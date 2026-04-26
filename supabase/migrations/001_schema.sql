@@ -344,27 +344,27 @@ INSERT INTO public.courses (id, slug, title, description, long_description, cate
 
 -- ─── Modules (Course 1: Foundations) ─────────────────────────
 INSERT INTO public.modules (id, course_id, title, description, order_index, xp_reward) VALUES
-('m1010000-0000-0000-0000-000000000001', 'c1000000-0000-0000-0000-000000000001', 'Earth''s Internal Structure',    'Explore the layered interior of our planet.',                          1, 60),
-('m1010000-0000-0000-0000-000000000002', 'c1000000-0000-0000-0000-000000000001', 'Minerals: The Building Blocks',  'Learn how to identify and classify Earth''s minerals.',                2, 60),
-('m1010000-0000-0000-0000-000000000003', 'c1000000-0000-0000-0000-000000000001', 'Rocks & the Rock Cycle',         'Understand how rocks form, transform, and are recycled.',              3, 60);
+('b1010000-0000-0000-0000-000000000001', 'c1000000-0000-0000-0000-000000000001', 'Earth''s Internal Structure',    'Explore the layered interior of our planet.',                          1, 60),
+('b1010000-0000-0000-0000-000000000002', 'c1000000-0000-0000-0000-000000000001', 'Minerals: The Building Blocks',  'Learn how to identify and classify Earth''s minerals.',                2, 60),
+('b1010000-0000-0000-0000-000000000003', 'c1000000-0000-0000-0000-000000000001', 'Rocks & the Rock Cycle',         'Understand how rocks form, transform, and are recycled.',              3, 60);
 
 -- ─── Modules (Course 2: Plate Tectonics) ─────────────────────
 INSERT INTO public.modules (id, course_id, title, description, order_index, xp_reward) VALUES
-('m2010000-0000-0000-0000-000000000001', 'c1000000-0000-0000-0000-000000000002', 'Continental Drift & Seafloor Spreading', 'The evidence and mechanisms behind moving plates.', 1, 70),
-('m2010000-0000-0000-0000-000000000002', 'c1000000-0000-0000-0000-000000000002', 'Plate Boundaries & Tectonics',           'Divergent, convergent, and transform boundaries.',  2, 70),
-('m2010000-0000-0000-0000-000000000003', 'c1000000-0000-0000-0000-000000000002', 'Earthquakes & Seismology',               'How seismic waves reveal Earth''s structure.',       3, 70);
+('b2010000-0000-0000-0000-000000000001', 'c1000000-0000-0000-0000-000000000002', 'Continental Drift & Seafloor Spreading', 'The evidence and mechanisms behind moving plates.', 1, 70),
+('b2010000-0000-0000-0000-000000000002', 'c1000000-0000-0000-0000-000000000002', 'Plate Boundaries & Tectonics',           'Divergent, convergent, and transform boundaries.',  2, 70),
+('b2010000-0000-0000-0000-000000000003', 'c1000000-0000-0000-0000-000000000002', 'Earthquakes & Seismology',               'How seismic waves reveal Earth''s structure.',       3, 70);
 
 -- ─── Modules (Course 3: Oceanic Worlds) ──────────────────────
 INSERT INTO public.modules (id, course_id, title, description, order_index, xp_reward) VALUES
-('m3010000-0000-0000-0000-000000000001', 'c1000000-0000-0000-0000-000000000003', 'Ocean Basins & Properties',  'Geography and chemistry of the world''s oceans.', 1, 70),
-('m3010000-0000-0000-0000-000000000002', 'c1000000-0000-0000-0000-000000000003', 'Ocean Circulation',          'Gyres, thermohaline circulation, and El Niño.',   2, 70),
-('m3010000-0000-0000-0000-000000000003', 'c1000000-0000-0000-0000-000000000003', 'Deep Sea Environments',      'Life and geology at the ocean floor.',             3, 70);
+('b3010000-0000-0000-0000-000000000001', 'c1000000-0000-0000-0000-000000000003', 'Ocean Basins & Properties',  'Geography and chemistry of the world''s oceans.', 1, 70),
+('b3010000-0000-0000-0000-000000000002', 'c1000000-0000-0000-0000-000000000003', 'Ocean Circulation',          'Gyres, thermohaline circulation, and El Niño.',   2, 70),
+('b3010000-0000-0000-0000-000000000003', 'c1000000-0000-0000-0000-000000000003', 'Deep Sea Environments',      'Life and geology at the ocean floor.',             3, 70);
 
 -- ─── Lessons (Module 1.1 — Earth's Internal Structure) ────────
 INSERT INTO public.lessons (id, module_id, title, content, key_concepts, fun_fact, order_index, xp_reward, read_time) VALUES
 (
-  'l1010100-0000-0000-0000-000000000001',
-  'm1010000-0000-0000-0000-000000000001',
+  'd1010100-0000-0000-0000-000000000001',
+  'b1010000-0000-0000-0000-000000000001',
   'Journey to the Centre of the Earth',
   '## What Lies Beneath Our Feet?
 
@@ -398,8 +398,8 @@ We cannot drill to these depths. Our knowledge comes from **seismology** — stu
   1, 25, 7
 ),
 (
-  'l1010100-0000-0000-0000-000000000002',
-  'm1010000-0000-0000-0000-000000000001',
+  'd1010100-0000-0000-0000-000000000002',
+  'b1010000-0000-0000-0000-000000000001',
   'The Lithosphere & Asthenosphere',
   '## Earth''s Moving Skin
 
@@ -425,8 +425,8 @@ When glaciers melt (reducing the weight on crust), the land **rebounds upward** 
 -- ─── Lessons (Module 1.2 — Minerals) ─────────────────────────
 INSERT INTO public.lessons (id, module_id, title, content, key_concepts, fun_fact, order_index, xp_reward, read_time) VALUES
 (
-  'l1020100-0000-0000-0000-000000000001',
-  'm1010000-0000-0000-0000-000000000002',
+  'd1020100-0000-0000-0000-000000000001',
+  'b1010000-0000-0000-0000-000000000002',
   'What is a Mineral?',
   '## Defining Minerals
 
@@ -462,15 +462,15 @@ Geologists identify minerals using physical properties:
 
 -- ─── Quizzes ──────────────────────────────────────────────────
 INSERT INTO public.quizzes (id, module_id, title, description, xp_reward, passing_score) VALUES
-('q1010000-0000-0000-0000-000000000001', 'm1010000-0000-0000-0000-000000000001', 'Earth''s Internal Structure Quiz', 'Test your knowledge of Earth''s layers and properties.', 100, 70),
-('q1020000-0000-0000-0000-000000000001', 'm1010000-0000-0000-0000-000000000002', 'Minerals Quiz', 'Identify and classify common minerals.', 100, 70),
-('q2010000-0000-0000-0000-000000000001', 'm2010000-0000-0000-0000-000000000001', 'Continental Drift Quiz', 'Assess your understanding of plate motion theory.', 120, 70),
-('q3010000-0000-0000-0000-000000000001', 'm3010000-0000-0000-0000-000000000001', 'Ocean Basins Quiz', 'Test your ocean science fundamentals.', 120, 70);
+('e1010000-0000-0000-0000-000000000001', 'b1010000-0000-0000-0000-000000000001', 'Earth''s Internal Structure Quiz', 'Test your knowledge of Earth''s layers and properties.', 100, 70),
+('e1020000-0000-0000-0000-000000000001', 'b1010000-0000-0000-0000-000000000002', 'Minerals Quiz', 'Identify and classify common minerals.', 100, 70),
+('e2010000-0000-0000-0000-000000000001', 'b2010000-0000-0000-0000-000000000001', 'Continental Drift Quiz', 'Assess your understanding of plate motion theory.', 120, 70),
+('e3010000-0000-0000-0000-000000000001', 'b3010000-0000-0000-0000-000000000001', 'Ocean Basins Quiz', 'Test your ocean science fundamentals.', 120, 70);
 
 -- ─── Quiz Questions (Earth''s Structure) ─────────────────────
 INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, explanation, order_index) VALUES
 (
-  'q1010000-0000-0000-0000-000000000001',
+  'e1010000-0000-0000-0000-000000000001',
   'Which layer of the Earth is responsible for generating the planet''s magnetic field?',
   '["The solid inner core", "The liquid outer core", "The asthenosphere", "The continental crust"]',
   'The liquid outer core',
@@ -478,7 +478,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   1
 ),
 (
-  'q1010000-0000-0000-0000-000000000001',
+  'e1010000-0000-0000-0000-000000000001',
   'What is the approximate depth of the boundary between Earth''s mantle and outer core?',
   '["~670 km", "~1,400 km", "~2,900 km", "~5,100 km"]',
   '~2,900 km',
@@ -486,7 +486,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   2
 ),
 (
-  'q1010000-0000-0000-0000-000000000001',
+  'e1010000-0000-0000-0000-000000000001',
   'S-waves cannot travel through the outer core. What does this tell us?',
   '["The outer core is very hot", "The outer core is liquid", "The outer core is made of iron", "The outer core rotates fast"]',
   'The outer core is liquid',
@@ -494,7 +494,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   3
 ),
 (
-  'q1010000-0000-0000-0000-000000000001',
+  'e1010000-0000-0000-0000-000000000001',
   'What is the term for the rigid outer shell comprising Earth''s crust and uppermost mantle?',
   '["Asthenosphere", "Mesosphere", "Lithosphere", "Hydrosphere"]',
   'Lithosphere',
@@ -502,7 +502,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   4
 ),
 (
-  'q1010000-0000-0000-0000-000000000001',
+  'e1010000-0000-0000-0000-000000000001',
   'Oceanic crust is generally __ than continental crust.',
   '["Thicker and less dense", "Thinner and less dense", "Thicker and denser", "Thinner and denser"]',
   'Thinner and denser',
@@ -513,7 +513,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
 -- ─── Quiz Questions (Minerals) ────────────────────────────────
 INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, explanation, order_index) VALUES
 (
-  'q1020000-0000-0000-0000-000000000001',
+  'e1020000-0000-0000-0000-000000000001',
   'What mineral is rated 10 on the Mohs hardness scale?',
   '["Corundum", "Quartz", "Feldspar", "Diamond"]',
   'Diamond',
@@ -521,7 +521,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   1
 ),
 (
-  'q1020000-0000-0000-0000-000000000001',
+  'e1020000-0000-0000-0000-000000000001',
   'Which mineral group makes up over 90% of Earth''s crust?',
   '["Carbonates", "Oxides", "Silicates", "Sulfides"]',
   'Silicates',
@@ -529,7 +529,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   2
 ),
 (
-  'q1020000-0000-0000-0000-000000000001',
+  'e1020000-0000-0000-0000-000000000001',
   'A mineral''s streak is the colour of its __ .',
   '["Crystal face in sunlight", "Powdered form on an unglazed porcelain plate", "Internal cleavage plane", "Surface oxidation layer"]',
   'Powdered form on an unglazed porcelain plate',
@@ -537,7 +537,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   3
 ),
 (
-  'q1020000-0000-0000-0000-000000000001',
+  'e1020000-0000-0000-0000-000000000001',
   'What chemical formula represents the mineral quartz?',
   '["CaCO₃", "FeS₂", "SiO₂", "Al₂O₃"]',
   'SiO₂',
@@ -545,7 +545,7 @@ INSERT INTO public.quiz_questions (quiz_id, question, options, correct_answer, e
   4
 ),
 (
-  'q1020000-0000-0000-0000-000000000001',
+  'e1020000-0000-0000-0000-000000000001',
   'Olivine, a major mineral in the upper mantle, belongs to which mineral class?',
   '["Carbonate", "Oxide", "Sulfate", "Silicate"]',
   'Silicate',

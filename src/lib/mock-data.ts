@@ -149,16 +149,16 @@ export const MOCK_COURSES: Course[] = [
 
 export const MOCK_MODULES: Record<string, Module[]> = {
   'c1000000-0000-0000-0000-000000000001': [
-    { id: 'm1010000-0000-0000-0000-000000000001', course_id: 'c1000000-0000-0000-0000-000000000001', title: "Earth's Internal Structure", description: "Explore the layered interior of our planet.", order_index: 1, xp_reward: 60 },
-    { id: 'm1010000-0000-0000-0000-000000000002', course_id: 'c1000000-0000-0000-0000-000000000001', title: "Minerals: The Building Blocks", description: "Learn to identify and classify Earth's minerals.", order_index: 2, xp_reward: 60 },
-    { id: 'm1010000-0000-0000-0000-000000000003', course_id: 'c1000000-0000-0000-0000-000000000001', title: "Rocks & the Rock Cycle", description: "Understand how rocks form, transform, and are recycled.", order_index: 3, xp_reward: 60 },
+    { id: 'b1010000-0000-0000-0000-000000000001', course_id: 'c1000000-0000-0000-0000-000000000001', title: "Earth's Internal Structure", description: "Explore the layered interior of our planet.", order_index: 1, xp_reward: 60 },
+    { id: 'b1010000-0000-0000-0000-000000000002', course_id: 'c1000000-0000-0000-0000-000000000001', title: "Minerals: The Building Blocks", description: "Learn to identify and classify Earth's minerals.", order_index: 2, xp_reward: 60 },
+    { id: 'b1010000-0000-0000-0000-000000000003', course_id: 'c1000000-0000-0000-0000-000000000001', title: "Rocks & the Rock Cycle", description: "Understand how rocks form, transform, and are recycled.", order_index: 3, xp_reward: 60 },
   ],
 }
 
 export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'qq1',
-    quiz_id: 'q1010000-0000-0000-0000-000000000001',
+    quiz_id: 'e1010000-0000-0000-0000-000000000001',
     question: "Which layer of the Earth is responsible for generating the planet's magnetic field?",
     options: ['The solid inner core', 'The liquid outer core', 'The asthenosphere', 'The continental crust'],
     correct_answer: 'The liquid outer core',
@@ -167,7 +167,7 @@ export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'qq2',
-    quiz_id: 'q1010000-0000-0000-0000-000000000001',
+    quiz_id: 'e1010000-0000-0000-0000-000000000001',
     question: "What is the approximate depth of the core-mantle boundary?",
     options: ['~670 km', '~1,400 km', '~2,900 km', '~5,100 km'],
     correct_answer: '~2,900 km',
@@ -176,7 +176,7 @@ export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'qq3',
-    quiz_id: 'q1010000-0000-0000-0000-000000000001',
+    quiz_id: 'e1010000-0000-0000-0000-000000000001',
     question: "S-waves cannot travel through the outer core. What does this tell us?",
     options: ['The outer core is very hot', 'The outer core is liquid', 'The outer core is made of iron', 'The outer core rotates fast'],
     correct_answer: 'The outer core is liquid',
@@ -185,7 +185,7 @@ export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'qq4',
-    quiz_id: 'q1010000-0000-0000-0000-000000000001',
+    quiz_id: 'e1010000-0000-0000-0000-000000000001',
     question: "What is the rigid outer shell comprising Earth's crust and uppermost mantle called?",
     options: ['Asthenosphere', 'Mesosphere', 'Lithosphere', 'Hydrosphere'],
     correct_answer: 'Lithosphere',
@@ -194,7 +194,7 @@ export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'qq5',
-    quiz_id: 'q1010000-0000-0000-0000-000000000001',
+    quiz_id: 'e1010000-0000-0000-0000-000000000001',
     question: "Compared to continental crust, oceanic crust is generally:",
     options: ['Thicker and less dense', 'Thinner and less dense', 'Thicker and denser', 'Thinner and denser'],
     correct_answer: 'Thinner and denser',
@@ -204,8 +204,8 @@ export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
 ]
 
 export const MOCK_LESSON: Lesson = {
-  id: 'l1010100-0000-0000-0000-000000000001',
-  module_id: 'm1010000-0000-0000-0000-000000000001',
+  id: 'd1010100-0000-0000-0000-000000000001',
+  module_id: 'b1010000-0000-0000-0000-000000000001',
   title: 'Journey to the Centre of the Earth',
   content: `## What Lies Beneath Our Feet?
 
