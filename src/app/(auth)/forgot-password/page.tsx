@@ -4,12 +4,16 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Mail } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { BRAND } from '@/lib/brand'
+import FacetLogo from '@/components/brand/FacetLogo'
+import FacetBackground from '@/components/brand/FacetBackground'
+import FacetInput from '@/components/ui/FacetInput'
 
 export default function ForgotPasswordPage() {
-  const [email, setEmail] = useState('')
+  const [email, setEmail]     = useState('')
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [error, setError] = useState('')
+  const [error, setError]     = useState('')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -25,63 +29,75 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0d1117] hero-bg flex items-center justify-center px-4 py-16">
-      <div className="w-full max-w-md">
+    <div
+      className="min-h-screen relative flex items-center justify-center px-4 py-16"
+      style={{ backgroundColor: BRAND.bg, color: BRAND.text, fontFamily: 'var(--font-sans)' }}
+    >
+      <FacetBackground />
+      <div className="relative z-10 w-full max-w-md">
         <div className="text-center mb-10">
-          <Link href="/" className="inline-flex items-center gap-2.5 font-black text-2xl">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center shadow-glow-cyan">🌍</div>
-            <span className="text-[#e6edf3]">Facet</span>
+          <Link href="/" className="inline-flex items-center gap-3">
+            <FacetLogo size={32} />
+            <div className="font-serif" style={{ fontSize: '28px', lineHeight: 1 }}>Facet</div>
           </Link>
         </div>
 
-        <div className="glass border border-white/8 rounded-2xl p-8">
+        <div
+          className="p-8 rounded-sm"
+          style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+        >
           {success ? (
             <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto mb-6">
-                <Mail className="w-8 h-8 text-cyan-400" />
+              <div
+                className="w-16 h-16 rounded-sm flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: `${BRAND.accent}15`, border: `1px solid ${BRAND.accent}40` }}
+              >
+                <Mail size={28} color={BRAND.accent} />
               </div>
-              <h1 className="text-xl font-black text-[#e6edf3] mb-3">Check your email</h1>
-              <p className="text-[#8b949e] text-sm mb-1">We sent a password reset link to</p>
-              <p className="text-cyan-400 font-semibold mb-6">{email}</p>
-              <p className="text-sm text-[#8b949e] mb-8">
-                Click the link to set a new password. Check your spam folder if you don't see it.
+              <h1 className="font-serif" style={{ fontSize: '24px' }}>Check your email</h1>
+              <p className="text-sm mt-2" style={{ color: BRAND.textDim }}>Reset link sent to</p>
+              <p className="font-semibold mt-1" style={{ color: BRAND.accent }}>{email}</p>
+              <p className="text-xs mt-4 leading-relaxed" style={{ color: BRAND.textDim }}>
+                Click the link to set a new password. Check your spam folder if you don&apos;t see it.
               </p>
-              <Link href="/login" className="text-sm text-cyan-400 hover:text-cyan-300 font-semibold transition-colors">
+              <Link
+                href="/login"
+                className="inline-block mt-6 text-xs font-semibold tracking-[0.1em] uppercase transition-opacity hover:opacity-70"
+                style={{ color: BRAND.accent }}
+              >
                 Back to sign in
               </Link>
             </div>
           ) : (
             <>
               <div className="mb-6">
-                <h1 className="text-xl font-black text-[#e6edf3] mb-2">Reset your password</h1>
-                <p className="text-sm text-[#8b949e]">Enter your email and we'll send you a reset link.</p>
+                <h1 className="font-serif" style={{ fontSize: '24px' }}>Reset your password</h1>
+                <p className="text-xs mt-2" style={{ color: BRAND.textDim }}>
+                  Enter your email and we&apos;ll send a reset link.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 {error && (
-                  <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-sm text-red-400">{error}</div>
+                  <div
+                    className="p-3 rounded-sm text-xs"
+                    style={{ backgroundColor: 'rgba(226,91,110,0.1)', border: `1px solid ${BRAND.ruby}`, color: BRAND.ruby }}
+                  >
+                    {error}
+                  </div>
                 )}
 
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#8b949e] uppercase tracking-wide">Email</label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    required
-                    placeholder="you@example.com"
-                    className="w-full bg-white/5 border border-white/8 hover:border-white/15 focus:border-cyan-500/50 focus:outline-none text-[#e6edf3] placeholder-[#8b949e] rounded-xl px-4 py-3 text-sm transition-colors"
-                  />
-                </div>
+                <FacetInput label="Email" value={email} onChange={setEmail} type="email" placeholder="you@example.com" />
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-3 bg-cyan-500 hover:bg-cyan-400 disabled:opacity-60 text-[#0d1117] font-bold rounded-xl text-sm transition-all shadow-glow-cyan"
+                  className="w-full py-3 rounded-sm text-xs font-semibold tracking-[0.15em] uppercase flex items-center justify-center gap-2 disabled:opacity-50 transition-opacity hover:opacity-80"
+                  style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
                 >
                   {loading
-                    ? <span className="w-4 h-4 border-2 border-[#0d1117]/30 border-t-[#0d1117] rounded-full animate-spin" />
-                    : <>Send Reset Link <ArrowRight className="w-4 h-4" /></>
+                    ? <span className="w-4 h-4 border-2 rounded-full animate-spin" style={{ borderColor: `${BRAND.bg}40`, borderTopColor: BRAND.bg }} />
+                    : <>Send Reset Link <ArrowRight size={12} /></>
                   }
                 </button>
               </form>
@@ -89,9 +105,10 @@ export default function ForgotPasswordPage() {
               <div className="mt-6 text-center">
                 <Link
                   href="/login"
-                  className="inline-flex items-center gap-1.5 text-sm text-[#8b949e] hover:text-[#e6edf3] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs transition-opacity hover:opacity-70"
+                  style={{ color: BRAND.textDim }}
                 >
-                  <ArrowLeft className="w-3.5 h-3.5" /> Back to sign in
+                  <ArrowLeft size={12} /> Back to sign in
                 </Link>
               </div>
             </>

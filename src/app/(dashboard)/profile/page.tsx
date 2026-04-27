@@ -1,122 +1,213 @@
-import { Metadata } from 'next'
+import { redirect } from 'next/navigation'
+import { Lock } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
-import { MOCK_COURSES } from '@/lib/mock-data'
-import XPBar from '@/components/features/XPBar'
-import AchievementBadge from '@/components/features/AchievementBadge'
-import EditProfileForm from '@/components/features/EditProfileForm'
-import { BookOpen, CheckCircle2, Zap, Trophy, Flame, Calendar, Clock } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { BRAND } from '@/lib/brand'
+import { LESSON_LIST } from '@/lessons/index'
+import { levelFromXp, xpProgressPct, xpInLevel, XP_PER_LEVEL } from '@/lib/utils'
+import FacetedAvatar from '@/components/brand/FacetedAvatar'
+import FacetLogo from '@/components/brand/FacetLogo'
+import type { Profile } from '@/types'
 
-export const metadata: Metadata = { title: 'Profile' }
+export const metadata = { title: 'Profile' }
+
+const ACHIEVEMENTS = [
+  { id: 'first-step',   name: 'First Facet',  desc: 'Complete your first lesson', threshold: (c: number) => c >= 1,               rarity: 'common' },
+  { id: 'trio',         name: 'Three Edges',  desc: 'Complete 3 lessons',          threshold: (c: number) => c >= 3,               rarity: 'uncommon' },
+  { id: 'scholar',      name: 'Faceted',      desc: 'Complete all lessons',        threshold: (c: number, t: number) => c >= t && t > 0, rarity: 'rare' },
+  { id: 'streak-week',  name: 'Steady Hand',  desc: '7-day streak',                threshold: (_c: number, _t: number, s: number) => s >= 7, rarity: 'uncommon' },
+  { id: 'xp-1k',        name: 'Brilliant',    desc: 'Earn 1,000 XP',               threshold: (_c: number, _t: number, _s: number, xp: number) => xp >= 1000, rarity: 'rare' },
+  { id: 'level-5',      name: 'Polished',     desc: 'Reach level 5',               threshold: (_c: number, _t: number, _s: number, _xp: number, lv: number) => lv >= 5, rarity: 'legendary' },
+] as const
+
+const RARITY_COLOR: Record<string, string> = {
+  legendary: BRAND.amethyst,
+  rare:      BRAND.gold,
+  uncommon:  BRAND.jade,
+  common:    BRAND.accent,
+}
 
 export default async function ProfilePage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
+  if (!user) redirect('/login')
 
-  const { data: profile } = await supabase.from('profiles').select('*').eq('id', user!.id).single()
-  const safe = profile ?? { xp: 0, level: 1, streak: 0, longest_streak: 0, display_name: null, username: user?.email?.split('@')[0] ?? 'Explorer', bio: '', avatar_color: '#06b6d4', created_at: new Date().toISOString() }
+  const { data: profileRow } = await supabase.from('profiles').select('*').eq('id', user.id).single()
+  const profile: Profile = (profileRow as Profile | null) ?? {
+    id: user.id,
+    username: user.email?.split('@')[0] ?? 'explorer',
+    display_name: user.user_metadata?.display_name ?? null,
+    bio: null,
+    avatar_color: '#7AD7F0',
+    xp: 0,
+    level: 1,
+    streak: 0,
+    longest_streak: 0,
+    last_active: new Date().toISOString(),
+    subscription: 'free',
+    created_at: new Date().toISOString(),
+  }
 
-  const { data: enrollments } = await supabase.from('user_course_enrollments').select('course_id, progress_percentage, completed_at').eq('user_id', user!.id)
-  const { data: lessonProgress } = await supabase.from('user_lesson_progress').select('id').eq('user_id', user!.id)
-  const { data: quizAttempts } = await supabase.from('user_quiz_attempts').select('passed, score').eq('user_id', user!.id) as { data: { passed: boolean; score: number }[] | null }
-  const { data: userAchievements } = await supabase.from('user_achievements').select('*, achievements(*)').eq('user_id', user!.id)
-  const { data: allAchievements } = await supabase.from('achievements').select('*')
+  const { data: progressRows } = await supabase
+    .from('user_lesson_progress' as never)
+    .select('lesson_id')
+    .eq('user_id', user.id)
+    .eq('completed', true)
+  const completed: string[] = ((progressRows ?? []) as { lesson_id: string }[]).map(r => r.lesson_id)
 
-  const stats = [
-    { icon: <BookOpen className="w-5 h-5" />,    label: 'Courses Enrolled',   value: enrollments?.length ?? 0,     color: 'text-cyan-400',   bg: 'bg-cyan-400/10' },
-    { icon: <CheckCircle2 className="w-5 h-5" />, label: 'Lessons Complete',  value: lessonProgress?.length ?? 0,  color: 'text-emerald-400',bg: 'bg-emerald-400/10' },
-    { icon: <Trophy className="w-5 h-5" />,       label: 'Quizzes Passed',    value: quizAttempts?.filter(a => a.passed).length ?? 0, color: 'text-amber-400', bg: 'bg-amber-400/10' },
-    { icon: <Flame className="w-5 h-5" />,        label: 'Longest Streak',    value: `${safe.longest_streak}d`,   color: 'text-orange-400', bg: 'bg-orange-400/10' },
-    { icon: <Zap className="w-5 h-5" />,          label: 'Total XP',          value: safe.xp.toLocaleString(),     color: 'text-purple-400', bg: 'bg-purple-400/10' },
-    { icon: <Calendar className="w-5 h-5" />,     label: 'Member Since',      value: new Date(safe.created_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }), color: 'text-blue-400', bg: 'bg-blue-400/10' },
-  ]
+  const xp       = profile.xp
+  const level    = levelFromXp(xp)
+  const pct      = xpProgressPct(xp)
+  const xpThis   = xpInLevel(xp)
+  const total    = LESSON_LIST.length
+  const pctDone  = total > 0 ? (completed.length / total) * 100 : 0
+  const joinDate = new Date(profile.created_at)
+  const displayName = profile.display_name ?? profile.username
+  const initials = displayName.slice(0, 2).toUpperCase()
 
-  const earnedIds = new Set(userAchievements?.map((ua: any) => ua.achievement_id) ?? [])
+  const achievements = ACHIEVEMENTS.map(a => ({
+    ...a,
+    unlocked: a.threshold(completed.length, total, profile.streak, xp, level),
+  }))
 
   return (
-    <div className="space-y-8 animate-fade-in max-w-4xl">
-      {/* Profile header */}
-      <div className="p-6 md:p-8 rounded-2xl bg-[#161b22] border border-white/5">
-        <div className="flex flex-col sm:flex-row items-start gap-6">
-          {/* Avatar */}
-          <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-black text-[#0d1117] shrink-0"
-            style={{ background: safe.avatar_color }}>
-            {(safe.display_name || safe.username)[0].toUpperCase()}
-          </div>
+    <div className="space-y-8 animate-fade-in">
 
-          <div className="flex-1 min-w-0">
-            <h1 className="text-2xl font-black text-[#e6edf3]">{safe.display_name || safe.username}</h1>
-            <p className="text-[#8b949e] text-sm">@{safe.username}</p>
-            {safe.bio && <p className="text-sm text-[#8b949e] mt-2 leading-relaxed">{safe.bio}</p>}
-            <div className="mt-4">
-              <XPBar xp={safe.xp} level={safe.level} streak={safe.streak} size="md" />
+      {/* Identity card */}
+      <div
+        className="grid md:grid-cols-3 gap-6 items-center p-6 md:p-8 rounded-sm"
+        style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+      >
+        <div className="flex items-center gap-5 md:col-span-2">
+          <FacetedAvatar initials={initials} size="lg" />
+          <div className="min-w-0">
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
+              Member
             </div>
+            <h1
+              className="font-serif truncate"
+              style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1 }}
+            >
+              {displayName}
+            </h1>
+            <div
+              className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-xs"
+              style={{ color: BRAND.textDim }}
+            >
+              <span className="font-mono">@{profile.username}</span>
+              <span className="hidden sm:inline">·</span>
+              <span>
+                Joined{' '}
+                {joinDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center md:text-right">
+          <div
+            className="font-serif leading-none"
+            style={{ fontSize: 'clamp(56px, 9vw, 80px)', color: BRAND.accent }}
+          >
+            {level}
+          </div>
+          <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
+            Current Level
+          </div>
+          <div className="mt-2 font-mono text-xs" style={{ color: BRAND.textDim }}>
+            {xpThis} / {XP_PER_LEVEL} XP
+          </div>
+          <div
+            className="mt-2 h-[2px] w-full rounded-full overflow-hidden"
+            style={{ backgroundColor: BRAND.border }}
+          >
+            <div
+              className="h-full transition-all duration-1000"
+              style={{ width: `${pct}%`, backgroundColor: BRAND.accent }}
+            />
           </div>
         </div>
       </div>
 
-      {/* Stats grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {stats.map(s => (
-          <div key={s.label} className="p-4 rounded-2xl bg-[#161b22] border border-white/5 flex items-center gap-3">
-            <div className={cn('w-9 h-9 rounded-xl flex items-center justify-center shrink-0', s.bg, s.color)}>{s.icon}</div>
-            <div className="min-w-0">
-              <p className="text-lg font-black text-[#e6edf3] truncate">{s.value}</p>
-              <p className="text-xs text-[#8b949e]">{s.label}</p>
-            </div>
-          </div>
-        ))}
+      {/* Curriculum progress */}
+      <div
+        className="p-6 rounded-sm"
+        style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="font-serif" style={{ fontSize: '24px' }}>Overall Curriculum</h3>
+          <span className="font-mono text-xs" style={{ color: BRAND.textSubtle }}>
+            {completed.length} / {total}
+          </span>
+        </div>
+        <div
+          className="h-[4px] rounded-full overflow-hidden"
+          style={{ backgroundColor: BRAND.border }}
+        >
+          <div
+            className="h-full transition-all duration-1000"
+            style={{
+              width: `${pctDone}%`,
+              background: `linear-gradient(90deg, ${BRAND.accent}, ${BRAND.amethyst})`,
+            }}
+          />
+        </div>
       </div>
 
       {/* Achievements */}
-      <div className="p-6 rounded-2xl bg-[#161b22] border border-white/5">
-        <h2 className="text-lg font-bold text-[#e6edf3] mb-5">
-          Achievements
-          <span className="ml-2 text-sm font-normal text-[#8b949e]">{earnedIds.size} / {allAchievements?.length ?? 15}</span>
-        </h2>
-        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4">
-          {(allAchievements ?? []).map((a: any) => (
-            <AchievementBadge
-              key={a.id}
-              achievement={a}
-              earned={earnedIds.has(a.id)}
-              size="sm"
-            />
-          ))}
+      <div>
+        <div
+          className="flex items-end justify-between mb-5 pb-3 border-b"
+          style={{ borderColor: BRAND.border }}
+        >
+          <h2 className="font-serif" style={{ fontSize: '30px' }}>Achievements</h2>
+          <span className="font-mono text-xs" style={{ color: BRAND.textSubtle }}>
+            {achievements.filter(a => a.unlocked).length} / {achievements.length}
+          </span>
         </div>
-      </div>
 
-      {/* Courses progress */}
-      {enrollments && enrollments.length > 0 && (
-        <div className="p-6 rounded-2xl bg-[#161b22] border border-white/5">
-          <h2 className="text-lg font-bold text-[#e6edf3] mb-5">My Courses</h2>
-          <div className="space-y-4">
-            {enrollments.map((e: any) => {
-              const course = MOCK_COURSES.find(c => c.id === e.course_id)
-              if (!course) return null
-              return (
-                <div key={e.course_id} className="flex items-center gap-4">
-                  <span className="text-2xl shrink-0">{course.icon}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-[#e6edf3] truncate">{course.title}</p>
-                    <div className="flex items-center gap-2 mt-1.5">
-                      <div className="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                        <div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-cyan-400" style={{ width: `${e.progress_percentage ?? 0}%` }} />
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {achievements.map(a => {
+            const rc = RARITY_COLOR[a.rarity]
+            return (
+              <div
+                key={a.id}
+                className="p-4 rounded-sm text-center transition-opacity"
+                style={{
+                  backgroundColor: BRAND.surface,
+                  border: `1px solid ${a.unlocked ? `${rc}60` : BRAND.border}`,
+                  opacity: a.unlocked ? 1 : 0.5,
+                }}
+              >
+                <div className="w-12 h-12 mx-auto mb-2">
+                  {a.unlocked
+                    ? <FacetLogo size={48} accent={rc} />
+                    : (
+                      <div
+                        className="w-12 h-12 rounded-sm flex items-center justify-center"
+                        style={{ backgroundColor: BRAND.border, border: `1px solid ${BRAND.borderHi}` }}
+                      >
+                        <Lock size={16} color={BRAND.textSubtle} />
                       </div>
-                      <span className="text-xs text-cyan-400 font-medium shrink-0">{Math.round(e.progress_percentage ?? 0)}%</span>
-                    </div>
-                  </div>
+                    )
+                  }
                 </div>
-              )
-            })}
-          </div>
+                <div className="font-serif" style={{ fontSize: '17px' }}>{a.name}</div>
+                <div
+                  className="text-[9px] tracking-[0.15em] uppercase mt-1"
+                  style={{ color: BRAND.textSubtle }}
+                >
+                  {a.desc}
+                </div>
+                <div
+                  className="mt-2 text-[9px] tracking-[0.25em] uppercase font-mono"
+                  style={{ color: rc }}
+                >
+                  {a.rarity}
+                </div>
+              </div>
+            )
+          })}
         </div>
-      )}
-
-      {/* Edit profile */}
-      <div className="p-6 rounded-2xl bg-[#161b22] border border-white/5">
-        <h2 className="text-lg font-bold text-[#e6edf3] mb-5">Edit Profile</h2>
-        <EditProfileForm currentDisplayName={safe.display_name ?? ''} currentBio={safe.bio ?? ''} currentColor={safe.avatar_color} />
       </div>
     </div>
   )

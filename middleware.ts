@@ -1,7 +1,8 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-const PROTECTED_PATHS = ['/dashboard', '/courses', '/lessons', '/quiz', '/leaderboard', '/profile']
+// Only routes that require an active session
+const AUTH_REQUIRED = ['/dashboard', '/profile']
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
@@ -25,16 +26,19 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  const isProtected = PROTECTED_PATHS.some(p => request.nextUrl.pathname.startsWith(p))
+  const { pathname } = request.nextUrl
+  const isProtected = AUTH_REQUIRED.some(p => pathname.startsWith(p))
 
+  // Unauthenticated user hitting a protected route → login
   if (!user && isProtected) {
     const loginUrl = request.nextUrl.clone()
     loginUrl.pathname = '/login'
-    loginUrl.searchParams.set('redirect', request.nextUrl.pathname)
+    loginUrl.searchParams.set('redirect', pathname)
     return NextResponse.redirect(loginUrl)
   }
 
-  if (user && (request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/register')) {
+  // Authenticated user hitting auth pages → dashboard
+  if (user && (pathname === '/login' || pathname === '/register')) {
     const dashUrl = request.nextUrl.clone()
     dashUrl.pathname = '/dashboard'
     return NextResponse.redirect(dashUrl)
