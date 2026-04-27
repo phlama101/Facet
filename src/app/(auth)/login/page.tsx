@@ -3,10 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Zap, Eye, EyeOff, ArrowRight } from 'lucide-react'
+import { Eye, EyeOff, ArrowRight } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { cn } from '@/lib/utils'
-import type { Metadata } from 'next'
 
 export default function LoginPage() {
   const router = useRouter()
