@@ -24,7 +24,13 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  let user = null
+  try {
+    const { data } = await supabase.auth.getUser()
+    user = data?.user ?? null
+  } catch {
+    // Auth unavailable — treat as guest, let the request pass through
+  }
 
   const { pathname } = request.nextUrl
   const isProtected = AUTH_REQUIRED.some(p => pathname.startsWith(p))
