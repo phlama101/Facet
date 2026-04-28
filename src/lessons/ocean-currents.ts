@@ -21,9 +21,16 @@ const oceanCurrents: Lesson = {
     {
       type: 'intro',
       title: 'The ocean is always moving',
-      body: `The ocean is not a still bathtub. According to NOAA, constant motion takes the form of a **global ocean conveyor belt** — a combined system of wind-driven surface currents and deep, density-driven flows.
+      body: `The ocean is not a still bathtub. According to NOAA, constant motion takes the form of a **global ocean conveyor belt** — a combined system of wind-driven surface currents and deep, density-driven flows that together circulate heat, salt, and nutrients across every ocean basin.
 
-Together, these currents move vast amounts of heat, salt, and nutrients around the planet. The Gulf Stream, for example, transports warm Caribbean water northeast across the Atlantic, affecting conditions in northern Europe.`,
+The Gulf Stream carries warm Caribbean water northeast across the Atlantic at up to 2 metres per second, transporting roughly 30 times the combined flow of all the world's rivers. Northern Europe's relatively mild climate is partly a result of this heat delivery.
+
+Ocean currents also feed ecosystems. Cold upwelling zones — where deep, nutrient-rich water rises to the surface — support some of Earth's most productive fisheries. The Humboldt Current off South America is one example; it sustains anchovy populations that feed millions of people.`,
+      keyTerms: [
+        { term: 'Gyre',                     def: 'A large, circular system of ocean currents driven by prevailing winds and shaped into a loop by the Coriolis effect. There is one major gyre in each ocean basin.' },
+        { term: 'Thermohaline circulation', def: 'Deep ocean circulation driven by differences in water density caused by temperature (thermo) and salt content (haline). Also called the global conveyor belt.' },
+        { term: 'Coriolis effect',          def: "The apparent deflection of moving objects — including air and ocean water — due to Earth's rotation. Deflects to the right in the Northern Hemisphere and to the left in the Southern." },
+      ],
     },
     {
       type: 'concept',
@@ -39,13 +46,13 @@ Together, these currents move vast amounts of heat, salt, and nutrients around t
       title: 'The Coriolis deflection',
       body: `Earth rotates, and this rotation deflects moving fluids — including ocean water. This is the **Coriolis effect**.
 
-In the Northern Hemisphere, currents are deflected to the **right**. In the Southern Hemisphere, to the **left**. This is why:
+In the Northern Hemisphere, currents are deflected to the **right**. In the Southern Hemisphere, to the **left**. The effect is strongest near the poles and drops to zero at the equator.
 
-- Gyres rotate clockwise in the North Atlantic
-- Gyres rotate counter-clockwise in the South Atlantic
-- Hurricanes spin in opposite directions across the equator
+**Northern Hemisphere gyres** — rotate clockwise. The Gulf Stream flows northeast along the US East Coast before crossing the Atlantic; the Kuroshio does the same off Japan.
 
-The effect is strongest at the poles and zero at the equator.`,
+**Southern Hemisphere gyres** — rotate counter-clockwise. The cold Humboldt Current flows north along South America's western coast, bringing nutrient-rich deep water to the surface.
+
+**Hurricanes and cyclones** — spin counter-clockwise north of the equator and clockwise south of it, for exactly the same reason. A storm cannot cross the equator because the Coriolis force reverses direction there.`,
     },
     {
       type: 'quiz',

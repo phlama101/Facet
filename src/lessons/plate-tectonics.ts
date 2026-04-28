@@ -27,8 +27,10 @@ His idea was rejected for 50 years. He had no mechanism — no way to explain HO
 
 This is plate tectonics — the theory that unifies nearly all of geology.`,
       keyTerms: [
-        { term: 'Pangaea',           def: 'The supercontinent that existed ~335 to 175 million years ago.' },
-        { term: 'Lithospheric plate', def: 'A rigid slab of crust and upper mantle that moves as a unit.' },
+        { term: 'Pangaea',            def: 'The supercontinent that existed roughly 335 to 175 million years ago, before breaking apart into the continents we see today.' },
+        { term: 'Lithospheric plate', def: 'A rigid slab of crust and upper mantle that moves as a single unit. Earth has about a dozen major plates and several smaller ones.' },
+        { term: 'Subduction',         def: 'The process where one tectonic plate slides beneath another and sinks into the mantle. It drives deep earthquakes, ocean trenches, and volcanic arcs.' },
+        { term: 'Mantle convection',  def: 'The slow circulation of hot rock in the mantle driven by heat from Earth\'s core — the engine ultimately responsible for moving tectonic plates.' },
       ],
     },
     {
@@ -44,15 +46,15 @@ This is plate tectonics — the theory that unifies nearly all of geology.`,
     {
       type: 'concept',
       title: 'The evidence and the pace',
-      body: `Plate tectonics is one of the best-supported theories in science. The evidence:
+      body: `Plate tectonics is one of the best-supported theories in all of science. Multiple independent lines of evidence confirm it.
 
-**Fossil distribution** — Identical fossils of the reptile *Mesosaurus* appear on both South American and African coasts. It couldn't swim across oceans — so the continents must have been joined.
+**Fossil distribution** — Identical fossils of the freshwater reptile *Mesosaurus* appear on both the South American and African coasts. It could not have crossed an ocean — the continents must have once been joined.
 
-**Magnetic striping** — The seafloor records Earth's magnetic field as it erupts. Stripes of alternating polarity run parallel to mid-ocean ridges.
+**Magnetic striping** — As new seafloor erupts at mid-ocean ridges, it records Earth's magnetic field direction. When the field later reverses, the next eruption records the new direction. This creates parallel stripes of alternating polarity on either side of the ridge — a perfect tape recording of seafloor spreading.
 
-**GPS measurement** — Modern satellites directly measure plate motion. Per USGS, plates move "roughly at the same rate that your fingernails grow."
+**Direct GPS measurement** — Modern satellites measure plate motion in real time. Per USGS, plates move at roughly the rate fingernails grow — about 2.5 to 15 centimetres per year depending on the plate.
 
-**Rate range** — The Arctic Ridge spreads at less than 2.5 cm/yr, while the East Pacific Rise spreads at more than 15 cm/yr.`,
+These lines of evidence together explain phenomena that were previously mysterious: why earthquakes cluster in narrow belts, why volcanoes ring the Pacific, and why the ocean floor is nowhere older than about 200 million years.`,
     },
     {
       type: 'quiz',

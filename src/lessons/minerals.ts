@@ -25,7 +25,14 @@ const minerals: Lesson = {
 
 A **mineral** is a single, pure substance with a specific chemical formula and crystal structure. A **rock** is a mixture of one or more minerals stuck together.
 
-Granite, for example, is a rock — you can see the individual pink (feldspar), white (quartz), and black (mica) mineral grains if you look closely.`,
+Granite, for example, is a rock — you can see the individual pink (feldspar), white (quartz), and black (mica) mineral grains if you look closely. Each of those grains is a distinct mineral with its own chemistry and crystal form.
+
+There are over 5,500 known minerals, but just a handful — quartz, feldspar, mica, calcite, olivine, pyroxene — make up the vast majority of Earth's crust.`,
+      keyTerms: [
+        { term: 'Mineral',       def: 'A naturally occurring, inorganic, solid substance with a specific chemical formula and an ordered crystalline structure. Must meet all five defining criteria.' },
+        { term: 'Crystal',       def: 'A solid in which atoms are arranged in a regular, repeating three-dimensional pattern. This internal order gives each mineral its characteristic shape, cleavage, and optical properties.' },
+        { term: 'Mohs hardness', def: 'A relative 1-to-10 scale ranking minerals by their resistance to being scratched, developed by Friedrich Mohs in 1812.' },
+      ],
     },
     {
       type: 'concept',
@@ -42,20 +49,20 @@ Granite, for example, is a rock — you can see the individual pink (feldspar), 
     {
       type: 'concept',
       title: 'The Mohs hardness scale',
-      body: `Developed by Friedrich Mohs in 1812, this 1-to-10 scale ranks minerals by scratch resistance.
+      body: `Hardness is one of the most useful properties for identifying a mineral in the field — and all you need are a few everyday objects. A harder mineral will always scratch a softer one.
 
-**1. Talc** — softer than your fingernail
-**2. Gypsum** — fingernail scratches it (~2.5)
-**3. Calcite** — copper penny scratches it (~3.5)
-**4. Fluorite** — steel knife scratches it (~5.5)
-**5. Apatite**
-**6. Orthoclase Feldspar** — scratches glass (~5.5)
-**7. Quartz** — hardest common mineral
-**8. Topaz**
-**9. Corundum** — ruby and sapphire
-**10. Diamond** — hardest natural substance
+**1. Talc** — scratched by a fingernail with ease; the softest mineral
+**2. Gypsum** — just scratched by a fingernail (~2.5)
+**3. Calcite** — a copper coin (~3.5) scratches it
+**4. Fluorite** — scratched by a steel knife or nail file (~5.5)
+**5. Apatite** — a steel knife barely scratches it
+**6. Orthoclase feldspar** — scratches glass; a file barely marks it
+**7. Quartz** — the hardest common mineral; scratches glass easily
+**8. Topaz** — scratches quartz
+**9. Corundum** — ruby and sapphire; scratches topaz
+**10. Diamond** — scratches everything; the hardest natural substance
 
-The scale is *relative*, not linear: diamond is about four times harder than corundum, not 11% harder.`,
+The scale is **relative, not linear**: diamond is roughly four times harder than corundum by absolute measurement, not just one step harder. Always test in both directions — if two minerals don't scratch each other, they have similar hardness.`,
     },
     {
       type: 'quiz',

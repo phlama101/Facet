@@ -27,15 +27,15 @@ This endless transformation is called the **rock cycle** — one of Earth's most
 
 Understanding the rock cycle means understanding how Earth itself works.`,
       keyTerms: [
-        { term: 'Lithosphere', def: "Earth's rigid outer layer, including the crust and upper mantle." },
-        { term: 'Deep time',   def: 'The geological timescale — millions to billions of years.' },
-        { term: 'Rock cycle',  def: 'The continuous process by which rocks are created, altered, destroyed, and re-formed through geological forces.' },
+        { term: 'Lithosphere', def: "Earth's rigid outer layer, made up of the crust and the uppermost mantle. It is broken into tectonic plates that move slowly over the hotter, softer layer below." },
+        { term: 'Deep time',   def: 'The geological timescale — the vast span of Earth\'s 4.54-billion-year history. Most rock-cycle processes operate over millions to hundreds of millions of years.' },
+        { term: 'Magma',       def: 'Molten rock beneath Earth\'s surface. Once it erupts at the surface through a volcano, it is called lava.' },
       ],
     },
     {
       type: 'concept',
       title: 'The three rock families',
-      body: 'Every rock on Earth belongs to one of three great families, each formed by a different process. Click any card to explore it.',
+      body: 'Every rock on Earth belongs to one of three great families, each formed by a different process. They can transform into each other given enough time. Click any card to explore it.',
       cards: [
         {
           name: 'Igneous',
