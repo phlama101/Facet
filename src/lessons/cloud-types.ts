@@ -1,3 +1,4 @@
+import { Cloud, CloudFog, Feather } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
@@ -31,9 +32,9 @@ Clouds are classified by two things: **altitude** (how high they form) and **sha
       title: "The three shape families",
       body: "Every cloud shape descends from three Latin root words in Luke Howard's 1803 system:",
       cards: [
-        { name: 'Cumulus', icon: '☁️', color: BRAND.text,    desc: '"Heap" — puffy cauliflower-shaped clouds with flat bottoms. Form from rising warm air.', examples: 'Fair weather · Thunderstorms' },
-        { name: 'Stratus', icon: '🌫️', color: BRAND.textDim, desc: '"Layer" — flat, sheet-like clouds that cover broad areas uniformly.', examples: 'Overcast drizzle · Fog' },
-        { name: 'Cirrus',  icon: '🪶', color: BRAND.accent,  desc: '"Curl" — thin, wispy, high-altitude clouds made of ice crystals.', examples: 'Horsetail streaks · Halos' },
+        { name: 'Cumulus', icon: Cloud, color: BRAND.text,    desc: '"Heap" — puffy cauliflower-shaped clouds with flat bottoms. Form from rising warm air.', examples: 'Fair weather · Thunderstorms' },
+        { name: 'Stratus', icon: CloudFog, color: BRAND.textDim, desc: '"Layer" — flat, sheet-like clouds that cover broad areas uniformly.', examples: 'Overcast drizzle · Fog' },
+        { name: 'Cirrus',  icon: Feather, color: BRAND.accent,  desc: '"Curl" — thin, wispy, high-altitude clouds made of ice crystals.', examples: 'Horsetail streaks · Halos' },
       ],
     },
     {

@@ -1,3 +1,4 @@
+import { ArrowLeftRight, Mountain, ArrowRightLeft } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
@@ -35,9 +36,9 @@ This is plate tectonics — the theory that unifies nearly all of geology.`,
       title: 'The three boundary types',
       body: 'Plates interact at their edges in three fundamentally different ways:',
       cards: [
-        { name: 'Divergent',  icon: '↔️', color: BRAND.accent,   desc: 'Plates pull apart. Magma rises to fill the gap, creating new crust.', examples: 'Mid-Atlantic Ridge, East African Rift' },
-        { name: 'Convergent', icon: '💥', color: BRAND.ruby,     desc: 'Plates collide. One plate may dive under another (subduction), building mountains, trenches, and volcanoes.', examples: 'Andes, Himalayas, Mariana Trench' },
-        { name: 'Transform',  icon: '⚡', color: BRAND.gold,     desc: 'Plates slide past each other horizontally. Produces earthquakes but little volcanism.', examples: 'San Andreas Fault, North Anatolian Fault' },
+        { name: 'Divergent',  icon: ArrowLeftRight, color: BRAND.accent,   desc: 'Plates pull apart. Magma rises to fill the gap, creating new crust.', examples: 'Mid-Atlantic Ridge, East African Rift' },
+        { name: 'Convergent', icon: Mountain, color: BRAND.ruby,     desc: 'Plates collide. One plate may dive under another (subduction), building mountains, trenches, and volcanoes.', examples: 'Andes, Himalayas, Mariana Trench' },
+        { name: 'Transform',  icon: ArrowRightLeft, color: BRAND.gold,     desc: 'Plates slide past each other horizontally. Produces earthquakes but little volcanism.', examples: 'San Andreas Fault, North Anatolian Fault' },
       ],
     },
     {

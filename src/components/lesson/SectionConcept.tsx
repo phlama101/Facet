@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { ConceptSection } from '@/lessons/types'
 
@@ -46,37 +47,86 @@ export default function SectionConcept({
       {renderBody(section.body)}
 
       {section.cards && (
-        <div className="mt-8 grid md:grid-cols-2 gap-3">
-          {section.cards.map((card, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveCard(activeCard === i ? null : i)}
-              className="text-left p-5 rounded-sm transition-all"
-              style={{
-                backgroundColor: activeCard === i ? BRAND.surfaceHi : BRAND.surface,
-                border: `1px solid ${activeCard === i ? card.color : BRAND.border}`,
-              }}
-            >
-              <div className="text-3xl mb-2">{card.icon}</div>
+        <div className="mt-8 space-y-2">
+          {section.cards.map((card, i) => {
+            const Icon = card.icon
+            const isOpen = activeCard === i
+            return (
               <div
-                className="font-serif"
-                style={{ fontSize: '22px', color: card.color }}
+                key={i}
+                className="rounded-sm overflow-hidden"
+                style={{
+                  border: `1px solid ${isOpen ? card.color : BRAND.border}`,
+                  borderLeft: `3px solid ${isOpen ? card.color : BRAND.border}`,
+                  backgroundColor: isOpen ? BRAND.surfaceHi : BRAND.surface,
+                  transition: 'border-color 0.15s, background-color 0.15s',
+                }}
               >
-                {card.name}
-              </div>
-              <div className="text-xs mt-2 leading-relaxed" style={{ color: BRAND.textDim }}>
-                {card.desc}
-              </div>
-              {card.examples && (
-                <div
-                  className="mt-3 text-[10px] tracking-[0.15em] uppercase font-mono"
-                  style={{ color: BRAND.textSubtle }}
+                <button
+                  onClick={() => setActiveCard(isOpen ? null : i)}
+                  className="w-full text-left flex items-center gap-4 px-5 py-4"
                 >
-                  {card.examples}
-                </div>
-              )}
-            </button>
-          ))}
+                  {/* Icon badge */}
+                  <div
+                    className="w-9 h-9 rounded-sm flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${card.color}1A` }}
+                  >
+                    <Icon size={18} color={card.color} strokeWidth={1.5} />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <div
+                      className="font-serif leading-tight"
+                      style={{ fontSize: '18px', color: isOpen ? card.color : BRAND.text }}
+                    >
+                      {card.name}
+                    </div>
+                    {!isOpen && card.examples && (
+                      <div
+                        className="text-[10px] tracking-[0.12em] uppercase font-mono mt-0.5 truncate"
+                        style={{ color: BRAND.textSubtle }}
+                      >
+                        {card.examples}
+                      </div>
+                    )}
+                  </div>
+
+                  {isOpen
+                    ? <ChevronUp size={14} color={BRAND.textSubtle} className="shrink-0" />
+                    : <ChevronDown size={14} color={BRAND.textSubtle} className="shrink-0" />
+                  }
+                </button>
+
+                {isOpen && (
+                  <div
+                    className="px-5 pb-5"
+                    style={{ borderTop: `1px solid ${card.color}25` }}
+                  >
+                    <p className="text-sm leading-relaxed pt-4" style={{ color: BRAND.textDim }}>
+                      {card.desc}
+                    </p>
+                    {card.examples && (
+                      <div className="flex flex-wrap gap-1.5 mt-4">
+                        {card.examples.split(' · ').map(ex => (
+                          <span
+                            key={ex}
+                            className="px-2.5 py-1 rounded-sm text-[11px] font-mono"
+                            style={{
+                              backgroundColor: `${card.color}15`,
+                              color: card.color,
+                              border: `1px solid ${card.color}30`,
+                            }}
+                          >
+                            {ex}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       )}
     </div>

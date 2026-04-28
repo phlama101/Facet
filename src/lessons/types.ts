@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react'
+
 export type TrackId = 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
 
 export type LessonLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
@@ -15,7 +17,7 @@ export interface KeyTerm {
 
 export interface ConceptCard {
   name: string
-  icon: string
+  icon: LucideIcon
   color: string
   desc: string
   examples?: string

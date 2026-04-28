@@ -32,11 +32,13 @@ export default function SectionDataLab({ section }: { section: DataLabSection })
         {section.title}
       </h2>
 
+      {/* Premise */}
       <div
         className="mb-8 p-4 rounded-sm"
         style={{
-          backgroundColor: `${BRAND.gold}0d`,
+          backgroundColor: `${BRAND.gold}0c`,
           border: `1px solid ${BRAND.gold}30`,
+          borderLeft: `3px solid ${BRAND.gold}`,
         }}
       >
         <div
@@ -48,51 +50,63 @@ export default function SectionDataLab({ section }: { section: DataLabSection })
         {renderBody(section.premise)}
       </div>
 
+      {/* Steps with connecting line */}
       <div
         className="text-[10px] tracking-[0.25em] uppercase mb-4"
         style={{ color: BRAND.gold }}
       >
         Worked Steps
       </div>
-      <div className="space-y-5">
-        {section.steps.map((step, i) => (
-          <div key={i}>
-            <div className="flex gap-3 mb-2">
+
+      <div className="relative">
+        {/* Vertical connector line */}
+        <div
+          className="absolute left-[11px] top-6 bottom-6 w-px"
+          style={{ backgroundColor: `${BRAND.gold}25` }}
+        />
+
+        <div className="space-y-5">
+          {section.steps.map((step, i) => (
+            <div key={i} className="flex gap-4">
+              {/* Step number badge */}
               <div
-                className="w-6 h-6 rounded-sm shrink-0 flex items-center justify-center text-xs font-mono font-bold"
+                className="w-6 h-6 rounded-sm flex items-center justify-center text-[11px] font-mono font-bold shrink-0 relative z-10 mt-0.5"
                 style={{
                   backgroundColor: `${BRAND.gold}20`,
+                  border: `1px solid ${BRAND.gold}40`,
                   color: BRAND.gold,
                 }}
               >
                 {i + 1}
               </div>
-              <p
-                className="text-sm leading-relaxed pt-0.5"
-                style={{ color: BRAND.text }}
-              >
-                {step.instruction}
-              </p>
+
+              <div className="flex-1 min-w-0">
+                <p className="text-sm leading-relaxed mb-2" style={{ color: BRAND.text }}>
+                  {step.instruction}
+                </p>
+                <div
+                  className="p-3 rounded-sm font-mono text-xs leading-relaxed"
+                  style={{
+                    backgroundColor: BRAND.surface,
+                    border: `1px solid ${BRAND.border}`,
+                    color: BRAND.accent,
+                  }}
+                >
+                  {step.result}
+                </div>
+              </div>
             </div>
-            <div
-              className="ml-9 p-3 rounded-sm font-mono text-xs leading-relaxed"
-              style={{
-                backgroundColor: BRAND.surface,
-                border: `1px solid ${BRAND.border}`,
-                color: BRAND.accent,
-              }}
-            >
-              {step.result}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
+      {/* Conclusion */}
       <div
         className="mt-8 p-4 rounded-sm"
         style={{
           backgroundColor: BRAND.surface,
           border: `1px solid ${BRAND.border}`,
+          borderLeft: `3px solid ${BRAND.gold}`,
         }}
       >
         <div

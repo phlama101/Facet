@@ -1,3 +1,4 @@
+import { Flame, Layers, Gem } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
@@ -28,16 +29,35 @@ Understanding the rock cycle means understanding how Earth itself works.`,
       keyTerms: [
         { term: 'Lithosphere', def: "Earth's rigid outer layer, including the crust and upper mantle." },
         { term: 'Deep time',   def: 'The geological timescale — millions to billions of years.' },
+        { term: 'Rock cycle',  def: 'The continuous process by which rocks are created, altered, destroyed, and re-formed through geological forces.' },
       ],
     },
     {
       type: 'concept',
       title: 'The three rock families',
-      body: 'Every rock on Earth belongs to one of three great families, each formed by a different process:',
+      body: 'Every rock on Earth belongs to one of three great families, each formed by a different process. Click any card to explore it.',
       cards: [
-        { name: 'Igneous',     icon: '🔥', color: BRAND.ruby,  desc: 'Born from fire. Forms when molten rock (magma or lava) cools and crystallizes.', examples: 'Granite, basalt, obsidian, pumice' },
-        { name: 'Sedimentary', icon: '🏖️', color: BRAND.gold,  desc: 'Built from debris. Forms when sediments (sand, mud, shells) are compacted and cemented.', examples: 'Sandstone, limestone, shale, conglomerate' },
-        { name: 'Metamorphic', icon: '💎', color: BRAND.jade,  desc: 'Transformed under pressure. Forms when existing rocks are altered by heat and pressure without fully melting.', examples: 'Marble, slate, gneiss, schist' },
+        {
+          name: 'Igneous',
+          icon: Flame,
+          color: BRAND.ruby,
+          desc: 'Born from fire. Forms when molten rock (magma or lava) cools and crystallizes. Slow cooling underground makes large crystals; rapid cooling at the surface makes fine-grained or glassy rock.',
+          examples: 'Granite · Basalt · Obsidian · Pumice',
+        },
+        {
+          name: 'Sedimentary',
+          icon: Layers,
+          color: BRAND.gold,
+          desc: 'Built from debris. Forms when sediments — sand, mud, shells, organic matter — are deposited in layers, compacted by the weight of overlying material, and cemented together over time.',
+          examples: 'Sandstone · Limestone · Shale · Conglomerate',
+        },
+        {
+          name: 'Metamorphic',
+          icon: Gem,
+          color: BRAND.jade,
+          desc: 'Transformed under pressure. Forms when existing rocks are altered by extreme heat and pressure without fully melting. The original minerals recrystallize into new, denser arrangements.',
+          examples: 'Marble · Slate · Gneiss · Schist',
+        },
       ],
     },
     {
@@ -49,7 +69,7 @@ Understanding the rock cycle means understanding how Earth itself works.`,
 
 **2. Weathering & erosion** — Wind, water, ice, and biological activity break rocks apart. Rivers and glaciers transport the fragments to basins.
 
-**3. Compaction & cementation** — Layer after layer of sediment buries older layers. Pressure squeezes out water and dissolved minerals "glue" grains together into solid rock.
+**3. Compaction & cementation** — Layer after layer of sediment buries older layers. Pressure squeezes out water and dissolved minerals cement grains together into solid rock.
 
 **4. Heat & pressure** — Deep burial or tectonic forces can bake and squeeze rocks until their minerals recrystallize into new arrangements — without ever fully melting.
 
@@ -62,19 +82,19 @@ Any rock can become any other rock, given enough time and the right conditions.`
           q: 'A rock forms as magma slowly cools deep underground. What type of rock is it?',
           a: ['Sedimentary', 'Metamorphic', 'Igneous', 'Biological'],
           correct: 2,
-          explain: 'Igneous rocks form from cooled magma or lava. Slow cooling underground produces coarse-grained varieties like granite.',
+          explain: 'Igneous rocks form from cooled magma or lava. Slow cooling underground produces coarse-grained varieties like granite — large crystals form because minerals have time to grow.',
         },
         {
           q: 'Which process turns sand and shell fragments into sandstone?',
           a: ['Melting', 'Compaction and cementation', 'Crystallization', 'Fossilization'],
           correct: 1,
-          explain: 'Sediments are buried under new layers, compacted by pressure, and cemented by minerals dissolved in groundwater.',
+          explain: 'Sediments are buried under new layers, compacted by pressure, and cemented by minerals dissolved in groundwater. This lithification process converts loose sediment into solid sedimentary rock.',
         },
         {
           q: 'Marble is a metamorphic rock. What was it before metamorphism?',
           a: ['Granite', 'Basalt', 'Limestone', 'Shale'],
           correct: 2,
-          explain: 'Marble forms when limestone is subjected to heat and pressure, causing its calcite crystals to recrystallize into interlocking grains.',
+          explain: 'Marble forms when limestone is subjected to heat and pressure, causing its calcite crystals to recrystallize into larger interlocking grains. The original layering of the limestone is often erased in the process.',
         },
       ],
     },

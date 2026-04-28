@@ -1,3 +1,4 @@
+import { Mountain, Layers, Gem, Microscope, Leaf, Diamond, Zap, Thermometer } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
@@ -106,28 +107,28 @@ As early-forming minerals lock up Mg, Fe, and Ca, the remaining melt becomes pro
       cards: [
         {
           name: 'Olivine — first to crystallize',
-          icon: '🟢',
+          icon: Mountain,
           color: BRAND.jade,
           desc: "Crystallizes at ~1,200–1,300 °C. Mg- and Fe-rich. Dominates Earth's upper mantle. Absent in granite — it crystallized out and reacted away long before granite-forming temperatures were reached.",
           examples: 'Peridotite · Dunite · Basalt',
         },
         {
           name: 'Plagioclase — continuous shift',
-          icon: '⬜',
+          icon: Layers,
           color: BRAND.accent,
           desc: 'Shifts from Ca-rich (anorthite) to Na-rich (albite) as cooling proceeds. Zoned crystals record this compositional history. The Ca/Na ratio indicates the temperature at which that part of the crystal grew.',
           examples: 'Gabbro (Ca-rich) · Granite (Na-rich)',
         },
         {
           name: 'Quartz — last to crystallize',
-          icon: '💎',
+          icon: Gem,
           color: BRAND.amethyst,
           desc: 'Pure SiO₂, crystallizes at ~650 °C — the lowest temperature in the series. Abundant in granite because it forms from the Si-enriched residual melt. Extremely chemically stable at the surface, so it dominates beach sand worldwide.',
           examples: 'Granite · Sandstone · Quartzite',
         },
         {
           name: 'Crystal size = cooling rate',
-          icon: '🔬',
+          icon: Microscope,
           color: BRAND.coral,
           desc: 'The same melt cooled slowly underground (intrusive/plutonic) produces centimetre-scale crystals. Cooled rapidly at the surface (extrusive/volcanic), it produces fine-grained or glassy rock. Two-stage cooling creates porphyritic texture: large phenocrysts set in a fine groundmass.',
           examples: 'Granite (slow) · Basalt (fast) · Porphyry (two-stage)',
@@ -167,28 +168,28 @@ A second metamorphic style operates without deep burial: **contact metamorphism*
       cards: [
         {
           name: 'Chlorite (Zone 1 — low)',
-          icon: '🌿',
+          icon: Leaf,
           color: BRAND.jade,
           desc: '~250–350 °C · ~8–12 km burial. Lowest Barrovian grade. Produces slates and phyllites. Represents mild burial — equivalent to sediment beneath a young, developing mountain belt.',
           examples: 'Slate · Phyllite · Chlorite schist',
         },
         {
           name: 'Garnet (Zone 3 — medium)',
-          icon: '🔴',
+          icon: Diamond,
           color: BRAND.ruby,
           desc: '~400–450 °C · ~15–20 km burial. Red almandine garnet appears. If you find garnet schist at the surface today, at least 15–20 km of rock above it has since eroded away.',
           examples: 'Garnet schist · Amphibolite',
         },
         {
           name: 'Sillimanite (Zone 6 — high)',
-          icon: '⚡',
+          icon: Zap,
           color: BRAND.amethyst,
           desc: 'Above 600 °C · above 30 km burial. Highest-grade Barrovian mineral. Only exposed at the surface after deep erosional exhumation of ancient mountain roots.',
           examples: 'Sillimanite gneiss · Granulite',
         },
         {
           name: 'Contact metamorphism',
-          icon: '🌡️',
+          icon: Thermometer,
           color: BRAND.coral,
           desc: 'Driven by intrusive heat, not burial depth. Highest grade immediately adjacent to the intrusion (hornfels); grade decreases outward. Forms a concentric aureole at any depth — even near the surface where regional metamorphism could never operate.',
           examples: 'Hornfels · Spotted slate · Marble adjacent to granite',

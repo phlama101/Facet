@@ -176,7 +176,7 @@ export default function LessonViewer({
               className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase px-5 py-2.5 rounded-sm transition-opacity hover:opacity-80"
               style={{ backgroundColor: track.color, color: BRAND.bg }}
             >
-              {sections[sectionIdx + 1]?.type === 'quiz' ? 'To Quiz' : 'Continue'}
+              {(({ quiz: 'To Quiz', theory: 'To Theory', 'case-study': 'To Case Study', 'data-lab': 'To Data Lab' } as Record<string, string>)[sections[sectionIdx + 1]?.type ?? '']) ?? 'Continue'}
               <ArrowRight size={12} />
             </button>
           </div>

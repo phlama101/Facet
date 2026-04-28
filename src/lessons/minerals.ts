@@ -1,3 +1,4 @@
+import { Globe, Atom, Snowflake, FlaskConical, Gem } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
@@ -31,11 +32,11 @@ Granite, for example, is a rock — you can see the individual pink (feldspar), 
       title: 'The five criteria',
       body: 'To qualify as a mineral (per AGI and USGS definitions), a substance must meet all five of these requirements:',
       cards: [
-        { name: '1. Naturally occurring', icon: '🌍', color: BRAND.jade,     desc: 'Must form through geological processes — not synthesized in a lab.' },
-        { name: '2. Inorganic',           icon: '⚛️', color: BRAND.accent,   desc: 'Not produced by living organisms (pearls and coral do not count as minerals).' },
-        { name: '3. Solid',               icon: '🧊', color: BRAND.amethyst, desc: 'Liquids and gases are excluded — though ice IS a mineral.' },
-        { name: '4. Definite formula',    icon: '🧪', color: BRAND.coral,    desc: 'Fixed composition, like quartz = SiO₂ or halite = NaCl.' },
-        { name: '5. Crystalline',         icon: '💎', color: BRAND.gold,     desc: 'Atoms arranged in an orderly, repeating 3D pattern.' },
+        { name: '1. Naturally occurring', icon: Globe, color: BRAND.jade,     desc: 'Must form through geological processes — not synthesized in a lab.' },
+        { name: '2. Inorganic',           icon: Atom, color: BRAND.accent,   desc: 'Not produced by living organisms (pearls and coral do not count as minerals).' },
+        { name: '3. Solid',               icon: Snowflake, color: BRAND.amethyst, desc: 'Liquids and gases are excluded — though ice IS a mineral.' },
+        { name: '4. Definite formula',    icon: FlaskConical, color: BRAND.coral,    desc: 'Fixed composition, like quartz = SiO₂ or halite = NaCl.' },
+        { name: '5. Crystalline',         icon: Gem, color: BRAND.gold,     desc: 'Atoms arranged in an orderly, repeating 3D pattern.' },
       ],
     },
     {

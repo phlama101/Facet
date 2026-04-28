@@ -35,44 +35,53 @@ export default function SectionTheory({ section }: { section: TheorySection }) {
       {renderBody(section.body)}
 
       {section.equations && section.equations.length > 0 && (
-        <div className="mt-8 space-y-3">
+        <div className="mt-8">
           <div
             className="text-[10px] tracking-[0.25em] uppercase mb-4"
             style={{ color: BRAND.amethyst }}
           >
             Key Equations
           </div>
-          {section.equations.map((eq, i) => (
-            <div
-              key={i}
-              className="p-4 rounded-sm"
-              style={{
-                backgroundColor: BRAND.surface,
-                border: `1px solid ${BRAND.amethyst}35`,
-              }}
-            >
+          <div className="space-y-2">
+            {section.equations.map((eq, i) => (
               <div
-                className="text-[10px] tracking-[0.2em] uppercase mb-2"
-                style={{ color: BRAND.amethyst }}
+                key={i}
+                className="rounded-sm overflow-hidden"
+                style={{
+                  border: `1px solid ${BRAND.amethyst}30`,
+                  borderLeft: `3px solid ${BRAND.amethyst}`,
+                  backgroundColor: BRAND.surface,
+                }}
               >
-                {eq.label}
-              </div>
-              <div
-                className="font-mono text-sm leading-relaxed"
-                style={{ color: BRAND.text }}
-              >
-                {eq.tex}
-              </div>
-              {eq.note && (
-                <div
-                  className="text-xs mt-2 leading-relaxed"
-                  style={{ color: BRAND.textDim }}
-                >
-                  {eq.note}
+                <div className="px-4 pt-3 pb-2">
+                  <div
+                    className="text-[10px] tracking-[0.2em] uppercase mb-2"
+                    style={{ color: BRAND.amethyst }}
+                  >
+                    {eq.label}
+                  </div>
+                  <div
+                    className="font-mono text-sm leading-relaxed"
+                    style={{ color: BRAND.text }}
+                  >
+                    {eq.tex}
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+                {eq.note && (
+                  <div
+                    className="px-4 py-2 text-xs leading-relaxed"
+                    style={{
+                      color: BRAND.textDim,
+                      borderTop: `1px solid ${BRAND.amethyst}20`,
+                      backgroundColor: `${BRAND.amethyst}08`,
+                    }}
+                  >
+                    {eq.note}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

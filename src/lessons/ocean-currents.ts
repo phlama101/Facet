@@ -1,3 +1,4 @@
+import { Wind, Waves } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
@@ -29,8 +30,8 @@ Together, these currents move vast amounts of heat, salt, and nutrients around t
       title: 'The two circulation systems',
       body: 'Ocean circulation operates at two very different depths and speeds:',
       cards: [
-        { name: 'Surface Currents', icon: '💨', color: BRAND.accent,   desc: 'Driven by prevailing winds in the top ~400 m. Fast (up to 2 m/s), organized into gyres.', examples: 'Gulf Stream, Kuroshio, Humboldt' },
-        { name: 'Thermohaline',     icon: '🌊', color: BRAND.amethyst, desc: 'Density-driven. Per NOAA, a water parcel takes roughly 1,000 years to complete the journey.', examples: 'The global conveyor belt' },
+        { name: 'Surface Currents', icon: Wind, color: BRAND.accent,   desc: 'Driven by prevailing winds in the top ~400 m. Fast (up to 2 m/s), organized into gyres.', examples: 'Gulf Stream, Kuroshio, Humboldt' },
+        { name: 'Thermohaline',     icon: Waves, color: BRAND.amethyst, desc: 'Density-driven. Per NOAA, a water parcel takes roughly 1,000 years to complete the journey.', examples: 'The global conveyor belt' },
       ],
     },
     {

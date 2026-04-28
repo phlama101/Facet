@@ -1,4 +1,4 @@
-import { MapPin } from 'lucide-react'
+import { MapPin, ExternalLink } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { CaseStudySection } from '@/lessons/types'
 
@@ -33,21 +33,23 @@ export default function SectionCaseStudy({ section }: { section: CaseStudySectio
         {section.title}
       </h2>
 
+      {/* Location badge */}
       <div
-        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm mb-6"
+        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm mb-7"
         style={{
-          backgroundColor: `${BRAND.jade}15`,
-          border: `1px solid ${BRAND.jade}40`,
+          backgroundColor: `${BRAND.jade}12`,
+          border: `1px solid ${BRAND.jade}35`,
         }}
       >
-        <MapPin size={12} color={BRAND.jade} />
-        <span className="text-xs tracking-[0.1em]" style={{ color: BRAND.jade }}>
+        <MapPin size={12} color={BRAND.jade} strokeWidth={2} />
+        <span className="text-xs tracking-[0.08em]" style={{ color: BRAND.jade }}>
           {section.location}
         </span>
       </div>
 
       {renderBody(section.body)}
 
+      {/* Findings */}
       <div className="mt-8">
         <div
           className="text-[10px] tracking-[0.25em] uppercase mb-3"
@@ -59,19 +61,25 @@ export default function SectionCaseStudy({ section }: { section: CaseStudySectio
           {section.findings.map((f, i) => (
             <div
               key={i}
-              className="p-4 rounded-sm"
+              className="rounded-sm overflow-hidden"
               style={{
-                backgroundColor: BRAND.surface,
                 border: `1px solid ${BRAND.border}`,
+                borderLeft: `3px solid ${BRAND.jade}`,
+                backgroundColor: BRAND.surface,
               }}
             >
-              <div
-                className="text-xs font-semibold mb-1"
-                style={{ color: BRAND.jade }}
-              >
-                {f.label}
+              <div className="px-4 pt-3 pb-1">
+                <div
+                  className="text-[11px] font-semibold tracking-[0.05em] uppercase mb-1.5"
+                  style={{ color: BRAND.jade }}
+                >
+                  {f.label}
+                </div>
               </div>
-              <div className="text-xs leading-relaxed" style={{ color: BRAND.textDim }}>
+              <div
+                className="px-4 pb-3 text-sm leading-relaxed"
+                style={{ color: BRAND.textDim }}
+              >
                 {f.detail}
               </div>
             </div>
@@ -79,6 +87,7 @@ export default function SectionCaseStudy({ section }: { section: CaseStudySectio
         </div>
       </div>
 
+      {/* Citation */}
       <div
         className="mt-6 p-4 rounded-sm"
         style={{
@@ -87,9 +96,10 @@ export default function SectionCaseStudy({ section }: { section: CaseStudySectio
         }}
       >
         <div
-          className="text-[10px] tracking-[0.2em] uppercase mb-1.5"
+          className="text-[10px] tracking-[0.2em] uppercase mb-1.5 flex items-center gap-1.5"
           style={{ color: BRAND.textSubtle }}
         >
+          <ExternalLink size={9} />
           Primary Source
         </div>
         <div className="text-xs leading-relaxed" style={{ color: BRAND.textDim }}>
@@ -98,7 +108,7 @@ export default function SectionCaseStudy({ section }: { section: CaseStudySectio
         {section.doi && (
           <div
             className="text-[10px] font-mono mt-2"
-            style={{ color: BRAND.textSubtle }}
+            style={{ color: BRAND.accent }}
           >
             doi: {section.doi}
           </div>
