@@ -24,13 +24,19 @@ export default async function CourseDetailPage({ params }: Props) {
   const { data: { user } } = await supabase.auth.getUser()
 
   let enrolled = false, progress = 0, completedLessonIds: string[] = []
+  let userSubscription: 'free' | 'pro' | 'expert' = 'free'
+
   if (user) {
-    const { data: enroll } = await supabase.from('user_course_enrollments').select('progress_percentage').eq('user_id', user.id).eq('course_id', course.id).single()
-    const safeEnroll = enroll as { progress_percentage: number } | null
+    const [enrollRes, lpRes, profileRes] = await Promise.all([
+      supabase.from('user_course_enrollments').select('progress_percentage').eq('user_id', user.id).eq('course_id', course.id).single(),
+      supabase.from('user_lesson_progress').select('lesson_id').eq('user_id', user.id),
+      (supabase.from('profiles') as any).select('subscription').eq('id', user.id).single(),
+    ])
+    const safeEnroll = enrollRes.data as { progress_percentage: number } | null
     enrolled = !!safeEnroll
     progress = safeEnroll?.progress_percentage ?? 0
-    const { data: lp } = await supabase.from('user_lesson_progress').select('lesson_id').eq('user_id', user.id)
-    completedLessonIds = (lp as { lesson_id: string }[] | null)?.map(r => r.lesson_id) ?? []
+    completedLessonIds = (lpRes.data as { lesson_id: string }[] | null)?.map(r => r.lesson_id) ?? []
+    userSubscription = (profileRes.data as { subscription: 'free' | 'pro' | 'expert' } | null)?.subscription ?? 'free'
   }
 
   const modules = MOCK_MODULES[course.id] ?? []
@@ -71,7 +77,7 @@ export default async function CourseDetailPage({ params }: Props) {
                   </div>
                 </div>
               )}
-              <EnrollButton courseId={course.id} enrolled={enrolled} isPremium={course.is_premium} slug={course.slug} />
+              <EnrollButton courseId={course.id} enrolled={enrolled} isPremium={course.is_premium} slug={course.slug} userSubscription={userSubscription} />
             </div>
           </div>
         </div>

@@ -1,11 +1,13 @@
 import { redirect } from 'next/navigation'
-import { Lock } from 'lucide-react'
+import { Lock, Zap, ArrowRight, CheckCircle2 as CheckIcon } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LESSON_LIST } from '@/lessons/index'
+import { PLANS } from '@/lib/stripe'
 import { levelFromXp, xpProgressPct, xpInLevel, XP_PER_LEVEL } from '@/lib/utils'
 import FacetedAvatar from '@/components/brand/FacetedAvatar'
 import FacetLogo from '@/components/brand/FacetLogo'
+import ManageBillingButton from '@/components/features/ManageBillingButton'
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Profile' }
@@ -127,6 +129,71 @@ export default async function ProfilePage() {
           </div>
         </div>
       </div>
+
+      {/* Subscription */}
+      {(() => {
+        const tier = profile.subscription as 'free' | 'pro' | 'expert'
+        const plan = PLANS[tier]
+        const isPaid = tier !== 'free'
+        const accentColor = tier === 'expert' ? BRAND.amethyst : tier === 'pro' ? BRAND.accent : BRAND.jade
+
+        return (
+          <div
+            className="p-6 rounded-sm"
+            style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.textSubtle }}>
+                  Plan
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-serif" style={{ fontSize: '24px' }}>{plan.name}</span>
+                  <span
+                    className="text-[9px] tracking-[0.2em] uppercase px-2 py-0.5 rounded-sm font-semibold"
+                    style={{ backgroundColor: `${accentColor}18`, color: accentColor, border: `1px solid ${accentColor}35` }}
+                  >
+                    {tier}
+                  </span>
+                </div>
+                {isPaid && (
+                  <ul className="mt-3 space-y-1.5">
+                    {plan.features.slice(0, 3).map(f => (
+                      <li key={f} className="flex items-center gap-2 text-xs" style={{ color: BRAND.textDim }}>
+                        <CheckIcon size={11} style={{ color: accentColor }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              <div className="shrink-0 flex flex-col items-end gap-2">
+                {isPaid ? (
+                  <ManageBillingButton />
+                ) : (
+                  <a
+                    href="/pricing"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-sm text-xs font-semibold transition-opacity hover:opacity-80"
+                    style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+                  >
+                    <Zap size={12} /> Upgrade <ArrowRight size={12} />
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {!isPaid && (
+              <div
+                className="mt-4 pt-4 text-xs leading-relaxed"
+                style={{ borderTop: `1px solid ${BRAND.border}`, color: BRAND.textDim }}
+              >
+                You&apos;re on the free plan — 3 beginner courses included. Upgrade to unlock all 8 courses, advanced labs, and leaderboards.
+              </div>
+            )}
+          </div>
+        )
+      })()}
 
       {/* Curriculum progress */}
       <div
