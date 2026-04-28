@@ -1,6 +1,6 @@
 export type TrackId = 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
 
-export type LessonLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert'
+export type LessonLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
 
 export interface Source {
   org: string
@@ -47,7 +47,48 @@ export interface QuizSection {
   questions: QuizQuestion[]
 }
 
-export type Section = IntroSection | ConceptSection | QuizSection
+export interface Equation {
+  label: string
+  tex: string
+  note?: string
+}
+
+export interface TheorySection {
+  type: 'theory'
+  title: string
+  body: string
+  equations?: Equation[]
+}
+
+export interface CaseStudyFinding {
+  label: string
+  detail: string
+}
+
+export interface CaseStudySection {
+  type: 'case-study'
+  title: string
+  location: string
+  body: string
+  findings: CaseStudyFinding[]
+  citation: string
+  doi?: string
+}
+
+export interface DataLabStep {
+  instruction: string
+  result: string
+}
+
+export interface DataLabSection {
+  type: 'data-lab'
+  title: string
+  premise: string
+  steps: DataLabStep[]
+  conclusion: string
+}
+
+export type Section = IntroSection | ConceptSection | QuizSection | TheorySection | CaseStudySection | DataLabSection
 
 export interface Lesson {
   id: string

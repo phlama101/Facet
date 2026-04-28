@@ -9,6 +9,9 @@ import FacetBackground from '@/components/brand/FacetBackground'
 import FacetLogo from '@/components/brand/FacetLogo'
 import SectionIntro from './SectionIntro'
 import SectionConcept from './SectionConcept'
+import SectionTheory from './SectionTheory'
+import SectionCaseStudy from './SectionCaseStudy'
+import SectionDataLab from './SectionDataLab'
 import SectionQuiz from './SectionQuiz'
 import LessonComplete from './LessonComplete'
 
@@ -129,6 +132,15 @@ export default function LessonViewer({
           )}
           {!done && cur.type === 'concept' && (
             <SectionConcept section={cur} sectionNumber={conceptCount + 1} />
+          )}
+          {!done && cur.type === 'theory' && (
+            <SectionTheory section={cur} />
+          )}
+          {!done && cur.type === 'case-study' && (
+            <SectionCaseStudy section={cur} />
+          )}
+          {!done && cur.type === 'data-lab' && (
+            <SectionDataLab section={cur} />
           )}
           {!done && cur.type === 'quiz' && (
             <SectionQuiz section={cur} onComplete={handleQuizComplete} />
