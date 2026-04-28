@@ -27,9 +27,16 @@ export async function POST(request: Request) {
 
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
     const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-    if (!url || !serviceKey) {
+
+    if (!url || !url.startsWith('https://')) {
       return NextResponse.json(
-        { error: 'Server configuration error. Please contact support.' },
+        { error: 'Server misconfiguration: NEXT_PUBLIC_SUPABASE_URL is missing or not a valid HTTPS URL.' },
+        { status: 500 }
+      )
+    }
+    if (!serviceKey || serviceKey.length < 20) {
+      return NextResponse.json(
+        { error: 'Server misconfiguration: SUPABASE_SERVICE_ROLE_KEY is missing.' },
         { status: 500 }
       )
     }
