@@ -3,13 +3,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Eye, EyeOff, ArrowRight, Check, Mail } from 'lucide-react'
+import { Eye, EyeOff, ArrowRight, Check } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { BRAND } from '@/lib/brand'
 import FacetLogo from '@/components/brand/FacetLogo'
 import FacetBackground from '@/components/brand/FacetBackground'
 import FacetInput from '@/components/ui/FacetInput'
-import { cn } from '@/lib/utils'
 
 const PERKS = [
   'Free forever — no credit card',
@@ -19,79 +18,53 @@ const PERKS = [
 
 export default function RegisterPage() {
   const router = useRouter()
-  const [form, setForm]     = useState({ username: '', email: '', password: '', displayName: '' })
-  const [showPw, setShowPw] = useState(false)
+  const [form, setForm]       = useState({ username: '', email: '', password: '', displayName: '' })
+  const [showPw, setShowPw]   = useState(false)
   const [loading, setLoading] = useState(false)
-  const [error, setError]   = useState('')
-  const [success, setSuccess] = useState(false)
+  const [error, setError]     = useState('')
 
   const set = (k: string) => (v: string) => setForm(f => ({ ...f, [k]: v }))
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError('')
+    if (!form.username.trim()) { setError('Username is required'); return }
+    if (!form.email.trim())    { setError('Email is required'); return }
     if (form.password.length < 6) { setError('Password must be at least 6 characters'); return }
     setLoading(true)
-    const supabase = createClient()
-    const { data, error: err } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-      options: {
-        data: { username: form.username, display_name: form.displayName || form.username },
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
-      },
-    })
-    if (err) { setError(err.message); setLoading(false); return }
-    if (data.session) { router.push('/dashboard'); router.refresh(); return }
-    setSuccess(true)
-    setLoading(false)
+    try {
+      // Create account server-side using the admin API — no email confirmation required
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: form.email,
+          password: form.password,
+          username: form.username,
+          displayName: form.displayName,
+        }),
+      })
+      const json = await res.json()
+      if (!res.ok) { setError(json.error ?? 'Registration failed'); setLoading(false); return }
+
+      // Account created — sign in immediately
+      const supabase = createClient()
+      const { error: signInErr } = await supabase.auth.signInWithPassword({
+        email: form.email,
+        password: form.password,
+      })
+      if (signInErr) { setError(signInErr.message); setLoading(false); return }
+      router.push('/dashboard')
+      router.refresh()
+    } catch {
+      setError('Something went wrong. Please try again.')
+      setLoading(false)
+    }
   }
 
-  const pwStrength = form.password.length === 0 ? 0 : form.password.length < 6 ? 1 : form.password.length < 10 ? 2 : 3
+  const pwStrength   = form.password.length === 0 ? 0 : form.password.length < 6 ? 1 : form.password.length < 10 ? 2 : 3
   const strengthLabel = ['', 'Weak', 'Good', 'Strong'][pwStrength]
   const strengthColor = ['', BRAND.ruby, BRAND.gold, BRAND.jade][pwStrength]
-
-  if (success) {
-    return (
-      <div
-        className="min-h-screen relative flex items-center justify-center px-4 py-16"
-        style={{ backgroundColor: BRAND.bg, color: BRAND.text, fontFamily: 'var(--font-sans)' }}
-      >
-        <FacetBackground />
-        <div className="relative z-10 w-full max-w-md text-center">
-          <Link href="/" className="inline-flex items-center gap-3 mb-10">
-            <FacetLogo size={32} />
-            <div className="font-serif" style={{ fontSize: '28px', lineHeight: 1 }}>Facet</div>
-          </Link>
-          <div
-            className="p-10 rounded-sm"
-            style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
-          >
-            <div
-              className="w-16 h-16 rounded-sm flex items-center justify-center mx-auto mb-6"
-              style={{ backgroundColor: `${BRAND.accent}15`, border: `1px solid ${BRAND.accent}40` }}
-            >
-              <Mail size={28} color={BRAND.accent} />
-            </div>
-            <h1 className="font-serif" style={{ fontSize: '28px' }}>Check your email</h1>
-            <p className="text-sm mt-2" style={{ color: BRAND.textDim }}>We sent a confirmation link to</p>
-            <p className="font-semibold mt-1" style={{ color: BRAND.accent }}>{form.email}</p>
-            <p className="text-xs mt-4 leading-relaxed" style={{ color: BRAND.textDim }}>
-              Click the link to activate your account and start learning.
-              Check your spam folder if you don&apos;t see it.
-            </p>
-            <Link
-              href="/login"
-              className="inline-block mt-6 text-xs font-semibold tracking-[0.1em] uppercase transition-opacity hover:opacity-70"
-              style={{ color: BRAND.accent }}
-            >
-              Back to sign in
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div
@@ -133,7 +106,7 @@ export default function RegisterPage() {
         >
           {error && (
             <div
-              className="flex items-start gap-2 p-3 rounded-sm text-xs"
+              className="p-3 rounded-sm text-xs"
               style={{ backgroundColor: 'rgba(226,91,110,0.1)', border: `1px solid ${BRAND.ruby}`, color: BRAND.ruby }}
             >
               {error}
@@ -141,11 +114,11 @@ export default function RegisterPage() {
           )}
 
           <FacetInput label="Display Name" value={form.displayName} onChange={set('displayName')} placeholder="Ada Karimi" />
-          <FacetInput label="Username"     value={form.username}    onChange={set('username')}    placeholder="fieldgeo99" />
-          <FacetInput label="Email"        value={form.email}       onChange={set('email')}       type="email" placeholder="you@example.com" />
+          <FacetInput label="Username *"   value={form.username}    onChange={set('username')}    placeholder="fieldgeo99" />
+          <FacetInput label="Email *"      value={form.email}       onChange={set('email')}       type="email" placeholder="you@example.com" />
           <div>
             <FacetInput
-              label="Password"
+              label="Password *"
               value={form.password}
               onChange={set('password')}
               type={showPw ? 'text' : 'password'}
