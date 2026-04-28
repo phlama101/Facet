@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 import { ArrowRight, BookOpen, Zap } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { PLANS } from '@/lib/stripe'
@@ -67,25 +68,44 @@ export default function EnrollButton({ courseId, enrolled, isPremium, slug, user
 
   if (enrolled) {
     return (
-      <a
+      <motion.a
         href={`/courses/${slug}`}
-        className="w-full flex items-center justify-center gap-2 py-3 bg-cyan-500 hover:bg-cyan-400 text-[#0d1117] font-bold rounded-xl text-sm transition-colors"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="group relative w-full flex items-center justify-center gap-2 py-3 bg-cyan-500 hover:bg-cyan-400 text-[#0d1117] font-bold rounded-xl text-sm transition-colors shadow-[0_8px_24px_-8px_rgba(6,182,212,0.6)] overflow-hidden"
       >
-        <BookOpen className="w-4 h-4" /> Continue Learning
-      </a>
+        <span aria-hidden className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[900ms] ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+        <BookOpen className="w-4 h-4" />
+        <span className="relative">Continue Learning</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+      </motion.a>
     )
   }
 
   if (isPremium && !hasPaidSub) {
     return (
       <div className="space-y-2">
-        <button
+        <motion.button
           onClick={upgrade}
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 py-3 bg-amber-500 hover:bg-amber-400 disabled:opacity-60 text-[#0d1117] font-bold rounded-xl text-sm transition-colors"
+          whileHover={loading ? undefined : { scale: 1.02 }}
+          whileTap={loading ? undefined : { scale: 0.98 }}
+          className={cn(
+            'group relative w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold overflow-hidden',
+            'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400',
+            'text-[#0d1117] shadow-[0_8px_28px_-8px_rgba(245,158,11,0.7)]',
+            'disabled:opacity-60 disabled:cursor-not-allowed transition-colors'
+          )}
         >
-          {loading ? spinner : <><Zap className="w-4 h-4" /> Unlock with Pro <ArrowRight className="w-4 h-4" /></>}
-        </button>
+          <span aria-hidden className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[900ms] ease-out bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+          {loading ? spinner : (
+            <>
+              <Zap className="w-4 h-4 fill-[#0d1117]" />
+              <span className="relative">Unlock with Pro</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </>
+          )}
+        </motion.button>
         <p className="text-xs text-center text-[#8b949e]">
           7-day free trial ·{' '}
           <a href="/pricing" className="underline underline-offset-2 hover:text-[#e6edf3] transition-colors">
@@ -97,16 +117,26 @@ export default function EnrollButton({ courseId, enrolled, isPremium, slug, user
   }
 
   return (
-    <button
+    <motion.button
       onClick={enroll}
       disabled={loading}
+      whileHover={loading ? undefined : { scale: 1.02 }}
+      whileTap={loading ? undefined : { scale: 0.98 }}
       className={cn(
-        'w-full flex items-center justify-center gap-2 py-3',
-        'bg-cyan-500 hover:bg-cyan-400 disabled:opacity-60',
-        'text-[#0d1117] font-bold rounded-xl text-sm transition-all'
+        'group relative w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold overflow-hidden',
+        'bg-cyan-500 hover:bg-cyan-400 text-[#0d1117]',
+        'shadow-[0_8px_24px_-8px_rgba(6,182,212,0.6)]',
+        'disabled:opacity-60 disabled:cursor-not-allowed transition-colors'
       )}
     >
-      {loading ? spinner : <><BookOpen className="w-4 h-4" /> Enroll for Free <ArrowRight className="w-4 h-4" /></>}
-    </button>
+      <span aria-hidden className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[900ms] ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      {loading ? spinner : (
+        <>
+          <BookOpen className="w-4 h-4" />
+          <span className="relative">Enroll for Free</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+        </>
+      )}
+    </motion.button>
   )
 }
