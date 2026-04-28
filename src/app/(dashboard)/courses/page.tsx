@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
-import { MOCK_COURSES } from '@/lib/mock-data'
 import CourseCard from '@/components/features/CourseCard'
 import CoursesFilter from '@/components/features/CoursesFilter'
 import { cn, difficultyColor, categoryColor } from '@/lib/utils'
+import type { Course } from '@/types'
 
 export const metadata: Metadata = { title: 'Courses' }
 
@@ -38,11 +38,11 @@ export default async function CoursesPage({ searchParams }: Props) {
   const category = params.category && params.category !== 'all' ? params.category : null
   const difficulty = params.difficulty && params.difficulty !== 'all' ? params.difficulty : null
 
-  const filtered = MOCK_COURSES.filter(c => {
-    if (category && c.category !== category) return false
-    if (difficulty && c.difficulty !== difficulty) return false
-    return true
-  })
+  let query = (supabase.from('courses') as any).select('*').eq('published', true).order('order_index')
+  if (category) query = query.eq('category', category)
+  if (difficulty) query = query.eq('difficulty', difficulty)
+  const { data } = await query
+  const filtered: Course[] = (data ?? []) as Course[]
 
   return (
     <div className="space-y-8 animate-fade-in">

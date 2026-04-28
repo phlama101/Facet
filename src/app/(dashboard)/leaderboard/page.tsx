@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
-import { MOCK_LEADERBOARD } from '@/lib/mock-data'
+import type { LeaderboardEntry } from '@/types'
 import { Trophy, Flame, Zap, Crown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -11,7 +11,7 @@ export default async function LeaderboardPage() {
   const { data: { user } } = await supabase.auth.getUser()
 
   const { data: dbLeaderboard } = await supabase.from('leaderboard').select('*').limit(50)
-  const board = dbLeaderboard && dbLeaderboard.length > 0 ? dbLeaderboard : MOCK_LEADERBOARD
+  const board: LeaderboardEntry[] = (dbLeaderboard ?? []) as LeaderboardEntry[]
 
   const { data: profile } = user
     ? await supabase.from('profiles').select('xp, level').eq('id', user.id).single()

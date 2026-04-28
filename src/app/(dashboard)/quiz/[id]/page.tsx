@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
-import { MOCK_QUIZ_QUESTIONS } from '@/lib/mock-data'
+import type { QuizQuestion } from '@/types'
 import QuizClient from '@/components/features/QuizClient'
 import { ChevronLeft, Trophy } from 'lucide-react'
 
@@ -20,9 +20,10 @@ export default async function QuizPage({ params }: Props) {
   const { data: dbQuestions } = await supabase.from('quiz_questions').select('*').eq('quiz_id', id).order('order_index')
   const safeDbQuestions = dbQuestions as { id: string; quiz_id: string; question: string; options: string[] | string; correct_answer: string; explanation: string | null; order_index: number }[] | null
 
-  const questions = safeDbQuestions && safeDbQuestions.length > 0
-    ? safeDbQuestions.map(q => ({ ...q, options: Array.isArray(q.options) ? q.options : JSON.parse(q.options as string) }))
-    : MOCK_QUIZ_QUESTIONS
+  const questions: QuizQuestion[] = (safeDbQuestions ?? []).map(q => ({
+    ...q,
+    options: Array.isArray(q.options) ? q.options : JSON.parse(q.options as string),
+  }))
 
   const quizTitle = safeQuiz?.title ?? 'Earth Science Quiz'
   const xpReward = safeQuiz?.xp_reward ?? 100

@@ -2,25 +2,28 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { MOCK_COURSES, MOCK_MODULES } from '@/lib/mock-data'
 import { cn, difficultyColor } from '@/lib/utils'
 import EnrollButton from '@/components/features/EnrollButton'
 import { Clock, Zap, BookOpen, CheckCircle2, Lock, ChevronRight, BarChart3 } from 'lucide-react'
+import type { Course, Module } from '@/types'
 
 interface Props { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const course = MOCK_COURSES.find(c => c.slug === slug)
-  return { title: course?.title ?? 'Course' }
+  const supabase = await createClient()
+  const { data } = await (supabase.from('courses') as any).select('title').eq('slug', slug).single()
+  return { title: (data as { title: string } | null)?.title ?? 'Course' }
 }
 
 export default async function CourseDetailPage({ params }: Props) {
   const { slug } = await params
-  const course = MOCK_COURSES.find(c => c.slug === slug)
+  const supabase = await createClient()
+
+  const { data: courseData } = await (supabase.from('courses') as any).select('*').eq('slug', slug).single()
+  const course = courseData as Course | null
   if (!course) notFound()
 
-  const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
   let enrolled = false, progress = 0, completedLessonIds: string[] = []
@@ -39,7 +42,14 @@ export default async function CourseDetailPage({ params }: Props) {
     userSubscription = (profileRes.data as { subscription: 'free' | 'pro' | 'expert' } | null)?.subscription ?? 'free'
   }
 
-  const modules = MOCK_MODULES[course.id] ?? []
+  const { data: modulesData } = await (supabase.from('modules') as any)
+    .select('*, lessons(*)')
+    .eq('course_id', course.id)
+    .order('order_index')
+  const modules: Module[] = ((modulesData ?? []) as any[]).map(m => ({
+    ...m,
+    lessons: [...(m.lessons ?? [])].sort((a: any, b: any) => a.order_index - b.order_index),
+  }))
 
   return (
     <div className="space-y-8 animate-fade-in">
