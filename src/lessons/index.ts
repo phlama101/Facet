@@ -3,18 +3,20 @@ import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson, TrackId } from './types'
 
-import rockCycle      from './rock-cycle'
-import plateTectonics from './plate-tectonics'
-import minerals       from './minerals'
-import oceanCurrents  from './ocean-currents'
-import cloudTypes     from './cloud-types'
+import rockCycle             from './rock-cycle'
+import rockCycleIntermediate  from './rock-cycle-intermediate'
+import plateTectonics         from './plate-tectonics'
+import minerals               from './minerals'
+import oceanCurrents          from './ocean-currents'
+import cloudTypes             from './cloud-types'
 
 export const LESSONS: Record<string, Lesson> = {
-  'rock-cycle':      rockCycle,
-  'plate-tectonics': plateTectonics,
-  'minerals':        minerals,
-  'ocean-currents':  oceanCurrents,
-  'cloud-types':     cloudTypes,
+  'rock-cycle':              rockCycle,
+  'rock-cycle-intermediate': rockCycleIntermediate,
+  'plate-tectonics':         plateTectonics,
+  'minerals':                minerals,
+  'ocean-currents':          oceanCurrents,
+  'cloud-types':             cloudTypes,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
