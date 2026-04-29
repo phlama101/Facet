@@ -32,7 +32,7 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
       setIndex(index + 1)
       setAnswer(null)
     } else {
-      onComplete(isRight ? correct + 1 : correct, total)
+      onComplete(correct, total)
     }
   }
 
