@@ -1,33 +1,53 @@
 'use client'
 
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import type { TimelineScrubberConfig } from '@/lessons-v2/types'
 
-interface Props {
-  config: TimelineScrubberConfig
-}
+interface Props { config: TimelineScrubberConfig }
 
 export default function TimelineScrubber({ config }: Props) {
   const [index, setIndex] = useState(0)
-
+  const [dir, setDir] = useState(1)
   const { events } = config
   const current = events[index]
 
+  function go(next: number) {
+    setDir(next > index ? 1 : -1)
+    setIndex(next)
+  }
+
   return (
-    <div
-      className="rounded-xl p-5 space-y-4"
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="rounded-xl p-5 space-y-5"
       style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}
     >
-      <span className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>
-        Timeline Scrubber
-      </span>
+      <div className="flex items-center justify-between">
+        <span className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>
+          Timeline Scrubber
+        </span>
+        <span className="text-xs font-mono tabular-nums" style={{ color: BRAND.gold }}>
+          {index + 1} / {events.length}
+        </span>
+      </div>
 
       {/* Scrubber */}
       <div className="space-y-2">
         <div className="flex justify-between text-xs font-mono" style={{ color: BRAND.textSubtle }}>
           <span>{events[0]?.year}</span>
-          <span style={{ color: BRAND.gold }}>{current?.year}</span>
+          <motion.span
+            key={index}
+            initial={{ scale: 1.2, color: BRAND.gold }}
+            animate={{ scale: 1, color: BRAND.gold }}
+            transition={{ duration: 0.25 }}
+            className="tabular-nums"
+          >
+            {current?.year}
+          </motion.span>
           <span>{events[events.length - 1]?.year}</span>
         </div>
 
@@ -37,8 +57,8 @@ export default function TimelineScrubber({ config }: Props) {
           max={events.length - 1}
           step={1}
           value={index}
-          onChange={(e) => setIndex(Number(e.target.value))}
-          className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
+          onChange={(e) => go(Number(e.target.value))}
+          className="w-full h-2 rounded-full appearance-none cursor-pointer"
           style={{
             accentColor: BRAND.gold,
             background: `linear-gradient(to right, ${BRAND.gold} ${(index / (events.length - 1)) * 100}%, ${BRAND.border} 0%)`,
@@ -46,13 +66,19 @@ export default function TimelineScrubber({ config }: Props) {
         />
 
         {/* Tick marks */}
-        <div className="flex justify-between">
+        <div className="flex justify-between px-0.5">
           {events.map((_, i) => (
-            <button
+            <motion.button
               key={i}
-              onClick={() => setIndex(i)}
-              className="w-1.5 h-1.5 rounded-full transition-colors"
-              style={{ backgroundColor: i === index ? BRAND.gold : BRAND.border }}
+              onClick={() => go(i)}
+              animate={{
+                width: i === index ? 10 : 6,
+                height: i === index ? 10 : 6,
+                backgroundColor: i === index ? BRAND.gold : BRAND.border,
+                boxShadow: i === index ? `0 0 8px ${BRAND.gold}80` : 'none',
+              }}
+              transition={{ duration: 0.25 }}
+              className="rounded-full"
             />
           ))}
         </div>
@@ -60,47 +86,57 @@ export default function TimelineScrubber({ config }: Props) {
 
       {/* Event card */}
       <div
-        className="rounded-lg p-4 space-y-2"
+        className="rounded-lg p-4 overflow-hidden"
         style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
       >
-        <div className="flex items-center gap-3">
-          <span
-            className="text-sm font-mono font-bold"
-            style={{ color: BRAND.gold }}
+        <AnimatePresence mode="wait" custom={dir}>
+          <motion.div
+            key={index}
+            custom={dir}
+            initial={{ opacity: 0, x: dir * 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: dir * -24 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-2"
           >
-            {current?.year}
-          </span>
-          <span className="text-sm font-semibold" style={{ color: BRAND.text }}>
-            {current?.label}
-          </span>
-        </div>
-        <p className="text-xs leading-relaxed" style={{ color: BRAND.textDim }}>
-          {current?.description}
-        </p>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-mono font-bold" style={{ color: BRAND.gold }}>
+                {current?.year}
+              </span>
+              <span className="text-sm font-semibold" style={{ color: BRAND.text }}>
+                {current?.label}
+              </span>
+            </div>
+            <p className="text-xs leading-relaxed" style={{ color: BRAND.textDim }}>
+              {current?.description}
+            </p>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Navigation */}
       <div className="flex justify-between text-xs" style={{ color: BRAND.textSubtle }}>
-        <button
-          onClick={() => setIndex((i) => Math.max(0, i - 1))}
+        <motion.button
+          onClick={() => go(Math.max(0, index - 1))}
           disabled={index === 0}
+          whileHover={index === 0 ? undefined : { x: -2 }}
+          whileTap={index === 0 ? undefined : { scale: 0.97 }}
           className="px-3 py-1 rounded disabled:opacity-30 transition-opacity"
           style={{ border: `1px solid ${BRAND.border}` }}
         >
           ← Prev
-        </button>
-        <span className="self-center">
-          {index + 1} / {events.length}
-        </span>
-        <button
-          onClick={() => setIndex((i) => Math.min(events.length - 1, i + 1))}
+        </motion.button>
+        <motion.button
+          onClick={() => go(Math.min(events.length - 1, index + 1))}
           disabled={index === events.length - 1}
+          whileHover={index === events.length - 1 ? undefined : { x: 2 }}
+          whileTap={index === events.length - 1 ? undefined : { scale: 0.97 }}
           className="px-3 py-1 rounded disabled:opacity-30 transition-opacity"
           style={{ border: `1px solid ${BRAND.border}` }}
         >
           Next →
-        </button>
+        </motion.button>
       </div>
-    </div>
+    </motion.div>
   )
 }

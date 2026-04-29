@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Zap } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import { TRACK_MAP } from '@/lessons/index'
 import { useProgressStore } from '@/lessons-v2/store/progressStore'
@@ -17,6 +18,7 @@ interface Props {
 
 export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
   const [sectionIdx, setSectionIdx] = useState(0)
+  const [dir, setDir] = useState(1)
   const [quizDone, setQuizDone] = useState(false)
   const [quizResult, setQuizResult] = useState<{ correct: number; total: number } | null>(null)
 
@@ -34,10 +36,16 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
   const showNav = !isQuizSection && !(isLastSection && quizDone)
 
   function goNext() {
-    if (sectionIdx < total - 1) setSectionIdx(sectionIdx + 1)
+    if (sectionIdx < total - 1) {
+      setDir(1)
+      setSectionIdx(sectionIdx + 1)
+    }
   }
   function goPrev() {
-    if (sectionIdx > 0) setSectionIdx(sectionIdx - 1)
+    if (sectionIdx > 0) {
+      setDir(-1)
+      setSectionIdx(sectionIdx - 1)
+    }
   }
 
   function handleQuizComplete(correct: number, total: number) {
@@ -52,12 +60,8 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
   }
 
   const nextLabel: Record<string, string> = {
-    concept: 'Concept',
-    visualization: 'Visualization',
-    lab: 'Lab',
-    challenge: 'Challenge',
-    quiz: 'Quiz',
-    intro: 'Intro',
+    concept: 'Concept', visualization: 'Visualization',
+    lab: 'Lab', challenge: 'Challenge', quiz: 'Quiz', intro: 'Intro',
   }
 
   return (
@@ -84,18 +88,26 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
           {/* Progress bar */}
           <div className="flex-1 max-w-xs">
             <div className="h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
-              <div
-                className="h-full transition-all duration-500"
-                style={{ width: `${progress}%`, backgroundColor: trackColor }}
+              <motion.div
+                className="h-full rounded-full"
+                style={{ backgroundColor: trackColor, boxShadow: `0 0 8px ${trackColor}80` }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               />
             </div>
           </div>
 
           {/* Session XP */}
-          <div className="flex items-center gap-1 text-[10px] font-mono tracking-widest" style={{ color: BRAND.gold }}>
+          <motion.div
+            key={sessionXP}
+            initial={{ scale: 1.3, color: BRAND.gold }}
+            animate={{ scale: 1, color: BRAND.gold }}
+            transition={{ duration: 0.35 }}
+            className="flex items-center gap-1 text-[10px] font-mono tracking-widest"
+          >
             <Zap size={10} />
             {sessionXP} XP
-          </div>
+          </motion.div>
 
           <div className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
             {sectionIdx + 1} / {total}
@@ -105,7 +117,12 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
 
       <main className="relative z-10 max-w-3xl mx-auto px-5 py-8 md:py-12">
         {/* Lesson header */}
-        <div className="mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8"
+        >
           <div className="flex items-center gap-2 mb-3">
             {track?.icon && <track.icon size={14} color={trackColor} />}
             <span className="text-[10px] tracking-[0.25em] uppercase" style={{ color: trackColor }}>
@@ -118,84 +135,155 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
           >
             {lesson.title}
           </h1>
-        </div>
+        </motion.div>
 
         {/* Section content */}
         <div className="mb-12">
-          {!quizDone && (
-            <SectionRenderer
-              section={cur}
-              sectionIndex={sectionIdx}
-              lessonId={lesson.id}
-              onQuizComplete={handleQuizComplete}
-            />
-          )}
+          <AnimatePresence mode="wait" custom={dir}>
+            {!quizDone && (
+              <motion.div
+                key={sectionIdx}
+                custom={dir}
+                initial={{ opacity: 0, x: dir * 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: dir * -40 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <SectionRenderer
+                  section={cur}
+                  sectionIndex={sectionIdx}
+                  lessonId={lesson.id}
+                  onQuizComplete={handleQuizComplete}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Lesson complete screen */}
-          {quizDone && quizResult && (
-            <div className="text-center space-y-6 py-8">
-              <div
-                className="inline-flex items-center justify-center w-20 h-20 rounded-full"
-                style={{ backgroundColor: `${trackColor}1A` }}
+          <AnimatePresence>
+            {quizDone && quizResult && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="relative text-center space-y-6 py-8 overflow-hidden"
               >
-                <Zap size={36} color={trackColor} />
-              </div>
-              <div className="space-y-2">
-                <h2 className="font-serif text-3xl" style={{ color: BRAND.text }}>
-                  Lesson Complete
-                </h2>
-                <p className="text-sm" style={{ color: BRAND.textDim }}>
-                  Quiz: {quizResult.correct}/{quizResult.total} correct
-                </p>
-              </div>
-              <div
-                className="inline-block px-6 py-4 rounded-xl"
-                style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}
-              >
-                <p className="text-xs uppercase tracking-widest mb-1" style={{ color: BRAND.textSubtle }}>
-                  Total XP Earned
-                </p>
-                <p className="text-4xl font-mono font-bold" style={{ color: trackColor }}>
-                  +{sessionXP + lesson.xpReward}
-                </p>
-              </div>
-              <button
-                onClick={handleFinish}
-                className="flex items-center gap-2 mx-auto px-8 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase transition-opacity hover:opacity-80"
-                style={{ backgroundColor: trackColor, color: BRAND.bg }}
-              >
-                Save & Continue <ArrowRight size={14} />
-              </button>
-            </div>
-          )}
+                {/* Confetti */}
+                {[...Array(14)].map((_, i) => {
+                  const angle = (i / 14) * Math.PI * 2
+                  const dist = 120 + Math.random() * 60
+                  const colors = [trackColor, BRAND.gold, BRAND.jade, BRAND.amethyst]
+                  return (
+                    <motion.span
+                      key={i}
+                      initial={{ x: 0, y: 0, opacity: 1, scale: 0 }}
+                      animate={{ x: Math.cos(angle) * dist, y: Math.sin(angle) * dist, opacity: 0, scale: 1, rotate: Math.random() * 360 }}
+                      transition={{ duration: 1.3, delay: 0.3 }}
+                      className="pointer-events-none absolute left-1/2 top-1/2 w-2 h-2 rounded-sm"
+                      style={{ background: colors[i % colors.length] }}
+                    />
+                  )
+                })}
+
+                <motion.div
+                  initial={{ scale: 0, rotate: -20 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 0.15, type: 'spring', stiffness: 220, damping: 14 }}
+                  className="inline-flex items-center justify-center w-20 h-20 rounded-full mx-auto"
+                  style={{ backgroundColor: `${trackColor}1A`, boxShadow: `0 0 32px ${trackColor}40` }}
+                >
+                  <Zap size={36} color={trackColor} />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="space-y-2"
+                >
+                  <h2 className="font-serif text-3xl" style={{ color: BRAND.text }}>Lesson Complete</h2>
+                  <p className="text-sm" style={{ color: BRAND.textDim }}>
+                    Quiz: {quizResult.correct}/{quizResult.total} correct
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.55, type: 'spring', stiffness: 260, damping: 18 }}
+                  className="inline-block px-6 py-4 rounded-xl mx-auto"
+                  style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}`, boxShadow: `0 0 24px ${trackColor}25` }}
+                >
+                  <p className="text-xs uppercase tracking-widest mb-1" style={{ color: BRAND.textSubtle }}>Total XP Earned</p>
+                  <p className="text-4xl font-mono font-bold" style={{ color: trackColor }}>
+                    +{sessionXP + lesson.xpReward}
+                  </p>
+                </motion.div>
+
+                <motion.button
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.75 }}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={handleFinish}
+                  className="flex items-center gap-2 mx-auto px-8 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase"
+                  style={{ backgroundColor: trackColor, color: BRAND.bg }}
+                >
+                  Save & Continue <ArrowRight size={14} />
+                </motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Navigation */}
         {showNav && (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
             className="flex items-center justify-between pt-6 border-t"
             style={{ borderColor: BRAND.border }}
           >
-            <button
+            <motion.button
               onClick={goPrev}
               disabled={sectionIdx === 0}
+              whileHover={sectionIdx === 0 ? undefined : { x: -2 }}
+              whileTap={sectionIdx === 0 ? undefined : { scale: 0.97 }}
               className="flex items-center gap-2 text-xs tracking-[0.12em] uppercase px-4 py-2 rounded-sm disabled:opacity-30 transition-opacity"
               style={{ color: BRAND.textDim }}
             >
               <ArrowLeft size={12} /> Previous
-            </button>
-            <button
+            </motion.button>
+
+            {/* Section dots */}
+            <div className="flex items-center gap-1.5">
+              {sections.map((_, i) => (
+                <motion.button
+                  key={i}
+                  onClick={() => { setDir(i > sectionIdx ? 1 : -1); setSectionIdx(i) }}
+                  animate={{ width: i === sectionIdx ? 16 : 6, backgroundColor: i === sectionIdx ? trackColor : BRAND.border }}
+                  transition={{ duration: 0.3 }}
+                  className="h-1.5 rounded-full"
+                />
+              ))}
+            </div>
+
+            <motion.button
               onClick={goNext}
               disabled={isLastSection}
-              className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase px-5 py-2.5 rounded-sm transition-opacity hover:opacity-80 disabled:opacity-30"
-              style={{ backgroundColor: trackColor, color: BRAND.bg }}
+              whileHover={isLastSection ? undefined : { x: 2 }}
+              whileTap={isLastSection ? undefined : { scale: 0.97 }}
+              className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase px-5 py-2.5 rounded-sm disabled:opacity-30"
+              style={{ backgroundColor: isLastSection ? 'transparent' : trackColor, color: isLastSection ? BRAND.textDim : BRAND.bg, border: isLastSection ? `1px solid ${BRAND.border}` : 'none' }}
             >
               {sections[sectionIdx + 1]
                 ? `To ${nextLabel[sections[sectionIdx + 1].type] ?? 'Next'}`
                 : 'Continue'}
               <ArrowRight size={12} />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         )}
       </main>
     </div>
