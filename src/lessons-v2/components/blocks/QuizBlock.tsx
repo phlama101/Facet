@@ -107,30 +107,26 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
         />
       </div>
 
-      {/* Question */}
-      <AnimatePresence mode="wait">
-        <motion.h3
-          key={qIdx}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base font-semibold leading-snug"
-          style={{ color: BRAND.text }}
-        >
-          {current.q}
-        </motion.h3>
-      </AnimatePresence>
+      {/* Question — enter-only animation; no exit to avoid stale-state interaction window */}
+      <motion.h3
+        key={qIdx}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="text-base font-semibold leading-snug"
+        style={{ color: BRAND.text }}
+      >
+        {current.q}
+      </motion.h3>
 
-      {/* Answers */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={qIdx}
-          className="space-y-2"
-          initial="hidden"
-          animate="show"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
-        >
+      {/* Answers — same: enter-only so the exiting frame never shows clickable next-question buttons */}
+      <motion.div
+        key={qIdx}
+        className="space-y-2"
+        initial="hidden"
+        animate="show"
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
+      >
           {current.a.map((answer, i) => {
             const isSelected = selected === i
             const isCorrect = i === current.correct
@@ -193,7 +189,6 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
             )
           })}
         </motion.div>
-      </AnimatePresence>
 
       {/* Explanation */}
       <AnimatePresence>
