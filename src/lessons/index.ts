@@ -9,6 +9,7 @@ import plateTectonics         from './plate-tectonics'
 import minerals               from './minerals'
 import oceanCurrents          from './ocean-currents'
 import cloudTypes             from './cloud-types'
+import earthInternalStructure from './geol-101-1-1'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -17,6 +18,7 @@ export const LESSONS: Record<string, Lesson> = {
   'minerals':                minerals,
   'ocean-currents':          oceanCurrents,
   'cloud-types':             cloudTypes,
+  'geol-101-1-1':            earthInternalStructure,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
