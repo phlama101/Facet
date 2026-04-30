@@ -13,6 +13,7 @@ import earthInternalStructure      from './geol-101-1-1'
 import crustContinentalVsOceanic   from './geol-101-1-2'
 import mantleConvection            from './geol-101-1-3'
 import coreAndMagneticField        from './geol-101-1-4'
+import whatDefinesAMineral         from './geol-101-1-2-1'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -25,6 +26,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-2':            crustContinentalVsOceanic,
   'geol-101-1-3':            mantleConvection,
   'geol-101-1-4':            coreAndMagneticField,
+  'geol-101-1-2-1':          whatDefinesAMineral,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
