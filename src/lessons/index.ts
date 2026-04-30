@@ -18,6 +18,7 @@ import identifyingMinerals         from './geol-101-1-2-2'
 import rockFormingMinerals         from './geol-101-1-2-3'
 import crystalSystems              from './geol-101-1-2-4'
 import rockCycleOverview           from './geol-101-1-3-1'
+import igneousRocks               from './geol-101-1-3-2'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -35,6 +36,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-2-3':          rockFormingMinerals,
   'geol-101-1-2-4':          crystalSystems,
   'geol-101-1-3-1':          rockCycleOverview,
+  'geol-101-1-3-2':          igneousRocks,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -65,6 +67,30 @@ export interface Institution {
   contributes: string
   color: string
 }
+
+export interface CourseModule {
+  id: string
+  title: string
+  lessonIds: string[]
+}
+
+export const GEOL_101_MODULES: CourseModule[] = [
+  {
+    id: 'geol-101-m1-1',
+    title: 'Module 1.1 — Earth\'s Internal Structure',
+    lessonIds: ['geol-101-1-1', 'geol-101-1-2', 'geol-101-1-3', 'geol-101-1-4'],
+  },
+  {
+    id: 'geol-101-m1-2',
+    title: 'Module 1.2 — Minerals',
+    lessonIds: ['geol-101-1-2-1', 'geol-101-1-2-2', 'geol-101-1-2-3', 'geol-101-1-2-4'],
+  },
+  {
+    id: 'geol-101-m1-3',
+    title: 'Module 1.3 — The Three Rock Families',
+    lessonIds: ['geol-101-1-3-1', 'geol-101-1-3-2', 'geol-101-1-3-3', 'geol-101-1-3-4'],
+  },
+]
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
