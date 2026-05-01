@@ -30,6 +30,7 @@ import weatheringErosion           from './geol-101-1-5-2'
 import riverSystems                from './geol-101-1-5-3'
 import glacialCoastalLandforms     from './geol-101-1-5-4'
 import geol101Capstone             from './geol-101-capstone'
+import deepTime                    from './geol-201-2-1-1'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -59,6 +60,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-5-3':          riverSystems,
   'geol-101-1-5-4':          glacialCoastalLandforms,
   'geol-101-capstone':       geol101Capstone,
+  'geol-201-2-1-1':          deepTime,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -126,6 +128,39 @@ export const GEOL_101_MODULES: CourseModule[] = [
     id: 'geol-101-capstone',
     title: 'GEOL 101 Final Exam',
     lessonIds: ['geol-101-capstone'],
+  },
+]
+
+export const GEOL_201_MODULES: CourseModule[] = [
+  {
+    id: 'geol-201-m2-1',
+    title: 'Module 2.1 — Telling Geologic Time',
+    lessonIds: ['geol-201-2-1-1', 'geol-201-2-1-2', 'geol-201-2-1-3', 'geol-201-2-1-4'],
+  },
+  {
+    id: 'geol-201-m2-2',
+    title: 'Module 2.2 — Stratigraphy and the Rock Record',
+    lessonIds: ['geol-201-2-2-1', 'geol-201-2-2-2', 'geol-201-2-2-3', 'geol-201-2-2-4'],
+  },
+  {
+    id: 'geol-201-m2-3',
+    title: 'Module 2.3 — The Fossil Record',
+    lessonIds: ['geol-201-2-3-1', 'geol-201-2-3-2', 'geol-201-2-3-3', 'geol-201-2-3-4'],
+  },
+  {
+    id: 'geol-201-m2-4',
+    title: 'Module 2.4 — Major Events in Earth History',
+    lessonIds: ['geol-201-2-4-1', 'geol-201-2-4-2', 'geol-201-2-4-3', 'geol-201-2-4-4'],
+  },
+  {
+    id: 'geol-201-m2-5',
+    title: 'Module 2.5 — Field Methods Introduction',
+    lessonIds: ['geol-201-2-5-1', 'geol-201-2-5-2', 'geol-201-2-5-3', 'geol-201-2-5-4'],
+  },
+  {
+    id: 'geol-201-capstone',
+    title: 'GEOL 201 Final Exam',
+    lessonIds: ['geol-201-capstone'],
   },
 ]
 
