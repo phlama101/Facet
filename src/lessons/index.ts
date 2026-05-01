@@ -29,6 +29,7 @@ import volcanicLandforms           from './geol-101-1-5-1'
 import weatheringErosion           from './geol-101-1-5-2'
 import riverSystems                from './geol-101-1-5-3'
 import glacialCoastalLandforms     from './geol-101-1-5-4'
+import geol101Capstone             from './geol-101-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -57,6 +58,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-5-2':          weatheringErosion,
   'geol-101-1-5-3':          riverSystems,
   'geol-101-1-5-4':          glacialCoastalLandforms,
+  'geol-101-capstone':       geol101Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -119,6 +121,11 @@ export const GEOL_101_MODULES: CourseModule[] = [
     id: 'geol-101-m1-5',
     title: 'Module 1.5 — Reading the Landscape',
     lessonIds: ['geol-101-1-5-1', 'geol-101-1-5-2', 'geol-101-1-5-3', 'geol-101-1-5-4'],
+  },
+  {
+    id: 'geol-101-capstone',
+    title: 'GEOL 101 Final Exam',
+    lessonIds: ['geol-101-capstone'],
   },
 ]
 
