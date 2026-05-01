@@ -26,6 +26,7 @@ import plateBoundaries             from './geol-101-1-4-2'
 import subductionOrogenesis        from './geol-101-1-4-3'
 import hotspotsAndPlumes           from './geol-101-1-4-4'
 import volcanicLandforms           from './geol-101-1-5-1'
+import weatheringErosion           from './geol-101-1-5-2'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -51,6 +52,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-4-3':          subductionOrogenesis,
   'geol-101-1-4-4':          hotspotsAndPlumes,
   'geol-101-1-5-1':          volcanicLandforms,
+  'geol-101-1-5-2':          weatheringErosion,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
