@@ -21,6 +21,7 @@ import rockCycleOverview           from './geol-101-1-3-1'
 import igneousRocks               from './geol-101-1-3-2'
 import sedimentaryRocks           from './geol-101-1-3-3'
 import metamorphicRocks           from './geol-101-1-3-4'
+import plateTectonicsTheory        from './geol-101-1-4-1'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -41,6 +42,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-3-2':          igneousRocks,
   'geol-101-1-3-3':          sedimentaryRocks,
   'geol-101-1-3-4':          metamorphicRocks,
+  'geol-101-1-4-1':          plateTectonicsTheory,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -93,6 +95,11 @@ export const GEOL_101_MODULES: CourseModule[] = [
     id: 'geol-101-m1-3',
     title: 'Module 1.3 — The Three Rock Families',
     lessonIds: ['geol-101-1-3-1', 'geol-101-1-3-2', 'geol-101-1-3-3', 'geol-101-1-3-4'],
+  },
+  {
+    id: 'geol-101-m1-4',
+    title: 'Module 1.4 — Plate Tectonics',
+    lessonIds: ['geol-101-1-4-1', 'geol-101-1-4-2', 'geol-101-1-4-3', 'geol-101-1-4-4'],
   },
 ]
 
