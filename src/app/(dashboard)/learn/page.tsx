@@ -161,9 +161,6 @@ export default function LearnPage() {
           All
         </button>
         {TRACKS.map(t => {
-          const count = t.id === 'geo'
-            ? COMBINED_LIST.filter(l => l.track === t.id).length
-            : STANDALONE_LIST.filter(l => l.track === t.id).length + (t.id === 'geo' ? 0 : 0)
           const total = COMBINED_LIST.filter(l => l.track === t.id).length
           if (total === 0) return null
           const isActive = activeTrack === t.id
