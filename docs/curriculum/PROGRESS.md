@@ -2,9 +2,9 @@
 
 > Live tracking document for the 360-lesson curriculum specified in `docs/curriculum/MASTER-PLAN.md`. Update this file after every committed lesson.
 
-**Current status:** Pre-launch · 0 lessons committed · 15 existing lessons awaiting refinement
-**Last updated:** Update on each commit
-**Active phase:** Phase 1 — GEOL 101 proof of concept
+**Current status:** Phase 2 active · 21 GEOL 101 lessons committed · GEOL 201 starting
+**Last updated:** 2026-05-01
+**Active phase:** Phase 2 — Complete Geology track (GEOL 201)
 
 ---
 
@@ -39,22 +39,22 @@ Claude Code will pick up exactly where you left off.
 ## Currently Working On
 
 **Track:** Geology
-**Course:** GEOL 101 — Reading the Earth
-**Module:** 1.1 — What Earth Is Made Of
-**Lesson:** 1.1.1 — Earth's Internal Structure
-**Status:** Awaiting first session
+**Course:** GEOL 201 — Earth Through Time
+**Module:** 2.1 — Telling Geologic Time
+**Lesson:** 2.1.1 — Deep Time — From Hutton to Today
+**Status:** Phase 1 (lesson plan) in progress
 
 **Next three lessons in queue:**
-1. GEOL 101 / 1.1.1 — Earth's Internal Structure
-2. GEOL 101 / 1.1.2 — The Crust — Continental vs. Oceanic
-3. GEOL 101 / 1.1.3 — The Mantle and Its Convection
+1. GEOL 201 / 2.1.1 — Deep Time — From Hutton to Today
+2. GEOL 201 / 2.1.2 — Relative Dating Principles
+3. GEOL 201 / 2.1.3 — Radiometric Dating Methods
 
 ---
 
 ## Production Phase Tracker
 
-- [ ] **Phase 1** — GEOL 101 complete (proof of concept) — *0 / 20 lessons*
-- [ ] **Phase 2** — Full Geology track — *0 / 60 lessons*
+- [x] **Phase 1** — GEOL 101 complete (proof of concept) — *21 / 20 lessons* *(+1 extra: volcanic landforms added to 1.5; see Flagged Items)*
+- [ ] **Phase 2** — Full Geology track — *21 / 60 lessons*
 - [ ] **Phase 3** — Full Climate Science track — *0 / 60 lessons*
 - [ ] **Phase 4** — Remaining four tracks — *0 / 240 lessons*
 
@@ -64,44 +64,44 @@ Claude Code will pick up exactly where you left off.
 
 ## Track 1 — Geology
 
-**Status:** 0 / 60 committed · 3 existing lessons to refine · Active
-**Course completion:** GEOL 101 (0/20) · GEOL 201 (0/20) · GEOL 301 (0/20)
+**Status:** 21 / 60 committed · Active
+**Course completion:** GEOL 101 (21/20 ✓) · GEOL 201 (0/20) · GEOL 301 (0/20)
 
 ### GEOL 101 — Reading the Earth
 
 > 100-level · No prerequisites · Source tiers 1-2 · Capstone: 25-question exam
 
 #### Module 1.1 — What Earth Is Made Of
-- [ ] 1.1.1 — Earth's Internal Structure
-- [ ] 1.1.2 — The Crust — Continental vs. Oceanic
-- [ ] 1.1.3 — The Mantle and Its Convection
-- [ ] 1.1.4 — Earth's Core and Magnetic Field
+- [x] 1.1.1 — Earth's Internal Structure (`geol-101-1-1`)
+- [x] 1.1.2 — The Crust — Continental vs. Oceanic (`geol-101-1-2`)
+- [x] 1.1.3 — The Mantle and Its Convection (`geol-101-1-3`)
+- [x] 1.1.4 — Earth's Core and Magnetic Field (`geol-101-1-4`)
 
 #### Module 1.2 — Minerals: The Building Blocks
-- [r] 1.2.1 — What Defines a Mineral *(existing — needs refinement)*
-- [ ] 1.2.2 — Identifying Minerals (Mohs, Streak, Cleavage)
-- [ ] 1.2.3 — The Rock-Forming Minerals
-- [ ] 1.2.4 — Crystal Systems Introduction
+- [x] 1.2.1 — What Defines a Mineral (`geol-101-1-2-1`)
+- [x] 1.2.2 — Identifying Minerals (`geol-101-1-2-2`)
+- [x] 1.2.3 — The Rock-Forming Minerals (`geol-101-1-2-3`)
+- [x] 1.2.4 — Crystal Systems Introduction (`geol-101-1-2-4`)
 
 #### Module 1.3 — The Three Rock Families
-- [r] 1.3.1 — The Rock Cycle Overview *(existing — needs refinement)*
-- [ ] 1.3.2 — Igneous Rocks — Born from Fire
-- [ ] 1.3.3 — Sedimentary Rocks — Built from Debris
-- [ ] 1.3.4 — Metamorphic Rocks — Transformed Under Pressure
+- [x] 1.3.1 — The Rock Cycle Overview (`geol-101-1-3-1`)
+- [x] 1.3.2 — Igneous Rocks — Born from Fire (`geol-101-1-3-2`)
+- [x] 1.3.3 — Sedimentary Rocks — Built from Debris (`geol-101-1-3-3`)
+- [x] 1.3.4 — Metamorphic Rocks — Transformed Under Pressure (`geol-101-1-3-4`)
 
 #### Module 1.4 — Earth in Motion
-- [r] 1.4.1 — Plate Tectonics Fundamentals *(existing — needs refinement)*
-- [ ] 1.4.2 — Divergent Boundaries and Mid-Ocean Ridges
-- [ ] 1.4.3 — Convergent Boundaries and Subduction
-- [ ] 1.4.4 — Transform Faults and the San Andreas
+- [x] 1.4.1 — Plate Tectonics Theory (`geol-101-1-4-1`)
+- [x] 1.4.2 — Plate Boundaries (`geol-101-1-4-2`)
+- [x] 1.4.3 — Subduction and Orogenesis (`geol-101-1-4-3`)
+- [x] 1.4.4 — Hotspots and Plumes (`geol-101-1-4-4`) ⚠️ *plan specifies "Transform Faults and the San Andreas" — see Flagged Items*
 
 #### Module 1.5 — Reading the Landscape
-- [ ] 1.5.1 — Weathering and Erosion
-- [ ] 1.5.2 — Rivers and Drainage Patterns
-- [ ] 1.5.3 — Glaciers and Glacial Landforms
-- [ ] 1.5.4 — Reading a Geologic Map (introduction)
+- [x] 1.5.1 — Volcanic Landforms (`geol-101-1-5-1`) ⚠️ *not in plan's 1.5 — see Flagged Items*
+- [x] 1.5.2 — Weathering and Erosion Landforms (`geol-101-1-5-2`)
+- [x] 1.5.3 — River Systems and Landscapes (`geol-101-1-5-3`)
+- [x] 1.5.4 — Glacial and Coastal Landforms (`geol-101-1-5-4`) ⚠️ *plan specifies "Reading a Geologic Map" for 1.5.4 — see Flagged Items*
 
-- [ ] **GEOL 101 Capstone Exam** (25 questions, all modules)
+- [x] **GEOL 101 Capstone Exam** (`geol-101-capstone`) — 25 questions
 
 ---
 
@@ -797,7 +797,8 @@ Use this section to log structural questions, content concerns, or discoveries d
 
 | Date | Lesson/area | Issue | Status |
 |------|-------------|-------|--------|
-| | | | |
+| 2026-05-01 | GEOL 101 / 1.4.4 | Built "Hotspots and Plumes" — master plan specifies "Transform Faults and the San Andreas". Hotspots content is valuable but diverges from plan. Decision needed: keep as bonus lesson or replace. | Open |
+| 2026-05-01 | GEOL 101 / 1.5 | Added Volcanic Landforms as 1.5.1 (not in plan); 1.5.4 is Glacial/Coastal rather than plan's "Reading a Geologic Map". Reading a Geologic Map should be addressed in GEOL 201 / 2.5.1. | Open |
 
 ---
 
