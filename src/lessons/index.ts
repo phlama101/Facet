@@ -31,6 +31,7 @@ import riverSystems                from './geol-101-1-5-3'
 import glacialCoastalLandforms     from './geol-101-1-5-4'
 import geol101Capstone             from './geol-101-capstone'
 import deepTime                    from './geol-201-2-1-1'
+import relativeDating              from './geol-201-2-1-2'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -61,6 +62,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-5-4':          glacialCoastalLandforms,
   'geol-101-capstone':       geol101Capstone,
   'geol-201-2-1-1':          deepTime,
+  'geol-201-2-1-2':          relativeDating,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
