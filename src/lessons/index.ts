@@ -19,6 +19,7 @@ import rockFormingMinerals         from './geol-101-1-2-3'
 import crystalSystems              from './geol-101-1-2-4'
 import rockCycleOverview           from './geol-101-1-3-1'
 import igneousRocks               from './geol-101-1-3-2'
+import sedimentaryRocks           from './geol-101-1-3-3'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -37,6 +38,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-2-4':          crystalSystems,
   'geol-101-1-3-1':          rockCycleOverview,
   'geol-101-1-3-2':          igneousRocks,
+  'geol-101-1-3-3':          sedimentaryRocks,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
