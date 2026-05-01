@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from 'next/font/google'
+import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { PostHogProvider } from '@/components/providers/PostHogProvider'
 
@@ -11,7 +11,7 @@ const serif = Instrument_Serif({
   display: 'swap',
 })
 
-const sans = Inter_Tight({
+const sans = Inter({
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-sans',
   subsets: ['latin'],
