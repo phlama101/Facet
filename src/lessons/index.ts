@@ -25,6 +25,7 @@ import plateTectonicsTheory        from './geol-101-1-4-1'
 import plateBoundaries             from './geol-101-1-4-2'
 import subductionOrogenesis        from './geol-101-1-4-3'
 import hotspotsAndPlumes           from './geol-101-1-4-4'
+import volcanicLandforms           from './geol-101-1-5-1'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -49,6 +50,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-4-2':          plateBoundaries,
   'geol-101-1-4-3':          subductionOrogenesis,
   'geol-101-1-4-4':          hotspotsAndPlumes,
+  'geol-101-1-5-1':          volcanicLandforms,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -106,6 +108,11 @@ export const GEOL_101_MODULES: CourseModule[] = [
     id: 'geol-101-m1-4',
     title: 'Module 1.4 — Plate Tectonics',
     lessonIds: ['geol-101-1-4-1', 'geol-101-1-4-2', 'geol-101-1-4-3', 'geol-101-1-4-4'],
+  },
+  {
+    id: 'geol-101-m1-5',
+    title: 'Module 1.5 — Reading the Landscape',
+    lessonIds: ['geol-101-1-5-1', 'geol-101-1-5-2', 'geol-101-1-5-3', 'geol-101-1-5-4'],
   },
 ]
 
