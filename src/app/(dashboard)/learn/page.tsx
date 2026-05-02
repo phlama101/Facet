@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Zap, Sparkles, BookOpen, ChevronRight } from 'lucide-react'
+import { Zap, Sparkles, BookOpen, ChevronRight, Check } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { LESSON_LIST, TRACKS, TRACK_MAP, GEOL_101_MODULES } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
+import { createClient } from '@/lib/supabase/client'
 import type { TrackId } from '@/lessons/types'
 
 interface DisplayLesson {
@@ -52,14 +53,17 @@ const COMBINED_MAP = Object.fromEntries(COMBINED_LIST.map(l => [l.id, l]))
 const geol101AllIds = new Set(GEOL_101_MODULES.flatMap(m => m.lessonIds))
 const STANDALONE_LIST = COMBINED_LIST.filter(l => !geol101AllIds.has(l.id))
 
-function LessonCard({ lesson, step }: { lesson: DisplayLesson; step?: number }) {
+function LessonCard({ lesson, step, isCompleted }: { lesson: DisplayLesson; step?: number; isCompleted?: boolean }) {
   const track = TRACK_MAP[lesson.track as TrackId]
   if (!track) return null
   return (
     <Link
       href={`/learn/${lesson.id}`}
       className="text-left p-5 rounded-sm transition-all hover:-translate-y-[2px] relative overflow-hidden group flex gap-4"
-      style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+      style={{
+        backgroundColor: BRAND.surface,
+        border: `1px solid ${isCompleted ? `${BRAND.jade}50` : BRAND.border}`,
+      }}
     >
       <div
         className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-0 group-hover:opacity-20 blur-3xl transition-opacity pointer-events-none"
@@ -68,9 +72,12 @@ function LessonCard({ lesson, step }: { lesson: DisplayLesson; step?: number }) 
       {step != null && (
         <div
           className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center text-[11px] font-mono font-bold mt-0.5"
-          style={{ backgroundColor: `${track.color}18`, color: track.color, border: `1px solid ${track.color}40` }}
+          style={isCompleted
+            ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
+            : { backgroundColor: `${track.color}18`, color: track.color, border: `1px solid ${track.color}40` }
+          }
         >
-          {step}
+          {isCompleted ? <Check size={12} strokeWidth={2.5} /> : step}
         </div>
       )}
       <div className="relative flex-1 min-w-0">
@@ -91,14 +98,24 @@ function LessonCard({ lesson, step }: { lesson: DisplayLesson; step?: number }) 
               {lesson.level}
             </span>
           </div>
-          {lesson.isV2 && (
-            <span
-              className="text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: `${BRAND.accent}20`, color: BRAND.accent, border: `1px solid ${BRAND.accent}40` }}
-            >
-              Interactive
-            </span>
-          )}
+          <div className="flex items-center gap-2">
+            {isCompleted && (
+              <span
+                className="flex items-center gap-1 text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
+                style={{ backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}40` }}
+              >
+                <Check size={8} strokeWidth={3} /> Done
+              </span>
+            )}
+            {lesson.isV2 && (
+              <span
+                className="text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
+                style={{ backgroundColor: `${BRAND.accent}20`, color: BRAND.accent, border: `1px solid ${BRAND.accent}40` }}
+              >
+                Interactive
+              </span>
+            )}
+          </div>
         </div>
         <h3 className="font-serif leading-tight" style={{ fontSize: '20px' }}>
           {lesson.title}
@@ -123,6 +140,20 @@ function LessonCard({ lesson, step }: { lesson: DisplayLesson; step?: number }) 
 
 export default function LearnPage() {
   const [activeTrack, setActiveTrack] = useState<TrackId | 'all'>('all')
+  const [completedIds, setCompletedIds] = useState<Set<string>>(new Set())
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (!user) return
+      ;(supabase.from('user_lesson_progress') as any)
+        .select('lesson_id')
+        .eq('user_id', user.id)
+        .then(({ data }: { data: { lesson_id: string }[] | null }) => {
+          if (data) setCompletedIds(new Set(data.map(r => r.lesson_id)))
+        })
+    })
+  }, [])
 
   const showGeol101 = activeTrack === 'all' || activeTrack === 'geo'
 
@@ -265,7 +296,7 @@ export default function LearnPage() {
                 {availableCount > 0 ? (
                   <div className="grid md:grid-cols-2 gap-3">
                     {moduleLessons.map((lesson, i) => (
-                      <LessonCard key={lesson.id} lesson={lesson} step={i + 1} />
+                      <LessonCard key={lesson.id} lesson={lesson} step={i + 1} isCompleted={completedIds.has(lesson.id)} />
                     ))}
                   </div>
                 ) : (
@@ -304,7 +335,7 @@ export default function LearnPage() {
           )}
           <div className="grid md:grid-cols-2 gap-3">
             {filteredStandalone.map(lesson => (
-              <LessonCard key={lesson.id} lesson={lesson} />
+              <LessonCard key={lesson.id} lesson={lesson} isCompleted={completedIds.has(lesson.id)} />
             ))}
           </div>
         </div>
