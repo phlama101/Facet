@@ -38,6 +38,7 @@ import sedimentaryFacies           from './geol-201-2-2-1'
 import unconformities              from './geol-201-2-2-2'
 import sequenceStratigraphy        from './geol-201-2-2-3'
 import stratigraphicColumn         from './geol-201-2-2-4'
+import howFossilsForm              from './geol-201-2-3-1'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -75,6 +76,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-201-2-2-2':          unconformities,
   'geol-201-2-2-3':          sequenceStratigraphy,
   'geol-201-2-2-4':          stratigraphicColumn,
+  'geol-201-2-3-1':          howFossilsForm,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
