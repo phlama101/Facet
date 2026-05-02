@@ -165,7 +165,7 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
 
           {/* Explanation text */}
           <div className="px-4 py-4" style={{ backgroundColor: BRAND.surface }}>
-            <p className="text-sm leading-[1.7]" style={{ color: BRAND.textDim }}>
+            <p className="text-[15px] leading-[1.75]" style={{ color: BRAND.textDim }}>
               {q.explain}
             </p>
             <button

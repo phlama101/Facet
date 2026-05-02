@@ -10,7 +10,7 @@ function renderBody(body: string) {
         : chunk
     )
     return (
-      <p key={i} className="mb-4 leading-[1.75] text-[15px]" style={{ color: BRAND.text }}>
+      <p key={i} className="mb-4 leading-[1.8] text-[16px]" style={{ color: BRAND.text }}>
         {parts}
       </p>
     )
