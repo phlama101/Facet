@@ -36,6 +36,7 @@ import radiometricDating           from './geol-201-2-1-3'
 import calibratingTimescale        from './geol-201-2-1-4'
 import sedimentaryFacies           from './geol-201-2-2-1'
 import unconformities              from './geol-201-2-2-2'
+import sequenceStratigraphy        from './geol-201-2-2-3'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -71,6 +72,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-201-2-1-4':          calibratingTimescale,
   'geol-201-2-2-1':          sedimentaryFacies,
   'geol-201-2-2-2':          unconformities,
+  'geol-201-2-2-3':          sequenceStratigraphy,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
