@@ -34,7 +34,7 @@ export default function AppNav({ profile }: AppNavProps) {
     <nav style={{ borderBottom: `1px solid ${BRAND.border}` }}>
       <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/dashboard" className="flex items-center gap-3">
           <FacetLogo size={30} />
           <div>
             <div className="font-serif leading-none" style={{ fontSize: '24px' }}>Facet</div>
