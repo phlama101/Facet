@@ -42,6 +42,10 @@ import howFossilsForm              from './geol-201-2-3-1'
 import biostratigraphy             from './geol-201-2-3-2'
 import traceFossils                from './geol-201-2-3-3'
 import lagerstatten                from './geol-201-2-3-4'
+import cambrianExplosion           from './geol-201-2-4-1'
+import massExtinctions             from './geol-201-2-4-2'
+import conquestOfLand              from './geol-201-2-4-3'
+import cenozoic                    from './geol-201-2-4-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -83,6 +87,10 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-201-2-3-2':          biostratigraphy,
   'geol-201-2-3-3':          traceFossils,
   'geol-201-2-3-4':          lagerstatten,
+  'geol-201-2-4-1':          cambrianExplosion,
+  'geol-201-2-4-2':          massExtinctions,
+  'geol-201-2-4-3':          conquestOfLand,
+  'geol-201-2-4-4':          cenozoic,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
