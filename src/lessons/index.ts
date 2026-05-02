@@ -33,6 +33,7 @@ import geol101Capstone             from './geol-101-capstone'
 import deepTime                    from './geol-201-2-1-1'
 import relativeDating              from './geol-201-2-1-2'
 import radiometricDating           from './geol-201-2-1-3'
+import calibratingTimescale        from './geol-201-2-1-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -65,6 +66,7 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-201-2-1-1':          deepTime,
   'geol-201-2-1-2':          relativeDating,
   'geol-201-2-1-3':          radiometricDating,
+  'geol-201-2-1-4':          calibratingTimescale,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
