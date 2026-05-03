@@ -46,6 +46,11 @@ import cambrianExplosion           from './geol-201-2-4-1'
 import massExtinctions             from './geol-201-2-4-2'
 import conquestOfLand              from './geol-201-2-4-3'
 import cenozoic                    from './geol-201-2-4-4'
+import geologicalMaps              from './geol-201-2-5-1'
+import structuralGeology           from './geol-201-2-5-2'
+import stratigraphicSections       from './geol-201-2-5-3'
+import rockMineralIdentification   from './geol-201-2-5-4'
+import geol201Capstone             from './geol-201-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -91,6 +96,11 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-201-2-4-2':          massExtinctions,
   'geol-201-2-4-3':          conquestOfLand,
   'geol-201-2-4-4':          cenozoic,
+  'geol-201-2-5-1':          geologicalMaps,
+  'geol-201-2-5-2':          structuralGeology,
+  'geol-201-2-5-3':          stratigraphicSections,
+  'geol-201-2-5-4':          rockMineralIdentification,
+  'geol-201-capstone':       geol201Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
