@@ -1,17 +1,49 @@
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Zap, Flame, BookOpen, TrendingUp, Play, ChevronRight, Check, ArrowRight } from 'lucide-react'
+import { Zap, Flame, BookOpen, TrendingUp, Play, ChevronRight, Check, ArrowRight, Trophy, Calendar, Clock } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LESSON_LIST, TRACK_MAP, GEOL_101_MODULES, GEOL_201_MODULES } from '@/lessons/index'
 import type { CourseModule } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
-import { levelFromXp, xpProgressPct, xpInLevel } from '@/lib/utils'
+import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
 import StatCard from '@/components/ui/StatCard'
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Dashboard' }
+
+type ProgressRow = { lesson_id: string; completed_at: string | null }
+
+function timeAgo(isoString: string | null): string {
+  if (!isoString) return ''
+  const diff = Date.now() - new Date(isoString).getTime()
+  const mins = Math.floor(diff / 60000)
+  if (mins < 60) return mins <= 1 ? 'just now' : `${mins}m ago`
+  const hours = Math.floor(mins / 60)
+  if (hours < 24) return `${hours}h ago`
+  const days = Math.floor(hours / 24)
+  if (days === 1) return 'yesterday'
+  if (days < 7) return `${days}d ago`
+  return new Date(isoString).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
+function getDayLabel(daysAgo: number): string {
+  const d = new Date()
+  d.setDate(d.getDate() - daysAgo)
+  return d.toLocaleDateString('en-US', { weekday: 'short' }).slice(0, 2)
+}
+
+function utcDayKey(isoString: string): string {
+  return isoString.slice(0, 10) // "YYYY-MM-DD"
+}
+
+function localDayKey(daysAgo: number): string {
+  const d = new Date()
+  d.setDate(d.getDate() - daysAgo)
+  // Use UTC date string that matches database UTC timestamps
+  return d.toISOString().slice(0, 10)
+}
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -36,14 +68,19 @@ export default async function DashboardPage() {
 
   const { data: progressRows } = await supabase
     .from('user_lesson_progress' as never)
-    .select('lesson_id')
+    .select('lesson_id, completed_at')
     .eq('user_id', user.id)
     .eq('completed', true)
-  const completed: string[] = ((progressRows ?? []) as { lesson_id: string }[]).map(r => r.lesson_id)
+    .order('completed_at', { ascending: false })
+  const allProgress: ProgressRow[] = (progressRows ?? []) as ProgressRow[]
+  const completed: string[] = allProgress.map(r => r.lesson_id)
 
   const xp = profile.xp
   const level = levelFromXp(xp)
   const pct = xpProgressPct(xp)
+  const xpThisLevel = xpInLevel(xp)
+  const xpForNextLevel = xpNeededForLevel(level)
+  const xpToGo = xpForNextLevel - xpThisLevel
 
   const v2BaseIds = new Set(LESSONS_V2_LIST.map(l => l.id.replace(/-v2$/, '')))
   const combinedList = [
@@ -58,6 +95,27 @@ export default async function DashboardPage() {
   const nextLesson = (nextCourseLesson ? lessonMap[nextCourseLesson] : null)
     ?? combinedList.find(l => !completed.includes(l.id))
     ?? combinedList[0]
+
+  // Recent activity: last 5 completions with lesson details
+  const recentActivity = allProgress
+    .slice(0, 5)
+    .map(r => ({ lesson: lessonMap[r.lesson_id] ?? null, completedAt: r.completed_at }))
+    .filter(r => r.lesson !== null) as { lesson: typeof combinedList[0]; completedAt: string | null }[]
+
+  // 7-day activity: count lessons per UTC day
+  const activityByDay = new Map<string, number>()
+  for (const row of allProgress) {
+    if (!row.completed_at) continue
+    const key = utcDayKey(row.completed_at)
+    activityByDay.set(key, (activityByDay.get(key) ?? 0) + 1)
+  }
+  const weekActivity = Array.from({ length: 7 }, (_, i) => {
+    const daysAgo = 6 - i
+    const key = localDayKey(daysAgo)
+    return { label: getDayLabel(daysAgo), count: activityByDay.get(key) ?? 0, isToday: daysAgo === 0 }
+  })
+  const totalWeekLessons = weekActivity.reduce((sum, d) => sum + d.count, 0)
+  const maxDayCount = Math.max(...weekActivity.map(d => d.count), 1)
 
   // Compute per-module stats
   function moduleStats(module: CourseModule) {
@@ -123,6 +181,123 @@ export default async function DashboardPage() {
         <StatCard label="Level"    value={level}               icon={TrendingUp}  accent={BRAND.accent} />
       </div>
 
+      {/* Progress + Activity Row */}
+      <div className="grid md:grid-cols-2 gap-3">
+        {/* XP Level Progress */}
+        <div
+          className="p-5 rounded-sm"
+          style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
+        >
+          <div className="text-[10px] tracking-[0.25em] uppercase mb-3" style={{ color: BRAND.textSubtle }}>
+            Level Progress
+          </div>
+          <div className="flex items-end justify-between mb-3">
+            <div>
+              <span className="font-serif" style={{ fontSize: '28px', color: BRAND.accent }}>Lv {level}</span>
+              <span className="text-xs ml-2" style={{ color: BRAND.textDim }}>{levelTitle(level)}</span>
+            </div>
+            <div className="text-right">
+              <div className="text-[11px] font-mono" style={{ color: BRAND.textSubtle }}>
+                {xpThisLevel.toLocaleString()} / {xpForNextLevel.toLocaleString()} XP
+              </div>
+            </div>
+          </div>
+          <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
+            <div
+              className="h-full rounded-full transition-all"
+              style={{ width: `${pct}%`, backgroundColor: BRAND.accent }}
+            />
+          </div>
+          <div className="mt-2 flex items-center justify-between">
+            <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>{pct}% complete</span>
+            <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>
+              {xpToGo.toLocaleString()} XP to Lv {level + 1}
+            </span>
+          </div>
+        </div>
+
+        {/* 7-Day Activity */}
+        <div
+          className="p-5 rounded-sm"
+          style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
+              7-Day Activity
+            </div>
+            <div className="text-[10px] font-mono" style={{ color: totalWeekLessons > 0 ? BRAND.jade : BRAND.textSubtle }}>
+              {totalWeekLessons} lesson{totalWeekLessons !== 1 ? 's' : ''} this week
+            </div>
+          </div>
+          <div className="flex items-end justify-between gap-1.5 h-14">
+            {weekActivity.map(({ label, count, isToday }) => {
+              const barHeight = count > 0 ? Math.max(16, Math.round((count / maxDayCount) * 48)) : 6
+              const barColor = count === 0 ? BRAND.border
+                : isToday ? BRAND.accent
+                : BRAND.jade
+              return (
+                <div key={label} className="flex-1 flex flex-col items-center justify-end gap-1">
+                  <div
+                    className="w-full rounded-sm transition-all"
+                    style={{ height: `${barHeight}px`, backgroundColor: barColor, opacity: count === 0 ? 0.4 : 1 }}
+                  />
+                  <div
+                    className="text-[9px] font-mono"
+                    style={{ color: isToday ? BRAND.accent : BRAND.textSubtle }}
+                  >
+                    {label}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Activity */}
+      {recentActivity.length > 0 && (
+        <div
+          className="rounded-sm overflow-hidden"
+          style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
+        >
+          <div
+            className="px-5 py-3 flex items-center justify-between"
+            style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}
+          >
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
+              Recent Activity
+            </div>
+            <Clock size={12} color={BRAND.textSubtle} />
+          </div>
+          <div className="divide-y" style={{ borderColor: BRAND.border }}>
+            {recentActivity.map(({ lesson, completedAt }, i) => (
+              <Link
+                key={`${lesson.id}-${i}`}
+                href={`/learn/${lesson.id}`}
+                className="px-5 py-3 flex items-center gap-4 transition-colors hover:bg-white/[0.02]"
+              >
+                <div
+                  className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: `${BRAND.jade}18`, border: `1px solid ${BRAND.jade}30` }}
+                >
+                  <Check size={12} color={BRAND.jade} strokeWidth={2.5} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm truncate" style={{ color: BRAND.text }}>{lesson.title}</div>
+                  <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>
+                    {lesson.trackName} · {lesson.level}
+                  </div>
+                </div>
+                <div className="text-right shrink-0">
+                  <div className="text-[11px] font-mono" style={{ color: BRAND.gold }}>+{lesson.xpReward} XP</div>
+                  <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>{timeAgo(completedAt)}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Curriculum */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
@@ -130,13 +305,22 @@ export default async function DashboardPage() {
             <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Curriculum</div>
             <h2 className="font-serif" style={{ fontSize: '26px' }}>Course progress</h2>
           </div>
-          <Link
-            href="/learn"
-            className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
-            style={{ color: BRAND.accent }}
-          >
-            All lessons <ChevronRight size={14} />
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/skill-tree"
+              className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
+              style={{ color: BRAND.amethyst }}
+            >
+              Skill tree <Trophy size={12} />
+            </Link>
+            <Link
+              href="/learn"
+              className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
+              style={{ color: BRAND.accent }}
+            >
+              All lessons <ChevronRight size={14} />
+            </Link>
+          </div>
         </div>
 
         {/* GEOL 101 */}
