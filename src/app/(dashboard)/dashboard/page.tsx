@@ -117,6 +117,15 @@ export default async function DashboardPage() {
   const totalWeekLessons = weekActivity.reduce((sum, d) => sum + d.count, 0)
   const maxDayCount = Math.max(...weekActivity.map(d => d.count), 1)
 
+  // Daily missions: count lessons completed today (UTC)
+  const todayKey = new Date().toISOString().slice(0, 10)
+  const todayCount = activityByDay.get(todayKey) ?? 0
+  const DAILY_MISSIONS = [
+    { label: 'First Lesson', target: 1,  bonusXp: 25,  color: BRAND.jade },
+    { label: 'On a Roll',    target: 3,  bonusXp: 75,  color: BRAND.gold },
+    { label: 'Day Champion', target: 5,  bonusXp: 150, color: BRAND.coral },
+  ] as const
+
   // Compute per-module stats
   function moduleStats(module: CourseModule) {
     const available = module.lessonIds.filter(id => lessonMap[id])
@@ -251,6 +260,70 @@ export default async function DashboardPage() {
               )
             })}
           </div>
+        </div>
+      </div>
+
+      {/* Daily Missions */}
+      <div
+        className="rounded-sm overflow-hidden"
+        style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
+      >
+        <div
+          className="px-5 py-3 flex items-center justify-between"
+          style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}
+        >
+          <div>
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Daily Missions</div>
+            <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
+              Resets at midnight UTC · {todayCount} lesson{todayCount !== 1 ? 's' : ''} completed today
+            </div>
+          </div>
+          <Calendar size={14} color={BRAND.textSubtle} />
+        </div>
+        <div className="divide-y" style={{ borderColor: BRAND.border }}>
+          {DAILY_MISSIONS.map(({ label, target, bonusXp, color }) => {
+            const progress = Math.min(todayCount, target)
+            const done = progress >= target
+            const pctFill = Math.round((progress / target) * 100)
+            return (
+              <div key={label} className="px-5 py-3 flex items-center gap-4">
+                <div
+                  className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
+                  style={done
+                    ? { backgroundColor: `${color}20`, border: `1px solid ${color}40` }
+                    : { backgroundColor: `${BRAND.surfaceHi}`, border: `1px solid ${BRAND.border}` }
+                  }
+                >
+                  {done
+                    ? <Check size={12} color={color} strokeWidth={2.5} />
+                    : <span className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>{progress}/{target}</span>
+                  }
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-1">
+                    <span
+                      className="text-[11px] font-medium"
+                      style={{ color: done ? color : BRAND.textDim }}
+                    >
+                      {label}
+                    </span>
+                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>
+                      +{bonusXp} XP
+                    </span>
+                  </div>
+                  <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
+                    <div
+                      className="h-full rounded-full transition-all"
+                      style={{ width: `${pctFill}%`, backgroundColor: done ? color : `${color}80` }}
+                    />
+                  </div>
+                  <div className="text-[9px] mt-0.5 font-mono" style={{ color: BRAND.textSubtle }}>
+                    Complete {target} lesson{target !== 1 ? 's' : ''} today
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
 
