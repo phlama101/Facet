@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { CheckCircle2, ArrowRight, Zap } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface Props { lessonId: string; completed: boolean; xpReward: number }
@@ -16,17 +15,14 @@ export default function LessonCompleteButton({ lessonId, completed, xpReward }: 
   async function markComplete() {
     if (completed) return
     setLoading(true)
-    const supabase = createClient()
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { router.push('/login'); return }
 
-    const { error } = await (supabase.from('user_lesson_progress') as any).upsert(
-      { user_id: user.id, lesson_id: lessonId },
-      { onConflict: 'user_id,lesson_id' }
-    )
+    const res = await fetch('/api/complete-lesson', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lessonId, xpReward }),
+    })
 
-    if (!error) {
-      await (supabase.rpc as any)('award_xp', { p_user_id: user.id, p_xp: xpReward })
+    if (res.ok) {
       setBurst(true)
       setTimeout(() => { setBurst(false); router.refresh() }, 1600)
     }
