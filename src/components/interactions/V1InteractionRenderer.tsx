@@ -1,18 +1,22 @@
 'use client'
 
 import type { InteractionConfig } from '@/lessons-v2/types'
-import SliderSimulation from './SliderSimulation'
-import NodeExplorer from './NodeExplorer'
-import TimelineScrubber from './TimelineScrubber'
-import SandboxSimulator from './SandboxSimulator'
-import LayeredVisual from '@/components/interactions/LayeredVisual'
-import FlowSimulator from '@/components/interactions/FlowSimulator'
+
+// V2 interaction components (already built, reused here for V1 lessons)
+import SliderSimulation from '@/lessons-v2/components/interactions/SliderSimulation'
+import NodeExplorer from '@/lessons-v2/components/interactions/NodeExplorer'
+import TimelineScrubber from '@/lessons-v2/components/interactions/TimelineScrubber'
+import SandboxSimulator from '@/lessons-v2/components/interactions/SandboxSimulator'
+
+// New interaction types (built in src/components/interactions/)
+import LayeredVisual from './LayeredVisual'
+import FlowSimulator from './FlowSimulator'
 
 interface Props {
   interaction: InteractionConfig
 }
 
-export default function InteractionRenderer({ interaction }: Props) {
+export default function V1InteractionRenderer({ interaction }: Props) {
   switch (interaction.type) {
     case 'slider-simulation':
       return <SliderSimulation config={interaction} />

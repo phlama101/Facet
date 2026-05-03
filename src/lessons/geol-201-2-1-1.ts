@@ -130,6 +130,66 @@ This is the operational significance of deep time for working geologists: slow r
       ],
     },
     {
+      type: 'visualization',
+      title: 'The Geologic Timescale',
+      body: "Step through Earth's 4.54 billion year history. Drag the scrubber or use the buttons to move between the major eons and eras.",
+      interaction: {
+        type: 'timeline-scrubber',
+        events: [
+          {
+            year: '4,540 Ma',
+            label: 'Hadean Eon begins — Earth forms',
+            description: "The solar system coalesces from a cloud of gas and dust. Earth accretes from planetesimals. The planet is molten, bombarded by meteorites (the Late Heavy Bombardment peaks ~3.9 Ga), and has no preserved crust. The Moon forms from a giant impact with a Mars-sized body (~Theia) at ~4.51 Ga. No rocks survive from this interval.",
+          },
+          {
+            year: '4,000 Ma',
+            label: 'Archean Eon — first stable crust',
+            description: "Earth cools enough to preserve crust. The oldest known rocks (Acasta Gneiss, Canada) date to ~4.0 Ga; the oldest minerals (Jack Hills zircons, Australia) to ~4.4 Ga. By ~3.8 Ga, the first evidence of life appears in isotopic signatures in Greenland. The atmosphere is reducing — no free oxygen. Archean cratons (ancient stable continental cores) are being assembled.",
+          },
+          {
+            year: '2,500 Ma',
+            label: 'Proterozoic Eon — oxygen and complex cells',
+            description: "The Great Oxidation Event (~2.4 Ga) sees atmospheric oxygen rise above trace levels for the first time, driven by photosynthetic cyanobacteria. Banded iron formations are deposited and then cease as oceans become oxidised. The first eukaryotic (nucleus-bearing) cells evolve (~1.8–2.1 Ga). Snowball Earth glaciations (~720–635 Ma) freeze Earth to the equator. The first multicellular animals appear in the Ediacaran (~635–541 Ma).",
+          },
+          {
+            year: '541 Ma',
+            label: 'Cambrian Period — the Explosion of animal life',
+            description: "The base of the Phanerozoic eon and the Cambrian Period. Almost all major animal body plans appear within ~20 Ma (the Cambrian Explosion). Hard shells, mineralised skeletons, and complex predator-prey relationships appear for the first time. The fossil record becomes dramatically richer. Trilobites, brachiopods, molluscs, and the first chordates are present.",
+          },
+          {
+            year: '485 Ma',
+            label: 'Ordovician–Silurian — marine diversification',
+            description: "The Great Ordovician Biodiversification Event sees marine animal diversity triple. Graptolites, corals, nautiloids, and echinoderm diversity peak. The end-Ordovician mass extinction (~445 Ma) kills ~85% of species in two pulses tied to Gondwana glaciation. Life colonises land — non-vascular plants (bryophytes) appear (~470 Ma). Silurian sees the first vascular plants and jawed fish.",
+          },
+          {
+            year: '419 Ma',
+            label: 'Devonian — first forests and fish',
+            description: "The 'Age of Fishes': fish diversity explosively increases; jawed fish (sharks, bony fish) dominate. The first forests grow in the Late Devonian (Archaeopteris, ~385 Ma). Tetrapods evolve from lobe-finned fish (Tiktaalik ~375 Ma; first tetrapods ~365 Ma). Atmospheric CO₂ falls dramatically due to forest expansion. The Late Devonian mass extinction (~375 Ma) kills ~75% of species.",
+          },
+          {
+            year: '359 Ma',
+            label: 'Carboniferous & Permian — coal forests and first reptiles',
+            description: "Coal swamp forests dominate the equatorial supercontinent. Atmospheric O₂ reaches ~30–35% (Carboniferous O₂ maximum) from buried lignin. Giant insects (Meganeura, Arthropleura) flourish. Amniotic egg evolves (~315 Ma), freeing reptiles from water. Pangaea assembles. The end-Permian mass extinction (~252 Ma) — the largest in Earth history — kills ~96% of species over ~60,000 years.",
+          },
+          {
+            year: '252 Ma',
+            label: 'Mesozoic Era begins — age of dinosaurs',
+            description: "After the end-Permian extinction, dinosaurs evolve and dominate land by the Late Triassic (~230 Ma). Marine reptiles (ichthyosaurs, plesiosaurs) and flying pterosaurs evolve. Pangaea rifts apart — the Atlantic begins to open (~180 Ma). Mammals evolve from synapsid ancestors (~225 Ma) but remain small and nocturnal throughout the Mesozoic. Flowering plants (angiosperms) evolve ~130 Ma.",
+          },
+          {
+            year: '66 Ma',
+            label: 'K-Pg boundary — non-avian dinosaurs extinct',
+            description: "The Chicxulub impactor (10–15 km diameter) strikes the Yucatan Peninsula, releasing energy equivalent to ~1 billion Hiroshima bombs. The impact winter eliminates non-avian dinosaurs and ~75% of species. Mammals, birds, and flowering plants radiate explosively into vacated niches. The Cenozoic Era begins — often called the Age of Mammals.",
+          },
+          {
+            year: '23 Ma – Present',
+            label: 'Neogene & Quaternary — ice ages and humans',
+            description: "Long-term Cenozoic cooling produces the Antarctic Ice Sheet (~34 Ma) and Northern Hemisphere glaciation (~2.6 Ma). Milankovitch orbital cycles drive glacial–interglacial cycles. Hominins evolve in Africa from ~6–7 Ma; Homo sapiens at ~300 ka. Agriculture ~12 ka. Industrial CO₂ emissions begin altering the carbon cycle at rates comparable to or faster than the PETM. Current geological epoch: Holocene (since 11.7 ka).",
+          },
+        ],
+      },
+    },
+    {
       type: 'quiz',
       questions: [
         {

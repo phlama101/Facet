@@ -112,6 +112,64 @@ The **genetic/developmental** hypothesis points to the Hox gene toolkit: a set o
       ],
     },
     {
+      type: 'visualization',
+      title: 'Major Animal Phyla of the Cambrian Explosion',
+      body: "Select any phylum to explore its defining features, key Cambrian fossils, and its connection to other animal groups.",
+      interaction: {
+        type: 'node-explorer',
+        nodes: [
+          {
+            id: 'ancestor',
+            label: 'Last Common Ancestor',
+            description: 'The hypothetical Urbilaterian — the last common ancestor of all bilaterian animals. Molecular clock estimates place divergence of major bilaterian lineages at ~650–800 Ma, well before the Cambrian. What the Cambrian Explosion records is primarily the acquisition of preservable hard parts, not the initial phylogenetic split.',
+            connections: ['arthropoda', 'mollusca', 'annelida', 'echinodermata', 'chordata', 'lophotrochozoa'],
+          },
+          {
+            id: 'arthropoda',
+            label: 'Arthropoda',
+            description: 'Segmented body + jointed limbs + exoskeleton. The most species-rich animal phylum today. Cambrian forms: trilobites (extinct), anomalocaridids (giant predators, ~0.5–1 m), bivalved arthropods. Trilobites first appear at the base of Cambrian Stage 3 (~521 Ma) and are the most abundant Cambrian macrofossils.',
+            connections: ['ancestor', 'annelida'],
+          },
+          {
+            id: 'mollusca',
+            label: 'Mollusca',
+            description: 'Soft body + mantle + radula. Includes modern snails, clams, squid, octopus. Earliest Cambrian molluscs include Halkieria (sclerite-coated slug-like animal), Yochelcionella (snail-like), and Tommotia. Among the first animals to biomineralise in the Cambrian. Cephalopods (squid, nautiloids) evolve by Late Cambrian.',
+            connections: ['ancestor', 'brachiopoda'],
+          },
+          {
+            id: 'echinodermata',
+            label: 'Echinodermata',
+            description: 'Five-fold radial symmetry (as adults) + water vascular system + calcite endoskeleton. Includes modern sea urchins, sea stars, sea cucumbers, crinoids. First appear in Lower Cambrian as edrioasteroids and helicoplacoids — early forms with unusual spiral or irregular symmetry unlike modern five-fold pattern. The five-fold symmetry itself evolved secondarily.',
+            connections: ['ancestor', 'chordata'],
+          },
+          {
+            id: 'chordata',
+            label: 'Chordata',
+            description: 'Notochord + dorsal hollow nerve cord + pharyngeal slits + post-anal tail at some point in development. Includes modern vertebrates, tunicates, and lancelets. Cambrian chordates: Pikaia (Burgess Shale, ~508 Ma) — a lancelet-like swimmer; Haikouichthys (~520 Ma, Chengjiang) — possible early vertebrate with a head and eyes. Our own lineage.',
+            connections: ['ancestor', 'echinodermata'],
+          },
+          {
+            id: 'brachiopoda',
+            label: 'Brachiopoda',
+            description: 'Two-shelled lophophore-bearing invertebrates. Among the most abundant Cambrian fossils — lingual and pedicle valves are common. Among the first shell-bearing animals (appearing ~540 Ma as small shelly fossils). Inarticulate brachiopods (e.g. Lingula) have survived nearly unchanged for 450 Ma — one of the best examples of morphological stasis.',
+            connections: ['mollusca', 'lophotrochozoa'],
+          },
+          {
+            id: 'annelida',
+            label: 'Annelida',
+            description: 'Segmented worms — includes modern earthworms, polychaetes, and leeches. Mostly soft-bodied, so poorly preserved in Cambrian rocks, but polychaete jaw elements (scolecodonts) and body impressions are present. Burgess Shale preserves polychaete worms beautifully. Closest relatives of arthropods in the Ecdysozoa (moulting animals) clade.',
+            connections: ['arthropoda', 'ancestor'],
+          },
+          {
+            id: 'lophotrochozoa',
+            label: 'Lophotrochozoa',
+            description: 'A major bilaterian superphylum encompassing molluscs, annelids, brachiopods, bryozoans, flatworms, and others. Defined by molecular data — all share either a lophophore (crown of ciliated tentacles) or a trochophore larval stage. All major lophotrochozoan phyla appear in the Cambrian record, suggesting rapid radiation from a common ancestor.',
+            connections: ['ancestor', 'brachiopoda'],
+          },
+        ],
+      },
+    },
+    {
       type: 'quiz',
       questions: [
         {

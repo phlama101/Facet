@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { ConceptSection } from '@/lessons/types'
+import V1InteractionRenderer from '@/components/interactions/V1InteractionRenderer'
 
 function renderBody(body: string) {
   return body.split('\n\n').map((para, i) => {
@@ -45,6 +46,12 @@ export default function SectionConcept({
       </h2>
 
       {renderBody(section.body)}
+
+      {section.interaction && (
+        <div className="mt-8">
+          <V1InteractionRenderer interaction={section.interaction} />
+        </div>
+      )}
 
       {section.cards && (
         <div className="mt-8 space-y-2">

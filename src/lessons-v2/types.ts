@@ -54,11 +54,51 @@ export interface SandboxSimulatorConfig {
   outputDescription: (vars: Record<string, number>) => string
 }
 
+export interface LayerDef {
+  id: string
+  label: string
+  sublabel?: string
+  color: string
+  thickness: number
+  state?: string
+  temperature?: string
+  description: string
+  facts: string[]
+}
+
+export interface LayeredVisualConfig {
+  type: 'layered-visual'
+  description: string
+  layers: LayerDef[]
+}
+
+export interface FlowNode {
+  id: string
+  label: string
+  description: string
+  color: string
+}
+
+export interface FlowEdge {
+  from: string
+  to: string
+  label: string
+}
+
+export interface FlowSimulatorConfig {
+  type: 'flow-simulator'
+  description: string
+  nodes: FlowNode[]
+  edges: FlowEdge[]
+}
+
 export type InteractionConfig =
   | SliderConfig
   | NodeExplorerConfig
   | TimelineScrubberConfig
   | SandboxSimulatorConfig
+  | LayeredVisualConfig
+  | FlowSimulatorConfig
 
 // ──────────────────────────────────────────────
 // Section types

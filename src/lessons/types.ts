@@ -1,4 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
+import type { InteractionConfig } from '@/lessons-v2/types'
+
+export type { InteractionConfig }
 
 export type TrackId = 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
 
@@ -35,6 +38,14 @@ export interface ConceptSection {
   title: string
   body: string
   cards?: ConceptCard[]
+  interaction?: InteractionConfig
+}
+
+export interface VisualizationSection {
+  type: 'visualization'
+  title: string
+  body: string
+  interaction: InteractionConfig
 }
 
 export interface QuizQuestion {
@@ -90,7 +101,7 @@ export interface DataLabSection {
   conclusion: string
 }
 
-export type Section = IntroSection | ConceptSection | QuizSection | TheorySection | CaseStudySection | DataLabSection
+export type Section = IntroSection | ConceptSection | VisualizationSection | QuizSection | TheorySection | CaseStudySection | DataLabSection
 
 export interface Lesson {
   id: string

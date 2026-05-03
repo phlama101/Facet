@@ -132,6 +132,28 @@ The geographic pattern is the strongest evidence. Africa, where hominids and lar
       ],
     },
     {
+      type: 'visualization',
+      title: 'Milankovitch Cycles: Orbital Forcing of Ice Ages',
+      body: "Adjust the cycle period to see how each Milankovitch cycle affects Earth's orbital geometry and the resulting change in high-latitude summer insolation.",
+      interaction: {
+        type: 'slider-simulation',
+        label: 'Milankovitch cycle period',
+        min: 19,
+        max: 400,
+        step: 1,
+        unit: 'ka',
+        defaultValue: 100,
+        outputLabel: 'Cycle type and climate effect',
+        formula: (v: number) => {
+          if (v <= 23) return 'Precession (~19–23 ka): axis wobble controls which hemisphere summers near perihelion. Strong effect on low-to-mid latitude insolation seasonality.'
+          if (v <= 45) return 'Obliquity (~41 ka): axial tilt 22.1°–24.5°. Controls high-latitude summer insolation and seasonal contrast. Dominated ice ages before 0.8 Ma.'
+          if (v <= 130) return 'Eccentricity short (~100 ka): orbital ellipticity cycle. Modulates total annual insolation. Dominates Pleistocene ice ages after the mid-Pleistocene transition (~0.8 Ma).'
+          return 'Eccentricity long (~400 ka): longer orbital ellipticity cycle. Modulates the amplitude of the 100-ka eccentricity cycles. Visible in sediment records over millions of years.'
+        },
+        description: 'The mid-Pleistocene transition (~1.2–0.7 Ma) saw glacial cycles shift from 41-ka (obliquity) to 100-ka (eccentricity-related) rhythms — without any change in orbital forcing. The 100-ka cycle dominates modern ice ages despite being the weakest orbital forcing signal, likely amplified by internal feedbacks (CO₂, ice-albedo, regolith removal).',
+      },
+    },
+    {
       type: 'quiz',
       questions: [
         {

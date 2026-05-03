@@ -115,6 +115,41 @@ The **impact mechanisms** were multiple and overlapping. The immediate effect wa
       ],
     },
     {
+      type: 'visualization',
+      title: 'The Big Five Mass Extinctions',
+      body: "Step through each of the five major mass extinction events — explore the timing, magnitude, and primary cause of each.",
+      interaction: {
+        type: 'timeline-scrubber',
+        events: [
+          {
+            year: '~445 Ma',
+            label: 'End-Ordovician Extinction',
+            description: 'Severity: ~85% of species lost — 2nd largest in Earth history. Two-pulse structure: (1) Glaciation pulse — rapid glaciation of Gondwana (~445 Ma) drops sea level by ~50–100 m, draining shallow marine habitats that housed most Ordovician animal life; cooling causes thermal stress in tropical fauna. (2) Anoxia pulse — rapid deglaciation at ~443 Ma causes sea level rise and ocean stratification; anoxic deep water floods continental shelves; second extinction pulse. Primary victims: trilobites, graptolites, brachiopods, corals, echinoderms.',
+          },
+          {
+            year: '~374 Ma',
+            label: 'Late Devonian Extinction',
+            description: 'Severity: ~75% of species lost, concentrated in marine ecosystems. Multiple pulses over ~20 Ma (not a single event). The Kellwasser event (~374 Ma) and Hangenberg event (~359 Ma) are the sharpest. Primary mechanisms: marine anoxia (black shales globally); possible cooling from Devonian forest expansion (CO₂ drawdown → glaciation); possible volcanic activity. Reef ecosystems collapsed almost entirely — the stromatoporoid-coral reef ecosystem did not recover for ~100 Ma. Fish and terrestrial ecosystems relatively spared.',
+          },
+          {
+            year: '~252 Ma',
+            label: 'End-Permian Extinction — The Great Dying',
+            description: 'Severity: ~96% of marine species, ~70% of terrestrial vertebrate species — the largest mass extinction in Earth history. Cause: Siberian Traps flood basalt eruption (~300,000 km³ of lava over ~60,000 years), with 5 cascading effects: (1) immediate SO₂ acid rain; (2) CO₂ warming ~8–10°C globally; (3) ocean acidification dissolving carbonate shells; (4) marine anoxia as warm water holds less oxygen; (5) hydrogen sulphide release from anoxic oceans. Recovery took ~4–10 Ma — the longest recovery from any mass extinction.',
+          },
+          {
+            year: '~201 Ma',
+            label: 'End-Triassic Extinction',
+            description: 'Severity: ~80% of species lost, enabling dinosaur dominance. Cause: Central Atlantic Magmatic Province (CAMP) flood basalt eruption — largest LIP of the Mesozoic, ~2.5 million km² of basalt associated with Pangaea rifting. CO₂ spike, rapid warming, ocean acidification. Victims: pseudosuchian archosaurs (the main Triassic terrestrial fauna competing with dinosaurs), marine reptiles, conodonts (extinct), many reef-building organisms. Survivors: dinosaurs, which had been minor components of Triassic ecosystems, radiated explosively to dominate the Jurassic.',
+          },
+          {
+            year: '~66 Ma',
+            label: 'K-Pg Extinction — Asteroid Impact',
+            description: 'Severity: ~75% of species lost. Cause: Chicxulub impactor (~10–15 km diameter), Yucatan Peninsula, 66.0 Ma. Three independent lines of evidence: (1) global iridium anomaly in K-Pg boundary clay (iridium is rare in Earth crust, abundant in asteroids); (2) shocked quartz and tektites (glass beads) from high-pressure impact ejecta; (3) the Chicxulub crater itself (180 km diameter, buried under Yucatan sediments, confirmed by drill cores). Immediate effects: thermal pulse from re-entering ejecta; impact winter from dust; acid rain from SO₂/NO₂. Non-avian dinosaurs, pterosaurs, and ~75% of species extinct. Mammals, birds, crocodilians, and turtles survived.',
+          },
+        ],
+      },
+    },
+    {
       type: 'quiz',
       questions: [
         {

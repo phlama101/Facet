@@ -125,6 +125,51 @@ Plants solved these problems first, preparing the land surface for animals to fo
       ],
     },
     {
+      type: 'visualization',
+      title: 'The Conquest of Land: A Timeline',
+      body: "Step through the key evolutionary innovations that brought life from water to land — from algal crusts to angiosperms.",
+      interaction: {
+        type: 'timeline-scrubber',
+        events: [
+          {
+            year: '~1,000–470 Ma',
+            label: 'Algal and microbial crusts',
+            description: 'Photosynthetic biofilms and microbial mats colonise moist rock surfaces in humid environments. Not true plants — primarily cyanobacteria and green algae — but they begin physical and chemical weathering of rock surfaces, creating the first thin proto-soils. No roots, no cuticle, no complex tissue differentiation. Entirely dependent on persistent moisture.',
+          },
+          {
+            year: '~470 Ma',
+            label: 'Non-vascular land plants (bryophytes)',
+            description: 'First true land plants: mosses, liverworts, and hornworts. Key innovations: (1) cuticle — a waxy waterproof layer covering aerial surfaces, reducing evaporative loss; (2) sporopollenin-coated spores — the first biologically produced airborne propagules resistant to UV radiation and desiccation. Still restricted to persistently moist environments — no vascular tissue to deliver water from soil to aerial parts, limiting height to a few centimetres.',
+          },
+          {
+            year: '~425 Ma',
+            label: 'Vascular plants (tracheophytes) — Cooksonia, Rhynia',
+            description: 'The pivotal innovation: lignified xylem (water-conducting, structurally rigid) and phloem (sugar-conducting). Xylem solves gravity (lignin reinforcement → upright growth) and desiccation simultaneously (water piped from roots to leaf tips). Stomata — pores flanked by guard cells — allow CO₂/O₂ exchange while actively regulating water loss. First vascular plants: Cooksonia (~425 Ma, <10 cm), Rhynia (~410 Ma, Rhynie Chert, Scotland — cellular detail extraordinarily preserved in silica).',
+          },
+          {
+            year: '~400–385 Ma',
+            label: 'Roots and leaves — inland expansion',
+            description: 'Root systems solve two problems simultaneously: anchoring plants in soil and accessing deeper water/nutrients. More importantly, root-exuded organic acids dramatically accelerate silicate weathering, drawing down atmospheric CO₂. Megaphylls (large leaves) evolve independently multiple times, maximising photosynthetic surface area. Plants begin colonising upland habitats away from watercourses.',
+          },
+          {
+            year: '~385–360 Ma',
+            label: 'First forests — Archaeopteris',
+            description: 'Archaeopteris: ~30 m tall, woody trunk with true wood anatomy (homologous to modern conifers), fern-like compound leaves. First trees capable of canopy formation. Devonian forest expansion causes CO₂ drawdown from ~4,000 ppm → ~1,500 ppm. Roots fracture bedrock and transport nutrients to rivers → ocean fertilisation → marine anoxia → Late Devonian mass extinction. True soils form for the first time — organically enriched, structured horizons.',
+          },
+          {
+            year: '~360–300 Ma',
+            label: 'Seeds and Carboniferous coal forests',
+            description: 'Seed innovation (~360 Ma): embryo + endosperm + waterproof coat = dispersal and development independent of liquid water. Gymnosperms (cycads, conifers, seed ferns) dominate. Meanwhile, vast equatorial coal swamp forests bury lignin-rich wood in anaerobic sediments (lignin gap — white rot fungi not yet evolved). Atmospheric O₂ rises to ~30–35% (Carboniferous O₂ maximum). Giant insects flourish: Meganeura (70 cm wingspan), Arthropleura (>2 m).',
+          },
+          {
+            year: '~130–125 Ma',
+            label: 'Angiosperms (flowering plants)',
+            description: 'The most successful plant evolutionary innovation: flowers co-evolve with insect pollinators (directed pollen transfer rather than mass wind dispersal); fruits co-evolve with animal seed dispersers. Angiosperms diversify explosively from ~130 Ma, displacing gymnosperms from most habitats. Today: >350,000 described species — more than all other plant groups combined. The modern terrestrial world is an angiosperm world.',
+          },
+        ],
+      },
+    },
+    {
       type: 'quiz',
       questions: [
         {

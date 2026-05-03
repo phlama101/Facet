@@ -9,6 +9,7 @@ import FacetBackground from '@/components/brand/FacetBackground'
 import FacetLogo from '@/components/brand/FacetLogo'
 import SectionIntro from './SectionIntro'
 import SectionConcept from './SectionConcept'
+import SectionVisualization from './SectionVisualization'
 import SectionTheory from './SectionTheory'
 import SectionCaseStudy from './SectionCaseStudy'
 import SectionDataLab from './SectionDataLab'
@@ -133,6 +134,9 @@ export default function LessonViewer({
           {!done && cur.type === 'concept' && (
             <SectionConcept section={cur} sectionNumber={conceptCount + 1} />
           )}
+          {!done && cur.type === 'visualization' && (
+            <SectionVisualization section={cur} />
+          )}
           {!done && cur.type === 'theory' && (
             <SectionTheory section={cur} />
           )}
@@ -176,7 +180,7 @@ export default function LessonViewer({
               className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase px-5 py-2.5 rounded-sm transition-opacity hover:opacity-80"
               style={{ backgroundColor: track.color, color: BRAND.bg }}
             >
-              {(({ quiz: 'To Quiz', theory: 'To Theory', 'case-study': 'To Case Study', 'data-lab': 'To Data Lab' } as Record<string, string>)[sections[sectionIdx + 1]?.type ?? '']) ?? 'Continue'}
+              {(({ quiz: 'To Quiz', theory: 'To Theory', 'case-study': 'To Case Study', 'data-lab': 'To Data Lab', visualization: 'To Visualization' } as Record<string, string>)[sections[sectionIdx + 1]?.type ?? '']) ?? 'Continue'}
               <ArrowRight size={12} />
             </button>
           </div>
