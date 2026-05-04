@@ -13,6 +13,9 @@ import type { Profile } from '@/types'
 
 export const metadata = { title: 'Dashboard' }
 
+// Next.js passes searchParams as a prop to page components
+type Props = { searchParams?: Promise<Record<string, string>> }
+
 type ProgressRow = { lesson_id: string; completed_at: string | null }
 
 function timeAgo(isoString: string | null): string {
@@ -45,7 +48,9 @@ function localDayKey(daysAgo: number): string {
   return d.toISOString().slice(0, 10)
 }
 
-export default async function DashboardPage() {
+export default async function DashboardPage({ searchParams }: Props) {
+  const params = await (searchParams ?? Promise.resolve({} as Record<string, string>))
+  const justUpgraded = (params as Record<string, string>).upgraded === '1'
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
@@ -136,6 +141,24 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-6 animate-fade-in">
+      {/* Upgrade success banner */}
+      {justUpgraded && (
+        <div
+          className="flex items-center gap-3 px-5 py-3.5 rounded-sm"
+          style={{ backgroundColor: `${BRAND.jade}15`, border: `1px solid ${BRAND.jade}40` }}
+        >
+          <Trophy size={16} color={BRAND.jade} />
+          <div className="flex-1">
+            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>
+              Welcome to your new plan!
+            </div>
+            <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
+              Your subscription is active. All unlocked content is available immediately.
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero */}
       <div
         className="relative overflow-hidden rounded-sm"

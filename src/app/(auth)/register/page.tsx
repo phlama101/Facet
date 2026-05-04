@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { Eye, EyeOff, ArrowRight, Check } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { BRAND } from '@/lib/brand'
@@ -18,6 +18,7 @@ const PERKS = [
 
 export default function RegisterPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [form, setForm]       = useState({ username: '', email: '', password: '', displayName: '' })
   const [showPw, setShowPw]   = useState(false)
   const [loading, setLoading] = useState(false)
@@ -54,7 +55,8 @@ export default function RegisterPage() {
         password: form.password,
       })
       if (signInErr) { setError(signInErr.message); setLoading(false); return }
-      router.push('/dashboard')
+      const next = searchParams.get('next')
+      router.push(next && next.startsWith('/') ? next : '/dashboard')
       router.refresh()
     } catch {
       setError('Something went wrong. Please try again.')

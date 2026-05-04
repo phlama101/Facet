@@ -12,6 +12,7 @@ const NAV_TABS = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/learn',     label: 'Learn' },
   { href: '/profile',   label: 'Profile' },
+  { href: '/billing',   label: 'Billing' },
   { href: '/sources',   label: 'Sources' },
 ]
 
