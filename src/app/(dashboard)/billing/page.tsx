@@ -16,8 +16,8 @@ export const metadata = { title: 'Billing' }
 type Tier = 'free' | 'pro' | 'expert'
 
 const TIER_META: Record<Tier, { label: string; color: string; icon: React.ElementType }> = {
-  free:   { label: 'Explorer',       color: BRAND.jade,     icon: BookOpen },
-  pro:    { label: 'Geologist',      color: BRAND.accent,   icon: FlaskConical },
+  free:   { label: 'Explorer',      color: BRAND.jade,     icon: BookOpen },
+  pro:    { label: 'Scholar',       color: BRAND.accent,   icon: FlaskConical },
   expert: { label: 'Earth Scientist', color: BRAND.amethyst, icon: Microscope },
 }
 
@@ -158,8 +158,8 @@ export default async function BillingPage() {
             </div>
             <p className="text-sm" style={{ color: BRAND.textDim }}>
               {isPro
-                ? 'Unlock expert modules, live Q&A sessions, and verified certificates.'
-                : '7-day free trial on all paid plans — cancel anytime, no lock-in.'}
+                ? 'Unlock expert modules, early access to new courses, and priority support.'
+                : 'Unlock the full course catalog and interactive labs — cancel anytime.'}
             </p>
           </div>
 
@@ -168,14 +168,13 @@ export default async function BillingPage() {
             {!isPro && (
               <UpgradeCard
                 tier="pro"
-                label="Geologist"
+                label="Scholar"
                 price={PLANS.pro.price}
                 priceId={PLANS.pro.priceId ?? ''}
                 color={BRAND.accent}
                 icon={FlaskConical}
                 features={PLANS.pro.features}
                 badge="Most Popular"
-                trialNote="7-day free trial"
               />
             )}
 
@@ -189,7 +188,6 @@ export default async function BillingPage() {
               icon={Microscope}
               features={PLANS.expert.features}
               badge={isPro ? 'Upgrade' : null}
-              trialNote={isPro ? undefined : '7-day free trial'}
             />
           </div>
         </div>
@@ -205,10 +203,6 @@ export default async function BillingPage() {
         </div>
         {[
           {
-            q: 'How does the 7-day free trial work?',
-            a: "You get full access to your chosen plan immediately. Your card isn't charged until day 8. Cancel any time within the trial and you owe nothing.",
-          },
-          {
             q: 'Can I cancel at any time?',
             a: "Yes. Use the billing portal to cancel — you'll retain access until the end of your current billing period.",
           },
@@ -217,6 +211,10 @@ export default async function BillingPage() {
             a: isPaid
               ? 'Click "Manage Billing" above to open the Stripe billing portal where you can update your card, download invoices, and manage your subscription.'
               : 'Upgrade to a paid plan to access the billing portal for invoices and payment management.',
+          },
+          {
+            q: "What's the difference between Scholar and Earth Scientist?",
+            a: "Scholar unlocks the full course catalog — GEOL 101 complete, GEOL 201, and all future 100/200-level courses. Earth Scientist adds expert 300-level modules, early access to new courses before public launch, and priority support.",
           },
         ].map(({ q, a }) => (
           <div key={q}>
@@ -240,7 +238,7 @@ export default async function BillingPage() {
 }
 
 function UpgradeCard({
-  tier, label, price, priceId, color, icon: Icon, features, badge, trialNote,
+  tier, label, price, priceId, color, icon: Icon, features, badge,
 }: {
   tier: string
   label: string
@@ -250,7 +248,6 @@ function UpgradeCard({
   icon: React.ElementType
   features: readonly string[]
   badge: string | null
-  trialNote?: string
 }) {
   return (
     <div
@@ -284,9 +281,7 @@ function UpgradeCard({
         </div>
       </div>
 
-      {trialNote && (
-        <p className="text-[11px] mb-4 -mt-1" style={{ color: BRAND.textSubtle }}>{trialNote} · Cancel anytime</p>
-      )}
+      <p className="text-[11px] mb-4 -mt-1" style={{ color: BRAND.textSubtle }}>Cancel anytime · No lock-in</p>
 
       <ul className="space-y-2 mb-5 flex-1">
         {features.map(f => (

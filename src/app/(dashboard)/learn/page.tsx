@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { Zap, Sparkles, BookOpen, ChevronRight, Check, Compass } from 'lucide-react'
+import { Zap, Sparkles, BookOpen, ChevronRight, Check, Compass, Lock } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
+import { FREE_LESSON_IDS } from '@/lib/access'
 import {
   LESSON_LIST,
   TRACKS,
@@ -91,7 +92,7 @@ const COMBINED_MAP = Object.fromEntries(COMBINED_LIST.map(l => [l.id, l]))
 const courseLessonIds = new Set(COURSES.flatMap(c => c.modules.flatMap(m => m.lessonIds)))
 const STANDALONE_LIST = COMBINED_LIST.filter(l => !courseLessonIds.has(l.id))
 
-function LessonCard({ lesson, step, isCompleted }: { lesson: DisplayLesson; step?: number; isCompleted?: boolean }) {
+function LessonCard({ lesson, step, isCompleted, isLocked }: { lesson: DisplayLesson; step?: number; isCompleted?: boolean; isLocked?: boolean }) {
   const track = TRACK_MAP[lesson.track as TrackId]
   if (!track) return null
   return (
@@ -101,6 +102,7 @@ function LessonCard({ lesson, step, isCompleted }: { lesson: DisplayLesson; step
       style={{
         backgroundColor: BRAND.surface,
         border: `1px solid ${isCompleted ? `${BRAND.jade}50` : BRAND.border}`,
+        opacity: isLocked ? 0.7 : 1,
       }}
     >
       <div
@@ -137,6 +139,14 @@ function LessonCard({ lesson, step, isCompleted }: { lesson: DisplayLesson; step
             </span>
           </div>
           <div className="flex items-center gap-2">
+            {isLocked && (
+              <span
+                className="flex items-center gap-1 text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
+                style={{ backgroundColor: `${BRAND.textSubtle}18`, color: BRAND.textSubtle, border: `1px solid ${BRAND.border}` }}
+              >
+                <Lock size={8} /> Scholar
+              </span>
+            )}
             {isCompleted && (
               <span
                 className="flex items-center gap-1 text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
@@ -145,7 +155,7 @@ function LessonCard({ lesson, step, isCompleted }: { lesson: DisplayLesson; step
                 <Check size={8} strokeWidth={3} /> Done
               </span>
             )}
-            {lesson.isV2 && (
+            {lesson.isV2 && !isLocked && (
               <span
                 className="text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
                 style={{ backgroundColor: `${BRAND.accent}20`, color: BRAND.accent, border: `1px solid ${BRAND.accent}40` }}
@@ -194,6 +204,7 @@ function shortModuleLabel(title: string) {
 export default function LearnPage() {
   const [activeTrack, setActiveTrack] = useState<TrackId | 'all'>('all')
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set())
+  const [subscription, setSubscription] = useState<string>('free')
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
@@ -201,12 +212,18 @@ export default function LearnPage() {
     const supabase = createClient()
     supabase.auth.getUser().then(({ data: { user } }) => {
       if (!user) return
-      ;(supabase.from('user_lesson_progress') as any)
-        .select('lesson_id')
-        .eq('user_id', user.id)
-        .then(({ data }: { data: { lesson_id: string }[] | null }) => {
-          if (data) setCompletedIds(new Set(data.map(r => r.lesson_id)))
-        })
+      Promise.all([
+        (supabase.from('user_lesson_progress') as any)
+          .select('lesson_id')
+          .eq('user_id', user.id),
+        (supabase.from('profiles') as any)
+          .select('subscription')
+          .eq('id', user.id)
+          .single(),
+      ]).then(([progressRes, profileRes]: [{ data: { lesson_id: string }[] | null }, { data: { subscription?: string } | null }]) => {
+        if (progressRes.data) setCompletedIds(new Set(progressRes.data.map(r => r.lesson_id)))
+        if (profileRes.data?.subscription) setSubscription(profileRes.data.subscription)
+      })
     })
   }, [])
 
@@ -491,7 +508,13 @@ export default function LearnPage() {
                   {availableCount > 0 ? (
                     <div className="grid md:grid-cols-2 gap-3">
                       {moduleLessons.map((lesson, i) => (
-                        <LessonCard key={lesson.id} lesson={lesson} step={i + 1} isCompleted={completedIds.has(lesson.id)} />
+                        <LessonCard
+                          key={lesson.id}
+                          lesson={lesson}
+                          step={i + 1}
+                          isCompleted={completedIds.has(lesson.id)}
+                          isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
+                        />
                       ))}
                     </div>
                   ) : (
@@ -531,7 +554,12 @@ export default function LearnPage() {
           )}
           <div className="grid md:grid-cols-2 gap-3">
             {filteredStandalone.map(lesson => (
-              <LessonCard key={lesson.id} lesson={lesson} isCompleted={completedIds.has(lesson.id)} />
+              <LessonCard
+                key={lesson.id}
+                lesson={lesson}
+                isCompleted={completedIds.has(lesson.id)}
+                isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
+              />
             ))}
           </div>
         </div>

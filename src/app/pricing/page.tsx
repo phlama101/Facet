@@ -19,30 +19,28 @@ const COMPARISON: { heading: string; rows: { label: string; free: boolean | stri
   {
     heading: 'Content',
     rows: [
-      { label: 'GEOL 101 — Earth\'s Structure (26 lessons)', free: true, pro: true, expert: true },
-      { label: 'GEOL 201 — Earth Through Time (25 lessons)', free: false, pro: true, expert: true },
-      { label: 'All future courses on release',              free: false, pro: true, expert: true },
-      { label: 'Expert & PhD-level modules',                 free: false, pro: false, expert: true },
+      { label: 'GEOL 101 Modules 1.1 & 1.2 — 8 lessons', free: true,  pro: true,  expert: true  },
+      { label: 'Full GEOL 101 — all 5 modules (26 lessons)', free: false, pro: true,  expert: true  },
+      { label: 'GEOL 201 — Earth Through Time',            free: false, pro: true,  expert: true  },
+      { label: 'All future 100/200-level courses',         free: false, pro: true,  expert: true  },
+      { label: 'Expert & 300-level modules',               free: false, pro: false, expert: true  },
     ],
   },
   {
     heading: 'Learning System',
     rows: [
-      { label: 'Quizzes, XP & level progression', free: true, pro: true, expert: true },
-      { label: 'Achievement badges',               free: true, pro: true, expert: true },
-      { label: 'Progress dashboard',               free: true, pro: true, expert: true },
-      { label: 'Advanced labs & data exercises',   free: false, pro: true, expert: true },
-      { label: 'Global leaderboards',              free: false, pro: true, expert: true },
-      { label: 'Downloadable PDF study guides',    free: false, pro: true, expert: true },
+      { label: 'Quizzes, XP & level progression', free: true,  pro: true,  expert: true  },
+      { label: 'Achievement badges',               free: true,  pro: true,  expert: true  },
+      { label: 'Streak tracker & progress dashboard', free: true, pro: true, expert: true },
+      { label: 'Interactive labs & simulations',   free: false, pro: true,  expert: true  },
+      { label: 'Global leaderboards & rankings',   free: false, pro: true,  expert: true  },
     ],
   },
   {
     heading: 'Premium Access',
     rows: [
-      { label: 'Monthly live Q&A sessions',    free: false, pro: false, expert: true },
-      { label: 'Verified course certificates', free: false, pro: false, expert: true },
-      { label: 'Research paper library',       free: false, pro: false, expert: true },
-      { label: 'Early access to new courses',  free: false, pro: false, expert: true },
+      { label: 'Early access to new courses', free: false, pro: false, expert: true },
+      { label: 'Priority support',            free: false, pro: false, expert: true },
     ],
   },
 ]
@@ -61,7 +59,7 @@ const PLANS_UI = [
     ...PLANS.pro,
     accent: BRAND.accent,
     badge: 'Most Popular' as string | null,
-    cta: 'Start 7-Day Trial',
+    cta: 'Upgrade to Scholar',
     ctaHref: null as string | null,
     priceId: PLANS.pro.priceId ?? null,
   },
@@ -70,7 +68,7 @@ const PLANS_UI = [
     ...PLANS.expert,
     accent: BRAND.amethyst,
     badge: null as string | null,
-    cta: 'Start 7-Day Trial',
+    cta: 'Upgrade to Earth Scientist',
     ctaHref: null as string | null,
     priceId: PLANS.expert.priceId ?? null,
   },
@@ -81,15 +79,15 @@ const PLAN_ICONS = [BookOpen, FlaskConical, Microscope]
 const FAQ_ITEMS = [
   {
     q: 'What\'s included in the free plan?',
-    a: 'GEOL 101 — Earth\'s Structure — is fully available at no cost. That\'s 26 lessons across 5 modules plus a capstone exam, covering everything from Earth\'s internal layers to plate tectonics and landscape reading.',
+    a: 'GEOL 101 Modules 1.1 and 1.2 are fully available at no cost — 8 lessons covering Earth\'s internal structure and minerals. It\'s a complete introduction to the foundations of geology, with no card required.',
   },
   {
     q: 'Can I cancel my subscription at any time?',
     a: 'Yes. Paid plans are billed monthly with no lock-in. Cancel from your billing page at any time and you\'ll retain access until the end of your billing period.',
   },
   {
-    q: 'How does the 7-day free trial work?',
-    a: 'You\'ll get full access to your chosen plan immediately. Your card isn\'t charged until day 8. Cancel within 7 days and you owe nothing.',
+    q: 'What are interactive labs?',
+    a: 'Interactive labs are rich simulations built into lessons — drag-and-drop mineral sorters, plate tectonic simulators, rock cycle flow diagrams, and more. They\'re available in all Scholar and Earth Scientist lessons.',
   },
   {
     q: 'Where does the content come from?',
@@ -97,11 +95,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Will there be more courses beyond GEOL 101 and GEOL 201?',
-    a: 'Yes — we\'re building courses in Oceanography, Atmospheric Science, Volcanology, and Planetary Science. Geologist and Earth Scientist plans include all future courses as they launch.',
+    a: 'Yes — we\'re building courses in Oceanography, Atmospheric Science, Volcanology, and Planetary Science. Scholar and Earth Scientist plans include all future courses as they launch.',
   },
   {
-    q: 'What are certificates and how do I earn them?',
-    a: 'Earth Scientist subscribers who pass all modules in a course with 80%+ quiz scores receive a verified digital certificate. Certificates are issued after completing the final capstone exam.',
+    q: 'What\'s the difference between Scholar and Earth Scientist?',
+    a: 'Scholar unlocks the full course catalog — GEOL 101, GEOL 201, and all future 100/200-level courses. Earth Scientist adds expert 300-level modules, early access to courses before public launch, and priority support.',
   },
 ]
 
@@ -190,8 +188,8 @@ export default function PricingPage() {
             className="max-w-lg mx-auto leading-relaxed"
             style={{ fontSize: '16px', color: BRAND.textDim }}
           >
-            Start free with GEOL 101 — a complete 26-lesson course. Unlock the full
-            curriculum and advanced features with a paid plan. Free trial, no card required.
+            Start free with GEOL 101 Modules 1.1 & 1.2 — no card required. Unlock the
+            full curriculum and interactive labs with a paid plan.
           </p>
         </div>
 
@@ -243,7 +241,7 @@ export default function PricingPage() {
 
                 {plan.price > 0 && (
                   <p className="text-xs mb-5 -mt-1" style={{ color: BRAND.textSubtle }}>
-                    7-day free trial · Cancel anytime
+                    Cancel anytime · No lock-in
                   </p>
                 )}
 
@@ -472,7 +470,7 @@ export default function PricingPage() {
             Start learning for free
           </h2>
           <p className="max-w-md mx-auto text-sm leading-relaxed mb-6" style={{ color: BRAND.textDim }}>
-            GEOL 101 is completely free — no card, no trial. Begin your first lesson in seconds.
+            GEOL 101 Modules 1.1 & 1.2 are completely free — no card required. Begin your first lesson in seconds.
           </p>
           <Link
             href="/register"

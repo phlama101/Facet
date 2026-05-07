@@ -45,9 +45,12 @@ export default async function SkillTreePage() {
 
   const geol101Pct = coursePct(GEOL_101_MODULES)
   const geol201Pct = coursePct(GEOL_201_MODULES)
+  const subscription = profile.subscription ?? 'free'
 
-  // GEOL 201 is locked if GEOL 101 < 80% complete
-  const geol201Locked = geol101Pct < 80
+  // GEOL 201 requires Scholar plan + 80% completion of GEOL 101
+  const geol201LockedBySubscription = subscription === 'free'
+  const geol201LockedByProgress = geol101Pct < 80
+  const geol201Locked = geol201LockedBySubscription || geol201LockedByProgress
 
   return (
     <div className="space-y-8 animate-fade-in">
@@ -82,7 +85,11 @@ export default async function SkillTreePage() {
         completed={completed}
         coursePct={geol201Pct}
         locked={geol201Locked}
-        lockReason="Complete 80% of GEOL 101 to unlock"
+        lockReason={
+          geol201LockedBySubscription
+            ? 'Scholar plan required — upgrade to unlock'
+            : 'Complete 80% of GEOL 101 to unlock'
+        }
       />
     </div>
   )
