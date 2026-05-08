@@ -32,6 +32,11 @@ export const FREE_LESSON_IDS = new Set([
   'clim-101-1-1-2',
   'clim-101-1-1-3',
   'clim-101-1-1-4',
+  // ASTR 101 Module 1.1 — Solar System Formation
+  'astr-101-1-1-1',
+  'astr-101-1-1-2',
+  'astr-101-1-1-3',
+  'astr-101-1-1-4',
 ])
 
 export function canAccessLesson(lessonId: string, subscription: string | null | undefined): boolean {

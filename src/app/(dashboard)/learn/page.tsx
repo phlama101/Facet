@@ -15,6 +15,7 @@ import {
   ATMO_101_MODULES,
   VOLC_101_MODULES,
   CLIM_101_MODULES,
+  ASTR_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
@@ -97,6 +98,15 @@ const COURSES: Course[] = [
     track: 'cli',
     modules: CLIM_101_MODULES,
     color: BRAND.jade,
+  },
+  {
+    id: 'astr-101',
+    code: 'ASTR 101',
+    title: 'Introduction to Planetary Science',
+    subtitle: 'Solar system formation, terrestrial and giant planets, moons, small bodies, and the search for life.',
+    track: 'ast',
+    modules: ASTR_101_MODULES,
+    color: BRAND.amethyst,
   },
 ]
 
