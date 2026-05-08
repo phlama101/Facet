@@ -87,6 +87,10 @@ import iceAgesAndMilankovitch      from './clim-101-1-2-1'
 import abruptClimateChange         from './clim-101-1-2-2'
 import holoceneAndLIA              from './clim-101-1-2-3'
 import deepTimeClimate             from './clim-101-1-2-4'
+import observedWarming             from './clim-101-1-3-1'
+import seaLevelRise                from './clim-101-1-3-2'
+import climateImpacts              from './clim-101-1-3-3'
+import mitigationAdaptation        from './clim-101-1-3-4'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -185,6 +189,10 @@ export const LESSONS: Record<string, Lesson> = {
   'clim-101-1-2-2':          abruptClimateChange,
   'clim-101-1-2-3':          holoceneAndLIA,
   'clim-101-1-2-4':          deepTimeClimate,
+  'clim-101-1-3-1':          observedWarming,
+  'clim-101-1-3-2':          seaLevelRise,
+  'clim-101-1-3-3':          climateImpacts,
+  'clim-101-1-3-4':          mitigationAdaptation,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -356,6 +364,11 @@ export const CLIM_101_MODULES: CourseModule[] = [
     id: 'clim-101-m1-2',
     title: 'Module 1.2 — Climate History',
     lessonIds: ['clim-101-1-2-1', 'clim-101-1-2-2', 'clim-101-1-2-3', 'clim-101-1-2-4'],
+  },
+  {
+    id: 'clim-101-m1-3',
+    title: 'Module 1.3 — Modern Climate Change',
+    lessonIds: ['clim-101-1-3-1', 'clim-101-1-3-2', 'clim-101-1-3-3', 'clim-101-1-3-4'],
   },
 ]
 
