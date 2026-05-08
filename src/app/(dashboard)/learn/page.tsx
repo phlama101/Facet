@@ -14,6 +14,7 @@ import {
   OCEA_101_MODULES,
   ATMO_101_MODULES,
   VOLC_101_MODULES,
+  CLIM_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
@@ -87,6 +88,15 @@ const COURSES: Course[] = [
     track: 'vol',
     modules: VOLC_101_MODULES,
     color: BRAND.ruby,
+  },
+  {
+    id: 'clim-101',
+    code: 'CLIM 101',
+    title: 'Introduction to Climate Science',
+    subtitle: 'The climate system, atmospheric and ocean circulation, the carbon cycle, paleoclimate, and modern climate change.',
+    track: 'cli',
+    modules: CLIM_101_MODULES,
+    color: BRAND.jade,
   },
 ]
 
