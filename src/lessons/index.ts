@@ -75,6 +75,10 @@ import eruptionClassification      from './volc-101-1-2-1'
 import effusiveEruptions           from './volc-101-1-2-2'
 import explosiveEruptions          from './volc-101-1-2-3'
 import volcanicGases               from './volc-101-1-2-4'
+import laharsHydrologicalHazards   from './volc-101-1-3-1'
+import volcanicTsunamis            from './volc-101-1-3-2'
+import volcanicWinter              from './volc-101-1-3-3'
+import volcanicMonitoring          from './volc-101-1-3-4'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -161,6 +165,10 @@ export const LESSONS: Record<string, Lesson> = {
   'volc-101-1-2-2':          effusiveEruptions,
   'volc-101-1-2-3':          explosiveEruptions,
   'volc-101-1-2-4':          volcanicGases,
+  'volc-101-1-3-1':          laharsHydrologicalHazards,
+  'volc-101-1-3-2':          volcanicTsunamis,
+  'volc-101-1-3-3':          volcanicWinter,
+  'volc-101-1-3-4':          volcanicMonitoring,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -314,6 +322,11 @@ export const VOLC_101_MODULES: CourseModule[] = [
     id: 'volc-101-m1-2',
     title: 'Module 1.2 — Eruption Styles',
     lessonIds: ['volc-101-1-2-1', 'volc-101-1-2-2', 'volc-101-1-2-3', 'volc-101-1-2-4'],
+  },
+  {
+    id: 'volc-101-m1-3',
+    title: 'Module 1.3 — Volcanic Hazards',
+    lessonIds: ['volc-101-1-3-1', 'volc-101-1-3-2', 'volc-101-1-3-3', 'volc-101-1-3-4'],
   },
 ]
 
