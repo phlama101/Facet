@@ -63,6 +63,10 @@ import atmosphereLayers            from './atmo-101-1-1-1'
 import atmosphereComposition       from './atmo-101-1-1-2'
 import solarRadiation              from './atmo-101-1-1-3'
 import greenhouseEffect            from './atmo-101-1-1-4'
+import airMassesFronts             from './atmo-101-1-2-1'
+import midLatitudeCyclone          from './atmo-101-1-2-2'
+import thunderstorms               from './atmo-101-1-2-3'
+import tropicalCyclones            from './atmo-101-1-2-4'
 import marineEcosystems            from './ocea-101-1-3-1'
 import phytoplanktonProduction     from './ocea-101-1-3-2'
 import coralReefs                  from './ocea-101-1-3-3'
@@ -129,6 +133,10 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-101-1-1-2':          atmosphereComposition,
   'atmo-101-1-1-3':          solarRadiation,
   'atmo-101-1-1-4':          greenhouseEffect,
+  'atmo-101-1-2-1':          airMassesFronts,
+  'atmo-101-1-2-2':          midLatitudeCyclone,
+  'atmo-101-1-2-3':          thunderstorms,
+  'atmo-101-1-2-4':          tropicalCyclones,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -259,6 +267,11 @@ export const ATMO_101_MODULES: CourseModule[] = [
     id: 'atmo-101-m1-1',
     title: 'Module 1.1 — Structure of the Atmosphere',
     lessonIds: ['atmo-101-1-1-1', 'atmo-101-1-1-2', 'atmo-101-1-1-3', 'atmo-101-1-1-4'],
+  },
+  {
+    id: 'atmo-101-m1-2',
+    title: 'Module 1.2 — Weather Systems',
+    lessonIds: ['atmo-101-1-2-1', 'atmo-101-1-2-2', 'atmo-101-1-2-3', 'atmo-101-1-2-4'],
   },
 ]
 
