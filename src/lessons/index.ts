@@ -95,6 +95,10 @@ import solarSystemFormation        from './astr-101-1-1-1'
 import differentiationLHB          from './astr-101-1-1-2'
 import theSun                      from './astr-101-1-1-3'
 import comparativePlanetology      from './astr-101-1-1-4'
+import mercuryAndVenus             from './astr-101-1-2-1'
+import marsGeology                 from './astr-101-1-2-2'
+import theMoon                     from './astr-101-1-2-3'
+import asteroidsAndMeteorites      from './astr-101-1-2-4'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -201,6 +205,10 @@ export const LESSONS: Record<string, Lesson> = {
   'astr-101-1-1-2':          differentiationLHB,
   'astr-101-1-1-3':          theSun,
   'astr-101-1-1-4':          comparativePlanetology,
+  'astr-101-1-2-1':          mercuryAndVenus,
+  'astr-101-1-2-2':          marsGeology,
+  'astr-101-1-2-3':          theMoon,
+  'astr-101-1-2-4':          asteroidsAndMeteorites,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -385,6 +393,11 @@ export const ASTR_101_MODULES: CourseModule[] = [
     id: 'astr-101-m1-1',
     title: 'Module 1.1 — Solar System Formation',
     lessonIds: ['astr-101-1-1-1', 'astr-101-1-1-2', 'astr-101-1-1-3', 'astr-101-1-1-4'],
+  },
+  {
+    id: 'astr-101-m1-2',
+    title: 'Module 1.2 — Terrestrial Worlds',
+    lessonIds: ['astr-101-1-2-1', 'astr-101-1-2-2', 'astr-101-1-2-3', 'astr-101-1-2-4'],
   },
 ]
 
