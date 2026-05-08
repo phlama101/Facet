@@ -12,6 +12,7 @@ import {
   GEOL_101_MODULES,
   GEOL_201_MODULES,
   OCEA_101_MODULES,
+  ATMO_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
@@ -67,6 +68,15 @@ const COURSES: Course[] = [
     track: 'oce',
     modules: OCEA_101_MODULES,
     color: BRAND.accent,
+  },
+  {
+    id: 'atmo-101',
+    code: 'ATMO 101',
+    title: 'Introduction to Meteorology',
+    subtitle: 'Atmospheric structure, composition, solar energy budget, the greenhouse effect, weather systems, and precipitation.',
+    track: 'atm',
+    modules: ATMO_101_MODULES,
+    color: BRAND.gold,
   },
 ]
 

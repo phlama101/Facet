@@ -1,5 +1,4 @@
-// Free tier: GEOL 101 M1.1 + M1.2 (8 geology lessons), OCEA 101 M1.1 (4 ocean basin lessons),
-// plus beginner minerals interactive lesson.
+// Free tier: GEOL 101 M1.1 + M1.2, OCEA 101 M1.1, ATMO 101 M1.1, plus beginner minerals interactive.
 export const FREE_LESSON_IDS = new Set([
   // GEOL 101 Module 1.1 — Earth's Internal Structure
   'geol-101-1-1',
@@ -18,6 +17,11 @@ export const FREE_LESSON_IDS = new Set([
   'ocea-101-1-1-2',
   'ocea-101-1-1-3',
   'ocea-101-1-1-4',
+  // ATMO 101 Module 1.1 — Structure of the Atmosphere
+  'atmo-101-1-1-1',
+  'atmo-101-1-1-2',
+  'atmo-101-1-1-3',
+  'atmo-101-1-1-4',
 ])
 
 export function canAccessLesson(lessonId: string, subscription: string | null | undefined): boolean {

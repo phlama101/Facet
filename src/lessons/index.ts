@@ -59,6 +59,10 @@ import seawaterSalinity            from './ocea-101-1-2-1'
 import oceanDensityStructure       from './ocea-101-1-2-2'
 import oceanCirculation            from './ocea-101-1-2-3'
 import wavesAndTides               from './ocea-101-1-2-4'
+import atmosphereLayers            from './atmo-101-1-1-1'
+import atmosphereComposition       from './atmo-101-1-1-2'
+import solarRadiation              from './atmo-101-1-1-3'
+import greenhouseEffect            from './atmo-101-1-1-4'
 import marineEcosystems            from './ocea-101-1-3-1'
 import phytoplanktonProduction     from './ocea-101-1-3-2'
 import coralReefs                  from './ocea-101-1-3-3'
@@ -121,6 +125,10 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-2-2':          oceanDensityStructure,
   'ocea-101-1-2-3':          oceanCirculation,
   'ocea-101-1-2-4':          wavesAndTides,
+  'atmo-101-1-1-1':          atmosphereLayers,
+  'atmo-101-1-1-2':          atmosphereComposition,
+  'atmo-101-1-1-3':          solarRadiation,
+  'atmo-101-1-1-4':          greenhouseEffect,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -243,6 +251,14 @@ export const OCEA_101_MODULES: CourseModule[] = [
     id: 'ocea-101-m1-3',
     title: 'Module 1.3 — Marine Biology',
     lessonIds: ['ocea-101-1-3-1', 'ocea-101-1-3-2', 'ocea-101-1-3-3', 'ocea-101-1-3-4'],
+  },
+]
+
+export const ATMO_101_MODULES: CourseModule[] = [
+  {
+    id: 'atmo-101-m1-1',
+    title: 'Module 1.1 — Structure of the Atmosphere',
+    lessonIds: ['atmo-101-1-1-1', 'atmo-101-1-1-2', 'atmo-101-1-1-3', 'atmo-101-1-1-4'],
   },
 ]
 
