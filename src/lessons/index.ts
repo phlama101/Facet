@@ -71,6 +71,10 @@ import originOfMagma              from './volc-101-1-1-1'
 import magmaComposition           from './volc-101-1-1-2'
 import intrusiveBodies            from './volc-101-1-1-3'
 import volcanicLandformsLesson    from './volc-101-1-1-4'
+import eruptionClassification      from './volc-101-1-2-1'
+import effusiveEruptions           from './volc-101-1-2-2'
+import explosiveEruptions          from './volc-101-1-2-3'
+import volcanicGases               from './volc-101-1-2-4'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -153,6 +157,10 @@ export const LESSONS: Record<string, Lesson> = {
   'volc-101-1-1-2':          magmaComposition,
   'volc-101-1-1-3':          intrusiveBodies,
   'volc-101-1-1-4':          volcanicLandformsLesson,
+  'volc-101-1-2-1':          eruptionClassification,
+  'volc-101-1-2-2':          effusiveEruptions,
+  'volc-101-1-2-3':          explosiveEruptions,
+  'volc-101-1-2-4':          volcanicGases,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -301,6 +309,11 @@ export const VOLC_101_MODULES: CourseModule[] = [
     id: 'volc-101-m1-1',
     title: 'Module 1.1 — Magma and Volcanism',
     lessonIds: ['volc-101-1-1-1', 'volc-101-1-1-2', 'volc-101-1-1-3', 'volc-101-1-1-4'],
+  },
+  {
+    id: 'volc-101-m1-2',
+    title: 'Module 1.2 — Eruption Styles',
+    lessonIds: ['volc-101-1-2-1', 'volc-101-1-2-2', 'volc-101-1-2-3', 'volc-101-1-2-4'],
   },
 ]
 
