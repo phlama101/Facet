@@ -11,6 +11,7 @@ import type { Profile } from '@/types'
 const NAV_TABS = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/learn',     label: 'Learn' },
+  { href: '/atlas',     label: 'Atlas' },
   { href: '/profile',   label: 'Profile' },
   { href: '/billing',   label: 'Billing' },
   { href: '/sources',   label: 'Sources' },
