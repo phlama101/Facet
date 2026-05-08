@@ -22,6 +22,11 @@ export const FREE_LESSON_IDS = new Set([
   'atmo-101-1-1-2',
   'atmo-101-1-1-3',
   'atmo-101-1-1-4',
+  // VOLC 101 Module 1.1 — Magma and Volcanism
+  'volc-101-1-1-1',
+  'volc-101-1-1-2',
+  'volc-101-1-1-3',
+  'volc-101-1-1-4',
 ])
 
 export function canAccessLesson(lessonId: string, subscription: string | null | undefined): boolean {

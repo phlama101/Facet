@@ -13,6 +13,7 @@ import {
   GEOL_201_MODULES,
   OCEA_101_MODULES,
   ATMO_101_MODULES,
+  VOLC_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
@@ -77,6 +78,15 @@ const COURSES: Course[] = [
     track: 'atm',
     modules: ATMO_101_MODULES,
     color: BRAND.gold,
+  },
+  {
+    id: 'volc-101',
+    code: 'VOLC 101',
+    title: 'Introduction to Volcanology',
+    subtitle: 'Magma origin, composition, volcanic landforms, eruption styles, pyroclastic flows, and volcanic hazards.',
+    track: 'vol',
+    modules: VOLC_101_MODULES,
+    color: BRAND.ruby,
   },
 ]
 

@@ -67,6 +67,10 @@ import airMassesFronts             from './atmo-101-1-2-1'
 import midLatitudeCyclone          from './atmo-101-1-2-2'
 import thunderstorms               from './atmo-101-1-2-3'
 import tropicalCyclones            from './atmo-101-1-2-4'
+import originOfMagma              from './volc-101-1-1-1'
+import magmaComposition           from './volc-101-1-1-2'
+import intrusiveBodies            from './volc-101-1-1-3'
+import volcanicLandformsLesson    from './volc-101-1-1-4'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -145,6 +149,10 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-101-1-3-2':          precipitation,
   'atmo-101-1-3-3':          atmosphericStability,
   'atmo-101-1-3-4':          weatherPrediction,
+  'volc-101-1-1-1':          originOfMagma,
+  'volc-101-1-1-2':          magmaComposition,
+  'volc-101-1-1-3':          intrusiveBodies,
+  'volc-101-1-1-4':          volcanicLandformsLesson,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -285,6 +293,14 @@ export const ATMO_101_MODULES: CourseModule[] = [
     id: 'atmo-101-m1-3',
     title: 'Module 1.3 — Clouds, Precipitation, and Forecasting',
     lessonIds: ['atmo-101-1-3-1', 'atmo-101-1-3-2', 'atmo-101-1-3-3', 'atmo-101-1-3-4'],
+  },
+]
+
+export const VOLC_101_MODULES: CourseModule[] = [
+  {
+    id: 'volc-101-m1-1',
+    title: 'Module 1.1 — Magma and Volcanism',
+    lessonIds: ['volc-101-1-1-1', 'volc-101-1-1-2', 'volc-101-1-1-3', 'volc-101-1-1-4'],
   },
 ]
 
