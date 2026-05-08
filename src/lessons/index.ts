@@ -59,6 +59,10 @@ import seawaterSalinity            from './ocea-101-1-2-1'
 import oceanDensityStructure       from './ocea-101-1-2-2'
 import oceanCirculation            from './ocea-101-1-2-3'
 import wavesAndTides               from './ocea-101-1-2-4'
+import marineEcosystems            from './ocea-101-1-3-1'
+import phytoplanktonProduction     from './ocea-101-1-3-2'
+import coralReefs                  from './ocea-101-1-3-3'
+import polarOceans                 from './ocea-101-1-3-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -117,6 +121,10 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-2-2':          oceanDensityStructure,
   'ocea-101-1-2-3':          oceanCirculation,
   'ocea-101-1-2-4':          wavesAndTides,
+  'ocea-101-1-3-1':          marineEcosystems,
+  'ocea-101-1-3-2':          phytoplanktonProduction,
+  'ocea-101-1-3-3':          coralReefs,
+  'ocea-101-1-3-4':          polarOceans,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -230,6 +238,11 @@ export const OCEA_101_MODULES: CourseModule[] = [
     id: 'ocea-101-m1-2',
     title: 'Module 1.2 — Seawater and Ocean Structure',
     lessonIds: ['ocea-101-1-2-1', 'ocea-101-1-2-2', 'ocea-101-1-2-3', 'ocea-101-1-2-4'],
+  },
+  {
+    id: 'ocea-101-m1-3',
+    title: 'Module 1.3 — Marine Biology',
+    lessonIds: ['ocea-101-1-3-1', 'ocea-101-1-3-2', 'ocea-101-1-3-3', 'ocea-101-1-3-4'],
   },
 ]
 

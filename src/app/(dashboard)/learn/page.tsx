@@ -63,7 +63,7 @@ const COURSES: Course[] = [
     id: 'ocea-101',
     code: 'OCEA 101',
     title: 'Introduction to Oceanography',
-    subtitle: 'The ocean basin, seawater chemistry, circulation, waves, and deep-sea ecosystems.',
+    subtitle: 'The ocean basin, seawater chemistry, circulation, waves, marine biology, and polar ecosystems.',
     track: 'oce',
     modules: OCEA_101_MODULES,
     color: BRAND.accent,
