@@ -133,29 +133,20 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
                 {/* Lesson connection */}
                 {isOn && !locked && (
                   <div style={{ borderTop: `1px solid ${BRAND.border}` }}>
-                    {layer.linkedLessonId ? (
-                      <Link
-                        href={`/learn/${layer.linkedLessonId}`}
-                        className="flex items-center gap-2 px-3 py-2 transition-colors hover:opacity-80"
-                        style={{ backgroundColor: hasLesson ? `${BRAND.jade}08` : 'transparent' }}
+                    <Link
+                      href={`/learn/${layer.linkedLessonId}`}
+                      className="flex items-center gap-2 px-3 py-2 transition-colors hover:opacity-80"
+                      style={{ backgroundColor: hasLesson ? `${BRAND.jade}08` : 'transparent' }}
+                    >
+                      <BookOpen size={9} color={hasLesson ? BRAND.jade : BRAND.textSubtle} />
+                      <span
+                        className="text-[9px] tracking-[0.1em] uppercase truncate flex-1"
+                        style={{ color: hasLesson ? BRAND.jade : BRAND.textSubtle }}
                       >
-                        <BookOpen size={9} color={hasLesson ? BRAND.jade : BRAND.textSubtle} />
-                        <span
-                          className="text-[9px] tracking-[0.1em] uppercase truncate flex-1"
-                          style={{ color: hasLesson ? BRAND.jade : BRAND.textSubtle }}
-                        >
-                          {layer.linkedLessonLabel}
-                        </span>
-                        <ChevronRight size={9} color={BRAND.textSubtle} />
-                      </Link>
-                    ) : (
-                      <div className="flex items-center gap-2 px-3 py-2">
-                        <BookOpen size={9} color={BRAND.textSubtle} />
-                        <span className="text-[9px] tracking-[0.1em] uppercase" style={{ color: BRAND.textSubtle }}>
-                          {layer.linkedLessonLabel}
-                        </span>
-                      </div>
-                    )}
+                        {layer.linkedLessonLabel}
+                      </span>
+                      <ChevronRight size={9} color={BRAND.textSubtle} />
+                    </Link>
                   </div>
                 )}
 

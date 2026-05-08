@@ -509,8 +509,8 @@ export const ATLAS_LAYERS = [
     label: 'Ocean Currents',
     description: 'Major warm and cold surface current systems',
     requiresSubscription: true,
-    linkedLessonId: null,
-    linkedLessonLabel: 'OCEA 101 — Coming Soon',
+    linkedLessonId: 'ocea-101-1-2-3',
+    linkedLessonLabel: 'OCEA 101 · 1.2.3 — Ocean Circulation',
   },
   {
     id: 'hotspots',

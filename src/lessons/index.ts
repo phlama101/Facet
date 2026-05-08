@@ -51,6 +51,14 @@ import structuralGeology           from './geol-201-2-5-2'
 import stratigraphicSections       from './geol-201-2-5-3'
 import rockMineralIdentification   from './geol-201-2-5-4'
 import geol201Capstone             from './geol-201-capstone'
+import oceanFloorGeography         from './ocea-101-1-1-1'
+import midOceanRidges              from './ocea-101-1-1-2'
+import oceanTrenches               from './ocea-101-1-1-3'
+import seafloorSediments           from './ocea-101-1-1-4'
+import seawaterSalinity            from './ocea-101-1-2-1'
+import oceanDensityStructure       from './ocea-101-1-2-2'
+import oceanCirculation            from './ocea-101-1-2-3'
+import wavesAndTides               from './ocea-101-1-2-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -101,6 +109,14 @@ export const LESSONS: Record<string, Lesson> = {
   'geol-201-2-5-3':          stratigraphicSections,
   'geol-201-2-5-4':          rockMineralIdentification,
   'geol-201-capstone':       geol201Capstone,
+  'ocea-101-1-1-1':          oceanFloorGeography,
+  'ocea-101-1-1-2':          midOceanRidges,
+  'ocea-101-1-1-3':          oceanTrenches,
+  'ocea-101-1-1-4':          seafloorSediments,
+  'ocea-101-1-2-1':          seawaterSalinity,
+  'ocea-101-1-2-2':          oceanDensityStructure,
+  'ocea-101-1-2-3':          oceanCirculation,
+  'ocea-101-1-2-4':          wavesAndTides,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -201,6 +217,19 @@ export const GEOL_201_MODULES: CourseModule[] = [
     id: 'geol-201-capstone',
     title: 'GEOL 201 Final Exam',
     lessonIds: ['geol-201-capstone'],
+  },
+]
+
+export const OCEA_101_MODULES: CourseModule[] = [
+  {
+    id: 'ocea-101-m1-1',
+    title: 'Module 1.1 — The Ocean Basin',
+    lessonIds: ['ocea-101-1-1-1', 'ocea-101-1-1-2', 'ocea-101-1-1-3', 'ocea-101-1-1-4'],
+  },
+  {
+    id: 'ocea-101-m1-2',
+    title: 'Module 1.2 — Seawater and Ocean Structure',
+    lessonIds: ['ocea-101-1-2-1', 'ocea-101-1-2-2', 'ocea-101-1-2-3', 'ocea-101-1-2-4'],
   },
 ]
 

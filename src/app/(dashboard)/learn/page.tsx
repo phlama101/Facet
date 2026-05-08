@@ -11,6 +11,7 @@ import {
   TRACK_MAP,
   GEOL_101_MODULES,
   GEOL_201_MODULES,
+  OCEA_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
@@ -57,6 +58,15 @@ const COURSES: Course[] = [
     track: 'geo',
     modules: GEOL_201_MODULES,
     color: BRAND.amethyst,
+  },
+  {
+    id: 'ocea-101',
+    code: 'OCEA 101',
+    title: 'Introduction to Oceanography',
+    subtitle: 'The ocean basin, seawater chemistry, circulation, waves, and deep-sea ecosystems.',
+    track: 'oce',
+    modules: OCEA_101_MODULES,
+    color: BRAND.accent,
   },
 ]
 
