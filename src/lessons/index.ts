@@ -67,6 +67,10 @@ import airMassesFronts             from './atmo-101-1-2-1'
 import midLatitudeCyclone          from './atmo-101-1-2-2'
 import thunderstorms               from './atmo-101-1-2-3'
 import tropicalCyclones            from './atmo-101-1-2-4'
+import cloudFormation              from './atmo-101-1-3-1'
+import precipitation               from './atmo-101-1-3-2'
+import atmosphericStability        from './atmo-101-1-3-3'
+import weatherPrediction           from './atmo-101-1-3-4'
 import marineEcosystems            from './ocea-101-1-3-1'
 import phytoplanktonProduction     from './ocea-101-1-3-2'
 import coralReefs                  from './ocea-101-1-3-3'
@@ -137,6 +141,10 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-101-1-2-2':          midLatitudeCyclone,
   'atmo-101-1-2-3':          thunderstorms,
   'atmo-101-1-2-4':          tropicalCyclones,
+  'atmo-101-1-3-1':          cloudFormation,
+  'atmo-101-1-3-2':          precipitation,
+  'atmo-101-1-3-3':          atmosphericStability,
+  'atmo-101-1-3-4':          weatherPrediction,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -272,6 +280,11 @@ export const ATMO_101_MODULES: CourseModule[] = [
     id: 'atmo-101-m1-2',
     title: 'Module 1.2 — Weather Systems',
     lessonIds: ['atmo-101-1-2-1', 'atmo-101-1-2-2', 'atmo-101-1-2-3', 'atmo-101-1-2-4'],
+  },
+  {
+    id: 'atmo-101-m1-3',
+    title: 'Module 1.3 — Clouds, Precipitation, and Forecasting',
+    lessonIds: ['atmo-101-1-3-1', 'atmo-101-1-3-2', 'atmo-101-1-3-3', 'atmo-101-1-3-4'],
   },
 ]
 
