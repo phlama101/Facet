@@ -2,72 +2,120 @@ import { Telescope, Globe, Wind } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
-const lesson: Lesson = {
+const differentiationAccretionAndLHB: Lesson = {
   id: 'astr-101-1-1-2',
   title: 'Differentiation, Accretion, and the Late Heavy Bombardment',
-  description: 'How planets separated into layered interiors, how the Moon formed, and the violent episode of impacts that reshaped the inner Solar System roughly 600–800 million years after formation.',
   track: 'ast',
   trackName: 'Planetary Science',
-  xpReward: 140,
   level: 'Beginner',
-  type: 'concept',
-  icon: Globe,
-  color: BRAND.amethyst,
-  cards: [
-    {
-      title: 'Planetary Differentiation and Core Formation',
-      body: `When a planet accretes enough mass, the energy released by infalling material and the decay of short-lived radionuclides (especially ²⁶Al) raises interior temperatures above the **iron melting point** (~1,200–1,500 °C at relevant pressures). Once iron melts, its high density (7,900 kg/m³ vs ~3,000 kg/m³ for silicate) causes it to sink through a partially molten silicate **magma ocean**, segregating into a metallic core — a process called **differentiation**.\n\nDifferentiation has profound consequences:\n1. **Siderophile element depletion:** Iron-loving elements (Ni, Co, Ir, Pt, Au) are stripped from the mantle as iron sinks. Earth's upper mantle contains ~50× more platinum-group elements (PGEs) than differentiation models predict — the **late veneer hypothesis** proposes that a small fraction of chondritic material was accreted after core formation, adding the observed PGE excess.\n2. **Core structure:** Earth's core has a liquid outer core (convecting, generating the geomagnetic field) and a solid inner core (solidifying over geologic time as the planet cools). Mars and the Moon have largely solidified cores, explaining their weak or absent dipole fields.\n3. **Radiometric dating of differentiation:** The Hf-W system (¹⁸²Hf → ¹⁸²W, t½ = 9 Myr) places Earth's core formation within ~30 Myr of Solar System formation.`,
-      icon: Globe,
-      color: BRAND.amethyst,
-    },
-    {
-      title: 'The Giant Impact and Formation of the Moon',
-      body: `The leading hypothesis for lunar origin is the **Giant Impact (Theia hypothesis):** approximately 50–100 Myr after Solar System formation, a Mars-sized protoplanet (Theia) collided with the proto-Earth at a glancing angle. The impact vaporised and ejected a large mass of material into Earth orbit, which rapidly coalesced into the Moon.\n\nEvidence supporting the Giant Impact:\n• **Earth-Moon isotopic similarity:** Apollo samples show that Earth and Moon share near-identical oxygen, titanium, silicon, and chromium isotope ratios — unlike nearly all meteorite classes. A glancing impact would have mixed Earth and Theia material thoroughly.\n• **Lunar iron depletion:** The Moon has a small core (~20 % by mass vs ~30 % for Earth), consistent with the impactor's iron having already differentiated into a core and remaining bound to Earth after impact.\n• **Angular momentum:** The Earth-Moon system's total angular momentum matches simulations of high-energy oblique impacts.\n• **Volatile depletion:** The Moon is strongly depleted in volatile elements (K, Na, water), consistent with the extreme temperatures (~4,000 K) of the impact plume.\n\nRemaining puzzles include the near-perfect isotopic match between Earth and Moon (suggesting either the impactor had Earth-like composition, or post-impact equilibration homogenised the reservoir).`,
-      icon: Telescope,
-      color: BRAND.amethyst,
-    },
-    {
-      title: 'The Late Heavy Bombardment',
-      body: `Lunar samples returned by Apollo missions (1969–1972) showed a clustering of impact-reset ages between ~3.8–4.1 Ga — far too young to represent the tail end of normal accretion. This observation, combined with the high density of lunar craters, led to the **Late Heavy Bombardment (LHB)** hypothesis: a cataclysmic spike in impact rate ~600–700 Myr after Solar System formation.\n\nThe **Nice model** (named after the Côte d'Azur Observatory) provides a dynamical explanation: gravitational interactions between Jupiter and Saturn caused them to cross a mutual orbital resonance, destabilising the orbits of Uranus and Neptune and scattering a vast reservoir of outer Solar System bodies inward. This resonance crossing sent a flood of icy planetesimals (and Kuiper Belt objects) into the inner Solar System, producing the LHB.\n\n**Biological significance:** The LHB ended just before the earliest evidence for life on Earth (~3.7–4.0 Ga). Whether the bombardment repeatedly sterilised early life (making Earth's life a rare survivor) or delivered water and organics that helped initiate life is debated. Deep-sea hydrothermal vent communities might have survived as refugia.\n\n**Revision of the LHB:** More recent crater chronology work suggests the apparent spike may partly reflect a statistical bias — most datable craters on the Moon cluster in one or two large impact basins (Imbrium, Serenitatis) that reset the radiometric clock widely. The true bombardment history may have been a more gradual decline from the end of accretion.`,
-      icon: Wind,
-      color: BRAND.amethyst,
-    },
+  duration: '11 min',
+  xpReward: 140,
+  description: 'How planets separated into layered interiors, how the Moon formed, and the violent episode of impacts that reshaped the inner Solar System ~600–800 Myr after formation.',
+  sources: [
+    { org: 'NASA',     title: 'NASA Lunar and Planetary Institute — Giant Impact Hypothesis and Lunar Formation',       url: 'https://www.lpi.usra.edu/lunar/missions/apollo/' },
+    { org: 'NASA',     title: 'NASA Solar System Exploration — The Late Heavy Bombardment and Solar System History',   url: 'https://solarsystem.nasa.gov/' },
+    { org: 'OpenStax', title: 'Astronomy 2e — Planetary Evolution and Impact History (CC-BY 4.0)',                     url: 'https://openstax.org/books/astronomy-2e/pages/1-introduction' },
+    { org: 'USGS',     title: 'USGS Astrogeology — Planetary Differentiation and Core Formation',                     url: 'https://astrogeology.usgs.gov/' },
+    { org: 'AGI',      title: 'Glossary of Geology — Differentiation, Late Heavy Bombardment, Nice Model',            url: 'https://www.americangeosciences.org/' },
   ],
-  quiz: [
+  sections: [
     {
-      question: 'Earth\'s upper mantle contains ~50× more platinum-group elements (PGEs) than expected after iron differentiated into the core. The late veneer hypothesis explains this by proposing:',
-      options: [
-        'A small fraction of chondritic material (comets, asteroids) accreted after core formation, adding PGEs to the mantle before they could be stripped into the core',
-        'PGEs are incompatible with iron and were rejected from the core as it solidified, re-enriching the mantle over time',
-        'Earth\'s mantle partially re-melted after core formation, allowing PGEs to remigrate upward from the core-mantle boundary',
-        'The Hf-W chronometer indicates core formation was incomplete, leaving PGEs partially in the mantle',
+      type: 'intro',
+      title: 'From undifferentiated rock to layered worlds',
+      body: `When a planetary embryo first forms from accreting planetesimals, it is broadly homogeneous — a jumble of rock, metal, and ice with no internal structure. But accretion releases enormous energy: every infalling chunk of rock converts its gravitational potential energy into heat on impact, and short-lived radioactive isotopes — particularly ²⁶Al (half-life 0.72 Myr) and ⁶⁰Fe (half-life 2.6 Myr) — provide additional heat from within. Given enough mass and the right timing of formation, this heat is sufficient to melt rock and iron, allowing gravity to sort materials by density in a process called **planetary differentiation**: dense iron-nickel metal sinks to the centre to form a core, while lighter silicate minerals rise to form a mantle and crust. The result is the layered interior structure we observe in every rocky world in the Solar System, from Mercury to the Moon.
+
+Differentiation happened fast — on timescales of just tens of millions of years. The **hafnium-tungsten (Hf-W) chronometer**, which exploits the radioactive decay of ¹⁸²Hf (half-life 9 Myr) into ¹⁸²W (which is siderophile, tending to concentrate in iron), tells us that Earth's metallic core had largely separated from its silicate mantle within ~30 million years of t₀ (4.5673 Ga). This is a geologically brief instant — less than 1% of Earth's age — and it sets the stage for everything that followed: the **geomagnetic field** generated by convection in the liquid outer core, the **plate tectonic** cycle driven partly by mantle convection, and the protection of Earth's atmosphere from solar wind stripping.
+
+The story of the early inner Solar System is also one of catastrophic impacts. The final assembly of the terrestrial planets from a swarm of lunar-to-Mars-mass embryos involved collisions of titanic violence. The most consequential was the formation of the Moon: a Mars-sized body called Theia struck proto-Earth approximately 50–100 Myr after t₀, ejecting enough material to form our lunar companion. Then, hundreds of millions of years later, a second pulse of heavy bombardment — the **Late Heavy Bombardment (LHB)** — rained projectiles onto the inner Solar System surfaces, resetting impact crater ages preserved in the Apollo lunar samples. Understanding these events reshapes our picture of when and how habitable conditions first arose on Earth.`,
+      keyTerms: [
+        { term: 'planetary differentiation', def: 'The separation of an originally homogeneous planet into compositionally distinct layers (core, mantle, crust) driven by density differences and gravitational settling. Differentiation requires the planet to at least partially melt so that materials can flow. Once iron-nickel metal melts, its high density (~7,900 kg/m³) relative to silicate rock (~3,000 kg/m³) causes it to sink through the molten or partially-molten silicate mantle toward the centre. Simultaneously, lighter, lower-melting-point materials are buoyed upward to form the crust. Differentiation releases additional gravitational potential energy as dense material descends, providing further heating in a runaway process. The result is recorded in every major rocky Solar System body: Earth, Mars, the Moon, Vesta, and others all show geophysical evidence of metallic cores and silicate mantles.' },
+        { term: 'magma ocean', def: 'A global or regional layer of molten silicate rock covering a planet\'s surface and extending to depth in the earliest stages of planetary formation and after giant impacts. Magma oceans are generated when accretional heating, giant impacts, or short-lived radionuclide decay raise temperatures above silicate melting points (~1,300–2,000 K). In a magma ocean, minerals crystallise from the melt in order of their melting points (fractional crystallisation), and dense minerals (e.g., bridgmanite/perovskite) sink while buoyant minerals (e.g., anorthosite) float. The lunar highlands, composed of ancient anorthositic crust, are the preserved floating crust of the Moon\'s primordial magma ocean. Earth almost certainly had one or more magma ocean episodes early in its history, though the evidence has been obliterated by subsequent geological activity.' },
+        { term: 'Giant Impact hypothesis', def: 'The leading scientific explanation for the origin of the Moon, proposing that a Mars-sized protoplanet (named Theia) collided with proto-Earth at a glancing angle approximately 50–100 Myr after Solar System formation (t₀ = 4.5673 Ga). The oblique collision at ~4–8 km/s generated a disc of vaporised and molten material in Earth orbit; this disc cooled and accreted into the Moon within a few thousand years. Key evidence: Earth and Moon have near-identical oxygen, titanium, silicon, and chromium isotope ratios (unlike most meteorite classes); the Moon has a small iron core (~2% of its mass, vs ~32% for Earth) consistent with most iron remaining bound to Earth after the impact; the Earth-Moon system\'s total angular momentum matches simulations of high-energy oblique impacts; the Moon is strongly depleted in volatile elements, consistent with the extreme temperatures (~4,000–6,000 K) of the impact plume.' },
+        { term: 'Late Heavy Bombardment (LHB)', def: 'A hypothesised intense episode of meteorite and asteroid impacts on the inner Solar System bodies (Moon, Earth, Mars, Mercury, Venus) concentrated between approximately 4.1 and 3.8 Ga — roughly 400–700 Myr after Solar System formation. Evidence comes primarily from Apollo lunar samples: radiometric ages of impact melt rocks from different lunar landing sites cluster in the 3.8–4.1 Ga range, suggesting a distinct impact pulse rather than the tail end of normal accretion. The leading dynamical explanation is the **Nice model**, in which gravitational resonance crossing between Jupiter and Saturn destabilises the outer Solar System and scatters a large reservoir of planetesimals inward. The existence of a sharp LHB spike (versus a more gradual decline from accretion) remains debated, with some researchers arguing for a statistical bias from a few large impact basins dominating the datable sample.' },
+        { term: 'Hf-W chronometer', def: 'A radioactive isotope system using the decay of ¹⁸²Hf (hafnium, lithophile — stays in silicate) to ¹⁸²W (tungsten, siderophile — prefers iron metal), with a half-life of 8.9 Myr. Because Hf remains in the silicate mantle and W partitions into metal, core formation separates the two elements at a precise moment in time. After that moment, the silicate mantle accumulates excess ¹⁸²W (from continued ¹⁸²Hf decay) relative to the metallic core. By measuring the ¹⁸²W/¹⁸⁴W ratio in mantle rocks and comparing to the solar (chondritic) baseline, geochemists can calculate when core-mantle separation occurred. For Earth, this system indicates core formation was essentially complete within ~30 Myr of t₀. The Hf-W system was also critical in demonstrating that the Moon-forming Giant Impact occurred ~50–100 Myr after t₀.' },
       ],
-      correctIndex: 0,
-      explain: 'If PGEs arrived after the iron core had segregated, they had no iron phase to partition into and instead distributed through the silicate mantle. The late veneer is estimated at ~0.5 % of Earth\'s mass — enough to explain the observed PGE excess. This timing also coincides with delivery of water and carbon to Earth, making the late veneer relevant to habitability as well.',
     },
     {
-      question: 'The Giant Impact hypothesis for Moon formation is strongly supported by the near-identical oxygen isotope ratios of Earth and Moon. Why is isotopic similarity between two bodies unusual, and what does it reveal?',
-      options: [
-        'Different Solar System regions have distinct isotope ratios reflecting their formation zone; Earth-Moon identity suggests impact mixing thoroughly homogenised both bodies\' material, or that Theia formed in the same isotopic reservoir as Earth',
-        'Oxygen isotopes are identical across the Solar System, so the similarity is expected and provides no constraint on impact models',
-        'High-temperature impact processing destroys isotopic differences, so any large impact would produce isotopic similarity regardless of the impactor\'s origin',
-        'The Moon formed from Earth\'s outer mantle through rotational fission, which naturally conserves isotopic ratios without requiring a Giant Impact',
+      type: 'concept',
+      title: 'Core formation, the Giant Impact, and the bombardment that followed',
+      body: `**Planetary differentiation: iron sinks, silicates rise.** The energy released by planetesimal accretion — kinetic energy converted to heat as each impactor strikes — is enormous; for a planet the size of Earth, the accretional energy is sufficient to raise temperatures by thousands of degrees if retained. Combined with the heat from ²⁶Al decay (particularly critical for early-forming planetesimals within ~2 Myr of t₀), temperatures in growing embryos quickly exceeded the iron-nickel melting point (~1,200–1,500°C at relevant pressures). Once molten iron forms, its much greater density (~7,900 kg/m³) relative to silicate rock (~3,000 kg/m³) drives it downward through the partially-molten silicate in a process called **iron rain** or **diapir sinking** — forming a metallic core within millions to tens of millions of years. This density-driven separation is **planetary differentiation**.
+
+Differentiation has profound geochemical consequences. Iron is the primary carrier of **siderophile elements** (iron-loving: Ni, Co, and the platinum-group elements — Pt, Pd, Ir, Os, Ru, Rh). As iron sank to the core, it stripped the silicate mantle of these elements, lowering their mantle concentrations by factors of hundreds relative to bulk Solar System (chondritic) abundances. However, Earth's upper mantle today contains roughly 50× more platinum-group elements (PGEs) than differentiation models predict should be left after core formation. The **late veneer hypothesis** explains this: after core formation was complete, Earth accreted an additional ~0.5% of its mass in chondritic material (asteroids and comets) delivered during the LHB and subsequent bombardment. Because the core was already formed, these late-arriving siderophile elements had no iron phase to partition into and instead distributed through the silicate mantle. The late veneer also delivered Earth's water and carbon — making it directly relevant to the origin of habitable conditions.
+
+The structure of Earth's core — a liquid outer core (iron-nickel alloy with ~5–10% lighter elements: sulphur, silicon, oxygen) surrounding a solid inner core — generates Earth's **geodynamo**: convective motions in the electrically conducting liquid outer core produce Earth's magnetic field through magnetohydrodynamic induction. This field deflects the solar wind, preventing it from stripping Earth's atmosphere and surface water — a prerequisite for long-term habitability. Mars, whose smaller size led to faster core solidification, lacks a global dipole field today; its thin atmosphere is consequently being eroded by the solar wind at a rate measurable by the MAVEN spacecraft. The Moon's core, ~2% of its mass, solidified early; ancient magnetised lunar surface rocks suggest the Moon briefly had a geodynamo before it switched off.
+
+**The Giant Impact and lunar origin.** The standard model of inner Solar System formation predicts that the final assembly of the terrestrial planets involved a chaotic ~10–100 Myr phase of giant impacts between Moon-to-Mars-sized embryos. The largest such impact in Earth's history was the **Moon-forming impact**: approximately 50–100 Myr after t₀, a Mars-sized protoplanet (dubbed Theia) struck proto-Earth at an oblique angle. The impact was catastrophic: it vaporised much of Theia and a large portion of Earth's mantle, creating a disc of molten and vaporised material in Earth orbit. Within a few thousand years, this disc cooled and accreted into the Moon. The impact is the only proposed mechanism that simultaneously explains all the key observational constraints on the Earth-Moon system.
+
+The isotopic evidence for the Giant Impact is particularly striking. Different regions of the Solar System have subtly different isotopic compositions (e.g., the ¹⁷O/¹⁶O and ¹⁸O/¹⁶O ratios differ between meteorite groups originating from different heliocentric distances). Earth and Moon share near-identical oxygen, titanium, silicon, and chromium isotope ratios — within fractions of a part per million. This isotopic identity, combined with the Moon's small iron core (~20% of the Moon's radius, compared to ~55% for Earth, consistent with most of Theia's iron core merging with Earth's core), its depletion in volatile elements (K, Na, water) relative to Earth (consistent with vaporisation in the impact plume at >4,000 K), and the angular momentum match with oblique impact simulations, provides converging evidence that the Moon formed in a giant impact. The remaining puzzle — why Earth and Moon are so isotopically identical, rather than showing a mixture of Earth and Theia compositions — has stimulated a vigorous sub-field of impact dynamics research, with solutions ranging from equilibration of the post-impact vapour disc to a high-energy, near head-on impact that homogenised the entire mantle.
+
+**The Late Heavy Bombardment and the Nice model.** The Moon's surface preserves a chronological record of impact history in the ages of impact-melt rocks. When Apollo astronauts returned lunar samples (1969–1972), radiometric dating revealed a striking pattern: impact-melt rocks from multiple distinct landing sites — the Sea of Tranquillity, Hadley-Apennine, Fra Mauro, and others — show clustering of impact-reset ages between ~3.8 and ~4.1 Ga. This is ~400–700 Myr after Solar System formation, far too late to represent the tail end of normal planetary accretion (which should have concluded within ~100 Myr). The apparent clustering suggests a distinct spike in the impact rate — the **Late Heavy Bombardment** — rather than a smooth decline. If the inner Solar System experienced such a bombardment, its consequences for the early Earth were severe: impactors of the scale required to produce the lunar multi-ring basins would have evaporated much of Earth's surface ocean and repeatedly reset surficial conditions.
+
+The dynamical explanation for the LHB is the **Nice model** (named after the Côte d'Azur Observatory, France), developed in the mid-2000s. In the Nice model, the four giant planets (Jupiter, Saturn, Uranus, Neptune) formed in a more compact configuration than they occupy today. After the protoplanetary disc dispersed, slow gravitational interactions between the giant planets caused their orbits to drift until Jupiter and Saturn crossed a mutual **mean-motion resonance** — most likely the 2:1 resonance, in which Jupiter completes exactly two orbits for every one of Saturn's. This resonance crossing rapidly and chaotically altered the orbits of all four giant planets; Uranus and Neptune were scattered outward into a vast disc of primordial planetesimals (the remnant of the protoplanetary disc beyond Neptune). The gravitational perturbations from the scattering event sent a flood of outer Solar System bodies into the inner Solar System — producing the LHB spike ~3.8–4.1 Ga. The Nice model also explains the current orbital architecture of the outer Solar System: the orbital eccentricities and inclinations of Jupiter, Saturn, Uranus, and Neptune; the orbital structure of the Kuiper Belt (including the Plutino resonant population); and the origin of the irregular satellite populations of Jupiter and Saturn (captured outer planetesimals during the resonance crossing).
+
+**Biological significance and the LHB debate.** The timing of the LHB has profound implications for the origin of life. The earliest putative evidence for life on Earth — microfossils and carbon isotope signatures suggesting biogenic carbon fractionation — dates to ~3.7–4.0 Ga, immediately after the LHB. This proximity has led to two contrasting interpretations: that the LHB repeatedly sterilised early life attempts and the first surviving life dates from just after bombardment ceased; or alternatively, that life originated in impact-heated hydrothermal systems and survived the bombardment in subsurface refugia (e.g., deep-sea hydrothermal vents analogous to modern black smokers). Either way, the LHB defined the boundary conditions for Earth's biological window. However, the existence of a sharp LHB spike (vs. a more gradual bombardment decline) has been questioned by more recent crater chronology analyses. A sampling bias may inflate the apparent spike: the vast majority of datable lunar impact melts come from the Imbrium and Serenitatis basin-forming impacts, which reset radiometric clocks across wide areas of the near-side Moon. If these two or three large basins dominate the datable sample, the apparent 3.8–4.1 Ga clustering could reflect the ages of just a handful of large impacts rather than a sustained bombardment episode — making the LHB's intensity and duration more uncertain than originally believed.`,
+      cards: [
+        {
+          name: 'Planetary Differentiation and Core Formation',
+          icon: Globe,
+          color: BRAND.amethyst,
+          desc: 'Accretional heating + ²⁶Al/⁶⁰Fe decay → iron melting → iron rain and diapir sinking; iron density (~7,900 kg/m³) vs silicate (~3,000 kg/m³) drives rapid core formation. Siderophile elements (Ni, Co, PGEs) stripped from mantle into core; Earth mantle PGE excess → late veneer hypothesis (~0.5% chondritic mass accreted after core formation). Hf-W chronometer (t½ = 9 Myr): ¹⁸²Hf stays in silicate; ¹⁸²W goes into metal at core formation; ¹⁸²W excess in mantle places Earth core formation within ~30 Myr of t₀. Earth: liquid outer core + solid inner core → geodynamo → magnetosphere protecting atmosphere. Mars/Moon: smaller bodies, faster core solidification, weak or no dipole field → solar wind erosion of atmosphere.',
+          examples: 'Vesta (asteroid): fully differentiated; HED meteorite suite samples its basaltic crust, howardite regolith, and diogenite lower crust · Mars: MAVEN observations show ongoing atmospheric loss to solar wind at ~100 g/s — consequence of no global dipole field · Earth mantle PGEs: ~3.5 ppb Ir in peridotite xenoliths (50× more than predicted post-core-formation) → quantifies late veneer at ~2 × 10²² kg',
+        },
+        {
+          name: 'The Giant Impact and Lunar Formation',
+          icon: Telescope,
+          color: BRAND.amethyst,
+          desc: 'Mars-sized Theia impacted proto-Earth ~50–100 Myr after t₀ at oblique angle (~45°) and ~4–8 km/s. Vaporised Theia + Earth mantle material formed a circumterrestrial disc; Moon accreted from this disc within ~10³ years. Isotopic identity: Earth and Moon share Δ¹⁷O, ε⁴⁸Ti, δ³⁰Si, Δ⁵³Cr within analytical uncertainty (unlike any meteorite class) → thorough mixing of Theia and Earth material. Lunar iron depletion: Moon core ~2% of mass (vs Earth ~32%) → most of Theia\'s iron merged with Earth\'s core. Volatile depletion: Moon has K/U ratio ~1,000× lower than Earth → extreme heating (>4,000 K) drove off volatiles. Angular momentum: Earth-Moon system L matches high-energy oblique impact simulations.',
+          examples: 'Apollo 11 samples: anorthositic highlands → solidified floating crust of primordial lunar magma ocean, formed within ~200 Myr of t₀ · Lunar laser ranging: Moon receding ~3.8 cm/yr from Earth due to tidal friction — total angular momentum conserved back-extrapolates to post-impact configuration · Giant Impact simulations (Canup & Asphaug 2001; Cuk & Stewart 2012): reproduce Moon mass and angular momentum but struggle simultaneously with perfect isotopic match — active research area',
+        },
+        {
+          name: 'The Late Heavy Bombardment and Nice Model',
+          icon: Wind,
+          color: BRAND.amethyst,
+          desc: 'Apollo sample impact-melt ages cluster 3.8–4.1 Ga — ~400–700 Myr after t₀ — implying a distinct bombardment spike, not mere accretion tail. Nice model: Jupiter-Saturn 2:1 mean-motion resonance crossing destabilises Uranus/Neptune → scattered outward into outer planetesimal disc → flood of outer Solar System bodies into inner Solar System. Nice model also explains: Kuiper Belt orbital structure (Plutinos in 3:2 resonance with Neptune), irregular satellites of giant planets (captured during scattering), giant planet eccentricities and inclinations. Biological significance: earliest life evidence ~3.7–4.0 Ga, immediately post-LHB; deep-sea hydrothermal vents as refugia. Revision: sampling bias from Imbrium/Serenitatis basins may inflate apparent spike — true LHB may be less catastrophic or more gradual.',
+          examples: 'Apollo 14 Fra Mauro samples: 3.85 Ga impact melt → Fra Mauro formation is Imbrium Basin ejecta · Nectaris, Crisium, Imbrium, Serenitatis basins: large multi-ring impact structures whose ages cluster near 3.8–4.1 Ga · Pluto and Charon (New Horizons 2015): heavily cratered terrains recording Kuiper Belt bombardment history independent of lunar sample bias',
+        },
       ],
-      correctIndex: 0,
-      explain: 'Meteorite groups from different Solar System regions have distinct Δ¹⁷O values — a fingerprint of formation location. That Earth and Moon share nearly identical values means either (a) Theia formed at the same heliocentric distance as Earth, or (b) the violent impact mixed and equilibrated the isotopic reservoir of both bodies in the vapour plume. This isotopic constraint is one of the hardest tests for Giant Impact models.',
     },
     {
-      question: 'The Nice model explains the Late Heavy Bombardment as a consequence of planetary migration. What orbital event is the direct trigger?',
-      options: [
-        'Jupiter and Saturn crossing a mutual mean-motion resonance, which destabilised the orbits of Uranus, Neptune, and a massive reservoir of outer Solar System planetesimals, scattering them inward',
-        'Jupiter migrating inward to the asteroid belt, scattering asteroid belt objects toward the inner planets',
-        'Neptune\'s outward migration into the Kuiper Belt, directly ejecting comets into inner Solar System crossing orbits',
-        'Solar wind pressure during the T Tauri phase sweeping large dust particles inward, increasing the impact rate on the terrestrial planets',
+      type: 'quiz',
+      questions: [
+        {
+          q: 'Earth\'s upper mantle contains ~50× more platinum-group elements (PGEs) than expected after iron differentiated into the core. What does the late veneer hypothesis propose to explain this?',
+          a: [
+            'A small fraction of chondritic material accreted after core formation, adding PGEs to the mantle before they could be stripped into the core',
+            'PGEs are incompatible with iron and were rejected from the core as it solidified, re-enriching the mantle over time',
+            'Earth\'s mantle partially re-melted after core formation, allowing PGEs to remigrate upward from the core-mantle boundary',
+            'The Hf-W chronometer indicates core formation was incomplete, leaving PGEs partially in the mantle',
+          ],
+          correct: 0,
+          explain: 'If PGEs arrived after the iron core had segregated, they had no iron phase to partition into and instead distributed through the silicate mantle. The late veneer is estimated at ~0.5 % of Earth\'s mass — enough to explain the observed PGE excess while also delivering the bulk of Earth\'s water and organic carbon.',
+        },
+        {
+          q: 'The Giant Impact hypothesis is strongly supported by the near-identical oxygen isotope ratios of Earth and Moon. Why is isotopic similarity between two bodies unusual, and what does it imply?',
+          a: [
+            'Different Solar System regions have distinct isotope ratios; Earth-Moon identity implies the impact mixed both bodies\' material thoroughly, or Theia formed in the same isotopic zone as Earth',
+            'Oxygen isotopes are identical across the Solar System, so the similarity is expected and provides no constraint on impact models',
+            'High-temperature impact processing destroys isotopic differences, so any large impact would produce isotopic similarity',
+            'The Moon formed from Earth\'s outer mantle through rotational fission, which naturally conserves isotopic ratios',
+          ],
+          correct: 0,
+          explain: 'Meteorite groups from different heliocentric distances have distinct Δ¹⁷O values. That Earth and Moon share nearly identical values means either Theia formed at the same distance from the Sun as Earth, or the violent impact mixed and equilibrated both bodies\' material in the vapour plume. This isotopic constraint is one of the hardest tests for Giant Impact models.',
+        },
+        {
+          q: 'The Nice model explains the Late Heavy Bombardment as a consequence of planetary migration. What orbital event is the direct trigger?',
+          a: [
+            'Jupiter and Saturn crossing a mutual mean-motion resonance, destabilising Uranus and Neptune\'s orbits and scattering outer Solar System planetesimals inward',
+            'Jupiter migrating inward to the asteroid belt, scattering asteroid belt objects toward the inner planets',
+            'Neptune\'s outward migration into the Kuiper Belt, directly ejecting comets into inner Solar System orbits',
+            'Solar wind pressure during the T Tauri phase sweeping large dust particles inward, increasing impact rates on terrestrial planets',
+          ],
+          correct: 0,
+          explain: 'In the Nice model, the specific resonance crossing (typically the 2:1 resonance between Jupiter and Saturn) produces rapid shifts in all four giant planet orbits. Uranus and Neptune scatter outward into a vast disc of primordial planetesimals, and the resulting gravitational perturbations send a flood of bodies inward, explaining the ~4.1–3.8 Ga impact spike recorded in Apollo samples.',
+        },
       ],
-      correctIndex: 0,
-      explain: 'In the Nice model, the specific resonance crossing (often described as 2:1 resonance between Jupiter and Saturn) produces a rapid shift in the orbits of all four giant planets. Uranus and Neptune are scattered outward into a vast disc of primordial planetesimals; the resulting gravitational perturbations send a flood of bodies inward, explaining the ~4.1–3.8 Ga impact spike recorded in Apollo samples.',
     },
   ],
 }
 
-export default lesson
+export default differentiationAccretionAndLHB
