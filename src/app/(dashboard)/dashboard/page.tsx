@@ -1,10 +1,19 @@
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Zap, Flame, BookOpen, TrendingUp, Play, ChevronRight, Check, ArrowRight, Trophy, Calendar, Clock } from 'lucide-react'
+import {
+  Zap, Flame, BookOpen, TrendingUp, Play, ChevronRight,
+  Check, ArrowRight, Trophy, Calendar, Clock,
+  Mountain, Waves, Wind, Thermometer, Telescope,
+} from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
-import { LESSON_LIST, TRACK_MAP, GEOL_101_MODULES, GEOL_201_MODULES } from '@/lessons/index'
-import type { CourseModule } from '@/lessons/index'
+import {
+  LESSON_LIST, TRACK_MAP,
+  GEOL_101_MODULES, GEOL_201_MODULES,
+  OCEA_101_MODULES, ATMO_101_MODULES,
+  VOLC_101_MODULES, CLIM_101_MODULES, ASTR_101_MODULES,
+  type CourseModule,
+} from '@/lessons/index'
 import { LESSONS_V2_LIST } from '@/lessons-v2/index'
 import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
@@ -13,10 +22,27 @@ import type { Profile } from '@/types'
 
 export const metadata = { title: 'Dashboard' }
 
-// Next.js passes searchParams as a prop to page components
 type Props = { searchParams?: Promise<Record<string, string>> }
-
 type ProgressRow = { lesson_id: string; completed_at: string | null }
+
+interface CourseConfig {
+  id: string
+  code: string
+  title: string
+  modules: CourseModule[]
+  color: string
+  icon: React.ComponentType<{ size?: number; color?: string }>
+}
+
+const COURSES: CourseConfig[] = [
+  { id: 'geol-101', code: 'GEOL 101', title: 'Reading the Earth',               modules: GEOL_101_MODULES, color: BRAND.coral,     icon: Mountain   },
+  { id: 'geol-201', code: 'GEOL 201', title: 'Earth Through Time',              modules: GEOL_201_MODULES, color: BRAND.amethyst,  icon: Mountain   },
+  { id: 'ocea-101', code: 'OCEA 101', title: 'Introduction to Oceanography',    modules: OCEA_101_MODULES, color: BRAND.accent,    icon: Waves      },
+  { id: 'atmo-101', code: 'ATMO 101', title: 'Introduction to Meteorology',     modules: ATMO_101_MODULES, color: BRAND.gold,      icon: Wind       },
+  { id: 'volc-101', code: 'VOLC 101', title: 'Introduction to Volcanology',     modules: VOLC_101_MODULES, color: BRAND.ruby,      icon: Flame      },
+  { id: 'clim-101', code: 'CLIM 101', title: 'Introduction to Climate Science', modules: CLIM_101_MODULES, color: BRAND.jade,      icon: Thermometer},
+  { id: 'astr-101', code: 'ASTR 101', title: 'Introduction to Planetary Science', modules: ASTR_101_MODULES, color: BRAND.amethyst, icon: Telescope },
+]
 
 function timeAgo(isoString: string | null): string {
   if (!isoString) return ''
@@ -37,15 +63,16 @@ function getDayLabel(daysAgo: number): string {
   return d.toLocaleDateString('en-US', { weekday: 'short' }).slice(0, 2)
 }
 
-function utcDayKey(isoString: string): string {
-  return isoString.slice(0, 10) // "YYYY-MM-DD"
-}
-
+function utcDayKey(isoString: string): string { return isoString.slice(0, 10) }
 function localDayKey(daysAgo: number): string {
   const d = new Date()
   d.setDate(d.getDate() - daysAgo)
-  // Use UTC date string that matches database UTC timestamps
   return d.toISOString().slice(0, 10)
+}
+
+function shortModuleName(title: string): string {
+  const parts = title.split('—')
+  return parts.length >= 2 ? parts.slice(1).join('—').trim() : title
 }
 
 export default async function DashboardPage({ searchParams }: Props) {
@@ -78,7 +105,7 @@ export default async function DashboardPage({ searchParams }: Props) {
     .eq('completed', true)
     .order('completed_at', { ascending: false })
   const allProgress: ProgressRow[] = (progressRows ?? []) as ProgressRow[]
-  const completed: string[] = allProgress.map(r => r.lesson_id)
+  const completedSet = new Set(allProgress.map(r => r.lesson_id))
 
   const xp = profile.xp
   const level = levelFromXp(xp)
@@ -89,25 +116,38 @@ export default async function DashboardPage({ searchParams }: Props) {
 
   const v2BaseIds = new Set(LESSONS_V2_LIST.map(l => l.id.replace(/-v2$/, '')))
   const combinedList = [
-    ...LESSONS_V2_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track })),
-    ...LESSON_LIST.filter(l => !v2BaseIds.has(l.id)).map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track })),
+    ...LESSONS_V2_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track, duration: l.duration })),
+    ...LESSON_LIST.filter(l => !v2BaseIds.has(l.id)).map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track, duration: l.duration })),
   ]
   const lessonMap = Object.fromEntries(combinedList.map(l => [l.id, l]))
 
-  // Find next lesson from structured courses first, then fall back to any
-  const allCourseIds = [...GEOL_101_MODULES, ...GEOL_201_MODULES].flatMap(m => m.lessonIds)
-  const nextCourseLesson = allCourseIds.find(id => lessonMap[id] && !completed.includes(id))
-  const nextLesson = (nextCourseLesson ? lessonMap[nextCourseLesson] : null)
-    ?? combinedList.find(l => !completed.includes(l.id))
-    ?? combinedList[0]
+  // Per-course stats
+  const courseStats = COURSES.map(course => {
+    const availableIds = course.modules.flatMap(m => m.lessonIds).filter(id => lessonMap[id])
+    const doneIds = availableIds.filter(id => completedSet.has(id))
+    const nextId = availableIds.find(id => !completedSet.has(id)) ?? null
+    const pctDone = availableIds.length ? Math.round((doneIds.length / availableIds.length) * 100) : 0
+    return { course, availableIds, doneIds, nextId, pctDone }
+  })
 
-  // Recent activity: last 5 completions with lesson details
+  // Hero: pick the course with the most completions but not 100% done; fallback to any
+  const activeCourseStats = courseStats
+    .filter(s => s.doneIds.length > 0 && s.nextId !== null)
+    .sort((a, b) => b.doneIds.length - a.doneIds.length)[0]
+    ?? courseStats.find(s => s.nextId !== null)
+
+  const nextLessonId = activeCourseStats?.nextId
+    ?? combinedList.find(l => !completedSet.has(l.id))?.id
+    ?? combinedList[0]?.id
+  const nextLesson = lessonMap[nextLessonId ?? ''] ?? combinedList[0]
+
+  // Recent activity
   const recentActivity = allProgress
     .slice(0, 5)
     .map(r => ({ lesson: lessonMap[r.lesson_id] ?? null, completedAt: r.completed_at }))
-    .filter(r => r.lesson !== null) as { lesson: typeof combinedList[0]; completedAt: string | null }[]
+    .filter((r): r is { lesson: typeof combinedList[0]; completedAt: string | null } => r.lesson !== null)
 
-  // 7-day activity: count lessons per UTC day
+  // 7-day activity
   const activityByDay = new Map<string, number>()
   for (const row of allProgress) {
     if (!row.completed_at) continue
@@ -116,32 +156,30 @@ export default async function DashboardPage({ searchParams }: Props) {
   }
   const weekActivity = Array.from({ length: 7 }, (_, i) => {
     const daysAgo = 6 - i
-    const key = localDayKey(daysAgo)
-    return { label: getDayLabel(daysAgo), count: activityByDay.get(key) ?? 0, isToday: daysAgo === 0 }
+    return { label: getDayLabel(daysAgo), count: activityByDay.get(localDayKey(daysAgo)) ?? 0, isToday: daysAgo === 0 }
   })
   const totalWeekLessons = weekActivity.reduce((sum, d) => sum + d.count, 0)
   const maxDayCount = Math.max(...weekActivity.map(d => d.count), 1)
 
-  // Daily missions: count lessons completed today (UTC)
+  // Daily missions
   const todayKey = new Date().toISOString().slice(0, 10)
   const todayCount = activityByDay.get(todayKey) ?? 0
   const DAILY_MISSIONS = [
-    { label: 'First Lesson', target: 1,  bonusXp: 25,  color: BRAND.jade },
-    { label: 'On a Roll',    target: 3,  bonusXp: 75,  color: BRAND.gold },
+    { label: 'First Lesson', target: 1,  bonusXp: 25,  color: BRAND.jade  },
+    { label: 'On a Roll',    target: 3,  bonusXp: 75,  color: BRAND.gold  },
     { label: 'Day Champion', target: 5,  bonusXp: 150, color: BRAND.coral },
   ] as const
 
-  // Compute per-module stats
-  function moduleStats(module: CourseModule) {
-    const available = module.lessonIds.filter(id => lessonMap[id])
-    const done = available.filter(id => completed.includes(id))
-    const nextId = available.find(id => !completed.includes(id)) ?? null
-    return { available, done, nextId, pct: available.length ? Math.round((done.length / available.length) * 100) : 0 }
-  }
+  // Sort courses: started (most progress first) → unstarted
+  const sortedCourseStats = [...courseStats].sort((a, b) => {
+    if (a.doneIds.length > 0 && b.doneIds.length === 0) return -1
+    if (a.doneIds.length === 0 && b.doneIds.length > 0) return  1
+    return b.doneIds.length - a.doneIds.length
+  })
 
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* Upgrade success banner */}
+      {/* Upgrade banner */}
       {justUpgraded && (
         <div
           className="flex items-center gap-3 px-5 py-3.5 rounded-sm"
@@ -149,9 +187,7 @@ export default async function DashboardPage({ searchParams }: Props) {
         >
           <Trophy size={16} color={BRAND.jade} />
           <div className="flex-1">
-            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>
-              Welcome to your new plan!
-            </div>
+            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>Welcome to your new plan!</div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
               Your subscription is active. All unlocked content is available immediately.
             </div>
@@ -171,7 +207,7 @@ export default async function DashboardPage({ searchParams }: Props) {
         <div className="relative p-6 md:p-10 grid md:grid-cols-5 gap-6 items-center">
           <div className="md:col-span-3">
             <div className="text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: BRAND.accent }}>
-              {completed.length === 0 ? `Welcome, ${profile.display_name ?? profile.username}` : 'Continue your study'}
+              {completedSet.size === 0 ? `Welcome, ${profile.display_name ?? profile.username}` : 'Continue your study'}
             </div>
             <h1 className="font-serif" style={{ fontSize: 'clamp(28px, 5vw, 48px)', lineHeight: 1.05 }}>
               {nextLesson.title}
@@ -207,22 +243,17 @@ export default async function DashboardPage({ searchParams }: Props) {
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <StatCard label="Total XP" value={xp.toLocaleString()} icon={Zap}        accent={BRAND.gold} />
-        <StatCard label="Lessons"  value={completed.length}    sub={`/ ${combinedList.length}`} icon={BookOpen} accent={BRAND.jade} />
-        <StatCard label="Streak"   value={profile.streak}      sub="days"         icon={Flame}      accent={BRAND.coral} />
-        <StatCard label="Level"    value={level}               icon={TrendingUp}  accent={BRAND.accent} />
+        <StatCard label="Total XP" value={xp.toLocaleString()} icon={Zap}       accent={BRAND.gold}   />
+        <StatCard label="Lessons"  value={completedSet.size}  sub={`/ ${combinedList.length}`} icon={BookOpen} accent={BRAND.jade} />
+        <StatCard label="Streak"   value={profile.streak}     sub="days"          icon={Flame}     accent={BRAND.coral}  />
+        <StatCard label="Level"    value={level}              icon={TrendingUp}  accent={BRAND.accent} />
       </div>
 
-      {/* Progress + Activity Row */}
+      {/* Progress + Activity */}
       <div className="grid md:grid-cols-2 gap-3">
         {/* XP Level Progress */}
-        <div
-          className="p-5 rounded-sm"
-          style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
-        >
-          <div className="text-[10px] tracking-[0.25em] uppercase mb-3" style={{ color: BRAND.textSubtle }}>
-            Level Progress
-          </div>
+        <div className="p-5 rounded-sm" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
+          <div className="text-[10px] tracking-[0.25em] uppercase mb-3" style={{ color: BRAND.textSubtle }}>Level Progress</div>
           <div className="flex items-end justify-between mb-3">
             <div>
               <span className="font-serif" style={{ fontSize: '28px', color: BRAND.accent }}>Lv {level}</span>
@@ -235,28 +266,18 @@ export default async function DashboardPage({ searchParams }: Props) {
             </div>
           </div>
           <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
-            <div
-              className="h-full rounded-full transition-all"
-              style={{ width: `${pct}%`, backgroundColor: BRAND.accent }}
-            />
+            <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: BRAND.accent }} />
           </div>
           <div className="mt-2 flex items-center justify-between">
             <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>{pct}% complete</span>
-            <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>
-              {xpToGo.toLocaleString()} XP to Lv {level + 1}
-            </span>
+            <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>{xpToGo.toLocaleString()} XP to Lv {level + 1}</span>
           </div>
         </div>
 
         {/* 7-Day Activity */}
-        <div
-          className="p-5 rounded-sm"
-          style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
-        >
+        <div className="p-5 rounded-sm" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
           <div className="flex items-center justify-between mb-3">
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
-              7-Day Activity
-            </div>
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>7-Day Activity</div>
             <div className="text-[10px] font-mono" style={{ color: totalWeekLessons > 0 ? BRAND.jade : BRAND.textSubtle }}>
               {totalWeekLessons} lesson{totalWeekLessons !== 1 ? 's' : ''} this week
             </div>
@@ -264,21 +285,11 @@ export default async function DashboardPage({ searchParams }: Props) {
           <div className="flex items-end justify-between gap-1.5 h-14">
             {weekActivity.map(({ label, count, isToday }) => {
               const barHeight = count > 0 ? Math.max(16, Math.round((count / maxDayCount) * 48)) : 6
-              const barColor = count === 0 ? BRAND.border
-                : isToday ? BRAND.accent
-                : BRAND.jade
+              const barColor = count === 0 ? BRAND.border : isToday ? BRAND.accent : BRAND.jade
               return (
                 <div key={label} className="flex-1 flex flex-col items-center justify-end gap-1">
-                  <div
-                    className="w-full rounded-sm transition-all"
-                    style={{ height: `${barHeight}px`, backgroundColor: barColor, opacity: count === 0 ? 0.4 : 1 }}
-                  />
-                  <div
-                    className="text-[9px] font-mono"
-                    style={{ color: isToday ? BRAND.accent : BRAND.textSubtle }}
-                  >
-                    {label}
-                  </div>
+                  <div className="w-full rounded-sm transition-all" style={{ height: `${barHeight}px`, backgroundColor: barColor, opacity: count === 0 ? 0.4 : 1 }} />
+                  <div className="text-[9px] font-mono" style={{ color: isToday ? BRAND.accent : BRAND.textSubtle }}>{label}</div>
                 </div>
               )
             })}
@@ -287,14 +298,8 @@ export default async function DashboardPage({ searchParams }: Props) {
       </div>
 
       {/* Daily Missions */}
-      <div
-        className="rounded-sm overflow-hidden"
-        style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
-      >
-        <div
-          className="px-5 py-3 flex items-center justify-between"
-          style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}
-        >
+      <div className="rounded-sm overflow-hidden" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
+        <div className="px-5 py-3 flex items-center justify-between" style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}>
           <div>
             <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Daily Missions</div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
@@ -314,31 +319,19 @@ export default async function DashboardPage({ searchParams }: Props) {
                   className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
                   style={done
                     ? { backgroundColor: `${color}20`, border: `1px solid ${color}40` }
-                    : { backgroundColor: `${BRAND.surfaceHi}`, border: `1px solid ${BRAND.border}` }
-                  }
+                    : { backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}
                 >
                   {done
                     ? <Check size={12} color={color} strokeWidth={2.5} />
-                    : <span className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>{progress}/{target}</span>
-                  }
+                    : <span className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>{progress}/{target}</span>}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
-                    <span
-                      className="text-[11px] font-medium"
-                      style={{ color: done ? color : BRAND.textDim }}
-                    >
-                      {label}
-                    </span>
-                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>
-                      +{bonusXp} XP
-                    </span>
+                    <span className="text-[11px] font-medium" style={{ color: done ? color : BRAND.textDim }}>{label}</span>
+                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>+{bonusXp} XP</span>
                   </div>
                   <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
-                    <div
-                      className="h-full rounded-full transition-all"
-                      style={{ width: `${pctFill}%`, backgroundColor: done ? color : `${color}80` }}
-                    />
+                    <div className="h-full rounded-full transition-all" style={{ width: `${pctFill}%`, backgroundColor: done ? color : `${color}80` }} />
                   </div>
                   <div className="text-[9px] mt-0.5 font-mono" style={{ color: BRAND.textSubtle }}>
                     Complete {target} lesson{target !== 1 ? 's' : ''} today
@@ -352,17 +345,9 @@ export default async function DashboardPage({ searchParams }: Props) {
 
       {/* Recent Activity */}
       {recentActivity.length > 0 && (
-        <div
-          className="rounded-sm overflow-hidden"
-          style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
-        >
-          <div
-            className="px-5 py-3 flex items-center justify-between"
-            style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}
-          >
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
-              Recent Activity
-            </div>
+        <div className="rounded-sm overflow-hidden" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
+          <div className="px-5 py-3 flex items-center justify-between" style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}>
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Recent Activity</div>
             <Clock size={12} color={BRAND.textSubtle} />
           </div>
           <div className="divide-y" style={{ borderColor: BRAND.border }}>
@@ -372,17 +357,12 @@ export default async function DashboardPage({ searchParams }: Props) {
                 href={`/learn/${lesson.id}`}
                 className="px-5 py-3 flex items-center gap-4 transition-colors hover:bg-white/[0.02]"
               >
-                <div
-                  className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${BRAND.jade}18`, border: `1px solid ${BRAND.jade}30` }}
-                >
+                <div className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0" style={{ backgroundColor: `${BRAND.jade}18`, border: `1px solid ${BRAND.jade}30` }}>
                   <Check size={12} color={BRAND.jade} strokeWidth={2.5} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-sm truncate" style={{ color: BRAND.text }}>{lesson.title}</div>
-                  <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>
-                    {lesson.trackName} · {lesson.level}
-                  </div>
+                  <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>{lesson.trackName} · {lesson.level}</div>
                 </div>
                 <div className="text-right shrink-0">
                   <div className="text-[11px] font-mono" style={{ color: BRAND.gold }}>+{lesson.xpReward} XP</div>
@@ -394,7 +374,7 @@ export default async function DashboardPage({ searchParams }: Props) {
         </div>
       )}
 
-      {/* Curriculum */}
+      {/* Curriculum — all 7 courses */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
@@ -419,145 +399,158 @@ export default async function DashboardPage({ searchParams }: Props) {
           </div>
         </div>
 
-        {/* GEOL 101 */}
-        <CourseBlock
-          code="GEOL 101"
-          title="Earth's Structure and Processes"
-          color={BRAND.coral}
-          modules={GEOL_101_MODULES}
-          moduleStats={moduleStats}
-          lessonMap={lessonMap}
-          completed={completed}
-        />
+        <div className="grid md:grid-cols-2 gap-4">
+          {sortedCourseStats.map(({ course, availableIds, doneIds, nextId, pctDone }) => {
+            const isComplete = availableIds.length > 0 && doneIds.length === availableIds.length
+            const hasStarted = doneIds.length > 0
+            const nextLesson = nextId ? lessonMap[nextId] : null
+            const Icon = course.icon
 
-        {/* GEOL 201 */}
-        <CourseBlock
-          code="GEOL 201"
-          title="Earth Through Time"
-          color={BRAND.amethyst}
-          modules={GEOL_201_MODULES}
-          moduleStats={moduleStats}
-          lessonMap={lessonMap}
-          completed={completed}
-        />
-      </div>
-    </div>
-  )
-}
-
-function CourseBlock({
-  code, title, color, modules, moduleStats, lessonMap, completed,
-}: {
-  code: string
-  title: string
-  color: string
-  modules: CourseModule[]
-  moduleStats: (m: CourseModule) => { available: string[]; done: string[]; nextId: string | null; pct: number }
-  lessonMap: Record<string, { id: string; title: string }>
-  completed: string[]
-}) {
-  const allAvailable = modules.flatMap(m => m.lessonIds.filter(id => lessonMap[id]))
-  const allDone = allAvailable.filter(id => completed.includes(id))
-  const coursePct = allAvailable.length ? Math.round((allDone.length / allAvailable.length) * 100) : 0
-
-  return (
-    <div
-      className="rounded-sm overflow-hidden"
-      style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
-    >
-      {/* Course header */}
-      <div
-        className="px-5 py-3 flex items-center justify-between"
-        style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}
-      >
-        <div className="flex items-center gap-3">
-          <span
-            className="text-[10px] tracking-[0.2em] uppercase font-mono px-2 py-0.5 rounded-sm"
-            style={{ backgroundColor: `${color}18`, color, border: `1px solid ${color}40` }}
-          >
-            {code}
-          </span>
-          <span className="font-serif" style={{ fontSize: '17px' }}>{title}</span>
-        </div>
-        <div className="flex items-center gap-3 shrink-0">
-          <span className="text-[11px] font-mono" style={{ color: BRAND.textSubtle }}>
-            {allDone.length}/{allAvailable.length}
-          </span>
-          <div className="w-20 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
-            <div
-              className="h-full rounded-full transition-all"
-              style={{ width: `${coursePct}%`, backgroundColor: coursePct === 100 ? BRAND.jade : color }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Module rows */}
-      <div className="divide-y" style={{ borderColor: BRAND.border }}>
-        {modules.map((module, mi) => {
-          const stats = moduleStats(module)
-          const isComplete = stats.done.length > 0 && stats.done.length === stats.available.length
-          const hasAny = stats.available.length > 0
-          const nextLesson = stats.nextId ? lessonMap[stats.nextId] : null
-
-          return (
-            <div key={module.id} className="px-5 py-3 flex items-center gap-4">
-              {/* Module number */}
+            return (
               <div
-                className="w-6 h-6 rounded-sm flex items-center justify-center text-[10px] font-mono font-bold shrink-0"
-                style={isComplete
-                  ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}40` }
-                  : { backgroundColor: `${color}12`, color, border: `1px solid ${color}30` }
-                }
+                key={course.id}
+                className="rounded-sm overflow-hidden"
+                style={{ border: `1px solid ${hasStarted ? `${course.color}30` : BRAND.border}`, backgroundColor: BRAND.surface }}
               >
-                {isComplete ? <Check size={11} strokeWidth={2.5} /> : mi + 1}
-              </div>
-
-              {/* Module info */}
-              <div className="flex-1 min-w-0">
-                <div className="text-[11px] font-mono truncate" style={{ color: BRAND.textDim }}>
-                  {module.title}
-                </div>
-                {hasAny && (
-                  <div className="flex items-center gap-2 mt-1">
-                    <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
+                {/* Course header */}
+                <div
+                  className="px-5 py-4"
+                  style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: hasStarted ? `${course.color}08` : BRAND.surfaceHi }}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
                       <div
-                        className="h-full rounded-full"
-                        style={{ width: `${stats.pct}%`, backgroundColor: isComplete ? BRAND.jade : color }}
+                        className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
+                        style={{ backgroundColor: `${course.color}18`, border: `1px solid ${course.color}40` }}
+                      >
+                        <Icon size={14} color={course.color} />
+                      </div>
+                      <div className="min-w-0">
+                        <div
+                          className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold"
+                          style={{ color: course.color }}
+                        >
+                          {course.code}
+                        </div>
+                        <div className="font-serif leading-tight truncate" style={{ fontSize: '16px', color: BRAND.text }}>
+                          {course.title}
+                        </div>
+                      </div>
+                    </div>
+
+                    {isComplete ? (
+                      <span
+                        className="shrink-0 flex items-center gap-1 text-[9px] tracking-[0.12em] uppercase px-2 py-1 rounded-sm"
+                        style={{ backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}40` }}
+                      >
+                        <Check size={9} strokeWidth={2.5} /> Complete
+                      </span>
+                    ) : nextLesson ? (
+                      <Link
+                        href={`/learn/${nextLesson.id}`}
+                        className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80"
+                        style={{ backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}35` }}
+                      >
+                        {hasStarted ? 'Continue' : 'Start'}
+                        <ArrowRight size={10} />
+                      </Link>
+                    ) : null}
+                  </div>
+
+                  {/* Course-level progress bar */}
+                  <div className="mt-3 flex items-center gap-3">
+                    <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: `${course.color}20` }}>
+                      <div
+                        className="h-full rounded-full transition-all"
+                        style={{ width: `${pctDone}%`, backgroundColor: isComplete ? BRAND.jade : course.color }}
                       />
                     </div>
                     <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
-                      {stats.done.length}/{stats.available.length}
+                      {doneIds.length} / {availableIds.length}
                     </span>
+                    {hasStarted && !isComplete && (
+                      <span className="text-[10px] font-mono shrink-0" style={{ color: course.color }}>{pctDone}%</span>
+                    )}
                   </div>
-                )}
-                {!hasAny && (
-                  <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>Coming soon</div>
-                )}
-              </div>
+                </div>
 
-              {/* Action */}
-              {nextLesson && (
-                <Link
-                  href={`/learn/${nextLesson.id}`}
-                  className="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.12em] uppercase font-semibold transition-opacity hover:opacity-80"
-                  style={{ backgroundColor: `${color}18`, color, border: `1px solid ${color}35` }}
-                >
-                  {stats.done.length > 0 ? 'Continue' : 'Start'}
-                  <ArrowRight size={10} />
-                </Link>
-              )}
-              {isComplete && (
-                <span
-                  className="shrink-0 flex items-center gap-1 text-[10px] tracking-[0.12em] uppercase"
-                  style={{ color: BRAND.jade }}
-                >
-                  <Check size={10} strokeWidth={2.5} /> Done
-                </span>
-              )}
-            </div>
-          )
-        })}
+                {/* Module rows */}
+                <div className="divide-y" style={{ borderColor: BRAND.border }}>
+                  {course.modules.map((module, mi) => {
+                    const avail = module.lessonIds.filter(id => lessonMap[id])
+                    const done = avail.filter(id => completedSet.has(id))
+                    const modNextId = avail.find(id => !completedSet.has(id)) ?? null
+                    const modNextLesson = modNextId ? lessonMap[modNextId] : null
+                    const modPct = avail.length ? Math.round((done.length / avail.length) * 100) : 0
+                    const modDone = avail.length > 0 && done.length === avail.length
+                    const modStarted = done.length > 0
+
+                    return (
+                      <div key={module.id} className="px-4 py-3 flex items-center gap-3">
+                        {/* Module number / check */}
+                        <div
+                          className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0"
+                          style={modDone
+                            ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}35` }
+                            : { backgroundColor: `${course.color}10`, color: modStarted ? course.color : BRAND.textSubtle, border: `1px solid ${modStarted ? course.color : BRAND.border}30` }}
+                        >
+                          {modDone ? <Check size={9} strokeWidth={2.5} /> : mi + 1}
+                        </div>
+
+                        {/* Module name + progress */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between gap-2">
+                            <span
+                              className="text-[11px] font-mono truncate"
+                              style={{ color: modDone ? BRAND.textDim : modStarted ? BRAND.textDim : BRAND.textSubtle }}
+                            >
+                              {shortModuleName(module.title)}
+                            </span>
+                            {avail.length > 0 && (
+                              <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
+                                {done.length}/{avail.length}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Next lesson title — show only if module is started but not done */}
+                          {modStarted && !modDone && modNextLesson && (
+                            <div className="text-[10px] mt-0.5 truncate" style={{ color: course.color }}>
+                              → {modNextLesson.title}
+                            </div>
+                          )}
+
+                          {avail.length === 0 && (
+                            <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>Coming soon</div>
+                          )}
+
+                          {/* Mini progress bar */}
+                          {avail.length > 0 && modStarted && !modDone && (
+                            <div className="mt-1.5 h-0.5 rounded-full overflow-hidden w-full" style={{ backgroundColor: `${course.color}20` }}>
+                              <div className="h-full rounded-full" style={{ width: `${modPct}%`, backgroundColor: course.color }} />
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Action: only show on the first incomplete module */}
+                        {!modDone && avail.length > 0 && modNextLesson && !modStarted && (
+                          <Link
+                            href={`/learn/${modNextLesson.id}`}
+                            className="shrink-0 p-1.5 rounded-sm transition-opacity hover:opacity-70"
+                            style={{ color: BRAND.textSubtle }}
+                            title={`Start ${shortModuleName(module.title)}`}
+                          >
+                            <ChevronRight size={13} />
+                          </Link>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
