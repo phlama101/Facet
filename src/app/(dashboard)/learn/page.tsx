@@ -2,7 +2,10 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { Zap, Sparkles, BookOpen, ChevronRight, Check, Compass, Lock, Search, X } from 'lucide-react'
+import {
+  Zap, Sparkles, BookOpen, ChevronRight, ChevronDown, ChevronUp,
+  Check, Compass, Lock, Search, X, Play,
+} from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { FREE_LESSON_IDS } from '@/lib/access'
 import {
@@ -142,7 +145,16 @@ const COMBINED_MAP = Object.fromEntries(COMBINED_LIST.map(l => [l.id, l]))
 const courseLessonIds = new Set(COURSES.flatMap(c => c.modules.flatMap(m => m.lessonIds)))
 const STANDALONE_LIST = COMBINED_LIST.filter(l => !courseLessonIds.has(l.id))
 
-function LessonCard({ lesson, step, isCompleted, isLocked }: { lesson: DisplayLesson; step?: number; isCompleted?: boolean; isLocked?: boolean }) {
+// ─── Lesson card ─────────────────────────────────────────────────────────────
+
+function LessonCard({
+  lesson, step, isCompleted, isLocked,
+}: {
+  lesson: DisplayLesson
+  step?: number
+  isCompleted?: boolean
+  isLocked?: boolean
+}) {
   const track = TRACK_MAP[lesson.track as TrackId]
   if (!track) return null
   return (
@@ -164,8 +176,7 @@ function LessonCard({ lesson, step, isCompleted, isLocked }: { lesson: DisplayLe
           className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center text-[11px] font-mono font-bold mt-0.5"
           style={isCompleted
             ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
-            : { backgroundColor: `${track.color}18`, color: track.color, border: `1px solid ${track.color}40` }
-          }
+            : { backgroundColor: `${track.color}18`, color: track.color, border: `1px solid ${track.color}40` }}
         >
           {isCompleted ? <Check size={12} strokeWidth={2.5} /> : step}
         </div>
@@ -236,12 +247,200 @@ function LessonCard({ lesson, step, isCompleted, isLocked }: { lesson: DisplayLe
   )
 }
 
+// ─── Continue learning banner ─────────────────────────────────────────────────
+
+function ContinueBanner({
+  lesson,
+  courseCode,
+  courseColor,
+  completedInCourse,
+  totalInCourse,
+}: {
+  lesson: DisplayLesson
+  courseCode: string
+  courseColor: string
+  completedInCourse: number
+  totalInCourse: number
+}) {
+  const track = TRACK_MAP[lesson.track as TrackId]
+  const pct = totalInCourse > 0 ? (completedInCourse / totalInCourse) * 100 : 0
+
+  return (
+    <Link
+      href={`/learn/${lesson.id}`}
+      className="group block relative overflow-hidden rounded-sm transition-all hover:-translate-y-[1px]"
+      style={{ backgroundColor: BRAND.surface, border: `1px solid ${courseColor}40` }}
+    >
+      {/* Subtle color wash */}
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{ background: `linear-gradient(135deg, ${courseColor}, transparent 60%)` }}
+      />
+
+      <div className="relative p-5 flex items-center gap-5">
+        {/* Play button */}
+        <div
+          className="shrink-0 w-11 h-11 rounded-sm flex items-center justify-center transition-transform group-hover:scale-105"
+          style={{ backgroundColor: `${courseColor}20`, border: `1px solid ${courseColor}50` }}
+        >
+          <Play size={16} color={courseColor} fill={courseColor} />
+        </div>
+
+        {/* Text */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <span
+              className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold px-2 py-0.5 rounded-sm"
+              style={{ backgroundColor: `${courseColor}18`, color: courseColor, border: `1px solid ${courseColor}40` }}
+            >
+              {courseCode}
+            </span>
+            <span
+              className="text-[9px] tracking-[0.15em] uppercase font-mono"
+              style={{ color: BRAND.textSubtle }}
+            >
+              Continue Learning
+            </span>
+          </div>
+          <p className="font-serif leading-tight truncate" style={{ fontSize: '18px', color: BRAND.text }}>
+            {lesson.title}
+          </p>
+          <div
+            className="mt-1.5 flex items-center gap-3 text-[10px] tracking-[0.1em] uppercase"
+            style={{ color: BRAND.textSubtle }}
+          >
+            <span>{lesson.duration}</span>
+            {track && <span style={{ color: track.color }}>{lesson.level}</span>}
+            <span className="flex items-center gap-1" style={{ color: BRAND.gold }}>
+              <Zap size={9} fill={BRAND.gold} /> {lesson.xpReward} XP
+            </span>
+          </div>
+        </div>
+
+        {/* Progress + arrow */}
+        <div className="shrink-0 text-right hidden sm:block">
+          <p className="text-[10px] font-mono mb-2" style={{ color: BRAND.textSubtle }}>
+            {completedInCourse} / {totalInCourse} lessons
+          </p>
+          <div
+            className="w-28 h-1.5 rounded-full overflow-hidden"
+            style={{ backgroundColor: `${courseColor}20` }}
+          >
+            <div
+              className="h-full rounded-full transition-all"
+              style={{ width: `${pct}%`, backgroundColor: courseColor }}
+            />
+          </div>
+        </div>
+
+        <ChevronRight
+          size={16}
+          className="shrink-0 transition-transform group-hover:translate-x-0.5"
+          style={{ color: courseColor }}
+        />
+      </div>
+    </Link>
+  )
+}
+
+// ─── Collapsed course card ────────────────────────────────────────────────────
+
+function CourseHeader({
+  course,
+  isExpanded,
+  onToggle,
+  completedCount,
+  availableCount,
+}: {
+  course: Course
+  isExpanded: boolean
+  onToggle: () => void
+  completedCount: number
+  availableCount: number
+}) {
+  const pct = availableCount > 0 ? Math.round((completedCount / availableCount) * 100) : 0
+  const allDone = availableCount > 0 && completedCount === availableCount
+
+  return (
+    <button
+      onClick={onToggle}
+      className="w-full text-left p-5 rounded-sm transition-all hover:bg-white/[0.02] group"
+      style={{
+        backgroundColor: BRAND.surface,
+        border: `1px solid ${isExpanded ? `${course.color}40` : BRAND.border}`,
+      }}
+      aria-expanded={isExpanded}
+    >
+      <div className="flex items-start gap-4">
+        {/* Course badge */}
+        <div
+          className="shrink-0 px-2.5 py-1.5 rounded-sm text-[10px] font-mono font-bold tracking-[0.15em] uppercase flex items-center gap-1.5 mt-0.5"
+          style={{ backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}40` }}
+        >
+          <BookOpen size={10} />
+          {course.code}
+        </div>
+
+        {/* Title + subtitle */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="font-serif leading-tight" style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}>
+              {course.title}
+            </h2>
+            <div
+              className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center transition-transform"
+              style={{ color: BRAND.textSubtle }}
+            >
+              {isExpanded
+                ? <ChevronUp size={15} />
+                : <ChevronDown size={15} />}
+            </div>
+          </div>
+          <p className="text-xs mt-1 pr-8 line-clamp-1" style={{ color: BRAND.textSubtle }}>
+            {course.subtitle}
+          </p>
+
+          {/* Progress bar + stats */}
+          <div className="mt-3 flex items-center gap-3">
+            <div
+              className="flex-1 max-w-[200px] h-1 rounded-full overflow-hidden"
+              style={{ backgroundColor: `${course.color}20` }}
+            >
+              <div
+                className="h-full rounded-full transition-all"
+                style={{ width: `${pct}%`, backgroundColor: allDone ? BRAND.jade : course.color }}
+              />
+            </div>
+            <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
+              {completedCount} / {availableCount} lessons
+            </span>
+            {allDone && (
+              <span
+                className="flex items-center gap-1 text-[9px] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full shrink-0"
+                style={{ backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}40` }}
+              >
+                <Check size={8} strokeWidth={3} /> Complete
+              </span>
+            )}
+            {!allDone && completedCount > 0 && !isExpanded && (
+              <span className="text-[10px] shrink-0" style={{ color: course.color }}>
+                {pct}%
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    </button>
+  )
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
 function moduleAnchorId(courseId: string, moduleId: string) {
   return `mod-${courseId}-${moduleId}`
 }
 
 function shortModuleLabel(title: string) {
-  // Title format: "Module 1.2 — Minerals"
   const dashSplit = title.split('—')
   if (dashSplit.length >= 2) {
     const left = dashSplit[0].trim().replace(/^Module\s+/i, '')
@@ -251,12 +450,22 @@ function shortModuleLabel(title: string) {
   return { num: '', name: title }
 }
 
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
 export default function LearnPage() {
   const [activeTrack, setActiveTrack] = useState<TrackId | 'all'>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set())
   const [subscription, setSubscription] = useState<string>('free')
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null)
+  const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set())
+  const [continueInfo, setContinueInfo] = useState<{
+    lesson: DisplayLesson
+    courseCode: string
+    courseColor: string
+    completedInCourse: number
+    totalInCourse: number
+  } | null>(null)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
@@ -265,18 +474,74 @@ export default function LearnPage() {
       if (!user) return
       Promise.all([
         (supabase.from('user_lesson_progress') as any)
-          .select('lesson_id')
-          .eq('user_id', user.id),
+          .select('lesson_id, completed_at')
+          .eq('user_id', user.id)
+          .order('completed_at', { ascending: false }),
         (supabase.from('profiles') as any)
           .select('subscription')
           .eq('id', user.id)
           .single(),
-      ]).then(([progressRes, profileRes]: [{ data: { lesson_id: string }[] | null }, { data: { subscription?: string } | null }]) => {
-        if (progressRes.data) setCompletedIds(new Set(progressRes.data.map(r => r.lesson_id)))
+      ]).then(([progressRes, profileRes]: [
+        { data: { lesson_id: string; completed_at: string }[] | null },
+        { data: { subscription?: string } | null },
+      ]) => {
         if (profileRes.data?.subscription) setSubscription(profileRes.data.subscription)
+
+        const rows = progressRes.data ?? []
+        if (rows.length === 0) return
+
+        const completedSet = new Set(rows.map(r => r.lesson_id))
+        setCompletedIds(completedSet)
+
+        // Find the course containing the most recently completed lesson
+        const mostRecentId = rows[0].lesson_id
+        const activeCourse = COURSES.find(c =>
+          c.modules.some(m => m.lessonIds.includes(mostRecentId)),
+        )
+        if (!activeCourse) return
+
+        // Auto-expand that course
+        setExpandedCourses(new Set([activeCourse.id]))
+
+        // Count completed / available in that course
+        const availableIds = activeCourse.modules
+          .flatMap(m => m.lessonIds)
+          .filter(id => COMBINED_MAP[id])
+        const completedInCourse = availableIds.filter(id => completedSet.has(id)).length
+        const totalInCourse = availableIds.length
+
+        // Find the first incomplete lesson in the course (in module order)
+        let nextLesson: DisplayLesson | null = null
+        outer: for (const mod of activeCourse.modules) {
+          for (const id of mod.lessonIds) {
+            if (!completedSet.has(id) && COMBINED_MAP[id]) {
+              nextLesson = COMBINED_MAP[id]
+              break outer
+            }
+          }
+        }
+
+        if (nextLesson) {
+          setContinueInfo({
+            lesson: nextLesson,
+            courseCode: activeCourse.code,
+            courseColor: activeCourse.color,
+            completedInCourse,
+            totalInCourse,
+          })
+        }
       })
     })
   }, [])
+
+  function toggleCourse(courseId: string) {
+    setExpandedCourses(prev => {
+      const next = new Set(prev)
+      if (next.has(courseId)) next.delete(courseId)
+      else next.add(courseId)
+      return next
+    })
+  }
 
   const visibleCourses = useMemo(
     () => activeTrack === 'all' ? COURSES : COURSES.filter(c => c.track === activeTrack),
@@ -302,13 +567,16 @@ export default function LearnPage() {
     ? searchResults.length > 0
     : visibleCourses.length > 0 || filteredStandalone.length > 0
 
-  // Track which module is currently in view, to highlight the active pill in the nav.
+  // Observe only module sections that are currently expanded
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (observerRef.current) observerRef.current.disconnect()
 
-    const ids = visibleCourses.flatMap(c => c.modules.map(m => moduleAnchorId(c.id, m.id)))
-    const elements = ids
+    const expandedIds = visibleCourses
+      .filter(c => expandedCourses.has(c.id))
+      .flatMap(c => c.modules.map(m => moduleAnchorId(c.id, m.id)))
+
+    const elements = expandedIds
       .map(id => document.getElementById(id))
       .filter((el): el is HTMLElement => el != null)
 
@@ -318,7 +586,6 @@ export default function LearnPage() {
       (entries) => {
         const visible = entries.filter(e => e.isIntersecting)
         if (visible.length > 0) {
-          // Choose the entry highest on the page (smallest top)
           const top = visible.reduce((a, b) =>
             a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
           )
@@ -331,7 +598,7 @@ export default function LearnPage() {
     elements.forEach(el => observer.observe(el))
     observerRef.current = observer
     return () => observer.disconnect()
-  }, [visibleCourses])
+  }, [visibleCourses, expandedCourses])
 
   const scrollToAnchor = (anchor: string) => {
     const el = document.getElementById(anchor)
@@ -341,6 +608,15 @@ export default function LearnPage() {
     setActiveAnchor(anchor)
   }
 
+  const expandAndScroll = (courseId: string) => {
+    setExpandedCourses(prev => {
+      if (prev.has(courseId)) return prev
+      return new Set([...prev, courseId])
+    })
+    // Small delay lets the expansion render before scrolling
+    setTimeout(() => scrollToAnchor(`course-${courseId}`), 50)
+  }
+
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Header */}
@@ -348,13 +624,15 @@ export default function LearnPage() {
         <div className="text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: BRAND.accent }}>
           Lesson Library
         </div>
-        <h1
-          className="font-serif"
-          style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1 }}
-        >
+        <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1 }}>
           Every <em style={{ color: BRAND.accent }}>facet</em> of earth science
         </h1>
       </div>
+
+      {/* Continue learning banner — only when user has progress */}
+      {continueInfo && !isSearching && (
+        <ContinueBanner {...continueInfo} />
+      )}
 
       {/* Search */}
       <div role="search" className="relative">
@@ -424,14 +702,11 @@ export default function LearnPage() {
         })}
       </div>
 
-      {/* Sticky course/module quick-jump navigator — hidden while searching */}
-      {!isSearching && visibleCourses.length > 0 && (
+      {/* Sticky module nav — only for expanded courses */}
+      {!isSearching && visibleCourses.some(c => expandedCourses.has(c.id)) && (
         <div
           className="sticky top-0 z-20 -mx-2 px-2 py-3 backdrop-blur-md"
-          style={{
-            backgroundColor: `${BRAND.bg}d9`,
-            borderBottom: `1px solid ${BRAND.border}`,
-          }}
+          style={{ backgroundColor: `${BRAND.bg}d9`, borderBottom: `1px solid ${BRAND.border}` }}
         >
           <div className="flex items-center gap-2 mb-2">
             <Compass size={11} style={{ color: BRAND.textSubtle }} />
@@ -440,7 +715,7 @@ export default function LearnPage() {
             </span>
           </div>
           <div className="space-y-2">
-            {visibleCourses.map(course => {
+            {visibleCourses.filter(c => expandedCourses.has(c.id)).map(course => {
               const availableInCourse = course.modules.reduce(
                 (n, m) => n + m.lessonIds.filter(id => COMBINED_MAP[id]).length,
                 0,
@@ -450,11 +725,7 @@ export default function LearnPage() {
                   <button
                     onClick={() => scrollToAnchor(`course-${course.id}`)}
                     className="shrink-0 px-2.5 py-1 rounded-sm text-[10px] font-mono tracking-[0.1em] uppercase font-bold flex items-center gap-1.5 transition-colors"
-                    style={{
-                      backgroundColor: `${course.color}1a`,
-                      color: course.color,
-                      border: `1px solid ${course.color}55`,
-                    }}
+                    style={{ backgroundColor: `${course.color}1a`, color: course.color, border: `1px solid ${course.color}55` }}
                   >
                     <BookOpen size={10} />
                     {course.code}
@@ -465,7 +736,6 @@ export default function LearnPage() {
                     const available = m.lessonIds.filter(id => COMBINED_MAP[id]).length
                     const allDone = available > 0 && m.lessonIds.every(id => completedIds.has(id))
                     const { num } = shortModuleLabel(m.title)
-                    const moduleNumber = num || `M${i + 1}`
                     return (
                       <button
                         key={m.id}
@@ -479,15 +749,12 @@ export default function LearnPage() {
                         }}
                         title={m.title}
                       >
-                        <span>{moduleNumber}</span>
+                        <span>{num || `M${i + 1}`}</span>
                         {allDone && <Check size={9} strokeWidth={3} style={{ color: isActive ? BRAND.bg : BRAND.jade }} />}
                       </button>
                     )
                   })}
-                  <span
-                    className="shrink-0 ml-1 text-[9px] font-mono tracking-[0.1em] uppercase"
-                    style={{ color: BRAND.textSubtle }}
-                  >
+                  <span className="shrink-0 ml-1 text-[9px] font-mono tracking-[0.1em] uppercase" style={{ color: BRAND.textSubtle }}>
                     {availableInCourse} live
                   </span>
                 </div>
@@ -524,14 +791,12 @@ export default function LearnPage() {
         </div>
       )}
 
-      {/* Search results — flat list across all courses */}
+      {/* Search results */}
       {isSearching && searchResults.length > 0 && (
         <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
-              {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
-            </span>
-          </div>
+          <span className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
+            {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
+          </span>
           <div className="grid md:grid-cols-2 gap-3">
             {searchResults.map(lesson => (
               <LessonCard
@@ -545,134 +810,119 @@ export default function LearnPage() {
         </div>
       )}
 
-      {/* Course sections — hidden while searching */}
+      {/* Course sections */}
       {!isSearching && visibleCourses.map(course => {
-        const totalLessons = course.modules.reduce((n, m) => n + m.lessonIds.length, 0)
-        const availableLessons = course.modules.reduce(
-          (n, m) => n + m.lessonIds.filter(id => COMBINED_MAP[id]).length,
-          0,
-        )
-        const completedInCourse = course.modules.reduce(
-          (n, m) => n + m.lessonIds.filter(id => completedIds.has(id)).length,
-          0,
-        )
+        const availableIds = course.modules.flatMap(m => m.lessonIds).filter(id => COMBINED_MAP[id])
+        const availableCount = availableIds.length
+        const completedCount = availableIds.filter(id => completedIds.has(id)).length
+        const isExpanded = expandedCourses.has(course.id)
 
         return (
-          <section key={course.id} id={`course-${course.id}`} className="space-y-10 scroll-mt-28">
-            {/* Course header */}
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div
-                  className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase mb-2 px-2.5 py-1 rounded-sm"
-                  style={{ backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}40` }}
-                >
-                  <BookOpen size={10} />
-                  {course.code}
-                </div>
-                <h2 className="font-serif" style={{ fontSize: 'clamp(22px, 3vw, 30px)', lineHeight: 1.1 }}>
-                  {course.title}
-                </h2>
-                <p className="text-xs mt-1 max-w-xl" style={{ color: BRAND.textSubtle }}>
-                  {course.subtitle}
-                </p>
-                <p className="text-[10px] mt-2 font-mono tracking-[0.1em]" style={{ color: BRAND.textSubtle }}>
-                  {availableLessons} of {totalLessons} lessons live · {course.modules.length} modules
-                  {completedInCourse > 0 && ` · ${completedInCourse} completed`}
-                </p>
-              </div>
-            </div>
+          <section key={course.id} id={`course-${course.id}`} className="scroll-mt-28">
+            <CourseHeader
+              course={course}
+              isExpanded={isExpanded}
+              onToggle={() => toggleCourse(course.id)}
+              completedCount={completedCount}
+              availableCount={availableCount}
+            />
 
-            {/* Modules */}
-            {course.modules.map((module, mi) => {
-              const moduleLessons = module.lessonIds
-                .map(id => COMBINED_MAP[id])
-                .filter(Boolean) as DisplayLesson[]
-              const totalInModule = module.lessonIds.length
-              const availableCount = moduleLessons.length
-              const isComplete = availableCount === totalInModule
-              const completedInModule = module.lessonIds.filter(id => completedIds.has(id)).length
-              const allDone = availableCount > 0 && completedInModule === totalInModule
-              const { num, name } = shortModuleLabel(module.title)
+            {isExpanded && (
+              <div className="mt-4 space-y-10">
+                {course.modules.map((module, mi) => {
+                  const moduleLessons = module.lessonIds
+                    .map(id => COMBINED_MAP[id])
+                    .filter(Boolean) as DisplayLesson[]
+                  const totalInModule = module.lessonIds.length
+                  const availableInModule = moduleLessons.length
+                  const isModuleComplete = availableInModule === totalInModule
+                  const completedInModule = module.lessonIds.filter(id => completedIds.has(id)).length
+                  const allModuleDone = availableInModule > 0 && completedInModule === totalInModule
+                  const { num, name } = shortModuleLabel(module.title)
 
-              return (
-                <div
-                  key={module.id}
-                  id={moduleAnchorId(course.id, module.id)}
-                  className="space-y-3 scroll-mt-32"
-                >
-                  {/* Module header */}
-                  <div className="flex items-center gap-3 pb-2" style={{ borderBottom: `1px solid ${BRAND.border}` }}>
+                  return (
                     <div
-                      className="w-7 h-7 rounded-sm flex items-center justify-center text-[10px] font-mono font-bold shrink-0"
-                      style={allDone
-                        ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
-                        : { backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}40` }
-                      }
+                      key={module.id}
+                      id={moduleAnchorId(course.id, module.id)}
+                      className="space-y-3 scroll-mt-32"
                     >
-                      {allDone ? <Check size={12} strokeWidth={2.5} /> : (num || mi + 1)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3
-                        className="font-mono text-[11px] tracking-[0.15em] uppercase truncate"
-                        style={{ color: BRAND.textDim }}
-                      >
-                        {name || module.title}
-                      </h3>
-                    </div>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>
-                        {availableCount} / {totalInModule}
-                      </span>
-                      {!isComplete && (
-                        <span
-                          className="text-[9px] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full"
-                          style={{ backgroundColor: `${BRAND.gold}18`, color: BRAND.gold, border: `1px solid ${BRAND.gold}40` }}
+                      <div className="flex items-center gap-3 pb-2" style={{ borderBottom: `1px solid ${BRAND.border}` }}>
+                        <div
+                          className="w-7 h-7 rounded-sm flex items-center justify-center text-[10px] font-mono font-bold shrink-0"
+                          style={allModuleDone
+                            ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
+                            : { backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}40` }}
                         >
-                          In progress
-                        </span>
+                          {allModuleDone ? <Check size={12} strokeWidth={2.5} /> : (num || mi + 1)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-mono text-[11px] tracking-[0.15em] uppercase truncate" style={{ color: BRAND.textDim }}>
+                            {name || module.title}
+                          </h3>
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>
+                            {availableInModule} / {totalInModule}
+                          </span>
+                          {!isModuleComplete && (
+                            <span
+                              className="text-[9px] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full"
+                              style={{ backgroundColor: `${BRAND.gold}18`, color: BRAND.gold, border: `1px solid ${BRAND.gold}40` }}
+                            >
+                              In progress
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {availableInModule > 0 ? (
+                        <div className="grid md:grid-cols-2 gap-3">
+                          {moduleLessons.map((lesson, i) => (
+                            <LessonCard
+                              key={lesson.id}
+                              lesson={lesson}
+                              step={i + 1}
+                              isCompleted={completedIds.has(lesson.id)}
+                              isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
+                            />
+                          ))}
+                        </div>
+                      ) : (
+                        <div
+                          className="p-4 rounded-sm text-center"
+                          style={{ backgroundColor: BRAND.surface, border: `1px dashed ${BRAND.border}` }}
+                        >
+                          <p className="text-[11px]" style={{ color: BRAND.textSubtle }}>Lessons coming soon</p>
+                        </div>
+                      )}
+
+                      {!isModuleComplete && availableInModule > 0 && (
+                        <div className="flex items-center gap-2 pt-1">
+                          <ChevronRight size={12} style={{ color: BRAND.textSubtle }} />
+                          <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>
+                            {totalInModule - availableInModule} more lesson{totalInModule - availableInModule !== 1 ? 's' : ''} coming soon
+                          </span>
+                        </div>
                       )}
                     </div>
-                  </div>
+                  )
+                })}
 
-                  {/* Lesson cards */}
-                  {availableCount > 0 ? (
-                    <div className="grid md:grid-cols-2 gap-3">
-                      {moduleLessons.map((lesson, i) => (
-                        <LessonCard
-                          key={lesson.id}
-                          lesson={lesson}
-                          step={i + 1}
-                          isCompleted={completedIds.has(lesson.id)}
-                          isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <div
-                      className="p-4 rounded-sm text-center"
-                      style={{ backgroundColor: BRAND.surface, border: `1px dashed ${BRAND.border}` }}
-                    >
-                      <p className="text-[11px]" style={{ color: BRAND.textSubtle }}>Lessons coming soon</p>
-                    </div>
-                  )}
-
-                  {/* Upcoming placeholder slots */}
-                  {!isComplete && availableCount > 0 && (
-                    <div className="flex items-center gap-2 pt-1">
-                      <ChevronRight size={12} style={{ color: BRAND.textSubtle }} />
-                      <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>
-                        {totalInModule - availableCount} more lesson{totalInModule - availableCount !== 1 ? 's' : ''} coming soon
-                      </span>
-                    </div>
-                  )}
-                </div>
-              )
-            })}
+                {/* Collapse shortcut at the bottom of a long expanded course */}
+                <button
+                  onClick={() => toggleCourse(course.id)}
+                  className="flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase transition-opacity hover:opacity-70 mx-auto"
+                  style={{ color: BRAND.textSubtle }}
+                >
+                  <ChevronUp size={12} /> Collapse {course.code}
+                </button>
+              </div>
+            )}
           </section>
         )
       })}
 
-      {/* Standalone / other-track lessons */}
+      {/* Standalone lessons */}
       {!isSearching && filteredStandalone.length > 0 && (
         <div className="space-y-4">
           {visibleCourses.length > 0 && (
