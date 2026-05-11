@@ -47,7 +47,7 @@ export default async function LeaderboardPage() {
       {/* Podium */}
       <div className="flex items-end justify-center gap-4 py-6">
         {PODIUM_ORDER.map((pos, i) => {
-          const entry = top3[pos] as any
+          const entry = top3[pos] as LeaderboardEntry | undefined
           if (!entry) return null
           return (
             <div key={entry.id} className="flex flex-col items-center gap-2 w-28">

@@ -12,6 +12,9 @@ const DAILY_MISSIONS = [
   { target: 5, bonusXp: 150 },
 ] as const
 
+// Postgres unique-violation error code
+const PG_UNIQUE_VIOLATION = '23505'
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json() as { lessonId?: unknown }
@@ -35,7 +38,7 @@ export async function POST(req: NextRequest) {
 
     const admin = createAdminClient()
 
-    // Fetch profile first — need subscription for access validation
+    // Fetch profile — need subscription for access validation
     const { data: profile } = await admin
       .from('profiles')
       .select('xp, level, streak, longest_streak, last_active, subscription')
@@ -50,19 +53,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    // Check if already completed (idempotent)
-    const { data: existing } = await admin
-      .from('user_lesson_progress')
-      .select('completed')
-      .eq('user_id', user.id)
-      .eq('lesson_id', lessonId)
-      .single()
-
-    if (existing?.completed) {
-      return NextResponse.json({ ok: true, alreadyCompleted: true })
-    }
-
-    // Count today's completions BEFORE marking this one (for mission threshold check)
+    // Count today's completions BEFORE inserting (for mission threshold check)
     const todayUTC = new Date().toISOString().slice(0, 10)
     const todayUTCStart = `${todayUTC}T00:00:00.000Z`
     const { count: countBefore } = await admin
@@ -75,11 +66,19 @@ export async function POST(req: NextRequest) {
     const previousTodayCount = countBefore ?? 0
     const newTodayCount = previousTodayCount + 1
 
-    // Mark lesson complete
-    await admin.from('user_lesson_progress').upsert(
-      { user_id: user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
-      { onConflict: 'user_id,lesson_id' }
-    )
+    // Use INSERT (not upsert) so the database's unique constraint on (user_id, lesson_id)
+    // makes this atomic — two concurrent requests can't both succeed, eliminating the
+    // read-check-then-write race condition that would double-award XP.
+    const { error: insertError } = await admin
+      .from('user_lesson_progress')
+      .insert({ user_id: user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() })
+
+    if (insertError) {
+      if (insertError.code === PG_UNIQUE_VIOLATION) {
+        return NextResponse.json({ ok: true, alreadyCompleted: true })
+      }
+      throw new Error(insertError.message)
+    }
 
     const baseXp = (profile.xp ?? 0) + xpReward
 

@@ -9,6 +9,7 @@ import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } f
 import FacetedAvatar from '@/components/brand/FacetedAvatar'
 import FacetLogo from '@/components/brand/FacetLogo'
 import ManageBillingButton from '@/components/features/ManageBillingButton'
+import ProfileEditForm from '@/components/features/ProfileEditForm'
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Profile' }
@@ -267,9 +268,12 @@ export default async function ProfilePage() {
       >
         <div className="flex items-center gap-5 md:col-span-2">
           <FacetedAvatar initials={initials} size="lg" />
-          <div className="min-w-0">
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
-              Member
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-3">
+              <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
+                Member
+              </div>
+              <ProfileEditForm displayName={displayName} bio={profile.bio} />
             </div>
             <h1
               className="font-serif truncate"
@@ -277,6 +281,11 @@ export default async function ProfilePage() {
             >
               {displayName}
             </h1>
+            {profile.bio && (
+              <p className="text-xs mt-1 line-clamp-2" style={{ color: BRAND.textDim }}>
+                {profile.bio}
+              </p>
+            )}
             <div
               className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-xs"
               style={{ color: BRAND.textDim }}
