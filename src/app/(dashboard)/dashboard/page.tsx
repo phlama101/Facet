@@ -36,7 +36,7 @@ interface CourseConfig {
 
 const COURSES: CourseConfig[] = [
   { id: 'geol-101', code: 'GEOL 101', title: 'Reading the Earth',               modules: GEOL_101_MODULES, color: BRAND.coral,     icon: Mountain   },
-  { id: 'geol-201', code: 'GEOL 201', title: 'Earth Through Time',              modules: GEOL_201_MODULES, color: BRAND.amethyst,  icon: Mountain   },
+  { id: 'geol-201', code: 'GEOL 201', title: 'Earth Through Time',              modules: GEOL_201_MODULES, color: BRAND.coral,     icon: Mountain   },
   { id: 'ocea-101', code: 'OCEA 101', title: 'Introduction to Oceanography',    modules: OCEA_101_MODULES, color: BRAND.accent,    icon: Waves      },
   { id: 'atmo-101', code: 'ATMO 101', title: 'Introduction to Meteorology',     modules: ATMO_101_MODULES, color: BRAND.gold,      icon: Wind       },
   { id: 'volc-101', code: 'VOLC 101', title: 'Introduction to Volcanology',     modules: VOLC_101_MODULES, color: BRAND.ruby,      icon: Flame      },

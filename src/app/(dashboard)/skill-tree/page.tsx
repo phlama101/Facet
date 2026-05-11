@@ -79,7 +79,7 @@ export default async function SkillTreePage() {
       <CourseTree
         code="GEOL 201"
         title="Earth Through Time"
-        color={BRAND.amethyst}
+        color={BRAND.coral}
         modules={GEOL_201_MODULES}
         lessonMap={lessonMap}
         completed={completed}

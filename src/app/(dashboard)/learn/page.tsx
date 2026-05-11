@@ -64,7 +64,7 @@ const COURSES: Course[] = [
     subtitle: 'Intermediate geology — geologic time, stratigraphy, fossils, life history.',
     track: 'geo',
     modules: GEOL_201_MODULES,
-    color: BRAND.amethyst,
+    color: BRAND.coral,
   },
   {
     id: 'ocea-101',
