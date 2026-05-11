@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { Zap, Sparkles, BookOpen, ChevronRight, Check, Compass, Lock } from 'lucide-react'
+import { Zap, Sparkles, BookOpen, ChevronRight, Check, Compass, Lock, Search, X } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { FREE_LESSON_IDS } from '@/lib/access'
 import {
@@ -253,6 +253,7 @@ function shortModuleLabel(title: string) {
 
 export default function LearnPage() {
   const [activeTrack, setActiveTrack] = useState<TrackId | 'all'>('all')
+  const [searchQuery, setSearchQuery] = useState('')
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set())
   const [subscription, setSubscription] = useState<string>('free')
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null)
@@ -286,7 +287,20 @@ export default function LearnPage() {
     ? STANDALONE_LIST
     : STANDALONE_LIST.filter(l => l.track === activeTrack)
 
-  const hasAnything = visibleCourses.length > 0 || filteredStandalone.length > 0
+  const isSearching = searchQuery.trim().length > 0
+
+  const searchResults = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase()
+    if (!q) return []
+    return COMBINED_LIST.filter(l => {
+      if (activeTrack !== 'all' && l.track !== activeTrack) return false
+      return l.title.toLowerCase().includes(q) || l.description.toLowerCase().includes(q)
+    })
+  }, [searchQuery, activeTrack])
+
+  const hasAnything = isSearching
+    ? searchResults.length > 0
+    : visibleCourses.length > 0 || filteredStandalone.length > 0
 
   // Track which module is currently in view, to highlight the active pill in the nav.
   useEffect(() => {
@@ -342,6 +356,36 @@ export default function LearnPage() {
         </h1>
       </div>
 
+      {/* Search */}
+      <div className="relative">
+        <Search
+          size={14}
+          className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+          style={{ color: BRAND.textSubtle }}
+        />
+        <input
+          type="text"
+          placeholder="Search lessons by title or topic…"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+          className="w-full pl-9 pr-10 py-2.5 rounded-sm text-sm bg-transparent outline-none"
+          style={{
+            backgroundColor: BRAND.surface,
+            border: `1px solid ${searchQuery ? BRAND.accent : BRAND.border}`,
+            color: BRAND.text,
+          }}
+        />
+        {searchQuery && (
+          <button
+            onClick={() => setSearchQuery('')}
+            className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 rounded-sm transition-opacity hover:opacity-70"
+            aria-label="Clear search"
+          >
+            <X size={13} style={{ color: BRAND.textSubtle }} />
+          </button>
+        )}
+      </div>
+
       {/* Track filter */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         <button
@@ -378,8 +422,8 @@ export default function LearnPage() {
         })}
       </div>
 
-      {/* Sticky course/module quick-jump navigator */}
-      {visibleCourses.length > 0 && (
+      {/* Sticky course/module quick-jump navigator — hidden while searching */}
+      {!isSearching && visibleCourses.length > 0 && (
         <div
           className="sticky top-0 z-20 -mx-2 px-2 py-3 backdrop-blur-md"
           style={{
@@ -458,15 +502,49 @@ export default function LearnPage() {
           style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
         >
           <Sparkles size={24} color={BRAND.textSubtle} className="mx-auto mb-3" />
-          <h3 className="font-serif" style={{ fontSize: '22px' }}>Coming soon</h3>
+          <h3 className="font-serif" style={{ fontSize: '22px' }}>
+            {isSearching ? 'No lessons found' : 'Coming soon'}
+          </h3>
           <p className="text-xs mt-2" style={{ color: BRAND.textSubtle }}>
-            We&apos;re building lessons for this track.
+            {isSearching
+              ? `No lessons match "${searchQuery}". Try a different keyword.`
+              : "We're building lessons for this track."}
           </p>
+          {isSearching && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="mt-4 px-4 py-2 rounded-sm text-[10px] tracking-[0.15em] uppercase transition-opacity hover:opacity-70"
+              style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}`, color: BRAND.text }}
+            >
+              Clear search
+            </button>
+          )}
         </div>
       )}
 
-      {/* Course sections */}
-      {visibleCourses.map(course => {
+      {/* Search results — flat list across all courses */}
+      {isSearching && searchResults.length > 0 && (
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
+              {searchResults.length} result{searchResults.length !== 1 ? 's' : ''}
+            </span>
+          </div>
+          <div className="grid md:grid-cols-2 gap-3">
+            {searchResults.map(lesson => (
+              <LessonCard
+                key={lesson.id}
+                lesson={lesson}
+                isCompleted={completedIds.has(lesson.id)}
+                isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Course sections — hidden while searching */}
+      {!isSearching && visibleCourses.map(course => {
         const totalLessons = course.modules.reduce((n, m) => n + m.lessonIds.length, 0)
         const availableLessons = course.modules.reduce(
           (n, m) => n + m.lessonIds.filter(id => COMBINED_MAP[id]).length,
@@ -593,7 +671,7 @@ export default function LearnPage() {
       })}
 
       {/* Standalone / other-track lessons */}
-      {filteredStandalone.length > 0 && (
+      {!isSearching && filteredStandalone.length > 0 && (
         <div className="space-y-4">
           {visibleCourses.length > 0 && (
             <div className="border-t pt-6" style={{ borderColor: BRAND.border }}>

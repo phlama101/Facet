@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { levelFromXp } from '@/lib/utils'
+import { LESSONS } from '@/lessons/index'
+import { LESSONS_V2 } from '@/lessons-v2/index'
+import { canAccessLesson } from '@/lib/access'
 
 const DAILY_MISSIONS = [
   { target: 1, bonusXp: 25 },
@@ -11,11 +14,19 @@ const DAILY_MISSIONS = [
 
 export async function POST(req: NextRequest) {
   try {
-    const { lessonId, xpReward } = await req.json() as { lessonId: string; xpReward: number }
+    const body = await req.json() as { lessonId?: unknown }
+    const lessonId = typeof body.lessonId === 'string' ? body.lessonId.trim() : null
 
-    if (!lessonId || typeof xpReward !== 'number') {
+    if (!lessonId) {
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 })
     }
+
+    // Validate lesson exists server-side and get authoritative xpReward (never trust client)
+    const lesson = LESSONS[lessonId] ?? LESSONS_V2[lessonId]
+    if (!lesson) {
+      return NextResponse.json({ error: 'Lesson not found' }, { status: 404 })
+    }
+    const xpReward = lesson.xpReward
 
     // Verify user session
     const supabase = await createClient()
@@ -23,6 +34,21 @@ export async function POST(req: NextRequest) {
     if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
     const admin = createAdminClient()
+
+    // Fetch profile first — need subscription for access validation
+    const { data: profile } = await admin
+      .from('profiles')
+      .select('xp, level, streak, longest_streak, last_active, subscription')
+      .eq('id', user.id)
+      .single()
+
+    if (!profile) return NextResponse.json({ error: 'Profile not found' }, { status: 404 })
+
+    // Validate the user's subscription allows access to this lesson
+    const subscription = (profile as { subscription?: string }).subscription ?? 'free'
+    if (!canAccessLesson(lessonId, subscription)) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    }
 
     // Check if already completed (idempotent)
     const { data: existing } = await admin
@@ -54,15 +80,6 @@ export async function POST(req: NextRequest) {
       { user_id: user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() },
       { onConflict: 'user_id,lesson_id' }
     )
-
-    // Fetch current profile state
-    const { data: profile } = await admin
-      .from('profiles')
-      .select('xp, level, streak, longest_streak, last_active')
-      .eq('id', user.id)
-      .single()
-
-    if (!profile) return NextResponse.json({ error: 'Profile not found' }, { status: 404 })
 
     const baseXp = (profile.xp ?? 0) + xpReward
 
