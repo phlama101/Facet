@@ -79,6 +79,7 @@ export default function LessonViewer({
         <div className="max-w-3xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
           <button
             onClick={onClose}
+            aria-label="Exit lesson"
             className="flex items-center gap-2 text-xs tracking-wider uppercase transition-opacity hover:opacity-70"
             style={{ color: BRAND.textDim }}
           >
@@ -87,6 +88,11 @@ export default function LessonViewer({
 
           <div className="flex-1 max-w-xs">
             <div
+              role="progressbar"
+              aria-valuenow={Math.round(progress)}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label={`Lesson progress: section ${sectionIdx + 1} of ${total}`}
               className="h-[3px] rounded-full overflow-hidden"
               style={{ backgroundColor: BRAND.border }}
             >
@@ -170,6 +176,7 @@ export default function LessonViewer({
             <button
               onClick={goPrev}
               disabled={sectionIdx === 0}
+              aria-label="Previous section"
               className="flex items-center gap-2 text-xs tracking-[0.12em] uppercase px-4 py-2 rounded-sm disabled:opacity-30 transition-opacity"
               style={{ color: BRAND.textDim }}
             >
@@ -177,6 +184,7 @@ export default function LessonViewer({
             </button>
             <button
               onClick={goNext}
+              aria-label="Continue to next section"
               className="flex items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase px-5 py-2.5 rounded-sm transition-opacity hover:opacity-80"
               style={{ backgroundColor: track.color, color: BRAND.bg }}
             >

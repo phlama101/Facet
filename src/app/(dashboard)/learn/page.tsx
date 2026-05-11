@@ -357,7 +357,7 @@ export default function LearnPage() {
       </div>
 
       {/* Search */}
-      <div className="relative">
+      <div role="search" className="relative">
         <Search
           size={14}
           className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
@@ -387,9 +387,10 @@ export default function LearnPage() {
       </div>
 
       {/* Track filter */}
-      <div className="flex gap-2 overflow-x-auto pb-1">
+      <div role="group" aria-label="Filter by track" className="flex gap-2 overflow-x-auto pb-1">
         <button
           onClick={() => setActiveTrack('all')}
+          aria-pressed={activeTrack === 'all'}
           className="px-4 py-2 rounded-sm text-[10px] tracking-[0.15em] uppercase whitespace-nowrap transition-all"
           style={{
             backgroundColor: activeTrack === 'all' ? BRAND.accent : BRAND.surface,
@@ -407,6 +408,7 @@ export default function LearnPage() {
             <button
               key={t.id}
               onClick={() => setActiveTrack(t.id)}
+              aria-pressed={isActive}
               className="px-4 py-2 rounded-sm text-[10px] tracking-[0.15em] uppercase whitespace-nowrap flex items-center gap-2 transition-all"
               style={{
                 backgroundColor: isActive ? t.color : BRAND.surface,

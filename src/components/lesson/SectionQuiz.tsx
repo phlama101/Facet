@@ -75,7 +75,7 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
       </h2>
 
       {/* Answer choices */}
-      <div className="space-y-2">
+      <div role="group" aria-label="Answer choices" className="space-y-2">
         {q.a.map((option, i) => {
           const isCorrectOption  = i === q.correct
           const isSelectedOption = answer === i
@@ -104,11 +104,16 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
             }
           }
 
+          const ariaLabel = answered
+            ? isCorrectOption ? `${String.fromCharCode(65 + i)}: correct answer` : isSelectedOption ? `${String.fromCharCode(65 + i)}: incorrect` : `${String.fromCharCode(65 + i)}`
+            : `Answer ${String.fromCharCode(65 + i)}`
           return (
             <button
               key={i}
               onClick={() => handleAnswer(i)}
               disabled={answered}
+              aria-label={ariaLabel}
+              aria-pressed={isSelectedOption}
               className="w-full text-left flex items-center gap-3 px-4 py-3.5 rounded-sm"
               style={{
                 backgroundColor: bgColor,

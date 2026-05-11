@@ -1,8 +1,10 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-// Only routes that require an active session
-const AUTH_REQUIRED = ['/dashboard', '/profile']
+// Routes that require an active session.
+// Note: '/learn/' (with trailing slash) protects /learn/[id] without blocking
+// the public /learn lesson library page.
+const AUTH_REQUIRED = ['/dashboard', '/profile', '/learn/', '/atlas', '/billing', '/skill-tree']
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
