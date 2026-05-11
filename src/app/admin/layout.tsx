@@ -1,13 +1,50 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { createClient as createAdminClient } from '@supabase/supabase-js'
 import Link from 'next/link'
 
 export const metadata = { title: 'Admin — Facet' }
 
-export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+export default async function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login?next=/admin/lessons')
+
+  // Check if migration has run (is_admin column exists)
+  const admin = createAdminClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { auth: { persistSession: false } }
+  )
+
+  const { error: migrationCheck } = await admin
+    .from('profiles')
+    .select('is_admin')
+    .eq('id', user.id)
+    .single()
+
+  const migrationNeeded = migrationCheck?.code === '42703' // column does not exist
+
+  if (migrationNeeded) {
+    // Let the setup page render without admin check
+    return (
+      <div className="min-h-screen bg-[#0d1117] text-[#e6edf3]">
+        <header className="border-b border-white/5 bg-[#161b22]">
+          <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+            <span className="text-sm font-bold text-[#e6edf3]">Facet Admin</span>
+            <Link href="/dashboard" className="text-xs text-[#8b949e] hover:text-[#e6edf3] transition-colors">← App</Link>
+          </div>
+        </header>
+        <main className="max-w-6xl mx-auto px-6 py-8">
+          {children}
+        </main>
+      </div>
+    )
+  }
 
   const { data: profile } = await supabase
     .from('profiles')
@@ -45,6 +82,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             <nav className="flex items-center gap-4">
               <Link href="/admin/lessons" className="text-sm text-[#8b949e] hover:text-[#e6edf3] transition-colors">
                 Lessons
+              </Link>
+              <Link href="/admin/setup" className="text-sm text-[#8b949e] hover:text-[#e6edf3] transition-colors">
+                Setup
               </Link>
             </nav>
           </div>
