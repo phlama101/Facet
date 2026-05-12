@@ -3,16 +3,11 @@ import Link from 'next/link'
 import {
   Zap, Flame, BookOpen, TrendingUp, Play, ChevronRight,
   Check, ArrowRight, Trophy, Calendar, Clock,
-  Mountain, Waves, Wind, Thermometer, Telescope,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import {
-  LESSON_LIST, TRACK_MAP,
-  GEOL_101_MODULES, GEOL_201_MODULES,
-  OCEA_101_MODULES, ATMO_101_MODULES,
-  VOLC_101_MODULES, CLIM_101_MODULES, ASTR_101_MODULES,
-  type CourseModule,
+  LESSON_LIST, TRACK_MAP, LEARNING_PATHS,
 } from '@/lessons/index'
 import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
@@ -23,25 +18,6 @@ export const metadata = { title: 'Dashboard' }
 
 type Props = { searchParams?: Promise<Record<string, string>> }
 type ProgressRow = { lesson_id: string; completed_at: string | null }
-
-interface CourseConfig {
-  id: string
-  code: string
-  title: string
-  modules: CourseModule[]
-  color: string
-  icon: React.ComponentType<{ size?: number; color?: string }>
-}
-
-const COURSES: CourseConfig[] = [
-  { id: 'geol-101', code: 'GEOL 101', title: 'Reading the Earth',               modules: GEOL_101_MODULES, color: BRAND.coral,     icon: Mountain   },
-  { id: 'geol-201', code: 'GEOL 201', title: 'Earth Through Time',              modules: GEOL_201_MODULES, color: BRAND.coral,     icon: Mountain   },
-  { id: 'ocea-101', code: 'OCEA 101', title: 'Introduction to Oceanography',    modules: OCEA_101_MODULES, color: BRAND.accent,    icon: Waves      },
-  { id: 'atmo-101', code: 'ATMO 101', title: 'Introduction to Meteorology',     modules: ATMO_101_MODULES, color: BRAND.gold,      icon: Wind       },
-  { id: 'volc-101', code: 'VOLC 101', title: 'Introduction to Volcanology',     modules: VOLC_101_MODULES, color: BRAND.ruby,      icon: Flame      },
-  { id: 'clim-101', code: 'CLIM 101', title: 'Introduction to Climate Science', modules: CLIM_101_MODULES, color: BRAND.jade,      icon: Thermometer},
-  { id: 'astr-101', code: 'ASTR 101', title: 'Introduction to Planetary Science', modules: ASTR_101_MODULES, color: BRAND.amethyst, icon: Telescope },
-]
 
 function timeAgo(isoString: string | null): string {
   if (!isoString) return ''
@@ -116,16 +92,16 @@ export default async function DashboardPage({ searchParams }: Props) {
   const combinedList = LESSON_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track, duration: l.duration }))
   const lessonMap = Object.fromEntries(combinedList.map(l => [l.id, l]))
 
-  // Per-course stats
-  const courseStats = COURSES.map(course => {
-    const availableIds = course.modules.flatMap(m => m.lessonIds).filter(id => lessonMap[id])
+  // Per-path stats
+  const courseStats = LEARNING_PATHS.map(path => {
+    const availableIds = path.chapters.flatMap(ch => ch.lessonIds).filter(id => lessonMap[id])
     const doneIds = availableIds.filter(id => completedSet.has(id))
     const nextId = availableIds.find(id => !completedSet.has(id)) ?? null
     const pctDone = availableIds.length ? Math.round((doneIds.length / availableIds.length) * 100) : 0
-    return { course, availableIds, doneIds, nextId, pctDone }
+    return { course: path, availableIds, doneIds, nextId, pctDone }
   })
 
-  // Hero: pick the course with the most completions but not 100% done; fallback to any
+  // Hero: pick the path with the most completions but not 100% done; fallback to any
   const activeCourseStats = courseStats
     .filter(s => s.doneIds.length > 0 && s.nextId !== null)
     .sort((a, b) => b.doneIds.length - a.doneIds.length)[0]
@@ -425,7 +401,7 @@ export default async function DashboardPage({ searchParams }: Props) {
                           className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold"
                           style={{ color: course.color }}
                         >
-                          {course.code}
+                          {course.level}
                         </div>
                         <div className="font-serif leading-tight truncate" style={{ fontSize: '16px', color: BRAND.text }}>
                           {course.title}
@@ -469,10 +445,10 @@ export default async function DashboardPage({ searchParams }: Props) {
                   </div>
                 </div>
 
-                {/* Module rows */}
+                {/* Chapter rows */}
                 <div className="divide-y" style={{ borderColor: BRAND.border }}>
-                  {course.modules.map((module, mi) => {
-                    const avail = module.lessonIds.filter(id => lessonMap[id])
+                  {course.chapters.map((chapter, ci) => {
+                    const avail = chapter.lessonIds.filter(id => lessonMap[id])
                     const done = avail.filter(id => completedSet.has(id))
                     const modNextId = avail.find(id => !completedSet.has(id)) ?? null
                     const modNextLesson = modNextId ? lessonMap[modNextId] : null
@@ -481,25 +457,25 @@ export default async function DashboardPage({ searchParams }: Props) {
                     const modStarted = done.length > 0
 
                     return (
-                      <div key={module.id} className="px-4 py-3 flex items-center gap-3">
-                        {/* Module number / check */}
+                      <div key={chapter.id} className="px-4 py-3 flex items-center gap-3">
+                        {/* Chapter number / check */}
                         <div
                           className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0"
                           style={modDone
                             ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}35` }
                             : { backgroundColor: `${course.color}10`, color: modStarted ? course.color : BRAND.textSubtle, border: `1px solid ${modStarted ? course.color : BRAND.border}30` }}
                         >
-                          {modDone ? <Check size={9} strokeWidth={2.5} /> : mi + 1}
+                          {modDone ? <Check size={9} strokeWidth={2.5} /> : ci + 1}
                         </div>
 
-                        {/* Module name + progress */}
+                        {/* Chapter name + progress */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between gap-2">
                             <span
                               className="text-[11px] font-mono truncate"
                               style={{ color: modDone ? BRAND.textDim : modStarted ? BRAND.textDim : BRAND.textSubtle }}
                             >
-                              {shortModuleName(module.title)}
+                              {chapter.title}
                             </span>
                             {avail.length > 0 && (
                               <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
@@ -508,7 +484,7 @@ export default async function DashboardPage({ searchParams }: Props) {
                             )}
                           </div>
 
-                          {/* Next lesson title — show only if module is started but not done */}
+                          {/* Next lesson title — show only if chapter is started but not done */}
                           {modStarted && !modDone && modNextLesson && (
                             <div className="text-[10px] mt-0.5 truncate" style={{ color: course.color }}>
                               → {modNextLesson.title}
@@ -527,13 +503,13 @@ export default async function DashboardPage({ searchParams }: Props) {
                           )}
                         </div>
 
-                        {/* Action: only show on the first incomplete module */}
+                        {/* Action: only show on the first incomplete chapter */}
                         {!modDone && avail.length > 0 && modNextLesson && !modStarted && (
                           <Link
                             href={`/learn/${modNextLesson.id}`}
                             className="shrink-0 p-1.5 rounded-sm transition-opacity hover:opacity-70"
                             style={{ color: BRAND.textSubtle }}
-                            title={`Start ${shortModuleName(module.title)}`}
+                            title={`Start ${chapter.title}`}
                           >
                             <ChevronRight size={13} />
                           </Link>

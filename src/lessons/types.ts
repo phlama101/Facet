@@ -116,6 +116,30 @@ export type InteractionConfig =
 
 export type TrackId = 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
 
+export type PathLevel = 'Foundations' | 'Intermediate' | 'Advanced' | 'Expert'
+
+export interface Chapter {
+  id: string
+  title: string
+  description?: string
+  lessonIds: string[]
+  iconId?: string
+}
+
+export interface LearningPath {
+  id: string
+  title: string
+  subtitle: string
+  tagline?: string
+  track: TrackId
+  level: PathLevel
+  chapters: Chapter[]
+  color: string
+  icon: LucideIcon
+  prerequisites?: string[]
+  iconId?: string
+}
+
 export type LessonLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
 
 export interface Source {

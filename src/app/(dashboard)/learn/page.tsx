@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import {
-  Zap, Sparkles, BookOpen, ChevronRight, ChevronDown, ChevronUp,
+  Zap, Sparkles, ChevronRight, ChevronDown, ChevronUp,
   Check, Compass, Lock, Search, X, Play,
 } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
@@ -12,17 +12,10 @@ import {
   LESSON_LIST,
   TRACKS,
   TRACK_MAP,
-  GEOL_101_MODULES,
-  GEOL_201_MODULES,
-  OCEA_101_MODULES,
-  ATMO_101_MODULES,
-  VOLC_101_MODULES,
-  CLIM_101_MODULES,
-  ASTR_101_MODULES,
-  type CourseModule,
+  LEARNING_PATHS,
 } from '@/lessons/index'
 import { createClient } from '@/lib/supabase/client'
-import type { TrackId } from '@/lessons/types'
+import type { TrackId, LearningPath } from '@/lessons/types'
 
 interface DisplayLesson {
   id: string
@@ -33,82 +26,6 @@ interface DisplayLesson {
   duration: string
   xpReward: number
 }
-
-interface Course {
-  id: string
-  code: string
-  title: string
-  subtitle: string
-  track: TrackId
-  modules: CourseModule[]
-  color: string
-}
-
-const COURSES: Course[] = [
-  {
-    id: 'geol-101',
-    code: 'GEOL 101',
-    title: 'Reading the Earth',
-    subtitle: 'Introductory geology — minerals, rocks, plate tectonics, surface processes.',
-    track: 'geo',
-    modules: GEOL_101_MODULES,
-    color: BRAND.coral,
-  },
-  {
-    id: 'geol-201',
-    code: 'GEOL 201',
-    title: 'Earth Through Time',
-    subtitle: 'Intermediate geology — geologic time, stratigraphy, fossils, life history.',
-    track: 'geo',
-    modules: GEOL_201_MODULES,
-    color: BRAND.coral,
-  },
-  {
-    id: 'ocea-101',
-    code: 'OCEA 101',
-    title: 'Introduction to Oceanography',
-    subtitle: 'The ocean basin, seawater chemistry, circulation, waves, marine biology, and polar ecosystems.',
-    track: 'oce',
-    modules: OCEA_101_MODULES,
-    color: BRAND.accent,
-  },
-  {
-    id: 'atmo-101',
-    code: 'ATMO 101',
-    title: 'Introduction to Meteorology',
-    subtitle: 'Atmospheric structure, composition, solar energy budget, the greenhouse effect, weather systems, and precipitation.',
-    track: 'atm',
-    modules: ATMO_101_MODULES,
-    color: BRAND.gold,
-  },
-  {
-    id: 'volc-101',
-    code: 'VOLC 101',
-    title: 'Introduction to Volcanology',
-    subtitle: 'Magma origin, composition, volcanic landforms, eruption styles, pyroclastic flows, and volcanic hazards.',
-    track: 'vol',
-    modules: VOLC_101_MODULES,
-    color: BRAND.ruby,
-  },
-  {
-    id: 'clim-101',
-    code: 'CLIM 101',
-    title: 'Introduction to Climate Science',
-    subtitle: 'The climate system, atmospheric and ocean circulation, the carbon cycle, paleoclimate, and modern climate change.',
-    track: 'cli',
-    modules: CLIM_101_MODULES,
-    color: BRAND.jade,
-  },
-  {
-    id: 'astr-101',
-    code: 'ASTR 101',
-    title: 'Introduction to Planetary Science',
-    subtitle: 'Solar system formation, terrestrial and giant planets, moons, small bodies, and the search for life.',
-    track: 'ast',
-    modules: ASTR_101_MODULES,
-    color: BRAND.amethyst,
-  },
-]
 
 const COMBINED_LIST: DisplayLesson[] = LESSON_LIST.map(l => ({
   id: l.id,
@@ -121,8 +38,8 @@ const COMBINED_LIST: DisplayLesson[] = LESSON_LIST.map(l => ({
 }))
 
 const COMBINED_MAP = Object.fromEntries(COMBINED_LIST.map(l => [l.id, l]))
-const courseLessonIds = new Set(COURSES.flatMap(c => c.modules.flatMap(m => m.lessonIds)))
-const STANDALONE_LIST = COMBINED_LIST.filter(l => !courseLessonIds.has(l.id))
+const pathLessonIds = new Set(LEARNING_PATHS.flatMap(p => p.chapters.flatMap(c => c.lessonIds)))
+const STANDALONE_LIST = COMBINED_LIST.filter(l => !pathLessonIds.has(l.id))
 
 // ─── Lesson card ─────────────────────────────────────────────────────────────
 
@@ -221,13 +138,13 @@ function LessonCard({
 
 function ContinueBanner({
   lesson,
-  courseCode,
+  pathTitle,
   courseColor,
   completedInCourse,
   totalInCourse,
 }: {
   lesson: DisplayLesson
-  courseCode: string
+  pathTitle: string
   courseColor: string
   completedInCourse: number
   totalInCourse: number
@@ -263,7 +180,7 @@ function ContinueBanner({
               className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold px-2 py-0.5 rounded-sm"
               style={{ backgroundColor: `${courseColor}18`, color: courseColor, border: `1px solid ${courseColor}40` }}
             >
-              {courseCode}
+              {pathTitle}
             </span>
             <span
               className="text-[9px] tracking-[0.15em] uppercase font-mono"
@@ -316,13 +233,13 @@ function ContinueBanner({
 // ─── Collapsed course card ────────────────────────────────────────────────────
 
 function CourseHeader({
-  course,
+  path,
   isExpanded,
   onToggle,
   completedCount,
   availableCount,
 }: {
-  course: Course
+  path: LearningPath
   isExpanded: boolean
   onToggle: () => void
   completedCount: number
@@ -337,25 +254,25 @@ function CourseHeader({
       className="w-full text-left p-5 rounded-sm transition-all hover:bg-white/[0.02] group"
       style={{
         backgroundColor: BRAND.surface,
-        border: `1px solid ${isExpanded ? `${course.color}40` : BRAND.border}`,
+        border: `1px solid ${isExpanded ? `${path.color}40` : BRAND.border}`,
       }}
       aria-expanded={isExpanded}
     >
       <div className="flex items-start gap-4">
-        {/* Course badge */}
+        {/* Level badge */}
         <div
           className="shrink-0 px-2.5 py-1.5 rounded-sm text-[10px] font-mono font-bold tracking-[0.15em] uppercase flex items-center gap-1.5 mt-0.5"
-          style={{ backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}40` }}
+          style={{ backgroundColor: `${path.color}18`, color: path.color, border: `1px solid ${path.color}40` }}
         >
-          <BookOpen size={10} />
-          {course.code}
+          <path.icon size={10} />
+          {path.level}
         </div>
 
         {/* Title + subtitle */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-3">
             <h2 className="font-serif leading-tight" style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}>
-              {course.title}
+              {path.title}
             </h2>
             <div
               className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center transition-transform"
@@ -367,18 +284,18 @@ function CourseHeader({
             </div>
           </div>
           <p className="text-xs mt-1 pr-8 line-clamp-1" style={{ color: BRAND.textSubtle }}>
-            {course.subtitle}
+            {path.subtitle}
           </p>
 
           {/* Progress bar + stats */}
           <div className="mt-3 flex items-center gap-3">
             <div
               className="flex-1 max-w-[200px] h-1 rounded-full overflow-hidden"
-              style={{ backgroundColor: `${course.color}20` }}
+              style={{ backgroundColor: `${path.color}20` }}
             >
               <div
                 className="h-full rounded-full transition-all"
-                style={{ width: `${pct}%`, backgroundColor: allDone ? BRAND.jade : course.color }}
+                style={{ width: `${pct}%`, backgroundColor: allDone ? BRAND.jade : path.color }}
               />
             </div>
             <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
@@ -393,7 +310,7 @@ function CourseHeader({
               </span>
             )}
             {!allDone && completedCount > 0 && !isExpanded && (
-              <span className="text-[10px] shrink-0" style={{ color: course.color }}>
+              <span className="text-[10px] shrink-0" style={{ color: path.color }}>
                 {pct}%
               </span>
             )}
@@ -406,18 +323,8 @@ function CourseHeader({
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function moduleAnchorId(courseId: string, moduleId: string) {
-  return `mod-${courseId}-${moduleId}`
-}
-
-function shortModuleLabel(title: string) {
-  const dashSplit = title.split('—')
-  if (dashSplit.length >= 2) {
-    const left = dashSplit[0].trim().replace(/^Module\s+/i, '')
-    const right = dashSplit.slice(1).join('—').trim()
-    return { num: left, name: right }
-  }
-  return { num: '', name: title }
+function moduleAnchorId(pathId: string, chapterId: string) {
+  return `mod-${pathId}-${chapterId}`
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -431,7 +338,7 @@ export default function LearnPage() {
   const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set())
   const [continueInfo, setContinueInfo] = useState<{
     lesson: DisplayLesson
-    courseCode: string
+    pathTitle: string
     courseColor: string
     completedInCourse: number
     totalInCourse: number
@@ -463,27 +370,27 @@ export default function LearnPage() {
         const completedSet = new Set(rows.map(r => r.lesson_id))
         setCompletedIds(completedSet)
 
-        // Find the course containing the most recently completed lesson
+        // Find the path containing the most recently completed lesson
         const mostRecentId = rows[0].lesson_id
-        const activeCourse = COURSES.find(c =>
-          c.modules.some(m => m.lessonIds.includes(mostRecentId)),
+        const activePath = LEARNING_PATHS.find(p =>
+          p.chapters.some(c => c.lessonIds.includes(mostRecentId)),
         )
-        if (!activeCourse) return
+        if (!activePath) return
 
-        // Auto-expand that course
-        setExpandedCourses(new Set([activeCourse.id]))
+        // Auto-expand that path
+        setExpandedCourses(new Set([activePath.id]))
 
-        // Count completed / available in that course
-        const availableIds = activeCourse.modules
-          .flatMap(m => m.lessonIds)
+        // Count completed / available in that path
+        const availableIds = activePath.chapters
+          .flatMap(c => c.lessonIds)
           .filter(id => COMBINED_MAP[id])
         const completedInCourse = availableIds.filter(id => completedSet.has(id)).length
         const totalInCourse = availableIds.length
 
-        // Find the first incomplete lesson in the course (in module order)
+        // Find the first incomplete lesson in the path (in chapter order)
         let nextLesson: DisplayLesson | null = null
-        outer: for (const mod of activeCourse.modules) {
-          for (const id of mod.lessonIds) {
+        outer: for (const chapter of activePath.chapters) {
+          for (const id of chapter.lessonIds) {
             if (!completedSet.has(id) && COMBINED_MAP[id]) {
               nextLesson = COMBINED_MAP[id]
               break outer
@@ -494,8 +401,8 @@ export default function LearnPage() {
         if (nextLesson) {
           setContinueInfo({
             lesson: nextLesson,
-            courseCode: activeCourse.code,
-            courseColor: activeCourse.color,
+            pathTitle: activePath.title,
+            courseColor: activePath.color,
             completedInCourse,
             totalInCourse,
           })
@@ -514,7 +421,7 @@ export default function LearnPage() {
   }
 
   const visibleCourses = useMemo(
-    () => activeTrack === 'all' ? COURSES : COURSES.filter(c => c.track === activeTrack),
+    () => activeTrack === 'all' ? LEARNING_PATHS : LEARNING_PATHS.filter(p => p.track === activeTrack),
     [activeTrack],
   )
 
@@ -543,8 +450,8 @@ export default function LearnPage() {
     if (observerRef.current) observerRef.current.disconnect()
 
     const expandedIds = visibleCourses
-      .filter(c => expandedCourses.has(c.id))
-      .flatMap(c => c.modules.map(m => moduleAnchorId(c.id, m.id)))
+      .filter(p => expandedCourses.has(p.id))
+      .flatMap(p => p.chapters.map(ch => moduleAnchorId(p.id, ch.id)))
 
     const elements = expandedIds
       .map(id => document.getElementById(id))
@@ -685,47 +592,46 @@ export default function LearnPage() {
             </span>
           </div>
           <div className="space-y-2">
-            {visibleCourses.filter(c => expandedCourses.has(c.id)).map(course => {
-              const availableInCourse = course.modules.reduce(
-                (n, m) => n + m.lessonIds.filter(id => COMBINED_MAP[id]).length,
+            {visibleCourses.filter(p => expandedCourses.has(p.id)).map(path => {
+              const availableInPath = path.chapters.reduce(
+                (n, ch) => n + ch.lessonIds.filter(id => COMBINED_MAP[id]).length,
                 0,
               )
               return (
-                <div key={course.id} className="flex items-center gap-2 overflow-x-auto pb-0.5">
+                <div key={path.id} className="flex items-center gap-2 overflow-x-auto pb-0.5">
                   <button
-                    onClick={() => scrollToAnchor(`course-${course.id}`)}
+                    onClick={() => scrollToAnchor(`course-${path.id}`)}
                     className="shrink-0 px-2.5 py-1 rounded-sm text-[10px] font-mono tracking-[0.1em] uppercase font-bold flex items-center gap-1.5 transition-colors"
-                    style={{ backgroundColor: `${course.color}1a`, color: course.color, border: `1px solid ${course.color}55` }}
+                    style={{ backgroundColor: `${path.color}1a`, color: path.color, border: `1px solid ${path.color}55` }}
                   >
-                    <BookOpen size={10} />
-                    {course.code}
+                    <path.icon size={10} />
+                    {path.title}
                   </button>
-                  {course.modules.map((m, i) => {
-                    const anchor = moduleAnchorId(course.id, m.id)
+                  {path.chapters.map((ch, i) => {
+                    const anchor = moduleAnchorId(path.id, ch.id)
                     const isActive = activeAnchor === anchor
-                    const available = m.lessonIds.filter(id => COMBINED_MAP[id]).length
-                    const allDone = available > 0 && m.lessonIds.every(id => completedIds.has(id))
-                    const { num } = shortModuleLabel(m.title)
+                    const available = ch.lessonIds.filter(id => COMBINED_MAP[id]).length
+                    const allDone = available > 0 && ch.lessonIds.every(id => completedIds.has(id))
                     return (
                       <button
-                        key={m.id}
+                        key={ch.id}
                         onClick={() => scrollToAnchor(anchor)}
                         className="shrink-0 px-2.5 py-1 rounded-sm text-[10px] font-mono tracking-[0.05em] flex items-center gap-1.5 transition-all whitespace-nowrap"
                         style={{
-                          backgroundColor: isActive ? course.color : BRAND.surface,
+                          backgroundColor: isActive ? path.color : BRAND.surface,
                           color: isActive ? BRAND.bg : (available > 0 ? BRAND.text : BRAND.textSubtle),
-                          border: `1px solid ${isActive ? course.color : BRAND.border}`,
+                          border: `1px solid ${isActive ? path.color : BRAND.border}`,
                           opacity: available > 0 ? 1 : 0.5,
                         }}
-                        title={m.title}
+                        title={ch.title}
                       >
-                        <span>{num || `M${i + 1}`}</span>
+                        <span>{i + 1}</span>
                         {allDone && <Check size={9} strokeWidth={3} style={{ color: isActive ? BRAND.bg : BRAND.jade }} />}
                       </button>
                     )
                   })}
                   <span className="shrink-0 ml-1 text-[9px] font-mono tracking-[0.1em] uppercase" style={{ color: BRAND.textSubtle }}>
-                    {availableInCourse} live
+                    {availableInPath} live
                   </span>
                 </div>
               )
@@ -780,61 +686,60 @@ export default function LearnPage() {
         </div>
       )}
 
-      {/* Course sections */}
-      {!isSearching && visibleCourses.map(course => {
-        const availableIds = course.modules.flatMap(m => m.lessonIds).filter(id => COMBINED_MAP[id])
+      {/* Path sections */}
+      {!isSearching && visibleCourses.map(path => {
+        const availableIds = path.chapters.flatMap(ch => ch.lessonIds).filter(id => COMBINED_MAP[id])
         const availableCount = availableIds.length
         const completedCount = availableIds.filter(id => completedIds.has(id)).length
-        const isExpanded = expandedCourses.has(course.id)
+        const isExpanded = expandedCourses.has(path.id)
 
         return (
-          <section key={course.id} id={`course-${course.id}`} className="scroll-mt-28">
+          <section key={path.id} id={`course-${path.id}`} className="scroll-mt-28">
             <CourseHeader
-              course={course}
+              path={path}
               isExpanded={isExpanded}
-              onToggle={() => toggleCourse(course.id)}
+              onToggle={() => toggleCourse(path.id)}
               completedCount={completedCount}
               availableCount={availableCount}
             />
 
             {isExpanded && (
               <div className="mt-4 space-y-10">
-                {course.modules.map((module, mi) => {
-                  const moduleLessons = module.lessonIds
+                {path.chapters.map((chapter, ci) => {
+                  const chapterLessons = chapter.lessonIds
                     .map(id => COMBINED_MAP[id])
                     .filter(Boolean) as DisplayLesson[]
-                  const totalInModule = module.lessonIds.length
-                  const availableInModule = moduleLessons.length
-                  const isModuleComplete = availableInModule === totalInModule
-                  const completedInModule = module.lessonIds.filter(id => completedIds.has(id)).length
-                  const allModuleDone = availableInModule > 0 && completedInModule === totalInModule
-                  const { num, name } = shortModuleLabel(module.title)
+                  const totalInChapter = chapter.lessonIds.length
+                  const availableInChapter = chapterLessons.length
+                  const isChapterComplete = availableInChapter === totalInChapter
+                  const completedInChapter = chapter.lessonIds.filter(id => completedIds.has(id)).length
+                  const allChapterDone = availableInChapter > 0 && completedInChapter === totalInChapter
 
                   return (
                     <div
-                      key={module.id}
-                      id={moduleAnchorId(course.id, module.id)}
+                      key={chapter.id}
+                      id={moduleAnchorId(path.id, chapter.id)}
                       className="space-y-3 scroll-mt-32"
                     >
                       <div className="flex items-center gap-3 pb-2" style={{ borderBottom: `1px solid ${BRAND.border}` }}>
                         <div
                           className="w-7 h-7 rounded-sm flex items-center justify-center text-[10px] font-mono font-bold shrink-0"
-                          style={allModuleDone
+                          style={allChapterDone
                             ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
-                            : { backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}40` }}
+                            : { backgroundColor: `${path.color}18`, color: path.color, border: `1px solid ${path.color}40` }}
                         >
-                          {allModuleDone ? <Check size={12} strokeWidth={2.5} /> : (num || mi + 1)}
+                          {allChapterDone ? <Check size={12} strokeWidth={2.5} /> : ci + 1}
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-mono text-[11px] tracking-[0.15em] uppercase truncate" style={{ color: BRAND.textDim }}>
-                            {name || module.title}
+                            {chapter.title}
                           </h3>
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
                           <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>
-                            {availableInModule} / {totalInModule}
+                            {availableInChapter} / {totalInChapter}
                           </span>
-                          {!isModuleComplete && (
+                          {!isChapterComplete && (
                             <span
                               className="text-[9px] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full"
                               style={{ backgroundColor: `${BRAND.gold}18`, color: BRAND.gold, border: `1px solid ${BRAND.gold}40` }}
@@ -845,9 +750,9 @@ export default function LearnPage() {
                         </div>
                       </div>
 
-                      {availableInModule > 0 ? (
+                      {availableInChapter > 0 ? (
                         <div className="grid md:grid-cols-2 gap-3">
-                          {moduleLessons.map((lesson, i) => (
+                          {chapterLessons.map((lesson, i) => (
                             <LessonCard
                               key={lesson.id}
                               lesson={lesson}
@@ -866,11 +771,11 @@ export default function LearnPage() {
                         </div>
                       )}
 
-                      {!isModuleComplete && availableInModule > 0 && (
+                      {!isChapterComplete && availableInChapter > 0 && (
                         <div className="flex items-center gap-2 pt-1">
                           <ChevronRight size={12} style={{ color: BRAND.textSubtle }} />
                           <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>
-                            {totalInModule - availableInModule} more lesson{totalInModule - availableInModule !== 1 ? 's' : ''} coming soon
+                            {totalInChapter - availableInChapter} more lesson{totalInChapter - availableInChapter !== 1 ? 's' : ''} coming soon
                           </span>
                         </div>
                       )}
@@ -878,13 +783,13 @@ export default function LearnPage() {
                   )
                 })}
 
-                {/* Collapse shortcut at the bottom of a long expanded course */}
+                {/* Collapse shortcut */}
                 <button
-                  onClick={() => toggleCourse(course.id)}
+                  onClick={() => toggleCourse(path.id)}
                   className="flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase transition-opacity hover:opacity-70 mx-auto"
                   style={{ color: BRAND.textSubtle }}
                 >
-                  <ChevronUp size={12} /> Collapse {course.code}
+                  <ChevronUp size={12} /> Collapse
                 </button>
               </div>
             )}

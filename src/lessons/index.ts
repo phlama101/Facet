@@ -1,7 +1,7 @@
-import { Mountain, Waves, Wind, Flame, Thermometer, Telescope } from 'lucide-react'
+import { Mountain, Layers, Waves, Wind, Flame, Thermometer, Telescope } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
-import type { Lesson, TrackId } from './types'
+import type { Lesson, TrackId, Chapter, LearningPath } from './types'
 
 import rockCycle             from './rock-cycle'
 import rockCycleIntermediate  from './rock-cycle-intermediate'
@@ -244,162 +244,297 @@ export interface Institution {
   color: string
 }
 
-export interface CourseModule {
-  id: string
-  title: string
-  lessonIds: string[]
-}
+// CourseModule is an alias for backwards compatibility with existing consumers.
+export type CourseModule = Chapter
+export type { Chapter, LearningPath }
 
-export const GEOL_101_MODULES: CourseModule[] = [
+// ─── Learning paths ───────────────────────────────────────────────────────────
+// Single source of truth. Legacy named exports below are derived from this array.
+// To add new content: append a Chapter to an existing path, or append a new LearningPath.
+// Icons: drop /public/icons/chapters/{iconId}.webp or /public/icons/paths/{iconId}.webp.
+
+export const LEARNING_PATHS: LearningPath[] = [
   {
-    id: 'geol-101-m1-1',
-    title: 'Module 1.1 — Earth\'s Internal Structure',
-    lessonIds: ['geol-101-1-1', 'geol-101-1-2', 'geol-101-1-3', 'geol-101-1-4'],
+    id: 'earth-foundations',
+    title: 'Earth Foundations',
+    subtitle: 'How our planet is built — from deep interior to the minerals, rocks, and tectonic forces that shape its surface.',
+    tagline: 'Start here.',
+    track: 'geo',
+    level: 'Foundations',
+    color: BRAND.coral,
+    icon: Mountain,
+    iconId: 'path-earth-foundations',
+    chapters: [
+      {
+        id: 'earth-interior',
+        title: "Earth's Interior",
+        description: 'Crust, mantle, outer core, inner core — and the geophysical methods that revealed them.',
+        lessonIds: ['geol-101-1-1', 'geol-101-1-2', 'geol-101-1-3', 'geol-101-1-4'],
+        iconId: 'chapter-earth-interior',
+      },
+      {
+        id: 'minerals-crystals',
+        title: 'Minerals & Crystals',
+        description: 'The five criteria that define a mineral, identification techniques, and how crystals grow.',
+        lessonIds: ['geol-101-1-2-1', 'geol-101-1-2-2', 'geol-101-1-2-3', 'geol-101-1-2-4'],
+        iconId: 'chapter-minerals-crystals',
+      },
+      {
+        id: 'rock-families',
+        title: 'The Rock Families',
+        description: 'Igneous, sedimentary, and metamorphic rocks — how they form and how to read them.',
+        lessonIds: ['geol-101-1-3-1', 'geol-101-1-3-2', 'geol-101-1-3-3', 'geol-101-1-3-4'],
+        iconId: 'chapter-rock-families',
+      },
+      {
+        id: 'plate-tectonics',
+        title: 'Plate Tectonics',
+        description: 'The theory that unified geology — moving plates, divergent and convergent boundaries, and hotspots.',
+        lessonIds: ['geol-101-1-4-1', 'geol-101-1-4-2', 'geol-101-1-4-3', 'geol-101-1-4-4'],
+        iconId: 'chapter-plate-tectonics',
+      },
+      {
+        id: 'surface-processes',
+        title: 'Surface Processes',
+        description: 'Weathering, erosion, rivers, glaciers, and coastlines — how landscapes are sculpted over time.',
+        lessonIds: ['geol-101-1-5-1', 'geol-101-1-5-2', 'geol-101-1-5-3', 'geol-101-1-5-4'],
+        iconId: 'chapter-surface-processes',
+      },
+      {
+        id: 'earth-foundations-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all five chapters of Earth Foundations.',
+        lessonIds: ['geol-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
   },
   {
-    id: 'geol-101-m1-2',
-    title: 'Module 1.2 — Minerals',
-    lessonIds: ['geol-101-1-2-1', 'geol-101-1-2-2', 'geol-101-1-2-3', 'geol-101-1-2-4'],
+    id: 'deep-time',
+    title: 'Deep Time',
+    subtitle: 'Billions of years of Earth history — reading the rock record, dating ancient events, and tracing life\'s story.',
+    tagline: 'Intermediate geology.',
+    track: 'geo',
+    level: 'Intermediate',
+    color: BRAND.coral,
+    icon: Layers,
+    iconId: 'path-deep-time',
+    prerequisites: ['earth-foundations'],
+    chapters: [
+      {
+        id: 'geologic-time',
+        title: 'Geologic Time',
+        description: 'Relative and absolute dating, the geologic timescale, and how we measure deep time.',
+        lessonIds: ['geol-201-2-1-1', 'geol-201-2-1-2', 'geol-201-2-1-3', 'geol-201-2-1-4'],
+        iconId: 'chapter-geologic-time',
+      },
+      {
+        id: 'stratigraphy',
+        title: 'Rock Records & Stratigraphy',
+        description: 'Sedimentary facies, unconformities, sequence stratigraphy, and stratigraphic columns.',
+        lessonIds: ['geol-201-2-2-1', 'geol-201-2-2-2', 'geol-201-2-2-3', 'geol-201-2-2-4'],
+        iconId: 'chapter-stratigraphy',
+      },
+      {
+        id: 'fossil-record',
+        title: 'The Fossil Record',
+        description: 'How fossils form, biostratigraphy, trace fossils, and extraordinary preservation sites.',
+        lessonIds: ['geol-201-2-3-1', 'geol-201-2-3-2', 'geol-201-2-3-3', 'geol-201-2-3-4'],
+        iconId: 'chapter-fossil-record',
+      },
+      {
+        id: 'life-through-ages',
+        title: 'Life Through the Ages',
+        description: 'The Cambrian explosion, mass extinctions, the conquest of land, and the Cenozoic.',
+        lessonIds: ['geol-201-2-4-1', 'geol-201-2-4-2', 'geol-201-2-4-3', 'geol-201-2-4-4'],
+        iconId: 'chapter-life-through-ages',
+      },
+      {
+        id: 'field-methods',
+        title: 'Field Methods',
+        description: 'Geological maps, structural geology, stratigraphic sections, and rock identification in the field.',
+        lessonIds: ['geol-201-2-5-1', 'geol-201-2-5-2', 'geol-201-2-5-3', 'geol-201-2-5-4'],
+        iconId: 'chapter-field-methods',
+      },
+      {
+        id: 'deep-time-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all five chapters of Deep Time.',
+        lessonIds: ['geol-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
   },
   {
-    id: 'geol-101-m1-3',
-    title: 'Module 1.3 — The Three Rock Families',
-    lessonIds: ['geol-101-1-3-1', 'geol-101-1-3-2', 'geol-101-1-3-3', 'geol-101-1-3-4'],
+    id: 'ocean-systems',
+    title: 'Ocean Systems',
+    subtitle: 'The ocean floor, seawater chemistry, global circulation, waves, and the ecosystems that depend on it all.',
+    track: 'oce',
+    level: 'Foundations',
+    color: BRAND.accent,
+    icon: Waves,
+    iconId: 'path-ocean-systems',
+    chapters: [
+      {
+        id: 'ocean-basin',
+        title: 'The Ocean Basin',
+        description: 'Mid-ocean ridges, trenches, abyssal plains, and the sediments that blanket the seafloor.',
+        lessonIds: ['ocea-101-1-1-1', 'ocea-101-1-1-2', 'ocea-101-1-1-3', 'ocea-101-1-1-4'],
+        iconId: 'chapter-ocean-basin',
+      },
+      {
+        id: 'seawater-structure',
+        title: 'Seawater & Ocean Structure',
+        description: 'Salinity, density, thermohaline circulation, waves, and tides.',
+        lessonIds: ['ocea-101-1-2-1', 'ocea-101-1-2-2', 'ocea-101-1-2-3', 'ocea-101-1-2-4'],
+        iconId: 'chapter-seawater-structure',
+      },
+      {
+        id: 'marine-life',
+        title: 'Marine Life',
+        description: 'Ocean ecosystems from surface to hadal zone — phytoplankton, coral reefs, and polar seas.',
+        lessonIds: ['ocea-101-1-3-1', 'ocea-101-1-3-2', 'ocea-101-1-3-3', 'ocea-101-1-3-4'],
+        iconId: 'chapter-marine-life',
+      },
+    ],
   },
   {
-    id: 'geol-101-m1-4',
-    title: 'Module 1.4 — Plate Tectonics',
-    lessonIds: ['geol-101-1-4-1', 'geol-101-1-4-2', 'geol-101-1-4-3', 'geol-101-1-4-4'],
+    id: 'atmosphere-weather',
+    title: 'Atmosphere & Weather',
+    subtitle: 'The invisible ocean above us — atmospheric layers, the energy budget, weather systems, and forecasting.',
+    track: 'atm',
+    level: 'Foundations',
+    color: BRAND.gold,
+    icon: Wind,
+    iconId: 'path-atmosphere-weather',
+    chapters: [
+      {
+        id: 'atmospheric-structure',
+        title: 'Atmospheric Structure',
+        description: 'The layers of the atmosphere, composition, solar radiation, and the greenhouse effect.',
+        lessonIds: ['atmo-101-1-1-1', 'atmo-101-1-1-2', 'atmo-101-1-1-3', 'atmo-101-1-1-4'],
+        iconId: 'chapter-atmospheric-structure',
+      },
+      {
+        id: 'weather-systems',
+        title: 'Weather Systems',
+        description: 'Air masses, fronts, mid-latitude cyclones, thunderstorms, and tropical cyclones.',
+        lessonIds: ['atmo-101-1-2-1', 'atmo-101-1-2-2', 'atmo-101-1-2-3', 'atmo-101-1-2-4'],
+        iconId: 'chapter-weather-systems',
+      },
+      {
+        id: 'clouds-forecasting',
+        title: 'Clouds & Forecasting',
+        description: 'Cloud formation, precipitation processes, atmospheric stability, and weather prediction.',
+        lessonIds: ['atmo-101-1-3-1', 'atmo-101-1-3-2', 'atmo-101-1-3-3', 'atmo-101-1-3-4'],
+        iconId: 'chapter-clouds-forecasting',
+      },
+    ],
   },
   {
-    id: 'geol-101-m1-5',
-    title: 'Module 1.5 — Reading the Landscape',
-    lessonIds: ['geol-101-1-5-1', 'geol-101-1-5-2', 'geol-101-1-5-3', 'geol-101-1-5-4'],
+    id: 'volcanoes',
+    title: 'Volcanoes',
+    subtitle: 'Where the interior meets the surface — magma generation, eruption styles, and the hazards that follow.',
+    track: 'vol',
+    level: 'Foundations',
+    color: BRAND.ruby,
+    icon: Flame,
+    iconId: 'path-volcanoes',
+    chapters: [
+      {
+        id: 'magma-volcanism',
+        title: 'Magma & Volcanism',
+        description: 'How magma originates, its composition and viscosity, intrusive bodies, and volcanic landforms.',
+        lessonIds: ['volc-101-1-1-1', 'volc-101-1-1-2', 'volc-101-1-1-3', 'volc-101-1-1-4'],
+        iconId: 'chapter-magma-volcanism',
+      },
+      {
+        id: 'eruption-styles',
+        title: 'Eruption Styles',
+        description: 'Effusive versus explosive eruptions, eruption classification, pyroclastic flows, and volcanic gases.',
+        lessonIds: ['volc-101-1-2-1', 'volc-101-1-2-2', 'volc-101-1-2-3', 'volc-101-1-2-4'],
+        iconId: 'chapter-eruption-styles',
+      },
+      {
+        id: 'volcanic-hazards',
+        title: 'Volcanic Hazards',
+        description: 'Lahars, volcanic tsunamis, volcanic winter, and modern monitoring systems.',
+        lessonIds: ['volc-101-1-3-1', 'volc-101-1-3-2', 'volc-101-1-3-3', 'volc-101-1-3-4'],
+        iconId: 'chapter-volcanic-hazards',
+      },
+    ],
   },
   {
-    id: 'geol-101-capstone',
-    title: 'GEOL 101 Final Exam',
-    lessonIds: ['geol-101-capstone'],
+    id: 'climate-past-future',
+    title: 'Climate, Past & Future',
+    subtitle: 'The climate system, its history over millions of years, and what rising CO₂ means for the planet ahead.',
+    track: 'cli',
+    level: 'Foundations',
+    color: BRAND.jade,
+    icon: Thermometer,
+    iconId: 'path-climate-past-future',
+    chapters: [
+      {
+        id: 'climate-system',
+        title: 'The Climate System',
+        description: 'Climate drivers, atmospheric and ocean circulation, the carbon cycle, and extreme weather.',
+        lessonIds: ['clim-101-1-1-1', 'clim-101-1-1-2', 'clim-101-1-1-3', 'clim-101-1-1-4'],
+        iconId: 'chapter-climate-system',
+      },
+      {
+        id: 'climate-history',
+        title: 'Climate Through History',
+        description: 'Ice ages, Milankovitch cycles, abrupt climate shifts, the Holocene, and deep-time climates.',
+        lessonIds: ['clim-101-1-2-1', 'clim-101-1-2-2', 'clim-101-1-2-3', 'clim-101-1-2-4'],
+        iconId: 'chapter-climate-history',
+      },
+      {
+        id: 'modern-climate-change',
+        title: 'Modern Climate Change',
+        description: 'Observed warming, sea level rise, climate impacts, and the pathways for mitigation.',
+        lessonIds: ['clim-101-1-3-1', 'clim-101-1-3-2', 'clim-101-1-3-3', 'clim-101-1-3-4'],
+        iconId: 'chapter-modern-climate-change',
+      },
+    ],
+  },
+  {
+    id: 'solar-system',
+    title: 'Solar System',
+    subtitle: 'From dust to worlds — how our solar system formed, and what comparative planetology reveals about each body.',
+    track: 'ast',
+    level: 'Foundations',
+    color: BRAND.amethyst,
+    icon: Telescope,
+    iconId: 'path-solar-system',
+    chapters: [
+      {
+        id: 'solar-system-formation',
+        title: 'Solar System Formation',
+        description: 'Nebular hypothesis, planetesimal accretion, differentiation, the Late Heavy Bombardment, and the Sun.',
+        lessonIds: ['astr-101-1-1-1', 'astr-101-1-1-2', 'astr-101-1-1-3', 'astr-101-1-1-4'],
+        iconId: 'chapter-solar-system-formation',
+      },
+      {
+        id: 'terrestrial-worlds',
+        title: 'Terrestrial Worlds',
+        description: 'Mercury, Venus, Mars, the Moon, and asteroids — geology and surface evolution of rocky bodies.',
+        lessonIds: ['astr-101-1-2-1', 'astr-101-1-2-2', 'astr-101-1-2-3', 'astr-101-1-2-4'],
+        iconId: 'chapter-terrestrial-worlds',
+      },
+    ],
   },
 ]
 
-export const GEOL_201_MODULES: CourseModule[] = [
-  {
-    id: 'geol-201-m2-1',
-    title: 'Module 2.1 — Telling Geologic Time',
-    lessonIds: ['geol-201-2-1-1', 'geol-201-2-1-2', 'geol-201-2-1-3', 'geol-201-2-1-4'],
-  },
-  {
-    id: 'geol-201-m2-2',
-    title: 'Module 2.2 — Stratigraphy and the Rock Record',
-    lessonIds: ['geol-201-2-2-1', 'geol-201-2-2-2', 'geol-201-2-2-3', 'geol-201-2-2-4'],
-  },
-  {
-    id: 'geol-201-m2-3',
-    title: 'Module 2.3 — The Fossil Record',
-    lessonIds: ['geol-201-2-3-1', 'geol-201-2-3-2', 'geol-201-2-3-3', 'geol-201-2-3-4'],
-  },
-  {
-    id: 'geol-201-m2-4',
-    title: 'Module 2.4 — Major Events in Earth History',
-    lessonIds: ['geol-201-2-4-1', 'geol-201-2-4-2', 'geol-201-2-4-3', 'geol-201-2-4-4'],
-  },
-  {
-    id: 'geol-201-m2-5',
-    title: 'Module 2.5 — Field Methods Introduction',
-    lessonIds: ['geol-201-2-5-1', 'geol-201-2-5-2', 'geol-201-2-5-3', 'geol-201-2-5-4'],
-  },
-  {
-    id: 'geol-201-capstone',
-    title: 'GEOL 201 Final Exam',
-    lessonIds: ['geol-201-capstone'],
-  },
-]
+// ─── Legacy named exports (derived from LEARNING_PATHS) ───────────────────────
+// Kept for backwards compatibility with skill-tree/page.tsx and profile/page.tsx.
 
-export const OCEA_101_MODULES: CourseModule[] = [
-  {
-    id: 'ocea-101-m1-1',
-    title: 'Module 1.1 — The Ocean Basin',
-    lessonIds: ['ocea-101-1-1-1', 'ocea-101-1-1-2', 'ocea-101-1-1-3', 'ocea-101-1-1-4'],
-  },
-  {
-    id: 'ocea-101-m1-2',
-    title: 'Module 1.2 — Seawater and Ocean Structure',
-    lessonIds: ['ocea-101-1-2-1', 'ocea-101-1-2-2', 'ocea-101-1-2-3', 'ocea-101-1-2-4'],
-  },
-  {
-    id: 'ocea-101-m1-3',
-    title: 'Module 1.3 — Marine Biology',
-    lessonIds: ['ocea-101-1-3-1', 'ocea-101-1-3-2', 'ocea-101-1-3-3', 'ocea-101-1-3-4'],
-  },
-]
-
-export const ATMO_101_MODULES: CourseModule[] = [
-  {
-    id: 'atmo-101-m1-1',
-    title: 'Module 1.1 — Structure of the Atmosphere',
-    lessonIds: ['atmo-101-1-1-1', 'atmo-101-1-1-2', 'atmo-101-1-1-3', 'atmo-101-1-1-4'],
-  },
-  {
-    id: 'atmo-101-m1-2',
-    title: 'Module 1.2 — Weather Systems',
-    lessonIds: ['atmo-101-1-2-1', 'atmo-101-1-2-2', 'atmo-101-1-2-3', 'atmo-101-1-2-4'],
-  },
-  {
-    id: 'atmo-101-m1-3',
-    title: 'Module 1.3 — Clouds, Precipitation, and Forecasting',
-    lessonIds: ['atmo-101-1-3-1', 'atmo-101-1-3-2', 'atmo-101-1-3-3', 'atmo-101-1-3-4'],
-  },
-]
-
-export const VOLC_101_MODULES: CourseModule[] = [
-  {
-    id: 'volc-101-m1-1',
-    title: 'Module 1.1 — Magma and Volcanism',
-    lessonIds: ['volc-101-1-1-1', 'volc-101-1-1-2', 'volc-101-1-1-3', 'volc-101-1-1-4'],
-  },
-  {
-    id: 'volc-101-m1-2',
-    title: 'Module 1.2 — Eruption Styles',
-    lessonIds: ['volc-101-1-2-1', 'volc-101-1-2-2', 'volc-101-1-2-3', 'volc-101-1-2-4'],
-  },
-  {
-    id: 'volc-101-m1-3',
-    title: 'Module 1.3 — Volcanic Hazards',
-    lessonIds: ['volc-101-1-3-1', 'volc-101-1-3-2', 'volc-101-1-3-3', 'volc-101-1-3-4'],
-  },
-]
-
-export const CLIM_101_MODULES: CourseModule[] = [
-  {
-    id: 'clim-101-m1-1',
-    title: 'Module 1.1 — The Climate System',
-    lessonIds: ['clim-101-1-1-1', 'clim-101-1-1-2', 'clim-101-1-1-3', 'clim-101-1-1-4'],
-  },
-  {
-    id: 'clim-101-m1-2',
-    title: 'Module 1.2 — Climate History',
-    lessonIds: ['clim-101-1-2-1', 'clim-101-1-2-2', 'clim-101-1-2-3', 'clim-101-1-2-4'],
-  },
-  {
-    id: 'clim-101-m1-3',
-    title: 'Module 1.3 — Modern Climate Change',
-    lessonIds: ['clim-101-1-3-1', 'clim-101-1-3-2', 'clim-101-1-3-3', 'clim-101-1-3-4'],
-  },
-]
-
-export const ASTR_101_MODULES: CourseModule[] = [
-  {
-    id: 'astr-101-m1-1',
-    title: 'Module 1.1 — Solar System Formation',
-    lessonIds: ['astr-101-1-1-1', 'astr-101-1-1-2', 'astr-101-1-1-3', 'astr-101-1-1-4'],
-  },
-  {
-    id: 'astr-101-m1-2',
-    title: 'Module 1.2 — Terrestrial Worlds',
-    lessonIds: ['astr-101-1-2-1', 'astr-101-1-2-2', 'astr-101-1-2-3', 'astr-101-1-2-4'],
-  },
-]
+export const GEOL_101_MODULES = LEARNING_PATHS.find(p => p.id === 'earth-foundations')!.chapters
+export const GEOL_201_MODULES = LEARNING_PATHS.find(p => p.id === 'deep-time')!.chapters
+export const OCEA_101_MODULES = LEARNING_PATHS.find(p => p.id === 'ocean-systems')!.chapters
+export const ATMO_101_MODULES = LEARNING_PATHS.find(p => p.id === 'atmosphere-weather')!.chapters
+export const VOLC_101_MODULES = LEARNING_PATHS.find(p => p.id === 'volcanoes')!.chapters
+export const CLIM_101_MODULES = LEARNING_PATHS.find(p => p.id === 'climate-past-future')!.chapters
+export const ASTR_101_MODULES = LEARNING_PATHS.find(p => p.id === 'solar-system')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
