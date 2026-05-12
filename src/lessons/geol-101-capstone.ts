@@ -2,13 +2,13 @@ import type { Lesson } from './types'
 
 const geol101Capstone: Lesson = {
   id: 'geol-101-capstone',
-  title: 'GEOL 101 Final Exam',
+  title: 'Earth Foundations Final Exam',
   track: 'geo',
   trackName: 'Geology',
   level: 'Beginner',
   duration: '45 min',
   xpReward: 500,
-  description: 'A 25-question cumulative assessment covering all five GEOL 101 modules: Earth\'s internal structure, minerals, the three rock families, plate tectonics, and reading the landscape.',
+  description: 'A 25-question cumulative assessment covering all five Earth Foundations chapters: Earth\'s interior, minerals, the three rock families, plate tectonics, and reading the landscape.',
   sources: [
     { org: 'USGS',     title: 'Science Topics — Geology (Public Domain)',        url: 'https://www.usgs.gov/science/science-explorer/geology' },
     { org: 'NPS',      title: 'Geology Fieldnotes series',                        url: 'https://www.nps.gov/subjects/geology/index.htm' },
@@ -18,8 +18,8 @@ const geol101Capstone: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'GEOL 101 Final Exam',
-      body: `This final exam covers all five modules of GEOL 101 — Reading the Earth. Five questions test each module in sequence: Earth's Internal Structure (1.1), Minerals (1.2), The Three Rock Families (1.3), Plate Tectonics (1.4), and Reading the Landscape (1.5). Questions are cumulative — later questions draw on concepts from earlier modules. Each question is followed by a full explanation covering why the correct answer is right and why the alternatives are not.
+      title: 'Earth Foundations Final Exam',
+      body: `This final exam covers all five chapters of Earth Foundations. Five questions test each chapter in sequence: Earth's Interior (Ch. 1), Minerals & Crystals (Ch. 2), The Three Rock Families (Ch. 3), Plate Tectonics (Ch. 4), and Reading the Landscape (Ch. 5). Questions are cumulative — later questions draw on concepts from earlier chapters. Each question is followed by a full explanation covering why the correct answer is right and why the alternatives are not.
 
 Take your time. Every question has one unambiguously correct answer, but the distractors are designed to test the depth of your understanding, not just surface recall.`,
     },

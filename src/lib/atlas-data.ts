@@ -494,7 +494,7 @@ export const ATLAS_LAYERS = [
     description: 'Divergent, convergent, and transform boundaries',
     requiresSubscription: false,
     linkedLessonId: 'geol-101-1-4-1',
-    linkedLessonLabel: 'GEOL 101 · 1.4.1 — Plate Tectonics Theory',
+    linkedLessonLabel: 'Earth Foundations · Plate Tectonics Theory',
   },
   {
     id: 'volcanoes',
@@ -502,7 +502,7 @@ export const ATLAS_LAYERS = [
     description: 'Notable active and historically significant volcanoes',
     requiresSubscription: true,
     linkedLessonId: 'geol-101-1-5-1',
-    linkedLessonLabel: 'GEOL 101 · 1.5.1 — Volcanic Landforms',
+    linkedLessonLabel: 'Earth Foundations · Volcanic Landforms',
   },
   {
     id: 'ocean-currents',
@@ -510,7 +510,7 @@ export const ATLAS_LAYERS = [
     description: 'Major warm and cold surface current systems',
     requiresSubscription: true,
     linkedLessonId: 'ocea-101-1-2-3',
-    linkedLessonLabel: 'OCEA 101 · 1.2.3 — Ocean Circulation',
+    linkedLessonLabel: 'Ocean Systems · Ocean Circulation',
   },
   {
     id: 'hotspots',
@@ -518,7 +518,7 @@ export const ATLAS_LAYERS = [
     description: 'Volcanic hotspots driven by deep mantle plumes',
     requiresSubscription: true,
     linkedLessonId: 'geol-101-1-4-4',
-    linkedLessonLabel: 'GEOL 101 · 1.4.4 — Hotspots & Plumes',
+    linkedLessonLabel: 'Earth Foundations · Hotspots & Plumes',
   },
 ] as const
 

@@ -444,7 +444,7 @@ export default function LearnPage() {
     ? searchResults.length > 0
     : visibleCourses.length > 0 || filteredStandalone.length > 0
 
-  // Observe only module sections that are currently expanded
+  // Observe only chapter sections that are currently expanded
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (observerRef.current) observerRef.current.disconnect()
@@ -579,7 +579,7 @@ export default function LearnPage() {
         })}
       </div>
 
-      {/* Sticky module nav — only for expanded courses */}
+      {/* Sticky chapter nav — only for expanded paths */}
       {!isSearching && visibleCourses.some(c => expandedCourses.has(c.id)) && (
         <div
           className="sticky top-0 z-20 -mx-2 px-2 py-3 backdrop-blur-md"
@@ -588,7 +588,7 @@ export default function LearnPage() {
           <div className="flex items-center gap-2 mb-2">
             <Compass size={11} style={{ color: BRAND.textSubtle }} />
             <span className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
-              Jump to module
+              Jump to chapter
             </span>
           </div>
           <div className="space-y-2">

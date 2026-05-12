@@ -334,7 +334,7 @@ export default function AtlasMapLeaflet({ layerVisibility, subscription, complet
                 </p>
                 <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10px', color: BRAND.textSubtle }}>
                   <Zap size={9} color={BRAND.gold} />
-                  OCEA 101 — Oceanography course coming soon
+                  Ocean Systems — coming soon
                 </div>
               </div>
             </div>

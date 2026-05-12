@@ -83,7 +83,7 @@ The result is a pattern of parallel bands of rock with alternating magnetic pola
 
 Magnetic striping is one of the most elegant examples in science of how a single observable pattern simultaneously proves two different things — magnetic reversals happening deep in the core, and new oceanic crust being continuously created at mid-ocean ridges. It ties the core, the mantle, and the crust into one coherent story.
 
-**Module 1.1 — complete.** This lesson closes the first module of GEOL 101. We have moved systematically from the outermost layer to the innermost: the crust (Lessons 1.1.1 and 1.1.2), the mantle and its convection engine (1.1.3), and now the core and its magnetic dynamo (1.1.4). Every major layer has been introduced with its composition, physical state, and the evidence that reveals it — and each lesson has resolved the open questions left by the one before it. Module 1.2 zooms back to the surface to ask a different kind of question: what are Earth's rocks actually built from at the scale of individual minerals?`,
+**Chapter 1 — complete.** This lesson closes the first chapter of Earth Foundations. We have moved systematically from the outermost layer to the innermost: the crust (Lessons 1 and 2), the mantle and its convection engine (Lesson 3), and now the core and its magnetic dynamo (Lesson 4). Every major layer has been introduced with its composition, physical state, and the evidence that reveals it — and each lesson has resolved the open questions left by the one before it. Chapter 2 zooms back to the surface to ask a different kind of question: what are Earth's rocks actually built from at the scale of individual minerals?`,
       cards: [
         {
           name: 'The Geodynamo',

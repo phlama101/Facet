@@ -178,18 +178,18 @@ const ACHIEVEMENTS: {
     check: c => c.level >= 20,
   },
 
-  // ── Course completions ──
+  // ── Path completions ──
   {
     id: 'geol-101-complete',
-    name: 'GEOL 101 Graduate',
-    desc: 'Complete all GEOL 101 lessons',
+    name: 'Earth Foundations Graduate',
+    desc: 'Complete all Earth Foundations lessons',
     rarity: 'rare', color: BRAND.jade, xpBonus: 750,
     check: c => GEOL_101_IDS.length > 0 && GEOL_101_IDS.every(id => c.ids.includes(id)),
   },
   {
     id: 'geol-201-complete',
-    name: 'GEOL 201 Graduate',
-    desc: 'Complete all GEOL 201 lessons',
+    name: 'Deep Time Graduate',
+    desc: 'Complete all Deep Time lessons',
     rarity: 'epic', color: BRAND.amethyst, xpBonus: 1500,
     check: c => GEOL_201_IDS.length > 0 && GEOL_201_IDS.every(id => c.ids.includes(id)),
   },
@@ -403,8 +403,8 @@ export default async function ProfilePage() {
                 className="mt-4 pt-4 text-xs leading-relaxed"
                 style={{ borderTop: `1px solid ${BRAND.border}`, color: BRAND.textDim }}
               >
-                You&apos;re on the free plan — GEOL 101 (26 lessons) is fully included.
-                Upgrade to unlock GEOL 201, advanced labs, leaderboards, and all future courses.
+                You&apos;re on the free plan — Earth Foundations (26 lessons) is fully included.
+                Upgrade to unlock Deep Time, advanced labs, leaderboards, and all future paths.
               </div>
             )}
           </div>

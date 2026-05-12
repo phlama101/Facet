@@ -19,11 +19,11 @@ const COMPARISON: { heading: string; rows: { label: string; free: boolean | stri
   {
     heading: 'Content',
     rows: [
-      { label: 'GEOL 101 Modules 1.1 & 1.2 — 8 lessons', free: true,  pro: true,  expert: true  },
-      { label: 'Full GEOL 101 — all 5 modules (26 lessons)', free: false, pro: true,  expert: true  },
-      { label: 'GEOL 201 — Earth Through Time',            free: false, pro: true,  expert: true  },
-      { label: 'All future 100/200-level courses',         free: false, pro: true,  expert: true  },
-      { label: 'Expert & 300-level modules',               free: false, pro: false, expert: true  },
+      { label: 'Earth Foundations — Ch. 1 & 2 (8 lessons)', free: true,  pro: true,  expert: true  },
+      { label: 'Earth Foundations — all 5 chapters (26 lessons)', free: false, pro: true,  expert: true  },
+      { label: 'Deep Time — Earth Through History',         free: false, pro: true,  expert: true  },
+      { label: 'All future learning paths',                 free: false, pro: true,  expert: true  },
+      { label: 'Expert & advanced paths',                   free: false, pro: false, expert: true  },
     ],
   },
   {
@@ -79,7 +79,7 @@ const PLAN_ICONS = [BookOpen, FlaskConical, Microscope]
 const FAQ_ITEMS = [
   {
     q: 'What\'s included in the free plan?',
-    a: 'GEOL 101 Modules 1.1 and 1.2 are fully available at no cost — 8 lessons covering Earth\'s internal structure and minerals. It\'s a complete introduction to the foundations of geology, with no card required.',
+    a: 'The first two chapters of Earth Foundations are fully available at no cost — 8 lessons covering Earth\'s interior and minerals. It\'s a complete introduction to the foundations of geology, with no card required.',
   },
   {
     q: 'Can I cancel my subscription at any time?',
@@ -94,12 +94,12 @@ const FAQ_ITEMS = [
     a: 'All lessons are sourced from federal agencies (USGS, NOAA, NASA) and peer-reviewed educational materials (OpenStax, AGI Glossary). Every claim is traceable to primary sources.',
   },
   {
-    q: 'Will there be more courses beyond GEOL 101 and GEOL 201?',
-    a: 'Yes — we\'re building courses in Oceanography, Atmospheric Science, Volcanology, and Planetary Science. Scholar and Earth Scientist plans include all future courses as they launch.',
+    q: 'Will there be more paths beyond Earth Foundations and Deep Time?',
+    a: 'Yes — we\'re building paths in Oceanography, Atmospheric Science, Volcanology, and Planetary Science. Scholar and Earth Scientist plans include all future paths as they launch.',
   },
   {
     q: 'What\'s the difference between Scholar and Earth Scientist?',
-    a: 'Scholar unlocks the full course catalog — GEOL 101, GEOL 201, and all future 100/200-level courses. Earth Scientist adds expert 300-level modules, early access to courses before public launch, and priority support.',
+    a: 'Scholar unlocks the full path catalog — Earth Foundations, Deep Time, and all future paths as they launch. Earth Scientist adds expert advanced paths, early access before public launch, and priority support.',
   },
 ]
 
@@ -188,7 +188,7 @@ export default function PricingPage() {
             className="max-w-lg mx-auto leading-relaxed"
             style={{ fontSize: '16px', color: BRAND.textDim }}
           >
-            Start free with GEOL 101 Modules 1.1 & 1.2 — no card required. Unlock the
+            Start free with Earth Foundations — two complete chapters, no card required. Unlock the
             full curriculum and interactive labs with a paid plan.
           </p>
         </div>
@@ -470,7 +470,7 @@ export default function PricingPage() {
             Start learning for free
           </h2>
           <p className="max-w-md mx-auto text-sm leading-relaxed mb-6" style={{ color: BRAND.textDim }}>
-            GEOL 101 Modules 1.1 & 1.2 are completely free — no card required. Begin your first lesson in seconds.
+            Earth Foundations — two complete chapters, completely free. No card required. Begin your first lesson in seconds.
           </p>
           <Link
             href="/register"

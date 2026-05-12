@@ -4,7 +4,7 @@ import { Lock, Check, ChevronRight, Zap } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LESSON_LIST, GEOL_101_MODULES, GEOL_201_MODULES } from '@/lessons/index'
-import type { CourseModule } from '@/lessons/index'
+import type { Chapter } from '@/lessons/index'
 import { levelFromXp } from '@/lib/utils'
 import type { Profile } from '@/types'
 
@@ -32,20 +32,20 @@ export default async function SkillTreePage() {
   const allLessons = LESSON_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, xpReward: l.xpReward }))
   const lessonMap = Object.fromEntries(allLessons.map(l => [l.id, l]))
 
-  function coursePct(modules: CourseModule[]) {
-    const available = modules.flatMap(m => m.lessonIds.filter(id => lessonMap[id]))
+  function pathPct(chapters: Chapter[]) {
+    const available = chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
     const done = available.filter(id => completed.has(id))
     return available.length ? Math.round((done.length / available.length) * 100) : 0
   }
 
-  const geol101Pct = coursePct(GEOL_101_MODULES)
-  const geol201Pct = coursePct(GEOL_201_MODULES)
+  const earthFoundationsPct = pathPct(GEOL_101_MODULES)
+  const deepTimePct = pathPct(GEOL_201_MODULES)
   const subscription = profile.subscription ?? 'free'
 
-  // GEOL 201 requires Scholar plan + 80% completion of GEOL 101
-  const geol201LockedBySubscription = subscription === 'free'
-  const geol201LockedByProgress = geol101Pct < 80
-  const geol201Locked = geol201LockedBySubscription || geol201LockedByProgress
+  // Deep Time requires Scholar plan + 80% completion of Earth Foundations
+  const deepTimeLockedBySubscription = subscription === 'free'
+  const deepTimeLockedByProgress = earthFoundationsPct < 80
+  const deepTimeLocked = deepTimeLockedBySubscription || deepTimeLockedByProgress
 
   return (
     <div className="space-y-8 animate-fade-in">
@@ -54,59 +54,58 @@ export default async function SkillTreePage() {
         <div className="text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.textSubtle }}>Curriculum</div>
         <h1 className="font-serif" style={{ fontSize: 'clamp(28px, 5vw, 42px)' }}>Skill Tree</h1>
         <p className="text-sm mt-1" style={{ color: BRAND.textDim }}>
-          Your learning path through earth science — complete modules in sequence to unlock advanced courses.
+          Your learning path through earth science — complete chapters in sequence to unlock advanced paths.
         </p>
       </div>
 
-      {/* GEOL 101 */}
-      <CourseTree
-        code="GEOL 101"
-        title="Earth's Structure and Processes"
+      {/* Earth Foundations */}
+      <PathTree
+        level="Foundations"
+        title="Earth Foundations"
         color={BRAND.coral}
-        modules={GEOL_101_MODULES}
+        chapters={GEOL_101_MODULES}
         lessonMap={lessonMap}
         completed={completed}
-        coursePct={geol101Pct}
+        pathPct={earthFoundationsPct}
         locked={false}
       />
 
-      {/* GEOL 201 */}
-      <CourseTree
-        code="GEOL 201"
-        title="Earth Through Time"
+      {/* Deep Time */}
+      <PathTree
+        level="Intermediate"
+        title="Deep Time"
         color={BRAND.coral}
-        modules={GEOL_201_MODULES}
+        chapters={GEOL_201_MODULES}
         lessonMap={lessonMap}
         completed={completed}
-        coursePct={geol201Pct}
-        locked={geol201Locked}
+        pathPct={deepTimePct}
+        locked={deepTimeLocked}
         lockReason={
-          geol201LockedBySubscription
+          deepTimeLockedBySubscription
             ? 'Scholar plan required — upgrade to unlock'
-            : 'Complete 80% of GEOL 101 to unlock'
+            : 'Complete 80% of Earth Foundations to unlock'
         }
       />
     </div>
   )
 }
 
-function CourseTree({
-  code, title, color, modules, lessonMap, completed, coursePct, locked, lockReason,
+function PathTree({
+  level, title, color, chapters, lessonMap, completed, pathPct, locked, lockReason,
 }: {
-  code: string
+  level: string
   title: string
   color: string
-  modules: CourseModule[]
+  chapters: Chapter[]
   lessonMap: Record<string, { id: string; title: string; level: string; xpReward: number }>
   completed: Set<string>
-  coursePct: number
+  pathPct: number
   locked: boolean
   lockReason?: string
 }) {
-  const allAvailable = modules.flatMap(m => m.lessonIds.filter(id => lessonMap[id]))
+  const allAvailable = chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
   const allDone = allAvailable.filter(id => completed.has(id))
 
-  // Which lesson comes next (first incomplete in order)
   const nextId = allAvailable.find(id => !completed.has(id)) ?? null
 
   return (
@@ -114,7 +113,7 @@ function CourseTree({
       className="rounded-sm overflow-hidden"
       style={{ border: `1px solid ${locked ? BRAND.border : color + '40'}`, opacity: locked ? 0.7 : 1 }}
     >
-      {/* Course header */}
+      {/* Path header */}
       <div
         className="px-5 py-4 flex items-center justify-between"
         style={{ backgroundColor: `${color}10`, borderBottom: `1px solid ${color}30` }}
@@ -125,7 +124,7 @@ function CourseTree({
             className="text-[10px] tracking-[0.2em] uppercase font-mono px-2 py-0.5 rounded-sm"
             style={{ backgroundColor: `${color}20`, color, border: `1px solid ${color}50` }}
           >
-            {code}
+            {level}
           </span>
           <div>
             <div className="font-serif" style={{ fontSize: '18px', color: locked ? BRAND.textDim : BRAND.text }}>
@@ -143,44 +142,43 @@ function CourseTree({
           <div className="w-24 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
             <div
               className="h-full rounded-full transition-all"
-              style={{ width: `${coursePct}%`, backgroundColor: coursePct === 100 ? BRAND.jade : color }}
+              style={{ width: `${pathPct}%`, backgroundColor: pathPct === 100 ? BRAND.jade : color }}
             />
           </div>
-          <span className="text-[10px] font-mono" style={{ color: coursePct === 100 ? BRAND.jade : color }}>
-            {coursePct}%
+          <span className="text-[10px] font-mono" style={{ color: pathPct === 100 ? BRAND.jade : color }}>
+            {pathPct}%
           </span>
         </div>
       </div>
 
-      {/* Modules */}
+      {/* Chapters */}
       <div
         className="divide-y"
         style={{ backgroundColor: BRAND.surface, borderColor: BRAND.border }}
       >
-        {modules.map((module, mi) => {
-          const lessonIds = module.lessonIds.filter(id => lessonMap[id])
-          const moduleDone = lessonIds.filter(id => completed.has(id))
-          const isModuleComplete = lessonIds.length > 0 && moduleDone.length === lessonIds.length
-          const isCapstone = module.id.includes('capstone')
+        {chapters.map((chapter, ci) => {
+          const lessonIds = chapter.lessonIds.filter(id => lessonMap[id])
+          const chapterDone = lessonIds.filter(id => completed.has(id))
+          const isChapterComplete = lessonIds.length > 0 && chapterDone.length === lessonIds.length
 
           return (
-            <div key={module.id} className="px-5 py-4">
-              {/* Module label */}
+            <div key={chapter.id} className="px-5 py-4">
+              {/* Chapter label */}
               <div className="flex items-center gap-2 mb-3">
                 <div
                   className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0"
-                  style={isModuleComplete
+                  style={isChapterComplete
                     ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}40` }
                     : { backgroundColor: `${color}12`, color, border: `1px solid ${color}30` }
                   }
                 >
-                  {isModuleComplete ? <Check size={9} strokeWidth={2.5} /> : mi + 1}
+                  {isChapterComplete ? <Check size={9} strokeWidth={2.5} /> : ci + 1}
                 </div>
                 <div className="text-[11px] font-mono" style={{ color: BRAND.textDim }}>
-                  {module.title}
+                  {chapter.title}
                 </div>
                 <div className="text-[9px] font-mono ml-auto" style={{ color: BRAND.textSubtle }}>
-                  {moduleDone.length}/{lessonIds.length}
+                  {chapterDone.length}/{lessonIds.length}
                 </div>
               </div>
 
@@ -222,10 +220,9 @@ function CourseTree({
                         width: '148px',
                         backgroundColor: bgColor,
                         border: `1px solid ${borderColor}`,
-                        cursor: isDone || (!isLocked && !isLocked) ? 'pointer' : 'default',
+                        cursor: isDone || !isLocked ? 'pointer' : 'default',
                       }}
                     >
-                      {/* Node indicator row */}
                       <div className="flex items-center justify-between">
                         <div
                           className="w-4 h-4 rounded-sm flex items-center justify-center text-[8px] font-mono"
@@ -238,7 +235,6 @@ function CourseTree({
                           <span className="text-[9px] font-mono">{lesson.xpReward}</span>
                         </div>
                       </div>
-                      {/* Title */}
                       <div
                         className="text-[10px] leading-snug"
                         style={{

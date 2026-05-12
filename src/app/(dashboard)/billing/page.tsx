@@ -214,7 +214,7 @@ export default async function BillingPage() {
           },
           {
             q: "What's the difference between Scholar and Earth Scientist?",
-            a: "Scholar unlocks the full course catalog — GEOL 101 complete, GEOL 201, and all future 100/200-level courses. Earth Scientist adds expert 300-level modules, early access to new courses before public launch, and priority support.",
+            a: "Scholar unlocks the full path catalog — Earth Foundations complete, Deep Time, and all future paths as they launch. Earth Scientist adds expert advanced paths, early access before public launch, and priority support.",
           },
         ].map(({ q, a }) => (
           <div key={q}>
