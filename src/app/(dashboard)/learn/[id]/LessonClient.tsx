@@ -3,13 +3,26 @@
 import { useState } from 'react'
 import { notFound, useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
-import { LESSONS } from '@/lessons/index'
+import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import LessonRenderer from '@/components/lesson/LessonRenderer'
 import LessonErrorBoundary from '@/components/lesson/LessonErrorBoundary'
 import { BRAND } from '@/lib/brand'
 
 interface Props {
   id: string
+}
+
+function findNextLesson(currentId: string): { id: string; title: string } | null {
+  for (const path of LEARNING_PATHS) {
+    const allIds = path.chapters.flatMap(ch => ch.lessonIds)
+    const idx = allIds.indexOf(currentId)
+    if (idx !== -1 && idx < allIds.length - 1) {
+      const nextId = allIds[idx + 1]
+      const next = LESSONS[nextId]
+      if (next) return { id: nextId, title: next.title }
+    }
+  }
+  return null
 }
 
 export default function LessonClient({ id }: Props) {
@@ -22,7 +35,9 @@ export default function LessonClient({ id }: Props) {
 
   if (!lesson) notFound()
 
-  async function handleComplete(xpEarned: number) {
+  const nextLesson = findNextLesson(id)
+
+  async function saveProgress(xpEarned: number): Promise<boolean> {
     setSaveError(false)
     setSaving(true)
     setPendingXp(xpEarned)
@@ -33,10 +48,24 @@ export default function LessonClient({ id }: Props) {
         body: JSON.stringify({ lessonId: lesson.id, xpReward: xpEarned }),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      router.push('/dashboard')
+      return true
     } catch {
       setSaveError(true)
       setSaving(false)
+      return false
+    }
+  }
+
+  async function handleComplete(xpEarned: number) {
+    if (await saveProgress(xpEarned)) {
+      router.refresh()
+      router.push('/dashboard')
+    }
+  }
+
+  async function handleCompleteAndNext(xpEarned: number) {
+    if (await saveProgress(xpEarned) && nextLesson) {
+      router.push(`/learn/${nextLesson.id}`)
     }
   }
 
@@ -73,6 +102,8 @@ export default function LessonClient({ id }: Props) {
           lesson={lesson}
           onClose={() => router.back()}
           onComplete={handleComplete}
+          nextLesson={nextLesson ?? undefined}
+          onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
         />
       </LessonErrorBoundary>
     </div>

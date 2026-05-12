@@ -1,3 +1,4 @@
+import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { LESSONS } from '@/lessons/index'
@@ -9,6 +10,20 @@ import LessonAccessGate from '@/components/features/LessonAccessGate'
 
 interface Props {
   params: Promise<{ id: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params
+  const lesson = LESSONS[id]
+  const dbLesson = lesson ? null : await getDbLesson(id)
+  const title = lesson?.title ?? dbLesson?.title ?? 'Lesson'
+  const description = lesson?.description ?? dbLesson?.description ?? 'Learn earth science with Facet.'
+  return {
+    title,
+    description,
+    openGraph: { title: `${title} — Facet`, description, type: 'article' },
+    twitter: { card: 'summary', title: `${title} — Facet`, description },
+  }
 }
 
 export default async function LessonPage({ params }: Props) {

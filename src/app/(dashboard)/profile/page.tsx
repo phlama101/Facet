@@ -599,7 +599,8 @@ export default async function ProfilePage() {
                   {group.map(a => (
                     <div
                       key={a.id}
-                      className="p-3.5 rounded-sm text-center transition-opacity"
+                      title={`${a.name}: ${a.desc}${a.unlocked ? ` (+${a.xpBonus} XP)` : ' — locked'}`}
+                      className="p-3.5 rounded-sm text-center transition-opacity cursor-default"
                       style={{
                         backgroundColor: BRAND.surface,
                         border: `1px solid ${a.unlocked ? `${a.color}55` : BRAND.border}`,

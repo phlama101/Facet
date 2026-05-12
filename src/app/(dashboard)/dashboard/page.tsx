@@ -147,6 +147,29 @@ export default async function DashboardPage({ searchParams }: Props) {
 
   return (
     <div className="space-y-6 animate-fade-in">
+      {/* New user welcome tip */}
+      {completedSet.size === 0 && !justUpgraded && (
+        <div
+          className="flex items-start gap-4 px-5 py-4 rounded-sm"
+          style={{ backgroundColor: `${BRAND.accent}10`, border: `1px solid ${BRAND.accent}30` }}
+        >
+          <div
+            className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0 mt-0.5"
+            style={{ backgroundColor: `${BRAND.accent}20`, border: `1px solid ${BRAND.accent}40` }}
+          >
+            <Play size={14} color={BRAND.accent} fill={BRAND.accent} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-medium" style={{ color: BRAND.text }}>Welcome to Facet</div>
+            <div className="text-[11px] mt-1 leading-relaxed" style={{ color: BRAND.textDim }}>
+              Start your first lesson below to earn XP and begin your earth science journey.
+              Complete daily missions for bonus XP, and track your progress across all learning paths.
+            </div>
+          </div>
+          <BookOpen size={16} color={BRAND.textSubtle} className="shrink-0 mt-0.5" />
+        </div>
+      )}
+
       {/* Upgrade banner */}
       {justUpgraded && (
         <div
@@ -271,7 +294,7 @@ export default async function DashboardPage({ searchParams }: Props) {
           <div>
             <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Daily Missions</div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-              Resets at midnight UTC · {todayCount} lesson{todayCount !== 1 ? 's' : ''} completed today
+              Resets at midnight UTC · Bonus XP on top of lesson rewards · {todayCount} lesson{todayCount !== 1 ? 's' : ''} today
             </div>
           </div>
           <Calendar size={14} color={BRAND.textSubtle} />
@@ -296,13 +319,13 @@ export default async function DashboardPage({ searchParams }: Props) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[11px] font-medium" style={{ color: done ? color : BRAND.textDim }}>{label}</span>
-                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>+{bonusXp} XP</span>
+                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>+{bonusXp} bonus XP</span>
                   </div>
                   <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
                     <div className="h-full rounded-full transition-all" style={{ width: `${pctFill}%`, backgroundColor: done ? color : `${color}80` }} />
                   </div>
                   <div className="text-[9px] mt-0.5 font-mono" style={{ color: BRAND.textSubtle }}>
-                    Complete {target} lesson{target !== 1 ? 's' : ''} today
+                    Complete {target} lesson{target !== 1 ? 's' : ''} today · earns bonus XP
                   </div>
                 </div>
               </div>

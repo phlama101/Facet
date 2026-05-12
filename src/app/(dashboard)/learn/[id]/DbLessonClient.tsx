@@ -5,9 +5,23 @@ import { useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { resolveIcon } from '@/lib/icon-map'
+import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import type { DbLesson, DbSection, DbConceptSection } from '@/lib/lesson-store'
 import type { Lesson, Section, ConceptSection } from '@/lessons/types'
 import LessonViewer from '@/components/lesson/LessonViewer'
+
+function findNextLesson(currentId: string): { id: string; title: string } | null {
+  for (const path of LEARNING_PATHS) {
+    const allIds = path.chapters.flatMap(ch => ch.lessonIds)
+    const idx = allIds.indexOf(currentId)
+    if (idx !== -1 && idx < allIds.length - 1) {
+      const nextId = allIds[idx + 1]
+      const next = LESSONS[nextId]
+      if (next) return { id: nextId, title: next.title }
+    }
+  }
+  return null
+}
 
 interface Props {
   dbLesson: DbLesson
@@ -48,8 +62,9 @@ export default function DbLessonClient({ dbLesson }: Props) {
   const [pendingXp, setPendingXp] = useState<number | null>(null)
 
   const lesson = hydrateLesson(dbLesson)
+  const nextLesson = findNextLesson(dbLesson.id)
 
-  async function handleComplete(xpEarned: number) {
+  async function saveProgress(xpEarned: number): Promise<boolean> {
     setSaveError(false)
     setSaving(true)
     setPendingXp(xpEarned)
@@ -60,10 +75,24 @@ export default function DbLessonClient({ dbLesson }: Props) {
         body: JSON.stringify({ lessonId: dbLesson.id, xpReward: xpEarned }),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      router.push('/dashboard')
+      return true
     } catch {
       setSaveError(true)
       setSaving(false)
+      return false
+    }
+  }
+
+  async function handleComplete(xpEarned: number) {
+    if (await saveProgress(xpEarned)) {
+      router.refresh()
+      router.push('/dashboard')
+    }
+  }
+
+  async function handleCompleteAndNext(xpEarned: number) {
+    if (await saveProgress(xpEarned) && nextLesson) {
+      router.push(`/learn/${nextLesson.id}`)
     }
   }
 
@@ -100,6 +129,8 @@ export default function DbLessonClient({ dbLesson }: Props) {
         alreadyCompleted={false}
         onClose={() => router.back()}
         onComplete={handleComplete}
+        nextLesson={nextLesson ?? undefined}
+        onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
       />
     </div>
   )

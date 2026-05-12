@@ -21,6 +21,8 @@ interface LessonViewerProps {
   alreadyCompleted: boolean
   onClose: () => void
   onComplete: (xpEarned: number) => void
+  nextLesson?: { id: string; title: string }
+  onCompleteAndNext?: (xpEarned: number) => void
 }
 
 export default function LessonViewer({
@@ -28,6 +30,8 @@ export default function LessonViewer({
   alreadyCompleted,
   onClose,
   onComplete,
+  nextLesson,
+  onCompleteAndNext,
 }: LessonViewerProps) {
   const [sectionIdx, setSectionIdx] = useState(0)
   const [done, setDone]             = useState(false)
@@ -163,6 +167,8 @@ export default function LessonViewer({
               xpEarned={alreadyCompleted ? Math.floor(lesson.xpReward * 0.25) : lesson.xpReward}
               alreadyCompleted={alreadyCompleted}
               onSave={handleSave}
+              nextLesson={nextLesson}
+              onNext={onCompleteAndNext ? () => onCompleteAndNext(alreadyCompleted ? Math.floor(lesson.xpReward * 0.25) : lesson.xpReward) : undefined}
             />
           )}
         </div>

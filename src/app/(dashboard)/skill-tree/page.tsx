@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LESSON_LIST, GEOL_101_MODULES, GEOL_201_MODULES } from '@/lessons/index'
 import type { Chapter } from '@/lessons/index'
-import { levelFromXp } from '@/lib/utils'
+
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Skill Tree' }
@@ -47,6 +47,11 @@ export default async function SkillTreePage() {
   const deepTimeLockedByProgress = earthFoundationsPct < 80
   const deepTimeLocked = deepTimeLockedBySubscription || deepTimeLockedByProgress
 
+  // Calculate how many lessons remain in Earth Foundations
+  const efAvailable = GEOL_101_MODULES.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
+  const efDone = efAvailable.filter(id => completed.has(id))
+  const efNeeded = Math.ceil(efAvailable.length * 0.8) - efDone.length
+
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Header */}
@@ -82,8 +87,10 @@ export default async function SkillTreePage() {
         locked={deepTimeLocked}
         lockReason={
           deepTimeLockedBySubscription
-            ? 'Scholar plan required — upgrade to unlock'
-            : 'Complete 80% of Earth Foundations to unlock'
+            ? 'Scholar plan required — upgrade at /billing to unlock'
+            : efNeeded > 0
+              ? `${earthFoundationsPct}% complete — ${efNeeded} more lesson${efNeeded !== 1 ? 's' : ''} needed to reach 80%`
+              : 'Complete 80% of Earth Foundations to unlock'
         }
       />
     </div>

@@ -1,4 +1,4 @@
-import { Zap, Library, ExternalLink } from 'lucide-react'
+import { Zap, Library, ExternalLink, ArrowRight } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from '@/lessons/types'
 
@@ -9,6 +9,8 @@ interface LessonCompleteProps {
   xpEarned: number
   alreadyCompleted: boolean
   onSave: () => void
+  nextLesson?: { id: string; title: string }
+  onNext?: () => void
 }
 
 export default function LessonComplete({
@@ -18,6 +20,8 @@ export default function LessonComplete({
   xpEarned,
   alreadyCompleted,
   onSave,
+  nextLesson,
+  onNext,
 }: LessonCompleteProps) {
   const flawless = correctCount === totalQuestions
 
@@ -109,13 +113,26 @@ export default function LessonComplete({
       </div>
       )}
 
-      <button
-        onClick={onSave}
-        className="mt-8 px-8 py-3 rounded-sm text-xs font-semibold tracking-[0.15em] uppercase block mx-auto transition-transform hover:scale-[1.02]"
-        style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
-      >
-        Save &amp; Continue
-      </button>
+      <div className="mt-8 flex flex-col items-center gap-3">
+        {nextLesson && onNext && (
+          <button
+            onClick={onNext}
+            className="flex items-center gap-2 px-8 py-3 rounded-sm text-xs font-semibold tracking-[0.15em] uppercase transition-transform hover:scale-[1.02]"
+            style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+          >
+            Next: {nextLesson.title} <ArrowRight size={12} />
+          </button>
+        )}
+        <button
+          onClick={onSave}
+          className="px-8 py-3 rounded-sm text-xs font-semibold tracking-[0.15em] uppercase transition-transform hover:scale-[1.02]"
+          style={nextLesson
+            ? { color: BRAND.textDim, border: `1px solid ${BRAND.border}` }
+            : { backgroundColor: BRAND.accent, color: BRAND.bg }}
+        >
+          {nextLesson ? 'Back to Dashboard' : 'Save & Continue'}
+        </button>
+      </div>
     </div>
   )
 }

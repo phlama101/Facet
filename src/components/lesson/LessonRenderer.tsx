@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Zap } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Zap, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import { TRACK_MAP } from '@/lessons/index'
@@ -14,13 +14,16 @@ interface Props {
   lesson: Lesson
   onClose: () => void
   onComplete: (xpEarned: number) => void
+  nextLesson?: { id: string; title: string }
+  onCompleteAndNext?: (xpEarned: number) => void
 }
 
-export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
+export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext }: Props) {
   const [sectionIdx, setSectionIdx] = useState(0)
   const [dir, setDir] = useState(1)
   const [quizDone, setQuizDone] = useState(false)
   const [quizResult, setQuizResult] = useState<{ correct: number; total: number } | null>(null)
+  const [exitConfirm, setExitConfirm] = useState(false)
 
   const { xp: sessionXP, reset } = useProgressStore()
 
@@ -78,13 +81,33 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
         style={{ borderColor: BRAND.border, backgroundColor: 'rgba(14,15,20,0.9)' }}
       >
         <div className="max-w-3xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
-          <button
-            onClick={onClose}
-            className="flex items-center gap-2 text-xs tracking-wider uppercase transition-opacity hover:opacity-70"
-            style={{ color: BRAND.textDim }}
-          >
-            <ArrowLeft size={14} /> Exit
-          </button>
+          {exitConfirm ? (
+            <div className="flex items-center gap-3">
+              <span className="text-xs" style={{ color: BRAND.ruby }}>Quit quiz?</span>
+              <button
+                onClick={onClose}
+                className="text-xs font-semibold tracking-wider uppercase px-2 py-1 rounded-sm transition-opacity hover:opacity-80"
+                style={{ backgroundColor: `${BRAND.ruby}20`, color: BRAND.ruby, border: `1px solid ${BRAND.ruby}50` }}
+              >
+                Exit
+              </button>
+              <button
+                onClick={() => setExitConfirm(false)}
+                className="flex items-center gap-1 text-xs tracking-wider uppercase transition-opacity hover:opacity-70"
+                style={{ color: BRAND.textDim }}
+              >
+                <X size={11} /> Stay
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={isQuizSection ? () => setExitConfirm(true) : onClose}
+              className="flex items-center gap-2 text-xs tracking-wider uppercase transition-opacity hover:opacity-70"
+              style={{ color: BRAND.textDim }}
+            >
+              <ArrowLeft size={14} /> Exit
+            </button>
+          )}
 
           {/* Progress bar */}
           <div className="flex-1 max-w-xs">
@@ -229,18 +252,35 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
                   </p>
                 </motion.div>
 
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.75 }}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={handleFinish}
-                  className="flex items-center gap-2 mx-auto px-8 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase"
-                  style={{ backgroundColor: trackColor, color: BRAND.bg }}
+                  className="flex flex-col items-center gap-3"
                 >
-                  Save & Continue <ArrowRight size={14} />
-                </motion.button>
+                  {nextLesson && onCompleteAndNext && (
+                    <motion.button
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      onClick={() => onCompleteAndNext(sessionXP + lesson.xpReward)}
+                      className="flex items-center gap-2 mx-auto px-8 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase"
+                      style={{ backgroundColor: trackColor, color: BRAND.bg }}
+                    >
+                      Next: {nextLesson.title} <ArrowRight size={14} />
+                    </motion.button>
+                  )}
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={handleFinish}
+                    className="flex items-center gap-2 mx-auto px-8 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase"
+                    style={nextLesson
+                      ? { color: BRAND.textDim, border: `1px solid ${BRAND.border}`, borderRadius: '0.5rem', padding: '0.5rem 1.5rem' }
+                      : { backgroundColor: trackColor, color: BRAND.bg }}
+                  >
+                    {nextLesson ? 'Back to Dashboard' : 'Save & Continue'} {!nextLesson && <ArrowRight size={14} />}
+                  </motion.button>
+                </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -267,14 +307,14 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
             </motion.button>
 
             {/* Section dots */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1 overflow-x-auto max-w-[160px] sm:max-w-none scrollbar-none">
               {sections.map((_, i) => (
                 <motion.button
                   key={i}
                   onClick={() => { setDir(i > sectionIdx ? 1 : -1); setSectionIdx(i) }}
                   animate={{ width: i === sectionIdx ? 16 : 6, backgroundColor: i === sectionIdx ? trackColor : BRAND.border }}
                   transition={{ duration: 0.3 }}
-                  className="h-1.5 rounded-full"
+                  className="h-1.5 rounded-full shrink-0"
                 />
               ))}
             </div>

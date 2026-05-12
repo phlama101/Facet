@@ -89,10 +89,10 @@ export default function AppNav({ profile }: AppNavProps) {
           {!profile && (
             <Link
               href="/register"
-              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] font-semibold tracking-[0.12em] uppercase transition-opacity hover:opacity-80"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] font-semibold tracking-[0.12em] uppercase transition-opacity hover:opacity-80"
               style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
             >
-              <UserPlus size={11} /> Sign Up
+              <UserPlus size={11} /> <span className="hidden sm:inline">Sign Up</span><span className="sm:hidden">Join</span>
             </Link>
           )}
         </div>
