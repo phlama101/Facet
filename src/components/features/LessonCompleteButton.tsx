@@ -19,7 +19,7 @@ export default function LessonCompleteButton({ lessonId, completed, xpReward }: 
     const res = await fetch('/api/complete-lesson', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ lessonId, xpReward }),
+      body: JSON.stringify({ lessonId }),
     })
 
     if (res.ok) {

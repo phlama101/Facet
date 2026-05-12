@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 
 import { LESSONS } from '@/lessons/index'
+import { getDbLesson } from '@/lib/lesson-store'
 import { canAccessLesson } from '@/lib/access'
 
 const DAILY_MISSIONS = [
@@ -23,12 +24,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 })
     }
 
-    // Validate lesson exists server-side and get authoritative xpReward (never trust client)
-    const lesson = LESSONS[lessonId]
-    if (!lesson) {
+    // Validate lesson exists server-side and get authoritative xpReward (never trust client).
+    // Check static lessons first, then fall back to published CMS lessons so that
+    // lessons created through the admin CMS (not in the TS bundle) are also completable.
+    const staticLesson = LESSONS[lessonId]
+    const xpReward = staticLesson
+      ? staticLesson.xpReward
+      : await getDbLesson(lessonId).then(db => db?.xpReward ?? null)
+
+    if (xpReward === null) {
       return NextResponse.json({ error: 'Lesson not found' }, { status: 404 })
     }
-    const xpReward = lesson.xpReward
 
     // Verify user session
     const supabase = await createClient()
@@ -52,22 +58,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    // Count today's completions BEFORE inserting (for mission threshold check)
     const todayUTC = new Date().toISOString().slice(0, 10)
     const todayUTCStart = `${todayUTC}T00:00:00.000Z`
-    const { count: countBefore } = await admin
-      .from('user_lesson_progress')
-      .select('*', { count: 'exact', head: true })
-      .eq('user_id', user.id)
-      .eq('completed', true)
-      .gte('completed_at', todayUTCStart) as { count: number | null }
 
-    const previousTodayCount = countBefore ?? 0
-    const newTodayCount = previousTodayCount + 1
-
-    // Use INSERT (not upsert) so the database's unique constraint on (user_id, lesson_id)
-    // makes this atomic — two concurrent requests can't both succeed, eliminating the
-    // read-check-then-write race condition that would double-award XP.
+    // INSERT first. The unique constraint on (user_id, lesson_id) ensures atomicity —
+    // two concurrent requests for the same lesson can't both succeed.
     const { error: insertError } = await admin
       .from('user_lesson_progress')
       .insert({ user_id: user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() })
@@ -78,6 +73,21 @@ export async function POST(req: NextRequest) {
       }
       throw new Error(insertError.message)
     }
+
+    // Count today's completions AFTER inserting so the count is stable and includes
+    // this row. Deriving previousTodayCount as (newCount - 1) is safe because the
+    // insert above confirmed exactly one new row was added for this user+lesson pair.
+    // This avoids the pre-insert read race that could double-award mission bonuses
+    // when two different lessons are completed nearly simultaneously.
+    const { count: countAfter } = await admin
+      .from('user_lesson_progress')
+      .select('*', { count: 'exact', head: true })
+      .eq('user_id', user.id)
+      .eq('completed', true)
+      .gte('completed_at', todayUTCStart) as { count: number | null }
+
+    const newTodayCount = countAfter ?? 1
+    const previousTodayCount = newTodayCount - 1
 
     // Award bonus XP for daily mission thresholds crossed by this completion
     let bonusXp = 0

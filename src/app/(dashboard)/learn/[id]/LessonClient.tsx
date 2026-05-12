@@ -45,7 +45,7 @@ export default function LessonClient({ id }: Props) {
       const res = await fetch('/api/complete-lesson', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lessonId: lesson.id, xpReward: xpEarned }),
+        body: JSON.stringify({ lessonId: lesson.id }),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       return true

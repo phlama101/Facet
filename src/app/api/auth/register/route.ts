@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
+const USERNAME_MAX = 30
+const DISPLAY_NAME_MAX = 50
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -14,6 +17,28 @@ export async function POST(request: Request) {
     if (!email || !password || !username) {
       return NextResponse.json(
         { error: 'Email, password, and username are required' },
+        { status: 400 }
+      )
+    }
+
+    if (typeof username !== 'string' || username.trim().length === 0) {
+      return NextResponse.json({ error: 'Username is required' }, { status: 400 })
+    }
+    if (username.trim().length > USERNAME_MAX) {
+      return NextResponse.json(
+        { error: `Username must be ${USERNAME_MAX} characters or fewer` },
+        { status: 400 }
+      )
+    }
+    if (!/^[a-zA-Z0-9_.-]+$/.test(username.trim())) {
+      return NextResponse.json(
+        { error: 'Username may only contain letters, numbers, underscores, hyphens, and dots' },
+        { status: 400 }
+      )
+    }
+    if (displayName && typeof displayName === 'string' && displayName.trim().length > DISPLAY_NAME_MAX) {
+      return NextResponse.json(
+        { error: `Display name must be ${DISPLAY_NAME_MAX} characters or fewer` },
         { status: 400 }
       )
     }
@@ -64,9 +89,9 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ ok: true })
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: err instanceof Error ? err.message : 'Registration failed. Please try again.' },
+      { error: 'Registration failed. Please try again.' },
       { status: 500 }
     )
   }
