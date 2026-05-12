@@ -11,17 +11,26 @@ interface Props {
   quizTitle: string
   xpReward: number
   passingScore: number
+  quizId?: string
   onComplete?: (score: number, passed: boolean) => void
 }
 
 type Phase = 'quiz' | 'feedback' | 'results'
 
-export default function QuizClient({ questions, quizTitle, xpReward, passingScore, onComplete }: Props) {
+type Results = {
+  score: number
+  passed: boolean
+  xpEarned: number
+  savedToServer: boolean
+}
+
+export default function QuizClient({ questions, quizTitle, xpReward, passingScore, quizId, onComplete }: Props) {
   const [current, setCurrent] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('quiz')
-  const [results, setResults] = useState<{ score: number; passed: boolean; xpEarned: number } | null>(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [results, setResults] = useState<Results | null>(null)
 
   const q = questions[current]
   const totalQ = questions.length
@@ -38,22 +47,63 @@ export default function QuizClient({ questions, quizTitle, xpReward, passingScor
     setPhase('feedback')
   }
 
-  function handleNext() {
+  async function handleNext() {
     if (current < totalQ - 1) {
       setCurrent(c => c + 1)
       setSelected(null)
       setPhase('quiz')
-    } else {
-      const finalAnswers = { ...answers, [q.id]: selected! }
-      let correct = 0
-      questions.forEach(qq => { if (finalAnswers[qq.id] === qq.correct_answer) correct++ })
-      const score = Math.round((correct / totalQ) * 100)
-      const passed = score >= passingScore
-      const xpEarned = passed ? xpReward : Math.floor(xpReward * 0.2)
-      setResults({ score, passed, xpEarned })
-      setPhase('results')
-      onComplete?.(score, passed)
+      return
     }
+
+    // Last question — submit to server
+    const finalAnswers = { ...answers, [q.id]: selected! }
+
+    // Optimistic client-side score for immediate feedback while the API call runs
+    let correct = 0
+    questions.forEach(qq => { if (finalAnswers[qq.id] === qq.correct_answer) correct++ })
+    const clientScore = Math.round((correct / totalQ) * 100)
+    const clientPassed = clientScore >= passingScore
+    const clientXp = clientPassed ? xpReward : Math.floor(xpReward * 0.2)
+
+    setSubmitting(true)
+
+    try {
+      if (quizId) {
+        const res = await fetch('/api/complete-quiz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ quizId, answers: finalAnswers }),
+        })
+        const json = await res.json() as {
+          ok?: boolean
+          score?: number
+          passed?: boolean
+          xpEarned?: number
+        }
+
+        if (res.ok && json.ok) {
+          // Use server-confirmed values
+          setResults({
+            score: json.score ?? clientScore,
+            passed: json.passed ?? clientPassed,
+            xpEarned: json.xpEarned ?? 0,
+            savedToServer: true,
+          })
+          onComplete?.(json.score ?? clientScore, json.passed ?? clientPassed)
+          setPhase('results')
+          return
+        }
+      }
+    } catch {
+      // Network error — fall through to client-side results
+    } finally {
+      setSubmitting(false)
+    }
+
+    // Fallback: show client-calculated result without confirming XP was saved
+    setResults({ score: clientScore, passed: clientPassed, xpEarned: clientXp, savedToServer: false })
+    onComplete?.(clientScore, clientPassed)
+    setPhase('results')
   }
 
   function handleRetry() {
@@ -66,7 +116,7 @@ export default function QuizClient({ questions, quizTitle, xpReward, passingScor
 
   const isCorrect = phase === 'feedback' && selected === q?.correct_answer
 
-  /* ── Results screen ─────────────────────────────────────── */
+  /* ── Results screen ─────────────────────────────────── */
   if (phase === 'results' && results) {
     const grade =
       results.score === 100 ? { label: 'Perfect!',    emoji: '🏆', color: 'text-amber-400',  ring: '#f59e0b' } :
@@ -151,15 +201,22 @@ export default function QuizClient({ questions, quizTitle, xpReward, passingScor
         </div>
 
         {/* XP earned */}
-        <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 1.1, type: 'spring', stiffness: 260, damping: 18 }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500/15 to-cyan-400/10 border border-cyan-500/25 rounded-xl text-cyan-300 font-bold shadow-[0_0_24px_rgba(6,182,212,0.15)]"
-        >
-          <Zap className="w-4 h-4 fill-cyan-400" />
-          +{results.xpEarned} XP earned
-        </motion.div>
+        {results.xpEarned > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 1.1, type: 'spring', stiffness: 260, damping: 18 }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500/15 to-cyan-400/10 border border-cyan-500/25 rounded-xl text-cyan-300 font-bold shadow-[0_0_24px_rgba(6,182,212,0.15)]"
+          >
+            <Zap className="w-4 h-4 fill-cyan-400" />
+            +{results.xpEarned} XP earned
+          </motion.div>
+        )}
+
+        {/* Silent fallback notice — only shown if server save failed */}
+        {!results.savedToServer && results.xpEarned > 0 && (
+          <p className="text-xs text-[#8b949e]">XP will sync next time you&apos;re online.</p>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 8 }}
@@ -191,7 +248,7 @@ export default function QuizClient({ questions, quizTitle, xpReward, passingScor
     )
   }
 
-  /* ── Quiz screen ────────────────────────────────────────── */
+  /* ── Quiz screen ────────────────────────────────────── */
   return (
     <div className="space-y-8">
       {/* Progress */}
@@ -351,13 +408,19 @@ export default function QuizClient({ questions, quizTitle, xpReward, passingScor
               key="next"
               initial={{ opacity: 0, x: 6 }}
               animate={{ opacity: 1, x: 0 }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={submitting ? undefined : { scale: 1.03 }}
+              whileTap={submitting ? undefined : { scale: 0.97 }}
               onClick={handleNext}
-              className="group flex items-center gap-2 px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-[#0d1117] rounded-xl font-bold text-sm transition-colors shadow-[0_8px_24px_-8px_rgba(6,182,212,0.6)]"
+              disabled={submitting}
+              className="group flex items-center gap-2 px-8 py-3 bg-cyan-500 hover:bg-cyan-400 disabled:opacity-70 disabled:cursor-not-allowed text-[#0d1117] rounded-xl font-bold text-sm transition-colors shadow-[0_8px_24px_-8px_rgba(6,182,212,0.6)]"
             >
-              {current < totalQ - 1 ? 'Next Question' : 'See Results'}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              {submitting ? (
+                <span className="w-4 h-4 border-2 border-[#0d1117]/30 border-t-[#0d1117] rounded-full animate-spin" />
+              ) : current < totalQ - 1 ? (
+                <>Next Question<ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" /></>
+              ) : (
+                <>See Results<ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" /></>
+              )}
             </motion.button>
           )}
         </AnimatePresence>

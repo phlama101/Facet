@@ -68,6 +68,7 @@ export default async function QuizPage({ params }: Props) {
           quizTitle={quizTitle}
           xpReward={xpReward}
           passingScore={passingScore}
+          quizId={id}
         />
       </div>
     </div>
