@@ -51,8 +51,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         'lesson-pulse': {
-          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '50%':      { transform: 'scale(1.1)', opacity: '0.85' },
+          '0%, 100%': { opacity: '1',  filter: 'brightness(1)'   },
+          '50%':      { opacity: '0.6', filter: 'brightness(1.5)' },
         },
         'path-shimmer': {
           '0%, 100%': { opacity: '1' },
