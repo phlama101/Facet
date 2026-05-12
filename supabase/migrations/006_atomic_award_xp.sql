@@ -11,6 +11,10 @@
 -- an extra round-trip.
 -- ─────────────────────────────────────────────────────────────────────────────
 
+-- Drop first because CREATE OR REPLACE cannot change a function's return type.
+-- The original award_xp() returned VOID; the new version returns a TABLE row.
+DROP FUNCTION IF EXISTS award_xp(UUID, INTEGER);
+
 CREATE OR REPLACE FUNCTION award_xp(p_user_id UUID, p_xp INTEGER)
 RETURNS TABLE(new_xp INTEGER, new_level INTEGER, new_streak INTEGER)
 LANGUAGE plpgsql
