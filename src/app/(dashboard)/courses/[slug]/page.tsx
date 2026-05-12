@@ -19,8 +19,16 @@ const DIFFICULTY_CLASSES: Record<string, string> = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const supabase = await createClient()
-  const { data } = await supabase.from('courses').select('title').eq('slug', slug).single()
-  return { title: (data as { title: string } | null)?.title ?? 'Course' }
+  const { data } = await supabase.from('courses').select('title, description').eq('slug', slug).single()
+  const course = data as { title: string; description: string } | null
+  const title = course?.title ?? 'Course'
+  const description = course?.description ?? 'Learn earth science with Facet.'
+  return {
+    title,
+    description,
+    openGraph: { title: `${title} — Facet`, description, type: 'article' },
+    twitter: { card: 'summary', title: `${title} — Facet`, description },
+  }
 }
 
 export default async function CourseDetailPage({ params }: Props) {

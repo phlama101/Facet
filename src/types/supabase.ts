@@ -455,7 +455,12 @@ export type Database = {
         Relationships: []
       }
     }
-    Functions: Record<string, never>
+    Functions: {
+      award_xp: {
+        Args: { p_user_id: string; p_xp: number }
+        Returns: { new_xp: number; new_level: number; new_streak: number }[]
+      }
+    }
     Enums: Record<string, never>
     CompositeTypes: Record<string, never>
   }

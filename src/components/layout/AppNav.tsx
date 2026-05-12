@@ -9,12 +9,14 @@ import { createClient } from '@/lib/supabase/client'
 import type { Profile } from '@/types'
 
 const NAV_TABS = [
-  { href: '/dashboard', label: 'Dashboard' },
-  { href: '/learn',     label: 'Learn' },
-  { href: '/atlas',     label: 'Atlas' },
-  { href: '/profile',   label: 'Profile' },
-  { href: '/billing',   label: 'Billing' },
-  { href: '/sources',   label: 'Sources' },
+  { href: '/dashboard',  label: 'Dashboard' },
+  { href: '/learn',      label: 'Learn' },
+  { href: '/skill-tree', label: 'Skill Tree' },
+  { href: '/leaderboard', label: 'Leaderboard' },
+  { href: '/atlas',      label: 'Atlas' },
+  { href: '/profile',    label: 'Profile' },
+  { href: '/billing',    label: 'Billing' },
+  { href: '/sources',    label: 'Sources' },
 ]
 
 interface AppNavProps {

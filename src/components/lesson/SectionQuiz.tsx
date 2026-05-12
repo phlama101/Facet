@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Check, X, ArrowRight } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { QuizSection } from '@/lessons/types'
@@ -27,14 +27,35 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
     if (i === q.correct) setCorrect(c => c + 1)
   }
 
-  function handleNext() {
+  function advance() {
     if (index < total - 1) {
-      setIndex(index + 1)
+      setIndex(i => i + 1)
       setAnswer(null)
     } else {
       onComplete(correct, total)
     }
   }
+
+  // Keyboard shortcuts: A/B/C/D to select answer, Enter/Space to advance
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      // Don't capture if user is typing in an input
+      if ((e.target as HTMLElement).tagName === 'INPUT') return
+
+      if (!answered) {
+        const idx = ['a', 'b', 'c', 'd'].indexOf(e.key.toLowerCase())
+        if (idx !== -1 && idx < q.a.length) {
+          handleAnswer(idx)
+        }
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        advance()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [answered, index, q.a.length])
 
   return (
     <div>
@@ -75,6 +96,11 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
       </h2>
 
       {/* Answer choices */}
+      {!answered && (
+        <p className="mb-3 text-[10px]" style={{ color: BRAND.textSubtle }}>
+          Press A · B · C · D to select
+        </p>
+      )}
       <div role="group" aria-label="Answer choices" className="space-y-2">
         {q.a.map((option, i) => {
           const isCorrectOption  = i === q.correct
@@ -174,7 +200,7 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
               {q.explain}
             </p>
             <button
-              onClick={handleNext}
+              onClick={advance}
               className="mt-4 w-full py-2.5 rounded-sm text-xs font-semibold tracking-[0.15em] uppercase flex items-center justify-center gap-2 transition-opacity hover:opacity-80"
               style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
             >
@@ -183,6 +209,9 @@ export default function SectionQuiz({ section, onComplete }: SectionQuizProps) {
                 : <>Next Question <ArrowRight size={12} /></>
               }
             </button>
+            <p className="mt-2 text-center text-[10px]" style={{ color: BRAND.textSubtle }}>
+              Press Enter or Space to continue
+            </p>
           </div>
         </div>
       )}

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
-import { levelFromXp } from '@/lib/utils'
+
 import { LESSONS } from '@/lessons/index'
 import { canAccessLesson } from '@/lib/access'
 
@@ -37,16 +37,16 @@ export async function POST(req: NextRequest) {
 
     const admin = createAdminClient()
 
-    // Fetch profile — need subscription for access validation
+    // Fetch profile — only need subscription for access validation;
+    // XP/streak/level are updated atomically by the award_xp DB function.
     const { data: profile } = await admin
       .from('profiles')
-      .select('xp, level, streak, longest_streak, last_active, subscription')
+      .select('subscription')
       .eq('id', user.id)
       .single()
 
     if (!profile) return NextResponse.json({ error: 'Profile not found' }, { status: 404 })
 
-    // Validate the user's subscription allows access to this lesson
     const subscription = (profile as { subscription?: string }).subscription ?? 'free'
     if (!canAccessLesson(lessonId, subscription)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
@@ -79,43 +79,26 @@ export async function POST(req: NextRequest) {
       throw new Error(insertError.message)
     }
 
-    const baseXp = (profile.xp ?? 0) + xpReward
-
-    // Compute streak using UTC day comparison
-    const lastActiveDate = profile.last_active
-      ? new Date(profile.last_active).toISOString().slice(0, 10)
-      : null
-
-    let newStreak: number
-    if (!lastActiveDate) {
-      newStreak = 1
-    } else if (lastActiveDate === todayUTC) {
-      newStreak = profile.streak ?? 1
-    } else {
-      const yesterday = new Date()
-      yesterday.setUTCDate(yesterday.getUTCDate() - 1)
-      const yesterdayUTC = yesterday.toISOString().slice(0, 10)
-      newStreak = lastActiveDate === yesterdayUTC ? (profile.streak ?? 0) + 1 : 1
-    }
-
-    const newLongest = Math.max(profile.longest_streak ?? 0, newStreak)
-
     // Award bonus XP for daily mission thresholds crossed by this completion
     let bonusXp = 0
     for (const { target, bonusXp: reward } of DAILY_MISSIONS) {
       if (previousTodayCount < target && newTodayCount >= target) bonusXp += reward
     }
 
-    const finalXp = baseXp + bonusXp
-    const finalLevel = levelFromXp(finalXp)
+    const xpToAward = xpReward + bonusXp
 
-    await admin.from('profiles').update({
-      xp: finalXp,
-      level: finalLevel,
-      streak: newStreak,
-      longest_streak: newLongest,
-      last_active: new Date().toISOString(),
-    }).eq('id', user.id)
+    // award_xp uses SELECT FOR UPDATE, so concurrent lesson completions queue at
+    // the DB level rather than racing on stale profile.xp reads.
+    const { data: awardRows, error: awardError } = await admin.rpc('award_xp', {
+      p_user_id: user.id,
+      p_xp: xpToAward,
+    }) as { data: { new_xp: number; new_level: number; new_streak: number }[] | null; error: unknown }
+
+    if (awardError || !awardRows?.length) {
+      throw new Error('award_xp failed')
+    }
+
+    const { new_xp: finalXp, new_level: finalLevel, new_streak: newStreak } = awardRows[0]
 
     return NextResponse.json({ ok: true, newXp: finalXp, newLevel: finalLevel, newStreak, bonusXp })
   } catch (err) {
