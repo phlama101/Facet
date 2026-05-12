@@ -485,6 +485,647 @@ export const HOTSPOTS: Hotspot[] = [
   },
 ]
 
+// ─── Tectonic Plates ─────────────────────────────────────────────────────────
+
+export interface TectonicPlate {
+  id: string
+  name: string
+  type: 'oceanic' | 'continental' | 'mixed'
+  areaKm2: number        // million km²
+  color: string
+  coordinates: [number, number][][]   // each inner array is one polygon ring
+  description: string
+}
+
+export const TECTONIC_PLATES: TectonicPlate[] = [
+  {
+    id: 'pacific',
+    name: 'Pacific Plate',
+    type: 'oceanic',
+    areaKm2: 103,
+    color: '#3A8FA8',
+    // Split at antimeridian: east half uses negative lngs, west half uses positive
+    coordinates: [
+      [
+        [57,-173],[52,-162],[53,-157],[57,-147],[50,-140],
+        [35,-132],[20,-120],[5,-108],[-5,-107],[-20,-112],
+        [-35,-112],[-52,-116],[-60,-150],[-60,-180],[57,-180],
+      ],
+      [
+        [57,180],[57,162],[48,154],[42,145],[32,143],
+        [20,145],[11,142],[0,150],[-15,168],[-25,174],
+        [-32,178],[-60,178],[-60,180],
+      ],
+    ],
+    description: 'The world\'s largest tectonic plate, covering ~103 million km² of almost entirely oceanic crust. It moves northwest at 5–10 cm/yr and is subducting beneath surrounding plates all around its perimeter — driving the volcanic "Ring of Fire" and generating the majority of the world\'s largest earthquakes.',
+  },
+  {
+    id: 'north-american',
+    name: 'North American Plate',
+    type: 'continental',
+    areaKm2: 76,
+    color: '#3D7A50',
+    coordinates: [[
+      [72,-8],[55,-35],[22,-43],[8,-38],
+      [8,-80],[16,-88],[20,-105],[26,-115],
+      [37,-122],[45,-130],[52,-168],[58,-175],
+      [66,-180],[82,-100],[80,-10],[72,-8],
+    ]],
+    description: 'Carries North America, Greenland, and the western North Atlantic. Moving west-southwest away from Eurasia as the Mid-Atlantic Ridge spreads. The Cascadia Subduction Zone on its western edge is locked and accumulating strain for a future magnitude 8–9 megathrust earthquake.',
+  },
+  {
+    id: 'south-american',
+    name: 'South American Plate',
+    type: 'continental',
+    areaKm2: 43,
+    color: '#8A6A30',
+    coordinates: [[
+      [8,-38],[-5,-14],[-20,-13],[-30,-14],
+      [-40,-17],[-45,-11],[-54,0],
+      [-56,-38],[-55,-65],[-45,-76],
+      [-20,-72],[0,-82],[8,-80],[8,-38],
+    ]],
+    description: 'Carries South America and the South Atlantic. The Nazca Plate subducts beneath its western edge at ~7 cm/yr, building the Andes and producing Earth\'s most powerful earthquakes, including the M 9.5 Valdivia quake in 1960 — the largest ever recorded.',
+  },
+  {
+    id: 'eurasian',
+    name: 'Eurasian Plate',
+    type: 'continental',
+    areaKm2: 68,
+    color: '#6A4A8A',
+    coordinates: [[
+      [72,-8],[66,-18],[60,-30],[45,-28],[38,-30],
+      [36,-6],[36,28],[34,40],[26,57],
+      [28,67],[28,95],[25,100],[30,130],
+      [36,142],[45,149],[57,164],[65,178],
+      [72,160],[82,60],[85,0],[82,-30],[72,-8],
+    ]],
+    description: 'The second-largest plate, carrying all of Europe and most of Asia. India collides into its southern edge at ~5 cm/yr, raising the Himalayas. In the east, the Pacific Plate subducts beneath it along Japan\'s coast — producing frequent devastating earthquakes.',
+  },
+  {
+    id: 'african',
+    name: 'African Plate',
+    type: 'continental',
+    areaKm2: 61,
+    color: '#8A4A3A',
+    coordinates: [[
+      [36,-6],[36,28],[34,40],
+      [12,43],[5,38],[0,36],[-20,35],[-38,24],
+      [-54,0],[-45,-11],[-40,-17],
+      [-20,-13],[-5,-14],[0,-20],
+      [8,-17],[20,-20],[30,-12],[36,-6],
+    ]],
+    description: 'The African Plate is slowly tearing itself apart along the East African Rift System. Eastern Africa (the Somali Plate) will separate into a new island continent in ~10 million years, forming a new ocean. The plate collides with Eurasia to the north, building the Atlas Mountains.',
+  },
+  {
+    id: 'australian',
+    name: 'Australian Plate',
+    type: 'continental',
+    areaKm2: 47,
+    color: '#3A7A6A',
+    coordinates: [[
+      [-38,75],[-42,90],[-45,110],
+      [-50,130],[-53,147],[-48,160],
+      [-40,172],[-32,178],[-20,170],
+      [-10,150],[-5,147],[-5,133],
+      [-5,105],[-9,119],[5,96],
+      [5,78],[-38,75],
+    ]],
+    description: 'The fastest-moving continental plate, drifting north at ~7 cm/yr. Australia has moved ~1,500 km north in 35 million years and is expected to collide with Southeast Asia within ~100 million years. Its northern boundary is the complex Sunda subduction zone.',
+  },
+  {
+    id: 'antarctic',
+    name: 'Antarctic Plate',
+    type: 'continental',
+    areaKm2: 60,
+    color: '#4A6A8A',
+    coordinates: [[
+      [-54,0],[-56,-30],[-58,-60],[-60,-100],
+      [-60,-150],[-60,-180],[-60,180],
+      [-55,150],[-50,130],[-45,110],
+      [-42,90],[-38,75],
+      [-42,60],[-45,40],[-50,20],[-54,0],
+    ]],
+    description: 'The only plate almost entirely surrounded by divergent boundaries — mid-ocean ridges on nearly all sides. This means it moves very slowly (~1–2 cm/yr). Contains the Antarctic Ice Sheet, Earth\'s largest freshwater reservoir, holding ~70% of the planet\'s fresh water.',
+  },
+  {
+    id: 'nazca',
+    name: 'Nazca Plate',
+    type: 'oceanic',
+    areaKm2: 15,
+    color: '#A85A3A',
+    coordinates: [[
+      [0,-100],[0,-82],[-5,-81],[-10,-78],
+      [-20,-72],[-30,-72],[-45,-76],[-55,-68],
+      [-52,-116],[-35,-112],[-20,-115],
+      [-5,-107],[0,-104],[0,-100],
+    ]],
+    description: 'A purely oceanic plate west of South America, subducting beneath the continent at ~7 cm/yr. This subduction drives Earth\'s most seismically active region, built the Andes, and produced the 1960 Chile M 9.5 earthquake — the largest ever recorded. The Galápagos hotspot sits above it.',
+  },
+  {
+    id: 'caribbean',
+    name: 'Caribbean Plate',
+    type: 'oceanic',
+    areaKm2: 3.2,
+    color: '#3A6A8A',
+    coordinates: [[
+      [20,-87],[17,-65],[12,-62],
+      [10,-72],[8,-83],[10,-88],
+      [16,-88],[20,-87],
+    ]],
+    description: 'A small, relatively stable plate wedged between North and South America. Its eastern boundary — the Lesser Antilles volcanic arc — is where Atlantic oceanic crust subducts westward, producing islands like Martinique (Mount Pelée) and Montserrat (Soufrière Hills).',
+  },
+  {
+    id: 'philippine',
+    name: 'Philippine Sea Plate',
+    type: 'oceanic',
+    areaKm2: 5.5,
+    color: '#6A3A8A',
+    coordinates: [[
+      [32,133],[26,125],[20,122],
+      [12,125],[8,127],[9,141],
+      [15,148],[20,148],[24,147],
+      [28,145],[32,143],[32,133],
+    ]],
+    description: 'Entirely bounded by subduction zones. The Mariana Trench — Earth\'s deepest point at 11,034 m — formed where the Pacific Plate dives beneath this plate. Japan, the Philippines, and Taiwan all lie at or near its boundaries, accounting for some of the world\'s highest earthquake frequency.',
+  },
+  {
+    id: 'arabian',
+    name: 'Arabian Plate',
+    type: 'continental',
+    areaKm2: 5,
+    color: '#8A7A3A',
+    coordinates: [[
+      [38,47],[33,53],[22,60],[16,50],
+      [12,43],[20,38],[28,35],
+      [34,36],[38,40],[38,47],
+    ]],
+    description: 'Rifted away from Africa ~30 million years ago, creating the Red Sea. Now colliding with Eurasia at ~2.5 cm/yr, building the Zagros Mountains of Iran. The triple junction at the Afar Triangle — where the Arabian, African, and Somali plates meet — is one of the most tectonically active regions on Earth.',
+  },
+  {
+    id: 'indian',
+    name: 'Indian Plate',
+    type: 'continental',
+    areaKm2: 12,
+    color: '#3A7A5A',
+    coordinates: [[
+      [28,67],[28,95],[15,93],[0,80],
+      [-38,75],[-10,65],[5,60],
+      [12,43],[20,38],[28,55],
+      [38,47],[28,67],
+    ]],
+    description: 'Has traveled ~9,000 km northward in ~100 million years — the fastest-moving continental plate in geological history. Its ongoing collision with Eurasia, starting ~50 Ma ago, built the Himalayas and the Tibetan Plateau (the "Roof of the World"). Mt. Everest grows taller at ~5 mm/yr.',
+  },
+  {
+    id: 'cocos',
+    name: 'Cocos Plate',
+    type: 'oceanic',
+    areaKm2: 2.9,
+    color: '#5A3A2A',
+    coordinates: [[
+      [22,-108],[13,-93],[10,-88],
+      [8,-83],[0,-82],[0,-104],
+      [12,-104],[22,-108],
+    ]],
+    description: 'A young oceanic plate subducting beneath Central America at 7–8 cm/yr — one of Earth\'s fastest subduction rates. This drives intense volcanism across Mexico and Central America and causes frequent large earthquakes, including the 1985 Mexico City disaster that killed ~9,500 people.',
+  },
+  {
+    id: 'juan-de-fuca',
+    name: 'Juan de Fuca Plate',
+    type: 'oceanic',
+    areaKm2: 0.25,
+    color: '#3A5A7A',
+    coordinates: [[
+      [49,-130],[47,-129],[45,-130],[43,-130],[41,-131],
+      [40,-126],[42,-126],[44,-125],[46,-124],[48,-126],[49,-130],
+    ]],
+    description: 'A tiny remnant of the ancient Farallon Plate, fully subducting beneath North America. Its locked contact with the North American Plate on the Cascadia Subduction Zone has built up centuries of strain — expected to rupture in a magnitude 8–9 earthquake that will affect Seattle, Portland, and Vancouver.',
+  },
+]
+
+// ─── Major Earthquakes ────────────────────────────────────────────────────────
+
+export interface MajorEarthquake {
+  id: string
+  name: string
+  lat: number
+  lng: number
+  magnitude: number
+  year: number
+  country: string
+  deaths: string
+  tsunamiGenerated: boolean
+  description: string
+}
+
+export const MAJOR_EARTHQUAKES: MajorEarthquake[] = [
+  {
+    id: 'lisbon-1755',
+    name: 'Lisbon Earthquake',
+    lat: 37.0, lng: -9.0,
+    magnitude: 8.7, year: 1755, country: 'Portugal',
+    deaths: '~60,000', tsunamiGenerated: true,
+    description: 'Struck on All Saints\' Day as worshippers filled churches. The tsunami and fires that followed killed tens of thousands more. It fundamentally shifted European philosophy — Voltaire cited it as evidence against naive optimism in Candide, sparking the Enlightenment debate on the problem of evil.',
+  },
+  {
+    id: 'new-madrid-1811',
+    name: 'New Madrid Earthquakes',
+    lat: 36.5, lng: -89.6,
+    magnitude: 7.7, year: 1811, country: 'USA',
+    deaths: '<1,000', tsunamiGenerated: false,
+    description: 'The most powerful earthquake sequence in the contiguous US east of the Rockies — three M>7 quakes in three months changed the course of the Mississippi River and were felt from Canada to the Gulf Coast. Occurring far from any plate boundary, it exposed the seismic hazard of ancient intraplate fault zones.',
+  },
+  {
+    id: 'san-francisco-1906',
+    name: 'San Francisco Earthquake',
+    lat: 37.7, lng: -122.5,
+    magnitude: 7.9, year: 1906, country: 'USA',
+    deaths: '~3,000', tsunamiGenerated: false,
+    description: 'A 477 km rupture of the San Andreas Fault. The earthquake and three-day fires destroyed ~28,000 buildings and 508 city blocks. It was the first earthquake systematically studied by scientists, establishing the "elastic rebound" theory of earthquake mechanics — the foundation of modern seismology.',
+  },
+  {
+    id: 'messina-1908',
+    name: 'Messina Earthquake',
+    lat: 38.2, lng: 15.6,
+    magnitude: 7.1, year: 1908, country: 'Italy',
+    deaths: '~75,000', tsunamiGenerated: true,
+    description: 'Struck at 5:20 AM, destroying the cities of Messina and Reggio Calabria as residents slept. The deadliest earthquake in European history. A tsunami struck immediately after, killing thousands more along the coastline. Most buildings, constructed without seismic codes, collapsed instantly.',
+  },
+  {
+    id: 'haiyuan-1920',
+    name: 'Haiyuan Earthquake',
+    lat: 36.5, lng: 105.7,
+    magnitude: 8.5, year: 1920, country: 'China',
+    deaths: '~273,000', tsunamiGenerated: false,
+    description: 'Struck Gansu and Shaanxi provinces, triggering catastrophic landslides that buried entire villages. Whole rivers were temporarily dammed, creating lakes overnight. One of the deadliest earthquakes in recorded history — occurring in a remote region with slow communications, full damage reports took months to compile.',
+  },
+  {
+    id: 'kanto-1923',
+    name: 'Great Kantō Earthquake',
+    lat: 35.3, lng: 139.5,
+    magnitude: 7.9, year: 1923, country: 'Japan',
+    deaths: '~143,000', tsunamiGenerated: true,
+    description: 'Struck Tokyo and Yokohama at lunchtime as cooking fires were lit across millions of homes. The resulting firestorm killed more than 100,000 people. It drove Japan to develop some of the world\'s most advanced earthquake engineering and preparedness systems over the following decades.',
+  },
+  {
+    id: 'assam-1950',
+    name: 'Assam-Tibet Earthquake',
+    lat: 28.4, lng: 96.7,
+    magnitude: 8.6, year: 1950, country: 'India/China',
+    deaths: '~4,000', tsunamiGenerated: false,
+    description: 'One of the largest earthquakes of the 20th century, occurring in one of the most tectonically active regions — where the Indian Plate drives into Eurasia. Triggered massive landslides in the Himalayas; dammed rivers later burst, sending walls of water and debris downstream.',
+  },
+  {
+    id: 'chile-1960',
+    name: 'Valdivia Earthquake',
+    lat: -38.3, lng: -73.6,
+    magnitude: 9.5, year: 1960, country: 'Chile',
+    deaths: '~5,700', tsunamiGenerated: true,
+    description: 'The largest earthquake ever recorded. The 1,000 km rupture of the Nazca-South American plate boundary generated a tsunami that crossed the Pacific, killing hundreds in Hawaii, Japan, and the Philippines. The Earth vibrated like a bell for weeks; the quake permanently displaced parts of the Chilean coast by 3–4 metres.',
+  },
+  {
+    id: 'alaska-1964',
+    name: 'Good Friday Earthquake',
+    lat: 61.0, lng: -147.7,
+    magnitude: 9.2, year: 1964, country: 'USA (Alaska)',
+    deaths: '~131', tsunamiGenerated: true,
+    description: 'The second-largest earthquake ever recorded. Anchorage neighbourhoods dropped several metres in minutes; entire hillsides liquefied. The resulting trans-Pacific tsunami killed people as far away as Crescent City, California. Its low death toll reflects Alaska\'s sparse population.',
+  },
+  {
+    id: 'tangshan-1976',
+    name: 'Tangshan Earthquake',
+    lat: 39.6, lng: 118.2,
+    magnitude: 7.8, year: 1976, country: 'China',
+    deaths: '~242,000', tsunamiGenerated: false,
+    description: 'Struck the industrial city of Tangshan at 3:42 AM with no warning. Within 23 seconds, ~85% of buildings collapsed, burying residents in their sleep. The Chinese government suppressed the true casualty figures for years; some estimates suggest up to 650,000 deaths, potentially the deadliest earthquake of the 20th century.',
+  },
+  {
+    id: 'mexico-1985',
+    name: 'Mexico City Earthquake',
+    lat: 18.1, lng: -102.9,
+    magnitude: 8.1, year: 1985, country: 'Mexico',
+    deaths: '~9,500', tsunamiGenerated: false,
+    description: 'The Cocos Plate rupture sent waves northward that were dramatically amplified by Mexico City\'s soft lake-bed sediments, destroying buildings that survived the initial shaking far inland. This "basin amplification" effect — where soft sediments trap and magnify seismic waves — is now a central consideration in urban seismic risk assessment worldwide.',
+  },
+  {
+    id: 'kobe-1995',
+    name: 'Great Hanshin Earthquake',
+    lat: 34.6, lng: 135.0,
+    magnitude: 6.9, year: 1995, country: 'Japan',
+    deaths: '~6,434', tsunamiGenerated: false,
+    description: 'Struck the modern port city of Kobe at 5:46 AM, collapsing elevated expressways and railways, and triggering fires that burned for two days. Despite Japan\'s advanced seismic codes, many older structures failed. The disaster transformed global seismic building standards and urban disaster planning.',
+  },
+  {
+    id: 'sumatra-2004',
+    name: 'Indian Ocean Earthquake',
+    lat: 3.3, lng: 95.8,
+    magnitude: 9.1, year: 2004, country: 'Indonesia',
+    deaths: '~227,000', tsunamiGenerated: true,
+    description: 'The third-largest earthquake ever recorded — a 1,600 km rupture of the Sunda megathrust. The tsunami reached 14 countries with waves up to 30 m tall, killing ~227,000 people. It catalysed the creation of the Indian Ocean Tsunami Warning System and transformed global tsunami preparedness.',
+  },
+  {
+    id: 'kashmir-2005',
+    name: 'Kashmir Earthquake',
+    lat: 34.5, lng: 73.6,
+    magnitude: 7.6, year: 2005, country: 'Pakistan/India',
+    deaths: '~87,000', tsunamiGenerated: false,
+    description: 'Struck the mountainous Kashmir region along the Indian-Eurasian collision zone, triggering massive landslides. With relief access hampered by steep terrain and damaged roads, ~3.5 million people were left homeless heading into a Himalayan winter — a secondary humanitarian disaster.',
+  },
+  {
+    id: 'sichuan-2008',
+    name: 'Sichuan Earthquake',
+    lat: 31.0, lng: 103.3,
+    magnitude: 7.9, year: 2008, country: 'China',
+    deaths: '~87,000', tsunamiGenerated: false,
+    description: 'The eastern margin of the Tibetan Plateau ruptured beneath densely populated mountains. Thousands of schoolchildren were killed in collapsed "tofu buildings" — poorly constructed school buildings that failed while adjacent government offices stood. The disaster spurred significant reform in Chinese construction standards.',
+  },
+  {
+    id: 'haiti-2010',
+    name: 'Haiti Earthquake',
+    lat: 18.5, lng: -72.5,
+    magnitude: 7.0, year: 2010, country: 'Haiti',
+    deaths: '~160,000', tsunamiGenerated: false,
+    description: 'Struck 25 km from Port-au-Prince on a previously unmapped fault. The combination of extremely shallow depth, proximity to the capital, inadequate building construction, and pre-existing poverty produced catastrophic damage. One of the most devastating natural disasters in the Western Hemisphere in modern history.',
+  },
+  {
+    id: 'chile-2010',
+    name: 'Maule Earthquake',
+    lat: -36.1, lng: -72.9,
+    magnitude: 8.8, year: 2010, country: 'Chile',
+    deaths: '~521', tsunamiGenerated: true,
+    description: 'The sixth-largest earthquake ever recorded, striking the same Nazca-South American boundary as the 1960 Valdivia quake. Chile\'s strict seismic building codes, developed in direct response to 1960, limited the death toll to ~521 for a quake 500 times more energetic than the Haiti earthquake two months earlier.',
+  },
+  {
+    id: 'tohoku-2011',
+    name: 'Tōhoku Earthquake',
+    lat: 38.3, lng: 142.4,
+    magnitude: 9.1, year: 2011, country: 'Japan',
+    deaths: '~20,000', tsunamiGenerated: true,
+    description: 'The Pacific Plate slipped 50–60 m beneath Japan along a 500 km rupture, generating tsunami waves up to 40 m tall. The 18-minute warning was insufficient for many coastal towns. The resulting flooding disabled the Fukushima Daiichi nuclear plant — triggering the worst nuclear disaster since Chernobyl.',
+  },
+  {
+    id: 'nepal-2015',
+    name: 'Gorkha Earthquake',
+    lat: 28.1, lng: 84.7,
+    magnitude: 7.8, year: 2015, country: 'Nepal',
+    deaths: '~9,000', tsunamiGenerated: false,
+    description: 'The India-Eurasia collision zone ruptured beneath Nepal, flattening mountain villages. Kathmandu\'s soft sediment basin amplified shaking. An Everest avalanche killed 22 people at Base Camp. A M 7.3 aftershock struck 17 days later. The disaster killed nearly 9,000 and left 3.5 million homeless.',
+  },
+  {
+    id: 'turkey-2023',
+    name: 'Kahramanmaraş Earthquakes',
+    lat: 37.2, lng: 37.0,
+    magnitude: 7.8, year: 2023, country: 'Turkey/Syria',
+    deaths: '~60,000', tsunamiGenerated: false,
+    description: 'Two M 7.8 and M 7.5 earthquakes struck southeastern Turkey and northern Syria within 9 hours on the East Anatolian Fault. Over 50,000 people were killed across 10 Turkish provinces. Winter temperatures, the scale of destruction, and conflict in Syria severely hampered rescue operations.',
+  },
+]
+
+// ─── Hydrothermal Vent Fields ─────────────────────────────────────────────────
+
+export interface HydrothermalVentField {
+  id: string
+  name: string
+  lat: number
+  lng: number
+  ocean: string
+  depthM: number
+  maxTempC: number
+  discoveredYear: number
+  description: string
+  features: string
+}
+
+export const HYDROTHERMAL_VENTS: HydrothermalVentField[] = [
+  {
+    id: 'galapagos-rift',
+    name: 'Galápagos Rift',
+    lat: 0.8, lng: -86.2,
+    ocean: 'Pacific', depthM: 2450, maxTempC: 17, discoveredYear: 1977,
+    description: 'The discovery site of all vent biology. In February 1977, a Woods Hole/USGS team in the submersible Alvin descended and found warm water shimmering with dense clam beds and tube worms — completely rewriting the rules of life on Earth. The vents here are warm-water "temperature anomaly" vents, not the black-smoker variety discovered two years later.',
+    features: 'Warm-water vents, giant clam beds, tube worms — site of initial 1977 discovery',
+  },
+  {
+    id: 'epr-21n',
+    name: 'East Pacific Rise 21°N',
+    lat: 21.0, lng: -109.1,
+    ocean: 'Pacific', depthM: 2600, maxTempC: 380, discoveredYear: 1979,
+    description: 'Site of the first black smoker vent ever observed (1979). A Franco-American expedition in Alvin and the French submersible Cyana found plumes of dark fluid at 380°C — far exceeding boiling point at surface pressure. The iconic image of black smoker chimneys (up to 60 m tall) billowing dark mineral-laden fluid originated here.',
+    features: 'Black smokers, zinc-iron sulfide chimneys, first high-temperature vent discovered',
+  },
+  {
+    id: 'epr-9n',
+    name: 'East Pacific Rise 9–10°N',
+    lat: 9.8, lng: -104.3,
+    ocean: 'Pacific', depthM: 2500, maxTempC: 403, discoveredYear: 1989,
+    description: 'The most intensively studied vent field on Earth. A 1991 volcanic eruption was directly observed in real time, and the colonization of the fresh lava by vent organisms was documented over years — revealing the resilience and dispersal dynamics of chemosynthetic ecosystems. Hosts the densest known aggregations of Riftia pachyptila tube worms.',
+    features: 'Riftia tube worm forests, highest-temperature vents, eruption directly observed (1991)',
+  },
+  {
+    id: 'endeavour-jdf',
+    name: 'Endeavour Segment (Juan de Fuca Ridge)',
+    lat: 47.9, lng: -129.0,
+    ocean: 'Pacific (NE)', depthM: 2200, maxTempC: 340, discoveredYear: 1982,
+    description: 'One of the most thermally active vent fields on the NE Pacific. Five major vent clusters across 3 km produce 60% of the entire ridge segment\'s heat output. Continuously monitored for 40+ years, it has provided critical long-term data on how vent communities evolve and respond to seismic activity.',
+    features: 'Main Endeavour, Mothra, High Rise vent clusters; long-term ONC monitoring',
+  },
+  {
+    id: 'axial-seamount',
+    name: 'Axial Seamount',
+    lat: 45.9, lng: -130.0,
+    ocean: 'Pacific (NE)', depthM: 1520, maxTempC: 312, discoveredYear: 1986,
+    description: 'The most active submarine volcano on the Juan de Fuca Ridge, erupting in 1998, 2011, and 2015. Equipped with the world\'s most comprehensive deep-sea observatory network (OOI Cabled Array), enabling real-time monitoring of seafloor earthquakes, deformation, and fluid flow. The 2015 eruption was successfully forecast weeks in advance.',
+    features: 'Active caldera, OOI real-time observatory, predictable eruption cycles',
+  },
+  {
+    id: 'lost-city',
+    name: 'Lost City Hydrothermal Field',
+    lat: 30.1, lng: -42.1,
+    ocean: 'Atlantic (Mid-Atlantic Ridge)', depthM: 800, maxTempC: 91, discoveredYear: 2000,
+    description: 'Discovered in 2000, Lost City shattered the established paradigm. Rather than volcanic heat, it is powered by serpentinization — seawater reacting with mantle peridotite. This produces alkaline, hydrogen-rich fluids and white carbonate chimneys up to 60 m tall. Some structures are estimated to be >120,000 years old. Its chemistry closely resembles what scientists think early Earth conditions looked like — making it the leading candidate site for the origin of life.',
+    features: 'White carbonate towers, alkaline H₂-rich fluids, >120,000-year-old structures; origin-of-life candidate',
+  },
+  {
+    id: 'tag-field',
+    name: 'Trans-Atlantic Geotraverse (TAG)',
+    lat: 26.1, lng: -44.8,
+    ocean: 'Atlantic (Mid-Atlantic Ridge)', depthM: 3650, maxTempC: 366, discoveredYear: 1985,
+    description: 'The largest active hydrothermal mound on the seafloor — 200 m wide and 50 m tall. The TAG mound has cycled on and off for ~140,000 years. In 1994, the first scientific ocean drilling into an active hydrothermal mound (ODP Leg 158) revealed how massive sulfide ore deposits form at spreading ridges.',
+    features: 'Largest active sulfide mound on Earth, scientific drilling site',
+  },
+  {
+    id: 'rainbow-field',
+    name: 'Rainbow Vent Field',
+    lat: 36.2, lng: -33.9,
+    ocean: 'Atlantic (Mid-Atlantic Ridge)', depthM: 2300, maxTempC: 365, discoveredYear: 1997,
+    description: 'An unusually metal-rich field located where the mantle rock peridotite is exposed at the seafloor. The serpentinization reaction produces extraordinary concentrations of iron and hydrogen. Despite fluid temperatures hostile to most life, dense communities thrive here — demonstrating how life exploits even the most extreme chemical gradients.',
+    features: 'Metal-rich peridotite-hosted vents; exceptional iron and hydrogen concentrations',
+  },
+  {
+    id: 'lau-basin',
+    name: 'Lau Basin Vent Fields',
+    lat: -21.0, lng: -176.5,
+    ocean: 'Pacific (SW)', depthM: 1900, maxTempC: 334, discoveredYear: 1989,
+    description: 'A back-arc basin behind the Tonga subduction zone with the world\'s most diverse vent fauna — a hotspot of evolutionary radiation for vent organisms. Fluid pH can drop below 2, among the most acidic vent fluids known. The subducted Pacific slab adds arc-like chemistry, making each vent field within the basin dramatically different from its neighbors.',
+    features: 'Extreme acid vents (pH<2), Alviniconcha snail forests, highest vent diversity on Earth',
+  },
+  {
+    id: 'guaymas-basin',
+    name: 'Guaymas Basin',
+    lat: 27.0, lng: -111.4,
+    ocean: 'Pacific (Gulf of California)', depthM: 2000, maxTempC: 315, discoveredYear: 1980,
+    description: 'A vent field buried in thick organic-rich sediment from high biological productivity in the Gulf of California. Hydrothermal fluids "cook" the sediments, generating a remarkable mix of hydrocarbons and amino acids — essentially a natural abiotic synthesis laboratory. A prime site for studying how organic molecules that could seed life form under hydrothermal conditions.',
+    features: 'Sediment-hosted vents, petroleum-like hydrocarbons, natural amino acid synthesis',
+  },
+  {
+    id: 'kairei-cir',
+    name: 'Kairei Vent Field',
+    lat: -25.3, lng: 70.0,
+    ocean: 'Indian (Central Indian Ridge)', depthM: 2450, maxTempC: 360, discoveredYear: 2001,
+    description: 'The first high-temperature vent field discovered in the Indian Ocean. Features a unique biogeographic mixture: Atlantic Rimicaris shrimp and Pacific Alvinocarid shrimp occur side by side — revealing that the Indian Ocean is a mixing zone between the two major global vent biogeographic provinces that evolved in isolation.',
+    features: 'Atlantic-Pacific biogeographic mixing zone; dual shrimp species co-occurrence',
+  },
+  {
+    id: 'east-scotia-ridge',
+    name: 'East Scotia Ridge Vents',
+    lat: -56.1, lng: -30.3,
+    ocean: 'Southern', depthM: 2400, maxTempC: 382, discoveredYear: 2009,
+    description: 'The first vents discovered in the Southern Ocean, and home to a completely unknown ecosystem. Dominated by yeti crabs (Kiwa tyleri) piled in massive aggregations around vent chimneys. No tube worms — abundant everywhere else — were found. The Drake Passage appears to act as a biogeographic barrier, isolating Antarctic vent fauna from the rest of the ocean.',
+    features: 'Yeti crab aggregations (Kiwa tyleri), tube-worm-absent unique Antarctic ecosystem',
+  },
+  {
+    id: 'mid-cayman',
+    name: 'Mid-Cayman Spreading Centre',
+    lat: 18.5, lng: -81.7,
+    ocean: 'Atlantic (Caribbean)', depthM: 5000, maxTempC: 398, discoveredYear: 2010,
+    description: 'The world\'s deepest known hydrothermal vents, discovered in 2010 by ROV. Found two chemically distinct fields just 2 km apart — one basalt-hosted (Piccard), one peridotite-hosted (Von Damm) — allowing direct comparison of both vent types. At 5,000 m depth, extreme pressure alters fluid chemistry and biology in ways not seen at shallower sites.',
+    features: 'Deepest known vent system; Piccard and Von Damm fields; dual vent chemistry',
+  },
+]
+
+// ─── Coral Reef Systems ───────────────────────────────────────────────────────
+
+export interface CoralReef {
+  id: string
+  name: string
+  coordinates: [number, number][]
+  region: string
+  lengthKm: number
+  bleachingRisk: 'critical' | 'high' | 'moderate' | 'low'
+  description: string
+}
+
+export const CORAL_REEFS: CoralReef[] = [
+  {
+    id: 'great-barrier-reef',
+    name: 'Great Barrier Reef',
+    coordinates: [[-10,143],[-14,145],[-18,147],[-22,152],[-24,154]],
+    region: 'Australia (Queensland)',
+    lengthKm: 2300,
+    bleachingRisk: 'critical',
+    description: 'Earth\'s largest living structure and largest coral reef system, visible from space. Has suffered five mass bleaching events since 1998. Back-to-back bleaching in 2016–17 killed ~50% of shallow corals in the northern section. At current warming trajectories, annual bleaching events are projected by the 2030s, leaving insufficient recovery time.',
+  },
+  {
+    id: 'mesoamerican-reef',
+    name: 'Mesoamerican Barrier Reef',
+    coordinates: [[20,-87.5],[18,-87.7],[16,-88],[14,-87],[12,-83.5]],
+    region: 'Mexico, Belize, Honduras, Guatemala',
+    lengthKm: 1000,
+    bleachingRisk: 'high',
+    description: 'The world\'s second-largest barrier reef system, supporting thousands of species and the livelihoods of ~2 million people. Bleaching frequency has dramatically increased since 2005. In summer 2023, record-high Caribbean sea surface temperatures triggered one of the most severe bleaching events in the reef\'s recorded history.',
+  },
+  {
+    id: 'coral-triangle-indo',
+    name: 'Coral Triangle (Indonesia)',
+    coordinates: [[-5,107],[-5,120],[-5,132],[0,135],[0,145]],
+    region: 'Indonesia',
+    lengthKm: 3000,
+    bleachingRisk: 'high',
+    description: 'The "Amazon of the Seas" — the Indo-Pacific Coral Triangle contains 76% of all coral species and 37% of all coral reef fish. Indonesia alone contains more marine biodiversity than any other nation. It faces intense pressure from overfishing, destructive fishing practices, coastal development, and accelerating thermal bleaching events.',
+  },
+  {
+    id: 'coral-triangle-phil',
+    name: 'Coral Triangle (Philippines)',
+    coordinates: [[10,118],[10,121],[8,123],[7,126],[5,127]],
+    region: 'Philippines',
+    lengthKm: 1800,
+    bleachingRisk: 'high',
+    description: 'The Philippines section of the Coral Triangle contains some of the highest reef fish diversity on Earth and supports millions of subsistence fishers. Tubbataha Reef Natural Park — a UNESCO World Heritage Site in the Sulu Sea — demonstrates how strict marine protection can maintain reef health even under regional bleaching pressure.',
+  },
+  {
+    id: 'red-sea-reef',
+    name: 'Red Sea Coral Reefs',
+    coordinates: [[26,37],[24,38],[22,38],[18,41],[15,42]],
+    region: 'Saudi Arabia, Egypt, Yemen, Eritrea',
+    lengthKm: 2000,
+    bleachingRisk: 'moderate',
+    description: 'The most thermally tolerant coral reefs on Earth. Red Sea corals survive temperatures that would kill reefs elsewhere — having evolved in naturally warmer, more variable conditions. Scientists are studying their heat-resistance genes as a potential source of "super coral" genetics that might help reef restoration elsewhere survive future ocean warming.',
+  },
+  {
+    id: 'florida-reef',
+    name: 'Florida Reef Tract',
+    coordinates: [[24.5,-80.5],[25.5,-80.2],[27,-80.5],[28,-80.7]],
+    region: 'USA (Florida)',
+    lengthKm: 580,
+    bleachingRisk: 'critical',
+    description: 'The only living coral barrier reef in the continental USA, and among the world\'s most degraded. Has lost ~90% of living coral since the 1970s. In summer 2023, water temperatures in Florida Bay reached 38°C — warmer than a hot tub — causing mass bleaching with many scientists describing it as potentially irreversible at current warming rates.',
+  },
+  {
+    id: 'hawaiian-reefs',
+    name: 'Hawaiian Coral Reefs',
+    coordinates: [[22,-160],[21,-157],[20,-156],[19,-155.5]],
+    region: 'USA (Hawaii)',
+    lengthKm: 410,
+    bleachingRisk: 'high',
+    description: 'Evolved in geographic isolation, Hawaiian reefs contain ~25% endemic species found nowhere else. The Papahānaumokuākea Marine National Monument — one of the world\'s largest marine protected areas — protects the Northwestern Hawaiian Islands. Back-to-back bleaching events in 2015 and 2019 affected reefs across the archipelago.',
+  },
+  {
+    id: 'maldives-reefs',
+    name: 'Maldives Atolls',
+    coordinates: [[5,73],[3,73.5],[1,73],[-1,73.5],[-2,73]],
+    region: 'Maldives (Indian Ocean)',
+    lengthKm: 1500,
+    bleachingRisk: 'critical',
+    description: 'The Maldives — the world\'s lowest country, averaging 1.5 m above sea level — sits entirely on coral atolls. Both sea-level rise and bleaching threaten national existence. The 1998 bleaching event killed 90% of corals in some areas. Climate models project the islands could be uninhabitable by 2100, making this the most existential bleaching risk on Earth.',
+  },
+  {
+    id: 'new-caledonia-reef',
+    name: 'New Caledonia Lagoon',
+    coordinates: [[-20,164],[-22,165],[-22.5,167],[-22,168]],
+    region: 'France (New Caledonia)',
+    lengthKm: 1600,
+    bleachingRisk: 'moderate',
+    description: 'The world\'s most extensive lagoon system and a UNESCO World Heritage Site. Contains the second-largest barrier reef outside Australia and remarkable endemic species, including unique dugong populations. Relatively lower human population pressure compared to most major reef systems has allowed it to maintain higher coral cover.',
+  },
+  {
+    id: 'chagos-reefs',
+    name: 'Chagos / BIOT Reefs',
+    coordinates: [[-6,71.5],[-6.5,72],[-7,72.5],[-6.5,73]],
+    region: 'British Indian Ocean Territory',
+    lengthKm: 440,
+    bleachingRisk: 'low',
+    description: 'Among the most pristine coral reefs on Earth, protected by one of the world\'s largest no-take marine reserves (640,000 km²). With virtually no human impact from fishing or pollution, Chagos reefs recovered far faster from the 1998 bleaching event than any other major reef — demonstrating that reducing local stressors dramatically improves climate resilience.',
+  },
+  {
+    id: 'ningaloo-reef',
+    name: 'Ningaloo Reef',
+    coordinates: [[-21.5,114],[-22,113.8],[-23,113.6],[-24,113.4]],
+    region: 'Australia (Western Australia)',
+    lengthKm: 300,
+    bleachingRisk: 'moderate',
+    description: 'The world\'s largest fringing reef — one of the few places where a large coral reef is accessible directly from shore. Hosts annual whale shark aggregations (March–July) and manta ray populations. 2011 and 2013 bleaching events damaged sections, but recovery was observed at less-affected areas within years.',
+  },
+  {
+    id: 'andaman-reefs',
+    name: 'Andaman Sea Reefs',
+    coordinates: [[13,98],[10,98.5],[8,98.5],[6,99],[3,99]],
+    region: 'Thailand, Myanmar, Andaman Islands',
+    lengthKm: 900,
+    bleachingRisk: 'high',
+    description: 'Some of the highest coral diversity in the Indian Ocean, spanning the Andaman Islands, Mergui Archipelago, and Similan Islands. The 2004 Indian Ocean tsunami devastated coastal reefs in the immediate aftermath, but protected sites showed faster recovery than expected — a significant finding for reef resilience and marine protected area design.',
+  },
+]
+
 // ─── Layer definitions ────────────────────────────────────────────────────────
 
 export const ATLAS_LAYERS = [
@@ -492,6 +1133,22 @@ export const ATLAS_LAYERS = [
     id: 'plate-boundaries',
     label: 'Plate Boundaries',
     description: 'Divergent, convergent, and transform boundaries',
+    requiresSubscription: false,
+    linkedLessonId: 'geol-101-1-4-1',
+    linkedLessonLabel: 'Earth Foundations · Plate Tectonics Theory',
+  },
+  {
+    id: 'tectonic-fills',
+    label: 'Tectonic Plates',
+    description: 'Colour-coded territory fills for 14 major plates',
+    requiresSubscription: false,
+    linkedLessonId: 'geol-101-1-4-1',
+    linkedLessonLabel: 'Earth Foundations · Plate Tectonics Theory',
+  },
+  {
+    id: 'earthquakes',
+    label: 'Major Earthquakes',
+    description: 'Historical M 7+ events sized by magnitude',
     requiresSubscription: false,
     linkedLessonId: 'geol-101-1-4-1',
     linkedLessonLabel: 'Earth Foundations · Plate Tectonics Theory',
@@ -519,6 +1176,22 @@ export const ATLAS_LAYERS = [
     requiresSubscription: true,
     linkedLessonId: 'geol-101-1-4-4',
     linkedLessonLabel: 'Earth Foundations · Hotspots & Plumes',
+  },
+  {
+    id: 'vent-fields',
+    label: 'Hydrothermal Vents',
+    description: 'Known deep-sea hydrothermal vent fields',
+    requiresSubscription: true,
+    linkedLessonId: 'ocea-101-1-4-1',
+    linkedLessonLabel: 'Deep Ocean · Hydrothermal Vents & Chemosynthetic Life',
+  },
+  {
+    id: 'coral-reefs',
+    label: 'Coral Reef Systems',
+    description: 'Major reefs colour-coded by bleaching risk',
+    requiresSubscription: true,
+    linkedLessonId: 'ocea-101-1-4-2',
+    linkedLessonLabel: 'Deep Ocean · Ocean Acidification',
   },
 ] as const
 

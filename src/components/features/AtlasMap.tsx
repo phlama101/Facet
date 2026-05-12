@@ -5,7 +5,7 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import {
   Map, Lock, BookOpen, ChevronRight, Waves, Flame, Globe,
-  Search, X, Zap,
+  Search, X, Zap, Layers, Activity, Thermometer, Anchor,
 } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import {
@@ -14,6 +14,10 @@ import {
   VOLCANOES,
   OCEAN_CURRENTS,
   HOTSPOTS,
+  TECTONIC_PLATES,
+  MAJOR_EARTHQUAKES,
+  HYDROTHERMAL_VENTS,
+  CORAL_REEFS,
   type AtlasLayerId,
 } from '@/lib/atlas-data'
 import type { SelectedFeature } from './AtlasMapLeaflet'
@@ -24,40 +28,56 @@ const AtlasMapLeaflet = dynamic(() => import('./AtlasMapLeaflet'), { ssr: false 
 
 const LAYER_ICONS: Record<AtlasLayerId, React.ElementType> = {
   'plate-boundaries': Globe,
+  'tectonic-fills':   Layers,
+  'earthquakes':      Activity,
   'volcanoes':        Flame,
   'ocean-currents':   Waves,
   'hotspots':         Map,
+  'vent-fields':      Thermometer,
+  'coral-reefs':      Anchor,
 }
 
 const LAYER_COLORS: Record<AtlasLayerId, string> = {
   'plate-boundaries': BRAND.jade,
+  'tectonic-fills':   '#3A8FA8',
+  'earthquakes':      BRAND.gold,
   'volcanoes':        BRAND.ruby,
   'ocean-currents':   BRAND.accent,
   'hotspots':         BRAND.amethyst,
+  'vent-fields':      '#FF7A3A',
+  'coral-reefs':      BRAND.coral,
 }
 
 const BOUNDARY_COLORS: Record<string, string> = {
   divergent: BRAND.jade, convergent: BRAND.coral, transform: BRAND.gold,
 }
 const CURRENT_COLORS: Record<string, string> = { warm: '#FF9B6A', cold: BRAND.accent }
+const REEF_COLORS: Record<string, string> = {
+  critical: BRAND.ruby, high: BRAND.coral, moderate: BRAND.gold, low: BRAND.jade,
+}
 
 const LAYER_COUNTS: Record<AtlasLayerId, number> = {
   'plate-boundaries': PLATE_BOUNDARIES.length,
+  'tectonic-fills':   TECTONIC_PLATES.length,
+  'earthquakes':      MAJOR_EARTHQUAKES.length,
   'volcanoes':        VOLCANOES.length,
   'ocean-currents':   OCEAN_CURRENTS.length,
   'hotspots':         HOTSPOTS.length,
+  'vent-fields':      HYDROTHERMAL_VENTS.length,
+  'coral-reefs':      CORAL_REEFS.length,
 }
 
 // ── Searchable features ──────────────────────────────────────────────────────
 
 type SearchHit = {
-  type: 'boundary' | 'volcano' | 'current' | 'hotspot'
+  type: 'boundary' | 'volcano' | 'current' | 'hotspot' | 'plate' | 'earthquake' | 'vent' | 'reef'
   id: string
   name: string
   subtitle: string
   color: string
   lat: number
   lng: number
+  requiresScholar: boolean
 }
 
 const ALL_FEATURES: SearchHit[] = [
@@ -67,12 +87,29 @@ const ALL_FEATURES: SearchHit[] = [
     color: BOUNDARY_COLORS[b.type],
     lat: b.coordinates[Math.floor(b.coordinates.length / 2)][0],
     lng: b.coordinates[Math.floor(b.coordinates.length / 2)][1],
+    requiresScholar: false,
+  })),
+  ...TECTONIC_PLATES.map(p => ({
+    type: 'plate' as const, id: p.id, name: p.name,
+    subtitle: p.type + ' plate · ' + p.areaKm2 + 'M km²',
+    color: p.color,
+    lat: p.coordinates[0][Math.floor(p.coordinates[0].length / 2)][0],
+    lng: p.coordinates[0][Math.floor(p.coordinates[0].length / 2)][1],
+    requiresScholar: false,
+  })),
+  ...MAJOR_EARTHQUAKES.map(eq => ({
+    type: 'earthquake' as const, id: eq.id, name: eq.name,
+    subtitle: 'M' + eq.magnitude + ' · ' + eq.year + ' · ' + eq.country,
+    color: BRAND.gold,
+    lat: eq.lat, lng: eq.lng,
+    requiresScholar: false,
   })),
   ...VOLCANOES.map(v => ({
     type: 'volcano' as const, id: v.id, name: v.name,
     subtitle: v.country + (v.isActive ? ' · active' : ' · dormant'),
     color: v.isActive ? BRAND.ruby : BRAND.textSubtle,
     lat: v.lat, lng: v.lng,
+    requiresScholar: true,
   })),
   ...OCEAN_CURRENTS.map(c => ({
     type: 'current' as const, id: c.id, name: c.name,
@@ -80,12 +117,29 @@ const ALL_FEATURES: SearchHit[] = [
     color: CURRENT_COLORS[c.type],
     lat: c.coordinates[Math.floor(c.coordinates.length / 2)][0],
     lng: c.coordinates[Math.floor(c.coordinates.length / 2)][1],
+    requiresScholar: true,
   })),
   ...HOTSPOTS.map(h => ({
     type: 'hotspot' as const, id: h.id, name: h.name,
     subtitle: 'Mantle hotspot',
     color: BRAND.amethyst,
     lat: h.lat, lng: h.lng,
+    requiresScholar: true,
+  })),
+  ...HYDROTHERMAL_VENTS.map(v => ({
+    type: 'vent' as const, id: v.id, name: v.name,
+    subtitle: v.ocean + ' · ' + v.depthM.toLocaleString() + ' m depth',
+    color: '#FF7A3A',
+    lat: v.lat, lng: v.lng,
+    requiresScholar: true,
+  })),
+  ...CORAL_REEFS.map(r => ({
+    type: 'reef' as const, id: r.id, name: r.name,
+    subtitle: r.region + ' · ' + r.bleachingRisk + ' bleaching risk',
+    color: REEF_COLORS[r.bleachingRisk],
+    lat: r.coordinates[Math.floor(r.coordinates.length / 2)][0],
+    lng: r.coordinates[Math.floor(r.coordinates.length / 2)][1],
+    requiresScholar: true,
   })),
 ]
 
@@ -98,37 +152,55 @@ function FeaturePanel({
   completedLessonIds: string[]
   onClose: () => void
 }) {
-  const boundary = feature.type === 'boundary' ? PLATE_BOUNDARIES.find(b => b.id === feature.id) : null
-  const volcano  = feature.type === 'volcano'  ? VOLCANOES.find(v => v.id === feature.id)  : null
-  const current  = feature.type === 'current'  ? OCEAN_CURRENTS.find(c => c.id === feature.id) : null
-  const hotspot  = feature.type === 'hotspot'  ? HOTSPOTS.find(h => h.id === feature.id)  : null
+  const boundary   = feature.type === 'boundary'   ? PLATE_BOUNDARIES.find(b => b.id === feature.id)   : null
+  const volcano    = feature.type === 'volcano'     ? VOLCANOES.find(v => v.id === feature.id)          : null
+  const current    = feature.type === 'current'     ? OCEAN_CURRENTS.find(c => c.id === feature.id)     : null
+  const hotspot    = feature.type === 'hotspot'     ? HOTSPOTS.find(h => h.id === feature.id)           : null
+  const plate      = feature.type === 'plate'       ? TECTONIC_PLATES.find(p => p.id === feature.id)    : null
+  const earthquake = feature.type === 'earthquake'  ? MAJOR_EARTHQUAKES.find(e => e.id === feature.id)  : null
+  const vent       = feature.type === 'vent'        ? HYDROTHERMAL_VENTS.find(v => v.id === feature.id) : null
+  const reef       = feature.type === 'reef'        ? CORAL_REEFS.find(r => r.id === feature.id)        : null
 
   const accentColor =
-    feature.type === 'boundary' ? BOUNDARY_COLORS[boundary?.type ?? 'divergent']
+    feature.type === 'boundary'   ? BOUNDARY_COLORS[boundary?.type ?? 'divergent']
     : feature.type === 'volcano'  ? (volcano?.isActive ? BRAND.ruby : BRAND.textSubtle)
     : feature.type === 'current'  ? CURRENT_COLORS[current?.type ?? 'cold']
-    : BRAND.amethyst
+    : feature.type === 'hotspot'  ? BRAND.amethyst
+    : feature.type === 'plate'    ? (plate?.color ?? '#3A8FA8')
+    : feature.type === 'earthquake' ? (earthquake ? (earthquake.magnitude >= 9 ? BRAND.ruby : earthquake.magnitude >= 8 ? BRAND.coral : BRAND.gold) : BRAND.gold)
+    : feature.type === 'vent'     ? '#FF7A3A'
+    : REEF_COLORS[reef?.bleachingRisk ?? 'moderate']
 
   const typeLabel =
-    feature.type === 'boundary' ? (boundary?.type ?? '') + ' boundary'
+    feature.type === 'boundary'   ? (boundary?.type ?? '') + ' boundary'
     : feature.type === 'volcano'  ? (volcano?.type ?? 'volcano').replace(/-/g, ' ') + (volcano?.isActive ? ' · active' : ' · dormant')
     : feature.type === 'current'  ? (current?.type ?? '') + ' current'
-    : 'Mantle Hotspot'
+    : feature.type === 'hotspot'  ? 'Mantle Hotspot'
+    : feature.type === 'plate'    ? (plate?.type ?? 'tectonic') + ' plate'
+    : feature.type === 'earthquake' ? 'Major Earthquake'
+    : feature.type === 'vent'     ? 'Hydrothermal Vent Field'
+    : 'Coral Reef System'
 
-  const name        = boundary?.name ?? volcano?.name ?? current?.name ?? hotspot?.name ?? ''
-  const description = boundary?.description ?? volcano?.description ?? current?.description ?? hotspot?.description ?? ''
+  const name        = boundary?.name ?? volcano?.name ?? current?.name ?? hotspot?.name ?? plate?.name ?? earthquake?.name ?? vent?.name ?? reef?.name ?? ''
+  const description = boundary?.description ?? volcano?.description ?? current?.description ?? hotspot?.description ?? plate?.description ?? earthquake?.description ?? vent?.description ?? reef?.description ?? ''
 
   const linkedLesson =
-    feature.type === 'boundary' ? 'geol-101-1-4-1'
+    feature.type === 'boundary' || feature.type === 'plate' ? 'geol-101-1-4-1'
+    : feature.type === 'earthquake' ? 'geol-101-1-4-1'
     : feature.type === 'volcano'  ? 'geol-101-1-5-1'
     : feature.type === 'current'  ? 'ocea-101-1-2-3'
-    : 'geol-101-1-4-4'
+    : feature.type === 'hotspot'  ? 'geol-101-1-4-4'
+    : feature.type === 'vent'     ? 'ocea-101-1-4-1'
+    : 'ocea-101-1-4-2'
 
   const lessonLabel =
-    feature.type === 'boundary' ? 'Study plate tectonics'
+    feature.type === 'boundary' || feature.type === 'plate' ? 'Study plate tectonics'
+    : feature.type === 'earthquake' ? 'Study plate tectonics'
     : feature.type === 'volcano'  ? 'Study volcanic landforms'
     : feature.type === 'current'  ? 'Study ocean circulation'
-    : 'Study hotspots & plumes'
+    : feature.type === 'hotspot'  ? 'Study hotspots & plumes'
+    : feature.type === 'vent'     ? 'Study hydrothermal vents'
+    : 'Study ocean acidification'
 
   const hasStudied = completedLessonIds.includes(linkedLesson)
 
@@ -172,6 +244,50 @@ function FeaturePanel({
           {hotspot && (
             <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>{hotspot.features}</div>
           )}
+          {plate && (
+            <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>
+              {plate.areaKm2}M km² · {plate.type} crust
+            </div>
+          )}
+          {earthquake && (
+            <div className="flex items-center gap-2 mt-1 flex-wrap">
+              <span
+                className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-sm"
+                style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+              >
+                M{earthquake.magnitude}
+              </span>
+              <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>
+                {earthquake.year} · {earthquake.country} · {earthquake.deaths} deaths
+              </span>
+              {earthquake.tsunamiGenerated && (
+                <span
+                  className="text-[9px] tracking-wider uppercase font-mono px-1.5 py-0.5 rounded-sm"
+                  style={{ backgroundColor: `${BRAND.accent}15`, color: BRAND.accent }}
+                >
+                  Tsunami
+                </span>
+              )}
+            </div>
+          )}
+          {vent && (
+            <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>
+              {vent.ocean} · {vent.depthM.toLocaleString()} m · {vent.maxTempC}°C · disc. {vent.discoveredYear}
+            </div>
+          )}
+          {reef && (
+            <div className="flex items-center gap-2 mt-1">
+              <span
+                className="text-[9px] tracking-wider uppercase font-mono px-1.5 py-0.5 rounded-sm"
+                style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+              >
+                {reef.bleachingRisk} risk
+              </span>
+              <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>
+                {reef.lengthKm.toLocaleString()} km · {reef.region}
+              </span>
+            </div>
+          )}
         </div>
         <button
           onClick={onClose}
@@ -188,6 +304,13 @@ function FeaturePanel({
         <p className="text-[12px] leading-relaxed" style={{ color: BRAND.textDim }}>
           {description}
         </p>
+
+        {/* Vent features line */}
+        {vent && (
+          <p className="text-[10px] mt-2 leading-relaxed" style={{ color: BRAND.textSubtle }}>
+            {vent.features}
+          </p>
+        )}
 
         {/* Lesson link */}
         <Link
@@ -235,7 +358,7 @@ function LockedPanel({ onClose }: { onClose: () => void }) {
           </button>
         </div>
         <p className="text-[12px] leading-relaxed mb-3" style={{ color: BRAND.textDim }}>
-          Unlock volcanoes, ocean currents, and mantle hotspots with a Scholar subscription.
+          Unlock volcanoes, ocean currents, mantle hotspots, hydrothermal vents, and coral reefs with a Scholar subscription.
         </p>
         <Link
           href="/billing"
@@ -261,9 +384,13 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
 
   const [layerVisibility, setLayerVisibility] = useState<Record<AtlasLayerId, boolean>>({
     'plate-boundaries': true,
+    'tectonic-fills':   true,
+    'earthquakes':      true,
     'volcanoes':        true,
     'ocean-currents':   true,
     'hotspots':         true,
+    'vent-fields':      true,
+    'coral-reefs':      true,
   })
   const [selectedFeature, setSelectedFeature] = useState<SelectedFeature | null>(null)
   const [flyTarget, setFlyTarget] = useState<{ lat: number; lng: number; zoom?: number } | null>(null)
@@ -288,7 +415,7 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
     const q = searchQuery.trim().toLowerCase()
     if (!q) return []
     const filtered = ALL_FEATURES.filter(f => {
-      if (!isScholar && f.type !== 'boundary') return false
+      if (!isScholar && f.requiresScholar) return false
       return f.name.toLowerCase().includes(q) || f.subtitle.toLowerCase().includes(q)
     })
     return filtered.slice(0, 8)
@@ -519,9 +646,9 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
         </div>
 
         {/* Legend */}
-        <div className="px-4 py-3 space-y-2" style={{ borderTop: `1px solid ${BRAND.border}` }}>
-          <div className="text-[9px] tracking-[0.2em] uppercase mb-1" style={{ color: BRAND.textSubtle }}>
-            Boundary Legend
+        <div className="px-4 py-3 space-y-1.5" style={{ borderTop: `1px solid ${BRAND.border}` }}>
+          <div className="text-[9px] tracking-[0.2em] uppercase mb-2" style={{ color: BRAND.textSubtle }}>
+            Legend
           </div>
           {[
             { label: 'Divergent',   color: BRAND.jade },
@@ -538,7 +665,7 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
               <span className="text-[10px]" style={{ color: BRAND.textDim }}>{label}</span>
             </div>
           ))}
-          <div className="flex items-center gap-2 mt-1">
+          <div className="flex items-center gap-2 pt-0.5">
             <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: BRAND.ruby }} />
             <span className="text-[10px]" style={{ color: BRAND.textDim }}>Active volcano</span>
           </div>
@@ -546,6 +673,20 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
             <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: BRAND.amethyst, opacity: 0.7 }} />
             <span className="text-[10px]" style={{ color: BRAND.textDim }}>Mantle hotspot</span>
           </div>
+          <div className="flex items-center gap-2">
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#FF7A3A', opacity: 0.85 }} />
+            <span className="text-[10px]" style={{ color: BRAND.textDim }}>Hydrothermal vent</span>
+          </div>
+          {[
+            { label: 'Critical bleaching', color: BRAND.ruby },
+            { label: 'High bleaching',     color: BRAND.coral },
+            { label: 'Moderate bleaching', color: BRAND.gold },
+          ].map(({ label, color }) => (
+            <div key={label} className="flex items-center gap-2">
+              <div style={{ width: '20px', height: '3px', borderRadius: '2px', backgroundColor: color }} />
+              <span className="text-[10px]" style={{ color: BRAND.textDim }}>{label}</span>
+            </div>
+          ))}
         </div>
       </aside>
 

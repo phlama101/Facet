@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, Fragment } from 'react'
 import {
-  MapContainer, TileLayer, Polyline, CircleMarker, Tooltip,
-  Marker, useMap, useMapEvents,
+  MapContainer, TileLayer, Polyline, Polygon, CircleMarker, Tooltip,
+  Marker, useMap,
 } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -13,11 +13,15 @@ import {
   VOLCANOES,
   OCEAN_CURRENTS,
   HOTSPOTS,
+  TECTONIC_PLATES,
+  MAJOR_EARTHQUAKES,
+  HYDROTHERMAL_VENTS,
+  CORAL_REEFS,
   type AtlasLayerId,
 } from '@/lib/atlas-data'
 
 export interface SelectedFeature {
-  type: 'boundary' | 'volcano' | 'current' | 'hotspot' | 'locked'
+  type: 'boundary' | 'volcano' | 'current' | 'hotspot' | 'plate' | 'earthquake' | 'vent' | 'reef' | 'locked'
   id: string
   lat: number
   lng: number
@@ -33,6 +37,28 @@ const BOUNDARY_COLORS: Record<string, string> = {
 
 const VOLCANO_COLORS = { active: BRAND.ruby, inactive: BRAND.textSubtle }
 const CURRENT_COLORS: Record<string, string> = { warm: '#FF9B6A', cold: BRAND.accent }
+const VENT_COLOR = '#FF7A3A'
+
+const REEF_COLORS: Record<string, string> = {
+  critical: BRAND.ruby,
+  high:     BRAND.coral,
+  moderate: BRAND.gold,
+  low:      BRAND.jade,
+}
+
+function earthquakeColor(mag: number): string {
+  if (mag >= 9.0) return BRAND.ruby
+  if (mag >= 8.5) return BRAND.coral
+  if (mag >= 8.0) return '#F5A65B'
+  return BRAND.gold
+}
+
+function earthquakeRadius(mag: number): number {
+  if (mag >= 9.0) return 10
+  if (mag >= 8.5) return 8
+  if (mag >= 8.0) return 6
+  return 4
+}
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -45,7 +71,6 @@ function pathDirectionDeg(coords: [number, number][]): number {
   const mid = Math.floor(coords.length / 2)
   const p1 = coords[Math.max(0, mid - 1)]
   const p2 = coords[mid]
-  // angle from north (clockwise) — CSS 0deg = up
   return Math.atan2(p2[1] - p1[1], p2[0] - p1[0]) * (180 / Math.PI)
 }
 
@@ -91,7 +116,7 @@ interface Props {
 }
 
 export default function AtlasMapLeaflet({
-  layerVisibility, subscription, completedLessonIds, onSelect, flyTarget,
+  layerVisibility, subscription, onSelect, flyTarget,
 }: Props) {
   const isScholar = subscription === 'pro' || subscription === 'expert'
 
@@ -126,6 +151,59 @@ export default function AtlasMapLeaflet({
 
       <MapController flyTarget={flyTarget} />
 
+      {/* ── Tectonic Plate Fills (bottom layer) ──────────────────────── */}
+      {layerVisibility['tectonic-fills'] && TECTONIC_PLATES.map(plate =>
+        plate.coordinates.map((ring, i) => (
+          <Polygon
+            key={`${plate.id}-${i}`}
+            positions={ring}
+            pathOptions={{
+              color: plate.color,
+              fillColor: plate.color,
+              fillOpacity: 0.07,
+              weight: 0.5,
+              opacity: 0.25,
+            }}
+            eventHandlers={{
+              click: (e) => stopAndSelect(e, { type: 'plate', id: plate.id, lat: e.latlng.lat, lng: e.latlng.lng }),
+            }}
+          >
+            <Tooltip sticky className="facet-tooltip" pane="tooltipPane">
+              <span style={{ fontSize: '11px', color: plate.color }}>{plate.name}</span>
+            </Tooltip>
+          </Polygon>
+        ))
+      )}
+
+      {/* ── Coral Reefs ───────────────────────────────────────────────── */}
+      {layerVisibility['coral-reefs'] && CORAL_REEFS.map(r => {
+        const locked = !isScholar
+        const color = locked ? '#2A2D38' : REEF_COLORS[r.bleachingRisk]
+        return (
+          <Polyline
+            key={r.id}
+            positions={r.coordinates}
+            pathOptions={{
+              color,
+              weight: 3,
+              opacity: locked ? 0.3 : 0.8,
+              dashArray: '1 0',
+            }}
+            eventHandlers={{
+              click: (e) => locked
+                ? stopAndLocked(e)
+                : stopAndSelect(e, { type: 'reef', id: r.id, lat: e.latlng.lat, lng: e.latlng.lng }),
+            }}
+          >
+            {!locked && (
+              <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+                <span style={{ fontSize: '11px', color }}>{r.name}</span>
+              </Tooltip>
+            )}
+          </Polyline>
+        )
+      })}
+
       {/* ── Plate Boundaries ──────────────────────────────────────────── */}
       {layerVisibility['plate-boundaries'] && PLATE_BOUNDARIES.map(b => (
         <Polyline
@@ -146,55 +224,6 @@ export default function AtlasMapLeaflet({
           </Tooltip>
         </Polyline>
       ))}
-
-      {/* ── Volcanoes ─────────────────────────────────────────────────── */}
-      {layerVisibility['volcanoes'] && VOLCANOES.map(v => {
-        const locked = !isScholar
-        const color = locked ? '#3A3E4D' : (v.isActive ? VOLCANO_COLORS.active : VOLCANO_COLORS.inactive)
-        return (
-          <Fragment key={v.id}>
-            {/* Outer pulsing ring — only for unlocked active volcanoes */}
-            {v.isActive && !locked && (
-              <CircleMarker
-                center={[v.lat, v.lng]}
-                radius={13}
-                pathOptions={{
-                  color: VOLCANO_COLORS.active,
-                  fillColor: VOLCANO_COLORS.active,
-                  fillOpacity: 0.12,
-                  weight: 1,
-                  className: 'volcano-ring',
-                } as L.PathOptions}
-                interactive={false}
-              />
-            )}
-            {/* Inner marker */}
-            <CircleMarker
-              center={[v.lat, v.lng]}
-              radius={v.isActive ? 5 : 3.5}
-              pathOptions={{
-                color,
-                fillColor: color,
-                fillOpacity: locked ? 0.3 : (v.isActive ? 0.9 : 0.5),
-                weight: locked ? 0.5 : 1.5,
-              }}
-              eventHandlers={{
-                click: (e) => locked
-                  ? stopAndLocked(e)
-                  : stopAndSelect(e, { type: 'volcano', id: v.id, lat: v.lat, lng: v.lng }),
-              }}
-            >
-              {!locked && (
-                <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
-                  <span style={{ fontSize: '11px', color: v.isActive ? VOLCANO_COLORS.active : BRAND.textDim }}>
-                    {v.name}
-                  </span>
-                </Tooltip>
-              )}
-            </CircleMarker>
-          </Fragment>
-        )
-      })}
 
       {/* ── Ocean Currents ────────────────────────────────────────────── */}
       {layerVisibility['ocean-currents'] && OCEAN_CURRENTS.map(c => {
@@ -224,7 +253,6 @@ export default function AtlasMapLeaflet({
                 </Tooltip>
               )}
             </Polyline>
-            {/* Direction arrow at path midpoint */}
             {!locked && (
               <Marker
                 position={midpoint}
@@ -236,13 +264,38 @@ export default function AtlasMapLeaflet({
         )
       })}
 
+      {/* ── Major Earthquakes ─────────────────────────────────────────── */}
+      {layerVisibility['earthquakes'] && MAJOR_EARTHQUAKES.map(eq => {
+        const color = earthquakeColor(eq.magnitude)
+        const radius = earthquakeRadius(eq.magnitude)
+        return (
+          <CircleMarker
+            key={eq.id}
+            center={[eq.lat, eq.lng]}
+            radius={radius}
+            pathOptions={{
+              color,
+              fillColor: color,
+              fillOpacity: 0.75,
+              weight: 1.5,
+            }}
+            eventHandlers={{
+              click: (e) => stopAndSelect(e, { type: 'earthquake', id: eq.id, lat: eq.lat, lng: eq.lng }),
+            }}
+          >
+            <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+              <span style={{ fontSize: '11px', color }}>M{eq.magnitude} · {eq.name} ({eq.year})</span>
+            </Tooltip>
+          </CircleMarker>
+        )
+      })}
+
       {/* ── Hotspots ──────────────────────────────────────────────────── */}
       {layerVisibility['hotspots'] && HOTSPOTS.map(h => {
         const locked = !isScholar
         const color = locked ? '#2A2D38' : BRAND.amethyst
         return (
           <Fragment key={h.id}>
-            {/* Outer pulsing ring */}
             {!locked && (
               <CircleMarker
                 center={[h.lat, h.lng]}
@@ -257,7 +310,6 @@ export default function AtlasMapLeaflet({
                 interactive={false}
               />
             )}
-            {/* Inner marker */}
             <CircleMarker
               center={[h.lat, h.lng]}
               radius={6}
@@ -276,6 +328,98 @@ export default function AtlasMapLeaflet({
               {!locked && (
                 <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
                   <span style={{ fontSize: '11px', color: BRAND.amethyst }}>{h.name}</span>
+                </Tooltip>
+              )}
+            </CircleMarker>
+          </Fragment>
+        )
+      })}
+
+      {/* ── Volcanoes ─────────────────────────────────────────────────── */}
+      {layerVisibility['volcanoes'] && VOLCANOES.map(v => {
+        const locked = !isScholar
+        const color = locked ? '#3A3E4D' : (v.isActive ? VOLCANO_COLORS.active : VOLCANO_COLORS.inactive)
+        return (
+          <Fragment key={v.id}>
+            {v.isActive && !locked && (
+              <CircleMarker
+                center={[v.lat, v.lng]}
+                radius={13}
+                pathOptions={{
+                  color: VOLCANO_COLORS.active,
+                  fillColor: VOLCANO_COLORS.active,
+                  fillOpacity: 0.12,
+                  weight: 1,
+                  className: 'volcano-ring',
+                } as L.PathOptions}
+                interactive={false}
+              />
+            )}
+            <CircleMarker
+              center={[v.lat, v.lng]}
+              radius={v.isActive ? 5 : 3.5}
+              pathOptions={{
+                color,
+                fillColor: color,
+                fillOpacity: locked ? 0.3 : (v.isActive ? 0.9 : 0.5),
+                weight: locked ? 0.5 : 1.5,
+              }}
+              eventHandlers={{
+                click: (e) => locked
+                  ? stopAndLocked(e)
+                  : stopAndSelect(e, { type: 'volcano', id: v.id, lat: v.lat, lng: v.lng }),
+              }}
+            >
+              {!locked && (
+                <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+                  <span style={{ fontSize: '11px', color: v.isActive ? VOLCANO_COLORS.active : BRAND.textDim }}>
+                    {v.name}
+                  </span>
+                </Tooltip>
+              )}
+            </CircleMarker>
+          </Fragment>
+        )
+      })}
+
+      {/* ── Hydrothermal Vent Fields ──────────────────────────────────── */}
+      {layerVisibility['vent-fields'] && HYDROTHERMAL_VENTS.map(v => {
+        const locked = !isScholar
+        const color = locked ? '#2A2D38' : VENT_COLOR
+        return (
+          <Fragment key={v.id}>
+            {!locked && (
+              <CircleMarker
+                center={[v.lat, v.lng]}
+                radius={12}
+                pathOptions={{
+                  color: VENT_COLOR,
+                  fillColor: VENT_COLOR,
+                  fillOpacity: 0.1,
+                  weight: 1,
+                  className: 'vent-ring',
+                } as L.PathOptions}
+                interactive={false}
+              />
+            )}
+            <CircleMarker
+              center={[v.lat, v.lng]}
+              radius={5}
+              pathOptions={{
+                color,
+                fillColor: color,
+                fillOpacity: locked ? 0.2 : 0.85,
+                weight: locked ? 0.5 : 1.5,
+              }}
+              eventHandlers={{
+                click: (e) => locked
+                  ? stopAndLocked(e)
+                  : stopAndSelect(e, { type: 'vent', id: v.id, lat: v.lat, lng: v.lng }),
+              }}
+            >
+              {!locked && (
+                <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+                  <span style={{ fontSize: '11px', color: VENT_COLOR }}>{v.name}</span>
                 </Tooltip>
               )}
             </CircleMarker>
