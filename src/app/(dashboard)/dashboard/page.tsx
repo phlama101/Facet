@@ -12,6 +12,7 @@ import {
 import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
 import StatCard from '@/components/ui/StatCard'
+import PathIcon from '@/components/ui/PathIcon'
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Dashboard' }
@@ -375,8 +376,6 @@ export default async function DashboardPage({ searchParams }: Props) {
             const isComplete = availableIds.length > 0 && doneIds.length === availableIds.length
             const hasStarted = doneIds.length > 0
             const nextLesson = nextId ? lessonMap[nextId] : null
-            const Icon = course.icon
-
             return (
               <div
                 key={course.id}
@@ -391,10 +390,10 @@ export default async function DashboardPage({ searchParams }: Props) {
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0">
                       <div
-                        className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
+                        className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0"
                         style={{ backgroundColor: `${course.color}18`, border: `1px solid ${course.color}40` }}
                       >
-                        <Icon size={14} color={course.color} />
+                        <PathIcon iconId={course.iconId} category="paths" fallback={course.icon} color={course.color} size={20} />
                       </div>
                       <div className="min-w-0">
                         <div

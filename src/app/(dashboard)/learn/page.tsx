@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { FREE_LESSON_IDS } from '@/lib/access'
+import PathIcon from '@/components/ui/PathIcon'
 import {
   LESSON_LIST,
   TRACKS,
@@ -259,21 +260,28 @@ function CourseHeader({
       aria-expanded={isExpanded}
     >
       <div className="flex items-start gap-4">
-        {/* Level badge */}
+        {/* Path icon */}
         <div
-          className="shrink-0 px-2.5 py-1.5 rounded-sm text-[10px] font-mono font-bold tracking-[0.15em] uppercase flex items-center gap-1.5 mt-0.5"
-          style={{ backgroundColor: `${path.color}18`, color: path.color, border: `1px solid ${path.color}40` }}
+          className="shrink-0 w-11 h-11 rounded-sm flex items-center justify-center mt-0.5"
+          style={{ backgroundColor: `${path.color}18`, border: `1px solid ${path.color}40` }}
         >
-          <path.icon size={10} />
-          {path.level}
+          <PathIcon iconId={path.iconId} category="paths" fallback={path.icon} color={path.color} size={20} />
         </div>
 
         {/* Title + subtitle */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center justify-between gap-3">
-            <h2 className="font-serif leading-tight" style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}>
-              {path.title}
-            </h2>
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <div
+                className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold mb-0.5"
+                style={{ color: path.color }}
+              >
+                {path.level}
+              </div>
+              <h2 className="font-serif leading-tight" style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}>
+                {path.title}
+              </h2>
+            </div>
             <div
               className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center transition-transform"
               style={{ color: BRAND.textSubtle }}
@@ -722,6 +730,7 @@ export default function LearnPage() {
                       className="space-y-3 scroll-mt-32"
                     >
                       <div className="flex items-center gap-3 pb-2" style={{ borderBottom: `1px solid ${BRAND.border}` }}>
+                        {/* Chapter number / done indicator */}
                         <div
                           className="w-7 h-7 rounded-sm flex items-center justify-center text-[10px] font-mono font-bold shrink-0"
                           style={allChapterDone
@@ -729,6 +738,13 @@ export default function LearnPage() {
                             : { backgroundColor: `${path.color}18`, color: path.color, border: `1px solid ${path.color}40` }}
                         >
                           {allChapterDone ? <Check size={12} strokeWidth={2.5} /> : ci + 1}
+                        </div>
+                        {/* Chapter icon */}
+                        <div
+                          className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
+                          style={{ backgroundColor: `${path.color}10`, border: `1px solid ${path.color}28` }}
+                        >
+                          <PathIcon iconId={chapter.iconId} category="chapters" fallback={path.icon} color={path.color} size={13} />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-mono text-[11px] tracking-[0.15em] uppercase truncate" style={{ color: BRAND.textDim }}>
