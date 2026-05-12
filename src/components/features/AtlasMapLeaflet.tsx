@@ -1,10 +1,12 @@
 'use client'
 
-import { useState, useCallback } from 'react'
-import { MapContainer, TileLayer, Polyline, CircleMarker, Popup, Tooltip } from 'react-leaflet'
+import { useEffect, useRef, Fragment } from 'react'
+import {
+  MapContainer, TileLayer, Polyline, CircleMarker, Tooltip,
+  Marker, useMap, useMapEvents,
+} from 'react-leaflet'
+import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { Lock, Zap, BookOpen, ExternalLink } from 'lucide-react'
-import Link from 'next/link'
 import { BRAND } from '@/lib/brand'
 import {
   PLATE_BOUNDARIES,
@@ -14,6 +16,15 @@ import {
   type AtlasLayerId,
 } from '@/lib/atlas-data'
 
+export interface SelectedFeature {
+  type: 'boundary' | 'volcano' | 'current' | 'hotspot' | 'locked'
+  id: string
+  lat: number
+  lng: number
+}
+
+type FlyTarget = { lat: number; lng: number; zoom?: number }
+
 const BOUNDARY_COLORS: Record<string, string> = {
   divergent:  BRAND.jade,
   convergent: BRAND.coral,
@@ -21,39 +32,78 @@ const BOUNDARY_COLORS: Record<string, string> = {
 }
 
 const VOLCANO_COLORS = { active: BRAND.ruby, inactive: BRAND.textSubtle }
-const CURRENT_COLORS = { warm: '#FF9B6A', cold: BRAND.accent }
+const CURRENT_COLORS: Record<string, string> = { warm: '#FF9B6A', cold: BRAND.accent }
 
-interface PopupInfo {
-  type: 'boundary' | 'volcano' | 'current' | 'hotspot' | 'locked'
-  id: string
-  lat: number
-  lng: number
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+function pathMidpoint(coords: [number, number][]): [number, number] {
+  return coords[Math.floor(coords.length / 2)]
 }
+
+function pathDirectionDeg(coords: [number, number][]): number {
+  if (coords.length < 2) return 0
+  const mid = Math.floor(coords.length / 2)
+  const p1 = coords[Math.max(0, mid - 1)]
+  const p2 = coords[mid]
+  // angle from north (clockwise) — CSS 0deg = up
+  return Math.atan2(p2[1] - p1[1], p2[0] - p1[0]) * (180 / Math.PI)
+}
+
+function makeArrowIcon(color: string, angleDeg: number): L.DivIcon {
+  return L.divIcon({
+    className: '',
+    html: `<div style="
+      width:0; height:0;
+      border-left:5px solid transparent;
+      border-right:5px solid transparent;
+      border-bottom:11px solid ${color};
+      transform:rotate(${angleDeg}deg);
+      opacity:0.85;
+      transform-origin:center center;
+    "></div>`,
+    iconSize: [10, 11],
+    iconAnchor: [5, 5],
+  })
+}
+
+// ── Map sub-components ───────────────────────────────────────────────────────
+
+function MapController({ flyTarget }: { flyTarget: FlyTarget | null }) {
+  const map = useMap()
+  const prevRef = useRef<FlyTarget | null>(null)
+  useEffect(() => {
+    if (flyTarget && flyTarget !== prevRef.current) {
+      map.flyTo([flyTarget.lat, flyTarget.lng], flyTarget.zoom ?? 5, { duration: 1.2 })
+      prevRef.current = flyTarget
+    }
+  }, [flyTarget, map])
+  return null
+}
+
+// ── Main component ───────────────────────────────────────────────────────────
 
 interface Props {
   layerVisibility: Record<AtlasLayerId, boolean>
   subscription: string
   completedLessonIds: string[]
+  onSelect: (feature: SelectedFeature | null) => void
+  flyTarget: FlyTarget | null
 }
 
-export default function AtlasMapLeaflet({ layerVisibility, subscription, completedLessonIds }: Props) {
-  const [popupInfo, setPopupInfo] = useState<PopupInfo | null>(null)
-
+export default function AtlasMapLeaflet({
+  layerVisibility, subscription, completedLessonIds, onSelect, flyTarget,
+}: Props) {
   const isScholar = subscription === 'pro' || subscription === 'expert'
-  const hasLesson = useCallback(
-    (lessonId: string | null) => !lessonId || completedLessonIds.includes(lessonId),
-    [completedLessonIds],
-  )
 
-  function handleLockedClick(lat: number, lng: number) {
-    setPopupInfo({ type: 'locked', id: 'locked', lat, lng })
+  function stopAndSelect(e: L.LeafletMouseEvent, feature: SelectedFeature) {
+    L.DomEvent.stopPropagation(e)
+    onSelect(feature)
   }
 
-  // Find feature data for current popup
-  const boundary = popupInfo?.type === 'boundary' ? PLATE_BOUNDARIES.find(b => b.id === popupInfo.id) : null
-  const volcano  = popupInfo?.type === 'volcano'  ? VOLCANOES.find(v => v.id === popupInfo.id) : null
-  const current  = popupInfo?.type === 'current'  ? OCEAN_CURRENTS.find(c => c.id === popupInfo.id) : null
-  const hotspot  = popupInfo?.type === 'hotspot'  ? HOTSPOTS.find(h => h.id === popupInfo.id) : null
+  function stopAndLocked(e: L.LeafletMouseEvent) {
+    L.DomEvent.stopPropagation(e)
+    onSelect({ type: 'locked', id: 'locked', lat: e.latlng.lat, lng: e.latlng.lng })
+  }
 
   return (
     <MapContainer
@@ -66,7 +116,6 @@ export default function AtlasMapLeaflet({ layerVisibility, subscription, complet
       style={{ height: '100%', width: '100%' }}
       zoomControl
     >
-      {/* Dark map tiles — English labels, no world wrapping */}
       <TileLayer
         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -75,302 +124,164 @@ export default function AtlasMapLeaflet({ layerVisibility, subscription, complet
         noWrap
       />
 
-      {/* ── Plate Boundaries (free) ─────────────────────────────────────── */}
-      {layerVisibility['plate-boundaries'] && PLATE_BOUNDARIES.map(boundary => (
+      <MapController flyTarget={flyTarget} />
+
+      {/* ── Plate Boundaries ──────────────────────────────────────────── */}
+      {layerVisibility['plate-boundaries'] && PLATE_BOUNDARIES.map(b => (
         <Polyline
-          key={boundary.id}
-          positions={boundary.coordinates}
+          key={b.id}
+          positions={b.coordinates}
           pathOptions={{
-            color: BOUNDARY_COLORS[boundary.type],
-            weight: boundary.type === 'transform' ? 2 : 2.5,
+            color: BOUNDARY_COLORS[b.type],
+            weight: b.type === 'transform' ? 2 : 2.5,
             opacity: 0.85,
-            dashArray: boundary.type === 'transform' ? '8 4' : undefined,
+            dashArray: b.type === 'transform' ? '8 4' : undefined,
           }}
           eventHandlers={{
-            click: (e) => {
-              setPopupInfo({ type: 'boundary', id: boundary.id, lat: e.latlng.lat, lng: e.latlng.lng })
-            },
+            click: (e) => stopAndSelect(e, { type: 'boundary', id: b.id, lat: e.latlng.lat, lng: e.latlng.lng }),
           }}
         >
-          <Tooltip
-            sticky
-            className="facet-tooltip"
-            pane="tooltipPane"
-          >
-            <span style={{ fontSize: '11px', color: BOUNDARY_COLORS[boundary.type] }}>
-              {boundary.name}
-            </span>
+          <Tooltip sticky className="facet-tooltip" pane="tooltipPane">
+            <span style={{ fontSize: '11px', color: BOUNDARY_COLORS[b.type] }}>{b.name}</span>
           </Tooltip>
         </Polyline>
       ))}
 
-      {/* ── Volcanoes ───────────────────────────────────────────────────── */}
+      {/* ── Volcanoes ─────────────────────────────────────────────────── */}
       {layerVisibility['volcanoes'] && VOLCANOES.map(v => {
         const locked = !isScholar
         const color = locked ? '#3A3E4D' : (v.isActive ? VOLCANO_COLORS.active : VOLCANO_COLORS.inactive)
         return (
-          <CircleMarker
-            key={v.id}
-            center={[v.lat, v.lng]}
-            radius={v.isActive ? 5 : 3.5}
-            pathOptions={{
-              color,
-              fillColor: color,
-              fillOpacity: locked ? 0.3 : (v.isActive ? 0.9 : 0.5),
-              weight: locked ? 0.5 : 1.5,
-            }}
-            eventHandlers={{
-              click: (e) => {
-                if (locked) {
-                  handleLockedClick(e.latlng.lat, e.latlng.lng)
-                } else {
-                  setPopupInfo({ type: 'volcano', id: v.id, lat: v.lat, lng: v.lng })
-                }
-              },
-            }}
-          >
-            {!locked && (
-              <Tooltip sticky pane="tooltipPane">
-                <span style={{ fontSize: '11px', color: v.isActive ? VOLCANO_COLORS.active : BRAND.textDim }}>
-                  {v.name}
-                </span>
-              </Tooltip>
+          <Fragment key={v.id}>
+            {/* Outer pulsing ring — only for unlocked active volcanoes */}
+            {v.isActive && !locked && (
+              <CircleMarker
+                center={[v.lat, v.lng]}
+                radius={13}
+                pathOptions={{
+                  color: VOLCANO_COLORS.active,
+                  fillColor: VOLCANO_COLORS.active,
+                  fillOpacity: 0.12,
+                  weight: 1,
+                  className: 'volcano-ring',
+                } as L.PathOptions}
+                interactive={false}
+              />
             )}
-          </CircleMarker>
+            {/* Inner marker */}
+            <CircleMarker
+              center={[v.lat, v.lng]}
+              radius={v.isActive ? 5 : 3.5}
+              pathOptions={{
+                color,
+                fillColor: color,
+                fillOpacity: locked ? 0.3 : (v.isActive ? 0.9 : 0.5),
+                weight: locked ? 0.5 : 1.5,
+              }}
+              eventHandlers={{
+                click: (e) => locked
+                  ? stopAndLocked(e)
+                  : stopAndSelect(e, { type: 'volcano', id: v.id, lat: v.lat, lng: v.lng }),
+              }}
+            >
+              {!locked && (
+                <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+                  <span style={{ fontSize: '11px', color: v.isActive ? VOLCANO_COLORS.active : BRAND.textDim }}>
+                    {v.name}
+                  </span>
+                </Tooltip>
+              )}
+            </CircleMarker>
+          </Fragment>
         )
       })}
 
-      {/* ── Ocean Currents ──────────────────────────────────────────────── */}
-      {layerVisibility['ocean-currents'] && OCEAN_CURRENTS.map(current => {
+      {/* ── Ocean Currents ────────────────────────────────────────────── */}
+      {layerVisibility['ocean-currents'] && OCEAN_CURRENTS.map(c => {
         const locked = !isScholar
-        const color = locked ? '#2A2D38' : CURRENT_COLORS[current.type]
+        const color = locked ? '#2A2D38' : CURRENT_COLORS[c.type]
+        const midpoint = pathMidpoint(c.coordinates)
+        const arrowAngle = pathDirectionDeg(c.coordinates)
         return (
-          <Polyline
-            key={current.id}
-            positions={current.coordinates}
-            pathOptions={{
-              color,
-              weight: 2,
-              opacity: locked ? 0.3 : 0.7,
-              dashArray: '12 6',
-            }}
-            eventHandlers={{
-              click: (e) => {
-                if (locked) {
-                  handleLockedClick(e.latlng.lat, e.latlng.lng)
-                } else {
-                  setPopupInfo({ type: 'current', id: current.id, lat: e.latlng.lat, lng: e.latlng.lng })
-                }
-              },
-            }}
-          >
+          <Fragment key={c.id}>
+            <Polyline
+              positions={c.coordinates}
+              pathOptions={{
+                color,
+                weight: 2.5,
+                opacity: locked ? 0.3 : 0.75,
+                dashArray: c.type === 'cold' ? '8 6' : '14 5',
+              }}
+              eventHandlers={{
+                click: (e) => locked
+                  ? stopAndLocked(e)
+                  : stopAndSelect(e, { type: 'current', id: c.id, lat: e.latlng.lat, lng: e.latlng.lng }),
+              }}
+            >
+              {!locked && (
+                <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+                  <span style={{ fontSize: '11px', color }}>{c.name}</span>
+                </Tooltip>
+              )}
+            </Polyline>
+            {/* Direction arrow at path midpoint */}
             {!locked && (
-              <Tooltip sticky pane="tooltipPane">
-                <span style={{ fontSize: '11px', color: CURRENT_COLORS[current.type] }}>
-                  {current.name}
-                </span>
-              </Tooltip>
+              <Marker
+                position={midpoint}
+                icon={makeArrowIcon(color, arrowAngle)}
+                interactive={false}
+              />
             )}
-          </Polyline>
+          </Fragment>
         )
       })}
 
-      {/* ── Hotspots ────────────────────────────────────────────────────── */}
+      {/* ── Hotspots ──────────────────────────────────────────────────── */}
       {layerVisibility['hotspots'] && HOTSPOTS.map(h => {
         const locked = !isScholar
         const color = locked ? '#2A2D38' : BRAND.amethyst
         return (
-          <CircleMarker
-            key={h.id}
-            center={[h.lat, h.lng]}
-            radius={7}
-            pathOptions={{
-              color,
-              fillColor: color,
-              fillOpacity: locked ? 0.2 : 0.6,
-              weight: locked ? 1 : 2,
-            }}
-            eventHandlers={{
-              click: (e) => {
-                if (locked) {
-                  handleLockedClick(e.latlng.lat, e.latlng.lng)
-                } else {
-                  setPopupInfo({ type: 'hotspot', id: h.id, lat: h.lat, lng: h.lng })
-                }
-              },
-            }}
-          >
+          <Fragment key={h.id}>
+            {/* Outer pulsing ring */}
             {!locked && (
-              <Tooltip sticky pane="tooltipPane">
-                <span style={{ fontSize: '11px', color: BRAND.amethyst }}>{h.name}</span>
-              </Tooltip>
+              <CircleMarker
+                center={[h.lat, h.lng]}
+                radius={14}
+                pathOptions={{
+                  color: BRAND.amethyst,
+                  fillColor: BRAND.amethyst,
+                  fillOpacity: 0.1,
+                  weight: 1.5,
+                  className: 'hotspot-ring',
+                } as L.PathOptions}
+                interactive={false}
+              />
             )}
-          </CircleMarker>
+            {/* Inner marker */}
+            <CircleMarker
+              center={[h.lat, h.lng]}
+              radius={6}
+              pathOptions={{
+                color,
+                fillColor: color,
+                fillOpacity: locked ? 0.2 : 0.75,
+                weight: locked ? 1 : 2,
+              }}
+              eventHandlers={{
+                click: (e) => locked
+                  ? stopAndLocked(e)
+                  : stopAndSelect(e, { type: 'hotspot', id: h.id, lat: h.lat, lng: h.lng }),
+              }}
+            >
+              {!locked && (
+                <Tooltip sticky pane="tooltipPane" className="facet-tooltip">
+                  <span style={{ fontSize: '11px', color: BRAND.amethyst }}>{h.name}</span>
+                </Tooltip>
+              )}
+            </CircleMarker>
+          </Fragment>
         )
       })}
-
-      {/* ── Popup ───────────────────────────────────────────────────────── */}
-      {popupInfo && (
-        <Popup
-          position={[popupInfo.lat, popupInfo.lng]}
-          className="facet-popup"
-          eventHandlers={{ remove: () => setPopupInfo(null) }}
-          maxWidth={280}
-        >
-          {/* Locked layer popup */}
-          {popupInfo.type === 'locked' && (
-            <div style={{ padding: '16px' }}>
-              <div className="flex items-center gap-2 mb-2">
-                <Lock size={13} color={BRAND.accent} />
-                <span style={{ fontSize: '11px', color: BRAND.accent, letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 600 }}>
-                  Scholar Plan
-                </span>
-              </div>
-              <p style={{ fontSize: '12px', color: BRAND.textDim, lineHeight: 1.5, marginBottom: '12px' }}>
-                Upgrade to Scholar to explore interactive data layers — volcanoes, ocean currents, and mantle hotspots.
-              </p>
-              <Link
-                href="/billing"
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
-                  padding: '7px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 600,
-                  letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none',
-                  backgroundColor: BRAND.accent, color: BRAND.bg,
-                }}
-              >
-                Upgrade to Scholar
-              </Link>
-            </div>
-          )}
-
-          {/* Plate boundary popup */}
-          {boundary && (
-            <div>
-              <div style={{ padding: '12px 14px 10px', borderBottom: `1px solid ${BRAND.border}` }}>
-                <span style={{
-                  fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase',
-                  color: BOUNDARY_COLORS[boundary.type], fontWeight: 600,
-                }}>
-                  {boundary.type} boundary
-                </span>
-                <div style={{ fontSize: '14px', fontWeight: 500, marginTop: '2px', color: BRAND.text }}>
-                  {boundary.name}
-                </div>
-                <div style={{ fontSize: '10px', color: BRAND.textSubtle, marginTop: '2px' }}>
-                  {boundary.plates}
-                </div>
-              </div>
-              <div style={{ padding: '10px 14px 12px' }}>
-                <p style={{ fontSize: '12px', color: BRAND.textDim, lineHeight: 1.55 }}>
-                  {boundary.description}
-                </p>
-                {!hasLesson('geol-101-1-4-1') && (
-                  <Link href="/learn/geol-101-1-4-1" style={{ display: 'flex', alignItems: 'center', gap: '5px', marginTop: '10px', fontSize: '10px', color: BRAND.accent, textDecoration: 'none', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                    <BookOpen size={10} /> Study plate tectonics
-                  </Link>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Volcano popup */}
-          {volcano && (
-            <div>
-              <div style={{ padding: '12px 14px 10px', borderBottom: `1px solid ${BRAND.border}` }}>
-                <div className="flex items-center gap-2">
-                  <span style={{
-                    fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600,
-                    color: volcano.isActive ? VOLCANO_COLORS.active : BRAND.textSubtle,
-                    padding: '1px 6px', borderRadius: '2px',
-                    border: `1px solid ${volcano.isActive ? VOLCANO_COLORS.active + '50' : BRAND.border}`,
-                    backgroundColor: volcano.isActive ? VOLCANO_COLORS.active + '18' : 'transparent',
-                  }}>
-                    {volcano.isActive ? 'Active' : 'Dormant'}
-                  </span>
-                  <span style={{ fontSize: '9px', color: BRAND.textSubtle }}>
-                    {volcano.type.replace('-', ' ')}
-                  </span>
-                </div>
-                <div style={{ fontSize: '14px', fontWeight: 500, marginTop: '4px', color: BRAND.text }}>
-                  {volcano.name}
-                </div>
-                <div style={{ fontSize: '10px', color: BRAND.textSubtle, marginTop: '1px' }}>
-                  {volcano.country} · {volcano.elevationM.toLocaleString()} m elevation
-                </div>
-                <div style={{ fontSize: '10px', color: BRAND.textSubtle }}>
-                  Last eruption: {volcano.lastEruption}
-                </div>
-              </div>
-              <div style={{ padding: '10px 14px 12px' }}>
-                <p style={{ fontSize: '12px', color: BRAND.textDim, lineHeight: 1.55 }}>
-                  {volcano.description}
-                </p>
-                {!hasLesson('geol-101-1-5-1') && (
-                  <Link href="/learn/geol-101-1-5-1" style={{ display: 'flex', alignItems: 'center', gap: '5px', marginTop: '10px', fontSize: '10px', color: BRAND.accent, textDecoration: 'none', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                    <BookOpen size={10} /> Study volcanic landforms
-                  </Link>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Ocean current popup */}
-          {current && (
-            <div>
-              <div style={{ padding: '12px 14px 10px', borderBottom: `1px solid ${BRAND.border}` }}>
-                <span style={{
-                  fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600,
-                  color: CURRENT_COLORS[current.type],
-                }}>
-                  {current.type} current
-                </span>
-                <div style={{ fontSize: '14px', fontWeight: 500, marginTop: '2px', color: BRAND.text }}>
-                  {current.name}
-                </div>
-              </div>
-              <div style={{ padding: '10px 14px 12px' }}>
-                <p style={{ fontSize: '12px', color: BRAND.textDim, lineHeight: 1.55 }}>
-                  {current.description}
-                </p>
-                <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10px', color: BRAND.textSubtle }}>
-                  <Zap size={9} color={BRAND.gold} />
-                  Ocean Systems — coming soon
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Hotspot popup */}
-          {hotspot && (
-            <div>
-              <div style={{ padding: '12px 14px 10px', borderBottom: `1px solid ${BRAND.border}` }}>
-                <span style={{
-                  fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600,
-                  color: BRAND.amethyst,
-                }}>
-                  Mantle Hotspot
-                </span>
-                <div style={{ fontSize: '14px', fontWeight: 500, marginTop: '2px', color: BRAND.text }}>
-                  {hotspot.name}
-                </div>
-                <div style={{ fontSize: '10px', color: BRAND.textSubtle, marginTop: '1px' }}>
-                  {hotspot.features}
-                </div>
-              </div>
-              <div style={{ padding: '10px 14px 12px' }}>
-                <p style={{ fontSize: '12px', color: BRAND.textDim, lineHeight: 1.55 }}>
-                  {hotspot.description}
-                </p>
-                {!hasLesson('geol-101-1-4-4') && (
-                  <Link href="/learn/geol-101-1-4-4" style={{ display: 'flex', alignItems: 'center', gap: '5px', marginTop: '10px', fontSize: '10px', color: BRAND.accent, textDecoration: 'none', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                    <BookOpen size={10} /> Study hotspots &amp; plumes
-                  </Link>
-                )}
-              </div>
-            </div>
-          )}
-        </Popup>
-      )}
     </MapContainer>
   )
 }

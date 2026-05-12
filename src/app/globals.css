@@ -132,4 +132,37 @@
     font-size: 9px !important;
   }
   .leaflet-control-attribution a { color: #9CA0AE !important; }
+
+  /* ── Atlas marker animations ──────────────────────────────── */
+  @keyframes volcano-ring-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%       { opacity: 0.1;  transform: scale(1.8); }
+  }
+  .volcano-ring {
+    animation: volcano-ring-pulse 2.4s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+    pointer-events: none !important;
+  }
+  @keyframes hotspot-ring-pulse {
+    0%, 100% { opacity: 0.4;  transform: scale(1); }
+    50%       { opacity: 0.08; transform: scale(1.55); }
+  }
+  .hotspot-ring {
+    animation: hotspot-ring-pulse 3.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+    pointer-events: none !important;
+  }
+
+  /* ── Atlas tooltip ────────────────────────────────────────── */
+  .facet-tooltip {
+    background: #16181F !important;
+    border: 1px solid #2A2D38 !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5) !important;
+    padding: 3px 8px !important;
+    border-radius: 3px !important;
+  }
+  .facet-tooltip::before,
+  .facet-tooltip::after { display: none !important; }
 }
