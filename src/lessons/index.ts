@@ -91,6 +91,7 @@ import observedWarming             from './clim-101-1-3-1'
 import seaLevelRise                from './clim-101-1-3-2'
 import climateImpacts              from './clim-101-1-3-3'
 import mitigationAdaptation        from './clim-101-1-3-4'
+import clim101Capstone             from './clim-101-capstone'
 import solarSystemFormation        from './astr-101-1-1-1'
 import differentiationLHB          from './astr-101-1-1-2'
 import theSun                      from './astr-101-1-1-3'
@@ -107,6 +108,8 @@ import marineEcosystems            from './ocea-101-1-3-1'
 import phytoplanktonProduction     from './ocea-101-1-3-2'
 import coralReefs                  from './ocea-101-1-3-3'
 import polarOceans                 from './ocea-101-1-3-4'
+import hydrothermalVents           from './ocea-101-1-4-1'
+import oceanAcidification          from './ocea-101-1-4-2'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -201,6 +204,7 @@ export const LESSONS: Record<string, Lesson> = {
   'clim-101-1-3-2':          seaLevelRise,
   'clim-101-1-3-3':          climateImpacts,
   'clim-101-1-3-4':          mitigationAdaptation,
+  'clim-101-capstone':       clim101Capstone,
   'astr-101-1-1-1':          solarSystemFormation,
   'astr-101-1-1-2':          differentiationLHB,
   'astr-101-1-1-3':          theSun,
@@ -213,6 +217,8 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
   'ocea-101-1-3-4':          polarOceans,
+  'ocea-101-1-4-1':          hydrothermalVents,
+  'ocea-101-1-4-2':          oceanAcidification,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -396,6 +402,13 @@ export const LEARNING_PATHS: LearningPath[] = [
         lessonIds: ['ocea-101-1-3-1', 'ocea-101-1-3-2', 'ocea-101-1-3-3', 'ocea-101-1-3-4'],
         iconId: 'chapter-marine-life',
       },
+      {
+        id: 'deep-ocean',
+        title: 'The Deep Ocean',
+        description: 'Hydrothermal vents and chemosynthetic life, and the ocean acidification crisis reshaping marine chemistry.',
+        lessonIds: ['ocea-101-1-4-1', 'ocea-101-1-4-2'],
+        iconId: 'chapter-deep-ocean',
+      },
     ],
   },
   {
@@ -494,6 +507,13 @@ export const LEARNING_PATHS: LearningPath[] = [
         description: 'Observed warming, sea level rise, climate impacts, and the pathways for mitigation.',
         lessonIds: ['clim-101-1-3-1', 'clim-101-1-3-2', 'clim-101-1-3-3', 'clim-101-1-3-4'],
         iconId: 'chapter-modern-climate-change',
+      },
+      {
+        id: 'climate-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Climate, Past & Future.',
+        lessonIds: ['clim-101-capstone'],
+        iconId: 'chapter-assessment',
       },
     ],
   },
