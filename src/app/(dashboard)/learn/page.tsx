@@ -740,100 +740,130 @@ export default function LearnPage() {
             />
 
             {isExpanded && (
-              <div className="mt-4 space-y-10">
-                {path.chapters.map((chapter, ci) => {
-                  const chapterLessons = chapter.lessonIds
-                    .map(id => COMBINED_MAP[id])
-                    .filter(Boolean) as DisplayLesson[]
-                  const totalInChapter = chapter.lessonIds.length
-                  const availableInChapter = chapterLessons.length
-                  const isChapterComplete = availableInChapter === totalInChapter
-                  const completedInChapter = chapter.lessonIds.filter(id => completedIds.has(id)).length
-                  const allChapterDone = availableInChapter > 0 && completedInChapter === totalInChapter
+              <div className="mt-3">
+                {/* Path sequence intro */}
+                <div
+                  className="flex items-center gap-2 px-1 mb-5 text-[10px]"
+                  style={{ color: BRAND.textSubtle }}
+                >
+                  <ChevronRight size={10} />
+                  <span>Study chapters in order — each builds on the previous</span>
+                </div>
 
-                  return (
-                    <div
-                      key={chapter.id}
-                      id={moduleAnchorId(path.id, chapter.id)}
-                      className="space-y-3 scroll-mt-32"
-                    >
-                      <div className="flex items-center gap-3 pb-2" style={{ borderBottom: `1px solid ${BRAND.border}` }}>
-                        {/* Chapter number / done indicator */}
-                        <div
-                          className="w-7 h-7 rounded-sm flex items-center justify-center text-[10px] font-mono font-bold shrink-0"
-                          style={allChapterDone
-                            ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
-                            : { backgroundColor: `${path.color}18`, color: path.color, border: `1px solid ${path.color}40` }}
-                        >
-                          {allChapterDone ? <Check size={12} strokeWidth={2.5} /> : ci + 1}
+                {/* Chapter stepper */}
+                {(() => {
+                  const activeChapterIdx = path.chapters.findIndex(ch => {
+                    const avail = ch.lessonIds.filter(id => COMBINED_MAP[id])
+                    const done = avail.filter(id => completedIds.has(id))
+                    return avail.length > 0 && done.length < avail.length
+                  })
+                  return path.chapters.map((chapter, ci) => {
+                    const chapterLessons = chapter.lessonIds
+                      .map(id => COMBINED_MAP[id])
+                      .filter(Boolean) as DisplayLesson[]
+                    const availableInChapter = chapterLessons.length
+                    const totalInChapter = chapter.lessonIds.length
+                    const completedInChapter = chapter.lessonIds.filter(id => completedIds.has(id)).length
+                    const allChapterDone = availableInChapter > 0 && completedInChapter === availableInChapter
+                    const isCurrentChapter = ci === activeChapterIdx
+                    const isLast = ci === path.chapters.length - 1
+
+                    return (
+                      <div
+                        key={chapter.id}
+                        id={moduleAnchorId(path.id, chapter.id)}
+                        className="flex gap-4 scroll-mt-32"
+                      >
+                        {/* Left: step circle + connecting line */}
+                        <div className="flex flex-col items-center shrink-0" style={{ width: '28px' }}>
+                          <div
+                            className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-mono font-bold shrink-0 z-10"
+                            style={allChapterDone
+                              ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
+                              : isCurrentChapter
+                                ? { backgroundColor: path.color, color: BRAND.bg, border: `1px solid ${path.color}` }
+                                : { backgroundColor: BRAND.surfaceHi, color: BRAND.textSubtle, border: `1px solid ${BRAND.border}` }}
+                          >
+                            {allChapterDone ? <Check size={11} strokeWidth={2.5} /> : ci + 1}
+                          </div>
+                          {!isLast && (
+                            <div
+                              className="w-px flex-1 my-1"
+                              style={{ backgroundColor: allChapterDone ? `${BRAND.jade}40` : `${BRAND.border}`, minHeight: '24px' }}
+                            />
+                          )}
                         </div>
-                        {/* Chapter icon */}
-                        <div
-                          className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
-                          style={{ backgroundColor: `${path.color}10`, border: `1px solid ${path.color}28` }}
-                        >
-                          <PathIcon iconId={chapter.iconId} category="chapters" fallback={path.icon} color={path.color} size={13} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-mono text-[11px] tracking-[0.15em] uppercase truncate" style={{ color: BRAND.textDim }}>
-                            {chapter.title}
-                          </h3>
-                        </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>
-                            {availableInChapter} / {totalInChapter}
-                          </span>
-                          {!isChapterComplete && (
-                            <span
-                              className="text-[9px] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full"
-                              style={{ backgroundColor: `${BRAND.gold}18`, color: BRAND.gold, border: `1px solid ${BRAND.gold}40` }}
+
+                        {/* Right: chapter content */}
+                        <div className={`flex-1 min-w-0 ${isLast ? 'pb-2' : 'pb-8'}`}>
+                          {/* Chapter header row */}
+                          <div className="flex items-center gap-2 mb-3" style={{ minHeight: '28px' }}>
+                            <div
+                              className="w-6 h-6 rounded-sm flex items-center justify-center shrink-0"
+                              style={{ backgroundColor: `${path.color}10`, border: `1px solid ${path.color}25` }}
                             >
-                              In progress
-                            </span>
+                              <PathIcon
+                                iconId={chapter.iconId}
+                                category="chapters"
+                                fallback={path.icon}
+                                color={path.color}
+                                size={12}
+                              />
+                            </div>
+                            <h3
+                              className="font-mono text-[11px] tracking-[0.12em] uppercase font-semibold flex-1 truncate"
+                              style={{ color: allChapterDone ? BRAND.textSubtle : BRAND.text }}
+                            >
+                              {chapter.title}
+                            </h3>
+                            {allChapterDone && (
+                              <Check size={11} strokeWidth={2.5} style={{ color: BRAND.jade, flexShrink: 0 }} />
+                            )}
+                            {!allChapterDone && completedInChapter > 0 && (
+                              <span className="text-[9px] font-mono shrink-0" style={{ color: path.color }}>
+                                {completedInChapter}/{availableInChapter}
+                              </span>
+                            )}
+                            {availableInChapter === 0 && (
+                              <span className="text-[9px] tracking-[0.1em] uppercase shrink-0" style={{ color: BRAND.textSubtle }}>
+                                Coming soon
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Lesson list */}
+                          {availableInChapter > 0 && (
+                            <div className="space-y-1.5">
+                              {chapterLessons.map((lesson, i) => (
+                                <LinearLessonRow
+                                  key={lesson.id}
+                                  lesson={lesson}
+                                  step={i + 1}
+                                  isCompleted={completedIds.has(lesson.id)}
+                                  isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
+                                  color={path.color}
+                                />
+                              ))}
+                              {totalInChapter > availableInChapter && (
+                                <div className="pl-8 pt-1 text-[10px]" style={{ color: BRAND.textSubtle }}>
+                                  + {totalInChapter - availableInChapter} more coming soon
+                                </div>
+                              )}
+                            </div>
                           )}
                         </div>
                       </div>
+                    )
+                  })
+                })()}
 
-                      {availableInChapter > 0 ? (
-                        <div className="grid md:grid-cols-2 gap-3">
-                          {chapterLessons.map((lesson, i) => (
-                            <LessonCard
-                              key={lesson.id}
-                              lesson={lesson}
-                              step={i + 1}
-                              isCompleted={completedIds.has(lesson.id)}
-                              isLocked={!FREE_LESSON_IDS.has(lesson.id) && subscription === 'free'}
-                            />
-                          ))}
-                        </div>
-                      ) : (
-                        <div
-                          className="p-4 rounded-sm text-center"
-                          style={{ backgroundColor: BRAND.surface, border: `1px dashed ${BRAND.border}` }}
-                        >
-                          <p className="text-[11px]" style={{ color: BRAND.textSubtle }}>Lessons coming soon</p>
-                        </div>
-                      )}
-
-                      {!isChapterComplete && availableInChapter > 0 && (
-                        <div className="flex items-center gap-2 pt-1">
-                          <ChevronRight size={12} style={{ color: BRAND.textSubtle }} />
-                          <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>
-                            {totalInChapter - availableInChapter} more lesson{totalInChapter - availableInChapter !== 1 ? 's' : ''} coming soon
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-
-                {/* Collapse shortcut */}
+                {/* Collapse */}
                 <button
                   onClick={() => toggleCourse(path.id)}
-                  className="flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase transition-opacity hover:opacity-70 mx-auto"
+                  className="flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase transition-opacity hover:opacity-70 ml-10 mt-2"
                   style={{ color: BRAND.textSubtle }}
                 >
-                  <ChevronUp size={12} /> Collapse
+                  <ChevronUp size={12} /> Collapse path
                 </button>
               </div>
             )}
