@@ -51,6 +51,12 @@ The deepest ocean — conventionally defined as water below 6,000 metres, called
           def: 'A chain of volcanoes formed on the overriding plate above a subduction zone, roughly parallel to the trench. Oceanic arcs form where oceanic crust overrides oceanic crust (e.g. the Aleutian Islands, the Mariana Islands). Continental arcs form where oceanic crust subducts beneath a continent (e.g. the Andes, the Cascades of the US Pacific Northwest).',
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'thermohaline-circulation',
+        caption: 'Global thermohaline circulation (ocean conveyor belt): warm surface flow (coral) carries heat poleward; cold, dense deep water forms in the North Atlantic (NADW) and Antarctica and returns equatorward. ~1,000-year overturning timescale.',
+        credit: 'Broecker (1991) · RAPID array · AMOC',
+      },
     },
     {
       type: 'concept',

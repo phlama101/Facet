@@ -34,6 +34,12 @@ The concept of **radiative forcing** quantifies how much any given change — in
         { term: 'Climate sensitivity',     def: 'The equilibrium global mean surface temperature rise resulting from a doubling of CO₂. Estimated at 2.5–4.0°C (IPCC AR6 likely range), with a best estimate of ~3°C. Most of the uncertainty comes from cloud feedbacks. A 3°C equilibrium warming from CO₂ doubling includes all physical feedbacks (water vapour, ice-albedo, lapse rate) but not slow feedbacks (ice sheet collapse, permafrost carbon release).' },
         { term: 'Downwelling longwave radiation', def: 'Infrared radiation emitted by greenhouse gases and clouds downward toward Earth\'s surface — commonly called "back-radiation." Amounts to ~340 W m⁻² globally averaged, actually exceeding direct solar absorption at the surface. This downwelling IR is the direct heating mechanism of the enhanced greenhouse effect and is measurably increasing as greenhouse gas concentrations rise.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'atmospheric-circulation-cells',
+        caption: 'Three-cell atmospheric circulation model per hemisphere: Hadley (equator–30°), Ferrel (30°–60°), and Polar (60°–90°). Surface wind belts and ITCZ position are shown at the boundaries.',
+        credit: 'Hadley (1735) · Ferrel (1856) · NOAA',
+      },
     },
     {
       type: 'concept',

@@ -49,6 +49,12 @@ Those principles remain the foundation of every stratigraphic analysis performed
           def: "The process of demonstrating that rock units in separate locations are equivalent in age. Lithostratigraphic correlation matches rock type; biostratigraphic correlation matches fossil content (faunal succession); chemostratigraphic correlation matches chemical signatures (isotope ratios, trace elements). Correlation allows local sequences to be assembled into a global relative timescale.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'radiometric-decay',
+        caption: 'Exponential radioactive decay curves (all normalised to half-lives). Common geochronology systems — U-238, K-40, Rb-87, C-14 — span timescales from 50 ka (C-14) to billions of years (Rb-87).',
+        credit: 'Faure & Mensing (2005) · USGS Geologic Time',
+      },
     },
     {
       type: 'concept',

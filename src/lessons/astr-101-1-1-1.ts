@@ -34,6 +34,12 @@ Beyond our own Solar System, astronomers have now directly observed the process 
         { term: 'snow line', def: 'The heliocentric distance in the protoplanetary disc beyond which water ice can condense as a solid (at ~150–170 K, ~2.7 AU in the early Solar System). Interior to the snow line, only refractory materials (silicates, iron, and other high-condensation-temperature compounds) exist as solids; exterior to it, ice adds a significant mass of solid material to the disc — approximately doubling the surface density of solids. This enhanced solid surface density beyond the snow line is the primary reason Jupiter and the other giant planets form in the outer Solar System: the higher solid density enables planetary embryos to grow to the ~10 Earth-mass threshold needed to capture hydrogen and helium from the disc before the disc disperses (~1–10 Myr).' },
         { term: 'chondrule', def: 'Millimetre-sized spherical silicate droplets found within chondritic meteorites, formed by rapid melting and re-solidification of dust aggregates in the early solar nebula. Chondrules are among the most abundant components of chondritic meteorites and record transient high-temperature events (peak temperatures ~1,600–1,900 K, cooling rates ~10–1,000 K/hour) that occurred in the solar nebula before planetesimal formation. Their heating mechanism remains enigmatic — proposed sources include nebular shockwaves, lightning, and bow shocks around planetary embryos. Chondrules are absent from differentiated bodies (planets and asteroids that melted), making chondrites invaluable time capsules of solar nebula processes.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'solar-system-formation',
+        caption: 'Five-stage solar system formation sequence: molecular cloud → gravitational collapse → protostar + disc → planetesimals → mature solar system. Timescale spans ~5 Gyr before to 4.5 Gyr ago.',
+        credit: 'Schmidt (1944) · Safronov (1969) · ALMA protoplanetary disc observations',
+      },
     },
     {
       type: 'concept',

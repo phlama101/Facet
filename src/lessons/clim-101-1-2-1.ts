@@ -34,6 +34,12 @@ Understanding Milankovitch cycles is also important for modern climate change, b
         { term: 'Ice core', def: 'A cylindrical sample drilled from a glacier or ice sheet, preserving a stratigraphic record of past climate going back up to 800,000 years (EPICA Dome C, Antarctica). Ice cores record: (1) δ¹⁸O and δD — water isotope ratios that reflect past temperature; (2) trapped air bubbles — direct samples of past atmospheric composition (CO₂, CH₄, N₂O); (3) volcanic ash layers — used for chronology; (4) dust, sea salt, and other proxy records. Ice core records provided the first direct evidence that CO₂ and temperature co-vary through ice age cycles.' },
         { term: 'Insolation', def: 'Solar radiation reaching Earth\'s surface or top of atmosphere, expressed in W m⁻². Varies with latitude (higher near equator), season (higher in summer), and across Milankovitch cycles (variation in Earth-Sun distance and axial tilt). The boreal summer insolation at 65°N is the key diagnostic for glacial inception and termination in Milankovitch theory: when 65°N summer insolation falls below a threshold, snow fails to melt during summer, accumulates year over year, and ice sheets grow. The last glacial inception (~115 ka) corresponds to a minimum in 65°N summer insolation.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'milankovitch-cycles',
+        caption: 'Three Milankovitch orbital cycles over 400 kyr: eccentricity (~100 kyr), obliquity (~41 kyr), and precession (~23 kyr), with their combined insolation signal. Glacial-interglacial periods correlate with the combined cycle.',
+        credit: 'Milankovitch (1941) · Hays, Imbrie & Shackleton (1976)',
+      },
     },
     {
       type: 'concept',

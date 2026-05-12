@@ -49,6 +49,12 @@ The resolution came from an unlikely direction: the bottom of the ocean. During 
           def: "The process by which new oceanic crust is continuously created at mid-ocean ridges as magma rises from the mantle, solidifies into basalt and gabbro, and is pushed laterally away from the ridge axis. The discovery of seafloor spreading provided the mechanism that continental drift had lacked.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'plate-boundaries',
+        caption: 'Three types of plate boundaries: divergent (new crust forms at mid-ocean ridges), convergent (oceanic crust subducts under continental), and transform (plates slide past each other horizontally).',
+        credit: 'USGS / Tarbuck & Lutgens',
+      },
     },
     {
       type: 'concept',

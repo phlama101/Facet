@@ -49,6 +49,12 @@ In the Himalayas, India is still crashing into Asia at 5 cm per year, the collis
           def: "A convergent boundary where one plate (always oceanic, or the denser of two oceanic plates) descends into the mantle beneath the other. Marked by an oceanic trench (the deepest places on Earth), a volcanic arc on the overriding plate, and a zone of earthquakes that deepen with distance from the trench (the Wadati-Benioff zone).",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'subduction-zone',
+        caption: 'Subduction zone cross-section: oceanic plate descends under continental plate at ~30–45°, releasing H₂O into the mantle wedge (flux melting), generating arc volcanism. Accretionary wedge scrapes off incoming sediment.',
+        credit: 'USGS / Tarbuck & Lutgens',
+      },
     },
     {
       type: 'concept',

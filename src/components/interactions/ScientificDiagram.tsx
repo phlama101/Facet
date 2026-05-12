@@ -7,13 +7,57 @@ import { AtmosphereProfile } from '@/components/diagrams/AtmosphereProfile'
 import { EarthEnergyBudget } from '@/components/diagrams/EarthEnergyBudget'
 import { RockCycleDiagram } from '@/components/diagrams/RockCycleDiagram'
 import { SeismicShadowZone } from '@/components/diagrams/SeismicShadowZone'
+import { PlateBoundaries } from '@/components/diagrams/PlateBoundaries'
+import { GeologicTimescale } from '@/components/diagrams/GeologicTimescale'
+import { OceanFloorTopography } from '@/components/diagrams/OceanFloorTopography'
+import { AtmosphericCirculationCells } from '@/components/diagrams/AtmosphericCirculationCells'
+import { MohsHardnessScale } from '@/components/diagrams/MohsHardnessScale'
+import { GreenhouseMechanism } from '@/components/diagrams/GreenhouseMechanism'
+import { VolcanicConeTypes } from '@/components/diagrams/VolcanicConeTypes'
+import { IceAlbedoFeedback } from '@/components/diagrams/IceAlbedoFeedback'
+import { SolarSystemFormation } from '@/components/diagrams/SolarSystemFormation'
+import { IgneousRockTextures } from '@/components/diagrams/IgneousRockTextures'
+import { WaveAnatomy } from '@/components/diagrams/WaveAnatomy'
+import { MilankovitchCycles } from '@/components/diagrams/MilankovitchCycles'
+import { CO2TemperatureRecord } from '@/components/diagrams/CO2TemperatureRecord'
+import { OceanDepthZones } from '@/components/diagrams/OceanDepthZones'
+import { MetamorphicGrade } from '@/components/diagrams/MetamorphicGrade'
+import { RadiometricDecay } from '@/components/diagrams/RadiometricDecay'
+import { MagmaViscosity } from '@/components/diagrams/MagmaViscosity'
+import { ThermohalineCirculation } from '@/components/diagrams/ThermohalineCirculation'
+import { StellarHRDiagram } from '@/components/diagrams/StellarHRDiagram'
+import { PlanetComparison } from '@/components/diagrams/PlanetComparison'
+import { SubductionZone } from '@/components/diagrams/SubductionZone'
+import { CoriolisDeflection } from '@/components/diagrams/CoriolisDeflection'
 
 const DIAGRAMS: Record<string, React.FC> = {
-  'earth-cross-section':     EarthCrossSection,
-  'atmosphere-temp-profile': AtmosphereProfile,
-  'earth-energy-budget':     EarthEnergyBudget,
-  'rock-cycle':              RockCycleDiagram,
-  'seismic-shadow-zone':     SeismicShadowZone,
+  'earth-cross-section':          EarthCrossSection,
+  'atmosphere-temp-profile':      AtmosphereProfile,
+  'earth-energy-budget':          EarthEnergyBudget,
+  'rock-cycle':                   RockCycleDiagram,
+  'seismic-shadow-zone':          SeismicShadowZone,
+  'plate-boundaries':             PlateBoundaries,
+  'geologic-timescale':           GeologicTimescale,
+  'ocean-floor-topography':       OceanFloorTopography,
+  'atmospheric-circulation-cells':AtmosphericCirculationCells,
+  'mohs-hardness-scale':          MohsHardnessScale,
+  'greenhouse-mechanism':         GreenhouseMechanism,
+  'volcanic-cone-types':          VolcanicConeTypes,
+  'ice-albedo-feedback':          IceAlbedoFeedback,
+  'solar-system-formation':       SolarSystemFormation,
+  'igneous-rock-textures':        IgneousRockTextures,
+  'wave-anatomy':                 WaveAnatomy,
+  'milankovitch-cycles':          MilankovitchCycles,
+  'co2-temperature-record':       CO2TemperatureRecord,
+  'ocean-depth-zones':            OceanDepthZones,
+  'metamorphic-grade':            MetamorphicGrade,
+  'radiometric-decay':            RadiometricDecay,
+  'magma-viscosity':              MagmaViscosity,
+  'thermohaline-circulation':     ThermohalineCirculation,
+  'stellar-hr-diagram':           StellarHRDiagram,
+  'planet-comparison':            PlanetComparison,
+  'subduction-zone':              SubductionZone,
+  'coriolis-deflection':          CoriolisDeflection,
 }
 
 interface Props {

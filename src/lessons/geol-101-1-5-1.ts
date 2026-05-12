@@ -49,6 +49,12 @@ Module 1.5 applies the tools of Modules 1.1–1.4 to the visible landscape. This
           def: "A broad, flat landform built by repeated eruptions of very fluid basaltic lava from fissures rather than a central vent. Individual flows are thin but extensive; successive flows stack to great thickness over large areas. Examples: Columbia River Plateau (210,000 km²), Deccan Plateau (India), Iceland's interior highlands.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'volcanic-cone-types',
+        caption: 'Three volcanic morphologies compared: shield volcano (gentle, basaltic effusive), stratovolcano (steep, alternating lava and ash), and cinder cone (small, scoriaceous, monogenetic). Profiles are schematic, not to scale with each other.',
+        credit: 'USGS / Schmincke (2004)',
+      },
     },
     {
       type: 'concept',

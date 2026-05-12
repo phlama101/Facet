@@ -49,6 +49,12 @@ The ocean is the ultimate sink and regulator of Earth's surface chemistry. River
           def: 'A zone in the ocean characterised by a rapid change in salinity with depth, separating layers of different salinity. Distinct from the thermocline (temperature change with depth) and pycnocline (density change with depth), though all three often co-occur. Found most prominently at river mouths and in marginal seas with strong freshwater input.',
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'wave-anatomy',
+        caption: 'Ocean wave anatomy: crest, trough, wavelength, amplitude, and orbital water motion. Orbital circles shrink exponentially with depth; no motion below the wave base (λ/2).',
+        credit: 'NOAA / Thurman (1994)',
+      },
     },
     {
       type: 'concept',

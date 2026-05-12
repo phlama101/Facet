@@ -34,6 +34,12 @@ The **ocean** transports approximately 40% of the total equator-to-pole heat flu
         { term: 'Intertropical Convergence Zone (ITCZ)', def: 'The belt of intense convection and rainfall that occurs where the northeast and southeast trade winds converge near the equator. The ITCZ migrates seasonally following the thermal equator (zone of maximum solar heating), reaching its northernmost position (~10°N) in Northern Hemisphere summer and its southernmost position in Northern Hemisphere winter. It produces the monsoon rainfall patterns of South and Southeast Asia, West Africa, and Central America. Climate change may shift the ITCZ position, altering monsoon rainfall patterns for billions of people.' },
         { term: 'ENSO (El Niño-Southern Oscillation)', def: 'The largest source of interannual climate variability on Earth — a coupled ocean-atmosphere oscillation in the tropical Pacific. In El Niño phases, weakened trade winds allow warm water to accumulate in the eastern tropical Pacific, raising SSTs and shifting rainfall eastward, causing droughts in Australia/SE Asia and flooding in Peru/Ecuador. In La Niña phases, strengthened trades push warm water westward, cooling the eastern Pacific. ENSO cycles every 3–7 years and affects temperature and precipitation patterns globally.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'ice-albedo-feedback',
+        caption: 'Ice-albedo positive feedback loop: warming → ice/snow melt → lower surface albedo → more solar absorption → more warming. Arctic has warmed ~3–4× faster than the global mean since 1979.',
+        credit: 'IPCC AR6 · NSIDC',
+      },
     },
     {
       type: 'concept',

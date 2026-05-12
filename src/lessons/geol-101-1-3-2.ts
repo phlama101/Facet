@@ -49,6 +49,12 @@ Cooling rate is the master variable of igneous petrology, and **texture** — th
           def: "The two ends of the igneous compositional spectrum. Felsic rocks (feldspar + silica) are silica-rich (>65% SiO₂), light-coloured, and less dense — granite is the type example. Mafic rocks (magnesium + ferric/iron) are silica-poor (~45–52% SiO₂), dark-coloured, and denser — basalt is the type example.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'igneous-rock-textures',
+        caption: 'Coarse-grained intrusive (granite) vs fine-grained extrusive (basalt): crystal size is determined entirely by cooling rate. The same magma composition produces granite underground or rhyolite at the surface.',
+        credit: 'OpenStax Physical Geology',
+      },
     },
     {
       type: 'concept',

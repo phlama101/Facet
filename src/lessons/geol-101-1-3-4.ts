@@ -53,6 +53,12 @@ This lesson introduces the two settings where metamorphism occurs, the key textu
           def: "Metamorphism driven by both elevated temperature and directed pressure across a large region, typically in the root zone of a mountain belt where rocks are deeply buried during continental collision. Produces foliated rocks (slate, schist, gneiss) over areas of thousands of square kilometres.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'metamorphic-grade',
+        caption: 'Pressure–temperature diagram showing metamorphic facies and the Barrovian index mineral sequence (chlorite → biotite → garnet → staurolite → kyanite → sillimanite) at ~3 kbar.',
+        credit: 'After Barrow (1912) · Winter (2001)',
+      },
     },
     {
       type: 'concept',

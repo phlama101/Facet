@@ -34,6 +34,12 @@ A common misconception is that the Earth's interior is a vast ocean of magma fro
         { term: 'Partial melting',         def: 'The melting of some minerals in a rock while others remain solid. Since different minerals have different melting temperatures, a rock heated toward its solidus will melt progressively, with low-melting-point minerals melting first. The proportion of melt produced (melt fraction) determines the composition of the resulting magma. Partial melting of the mantle typically produces basaltic melt from a peridotite source rock.' },
         { term: 'Solidus',                 def: 'The temperature (at a given pressure) below which a rock is entirely solid. Above the solidus, some melt exists (partial melting); above the liquidus, the rock is entirely molten. The solidus of peridotite (the primary mantle rock) at ~100 km depth is approximately 1,300°C, but is lowered to ~1,000°C by the addition of water, explaining flux melting at subduction zones.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'magma-viscosity',
+        caption: 'Magma viscosity spectrum from basalt (~10² Pa·s) to rhyolite (~10¹¹ Pa·s). Higher SiO₂ content → more polymerised silicate chains → higher viscosity → trapped gas → explosive eruption style.',
+        credit: 'Dingwell (1995) · Schmincke (2004)',
+      },
     },
     {
       type: 'concept',

@@ -34,6 +34,12 @@ Understanding atmospheric composition is the foundation of understanding climate
         { term: 'Carbon dioxide (CO₂)',  def: 'Currently ~422 ppm (parts per million) in the atmosphere (2024), up from ~280 ppm pre-industrial. A greenhouse gas that absorbs infrared radiation. The primary long-term climate control on geological timescales. Exchanged between atmosphere, ocean, biosphere, and rock through the carbon cycle over timescales from seconds to millions of years.' },
         { term: 'Ozone (O₃)',           def: 'Triatomic oxygen. In the stratosphere (15–35 km): shields surface life by absorbing UV-B and UV-C radiation. In the troposphere (near surface): a harmful pollutant formed from car exhaust and industrial emissions reacting in sunlight. Same molecule, very different role depending on altitude — "good up high, bad nearby."' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'greenhouse-mechanism',
+        caption: 'Greenhouse mechanism: shortwave solar passes through GHG-transparent atmosphere; surface emits longwave IR; GHGs absorb and re-emit ~50% back toward the surface (back-radiation ~333 W m⁻²).',
+        credit: 'Trenberth, Fasullo & Kiehl (2009) · IPCC AR6',
+      },
     },
     {
       type: 'concept',

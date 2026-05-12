@@ -47,6 +47,12 @@ This lesson establishes those five criteria precisely, explores the edge cases t
           def: "A naturally occurring, inorganic solid that resembles a mineral but lacks a fully ordered crystalline structure — its atoms are arranged randomly rather than in a repeating lattice. Obsidian (volcanic glass) and opal are the most common examples. Mineraloids pass four of the five criteria but fail the crystalline test.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'mohs-hardness-scale',
+        caption: "Mohs scale of mineral hardness (1–10) with reference objects. The scale is ordinal — each step doesn't represent an equal increase in hardness.",
+        credit: 'Mohs (1812) · USGS',
+      },
     },
     {
       type: 'concept',

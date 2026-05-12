@@ -34,6 +34,12 @@ The energy budget also involves the atmosphere itself as an active participant. 
         { term: 'Blackbody radiation',   def: 'All objects emit electromagnetic radiation based on their temperature, described by the Stefan-Boltzmann law (power ∝ T⁴) and Wien\'s displacement law (peak wavelength ∝ 1/T). The sun (~5,778 K) emits mostly visible and near-IR light (peak ~0.5 μm). Earth (~288 K) emits entirely in the infrared (peak ~10 μm). These two very different spectra allow the atmosphere to absorb Earth\'s outgoing IR selectively while being largely transparent to incoming solar visible light.' },
         { term: 'Energy balance',        def: 'The equilibrium state in which outgoing longwave radiation (OLR) from Earth exactly equals incoming absorbed solar radiation. At equilibrium, Earth\'s temperature is stable. If more energy enters than leaves (positive imbalance), Earth warms. Current measured energy imbalance: ~0.3–0.9 W m⁻² due to increased greenhouse gases, driving ongoing warming.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'coriolis-deflection',
+        caption: "Coriolis effect: moving air is deflected right in the Northern Hemisphere and left in the Southern Hemisphere due to Earth's rotation. Results in counterclockwise NH cyclones and clockwise SH cyclones.",
+        credit: 'Coriolis (1835) · NOAA',
+      },
     },
     {
       type: 'concept',

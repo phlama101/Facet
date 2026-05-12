@@ -51,6 +51,12 @@ The ridge system was first identified as a continuous global structure by Marie 
           def: 'A type of fault that offsets segments of a mid-ocean ridge laterally. Transform faults connect ridge segments and absorb the differential spreading rates between them. They are a third type of plate boundary (beside divergent and convergent) and are sites of shallow earthquakes. The Romanche Transform in the equatorial Atlantic is one of the largest.',
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'ocean-depth-zones',
+        caption: 'Ocean depth zones from the sunlit epipelagic to the hadal zone of ocean trenches. Depth axis is log-compressed for readability; light penetration fades below ~200 m.',
+        credit: 'NOAA Ocean Exploration',
+      },
     },
     {
       type: 'concept',

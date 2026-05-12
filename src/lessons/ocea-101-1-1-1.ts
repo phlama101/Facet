@@ -51,6 +51,12 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           def: 'A long, narrow, steep-sided depression in the ocean floor formed where one tectonic plate subducts beneath another. The deepest places on Earth. The Mariana Trench in the western Pacific reaches 11,034 m below sea level at Challenger Deep.',
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'ocean-floor-topography',
+        caption: 'Ocean floor cross-section from continental shelf to mid-ocean ridge and trench. Vertical scale exaggerated to show bathymetric structure; actual slopes are gentler.',
+        credit: 'NOAA / Heezen & Tharp (1977)',
+      },
     },
     {
       type: 'concept',

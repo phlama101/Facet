@@ -34,6 +34,12 @@ Both planets have been targets of dedicated spacecraft exploration — Mercury b
         { term: 'Caloris Basin',            def: "A multi-ring impact basin on Mercury approximately 1,550 km in diameter, among the largest impact structures in the Solar System. It formed ~3.9 billion years ago during the Late Heavy Bombardment when a large asteroid or comet struck Mercury. The enormous shock energy propagated around the entire planet, focusing at the antipodal point and creating a region of chaotic, hummocky terrain called 'weird terrain' directly opposite Caloris. The basin interior has been volcanically resurfaced and is filled with relatively young smooth plains." },
         { term: 'Coronae',                  def: "Oval to circular volcanic-tectonic features on Venus, ranging from ~100 to >2,600 km in diameter, characterised by concentric fractures, ridges, and radial fracture systems surrounding a central volcanic region. Coronae form where a mantle plume head impinges on the crust from below, causes doming, then subsides, leaving a collapsed structure rimmed by compressional ridges. Over 500 coronae have been identified by Magellan radar data; they have no exact counterpart on Earth and may be the primary mechanism by which Venus loses internal heat in the absence of plate tectonics." },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'stellar-hr-diagram',
+        caption: 'Hertzsprung–Russell diagram: luminosity vs. effective temperature for all stellar types. Main sequence (90% of stars), giant branch, supergiants, and white dwarfs are labelled with named stars.',
+        credit: 'Hertzsprung (1911) · Russell (1914)',
+      },
     },
     {
       type: 'concept',

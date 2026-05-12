@@ -34,6 +34,12 @@ The story of the early inner Solar System is also one of catastrophic impacts. T
         { term: 'Late Heavy Bombardment (LHB)', def: 'A hypothesised intense episode of meteorite and asteroid impacts on the inner Solar System bodies (Moon, Earth, Mars, Mercury, Venus) concentrated between approximately 4.1 and 3.8 Ga — roughly 400–700 Myr after Solar System formation. Evidence comes primarily from Apollo lunar samples: radiometric ages of impact melt rocks from different lunar landing sites cluster in the 3.8–4.1 Ga range, suggesting a distinct impact pulse rather than the tail end of normal accretion. The leading dynamical explanation is the **Nice model**, in which gravitational resonance crossing between Jupiter and Saturn destabilises the outer Solar System and scatters a large reservoir of planetesimals inward. The existence of a sharp LHB spike (versus a more gradual decline from accretion) remains debated, with some researchers arguing for a statistical bias from a few large impact basins dominating the datable sample.' },
         { term: 'Hf-W chronometer', def: 'A radioactive isotope system using the decay of ¹⁸²Hf (hafnium, lithophile — stays in silicate) to ¹⁸²W (tungsten, siderophile — prefers iron metal), with a half-life of 8.9 Myr. Because Hf remains in the silicate mantle and W partitions into metal, core formation separates the two elements at a precise moment in time. After that moment, the silicate mantle accumulates excess ¹⁸²W (from continued ¹⁸²Hf decay) relative to the metallic core. By measuring the ¹⁸²W/¹⁸⁴W ratio in mantle rocks and comparing to the solar (chondritic) baseline, geochemists can calculate when core-mantle separation occurred. For Earth, this system indicates core formation was essentially complete within ~30 Myr of t₀. The Hf-W system was also critical in demonstrating that the Moon-forming Giant Impact occurred ~50–100 Myr after t₀.' },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'planet-comparison',
+        caption: 'All 8 planets compared by size (to scale relative to each other), distance from Sun, number of moons, average temperature, and atmospheric composition. Jupiter is ~11× Earth\'s radius.',
+        credit: 'NASA planetary fact sheets · IAU 2006',
+      },
     },
     {
       type: 'concept',
