@@ -158,8 +158,8 @@ export default async function BillingPage() {
             </div>
             <p className="text-sm" style={{ color: BRAND.textDim }}>
               {isPro
-                ? 'Unlock expert modules, early access to new courses, and priority support.'
-                : 'Unlock the full course catalog and interactive labs — cancel anytime.'}
+                ? 'Unlock expert & advanced paths, early access before public launch, and priority support.'
+                : 'Unlock the full path catalog — every current and future learning path.'}
             </p>
           </div>
 

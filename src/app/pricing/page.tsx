@@ -19,28 +19,27 @@ const COMPARISON: { heading: string; rows: { label: string; free: boolean | stri
   {
     heading: 'Content',
     rows: [
-      { label: 'Earth Foundations — Ch. 1 & 2 (8 lessons)', free: true,  pro: true,  expert: true  },
-      { label: 'Earth Foundations — all 5 chapters (26 lessons)', free: false, pro: true,  expert: true  },
-      { label: 'Deep Time — Earth Through History',         free: false, pro: true,  expert: true  },
-      { label: 'All future learning paths',                 free: false, pro: true,  expert: true  },
-      { label: 'Expert & advanced paths',                   free: false, pro: false, expert: true  },
+      { label: 'Earth Foundations Ch. 1 & 2 (8 lessons)', free: true,  pro: true,  expert: true  },
+      { label: 'Chapter 1 of every other path',            free: true,  pro: true,  expert: true  },
+      { label: 'Earth Foundations — all 5 chapters',       free: false, pro: true,  expert: true  },
+      { label: 'Deep Time — Earth Through History',        free: false, pro: true,  expert: true  },
+      { label: 'All current & future learning paths',      free: false, pro: true,  expert: true  },
+      { label: 'Expert & advanced paths',                  free: false, pro: false, expert: true  },
     ],
   },
   {
     heading: 'Learning System',
     rows: [
-      { label: 'Quizzes, XP & level progression', free: true,  pro: true,  expert: true  },
-      { label: 'Achievement badges',               free: true,  pro: true,  expert: true  },
-      { label: 'Streak tracker & progress dashboard', free: true, pro: true, expert: true },
-      { label: 'Interactive labs & simulations',   free: false, pro: true,  expert: true  },
-      { label: 'Global leaderboards & rankings',   free: false, pro: true,  expert: true  },
+      { label: 'Quizzes, XP & level progression',      free: true, pro: true, expert: true },
+      { label: 'Achievement badges',                    free: true, pro: true, expert: true },
+      { label: 'Streak tracker & progress dashboard',   free: true, pro: true, expert: true },
     ],
   },
   {
     heading: 'Premium Access',
     rows: [
-      { label: 'Early access to new courses', free: false, pro: false, expert: true },
-      { label: 'Priority support',            free: false, pro: false, expert: true },
+      { label: 'Early access to new paths', free: false, pro: false, expert: true },
+      { label: 'Priority support',          free: false, pro: false, expert: true },
     ],
   },
 ]
