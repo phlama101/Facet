@@ -55,14 +55,14 @@ Adaptation is unavoidable even under the most aggressive mitigation scenario, be
         {
           name: 'Mitigation Pathways: Net-Zero by 2050',
           icon: Wind,
-          color: BRAND.jade,
+          color: BRAND.accent,
           desc: 'Net-zero CO₂ by ~2050 required for 1.5 °C. Energy sector: solar PV + wind costs down >90 % since 2010; cheapest new electricity globally; electricity generation must reach near-zero carbon by 2035 (high income), 2040 (global). Hardest sectors: steel, cement, shipping, aviation; require green H₂, CCS, alternative chemistry. Land use: halting deforestation = 10 % global emissions eliminated; forest restoration provides major sinks. CDR: 2–10 GtCO₂/yr required by 2050; current capacity 0.002 GtCO₂/yr — 1,000× scale-up needed. Methane and N₂O reductions (agriculture, fossil fuels) provide rapid near-term climate benefit.',
           examples: 'Hinkley Point C nuclear: $35B, 15-year construction; contrast with offshore wind farms built in 3–4 years · India: 500 GW renewables target by 2030; solar costs now 40 % below coal LCOE · Germany Energiewende: 60 % renewable electricity 2023; still reliant on gas and coal for winter peaks · Direct Air Capture (Orca plant, Iceland): 4,000 tCO₂/yr capacity; $400–1,000/tCO₂; target <$100 by 2030',
         },
         {
           name: 'Adaptation: Frameworks and Hard Limits',
           icon: Thermometer,
-          color: BRAND.jade,
+          color: BRAND.coral,
           desc: 'Adaptation unavoidable: 0.3–0.5 °C committed warming + impacts locked in at current 1.2 °C. Infrastructure: sea walls, surge barriers (Thames Barrier, Rotterdam Maeslant Gate), mangrove restoration, managed retreat. Agriculture: heat/drought-tolerant varieties, shifted planting dates, crop diversification. Hard limits: permanent inundation of atoll nations (Tuvalu, Kiribati); physiological heat limits (Tw >35 °C); irreversible species extinction. Soft limits: addressable with sufficient finance + technology + governance. Loss and Damage Fund (COP27, 2022): formal recognition of irreversible climate harms; funding governance contested. Green Climate Fund: supports adaptation in developing nations.',
           examples: 'Netherlands Delta Works: $5B coastal defence; now expanding to accommodate 2 m SLR · Bangladesh Cyclone Preparedness Programme: reduced mortality per cyclone from 500,000 (1970) to <1,000 despite stronger storms · Maldives: building artificial island Hulhumalé above SLR projections; also negotiating sovereign territory relocation · Bangladesh coastal embankments: protecting 30 % of country from flooding; require regular upgrading as SLR accelerates',
         },

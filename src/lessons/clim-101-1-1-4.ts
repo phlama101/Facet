@@ -55,7 +55,7 @@ Understanding attribution science is important not just for academic understandi
         {
           name: 'Heat Waves: Shifting the Distribution Tail',
           icon: Thermometer,
-          color: BRAND.jade,
+          color: BRAND.accent,
           desc: '1°C mean warming → large increase in extreme heat frequency. Example: event at 99.9th percentile (once per 1,000 days) → moves to 99.5th percentile (once per 200 days) → 5× more frequent. Wet-bulb temperature > 35°C: human cooling impossible; fatal within hours. 1.5°C warming: extreme heat events 4.1× more frequent than pre-industrial. 2°C: 5.6× more frequent. 4°C: 9.4× more frequent. 2003 European heat wave: 70,000 deaths, made ~4× more likely by climate change. 2021 Pacific Northwest: 49.6°C in Lytton, BC; >150× more likely; virtually impossible without climate change. 2010 Russia heat wave: 55,000 deaths.',
           examples: 'Pacific Northwest 2021: unprecedented 49.6°C, Lytton, BC; 1,000 excess deaths in Oregon and BC · European 2003 heat wave: 70,000 deaths; France alone 15,000; triggered mandatory heat emergency protocols · South Asian humid heat: several Wet Bulb Temperature exceedances of 31–33°C already recorded in Pakistan/India',
         },
@@ -69,7 +69,7 @@ Understanding attribution science is important not just for academic understandi
         {
           name: 'Drought, Fire, and Attribution Science',
           icon: Globe,
-          color: BRAND.jade,
+          color: BRAND.gold,
           desc: 'Drought: reduced precipitation AND/OR increased evapotranspiration (ET). Warming increases ET even without precipitation change. SW USA megadrought (2000–present): driest 22-year period in 1,200 years; climate change contributed ~42% of severity (tree-ring + model attribution). Lake Mead/Powell: record lows, supply for 40M people at risk. Wildfire: drought + heat + wind → fire weather conditions increasingly frequent. 2020 California: 4M+ acres, largest in history. Attribution: heat extreme events → highest confidence; precipitation → moderate; drought → lower (complex). WWA: rapid attribution in days–weeks post-event; legal relevance growing.',
           examples: 'SW US megadrought: attributable 42% to climate change; Lake Mead at 27% capacity (2022) · Australia Black Summer 2019–20: 18M hectares; 3B animals killed or displaced; climate change made occurrence 4–5× more likely · California 2020 fires: 4M acres; 31 deaths; fire weather driven by record heat and drought',
         },

@@ -62,14 +62,14 @@ The **ocean** transports approximately 40% of the total equator-to-pole heat flu
         {
           name: 'Thermohaline Circulation and AMOC',
           icon: Globe,
-          color: BRAND.jade,
+          color: BRAND.ruby,
           desc: 'THC: density-driven global ocean overturning. AMOC: North Atlantic component; transports ~1.3 PW heat to North Atlantic; warms Europe 5–8°C. Sinking: Labrador Sea + GIN Seas (cold + salty → dense). Rising: upwelling in Southern Ocean and Indian Ocean. NADW, AABW (Antarctic Bottom Water). Circuit time: ~1,000 years. AMOC weakening: ~15% since mid-20th century (RAPID array + fingerprinting). Tipping risk: freshwater input from Greenland Ice Sheet melt reduces salinity → AMOC slowdown → potential collapse within 50–200 years (model range). Younger Dryas: AMOC collapse, Europe cooled 10°C in decades.',
           examples: 'London (51°N): warmer winters than Calgary (51°N) by ~15°C due to AMOC heat transport · Younger Dryas (12,900–11,700 BP): abrupt AMOC collapse from Laurentide meltwater; Europe 10°C cooler for 1,200 years · RAPID array: direct AMOC monitoring since 2004; confirms recent weakening',
         },
         {
           name: 'ENSO: Ocean-Atmosphere Coupling',
           icon: Thermometer,
-          color: BRAND.jade,
+          color: BRAND.accent,
           desc: 'El Niño: weakened trade winds → warm water pools in eastern Pacific → Walker Circulation slows → shifts rainfall east. Teleconnections: western US wetter; Australia/SE Asia drought; Atlantic hurricane season suppressed (wind shear); East Africa wetter. Global T anomaly: +0.1–0.2°C during strong El Niño. La Niña: opposite; active Atlantic hurricane season; drought in southern US. Neutral: balanced state. IOD (Indian Ocean Dipole): similar coupled mode in Indian Ocean; amplifies/reduces El Niño impacts on Australia and East Africa. Predict 6–9 months in advance.',
           examples: '1997–98 El Niño: strongest pre-2015; California floods, Indonesia forest fires (smoke blanketed SE Asia), Peru floods · 2015–16 El Niño: strongest recorded; 2016 hottest year on record partly attributable · 2020–22 triple La Niña: 3 consecutive La Niña winters; global T temporarily suppressed despite continued CO₂ rise',
         },

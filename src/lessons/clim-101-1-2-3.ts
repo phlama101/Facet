@@ -49,14 +49,14 @@ These Holocene climate variations are well-documented in multiple proxy records 
         {
           name: 'Proxy Networks and the 2,000-Year Record',
           icon: Globe,
-          color: BRAND.jade,
+          color: BRAND.ruby,
           desc: 'PAGES 2k Consortium: 692 proxy records, 7 regions. Key proxies: tree rings (annual resolution, temperature), speleothems (precipitation/temperature), ocean sediments (SST), coral δ¹⁸O (SST), ice cores (temperature + gas). Hockey stick: Northern Hemisphere temperatures ~1000–1900 CE relatively stable (±0.2°C), then sharp rise in 20th C. Confirmed by >20 independent reconstructions using different proxies and methods. 2019 result: warmest 50-yr period is most recent (1970–2019). Rate of modern warming: ≥10× any natural Holocene rate. 2023: ~1.4°C above 1850–1900 baseline.',
           examples: 'Mann et al. (1998–1999): first hockey stick; sparked 20 years of independent replication · PAGES 2k (2013, 2019): most comprehensive synthesis; 692 records globally · IPCC AR6: confirms modern warming unprecedented in at least 2,000 years in both magnitude and rate',
         },
         {
           name: 'Holocene Variability: HTM, 4.2 kyr, MCA, LIA',
           icon: Thermometer,
-          color: BRAND.jade,
+          color: BRAND.gold,
           desc: 'Holocene Thermal Maximum (~9–5 ka): NH summer +0.5–1°C from orbital; Green Sahara; boreal forest at Arctic Ocean; mountain glacier retreat. 4.2 kyr event: abrupt arid interval; Akkadian Empire collapse; Old Kingdom Egypt stress; possibly linked to ITCZ southward shift. Medieval Climate Anomaly (~950–1250 CE): North Atlantic regional warmth; ~0.4°C below modern globally (not warmer than today); Viking Greenland settlement. Little Ice Age (~1300–1850 CE): 0.1–0.3°C below 20th C mean; Alpine glacier advance; Thames frozen; Maunder Minimum + volcanism (Samalas 1257, Tambora 1815); AMOC weakening possible contributor.',
           examples: 'Green Sahara: Tassili N\'Ajjer rock art (Algeria) shows hippos, crocodiles, cattle in now-hyperarid region · LIA Thames frost fairs: 1683–84, 1814 — Thames frozen solid for weeks · Viking Greenland: established 985 CE, abandoned ~1408 CE as LIA cooling reduced agriculture · Akkadian Empire: 2200 BCE collapse coincides with 4.2 kyr arid event in Mesopotamia (Tell Leilan evidence)',
         },

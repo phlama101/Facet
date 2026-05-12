@@ -56,14 +56,14 @@ The scientific implication is alarming: if the climate system has tipping points
         {
           name: 'Climate Tipping Points and Cascade Risk',
           icon: Globe,
-          color: BRAND.jade,
+          color: BRAND.amethyst,
           desc: 'Tipping point: threshold at which small forcing triggers large, self-amplifying state change. Nine major tipping elements: AMOC, W. Antarctic IS, E. Antarctic IS, Greenland IS, permafrost/methane, Amazon dieback, boreal die-off, Arctic sea ice, coral reefs. Cascade interactions: AMOC weakening → monsoon disruption → Amazon stress → permafrost thaw → more warming → more ice melt → more AMOC weakening. Tipping point temperatures (estimated): AMOC ~1.5–4°C; WAIS ~1.5°C; Greenland IS ~1.5°C; permafrost ~1.5°C; Amazon ~3–4°C. Many may already be crossed or approaching at current 1.2°C warming. "Hothouse Earth" scenario: cascade drives warming beyond emissions target.',
           examples: 'AMOC: RAPID array data shows 15% weakening; Boers (2021) found statistical indicators of approaching tipping point · Greenland: recent acceleration of ice loss; Jakobshavn and Helheim glaciers retreating rapidly · Amazon: 2021 Amazon study found eastern Amazon now a net CO₂ source due to deforestation and fire',
         },
         {
           name: 'Geological Analogues for Future Warming',
           icon: Wind,
-          color: BRAND.jade,
+          color: BRAND.coral,
           desc: 'Eemian interglacial (~125 ka): ~1–2°C above pre-industrial; sea level +6–9 m; hippos in Thames; boreal forest in Greenland. Mid-Pliocene Warm Period (~3–5 Ma): 2–4°C above pre-industrial; CO₂ ~350–450 ppm; sea level +15–25 m; Arctic Ocean largely ice-free in summer. PETM (~56 Ma): ~5–8°C warming in 20,000 years from massive carbon release; ocean acidification; major biotic disruption — closest geological analogue to modern carbon injection rate but still 10× slower. Current CO₂ rise rate: ~2.5 ppm/year; geological events 10–100× slower. All geological analogues have higher sea levels than today despite similar/lower CO₂ — implies long-term commitment to multi-metre sea level rise.',
           examples: 'Eemian: sea caves above current sea level on Bermuda; fossil coral reefs 2–6 m above present sea level in many tropical locations · Pliocene: tree stumps beneath Arctic Ocean sediments; fossil pollen of temperate forests in northern Canada · PETM: rapid acidification event; CCD shoaled by 2 km; carbonate dissolution in deep ocean sediments',
         },

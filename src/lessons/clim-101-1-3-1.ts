@@ -49,7 +49,7 @@ The record shows approximately **+1.2 °C** of warming above the 1850–1900 bas
         {
           name: 'The Instrumental Temperature Record',
           icon: Thermometer,
-          color: BRAND.jade,
+          color: BRAND.gold,
           desc: 'GMST constructed from land (GHCN) and ocean (HadSST, Argo) observations by four independent groups (NASA GISS, NOAA GlobalTemp, HadCRUT, Berkeley Earth). All agree: +1.2 °C above 1850–1900 baseline as of 2023. Warming rate has accelerated to +0.2 °C/decade (2011–2020). Land warms 2× faster than ocean. Arctic warms 3–4× global mean (polar amplification). Warmest 10 years all in last decade. Satellite tropospheric data (RSS, UAH) independently confirm surface trends since 1979. Ocean heat content (Argo floats) shows ~90% of excess heat in ocean.',
           examples: '1998 El Niño spike: +0.6 °C above 1961–1990 baseline; then 2016 and 2023 both set new annual records · Berkeley Earth analysis uses ~36,000 station records vs ~7,500 in earlier datasets · Satellite MSU data: agreement with surface record strengthened by orbital drift corrections after reanalysis',
         },
@@ -63,7 +63,7 @@ The record shows approximately **+1.2 °C** of warming above the 1850–1900 bas
         {
           name: 'Carbon Budgets and Committed Warming',
           icon: Wind,
-          color: BRAND.jade,
+          color: BRAND.coral,
           desc: 'TCRE (Transient Climate Response to Cumulative CO₂ Emissions): ~0.45 °C per 1,000 GtCO₂. Remaining budget for 1.5 °C (50 %): ~500 GtCO₂ from 2020; ~12 years at current rates (~40 GtCO₂/yr). Budget for 2 °C (67 %): ~1,150 GtCO₂ from 2020; ~29 years. Committed warming ("pipeline"): ~0.3–0.5 °C even at zero emissions today, due to ocean thermal inertia. Budget uncertainties: non-CO₂ gases, aerosol cooling estimate, permafrost feedbacks. TCRE relationship allows direct policy-science translation: every GtCO₂ emitted reduces remaining budget by 0.45/1000 °C.',
           examples: 'Cumulative emissions to 2023: ~2,500 GtCO₂ from fossil fuels + ~200 GtCO₂ from land use change ≈ 2,700 GtCO₂ total · Pre-industrial CO₂: 280 ppm; 2023: 420 ppm — 50% increase. Keeling Curve at Mauna Loa shows uninterrupted rise since 1958 · Aerosol unmasking: rapid elimination of sulphate aerosol pollution could briefly add +0.5–1.0 °C before CO₂ warming dominates',
         },

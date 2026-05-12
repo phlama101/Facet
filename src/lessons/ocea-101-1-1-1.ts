@@ -108,6 +108,61 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
 • **All ocean floor younger than ~200 Ma — because it is continuously recycled**: Oceanic crust is denser than continental crust, so it inevitably subducts at convergent boundaries. The mid-ocean ridge system (65,000 km long) continuously creates new crust; trenches destroy old crust. No ocean floor survives longer than about 200 million years.`,
     },
     {
+      type: 'visualization',
+      title: 'The ocean floor conveyor belt',
+      body: `The ocean floor is not permanent — it is continuously manufactured at mid-ocean ridges and destroyed at subduction zones in a cycle that takes ~100–200 million years to complete. This conveyor belt explains why no ocean floor older than ~200 Ma exists anywhere on Earth today, even though the ocean basins themselves have existed for billions of years. Explore each stage of the cycle below.`,
+      interaction: {
+        type: 'flow-simulator' as const,
+        description: 'The plate tectonic cycle that continuously creates and destroys oceanic crust',
+        nodes: [
+          {
+            id: 'mantle',
+            label: 'Mantle Upwelling',
+            description: 'Hot asthenospheric mantle rock rises buoyantly beneath mid-ocean ridges. Decompression melting — pressure drop as rock ascends — generates basaltic magma. The mantle provides the engine that drives the entire ocean floor cycle.',
+            color: BRAND.ruby,
+          },
+          {
+            id: 'ridge',
+            label: 'Mid-Ocean Ridge',
+            description: 'Magma erupts at the rift valley at the ridge crest, forming new basaltic oceanic crust. The 65,000 km ridge system is Earth\'s most volcanically active zone. Spreading rates range from 2–3 cm/yr (Mid-Atlantic Ridge) to up to 15 cm/yr (East Pacific Rise).',
+            color: BRAND.coral,
+          },
+          {
+            id: 'spreading',
+            label: 'Seafloor Spreading',
+            description: 'New crust moves laterally away from the ridge as more magma intrudes behind it. The seafloor records Earth\'s magnetic polarity reversals as symmetrical stripes on either side — the paleomagnetic "barcode" that proved seafloor spreading in the 1960s.',
+            color: BRAND.gold,
+          },
+          {
+            id: 'abyssal',
+            label: 'Abyssal Plain',
+            description: 'As oceanic crust moves away from the ridge it cools, contracts, and subsides from ~2,500 m at the ridge crest to ~5,000–6,000 m in the far-field abyssal plain. Fine sediment gradually buries the rough basaltic topography, producing the flattest terrain on Earth.',
+            color: BRAND.accent,
+          },
+          {
+            id: 'trench',
+            label: 'Ocean Trench',
+            description: 'When old, cold, dense oceanic lithosphere meets a continent or island arc, it bends downward and subducts into the mantle. The Mariana Trench reaches 11,034 m. Subduction generates earthquakes and arc volcanism as the slab releases water, lowering the mantle melting point.',
+            color: BRAND.amethyst,
+          },
+          {
+            id: 'subduction',
+            label: 'Slab Recycling',
+            description: 'The subducted oceanic slab sinks through the mantle over tens of millions of years, reaching the lower mantle or core-mantle boundary. Seismic tomography images fossil slabs at depth. Over geological timescales, slab material remixes into the mantle and may re-emerge at future hotspots.',
+            color: BRAND.jade,
+          },
+        ],
+        edges: [
+          { from: 'mantle',    to: 'ridge',     label: 'decompression melting → basalt eruption' },
+          { from: 'ridge',     to: 'spreading', label: 'lateral plate motion from ridge push' },
+          { from: 'spreading', to: 'abyssal',   label: 'cooling, subsidence, sediment burial' },
+          { from: 'abyssal',   to: 'trench',    label: 'plate convergence at subduction zone' },
+          { from: 'trench',    to: 'subduction',label: 'dense old crust sinks into mantle' },
+          { from: 'subduction',to: 'mantle',    label: 'slab recycled back to mantle over ~Myr' },
+        ],
+      },
+    },
+    {
       type: 'quiz',
       questions: [
         {
