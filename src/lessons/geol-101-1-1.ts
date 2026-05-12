@@ -49,6 +49,12 @@ This lesson introduces the four layers of Earth's interior, the seismic evidence
           def: "A wave of mechanical energy released by an earthquake that travels through Earth's interior. The two main types — P-waves and S-waves — behave differently in solid versus liquid material, which is what makes them so informative about the layers they pass through.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'earth-cross-section',
+        caption: "Earth's four-layer interior drawn to approximate scale. The crust ring is exaggerated ~8× for visibility — in reality it is thinner than the shell of an egg relative to the whole.",
+        credit: 'USGS / OpenStax Physical Geology',
+      },
     },
     {
       type: 'concept',
@@ -96,6 +102,12 @@ In the next lesson we will zoom into the crust and discover why a thick continen
           examples: 'PKIKP seismic wave refraction detects solid state · ~5,100–6,371 km depth · Solid iron-nickel · ~1,200 km radius · Differential rotation ~0.3°/yr',
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'seismic-shadow-zone',
+        caption: "P-waves reach stations worldwide; S-waves disappear beyond 104° from the earthquake. This S-wave shadow zone is the direct observational proof that the outer core is liquid.",
+        credit: 'USGS Earthquake Hazards Program',
+      },
     },
     {
       type: 'visualization',

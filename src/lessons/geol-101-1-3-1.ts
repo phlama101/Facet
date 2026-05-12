@@ -49,6 +49,12 @@ Module 1.2 gave you the mineral vocabulary for reading rocks — the 30 or so ro
           def: "Rock formed when pre-existing rock (of any family) is subjected to elevated temperature and/or pressure — conditions intense enough to alter its mineral assemblage or texture — without fully melting it. The original rock is transformed in the solid state.",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'rock-cycle',
+        caption: "The rock cycle connects all three rock families through geological processes. There is no single direction — any rock family can transform into any other, and the same material may cycle repeatedly over billions of years.",
+        credit: 'USGS / OpenStax Physical Geology',
+      },
     },
     {
       type: 'concept',

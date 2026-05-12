@@ -7,6 +7,7 @@ import TimelineScrubber from './TimelineScrubber'
 import SandboxSimulator from './SandboxSimulator'
 import LayeredVisual from './LayeredVisual'
 import FlowSimulator from './FlowSimulator'
+import ScientificDiagram from './ScientificDiagram'
 
 interface Props {
   interaction: InteractionConfig
@@ -26,6 +27,8 @@ export default function InteractionRenderer({ interaction }: Props) {
       return <LayeredVisual config={interaction} />
     case 'flow-simulator':
       return <FlowSimulator config={interaction} />
+    case 'scientific-diagram':
+      return <ScientificDiagram config={interaction} />
     default:
       return null
   }

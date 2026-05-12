@@ -94,6 +94,13 @@ export interface FlowSimulatorConfig {
   edges: FlowEdge[]
 }
 
+export interface ScientificDiagramConfig {
+  type: 'scientific-diagram'
+  id: string
+  caption?: string
+  credit?: string
+}
+
 export type InteractionConfig =
   | SliderConfig
   | NodeExplorerConfig
@@ -101,6 +108,7 @@ export type InteractionConfig =
   | SandboxSimulatorConfig
   | LayeredVisualConfig
   | FlowSimulatorConfig
+  | ScientificDiagramConfig
 
 // ──────────────────────────────────────────────
 // Shared primitives
