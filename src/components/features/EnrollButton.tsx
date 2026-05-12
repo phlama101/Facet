@@ -29,6 +29,7 @@ export default function EnrollButton({ courseId, enrolled, isPremium, slug, user
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) { router.push('/login'); return }
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await (supabase.from('user_course_enrollments') as any).upsert(
         { user_id: user.id, course_id: courseId },
         { onConflict: 'user_id,course_id' }
@@ -107,7 +108,7 @@ export default function EnrollButton({ courseId, enrolled, isPremium, slug, user
           )}
         </motion.button>
         <p className="text-xs text-center text-[#8b949e]">
-          7-day free trial ·{' '}
+          Cancel anytime ·{' '}
           <a href="/pricing" className="underline underline-offset-2 hover:text-[#e6edf3] transition-colors">
             See all plans
           </a>

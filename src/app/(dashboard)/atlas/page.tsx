@@ -11,15 +11,13 @@ export default async function AtlasPage() {
 
   const [profileRes, progressRes] = await Promise.all([
     supabase.from('profiles').select('subscription').eq('id', user.id).single(),
-    (supabase.from('user_lesson_progress') as any)
-      .select('lesson_id')
-      .eq('user_id', user.id)
-      .eq('completed', true),
+    supabase.from('user_lesson_progress').select('lesson_id').eq('user_id', user.id).eq('completed', true),
   ])
 
-  const subscription = (profileRes.data as { subscription?: string } | null)?.subscription ?? 'free'
-  const completedLessonIds: string[] = (progressRes.data as { lesson_id: string }[] | null)
-    ?.map((r: { lesson_id: string }) => r.lesson_id) ?? []
+  const subscription =
+    (profileRes.data as { subscription?: string } | null)?.subscription ?? 'free'
+  const completedLessonIds: string[] =
+    (progressRes.data as { lesson_id: string }[] | null)?.map(r => r.lesson_id) ?? []
 
   return (
     <div className="-mx-5 -mt-6 md:-mt-8 px-5 pt-4 pb-0">

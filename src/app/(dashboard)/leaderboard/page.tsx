@@ -18,7 +18,7 @@ export default async function LeaderboardPage() {
     : { data: null }
 
   const userRank = user && profile
-    ? board.findIndex((e: any) => e.id === user.id) + 1
+    ? board.findIndex(e => e.id === user.id) + 1
     : null
 
   const top3 = board.slice(0, 3)
@@ -76,7 +76,7 @@ export default async function LeaderboardPage() {
         </div>
 
         <div className="divide-y divide-white/3">
-          {rest.map((entry: any, i) => {
+          {rest.map((entry, i) => {
             const isMe = user && entry.id === user.id
             return (
               <div key={entry.id} className={cn('grid grid-cols-[auto_1fr_auto_auto] gap-x-4 px-5 py-3.5 items-center transition-colors',

@@ -5,6 +5,7 @@ import { notFound, useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
 import { LESSONS } from '@/lessons/index'
 import LessonRenderer from '@/components/lesson/LessonRenderer'
+import LessonErrorBoundary from '@/components/lesson/LessonErrorBoundary'
 import { BRAND } from '@/lib/brand'
 
 interface Props {
@@ -67,11 +68,13 @@ export default function LessonClient({ id }: Props) {
         </div>
       )}
 
-      <LessonRenderer
-        lesson={lesson}
-        onClose={() => router.back()}
-        onComplete={handleComplete}
-      />
+      <LessonErrorBoundary>
+        <LessonRenderer
+          lesson={lesson}
+          onClose={() => router.back()}
+          onComplete={handleComplete}
+        />
+      </LessonErrorBoundary>
     </div>
   )
 }

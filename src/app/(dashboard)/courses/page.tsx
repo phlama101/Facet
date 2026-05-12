@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
 import CourseCard from '@/components/features/CourseCard'
 import CoursesFilter from '@/components/features/CoursesFilter'
-import { cn, difficultyColor, categoryColor } from '@/lib/utils'
 import type { Course } from '@/types'
 
 export const metadata: Metadata = { title: 'Courses' }
@@ -27,17 +26,21 @@ export default async function CoursesPage({ searchParams }: Props) {
   let enrollmentIds: string[] = []
   let progressMap: Record<string, number> = {}
   if (user) {
-    const { data: enrollments } = await supabase.from('user_course_enrollments').select('course_id, progress_percentage').eq('user_id', user.id)
-    const safeEnrollments = enrollments as { course_id: string; progress_percentage: number }[] | null
-    if (safeEnrollments) {
-      enrollmentIds = safeEnrollments.map(e => e.course_id)
-      progressMap = Object.fromEntries(safeEnrollments.map(e => [e.course_id, e.progress_percentage]))
+    const { data: rawEnrollments } = await supabase
+      .from('user_course_enrollments')
+      .select('course_id, progress_percentage')
+      .eq('user_id', user.id)
+    const enrollments = rawEnrollments as { course_id: string; progress_percentage: number }[] | null
+    if (enrollments) {
+      enrollmentIds = enrollments.map(e => e.course_id)
+      progressMap = Object.fromEntries(enrollments.map(e => [e.course_id, e.progress_percentage]))
     }
   }
 
   const category = params.category && params.category !== 'all' ? params.category : null
   const difficulty = params.difficulty && params.difficulty !== 'all' ? params.difficulty : null
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let query = (supabase.from('courses') as any).select('*').eq('published', true).order('order_index')
   if (category) query = query.eq('category', category)
   if (difficulty) query = query.eq('difficulty', difficulty)

@@ -63,11 +63,3 @@ export function levelTitle(level: number): string {
   return LEVEL_TITLES[level] ?? `Earth Scientist ${level - 19}`
 }
 
-// Legacy aliases — kept for backward compatibility
-/** @deprecated use xpNeededForLevel(level) for the current level's XP ceiling */
-export const XP_PER_LEVEL = 500
-export const xpProgress = xpProgressPct
-export function difficultyColor(_d: string) { return '' }
-export function categoryColor(_c: string)   { return '' }
-export function rarityColor(_r: string)     { return '' }
-export function xpForLevel(level: number)   { return totalXpForLevel(level) }

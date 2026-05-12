@@ -2,17 +2,24 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { cn, difficultyColor } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import EnrollButton from '@/components/features/EnrollButton'
-import { Clock, Zap, BookOpen, CheckCircle2, Lock, ChevronRight, BarChart3 } from 'lucide-react'
+import { Clock, Zap, BookOpen, CheckCircle2, Lock, BarChart3 } from 'lucide-react'
 import type { Course, Module } from '@/types'
 
 interface Props { params: Promise<{ slug: string }> }
 
+const DIFFICULTY_CLASSES: Record<string, string> = {
+  beginner:     'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+  intermediate: 'text-amber-400   border-amber-500/30   bg-amber-500/10',
+  advanced:     'text-orange-400  border-orange-500/30  bg-orange-500/10',
+  expert:       'text-red-400     border-red-500/30     bg-red-500/10',
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const supabase = await createClient()
-  const { data } = await (supabase.from('courses') as any).select('title').eq('slug', slug).single()
+  const { data } = await supabase.from('courses').select('title').eq('slug', slug).single()
   return { title: (data as { title: string } | null)?.title ?? 'Course' }
 }
 
@@ -20,7 +27,12 @@ export default async function CourseDetailPage({ params }: Props) {
   const { slug } = await params
   const supabase = await createClient()
 
-  const { data: courseData } = await (supabase.from('courses') as any).select('*').eq('slug', slug).single()
+  const { data: courseData } = await supabase
+    .from('courses')
+    .select('*')
+    .eq('slug', slug)
+    .single()
+
   const course = courseData as Course | null
   if (!course) notFound()
 
@@ -31,25 +43,45 @@ export default async function CourseDetailPage({ params }: Props) {
 
   if (user) {
     const [enrollRes, lpRes, profileRes] = await Promise.all([
-      supabase.from('user_course_enrollments').select('progress_percentage').eq('user_id', user.id).eq('course_id', course.id).single(),
-      supabase.from('user_lesson_progress').select('lesson_id').eq('user_id', user.id),
-      (supabase.from('profiles') as any).select('subscription').eq('id', user.id).single(),
+      supabase
+        .from('user_course_enrollments')
+        .select('progress_percentage')
+        .eq('user_id', user.id)
+        .eq('course_id', course.id)
+        .single(),
+      supabase
+        .from('user_lesson_progress')
+        .select('lesson_id')
+        .eq('user_id', user.id),
+      supabase
+        .from('profiles')
+        .select('subscription')
+        .eq('id', user.id)
+        .single(),
     ])
     const safeEnroll = enrollRes.data as { progress_percentage: number } | null
     enrolled = !!safeEnroll
     progress = safeEnroll?.progress_percentage ?? 0
-    completedLessonIds = (lpRes.data as { lesson_id: string }[] | null)?.map(r => r.lesson_id) ?? []
-    userSubscription = (profileRes.data as { subscription: 'free' | 'pro' | 'expert' } | null)?.subscription ?? 'free'
+    completedLessonIds =
+      (lpRes.data as { lesson_id: string }[] | null)?.map(r => r.lesson_id) ?? []
+    userSubscription =
+      (profileRes.data as { subscription: 'free' | 'pro' | 'expert' } | null)?.subscription ?? 'free'
   }
 
-  const { data: modulesData } = await (supabase.from('modules') as any)
+  const { data: modulesRaw } = await supabase
+    .from('modules')
     .select('*, lessons(*)')
     .eq('course_id', course.id)
     .order('order_index')
-  const modules: Module[] = ((modulesData ?? []) as any[]).map(m => ({
+
+  // The joined `lessons(*)` shape is not captured in the static table type;
+  // cast to the app Module type and sort lessons by order_index.
+  const modules: Module[] = ((modulesRaw ?? []) as unknown as Module[]).map(m => ({
     ...m,
-    lessons: [...(m.lessons ?? [])].sort((a: any, b: any) => a.order_index - b.order_index),
+    lessons: [...(m.lessons ?? [])].sort((a, b) => a.order_index - b.order_index),
   }))
+
+  const difficultyClass = DIFFICULTY_CLASSES[course.difficulty] ?? 'text-[#8b949e] border-white/10 bg-white/5'
 
   return (
     <div className="space-y-8 animate-fade-in">
@@ -60,7 +92,7 @@ export default async function CourseDetailPage({ params }: Props) {
           <span className="text-6xl shrink-0">{course.icon}</span>
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap gap-2 mb-3">
-              <span className={cn('text-xs px-2.5 py-1 rounded-full border font-semibold capitalize', difficultyColor(course.difficulty))}>
+              <span className={cn('text-xs px-2.5 py-1 rounded-full border font-semibold capitalize', difficultyClass)}>
                 {course.difficulty}
               </span>
               <span className="text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[#8b949e] capitalize">{course.category}</span>

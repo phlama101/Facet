@@ -3,7 +3,14 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Clock, Zap, BookOpen, Lock, Sparkles } from 'lucide-react'
-import { cn, difficultyColor } from '@/lib/utils'
+import { cn } from '@/lib/utils'
+
+const DIFFICULTY_CLASSES: Record<string, string> = {
+  beginner:     'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+  intermediate: 'text-amber-400   border-amber-500/30   bg-amber-500/10',
+  advanced:     'text-orange-400  border-orange-500/30  bg-orange-500/10',
+  expert:       'text-red-400     border-red-500/30     bg-red-500/10',
+}
 import type { Course } from '@/types'
 
 interface Props {
@@ -54,7 +61,7 @@ export default function CourseCard({ course, progress, enrolled }: Props) {
           {(!course.is_premium || enrolled) && (
             <span className={cn(
               'text-[11px] px-2.5 py-1 rounded-full border font-semibold uppercase tracking-wide',
-              difficultyColor(course.difficulty)
+              DIFFICULTY_CLASSES[course.difficulty] ?? 'text-[#8b949e] border-white/10 bg-white/5'
             )}>
               {course.difficulty}
             </span>

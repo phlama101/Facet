@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json() as { display_name?: unknown; bio?: unknown }
 
-    const updates: Record<string, string> = {}
+    const updates: { display_name?: string; bio?: string } = {}
 
     if (typeof body.display_name === 'string') {
       const name = body.display_name.trim().slice(0, DISPLAY_NAME_MAX)

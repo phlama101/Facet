@@ -15,11 +15,45 @@ export type Database = {
           last_active: string
           subscription: 'free' | 'pro' | 'expert'
           stripe_customer_id: string | null
+          is_admin: boolean
           created_at: string
           updated_at: string
         }
-        Insert: Partial<Database['public']['Tables']['profiles']['Row']> & { id: string; username: string }
-        Update: Partial<Database['public']['Tables']['profiles']['Row']>
+        Insert: {
+          id: string
+          username: string
+          display_name?: string | null
+          bio?: string | null
+          avatar_color?: string
+          xp?: number
+          level?: number
+          streak?: number
+          longest_streak?: number
+          last_active?: string
+          subscription?: 'free' | 'pro' | 'expert'
+          stripe_customer_id?: string | null
+          is_admin?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          username?: string
+          display_name?: string | null
+          bio?: string | null
+          avatar_color?: string
+          xp?: number
+          level?: number
+          streak?: number
+          longest_streak?: number
+          last_active?: string
+          subscription?: 'free' | 'pro' | 'expert'
+          stripe_customer_id?: string | null
+          is_admin?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       courses: {
         Row: {
@@ -42,8 +76,47 @@ export type Database = {
           published: boolean
           created_at: string
         }
-        Insert: Omit<Database['public']['Tables']['courses']['Row'], 'id' | 'created_at'>
-        Update: Partial<Database['public']['Tables']['courses']['Row']>
+        Insert: {
+          id?: string
+          slug: string
+          title: string
+          description?: string | null
+          long_description?: string | null
+          category: string
+          difficulty: string
+          icon: string
+          color: string
+          gradient: string
+          total_xp?: number
+          estimated_hours?: number
+          prerequisites?: string[]
+          tags?: string[]
+          is_premium?: boolean
+          order_index?: number
+          published?: boolean
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          title?: string
+          description?: string | null
+          long_description?: string | null
+          category?: string
+          difficulty?: string
+          icon?: string
+          color?: string
+          gradient?: string
+          total_xp?: number
+          estimated_hours?: number
+          prerequisites?: string[]
+          tags?: string[]
+          is_premium?: boolean
+          order_index?: number
+          published?: boolean
+          created_at?: string
+        }
+        Relationships: []
       }
       modules: {
         Row: {
@@ -54,8 +127,23 @@ export type Database = {
           order_index: number
           xp_reward: number
         }
-        Insert: Omit<Database['public']['Tables']['modules']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['modules']['Row']>
+        Insert: {
+          id?: string
+          course_id: string
+          title: string
+          description?: string | null
+          order_index?: number
+          xp_reward?: number
+        }
+        Update: {
+          id?: string
+          course_id?: string
+          title?: string
+          description?: string | null
+          order_index?: number
+          xp_reward?: number
+        }
+        Relationships: []
       }
       lessons: {
         Row: {
@@ -70,8 +158,31 @@ export type Database = {
           xp_reward: number
           read_time: number
         }
-        Insert: Omit<Database['public']['Tables']['lessons']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['lessons']['Row']>
+        Insert: {
+          id?: string
+          module_id: string
+          title: string
+          content: string
+          key_concepts?: string[]
+          fun_fact?: string | null
+          type?: string
+          order_index?: number
+          xp_reward?: number
+          read_time?: number
+        }
+        Update: {
+          id?: string
+          module_id?: string
+          title?: string
+          content?: string
+          key_concepts?: string[]
+          fun_fact?: string | null
+          type?: string
+          order_index?: number
+          xp_reward?: number
+          read_time?: number
+        }
+        Relationships: []
       }
       quizzes: {
         Row: {
@@ -82,8 +193,23 @@ export type Database = {
           xp_reward: number
           passing_score: number
         }
-        Insert: Omit<Database['public']['Tables']['quizzes']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['quizzes']['Row']>
+        Insert: {
+          id?: string
+          module_id: string
+          title: string
+          description?: string | null
+          xp_reward?: number
+          passing_score?: number
+        }
+        Update: {
+          id?: string
+          module_id?: string
+          title?: string
+          description?: string | null
+          xp_reward?: number
+          passing_score?: number
+        }
+        Relationships: []
       }
       quiz_questions: {
         Row: {
@@ -96,8 +222,27 @@ export type Database = {
           explanation: string | null
           order_index: number
         }
-        Insert: Omit<Database['public']['Tables']['quiz_questions']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['quiz_questions']['Row']>
+        Insert: {
+          id?: string
+          quiz_id: string
+          question: string
+          type?: string
+          options: string[]
+          correct_answer: string
+          explanation?: string | null
+          order_index?: number
+        }
+        Update: {
+          id?: string
+          quiz_id?: string
+          question?: string
+          type?: string
+          options?: string[]
+          correct_answer?: string
+          explanation?: string | null
+          order_index?: number
+        }
+        Relationships: []
       }
       user_course_enrollments: {
         Row: {
@@ -108,8 +253,80 @@ export type Database = {
           completed_at: string | null
           progress_percentage: number
         }
-        Insert: Omit<Database['public']['Tables']['user_course_enrollments']['Row'], 'id' | 'enrolled_at'>
-        Update: Partial<Database['public']['Tables']['user_course_enrollments']['Row']>
+        Insert: {
+          id?: string
+          user_id: string
+          course_id: string
+          enrolled_at?: string
+          completed_at?: string | null
+          progress_percentage?: number
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          course_id?: string
+          enrolled_at?: string
+          completed_at?: string | null
+          progress_percentage?: number
+        }
+        Relationships: []
+      }
+      user_lesson_progress: {
+        Row: {
+          id: string
+          user_id: string
+          lesson_id: string
+          completed: boolean
+          completed_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          lesson_id: string
+          completed: boolean
+          completed_at: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          lesson_id?: string
+          completed?: boolean
+          completed_at?: string
+        }
+        Relationships: []
+      }
+      user_quiz_attempts: {
+        Row: {
+          id: string
+          user_id: string
+          quiz_id: string
+          score: number
+          passed: boolean
+          xp_earned: number
+          answers: Record<string, string>
+          attempted_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          quiz_id: string
+          score: number
+          passed?: boolean
+          xp_earned?: number
+          answers?: Record<string, string>
+          attempted_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          quiz_id?: string
+          score?: number
+          passed?: boolean
+          xp_earned?: number
+          answers?: Record<string, string>
+          attempted_at?: string
+        }
+        Relationships: []
       }
       achievements: {
         Row: {
@@ -123,8 +340,104 @@ export type Database = {
           condition_value: number
           rarity: 'common' | 'rare' | 'epic' | 'legendary'
         }
-        Insert: Omit<Database['public']['Tables']['achievements']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['achievements']['Row']>
+        Insert: {
+          id?: string
+          title: string
+          description?: string | null
+          icon: string
+          color?: string
+          xp_reward?: number
+          condition_type: string
+          condition_value?: number
+          rarity?: 'common' | 'rare' | 'epic' | 'legendary'
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string | null
+          icon?: string
+          color?: string
+          xp_reward?: number
+          condition_type?: string
+          condition_value?: number
+          rarity?: 'common' | 'rare' | 'epic' | 'legendary'
+        }
+        Relationships: []
+      }
+      user_achievements: {
+        Row: {
+          id: string
+          user_id: string
+          achievement_id: string
+          earned_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          achievement_id: string
+          earned_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          achievement_id?: string
+          earned_at?: string
+        }
+        Relationships: []
+      }
+      cms_lessons: {
+        Row: {
+          id: string
+          title: string
+          track: 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
+          track_name: string
+          level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
+          duration: string
+          xp_reward: number
+          description: string
+          sources: unknown[]
+          sections: unknown[]
+          is_premium: boolean
+          status: 'draft' | 'review' | 'published'
+          created_at: string
+          updated_at: string
+          created_by: string | null
+        }
+        Insert: {
+          id: string
+          title: string
+          track: 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
+          track_name: string
+          level?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
+          duration?: string
+          xp_reward?: number
+          description?: string
+          sources?: unknown[]
+          sections?: unknown[]
+          is_premium?: boolean
+          status?: 'draft' | 'review' | 'published'
+          created_at?: string
+          updated_at?: string
+          created_by?: string | null
+        }
+        Update: {
+          id?: string
+          title?: string
+          track?: 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
+          track_name?: string
+          level?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
+          duration?: string
+          xp_reward?: number
+          description?: string
+          sources?: unknown[]
+          sections?: unknown[]
+          is_premium?: boolean
+          status?: 'draft' | 'review' | 'published'
+          created_at?: string
+          updated_at?: string
+          created_by?: string | null
+        }
+        Relationships: []
       }
     }
     Views: {
@@ -139,7 +452,11 @@ export type Database = {
           streak: number
           rank: number
         }
+        Relationships: []
       }
     }
+    Functions: Record<string, never>
+    Enums: Record<string, never>
+    CompositeTypes: Record<string, never>
   }
 }

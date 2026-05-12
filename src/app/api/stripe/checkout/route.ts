@@ -1,22 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { stripe } from '@/lib/stripe'
+import { stripe, PLANS } from '@/lib/stripe'
 import { createClient } from '@/lib/supabase/server'
+
+// Only allow price IDs that belong to our known plans.
+// This prevents a tampered client request from initiating a checkout session
+// for an arbitrary Stripe price.
+const VALID_PRICE_IDS = new Set(
+  [PLANS.pro.priceId, PLANS.expert.priceId].filter((id): id is string => Boolean(id))
+)
 
 export async function POST(req: NextRequest) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { priceId } = await req.json() as { priceId: string }
-  if (!priceId) return NextResponse.json({ error: 'priceId required' }, { status: 400 })
+  const body = await req.json() as { priceId?: unknown }
+  const priceId = typeof body.priceId === 'string' ? body.priceId.trim() : ''
+
+  if (!priceId || !VALID_PRICE_IDS.has(priceId)) {
+    return NextResponse.json({ error: 'Invalid plan' }, { status: 400 })
+  }
 
   // Get or create a Stripe customer tied to this user
-  const { data: profile } = await (supabase.from('profiles') as any)
+  const { data: profileData } = await supabase
+    .from('profiles')
     .select('stripe_customer_id')
     .eq('id', user.id)
     .single()
+  const profile = profileData as { stripe_customer_id: string | null } | null
 
-  let customerId: string = profile?.stripe_customer_id
+  let customerId = profile?.stripe_customer_id ?? null
 
   if (!customerId) {
     const customer = await stripe.customers.create({
@@ -24,6 +37,7 @@ export async function POST(req: NextRequest) {
       metadata: { supabase_user_id: user.id },
     })
     customerId = customer.id
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (supabase.from('profiles') as any)
       .update({ stripe_customer_id: customerId })
       .eq('id', user.id)
