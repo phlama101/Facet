@@ -12,12 +12,12 @@ interface StatCardProps {
 export default function StatCard({ label, value, sub, icon: Icon, accent }: StatCardProps) {
   return (
     <div
-      className="p-4 rounded-sm relative overflow-hidden"
+      className="p-4 rounded-sm relative overflow-hidden group transition-all duration-300"
       style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
     >
-      {/* Glow blob */}
+      {/* Glow blob — expands on hover */}
       <div
-        className="absolute -top-8 -right-8 w-20 h-20 rounded-full opacity-10 blur-2xl pointer-events-none"
+        className="absolute -top-8 -right-8 w-24 h-24 rounded-full blur-2xl pointer-events-none transition-all duration-500 opacity-10 group-hover:opacity-25 group-hover:scale-150"
         style={{ backgroundColor: accent }}
       />
       <div className="flex items-start justify-between mb-2">

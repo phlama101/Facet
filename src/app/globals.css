@@ -68,6 +68,28 @@
     height: 100%;
   }
 
+  /* Subtle dot-grid overlay for hero sections */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+  }
+
+  /* Facet hexagon grid — lower-fi than FacetBackground, usable inline */
+  .facet-grid {
+    background-image:
+      repeating-linear-gradient(60deg, transparent, transparent 18px, rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 19px),
+      repeating-linear-gradient(-60deg, transparent, transparent 18px, rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 19px);
+    pointer-events: none;
+  }
+
+  /* Glow border for highlighted elements */
+  .glow-jade   { box-shadow: 0 0 16px rgba(127, 194, 155, 0.25); }
+  .glow-accent { box-shadow: 0 0 16px rgba(122, 215, 240, 0.25); }
+  .glow-coral  { box-shadow: 0 0 16px rgba(242, 140, 118, 0.25); }
+  .glow-gold   { box-shadow: 0 0 16px rgba(228, 183, 74,  0.25); }
+  .glow-ruby   { box-shadow: 0 0 16px rgba(226, 91,  110, 0.25); }
+
   /* Leaflet map dark theme */
   .leaflet-container {
     background: #0E0F14;

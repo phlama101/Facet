@@ -36,8 +36,10 @@ const config: Config = {
         sm: '2px',
       },
       animation: {
-        'fade-in':   'fade-in 0.4s ease-out',
-        'slide-up':  'slide-up 0.4s ease-out',
+        'fade-in':      'fade-in 0.4s ease-out',
+        'slide-up':     'slide-up 0.4s ease-out',
+        'lesson-pulse': 'lesson-pulse 2.4s ease-in-out infinite',
+        'path-shimmer': 'path-shimmer 1.8s ease-in-out infinite',
       },
       keyframes: {
         'fade-in': {
@@ -47,6 +49,14 @@ const config: Config = {
         'slide-up': {
           '0%':   { opacity: '0', transform: 'translateY(12px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'lesson-pulse': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%':      { transform: 'scale(1.1)', opacity: '0.85' },
+        },
+        'path-shimmer': {
+          '0%, 100%': { opacity: '1' },
+          '50%':      { opacity: '0.65' },
         },
       },
     },

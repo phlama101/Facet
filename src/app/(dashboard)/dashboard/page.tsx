@@ -191,10 +191,12 @@ export default async function DashboardPage({ searchParams }: Props) {
         className="relative overflow-hidden rounded-sm"
         style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
       >
+        {/* Background layers */}
         <div
           className="absolute inset-0 opacity-40 pointer-events-none"
           style={{ background: `radial-gradient(ellipse at top right, ${BRAND.accent}30 0%, transparent 60%)` }}
         />
+        <div className="absolute inset-0 dot-grid opacity-[0.06] pointer-events-none" />
         <div className="relative p-6 md:p-10 grid md:grid-cols-5 gap-6 items-center">
           <div className="md:col-span-3">
             <div className="text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: BRAND.accent }}>
