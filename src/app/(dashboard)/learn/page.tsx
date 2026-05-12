@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import {
   Zap, Sparkles, ChevronRight, ChevronDown, ChevronUp,
-  Check, Lock, Search, X, Play,
+  Check, Lock, Search, X, Play, ArrowRight,
 } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { FREE_LESSON_IDS } from '@/lib/access'
@@ -42,7 +42,7 @@ const COMBINED_MAP = Object.fromEntries(COMBINED_LIST.map(l => [l.id, l]))
 const pathLessonIds = new Set(LEARNING_PATHS.flatMap(p => p.chapters.flatMap(c => c.lessonIds)))
 const STANDALONE_LIST = COMBINED_LIST.filter(l => !pathLessonIds.has(l.id))
 
-// ─── Lesson card ─────────────────────────────────────────────────────────────
+// ─── Lesson card (search results / standalone grid) ──────────────────────────
 
 function LessonCard({
   lesson, step, isCompleted, isLocked,
@@ -89,10 +89,7 @@ function LessonCard({
                 <track.icon size={13} color={track.color} />
               </div>
             )}
-            <span
-              className="text-[10px] tracking-[0.2em] uppercase font-mono"
-              style={{ color: track.color }}
-            >
+            <span className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: track.color }}>
               {lesson.level}
             </span>
           </div>
@@ -135,7 +132,7 @@ function LessonCard({
   )
 }
 
-// ─── Continue learning banner ─────────────────────────────────────────────────
+// ─── Continue learning hero banner ────────────────────────────────────────────
 
 function ContinueBanner({
   lesson,
@@ -152,51 +149,51 @@ function ContinueBanner({
 }) {
   const track = TRACK_MAP[lesson.track as TrackId]
   const pct = totalInCourse > 0 ? (completedInCourse / totalInCourse) * 100 : 0
+  const lessonNum = completedInCourse + 1
 
   return (
     <Link
       href={`/learn/${lesson.id}`}
-      className="group block relative overflow-hidden rounded-sm transition-all hover:-translate-y-[1px]"
-      style={{ backgroundColor: BRAND.surface, border: `1px solid ${courseColor}40` }}
+      className="group block relative overflow-hidden rounded-sm transition-all hover:-translate-y-[2px]"
+      style={{ backgroundColor: BRAND.surface, border: `1px solid ${courseColor}50` }}
     >
-      {/* Subtle color wash */}
+      {/* Gradient wash */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{ background: `linear-gradient(135deg, ${courseColor}, transparent 60%)` }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: `linear-gradient(120deg, ${courseColor}12 0%, transparent 55%)` }}
+      />
+      {/* Left accent stripe */}
+      <div
+        className="absolute left-0 top-0 bottom-0 w-1 rounded-l-sm"
+        style={{ backgroundColor: courseColor }}
       />
 
-      <div className="relative p-5 flex items-center gap-5">
+      <div className="relative pl-6 pr-5 py-6 flex items-center gap-5">
         {/* Play button */}
         <div
-          className="shrink-0 w-11 h-11 rounded-sm flex items-center justify-center transition-transform group-hover:scale-105"
-          style={{ backgroundColor: `${courseColor}20`, border: `1px solid ${courseColor}50` }}
+          className="shrink-0 w-12 h-12 rounded-sm flex items-center justify-center transition-transform group-hover:scale-105"
+          style={{ backgroundColor: `${courseColor}22`, border: `1px solid ${courseColor}55` }}
         >
-          <Play size={16} color={courseColor} fill={courseColor} />
+          <Play size={18} color={courseColor} fill={courseColor} />
         </div>
 
-        {/* Text */}
+        {/* Text block */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1.5">
             <span
               className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold px-2 py-0.5 rounded-sm"
-              style={{ backgroundColor: `${courseColor}18`, color: courseColor, border: `1px solid ${courseColor}40` }}
+              style={{ backgroundColor: `${courseColor}20`, color: courseColor, border: `1px solid ${courseColor}40` }}
             >
               {pathTitle}
             </span>
-            <span
-              className="text-[9px] tracking-[0.15em] uppercase font-mono"
-              style={{ color: BRAND.textSubtle }}
-            >
-              Continue Learning
+            <span className="text-[9px] tracking-[0.15em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
+              Lesson {lessonNum} of {totalInCourse}
             </span>
           </div>
-          <p className="font-serif leading-tight truncate" style={{ fontSize: '18px', color: BRAND.text }}>
+          <h2 className="font-serif leading-tight" style={{ fontSize: 'clamp(20px, 3vw, 26px)', color: BRAND.text }}>
             {lesson.title}
-          </p>
-          <div
-            className="mt-1.5 flex items-center gap-3 text-[10px] tracking-[0.1em] uppercase"
-            style={{ color: BRAND.textSubtle }}
-          >
+          </h2>
+          <div className="mt-1.5 flex items-center gap-4 text-[10px] tracking-[0.12em] uppercase" style={{ color: BRAND.textSubtle }}>
             <span>{lesson.duration}</span>
             {track && <span style={{ color: track.color }}>{lesson.level}</span>}
             <span className="flex items-center gap-1" style={{ color: BRAND.gold }}>
@@ -205,15 +202,12 @@ function ContinueBanner({
           </div>
         </div>
 
-        {/* Progress + arrow */}
-        <div className="shrink-0 text-right hidden sm:block">
-          <p className="text-[10px] font-mono mb-2" style={{ color: BRAND.textSubtle }}>
-            {completedInCourse} / {totalInCourse} lessons
+        {/* Progress */}
+        <div className="shrink-0 hidden sm:block">
+          <p className="text-[10px] font-mono text-right mb-2" style={{ color: BRAND.textSubtle }}>
+            {completedInCourse} / {totalInCourse} complete
           </p>
-          <div
-            className="w-28 h-1.5 rounded-full overflow-hidden"
-            style={{ backgroundColor: `${courseColor}20` }}
-          >
+          <div className="w-36 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: `${courseColor}18` }}>
             <div
               className="h-full rounded-full transition-all"
               style={{ width: `${pct}%`, backgroundColor: courseColor }}
@@ -223,7 +217,7 @@ function ContinueBanner({
 
         <ChevronRight
           size={16}
-          className="shrink-0 transition-transform group-hover:translate-x-0.5"
+          className="shrink-0 transition-transform group-hover:translate-x-1"
           style={{ color: courseColor }}
         />
       </div>
@@ -231,7 +225,7 @@ function ContinueBanner({
   )
 }
 
-// ─── Collapsed course card ────────────────────────────────────────────────────
+// ─── Collapsed path card ──────────────────────────────────────────────────────
 
 function CourseHeader({
   path,
@@ -239,12 +233,14 @@ function CourseHeader({
   onToggle,
   completedCount,
   availableCount,
+  completedIds,
 }: {
   path: LearningPath
   isExpanded: boolean
   onToggle: () => void
   completedCount: number
   availableCount: number
+  completedIds: Set<string>
 }) {
   const pct = availableCount > 0 ? Math.round((completedCount / availableCount) * 100) : 0
   const allDone = availableCount > 0 && completedCount === availableCount
@@ -268,27 +264,19 @@ function CourseHeader({
           <PathIcon iconId={path.iconId} category="paths" fallback={path.icon} color={path.color} size={20} />
         </div>
 
-        {/* Title + subtitle */}
+        {/* Title + content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <div
-                className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold mb-0.5"
-                style={{ color: path.color }}
-              >
+              <div className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold mb-0.5" style={{ color: path.color }}>
                 {path.level}
               </div>
               <h2 className="font-serif leading-tight" style={{ fontSize: 'clamp(18px, 2.5vw, 22px)' }}>
                 {path.title}
               </h2>
             </div>
-            <div
-              className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center transition-transform"
-              style={{ color: BRAND.textSubtle }}
-            >
-              {isExpanded
-                ? <ChevronUp size={15} />
-                : <ChevronDown size={15} />}
+            <div className="shrink-0 w-7 h-7 rounded-sm flex items-center justify-center" style={{ color: BRAND.textSubtle }}>
+              {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
             </div>
           </div>
           <p className="text-xs mt-1 pr-8 line-clamp-1" style={{ color: BRAND.textSubtle }}>
@@ -307,7 +295,7 @@ function CourseHeader({
               />
             </div>
             <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
-              {completedCount} / {availableCount} lessons
+              {completedCount} / {availableCount}
             </span>
             {allDone && (
               <span
@@ -318,18 +306,53 @@ function CourseHeader({
               </span>
             )}
             {!allDone && completedCount > 0 && !isExpanded && (
-              <span className="text-[10px] shrink-0" style={{ color: path.color }}>
-                {pct}%
-              </span>
+              <span className="text-[10px] shrink-0" style={{ color: path.color }}>{pct}%</span>
             )}
           </div>
+
+          {/* Chapter preview pills — visible only when collapsed */}
+          {!isExpanded && path.chapters.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {path.chapters.slice(0, 5).map((ch, i) => {
+                const available = ch.lessonIds.some(id => COMBINED_MAP[id])
+                const done = available && ch.lessonIds
+                  .filter(id => COMBINED_MAP[id])
+                  .every(id => completedIds.has(id))
+                return (
+                  <span
+                    key={ch.id}
+                    className="flex items-center gap-1 text-[9px] font-mono px-2 py-0.5 rounded-sm leading-none"
+                    style={{
+                      backgroundColor: done ? `${BRAND.jade}12` : available ? `${path.color}10` : BRAND.surfaceHi,
+                      color: done ? BRAND.jade : available ? BRAND.textDim : BRAND.textSubtle,
+                      border: `1px solid ${done ? `${BRAND.jade}30` : available ? `${path.color}20` : BRAND.border}`,
+                    }}
+                  >
+                    {done
+                      ? <Check size={7} strokeWidth={3} />
+                      : <span className="opacity-50">{i + 1}</span>
+                    }
+                    <span>{ch.title}</span>
+                  </span>
+                )
+              })}
+              {path.chapters.length > 5 && (
+                <span
+                  className="text-[9px] font-mono px-2 py-0.5 rounded-sm"
+                  style={{ color: BRAND.textSubtle, backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}
+                >
+                  +{path.chapters.length - 5} more
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </button>
   )
 }
 
-// ─── Linear lesson row (used inside expanded chapters) ────────────────────────
+// ─── Linear lesson row (inside expanded chapter) ─────────────────────────────
 
 function LinearLessonRow({
   lesson, step, isCompleted, isLocked, color,
@@ -343,7 +366,7 @@ function LinearLessonRow({
   return (
     <Link
       href={`/learn/${lesson.id}`}
-      className="flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all hover:-translate-y-[1px] group relative overflow-hidden"
+      className="flex items-start gap-3 px-3 py-3 rounded-sm transition-all hover:-translate-y-[1px] group relative overflow-hidden"
       style={{
         backgroundColor: BRAND.surfaceHi,
         border: `1px solid ${isCompleted ? `${BRAND.jade}35` : BRAND.border}`,
@@ -351,7 +374,7 @@ function LinearLessonRow({
       }}
     >
       <div
-        className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0"
+        className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0 mt-0.5"
         style={isCompleted
           ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
           : { backgroundColor: `${color}15`, color: color, border: `1px solid ${color}35` }}
@@ -359,10 +382,13 @@ function LinearLessonRow({
         {isCompleted ? <Check size={10} strokeWidth={2.5} /> : step}
       </div>
       <div className="flex-1 min-w-0">
-        <div className="text-[13px] leading-snug truncate" style={{ color: isLocked ? BRAND.textSubtle : BRAND.text }}>
+        <div className="text-[14px] font-medium leading-snug truncate" style={{ color: isLocked ? BRAND.textSubtle : BRAND.text }}>
           {lesson.title}
         </div>
-        <div className="flex items-center gap-2 text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>
+        <div className="text-[11px] leading-snug mt-0.5 line-clamp-1" style={{ color: BRAND.textSubtle }}>
+          {lesson.description}
+        </div>
+        <div className="flex items-center gap-2 text-[10px] mt-1" style={{ color: BRAND.textSubtle }}>
           <span>{lesson.duration}</span>
           <span className="flex items-center gap-0.5" style={{ color: BRAND.gold }}>
             <Zap size={8} fill={BRAND.gold} /> {lesson.xpReward}
@@ -370,8 +396,8 @@ function LinearLessonRow({
         </div>
       </div>
       {isLocked
-        ? <Lock size={11} style={{ color: BRAND.textSubtle, flexShrink: 0 }} />
-        : <ChevronRight size={12} className="shrink-0 opacity-0 group-hover:opacity-60 transition-opacity" style={{ color }} />
+        ? <Lock size={11} className="mt-0.5" style={{ color: BRAND.textSubtle, flexShrink: 0 }} />
+        : <ChevronRight size={12} className="shrink-0 mt-0.5 opacity-0 group-hover:opacity-60 transition-opacity" style={{ color }} />
       }
     </Link>
   )
@@ -428,24 +454,21 @@ export default function LearnPage() {
         const completedSet = new Set(rows.map(r => r.lesson_id))
         setCompletedIds(completedSet)
 
-        // Find the path containing the most recently completed lesson
+        // Find path containing the most recently completed lesson
         const mostRecentId = rows[0].lesson_id
         const activePath = LEARNING_PATHS.find(p =>
           p.chapters.some(c => c.lessonIds.includes(mostRecentId)),
         )
         if (!activePath) return
 
-        // Auto-expand that path
         setExpandedCourses(new Set([activePath.id]))
 
-        // Count completed / available in that path
         const availableIds = activePath.chapters
           .flatMap(c => c.lessonIds)
           .filter(id => COMBINED_MAP[id])
         const completedInCourse = availableIds.filter(id => completedSet.has(id)).length
         const totalInCourse = availableIds.length
 
-        // Find the first incomplete lesson in the path (in chapter order)
         let nextLesson: DisplayLesson | null = null
         outer: for (const chapter of activePath.chapters) {
           for (const id of chapter.lessonIds) {
@@ -468,6 +491,23 @@ export default function LearnPage() {
       })
     })
   }, [])
+
+  // Per-track completion stats for filter buttons
+  const trackCompletionMap = useMemo(() => {
+    const map: Record<string, { completed: number; total: number }> = {}
+    COMBINED_LIST.forEach(l => {
+      if (!map[l.track]) map[l.track] = { completed: 0, total: 0 }
+      map[l.track].total++
+      if (completedIds.has(l.id)) map[l.track].completed++
+    })
+    return map
+  }, [completedIds])
+
+  // Total XP earned from completed lessons
+  const earnedXp = useMemo(
+    () => Array.from(completedIds).reduce((sum, id) => sum + (COMBINED_MAP[id]?.xpReward ?? 0), 0),
+    [completedIds],
+  )
 
   function toggleCourse(courseId: string) {
     setExpandedCourses(prev => {
@@ -502,7 +542,7 @@ export default function LearnPage() {
     ? searchResults.length > 0
     : visibleCourses.length > 0 || filteredStandalone.length > 0
 
-  // Observe only chapter sections that are currently expanded
+  // Observe chapter sections that are currently expanded
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (observerRef.current) observerRef.current.disconnect()
@@ -548,23 +588,40 @@ export default function LearnPage() {
       if (prev.has(courseId)) return prev
       return new Set([...prev, courseId])
     })
-    // Small delay lets the expansion render before scrolling
     setTimeout(() => scrollToAnchor(`course-${courseId}`), 50)
   }
 
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Header */}
-      <div className="border-b pb-4" style={{ borderColor: BRAND.border }}>
+      <div className="border-b pb-5" style={{ borderColor: BRAND.border }}>
         <div className="text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: BRAND.accent }}>
           Lesson Library
         </div>
         <h1 className="font-serif" style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1 }}>
           Every <em style={{ color: BRAND.accent }}>facet</em> of earth science
         </h1>
+
+        {/* Progress stats — only shown when user has completed lessons */}
+        {completedIds.size > 0 && (
+          <div
+            className="flex items-center gap-4 mt-4 text-[10px] tracking-[0.1em] uppercase font-mono"
+            style={{ color: BRAND.textSubtle }}
+          >
+            <span className="flex items-center gap-1.5">
+              <Check size={10} strokeWidth={2.5} style={{ color: BRAND.jade }} />
+              {completedIds.size} lesson{completedIds.size !== 1 ? 's' : ''} complete
+            </span>
+            <span style={{ color: BRAND.border }}>·</span>
+            <span className="flex items-center gap-1" style={{ color: BRAND.gold }}>
+              <Zap size={9} fill={BRAND.gold} />
+              {earnedXp.toLocaleString()} XP earned
+            </span>
+          </div>
+        )}
       </div>
 
-      {/* Continue learning banner — only when user has progress */}
+      {/* Continue learning hero — only when user has progress */}
       {continueInfo && !isSearching && (
         <ContinueBanner {...continueInfo} />
       )}
@@ -614,9 +671,10 @@ export default function LearnPage() {
           All
         </button>
         {TRACKS.map(t => {
-          const total = COMBINED_LIST.filter(l => l.track === t.id).length
-          if (total === 0) return null
+          const stats = trackCompletionMap[t.id] || { completed: 0, total: 0 }
+          if (stats.total === 0) return null
           const isActive = activeTrack === t.id
+          const hasProgress = completedIds.size > 0 && stats.completed > 0
           return (
             <button
               key={t.id}
@@ -631,7 +689,9 @@ export default function LearnPage() {
             >
               <t.icon size={12} />
               {t.name}
-              <span style={{ opacity: 0.6 }}>({total})</span>
+              <span style={{ opacity: 0.65 }}>
+                ({hasProgress ? `${stats.completed}/${stats.total}` : stats.total})
+              </span>
             </button>
           )
         })}
@@ -737,16 +797,17 @@ export default function LearnPage() {
               onToggle={() => toggleCourse(path.id)}
               completedCount={completedCount}
               availableCount={availableCount}
+              completedIds={completedIds}
             />
 
             {isExpanded && (
               <div className="mt-3">
-                {/* Path sequence intro */}
+                {/* Sequence hint */}
                 <div
                   className="flex items-center gap-2 px-1 mb-5 text-[10px]"
                   style={{ color: BRAND.textSubtle }}
                 >
-                  <ChevronRight size={10} />
+                  <ArrowRight size={10} />
                   <span>Study chapters in order — each builds on the previous</span>
                 </div>
 
@@ -789,17 +850,17 @@ export default function LearnPage() {
                           {!isLast && (
                             <div
                               className="w-px flex-1 my-1"
-                              style={{ backgroundColor: allChapterDone ? `${BRAND.jade}40` : `${BRAND.border}`, minHeight: '24px' }}
+                              style={{ backgroundColor: allChapterDone ? `${BRAND.jade}40` : BRAND.border, minHeight: '24px' }}
                             />
                           )}
                         </div>
 
                         {/* Right: chapter content */}
                         <div className={`flex-1 min-w-0 ${isLast ? 'pb-2' : 'pb-8'}`}>
-                          {/* Chapter header row */}
-                          <div className="flex items-center gap-2 mb-3" style={{ minHeight: '28px' }}>
+                          {/* Chapter header */}
+                          <div className="flex items-start gap-2 mb-3" style={{ minHeight: '28px' }}>
                             <div
-                              className="w-6 h-6 rounded-sm flex items-center justify-center shrink-0"
+                              className="w-6 h-6 rounded-sm flex items-center justify-center shrink-0 mt-0.5"
                               style={{ backgroundColor: `${path.color}10`, border: `1px solid ${path.color}25` }}
                             >
                               <PathIcon
@@ -810,25 +871,34 @@ export default function LearnPage() {
                                 size={12}
                               />
                             </div>
-                            <h3
-                              className="font-mono text-[11px] tracking-[0.12em] uppercase font-semibold flex-1 truncate"
-                              style={{ color: allChapterDone ? BRAND.textSubtle : BRAND.text }}
-                            >
-                              {chapter.title}
-                            </h3>
-                            {allChapterDone && (
-                              <Check size={11} strokeWidth={2.5} style={{ color: BRAND.jade, flexShrink: 0 }} />
-                            )}
-                            {!allChapterDone && completedInChapter > 0 && (
-                              <span className="text-[9px] font-mono shrink-0" style={{ color: path.color }}>
-                                {completedInChapter}/{availableInChapter}
-                              </span>
-                            )}
-                            {availableInChapter === 0 && (
-                              <span className="text-[9px] tracking-[0.1em] uppercase shrink-0" style={{ color: BRAND.textSubtle }}>
-                                Coming soon
-                              </span>
-                            )}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2">
+                                <h3
+                                  className="font-mono text-[11px] tracking-[0.12em] uppercase font-semibold truncate"
+                                  style={{ color: allChapterDone ? BRAND.textSubtle : BRAND.text }}
+                                >
+                                  {chapter.title}
+                                </h3>
+                                {allChapterDone && (
+                                  <Check size={11} strokeWidth={2.5} style={{ color: BRAND.jade, flexShrink: 0 }} />
+                                )}
+                                {!allChapterDone && completedInChapter > 0 && (
+                                  <span className="text-[9px] font-mono shrink-0" style={{ color: path.color }}>
+                                    {completedInChapter}/{availableInChapter}
+                                  </span>
+                                )}
+                                {availableInChapter === 0 && (
+                                  <span className="text-[9px] tracking-[0.1em] uppercase shrink-0" style={{ color: BRAND.textSubtle }}>
+                                    Coming soon
+                                  </span>
+                                )}
+                              </div>
+                              {chapter.description && (
+                                <p className="text-[11px] mt-0.5 leading-snug line-clamp-2" style={{ color: BRAND.textSubtle }}>
+                                  {chapter.description}
+                                </p>
+                              )}
+                            </div>
                           </div>
 
                           {/* Lesson list */}
