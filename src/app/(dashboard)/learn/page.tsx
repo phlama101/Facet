@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import {
   Zap, Sparkles, ChevronRight, ChevronDown, ChevronUp,
-  Check, Compass, Lock, Search, X, Play,
+  Check, Lock, Search, X, Play,
 } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { FREE_LESSON_IDS } from '@/lib/access'
@@ -329,6 +329,54 @@ function CourseHeader({
   )
 }
 
+// ─── Linear lesson row (used inside expanded chapters) ────────────────────────
+
+function LinearLessonRow({
+  lesson, step, isCompleted, isLocked, color,
+}: {
+  lesson: DisplayLesson
+  step: number
+  isCompleted: boolean
+  isLocked: boolean
+  color: string
+}) {
+  return (
+    <Link
+      href={`/learn/${lesson.id}`}
+      className="flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all hover:-translate-y-[1px] group relative overflow-hidden"
+      style={{
+        backgroundColor: BRAND.surfaceHi,
+        border: `1px solid ${isCompleted ? `${BRAND.jade}35` : BRAND.border}`,
+        opacity: isLocked ? 0.75 : 1,
+      }}
+    >
+      <div
+        className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0"
+        style={isCompleted
+          ? { backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}50` }
+          : { backgroundColor: `${color}15`, color: color, border: `1px solid ${color}35` }}
+      >
+        {isCompleted ? <Check size={10} strokeWidth={2.5} /> : step}
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-[13px] leading-snug truncate" style={{ color: isLocked ? BRAND.textSubtle : BRAND.text }}>
+          {lesson.title}
+        </div>
+        <div className="flex items-center gap-2 text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>
+          <span>{lesson.duration}</span>
+          <span className="flex items-center gap-0.5" style={{ color: BRAND.gold }}>
+            <Zap size={8} fill={BRAND.gold} /> {lesson.xpReward}
+          </span>
+        </div>
+      </div>
+      {isLocked
+        ? <Lock size={11} style={{ color: BRAND.textSubtle, flexShrink: 0 }} />
+        : <ChevronRight size={12} className="shrink-0 opacity-0 group-hover:opacity-60 transition-opacity" style={{ color }} />
+      }
+    </Link>
+  )
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function moduleAnchorId(pathId: string, chapterId: string) {
@@ -343,7 +391,9 @@ export default function LearnPage() {
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set())
   const [subscription, setSubscription] = useState<string>('free')
   const [activeAnchor, setActiveAnchor] = useState<string | null>(null)
-  const [expandedCourses, setExpandedCourses] = useState<Set<string>>(new Set())
+  const [expandedCourses, setExpandedCourses] = useState<Set<string>>(
+    () => new Set([LEARNING_PATHS[0]?.id ?? ''])
+  )
   const [continueInfo, setContinueInfo] = useState<{
     lesson: DisplayLesson
     pathTitle: string
@@ -590,60 +640,38 @@ export default function LearnPage() {
       {/* Sticky chapter nav — only for expanded paths */}
       {!isSearching && visibleCourses.some(c => expandedCourses.has(c.id)) && (
         <div
-          className="sticky top-0 z-20 -mx-2 px-2 py-3 backdrop-blur-md"
+          className="sticky top-0 z-20 -mx-2 px-2 py-2 backdrop-blur-md"
           style={{ backgroundColor: `${BRAND.bg}d9`, borderBottom: `1px solid ${BRAND.border}` }}
         >
-          <div className="flex items-center gap-2 mb-2">
-            <Compass size={11} style={{ color: BRAND.textSubtle }} />
-            <span className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
-              Jump to chapter
-            </span>
-          </div>
-          <div className="space-y-2">
-            {visibleCourses.filter(p => expandedCourses.has(p.id)).map(path => {
-              const availableInPath = path.chapters.reduce(
-                (n, ch) => n + ch.lessonIds.filter(id => COMBINED_MAP[id]).length,
-                0,
-              )
-              return (
-                <div key={path.id} className="flex items-center gap-2 overflow-x-auto pb-0.5">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5">
+            {visibleCourses.filter(p => expandedCourses.has(p.id)).flatMap(path =>
+              path.chapters.map((ch, i) => {
+                const anchor = moduleAnchorId(path.id, ch.id)
+                const isActive = activeAnchor === anchor
+                const available = ch.lessonIds.some(id => COMBINED_MAP[id])
+                const allDone = available && ch.lessonIds.filter(id => COMBINED_MAP[id]).every(id => completedIds.has(id))
+                return (
                   <button
-                    onClick={() => scrollToAnchor(`course-${path.id}`)}
-                    className="shrink-0 px-2.5 py-1 rounded-sm text-[10px] font-mono tracking-[0.1em] uppercase font-bold flex items-center gap-1.5 transition-colors"
-                    style={{ backgroundColor: `${path.color}1a`, color: path.color, border: `1px solid ${path.color}55` }}
+                    key={anchor}
+                    onClick={() => scrollToAnchor(anchor)}
+                    className="shrink-0 px-2.5 py-1 rounded-sm text-[10px] font-mono flex items-center gap-1.5 transition-all whitespace-nowrap"
+                    style={{
+                      backgroundColor: isActive ? path.color : BRAND.surface,
+                      color: isActive ? BRAND.bg : available ? BRAND.text : BRAND.textSubtle,
+                      border: `1px solid ${isActive ? path.color : BRAND.border}`,
+                      opacity: available ? 1 : 0.45,
+                    }}
+                    title={ch.title}
                   >
-                    <path.icon size={10} />
-                    {path.title}
+                    {allDone
+                      ? <Check size={8} strokeWidth={3} style={{ color: isActive ? BRAND.bg : BRAND.jade }} />
+                      : <span>{i + 1}</span>
+                    }
+                    <span className="hidden sm:inline">{ch.title}</span>
                   </button>
-                  {path.chapters.map((ch, i) => {
-                    const anchor = moduleAnchorId(path.id, ch.id)
-                    const isActive = activeAnchor === anchor
-                    const available = ch.lessonIds.filter(id => COMBINED_MAP[id]).length
-                    const allDone = available > 0 && ch.lessonIds.every(id => completedIds.has(id))
-                    return (
-                      <button
-                        key={ch.id}
-                        onClick={() => scrollToAnchor(anchor)}
-                        className="shrink-0 px-2.5 py-1 rounded-sm text-[10px] font-mono tracking-[0.05em] flex items-center gap-1.5 transition-all whitespace-nowrap"
-                        style={{
-                          backgroundColor: isActive ? path.color : BRAND.surface,
-                          color: isActive ? BRAND.bg : (available > 0 ? BRAND.text : BRAND.textSubtle),
-                          border: `1px solid ${isActive ? path.color : BRAND.border}`,
-                          opacity: available > 0 ? 1 : 0.5,
-                        }}
-                        title={ch.title}
-                      >
-                        <span>{i + 1}</span>
-                        {allDone && <Check size={9} strokeWidth={3} style={{ color: isActive ? BRAND.bg : BRAND.jade }} />}
-                      </button>
-                    )
-                  })}
-                  <span className="shrink-0 ml-1 text-[9px] font-mono tracking-[0.1em] uppercase" style={{ color: BRAND.textSubtle }}>
-                    {availableInPath} live
-                  </span>
-                </div>
-              )
-            })}
+                )
+              })
+            )}
           </div>
         </div>
       )}

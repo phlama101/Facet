@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import PathImageClient from './PathImageClient'
 import type { LucideIcon } from 'lucide-react'
 
 export default function PathIcon({
@@ -16,21 +14,22 @@ export default function PathIcon({
   color: string
   size?: number
 }) {
-  const [failed, setFailed] = useState(false)
-
-  if (iconId && !failed) {
-    return (
-      <img
-        src={`/icons/${category}/${iconId}.webp`}
-        width={size}
-        height={size}
-        alt=""
-        draggable={false}
-        onError={() => setFailed(true)}
-        style={{ objectFit: 'contain', display: 'block' }}
-      />
-    )
-  }
-
-  return <Fallback size={size} color={color} />
+  return (
+    <span
+      style={{
+        position: 'relative',
+        width: size,
+        height: size,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+      }}
+    >
+      <Fallback size={size} color={color} />
+      {iconId && (
+        <PathImageClient src={`/icons/${category}/${iconId}.webp`} size={size} />
+      )}
+    </span>
+  )
 }

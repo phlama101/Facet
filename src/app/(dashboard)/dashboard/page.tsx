@@ -7,7 +7,7 @@ import {
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import {
-  LESSON_LIST, TRACK_MAP, LEARNING_PATHS,
+  LESSON_LIST, LEARNING_PATHS,
 } from '@/lessons/index'
 import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
@@ -46,10 +46,6 @@ function localDayKey(daysAgo: number): string {
   return d.toISOString().slice(0, 10)
 }
 
-function shortModuleName(title: string): string {
-  const parts = title.split('—')
-  return parts.length >= 2 ? parts.slice(1).join('—').trim() : title
-}
 
 export default async function DashboardPage({ searchParams }: Props) {
   const params = await (searchParams ?? Promise.resolve({} as Record<string, string>))
@@ -346,182 +342,92 @@ export default async function DashboardPage({ searchParams }: Props) {
         </div>
       )}
 
-      {/* Curriculum — all 7 courses */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Curriculum</div>
-            <h2 className="font-serif" style={{ fontSize: '26px' }}>Course progress</h2>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/skill-tree"
-              className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
-              style={{ color: BRAND.amethyst }}
-            >
-              Skill tree <Trophy size={12} />
-            </Link>
-            <Link
-              href="/learn"
-              className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
-              style={{ color: BRAND.accent }}
-            >
-              All lessons <ChevronRight size={14} />
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          {sortedCourseStats.map(({ course, availableIds, doneIds, nextId, pctDone }) => {
-            const isComplete = availableIds.length > 0 && doneIds.length === availableIds.length
-            const hasStarted = doneIds.length > 0
-            const nextLesson = nextId ? lessonMap[nextId] : null
-            return (
-              <div
-                key={course.id}
-                className="rounded-sm overflow-hidden"
-                style={{ border: `1px solid ${hasStarted ? `${course.color}30` : BRAND.border}`, backgroundColor: BRAND.surface }}
+      {/* Active Paths */}
+      {(() => {
+        const inProgress = sortedCourseStats.filter(s => s.doneIds.length > 0 && s.nextId !== null).slice(0, 3)
+        const displayPaths = inProgress.length > 0 ? inProgress : sortedCourseStats.slice(0, 1)
+        return (
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>
+                Your Paths
+              </div>
+              <Link
+                href="/learn"
+                className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
+                style={{ color: BRAND.accent }}
               >
-                {/* Course header */}
+                Browse all <ChevronRight size={12} />
+              </Link>
+            </div>
+            {displayPaths.map(({ course, availableIds, doneIds, nextId, pctDone }) => {
+              const hasStarted = doneIds.length > 0
+              const isComplete = availableIds.length > 0 && doneIds.length === availableIds.length
+              const pathNextLesson = nextId ? lessonMap[nextId] : null
+              return (
                 <div
-                  className="px-5 py-4"
-                  style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: hasStarted ? `${course.color}08` : BRAND.surfaceHi }}
+                  key={course.id}
+                  className="rounded-sm p-4"
+                  style={{
+                    border: `1px solid ${hasStarted ? `${course.color}30` : BRAND.border}`,
+                    backgroundColor: BRAND.surface,
+                  }}
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0"
+                      style={{ backgroundColor: `${course.color}15`, border: `1px solid ${course.color}35` }}
+                    >
+                      <PathIcon iconId={course.iconId} category="paths" fallback={course.icon} color={course.color} size={18} />
+                    </div>
+                    <div className="flex-1 min-w-0">
                       <div
-                        className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0"
-                        style={{ backgroundColor: `${course.color}18`, border: `1px solid ${course.color}40` }}
+                        className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold mb-0.5"
+                        style={{ color: course.color }}
                       >
-                        <PathIcon iconId={course.iconId} category="paths" fallback={course.icon} color={course.color} size={20} />
+                        {course.level}
                       </div>
-                      <div className="min-w-0">
-                        <div
-                          className="text-[9px] tracking-[0.2em] uppercase font-mono font-bold"
-                          style={{ color: course.color }}
-                        >
-                          {course.level}
-                        </div>
-                        <div className="font-serif leading-tight truncate" style={{ fontSize: '16px', color: BRAND.text }}>
-                          {course.title}
-                        </div>
+                      <div className="font-serif leading-tight truncate" style={{ fontSize: '15px', color: BRAND.text }}>
+                        {course.title}
                       </div>
                     </div>
-
                     {isComplete ? (
                       <span
                         className="shrink-0 flex items-center gap-1 text-[9px] tracking-[0.12em] uppercase px-2 py-1 rounded-sm"
                         style={{ backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}40` }}
                       >
-                        <Check size={9} strokeWidth={2.5} /> Complete
+                        <Check size={9} strokeWidth={2.5} /> Done
                       </span>
-                    ) : nextLesson ? (
+                    ) : pathNextLesson ? (
                       <Link
-                        href={`/learn/${nextLesson.id}`}
+                        href={`/learn/${pathNextLesson.id}`}
                         className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80"
                         style={{ backgroundColor: `${course.color}18`, color: course.color, border: `1px solid ${course.color}35` }}
                       >
-                        {hasStarted ? 'Continue' : 'Start'}
-                        <ArrowRight size={10} />
+                        {hasStarted ? 'Continue' : 'Start'} <ArrowRight size={10} />
                       </Link>
                     ) : null}
                   </div>
-
-                  {/* Course-level progress bar */}
                   <div className="mt-3 flex items-center gap-3">
-                    <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: `${course.color}20` }}>
+                    <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ backgroundColor: `${course.color}15` }}>
                       <div
                         className="h-full rounded-full transition-all"
                         style={{ width: `${pctDone}%`, backgroundColor: isComplete ? BRAND.jade : course.color }}
                       />
                     </div>
                     <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
-                      {doneIds.length} / {availableIds.length}
+                      {doneIds.length}/{availableIds.length}
                     </span>
                     {hasStarted && !isComplete && (
                       <span className="text-[10px] font-mono shrink-0" style={{ color: course.color }}>{pctDone}%</span>
                     )}
                   </div>
                 </div>
-
-                {/* Chapter rows */}
-                <div className="divide-y" style={{ borderColor: BRAND.border }}>
-                  {course.chapters.map((chapter, ci) => {
-                    const avail = chapter.lessonIds.filter(id => lessonMap[id])
-                    const done = avail.filter(id => completedSet.has(id))
-                    const modNextId = avail.find(id => !completedSet.has(id)) ?? null
-                    const modNextLesson = modNextId ? lessonMap[modNextId] : null
-                    const modPct = avail.length ? Math.round((done.length / avail.length) * 100) : 0
-                    const modDone = avail.length > 0 && done.length === avail.length
-                    const modStarted = done.length > 0
-
-                    return (
-                      <div key={chapter.id} className="px-4 py-3 flex items-center gap-3">
-                        {/* Chapter number / check */}
-                        <div
-                          className="w-5 h-5 rounded-sm flex items-center justify-center text-[9px] font-mono font-bold shrink-0"
-                          style={modDone
-                            ? { backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}35` }
-                            : { backgroundColor: `${course.color}10`, color: modStarted ? course.color : BRAND.textSubtle, border: `1px solid ${modStarted ? course.color : BRAND.border}30` }}
-                        >
-                          {modDone ? <Check size={9} strokeWidth={2.5} /> : ci + 1}
-                        </div>
-
-                        {/* Chapter name + progress */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2">
-                            <span
-                              className="text-[11px] font-mono truncate"
-                              style={{ color: modDone ? BRAND.textDim : modStarted ? BRAND.textDim : BRAND.textSubtle }}
-                            >
-                              {chapter.title}
-                            </span>
-                            {avail.length > 0 && (
-                              <span className="text-[10px] font-mono shrink-0" style={{ color: BRAND.textSubtle }}>
-                                {done.length}/{avail.length}
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Next lesson title — show only if chapter is started but not done */}
-                          {modStarted && !modDone && modNextLesson && (
-                            <div className="text-[10px] mt-0.5 truncate" style={{ color: course.color }}>
-                              → {modNextLesson.title}
-                            </div>
-                          )}
-
-                          {avail.length === 0 && (
-                            <div className="text-[10px] mt-0.5" style={{ color: BRAND.textSubtle }}>Coming soon</div>
-                          )}
-
-                          {/* Mini progress bar */}
-                          {avail.length > 0 && modStarted && !modDone && (
-                            <div className="mt-1.5 h-0.5 rounded-full overflow-hidden w-full" style={{ backgroundColor: `${course.color}20` }}>
-                              <div className="h-full rounded-full" style={{ width: `${modPct}%`, backgroundColor: course.color }} />
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Action: only show on the first incomplete chapter */}
-                        {!modDone && avail.length > 0 && modNextLesson && !modStarted && (
-                          <Link
-                            href={`/learn/${modNextLesson.id}`}
-                            className="shrink-0 p-1.5 rounded-sm transition-opacity hover:opacity-70"
-                            style={{ color: BRAND.textSubtle }}
-                            title={`Start ${chapter.title}`}
-                          >
-                            <ChevronRight size={13} />
-                          </Link>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
+              )
+            })}
+          </div>
+        )
+      })()}
     </div>
   )
 }
