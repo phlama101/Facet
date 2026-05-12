@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import type { V2ConceptSection } from '@/lessons-v2/types'
-import InteractionRenderer from '../interactions/InteractionRenderer'
+import type { IntroSection } from '@/lessons/types'
+import InteractionRenderer from '@/components/interactions/InteractionRenderer'
 
-interface Props { section: V2ConceptSection }
+interface Props { section: IntroSection }
 
 function escapeHtml(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -21,7 +21,7 @@ function renderBody(text: string) {
         key={i}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.12 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.4, delay: 0.15 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
         className="text-base leading-relaxed"
         style={{ color: BRAND.textDim }}
         dangerouslySetInnerHTML={{ __html: html }}
@@ -30,7 +30,7 @@ function renderBody(text: string) {
   })
 }
 
-export default function ConceptBlock({ section }: Props) {
+export default function IntroBlock({ section }: Props) {
   return (
     <div className="space-y-6">
       <div className="space-y-1">
@@ -39,16 +39,16 @@ export default function ConceptBlock({ section }: Props) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
           className="text-xs tracking-widest uppercase"
-          style={{ color: BRAND.accent }}
+          style={{ color: BRAND.textSubtle }}
         >
-          Concept
+          Introduction
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
           className="font-serif"
-          style={{ fontSize: 'clamp(22px, 3.5vw, 32px)', lineHeight: 1.15, color: BRAND.text }}
+          style={{ fontSize: 'clamp(24px, 4vw, 36px)', lineHeight: 1.1, color: BRAND.text }}
         >
           {section.title}
         </motion.h2>
@@ -56,31 +56,23 @@ export default function ConceptBlock({ section }: Props) {
 
       <div className="space-y-4">{renderBody(section.body)}</div>
 
-      {section.points && section.points.length > 0 && (
-        <motion.ul
-          className="space-y-3 pl-1"
-          initial="hidden"
-          animate="show"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } } }}
+      {section.keyTerms && section.keyTerms.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.25 }}
+          className="space-y-2"
         >
-          {section.points.map((point, i) => (
-            <motion.li
-              key={i}
-              variants={{ hidden: { opacity: 0, x: -12 }, show: { opacity: 1, x: 0, transition: { ease: [0.16, 1, 0.3, 1] } } }}
-              className="flex gap-3 text-sm leading-relaxed"
-              style={{ color: BRAND.textDim }}
-            >
-              <motion.span
-                style={{ color: BRAND.accent, flexShrink: 0, marginTop: '2px' }}
-                whileHover={{ x: 3 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-              >
-                ▸
-              </motion.span>
-              <span>{point}</span>
-            </motion.li>
-          ))}
-        </motion.ul>
+          <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Key Terms</p>
+          <div className="space-y-2">
+            {section.keyTerms.map((kt, i) => (
+              <div key={i} className="rounded-lg p-3" style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}>
+                <span className="text-xs font-semibold" style={{ color: BRAND.accent }}>{kt.term}</span>
+                <p className="text-xs leading-relaxed mt-1" style={{ color: BRAND.textDim }}>{kt.def}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       )}
 
       {section.interaction && (

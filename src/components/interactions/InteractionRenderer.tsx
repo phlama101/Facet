@@ -1,12 +1,12 @@
 'use client'
 
-import type { InteractionConfig } from '@/lessons-v2/types'
+import type { InteractionConfig } from '@/lessons/types'
 import SliderSimulation from './SliderSimulation'
 import NodeExplorer from './NodeExplorer'
 import TimelineScrubber from './TimelineScrubber'
 import SandboxSimulator from './SandboxSimulator'
-import LayeredVisual from '@/components/interactions/LayeredVisual'
-import FlowSimulator from '@/components/interactions/FlowSimulator'
+import LayeredVisual from './LayeredVisual'
+import FlowSimulator from './FlowSimulator'
 
 interface Props {
   interaction: InteractionConfig

@@ -22,7 +22,9 @@ const earthInternalStructure: Lesson = {
     {
       type: 'intro',
       title: "We've never seen it",
-      body: `In 1970, Soviet scientists began drilling the deepest hole ever attempted — the Kola Superdeep Borehole in northwestern Russia. After 24 years of effort they reached **12.2 km**. That sounds impressive until you compare it to Earth's radius of **6,371 km**. They had drilled roughly 1/500th of the way through the planet — barely into the crust.
+      body: `How do we know what's 6,000 km beneath our feet without ever drilling that deep? The answer is stranger and more elegant than most people expect.
+
+In 1970, Soviet scientists began drilling the deepest hole ever attempted — the Kola Superdeep Borehole in northwestern Russia. After 24 years of effort they reached **12.2 km**. That sounds impressive until you compare it to Earth's radius of **6,371 km**. They had drilled roughly 1/500th of the way through the planet — barely into the crust.
 
 So how do we know what lies below? We have never seen it. No camera, no probe, and no drill has come close to Earth's center.
 
@@ -51,7 +53,7 @@ This lesson introduces the four layers of Earth's interior, the seismic evidence
     {
       type: 'concept',
       title: 'Four layers — and how we know',
-      body: `Earth is divided into four major layers, nested like the rings of an onion from surface to center: the **crust**, the **mantle**, the **outer core**, and the **inner core**. Each differs in composition, temperature, pressure, and physical state.
+      body: `Earth is divided into four major layers, nested like the rings of an onion from surface to center: the **crust**, the **mantle**, the **outer core**, and the **inner core**. Each differs in composition, temperature, pressure, and physical state. Think of it like a hard-boiled egg: a paper-thin shell (crust), a thick white (mantle), and a dense yolk (core) — except the yolk has a liquid ring around a solid center, and the "shell" is up to ten times thicker beneath a mountain range than beneath the ocean floor.
 
 **Reading Earth's interior with seismic waves.** Two types of waves travel outward from every earthquake. **P-waves** (compressional, or "primary" waves) compress and expand rock as they travel; they pass through both solid and liquid material. **S-waves** (shear, or "secondary" waves) move rock sideways; they can only travel through solid material and are blocked entirely by liquids.
 
@@ -70,28 +72,28 @@ In the next lesson we will zoom into the crust and discover why a thick continen
           icon: Mountain,
           color: BRAND.coral,
           desc: "The thinnest of the four layers and the one where all surface geology, life, and human infrastructure exist. The crust is solid silicate rock rich in oxygen, silicon, aluminum, iron, and magnesium. Its lower boundary — the Moho — is marked by an abrupt increase in seismic-wave speed as waves enter the denser mantle below.",
-          examples: '0–70 km depth · Solid silicate rock · Thinnest layer',
+          examples: 'Kola Borehole (12.2 km) barely scratched it · Oceanic crust ~7 km under Pacific · Continental crust up to 70 km under Himalayas · Moho at ~35 km beneath average continent',
         },
         {
           name: 'Mantle',
           icon: Layers,
           color: BRAND.gold,
           desc: "The largest layer by volume, stretching from the Moho to about 2,900 km depth. The mantle is solid silicate rock — primarily minerals rich in iron and magnesium — under enormous heat and pressure. Over timescales of millions of years it flows extremely slowly. The cold, uppermost part of the mantle is mechanically locked to the crust, forming the lithosphere.",
-          examples: "~7–2,900 km depth · Solid silicate · ~84% of Earth's volume",
+          examples: "~7–2,900 km depth · Solid silicate (olivine + pyroxene) · ~84% of Earth's volume · Flows at ~2–5 cm/yr in asthenosphere · Peridotite brought to surface at Hess Deep (Pacific) by seafloor spreading",
         },
         {
           name: 'Outer Core',
           icon: Waves,
           color: BRAND.accent,
           desc: "A layer about 2,200 km thick composed of liquid iron-nickel alloy. Its molten state is directly established by the S-wave shadow zone — shear waves cannot travel through liquid and are absorbed at the outer core boundary. Temperatures here reach roughly 4,000–5,000 °C. The motion of this electrically conducting liquid is associated with Earth's magnetic field.",
-          examples: '~2,900–5,100 km depth · Liquid iron-nickel · ~2,200 km thick',
+          examples: '~2,900–5,100 km depth · Liquid iron-nickel · ~2,200 km thick (similar width to the Moon\'s diameter) · S-wave shadow zone proves liquid state · Geodynamo powers Earth\'s magnetic field from here',
         },
         {
           name: 'Inner Core',
           icon: Globe,
           color: BRAND.amethyst,
           desc: "A solid iron-nickel sphere at Earth's very center, about 1,200 km in radius. Despite temperatures that may reach 5,000–6,000 °C — comparable to the surface of the Sun — the inner core remains solid because the immense pressure suppresses melting. Its solid state was inferred from detailed analysis of how P-waves pass through the exact center of the planet.",
-          examples: '~5,100–6,371 km depth · Solid iron-nickel · ~1,200 km radius',
+          examples: 'PKIKP seismic wave refraction detects solid state · ~5,100–6,371 km depth · Solid iron-nickel · ~1,200 km radius · Differential rotation ~0.3°/yr',
         },
       ],
     },
@@ -169,6 +171,15 @@ In the next lesson we will zoom into the crust and discover why a thick continen
           },
         ],
       },
+    },
+    {
+      type: 'concept',
+      title: 'Key takeaways',
+      body: `• **Seismic waves are our X-ray machine**: The S-wave shadow zone — the belt of silence beyond ~104° from every earthquake — is direct proof that the outer core is liquid, because S-waves cannot travel through fluid. No drill or camera is needed; every major earthquake performs this experiment automatically.
+
+• **Chemical and mechanical layering answer different questions**: The crust/mantle/core scheme describes *what* each layer is made of; the lithosphere/asthenosphere scheme describes *how* each layer behaves. Both are correct and both are useful — choosing between them depends on the question being asked.
+
+• **Density fingerprints confirm the core's composition**: Earth's average density (~5.5 g/cm³) is nearly twice that of surface rocks (~2.7 g/cm³), meaning something very dense must lie at the center. Iron-nickel meteorites — fragments from shattered early planetary bodies — match the expected composition exactly, providing a chemical confirmation that is entirely independent of seismology.`,
     },
     {
       type: 'quiz',

@@ -22,7 +22,9 @@ const oceanFloorGeography: Lesson = {
     {
       type: 'intro',
       title: 'The hidden world beneath the waves',
-      body: `The ocean is not simply a uniform basin filled with water. It is a topographically complex world — mountain ranges thousands of kilometres long, plains larger than any continent, trenches so deep that Mount Everest could disappear within them with a kilometre to spare. Yet until the mid-twentieth century, almost none of this was known. The ocean floor was assumed to be a featureless, sediment-draped abyss, largely because the only tools available for sounding its depth were weighted lines dropped by hand from ships — a process so slow and imprecise that a comprehensive global survey was essentially impossible.
+      body: `The ocean floor is the largest and least explored terrain on Earth — less than 25% has been mapped at the resolution we routinely apply to the surface of Mars. Its average depth of 3.7 kilometres means the ocean holds a volume so vast that if you melted all of Antarctica, sea level would rise only about 60 metres — still leaving most of the deep seafloor untouched.
+
+The ocean is not simply a uniform basin filled with water. It is a topographically complex world — mountain ranges thousands of kilometres long, plains larger than any continent, trenches so deep that Mount Everest could disappear within them with a kilometre to spare. Yet until the mid-twentieth century, almost none of this was known. The ocean floor was assumed to be a featureless, sediment-draped abyss, largely because the only tools available for sounding its depth were weighted lines dropped by hand from ships — a process so slow and imprecise that a comprehensive global survey was essentially impossible.
 
 The technology that changed everything was sonar (Sound Navigation and Ranging), developed during World War I to detect submarines. By emitting pulses of sound from the ship and measuring the time for the echo to return from the seafloor, ships could measure depth continuously as they sailed. The first systematic sonar surveys, carried out by the US Navy and civilian research ships from the 1940s onward, began to reveal the true character of the ocean bottom. **Marie Tharp**, a geologist working at Columbia University's Lamont-Doherty Geological Observatory, spent years compiling thousands of sonar profiles into the first scientific maps of the Atlantic seafloor. Her maps revealed the Mid-Atlantic Ridge — a continuous underwater mountain range running the full length of the ocean basin — and convinced her colleague Bruce Heezen that the ocean floor was geologically active. The combination of Tharp and Heezen's work, and the broader Navy mapping programme, provided much of the data that would eventually confirm seafloor spreading and plate tectonics.
 
@@ -53,7 +55,7 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
     {
       type: 'concept',
       title: 'Ocean floor provinces',
-      body: `**From shore to abyss: five major zones.** The ocean floor is conventionally divided into distinct bathymetric (depth) provinces, each with characteristic depth, geology, and biological communities. Moving from the coastline into the deep ocean, these are the continental shelf, continental slope, continental rise, abyssal plain, and mid-ocean ridge system (with trenches where plates converge).
+      body: `**From shore to abyss: five major zones.** The ocean floor is conventionally divided into distinct bathymetric (depth) provinces, each with characteristic depth, geology, and biological communities. Moving from the coastline into the deep ocean, these are the continental shelf, continental slope, continental rise, abyssal plain, and mid-ocean ridge system (with trenches where plates converge). Think of it like stepping off a curb onto a gently sloping driveway (the continental shelf), then suddenly reaching the edge of a cliff (the shelf break), descending a steep hillside (the continental slope), crossing a vast flat parking lot (the abyssal plain), and then arriving at a mountain range taller than anything on land (the mid-ocean ridge) — all in total darkness.
 
 **Continental shelf.** The shelf is the shallowest part of the ocean floor — rarely deeper than 200 metres and with gradients often less than 1 in 1,000 (virtually flat). It is geologically part of the continent: the crust beneath is continental felsic rock, not the dense basalt of true ocean floor. The shelf edge (shelf break) at roughly 200 m marks the transition to steeper terrain. Shelf width is controlled by tectonic setting: **passive margins** (where no active subduction is occurring) have broad shelves, because sediment shed from the continent accumulates over millions of years with nothing to remove it. The US Atlantic coast, the North Sea, and Australia's northwest shelf are passive-margin examples with shelves extending hundreds of kilometres. **Active margins** (with nearby subduction zones, such as the US Pacific coast) have narrow or absent shelves, because the subducting plate drags the shelf sediment downward. Economically, continental shelves contain most of the world's productive fisheries, coral reefs, and offshore oil and gas fields.
 
@@ -72,14 +74,14 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           icon: Mountain,
           color: BRAND.coral,
           desc: 'The transition from continental to oceanic crust. Passive margins (no nearby subduction) have broad shelves, thick sediment wedges, and gradual slopes — most of the Atlantic coast. Active margins (adjacent subduction) are narrow and steep — most of the Pacific coast. The shelf break at ~200 m is the legal boundary for Exclusive Economic Zones (EEZs) under international law.',
-          examples: 'US Atlantic: broad passive margin, shelf up to 200 km · US Pacific: narrow active margin, shelf <20 km · Monterey Canyon: 3,600 m deep submarine gorge off California',
+          examples: 'US Atlantic: broad passive margin, shelf up to 200 km · US Pacific: narrow active margin, shelf <20 km · Monterey Canyon: 3,600 m deep submarine gorge off California · North Sea: passive margin, shelf 500 km wide, major fishing ground',
         },
         {
           name: 'Abyssal Plain & Seamounts',
           icon: Waves,
           color: BRAND.accent,
           desc: "Abyssal plains cover ~40% of Earth's surface — the largest environment on the planet. Flat because turbidite sediments bury the rough basaltic basement. Over 100,000 seamounts exist globally, mostly in the Pacific. Guyots (flat-topped seamounts) record ancient sea levels: their planed summits were at sea level when formed, then subsided as oceanic crust cooled and thickened.",
-          examples: 'Sohm Abyssal Plain (N Atlantic): 900,000 km² · Emperor Seamount Chain: 6,000 km from Hawaii to the Aleutian Trench · Davidson Seamount (California): 2,280 m tall, never reached surface',
+          examples: 'Sohm Abyssal Plain (N Atlantic): 900,000 km² · Emperor Seamount Chain: 6,000 km from Hawaii to the Aleutian Trench · Davidson Seamount (California): 2,280 m tall, never reached surface · Pacific abyssal plains: deepest recorded flatness, gradients <1 in 10,000',
         },
         {
           name: 'Trenches & Ridges',
@@ -89,6 +91,15 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           examples: 'Mid-Atlantic Ridge: 2.5 cm/yr spreading, Iceland sits above it · East Pacific Rise: 15 cm/yr, broadest ridge on Earth · Mariana Trench: 11,034 m depth, Challenger Deep',
         },
       ],
+    },
+    {
+      type: 'concept',
+      title: 'Key takeaways',
+      body: `• **Continental shelves are flooded continental crust**: Despite being underwater, shelves are geologically part of the continent — underlain by felsic rock, not oceanic basalt. Passive margins (like the US Atlantic coast) have wide shelves; active margins (like the US Pacific coast) have narrow ones due to nearby subduction.
+
+• **Abyssal plains are the flattest terrain on Earth — but only because of sediment burial**: The underlying basaltic crust is rough; millennia of slowly settling particles (clay, shell fragments, volcanic ash) fill every depression, producing gradients less than 1 in 10,000 over thousands of kilometres.
+
+• **All ocean floor younger than ~200 Ma — because it is continuously recycled**: Oceanic crust is denser than continental crust, so it inevitably subducts at convergent boundaries. The mid-ocean ridge system (65,000 km long) continuously creates new crust; trenches destroy old crust. No ocean floor survives longer than about 200 million years.`,
     },
     {
       type: 'quiz',

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
-import type { FlowSimulatorConfig } from '@/lessons-v2/types'
+import type { FlowSimulatorConfig } from '@/lessons/types'
 
 interface Props { config: FlowSimulatorConfig }
 

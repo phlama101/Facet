@@ -1,7 +1,110 @@
 import type { LucideIcon } from 'lucide-react'
-import type { InteractionConfig } from '@/lessons-v2/types'
 
-export type { InteractionConfig }
+// ──────────────────────────────────────────────
+// Interaction configs
+// ──────────────────────────────────────────────
+
+export interface SliderConfig {
+  type: 'slider-simulation'
+  label: string
+  min: number
+  max: number
+  step: number
+  unit: string
+  defaultValue: number
+  outputLabel: string
+  formula: (value: number) => string | number
+  description?: string
+}
+
+export interface NodeDef {
+  id: string
+  label: string
+  description: string
+  connections: string[]
+}
+
+export interface NodeExplorerConfig {
+  type: 'node-explorer'
+  nodes: NodeDef[]
+}
+
+export interface TimelineEvent {
+  year: number | string
+  label: string
+  description: string
+}
+
+export interface TimelineScrubberConfig {
+  type: 'timeline-scrubber'
+  events: TimelineEvent[]
+}
+
+export interface SandboxVariable {
+  id: string
+  label: string
+  min: number
+  max: number
+  default: number
+  unit: string
+}
+
+export interface SandboxSimulatorConfig {
+  type: 'sandbox-simulator'
+  prompt: string
+  variables: SandboxVariable[]
+  outputDescription: (vars: Record<string, number>) => string
+}
+
+export interface LayerDef {
+  id: string
+  label: string
+  sublabel?: string
+  color: string
+  thickness: number
+  state?: string
+  temperature?: string
+  description: string
+  facts: string[]
+}
+
+export interface LayeredVisualConfig {
+  type: 'layered-visual'
+  description: string
+  layers: LayerDef[]
+}
+
+export interface FlowNode {
+  id: string
+  label: string
+  description: string
+  color: string
+}
+
+export interface FlowEdge {
+  from: string
+  to: string
+  label: string
+}
+
+export interface FlowSimulatorConfig {
+  type: 'flow-simulator'
+  description: string
+  nodes: FlowNode[]
+  edges: FlowEdge[]
+}
+
+export type InteractionConfig =
+  | SliderConfig
+  | NodeExplorerConfig
+  | TimelineScrubberConfig
+  | SandboxSimulatorConfig
+  | LayeredVisualConfig
+  | FlowSimulatorConfig
+
+// ──────────────────────────────────────────────
+// Shared primitives
+// ──────────────────────────────────────────────
 
 export type TrackId = 'geo' | 'oce' | 'atm' | 'vol' | 'cli' | 'ast'
 
@@ -26,11 +129,32 @@ export interface ConceptCard {
   examples?: string
 }
 
+export interface Equation {
+  label: string
+  tex: string
+  note?: string
+}
+
+export interface CaseStudyFinding {
+  label: string
+  detail: string
+}
+
+export interface DataLabStep {
+  instruction: string
+  result: string
+}
+
+// ──────────────────────────────────────────────
+// Section types
+// ──────────────────────────────────────────────
+
 export interface IntroSection {
   type: 'intro'
   title: string
   body: string
   keyTerms?: KeyTerm[]
+  interaction?: InteractionConfig
 }
 
 export interface ConceptSection {
@@ -38,6 +162,7 @@ export interface ConceptSection {
   title: string
   body: string
   cards?: ConceptCard[]
+  points?: string[]
   interaction?: InteractionConfig
 }
 
@@ -58,12 +183,7 @@ export interface QuizQuestion {
 export interface QuizSection {
   type: 'quiz'
   questions: QuizQuestion[]
-}
-
-export interface Equation {
-  label: string
-  tex: string
-  note?: string
+  xpPerQuestion?: number
 }
 
 export interface TheorySection {
@@ -71,11 +191,6 @@ export interface TheorySection {
   title: string
   body: string
   equations?: Equation[]
-}
-
-export interface CaseStudyFinding {
-  label: string
-  detail: string
 }
 
 export interface CaseStudySection {
@@ -88,11 +203,6 @@ export interface CaseStudySection {
   doi?: string
 }
 
-export interface DataLabStep {
-  instruction: string
-  result: string
-}
-
 export interface DataLabSection {
   type: 'data-lab'
   title: string
@@ -101,7 +211,42 @@ export interface DataLabSection {
   conclusion: string
 }
 
-export type Section = IntroSection | ConceptSection | VisualizationSection | QuizSection | TheorySection | CaseStudySection | DataLabSection
+export interface LabStep {
+  instruction: string
+  hint?: string
+}
+
+export interface LabSection {
+  type: 'lab'
+  title: string
+  premise: string
+  steps: LabStep[]
+  interaction?: InteractionConfig
+  xpReward?: number
+}
+
+export interface ChallengeSection {
+  type: 'challenge'
+  title: string
+  prompt: string
+  interaction?: InteractionConfig
+  xpReward?: number
+}
+
+export type Section =
+  | IntroSection
+  | ConceptSection
+  | VisualizationSection
+  | QuizSection
+  | TheorySection
+  | CaseStudySection
+  | DataLabSection
+  | LabSection
+  | ChallengeSection
+
+// ──────────────────────────────────────────────
+// Top-level Lesson
+// ──────────────────────────────────────────────
 
 export interface Lesson {
   id: string
@@ -112,6 +257,6 @@ export interface Lesson {
   duration: string
   xpReward: number
   description: string
-  sources: Source[]
+  sources?: Source[]
   sections: Section[]
 }

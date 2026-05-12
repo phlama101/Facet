@@ -67,7 +67,7 @@ function convertLesson(lesson: Lesson) {
     duration: lesson.duration,
     xpReward: lesson.xpReward,
     description: lesson.description,
-    sources: lesson.sources,
+    sources: lesson.sources ?? [],
     sections: lesson.sections.map(convertSection),
     isPremium: false,
     status: 'draft' as const,

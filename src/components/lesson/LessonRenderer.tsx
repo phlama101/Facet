@@ -5,13 +5,13 @@ import { ArrowLeft, ArrowRight, Zap } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import { TRACK_MAP } from '@/lessons/index'
-import { useProgressStore } from '@/lessons-v2/store/progressStore'
-import type { LessonV2 } from '@/lessons-v2/types'
+import { useProgressStore } from '@/lib/progressStore'
+import type { Lesson } from '@/lessons/types'
 import FacetBackground from '@/components/brand/FacetBackground'
 import SectionRenderer from './SectionRenderer'
 
 interface Props {
-  lesson: LessonV2
+  lesson: Lesson
   onClose: () => void
   onComplete: (xpEarned: number) => void
 }
@@ -24,7 +24,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
 
   const { xp: sessionXP, reset } = useProgressStore()
 
-  const track = TRACK_MAP[lesson.track as keyof typeof TRACK_MAP]
+  const track = TRACK_MAP[lesson.track]
   const trackColor = track?.color ?? BRAND.accent
   const sections = lesson.sections
   const total = sections.length
@@ -62,6 +62,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
   const nextLabel: Record<string, string> = {
     concept: 'Concept', visualization: 'Visualization',
     lab: 'Lab', challenge: 'Challenge', quiz: 'Quiz', intro: 'Intro',
+    theory: 'Theory', 'case-study': 'Case Study', 'data-lab': 'Data Lab',
   }
 
   return (
@@ -87,7 +88,15 @@ export default function LessonRenderer({ lesson, onClose, onComplete }: Props) {
 
           {/* Progress bar */}
           <div className="flex-1 max-w-xs">
-            <div className="h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
+            <div
+              role="progressbar"
+              aria-valuenow={Math.round(progress)}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label={`Lesson progress: section ${sectionIdx + 1} of ${total}`}
+              className="h-[3px] rounded-full overflow-hidden"
+              style={{ backgroundColor: BRAND.border }}
+            >
               <motion.div
                 className="h-full rounded-full"
                 style={{ backgroundColor: trackColor, boxShadow: `0 0 8px ${trackColor}80` }}

@@ -4,11 +4,11 @@ import { useState } from 'react'
 import { CheckCircle2, ChevronDown, ChevronUp, Zap } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import { useProgressStore } from '@/lessons-v2/store/progressStore'
-import type { V2LabSection } from '@/lessons-v2/types'
-import InteractionRenderer from '../interactions/InteractionRenderer'
+import { useProgressStore } from '@/lib/progressStore'
+import type { LabSection } from '@/lessons/types'
+import InteractionRenderer from '@/components/interactions/InteractionRenderer'
 
-interface Props { section: V2LabSection; sectionKey: string }
+interface Props { section: LabSection; sectionKey: string }
 
 export default function LabBlock({ section, sectionKey }: Props) {
   const [completed, setCompleted] = useState<Set<number>>(new Set())
@@ -99,11 +99,6 @@ export default function LabBlock({ section, sectionKey }: Props) {
             <motion.div
               key={i}
               variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1] } } }}
-              animate={{
-                borderColor: done ? BRAND.jade : BRAND.border,
-                backgroundColor: done ? `${BRAND.jade}0D` : BRAND.surfaceHi,
-              }}
-              transition={{ duration: 0.3 }}
               className="rounded-lg overflow-hidden"
               style={{ border: `1px solid ${done ? BRAND.jade : BRAND.border}`, backgroundColor: done ? `${BRAND.jade}0D` : BRAND.surfaceHi }}
             >
@@ -115,10 +110,7 @@ export default function LabBlock({ section, sectionKey }: Props) {
                   className="mt-0.5 shrink-0 transition-colors"
                   style={{ color: done ? BRAND.jade : BRAND.border }}
                 >
-                  <motion.div
-                    animate={{ scale: done ? [1, 1.3, 1] : 1 }}
-                    transition={{ duration: 0.35 }}
-                  >
+                  <motion.div animate={{ scale: done ? [1, 1.3, 1] : 1 }} transition={{ duration: 0.35 }}>
                     <CheckCircle2 size={18} />
                   </motion.div>
                 </motion.button>
@@ -178,7 +170,7 @@ export default function LabBlock({ section, sectionKey }: Props) {
             disabled={alreadyClaimed || claimed}
             whileHover={alreadyClaimed || claimed ? undefined : { scale: 1.02 }}
             whileTap={alreadyClaimed || claimed ? undefined : { scale: 0.98 }}
-            className="w-full py-3 rounded-lg text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-2 disabled:opacity-70 overflow-hidden relative"
+            className="w-full py-3 rounded-lg text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-2 disabled:opacity-70"
             style={{ backgroundColor: BRAND.jade, color: BRAND.bg, boxShadow: `0 8px 24px -8px ${BRAND.jade}80` }}
           >
             <Zap size={14} />

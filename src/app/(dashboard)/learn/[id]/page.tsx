@@ -1,6 +1,5 @@
 import { notFound, redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { LESSONS_V2 } from '@/lessons-v2/index'
 import { LESSONS } from '@/lessons/index'
 import { getDbLesson } from '@/lib/lesson-store'
 import { canAccessLesson } from '@/lib/access'
@@ -15,17 +14,14 @@ interface Props {
 export default async function LessonPage({ params }: Props) {
   const { id } = await params
 
-  // DB lesson takes priority over static files.
-  // Falls back to V2 interactive, then V1 static.
   const [dbLesson, supabase] = await Promise.all([
     getDbLesson(id),
     createClient(),
   ])
 
-  const lessonV2 = LESSONS_V2[id]
-  const lessonV1 = LESSONS[id]
+  const lesson = LESSONS[id]
 
-  if (!dbLesson && !lessonV2 && !lessonV1) notFound()
+  if (!dbLesson && !lesson) notFound()
 
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect(`/login?next=/learn/${id}`)
@@ -39,15 +35,10 @@ export default async function LessonPage({ params }: Props) {
   const subscription = (profile as { subscription?: string } | null)?.subscription ?? 'free'
 
   if (!canAccessLesson(id, subscription)) {
-    const title =
-      dbLesson?.title ??
-      lessonV2?.title ??
-      (lessonV1 as { title?: string } | undefined)?.title ??
-      'This lesson'
+    const title = dbLesson?.title ?? lesson?.title ?? 'This lesson'
     return <LessonAccessGate lessonTitle={title} />
   }
 
-  // DB lesson overrides static — render without bundling static lesson data.
   if (dbLesson) {
     return <DbLessonClient dbLesson={dbLesson} />
   }

@@ -4,11 +4,11 @@ import { useState, useRef, useEffect } from 'react'
 import { CheckCircle2, XCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import { useProgressStore } from '@/lessons-v2/store/progressStore'
-import type { V2QuizSection } from '@/lessons-v2/types'
+import { useProgressStore } from '@/lib/progressStore'
+import type { QuizSection } from '@/lessons/types'
 
 interface Props {
-  section: V2QuizSection
+  section: QuizSection
   sectionKey: string
   onComplete?: (correct: number, total: number) => void
 }
@@ -19,21 +19,18 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
   const [answered, setAnswered] = useState<{ chosen: number; correct: boolean }[]>([])
   const [done, setDone] = useState(false)
 
-  // Ref lock prevents double-execution even before React re-renders the component
-  // (selected !== null alone is subject to batching and can be read as stale)
   const processingRef = useRef(false)
 
   const { addXP, hasSectionXP } = useProgressStore()
   const xpPerQ = section.xpPerQuestion ?? 20
   const questions = section.questions
 
-  // Fire onComplete once after done=true using the freshest answered state
   useEffect(() => {
     if (!done) return
     setAnswered(prev => {
       const correct = prev.filter(a => a.correct).length
       onComplete?.(correct, questions.length)
-      return prev // no change, just reading
+      return prev
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [done])
@@ -53,8 +50,6 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
     }
 
     setTimeout(() => {
-      // Always use functional update so we append to the LATEST state,
-      // not to whatever `answered` was captured in the closure.
       setAnswered(prev => [...prev, { chosen: idx, correct: isCorrect }])
 
       if (!isLast) {
@@ -113,7 +108,6 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
         </span>
       </div>
 
-      {/* Progress bar */}
       <div className="h-[2px] rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
         <motion.div
           className="h-full rounded-full"
@@ -123,7 +117,6 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
         />
       </div>
 
-      {/* Question — enter-only, no exit animation to avoid stale clickable content */}
       <motion.h3
         key={qIdx}
         initial={{ opacity: 0, x: 20 }}
@@ -135,7 +128,6 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
         {current.q}
       </motion.h3>
 
-      {/* Answers — enter-only for the same reason */}
       <motion.div
         key={qIdx}
         className="space-y-2"
@@ -197,7 +189,6 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
         })}
       </motion.div>
 
-      {/* Explanation */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div

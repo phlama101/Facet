@@ -5,7 +5,6 @@ import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LESSON_LIST, GEOL_101_MODULES, GEOL_201_MODULES } from '@/lessons/index'
 import type { CourseModule } from '@/lessons/index'
-import { LESSONS_V2_LIST } from '@/lessons-v2/index'
 import { levelFromXp } from '@/lib/utils'
 import type { Profile } from '@/types'
 
@@ -30,11 +29,7 @@ export default async function SkillTreePage() {
     .eq('completed', true)
   const completed = new Set(((progressRows ?? []) as { lesson_id: string }[]).map(r => r.lesson_id))
 
-  const v2BaseIds = new Set(LESSONS_V2_LIST.map(l => l.id.replace(/-v2$/, '')))
-  const allLessons = [
-    ...LESSONS_V2_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, xpReward: l.xpReward })),
-    ...LESSON_LIST.filter(l => !v2BaseIds.has(l.id)).map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, xpReward: l.xpReward })),
-  ]
+  const allLessons = LESSON_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, xpReward: l.xpReward }))
   const lessonMap = Object.fromEntries(allLessons.map(l => [l.id, l]))
 
   function coursePct(modules: CourseModule[]) {

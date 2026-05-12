@@ -22,7 +22,7 @@ const atmosphereLayers: Lesson = {
     {
       type: 'intro',
       title: 'A layered shell of air',
-      body: `Earth's atmosphere is a thin envelope of gas held in place by gravity. From the surface to the edge of space, it spans roughly 700 km, yet 99% of its mass is compressed into the lowest 30 km — a layer thinner, relative to Earth's diameter, than the skin of an apple. Despite its thinness, the atmosphere performs an extraordinary range of functions: it supplies the oxygen and carbon dioxide needed for life, absorbs and scatters incoming solar radiation, retains heat through the greenhouse effect, transmits weather, and shields the surface from lethal ultraviolet radiation and the vacuum of space.
+      body: `If you could drive a car straight upward at highway speed, you'd reach "outer space" in about 30 minutes — yet that razor-thin blanket of air is the only thing standing between you and temperatures that swing 300°C, lethal radiation, and the vacuum of space. How does something so thin do so much?\n\nEarth's atmosphere is a thin envelope of gas held in place by gravity. From the surface to the edge of space, it spans roughly 700 km, yet 99% of its mass is compressed into the lowest 30 km — a layer thinner, relative to Earth's diameter, than the skin of an apple. Despite its thinness, the atmosphere performs an extraordinary range of functions: it supplies the oxygen and carbon dioxide needed for life, absorbs and scatters incoming solar radiation, retains heat through the greenhouse effect, transmits weather, and shields the surface from lethal ultraviolet radiation and the vacuum of space.
 
 The atmosphere is not uniform. Scientists divide it into distinct **layers** based on how temperature changes with altitude. In some layers, temperature decreases as you ascend (as on a mountain); in others, it increases. These temperature inversions — warm layers above cool ones — act as lids that trap gas below them and define the boundary between layers. The boundaries themselves are named with the suffix "-pause": the **tropopause** (top of the troposphere), **stratopause**, **mesopause**, and **thermopause**. Each pause is a temperature minimum or maximum that marks the transition to the layer above.
 
@@ -38,7 +38,7 @@ Understanding the layers of the atmosphere is essential to understanding weather
     {
       type: 'concept',
       title: 'The four main layers and why temperature reverses',
-      body: `**Why temperature changes with altitude — and reverses.** In everyday experience, it gets colder as you go up a mountain. This cooling is a fundamental property of the troposphere: air expands as pressure decreases with altitude, and expansion cools air (the dry adiabatic lapse rate). But temperature does not always decrease with altitude in the atmosphere. The driving factor is **where energy is absorbed**. If a layer absorbs radiation from above (from the sun or from space), the top of that layer is warmer than the bottom, creating a temperature inversion. This is why the stratosphere is warm at the top (ozone absorbs UV from above) and the thermosphere is hot at the top (oxygen and nitrogen molecules absorb X-rays from above). Understanding these reversals is the key to understanding the layers.
+      body: `**Why temperature changes with altitude — and reverses.** In everyday experience, it gets colder as you go up a mountain. This cooling is a fundamental property of the troposphere: air expands as pressure decreases with altitude, and expansion cools air (the dry adiabatic lapse rate). But temperature does not always decrease with altitude in the atmosphere. The driving factor is **where energy is absorbed**. Think of it like a room heated from above rather than below — if the ceiling is warmer than the floor, the air layers won't overturn; the same principle makes the stratosphere stable. If a layer absorbs radiation from above (from the sun or from space), the top of that layer is warmer than the bottom, creating a temperature inversion. This is why the stratosphere is warm at the top (ozone absorbs UV from above) and the thermosphere is hot at the top (oxygen and nitrogen molecules absorb X-rays from above). Understanding these reversals is the key to understanding the layers.
 
 **The troposphere: where weather lives.** The troposphere extends from the surface to ~12 km (higher in the tropics, ~17 km; lower at poles, ~7 km). Temperature drops from ~15°C at sea level to approximately −60°C at the tropopause. This cooling with altitude makes the troposphere unstable: warm, moist air near the surface is less dense than cold air above, so it rises — creating convection, clouds, and storms. Virtually all weather, all clouds, and all precipitation occur in the troposphere. The tropopause acts as a temperature lid: the stratosphere above is warmer, so air rising from below cools until it reaches the same temperature as the stratosphere and can no longer rise. This is why cumulonimbus (thunderstorm) clouds spread out horizontally into the characteristic anvil shape when they hit the tropopause.
 
@@ -67,9 +67,18 @@ Understanding the layers of the atmosphere is essential to understanding weather
           icon: Globe,
           color: BRAND.jade,
           desc: 'Mesosphere (50–85 km): coldest atmosphere point (−90°C), meteor burnup zone, noctilucent clouds. Thermosphere (85–700 km): temperature >1,000°C but too sparse to feel hot; ISS orbits at ~400 km. Ionosphere (within thermosphere): ionised by solar UV/X-ray, reflects AM radio waves, site of aurora at 100–300 km altitude; auroral colours = oxygen (green/red) and nitrogen (blue/purple).',
-          examples: 'Shooting stars: mesosphere (~80 km) · ISS: lower thermosphere (~400 km) · Aurora borealis: 100–300 km · AM radio skip: ionosphere reflects signals over the horizon for long-distance communication',
+          examples: 'Shooting stars (meteors): mesosphere, ~80 km — rock the size of a pea glows white-hot · ISS orbit: 400 km in lower thermosphere, 16 sunrises per day · Noctilucent clouds: rare ice-crystal clouds at 82 km visible at twilight near poles, only spot in atmosphere cold enough for ice at that altitude · Aurora Borealis: green glow at 100–150 km (oxygen), red above 200 km · AM radio skip: ionosphere reflects 1–30 MHz signals to receivers thousands of km away, enabling transoceanic broadcasts before satellites',
         },
       ],
+    },
+    {
+      type: 'concept',
+      title: 'Key takeaways',
+      body: `• **The tropopause acts as a convective lid**: Storm tops flatten into anvil shapes exactly at this boundary because the stratosphere above it is warmer — rising air loses its buoyancy the moment it crosses into the stratosphere, which is why thunderstorms cannot punch through it.
+
+• **Temperature reversals define the layers**: The stratosphere is warm at the top (ozone absorbs UV from above) and the thermosphere is extremely hot at the top (molecules absorb X-rays), while the mesosphere — sandwiched in between — is the coldest point in the entire atmosphere at around −90°C near 85 km altitude.
+
+• **The ionosphere makes long-distance radio and auroras possible**: Solar radiation strips electrons from gas molecules in the thermosphere, creating a conductive plasma layer that reflects AM radio waves back to Earth and glows green and red when charged solar particles collide with oxygen and nitrogen at 100–300 km altitude.`,
     },
     {
       type: 'quiz',

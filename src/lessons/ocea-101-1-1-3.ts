@@ -22,7 +22,9 @@ const oceanTrenches: Lesson = {
     {
       type: 'intro',
       title: 'Where plates descend',
-      body: `On 23 January 1960, Swiss oceanographer Jacques Piccard and US Navy Lieutenant Don Walsh climbed into the bathyscaphe *Trieste* and descended into the Challenger Deep — the deepest known point in the Mariana Trench, in the western Pacific Ocean. Five hours of descent. At 10,916 metres (later surveys have measured slightly varying depths, with recent estimates converging around 10,935 m), they touched the seafloor and reported the most astonishing thing: a flatfish — a sole, they thought — resting on the sediment. Life at the extreme bottom of the ocean. The observation, later disputed by scientists who suggested the animal might have been a sea cucumber, nonetheless established that even the deepest ocean is inhabited.
+      body: `At the bottom of the Mariana Trench, pressure exceeds 1,100 atmospheres — equivalent to the weight of 50 jumbo jets stacked on a single square metre. Yet even here, life persists. The deep ocean trenches, where one tectonic plate dives beneath another, are not just the deepest places on Earth — they are the source of its most destructive earthquakes and tsunamis.
+
+On 23 January 1960, Swiss oceanographer Jacques Piccard and US Navy Lieutenant Don Walsh climbed into the bathyscaphe *Trieste* and descended into the Challenger Deep — the deepest known point in the Mariana Trench, in the western Pacific Ocean. Five hours of descent. At 10,916 metres (later surveys have measured slightly varying depths, with recent estimates converging around 10,935 m), they touched the seafloor and reported the most astonishing thing: a flatfish — a sole, they thought — resting on the sediment. Life at the extreme bottom of the ocean. The observation, later disputed by scientists who suggested the animal might have been a sea cucumber, nonetheless established that even the deepest ocean is inhabited.
 
 The Mariana Trench represents one end of a geological process that also produces the most destructive earthquakes and tsunamis on Earth: **subduction**. Where two tectonic plates converge and one descends into the mantle, the collision creates an asymmetric topography — a deep ocean trench on the ocean side and a volcanic arc on the overriding plate. The trench and its associated subduction zone are not passive scars in the seafloor; they are active machinery. The descending slab carries oceanic sediment and water into the hot mantle, which returns to the surface as arc volcanism. Great megathrust earthquakes occur when the two plates lock and then suddenly release — the 2004 Indian Ocean earthquake (magnitude 9.1), the 2011 Tōhoku earthquake in Japan (magnitude 9.0), and the 1960 Valdivia earthquake in Chile (magnitude 9.5, the largest ever recorded) all occurred on subduction zone faults adjacent to ocean trenches.
 
@@ -53,7 +55,7 @@ The deepest ocean — conventionally defined as water below 6,000 metres, called
     {
       type: 'concept',
       title: 'Trench structure, subduction dynamics, and hadal life',
-      body: `**Anatomy of an ocean trench.** An ocean trench is a long, narrow, V-shaped depression formed at a convergent plate boundary. The trench itself is the surface expression of the line along which one plate bends and descends into the mantle. It is typically 2,000–4,000 km long, 50–100 km wide, and 2,000–4,000 m deeper than the surrounding abyssal plain — which is itself already 3,000–5,000 m below sea level, making total trench depths of 8,000–11,000 m at the deepest points. The trench floor is covered by a thin layer of fine-grained sediment — turbidites and fine pelagic particles that settle from the water above and drain off the adjacent slopes.
+      body: `**Anatomy of an ocean trench.** An ocean trench is a long, narrow, V-shaped depression formed at a convergent plate boundary. A helpful analogy: think of the oceanic plate as a cold, stiff slab sliding off a table at the subduction zone — as it peels downward and descends, it drags the edge of the table (the seafloor) down with it, creating the trench; the table on the other side (the overriding plate) bears the weight and bulges upward into a volcanic arc. The trench itself is the surface expression of the line along which one plate bends and descends into the mantle. It is typically 2,000–4,000 km long, 50–100 km wide, and 2,000–4,000 m deeper than the surrounding abyssal plain — which is itself already 3,000–5,000 m below sea level, making total trench depths of 8,000–11,000 m at the deepest points. The trench floor is covered by a thin layer of fine-grained sediment — turbidites and fine pelagic particles that settle from the water above and drain off the adjacent slopes.
 
 The trench is asymmetric: the **oceanic side** (where the subducting plate bends down) has a gently sloping outer wall, while the **arc side** (the overriding plate) has a steeper inner wall that may feature an **accretionary prism** — a wedge of sediment scraped off the subducting plate and piled up against the overriding plate like material pushed by a bulldozer blade. The inner wall may be hundreds of kilometres wide and rise several kilometres above the trench floor.
 
@@ -72,7 +74,7 @@ The trench is asymmetric: the **oceanic side** (where the subducting plate bends
           icon: Mountain,
           color: BRAND.coral,
           desc: 'Trench (ocean floor depressed 2,000–4,000 m below abyssal plain) → accretionary prism (scraped sediment wedge on inner wall) → forearc basin (sediment-filled trough landward of the prism) → volcanic arc (magma generated by flux melting, 100–200 km landward of trench) → backarc basin (extensional basin behind the arc). The descending slab releases water that triggers melting in the mantle wedge above it.',
-          examples: 'Mariana Trench: deepest (11,034 m), subducting Pacific Plate · Cascadia Subduction Zone: Juan de Fuca Plate beneath North America, risk of M9+ earthquake · Tonga Trench: fastest subduction rate, ~24 cm/yr',
+          examples: 'Mariana Trench: 11,034 m at Challenger Deep, named for HMS Challenger (1875 sounding) · Cascadia Subduction Zone: Juan de Fuca Plate beneath North America, M9+ earthquake risk for Pacific Northwest · Tonga Trench: fastest subduction rate (~24 cm/yr), 10,882 m deep',
         },
         {
           name: 'Mega­thrust Earthquakes',
@@ -86,7 +88,7 @@ The trench is asymmetric: the **oceanic side** (where the subducting plate bends
           icon: Waves,
           color: BRAND.accent,
           desc: 'Hadal zone (>6,000 m): 0.15% of ocean area, exists entirely within trenches. Pressure 600–1,100 atm. Food arrives as marine snow, funnelled to trench floor. Key fauna: amphipods (dominant, up to thousands/m²), holothurians, polychaetes, foraminifera. No photosynthesis — all energy from sinking organic matter. Organisms are piezophilic: adapted to high pressure, malfunction at surface.',
-          examples: 'Hirondellea gigas: amphipod, deepest-living crustacean, found at >10,000 m · Hadal snailfish: deepest-living fish, found at 8,000 m in Mariana · Giant foraminifera: single-celled but cm-scale, common in hadal sediments',
+          examples: 'Hirondellea gigas: amphipod found at >10,000 m, deepest-living crustacean · Pseudoliparis belyaevi (hadal snailfish): deepest fish recorded, found at 8,336 m in the Mariana · Giant xenophyophores: single-celled organisms reaching 20 cm wide, abundant in hadal sediments',
         },
       ],
     },

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import type { TimelineScrubberConfig } from '@/lessons-v2/types'
+import type { TimelineScrubberConfig } from '@/lessons/types'
 
 interface Props { config: TimelineScrubberConfig }
 

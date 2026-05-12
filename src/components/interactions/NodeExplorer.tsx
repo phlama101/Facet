@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import type { NodeExplorerConfig, NodeDef } from '@/lessons-v2/types'
+import type { NodeExplorerConfig, NodeDef } from '@/lessons/types'
 
 interface Props { config: NodeExplorerConfig }
 

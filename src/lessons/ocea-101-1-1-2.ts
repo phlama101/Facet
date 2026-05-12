@@ -22,7 +22,9 @@ const midOceanRidges: Lesson = {
     {
       type: 'intro',
       title: "The planet's longest mountain range",
-      body: `In 1977, marine geologists aboard the research submersible *Alvin* descended to the Galapagos Rift, a section of the mid-ocean ridge system in the eastern Pacific. They were testing a hypothesis: if seafloor spreading is driven by hot magma rising from the mantle, the seafloor at the ridge crest should be warm, and seawater percolating through cracks in the basalt should absorb that heat and emerge somewhere. What they found exceeded all expectations. At a depth of 2,500 metres, where the temperature of normal bottom water is just 2°C, they encountered shimmering columns of superheated water pouring from cracks in the seafloor at temperatures above 350°C. Around these **hydrothermal vents**, improbably, lived dense colonies of tubeworms, giant clams, shrimp, crabs, and fish — entirely independent of sunlight for energy. Instead, bacteria oxidised hydrogen sulphide emerging from the vents, producing the chemical energy that fuelled the entire food web. The discovery of hydrothermal vent ecosystems overturned the assumption that all life on Earth depends ultimately on photosynthesis, and opened new hypotheses about where life might exist elsewhere in the solar system.
+      body: `Every year, mid-ocean ridges produce roughly 3 cubic kilometres of new volcanic rock — more than all of Earth's land volcanoes combined. This hidden mountain system, stretching 65,000 kilometres beneath every ocean, is the most volcanically active feature on the planet and the engine that drives plate tectonics.
+
+In 1977, marine geologists aboard the research submersible *Alvin* descended to the Galapagos Rift, a section of the mid-ocean ridge system in the eastern Pacific. They were testing a hypothesis: if seafloor spreading is driven by hot magma rising from the mantle, the seafloor at the ridge crest should be warm, and seawater percolating through cracks in the basalt should absorb that heat and emerge somewhere. What they found exceeded all expectations. At a depth of 2,500 metres, where the temperature of normal bottom water is just 2°C, they encountered shimmering columns of superheated water pouring from cracks in the seafloor at temperatures above 350°C. Around these **hydrothermal vents**, improbably, lived dense colonies of tubeworms, giant clams, shrimp, crabs, and fish — entirely independent of sunlight for energy. Instead, bacteria oxidised hydrogen sulphide emerging from the vents, producing the chemical energy that fuelled the entire food web. The discovery of hydrothermal vent ecosystems overturned the assumption that all life on Earth depends ultimately on photosynthesis, and opened new hypotheses about where life might exist elsewhere in the solar system.
 
 The hydrothermal vents are a consequence of a larger geological system: the **mid-ocean ridge**. Running through every ocean basin on Earth, the mid-ocean ridge system is a continuous volcanic mountain chain approximately 65,000 kilometres long — roughly the circumference of Earth, and ten times the length of the Andes. It is the most volcanically active feature on the planet's surface. Every year, mid-ocean ridges produce approximately 3 km³ of new basaltic oceanic crust — vastly more volcanic material than all of the world's subaerial volcanoes combined. This continuous creation of new seafloor is the engine of plate tectonics: new crust forms, pushes older crust away from the ridge axis, and ultimately drives the movement of the tectonic plates.
 
@@ -53,7 +55,7 @@ The ridge system was first identified as a continuous global structure by Marie 
     {
       type: 'concept',
       title: 'Ridge structure, spreading rates, and vent chemistry',
-      body: `**Anatomy of a mid-ocean ridge.** Despite its enormous length, the mid-ocean ridge follows a consistent structural pattern. At the ridge crest, magma from the upper mantle pools in a **magma chamber** a few kilometres below the seafloor and periodically erupts, creating pillow basalts — rounded lobes of lava formed when molten rock erupts into cold seawater and quenches instantly into characteristic pillow shapes. The eruptions build up the ridge flanks and add new material to the oceanic crust. The central **rift valley** runs along the crest of slow-spreading ridges, formed by extensional faulting as the crust is pulled apart. At fast-spreading ridges, where the magma supply is more continuous and the crust more buoyant, the rift is subdued or absent, replaced by a gently inflated ridge crest called an **axial high**.
+      body: `**Anatomy of a mid-ocean ridge.** Despite its enormous length, the mid-ocean ridge follows a consistent structural pattern. A useful way to picture it: the mid-ocean ridge is like a seam running down a baseball — but instead of thread holding panels together, it is a crack where new panels of crust are continuously being stitched into existence by magma. At the ridge crest, magma from the upper mantle pools in a **magma chamber** a few kilometres below the seafloor and periodically erupts, creating pillow basalts — rounded lobes of lava formed when molten rock erupts into cold seawater and quenches instantly into characteristic pillow shapes. The eruptions build up the ridge flanks and add new material to the oceanic crust. The central **rift valley** runs along the crest of slow-spreading ridges, formed by extensional faulting as the crust is pulled apart. At fast-spreading ridges, where the magma supply is more continuous and the crust more buoyant, the rift is subdued or absent, replaced by a gently inflated ridge crest called an **axial high**.
 
 **Spreading rates and ridge morphology.** Not all mid-ocean ridges spread at the same rate. The spreading rate profoundly affects the ridge's shape. **Slow-spreading ridges** (1–4 cm/yr, like the Mid-Atlantic Ridge) have rugged, mountainous flanks, a deep and wide central rift valley, and more faulting than volcanism at the surface. The crust is cooler and more brittle, so earthquakes are common and can extend to considerable depth. **Fast-spreading ridges** (8–15 cm/yr, like the East Pacific Rise) have smooth, gently sloping flanks, a broad axial dome, and a subdued rift; volcanism is more continuous and less episodic. **Intermediate** ridges (4–8 cm/yr, like the Juan de Fuca Ridge off Oregon and Washington) have characteristics between these extremes. The East Pacific Rise is responsible for generating much of the Pacific Ocean floor; the Mid-Atlantic Ridge is opening the Atlantic at approximately the rate fingernails grow on a human hand.
 
@@ -70,14 +72,14 @@ The ridge system was first identified as a continuous global structure by Marie 
           icon: Globe,
           color: BRAND.jade,
           desc: 'Spreading rate determines ridge morphology. Fast ridges (East Pacific Rise, ~12 cm/yr): broad, smooth flanks, axial high, continuous volcanism, minimal rift valley. Slow ridges (Mid-Atlantic Ridge, ~2.5 cm/yr): rugged mountainous flanks, deep wide rift valley, episodic volcanism, more faulting. Intermediate ridges (Juan de Fuca Ridge, ~5 cm/yr): transitional character.',
-          examples: 'Mid-Atlantic Ridge: slow, 2.5 cm/yr, Iceland surface exposure · East Pacific Rise: fast, up to 15 cm/yr · Juan de Fuca Ridge: intermediate, active geology off NW USA',
+          examples: 'Mid-Atlantic Ridge: slow, 2.5 cm/yr, Iceland sits where it breaks the surface · East Pacific Rise: fast, up to 15 cm/yr, broadest ridge on Earth · Juan de Fuca Ridge: intermediate, ~5 cm/yr, supplies magma to Cascade volcanoes',
         },
         {
           name: 'Black & White Smokers',
           icon: Flame,
           color: BRAND.coral,
           desc: 'Black smokers: >350°C, precipitate iron-copper-zinc sulphides, form tall chimneys. White smokers: 40–300°C, precipitate barium-calcium-silicon minerals, milky plume. Lost City vents (2000): driven by serpentinisation rather than magmatic heat — peridotite + seawater reaction generates H₂ and heat independently of a magma source. All types support chemosynthetic communities.',
-          examples: 'TAG Field (Mid-Atlantic): black smokers at 2,600 m depth · Lost City (Mid-Atlantic): white carbonate chimneys up to 60 m tall · Oases on East Pacific Rise: tubeworm fields discovered 1977',
+          examples: 'TAG Field (Mid-Atlantic Ridge): active black smokers at 2,600 m, explored by *Alvin* · Lost City (Mid-Atlantic): serpentinisation-driven chimneys up to 60 m tall, discovered 2000 · Galapagos Rift: site of first hydrothermal vent discovery in 1977',
         },
         {
           name: 'Vent Ecosystems',
@@ -87,6 +89,15 @@ The ridge system was first identified as a continuous global structure by Marie 
           examples: 'Riftia pachyptila: growth rate up to 85 cm/yr, world\'s fastest animal growth · Yeti crab: "farms" bacterial mats on its hairy claws · 700+ species unique to hydrothermal vents globally',
         },
       ],
+    },
+    {
+      type: 'concept',
+      title: 'Key takeaways',
+      body: `• **Spreading rate controls ridge shape**: Fast-spreading ridges (East Pacific Rise, ~12 cm/yr) have smooth, broad axial highs because a continuous magma supply keeps the crust warm and buoyant. Slow-spreading ridges (Mid-Atlantic Ridge, ~2.5 cm/yr) have rugged, steep flanks and a deep rift valley because faulting dominates between infrequent eruptions.
+
+• **Hydrothermal vents are powered by seawater circulating through hot crust**: Cold seawater percolates down through cracks, heats to over 400°C near the magma body, strips metals from the basalt, and erupts as mineral-laden black smokers. This circulation processes the entire volume of the world's oceans every 8–10 million years and significantly influences ocean chemistry.
+
+• **Vent ecosystems run on chemistry, not sunlight**: Chemosynthetic bacteria oxidise hydrogen sulphide from vent fluid using dissolved oxygen, producing organic carbon that supports tubeworms, clams, shrimp, and fish — entirely independent of photosynthesis. This was the first ecosystem discovered on Earth that does not ultimately depend on sunlight.`,
     },
     {
       type: 'quiz',

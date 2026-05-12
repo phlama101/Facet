@@ -1,15 +1,18 @@
 'use client'
 
-import type { V2Section } from '@/lessons-v2/types'
-import IntroBlock from '../blocks/IntroBlock'
-import ConceptBlock from '../blocks/ConceptBlock'
-import VisualizationBlock from '../blocks/VisualizationBlock'
-import LabBlock from '../blocks/LabBlock'
-import ChallengeBlock from '../blocks/ChallengeBlock'
-import QuizBlock from '../blocks/QuizBlock'
+import type { Section } from '@/lessons/types'
+import IntroBlock from './blocks/IntroBlock'
+import ConceptBlock from './blocks/ConceptBlock'
+import VisualizationBlock from './blocks/VisualizationBlock'
+import LabBlock from './blocks/LabBlock'
+import ChallengeBlock from './blocks/ChallengeBlock'
+import QuizBlock from './blocks/QuizBlock'
+import SectionTheory from './SectionTheory'
+import SectionCaseStudy from './SectionCaseStudy'
+import SectionDataLab from './SectionDataLab'
 
 interface Props {
-  section: V2Section
+  section: Section
   sectionIndex: number
   lessonId: string
   onQuizComplete?: (correct: number, total: number) => void
@@ -37,6 +40,12 @@ export default function SectionRenderer({ section, sectionIndex, lessonId, onQui
           onComplete={onQuizComplete}
         />
       )
+    case 'theory':
+      return <SectionTheory section={section} />
+    case 'case-study':
+      return <SectionCaseStudy section={section} />
+    case 'data-lab':
+      return <SectionDataLab section={section} />
     default:
       return null
   }

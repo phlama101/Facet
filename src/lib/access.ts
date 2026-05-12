@@ -11,7 +11,7 @@ export const FREE_LESSON_IDS = new Set([
   'geol-101-1-2-3',
   'geol-101-1-2-4',
   // Interactive
-  'minerals-v2',
+  'minerals',
   // OCEA 101 Module 1.1 — The Ocean Basin
   'ocea-101-1-1-1',
   'ocea-101-1-1-2',

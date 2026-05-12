@@ -3,7 +3,6 @@ import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { levelFromXp } from '@/lib/utils'
 import { LESSONS } from '@/lessons/index'
-import { LESSONS_V2 } from '@/lessons-v2/index'
 import { canAccessLesson } from '@/lib/access'
 
 const DAILY_MISSIONS = [
@@ -25,7 +24,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Validate lesson exists server-side and get authoritative xpReward (never trust client)
-    const lesson = LESSONS[lessonId] ?? LESSONS_V2[lessonId]
+    const lesson = LESSONS[lessonId]
     if (!lesson) {
       return NextResponse.json({ error: 'Lesson not found' }, { status: 404 })
     }

@@ -22,7 +22,9 @@ const crustContinentalVsOceanic: Lesson = {
     {
       type: 'intro',
       title: 'Two kinds of floor',
-      body: `Stand on a beach and look out at the ocean. You are standing at one of the most important geological boundaries on Earth — not just between land and sea, but between two fundamentally different types of rock. The ground beneath your feet and the floor of the ocean are not the same material. They have different compositions, different densities, different thicknesses, and very different ages.
+      body: `The ground beneath a beach in California and the rock 5 km below the Pacific Ocean look nothing alike — yet both are called "crust." That single word hides one of the most consequential distinctions in all of geology.
+
+Stand on a beach and look out at the ocean. You are standing at one of the most important geological boundaries on Earth — not just between land and sea, but between two fundamentally different types of rock. The ground beneath your feet and the floor of the ocean are not the same material. They have different compositions, different densities, different thicknesses, and very different ages.
 
 In Lesson 1.1.1, we learned that the crust — Earth's thin outermost layer — ranges in thickness from about **7 km** beneath the ocean floor to as much as **70 km** beneath major mountain ranges. That is a tenfold difference. We promised to explain why. This lesson delivers that explanation.
 
@@ -51,7 +53,7 @@ By the end of this lesson you will understand the key differences between the tw
     {
       type: 'concept',
       title: 'Composition, isostasy, and the age of the ocean floor',
-      body: `The most important difference between the two types of crust is **chemistry** — what they are made of. Every other difference (thickness, elevation, age) flows from that.
+      body: `The most important difference between the two types of crust is **chemistry** — what they are made of. Every other difference (thickness, elevation, age) flows from that. Just as a wooden board floats higher in water than a steel plate of the same size — because wood is less dense — continental crust floats higher on the mantle than oceanic crust because granite is less dense than basalt.
 
 **Oceanic crust: dense and thin.** The ocean floor is built almost entirely from **basalt** — a dark, heavy volcanic rock. Basalt is loaded with iron and magnesium, which makes it dense. Geologists describe this as **mafic** (a word blending "magnesium" and the Latin word for iron, ferrum). The average density of oceanic crust is about 3.0 g/cm³. It is also remarkably thin — only about 7 km on average. If you drove from the ocean surface to the bottom of the oceanic crust, you would travel roughly the same distance as driving across a large city.
 
@@ -87,14 +89,14 @@ All three methods point to the same picture, giving geologists very high confide
           icon: Mountain,
           color: BRAND.coral,
           desc: "Thick (30–70 km), less dense (~2.7 g/cm³), and dominated by felsic rocks like granite. Because it is less dense than the mantle, it floats relatively high — explaining why continents stand above sea level. Continental crust is ancient: stable cratons preserve rocks over 3–4 billion years old. It also thickens beneath mountain ranges, where colliding plates force the crust to pile up and grow a deep root into the mantle.",
-          examples: '30–70 km thick · ~2.7 g/cm³ · Felsic / granitic · Up to 4+ Ga old',
+          examples: 'Canadian Shield: rocks 4+ Ga old · Himalayan root: ~70 km thick · Average stable continent: ~35 km · Jack Hills zircon (Australia): oldest mineral grain 4.4 Ga · ~2.7 g/cm³ density',
         },
         {
           name: 'Oceanic Crust',
           icon: Waves,
           color: BRAND.accent,
           desc: "Thin (~7 km), dense (~3.0 g/cm³), and made almost entirely of mafic basalt. Its greater density relative to the mantle is just small enough to keep it floating, but it floats low — which is why ocean basins sit 3–5 km below sea level. Oceanic crust is geologically young: the oldest intact patches are only about 180–200 million years old, a tiny fraction of Earth's 4.54-billion-year age.",
-          examples: '~7 km thick · ~3.0 g/cm³ · Mafic / basaltic · Max ~200 Ma old',
+          examples: 'West Pacific oldest patches: ~180–200 Ma · Average thickness ~7 km · ~3.0 g/cm³ · DSDP/ODP drill cores confirm basalt everywhere · New crust forming today at Mid-Atlantic Ridge',
         },
         {
           name: 'Isostasy',

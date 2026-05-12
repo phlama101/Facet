@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import type { V2VisualizationSection } from '@/lessons-v2/types'
-import InteractionRenderer from '../interactions/InteractionRenderer'
+import type { VisualizationSection } from '@/lessons/types'
+import InteractionRenderer from '@/components/interactions/InteractionRenderer'
 
-interface Props { section: V2VisualizationSection }
+interface Props { section: VisualizationSection }
 
 export default function VisualizationBlock({ section }: Props) {
   return (

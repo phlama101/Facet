@@ -70,6 +70,7 @@ export default function LessonComplete({
       </div>
 
       {/* Sources */}
+      {lesson.sources && lesson.sources.length > 0 && (
       <div
         className="mt-10 text-left p-5 rounded-sm"
         style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
@@ -106,6 +107,7 @@ export default function LessonComplete({
           ))}
         </div>
       </div>
+      )}
 
       <button
         onClick={onSave}

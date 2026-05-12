@@ -4,11 +4,11 @@ import { useState } from 'react'
 import { Zap, CheckCircle2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import { useProgressStore } from '@/lessons-v2/store/progressStore'
-import type { V2ChallengeSection } from '@/lessons-v2/types'
-import InteractionRenderer from '../interactions/InteractionRenderer'
+import { useProgressStore } from '@/lib/progressStore'
+import type { ChallengeSection } from '@/lessons/types'
+import InteractionRenderer from '@/components/interactions/InteractionRenderer'
 
-interface Props { section: V2ChallengeSection; sectionKey: string }
+interface Props { section: ChallengeSection; sectionKey: string }
 
 export default function ChallengeBlock({ section, sectionKey }: Props) {
   const [claimed, setClaimed] = useState(false)
@@ -54,7 +54,6 @@ export default function ChallengeBlock({ section, sectionKey }: Props) {
         className="rounded-xl p-5 relative overflow-hidden"
         style={{ backgroundColor: `${BRAND.gold}0D`, border: `1px solid ${BRAND.gold}33` }}
       >
-        {/* Subtle shimmer on gold border */}
         <motion.span
           aria-hidden
           className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-amber-300/10 to-transparent skew-x-12"

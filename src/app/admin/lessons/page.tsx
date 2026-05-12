@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { getAllDbLessons } from '@/lib/lesson-store'
 import { LESSONS } from '@/lessons/index'
-import { LESSONS_V2 } from '@/lessons-v2/index'
 import { Plus, Database, FileCode2, Eye, Edit2, Pencil } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -17,13 +16,9 @@ export default async function AdminLessonsPage() {
   const dbLessons = await getAllDbLessons()
   const dbLessonIds = new Set(dbLessons.map(l => l.id))
 
-  const staticIds = [
-    ...Object.keys(LESSONS),
-    ...Object.keys(LESSONS_V2),
-  ].filter(id => !dbLessonIds.has(id))
-
-  // Sort static IDs for consistent display
-  staticIds.sort()
+  const staticIds = Object.keys(LESSONS)
+    .filter(id => !dbLessonIds.has(id))
+    .sort()
 
   return (
     <div className="space-y-6">
@@ -105,20 +100,14 @@ export default async function AdminLessonsPage() {
         </h2>
         <div className="rounded-2xl bg-[#161b22] border border-white/5 overflow-hidden divide-y divide-white/5">
           {staticIds.map(id => {
-            const lesson = LESSONS[id] ?? LESSONS_V2[id]
-            const isV2 = !!LESSONS_V2[id]
+            const lesson = LESSONS[id]
             return (
               <div key={id} className="flex items-center gap-4 px-5 py-3.5 hover:bg-white/2 transition-colors">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-sm text-[#e6edf3]">
-                      {(lesson as { title?: string })?.title ?? id}
+                      {lesson?.title ?? id}
                     </span>
-                    {isV2 && (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wide bg-purple-500/15 text-purple-400 border border-purple-500/20">
-                        V2
-                      </span>
-                    )}
                   </div>
                   <code className="text-xs text-[#8b949e] font-mono">{id}</code>
                 </div>

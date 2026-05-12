@@ -21,7 +21,6 @@ import {
   ASTR_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
-import { LESSONS_V2_LIST } from '@/lessons-v2/index'
 import { createClient } from '@/lib/supabase/client'
 import type { TrackId } from '@/lessons/types'
 
@@ -33,8 +32,6 @@ interface DisplayLesson {
   level: string
   duration: string
   xpReward: number
-  sourceCount?: number
-  isV2?: boolean
 }
 
 interface Course {
@@ -113,33 +110,15 @@ const COURSES: Course[] = [
   },
 ]
 
-const v2BaseIds = new Set(LESSONS_V2_LIST.map(l => l.id.replace(/-v2$/, '')))
-
-const COMBINED_LIST: DisplayLesson[] = [
-  ...LESSONS_V2_LIST.map(l => ({
-    id: l.id,
-    title: l.title,
-    description: l.description,
-    track: l.track,
-    level: l.level,
-    duration: l.duration,
-    xpReward: l.xpReward,
-    isV2: true,
-  })),
-  ...LESSON_LIST
-    .filter(l => !v2BaseIds.has(l.id))
-    .map(l => ({
-      id: l.id,
-      title: l.title,
-      description: l.description,
-      track: l.track,
-      level: l.level,
-      duration: l.duration,
-      xpReward: l.xpReward,
-      sourceCount: l.sources.length,
-      isV2: false,
-    })),
-]
+const COMBINED_LIST: DisplayLesson[] = LESSON_LIST.map(l => ({
+  id: l.id,
+  title: l.title,
+  description: l.description,
+  track: l.track,
+  level: l.level,
+  duration: l.duration,
+  xpReward: l.xpReward,
+}))
 
 const COMBINED_MAP = Object.fromEntries(COMBINED_LIST.map(l => [l.id, l]))
 const courseLessonIds = new Set(COURSES.flatMap(c => c.modules.flatMap(m => m.lessonIds)))
@@ -216,14 +195,6 @@ function LessonCard({
                 <Check size={8} strokeWidth={3} /> Done
               </span>
             )}
-            {lesson.isV2 && !isLocked && (
-              <span
-                className="text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
-                style={{ backgroundColor: `${BRAND.accent}20`, color: BRAND.accent, border: `1px solid ${BRAND.accent}40` }}
-              >
-                Interactive
-              </span>
-            )}
           </div>
         </div>
         <h3 className="font-serif leading-tight" style={{ fontSize: '20px' }}>
@@ -237,7 +208,6 @@ function LessonCard({
           style={{ color: BRAND.textSubtle }}
         >
           <span>{lesson.duration}</span>
-          {lesson.sourceCount != null && <span>{lesson.sourceCount} sources</span>}
           <span className="flex items-center gap-1" style={{ color: BRAND.gold }}>
             <Zap size={10} fill={BRAND.gold} /> {lesson.xpReward} XP
           </span>

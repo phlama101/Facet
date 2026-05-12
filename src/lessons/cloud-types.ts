@@ -21,7 +21,9 @@ const cloudTypes: Lesson = {
     {
       type: 'intro',
       title: 'The sky is an instrument',
-      body: `Clouds are not just weather decoration — they are a free, real-time readout of atmospheric conditions. With a few minutes of observation, you can forecast the next few hours of weather with surprising accuracy.
+      body: `Every sailor, farmer, and pilot who lived before weather satellites learned to read the sky as a survival skill — and the rules they discovered still work today. You already have everything you need: your eyes, a few minutes, and the vocabulary to name what you see.
+
+Clouds are not just weather decoration — they are a free, real-time readout of atmospheric conditions. With a few minutes of observation, you can forecast the next few hours of weather with surprising accuracy.
 
 A cloud forms when rising, moist air cools below its **dew point** — the temperature at which water vapour condenses into tiny liquid droplets or ice crystals around microscopic particles called condensation nuclei. The type of cloud that forms depends on how fast the air rises, how moist it is, and at what altitude condensation occurs.
 
@@ -39,9 +41,9 @@ Clouds are classified by two properties: **altitude** (how high they form) and *
       title: "The three shape families",
       body: "Every cloud shape descends from three Latin root words in Luke Howard's 1803 system:",
       cards: [
-        { name: 'Cumulus', icon: Cloud, color: BRAND.coral,    desc: '"Heap" (Latin) — puffy, cauliflower-shaped clouds with flat bottoms and bright white tops. They form when warm air rises rapidly and cools. Small cumulus are harmless; tall ones become thunderstorms.', examples: 'Fair-weather cumulus · Cumulonimbus' },
-        { name: 'Stratus', icon: CloudFog, color: BRAND.amethyst, desc: '"Layer" (Latin) — flat, featureless sheets that spread horizontally across the sky. They form in stable air with slow, widespread lifting. Bring persistent drizzle rather than heavy rain.', examples: 'Overcast drizzle · Fog · Nimbostratus' },
-        { name: 'Cirrus',  icon: Feather, color: BRAND.accent,  desc: '"Curl of hair" (Latin) — thin, wispy filaments at high altitude (above 6 km), composed entirely of ice crystals. Often the first sign of an approaching weather system.', examples: 'Mares\' tails · Cirrostratus halos' },
+        { name: 'Cumulus', icon: Cloud, color: BRAND.coral,    desc: '"Heap" (Latin) — puffy, cauliflower-shaped clouds with flat bottoms and bright white tops. They form when warm air rises rapidly and cools. Small cumulus are harmless; tall ones become thunderstorms. Think of them as bubbles in boiling water — wherever the surface heats up fastest, air rises and a cloud bubble pops up above it.', examples: 'Fair-weather cumulus over Colorado plains on a summer afternoon · Cumulonimbus over the Gulf Coast producing evening thunderstorms' },
+        { name: 'Stratus', icon: CloudFog, color: BRAND.amethyst, desc: '"Layer" (Latin) — flat, featureless sheets that spread horizontally across the sky. They form in stable air with slow, widespread lifting. Bring persistent drizzle rather than heavy rain.', examples: 'Marine stratus blanketing San Francisco Bay every June · Nimbostratus producing 24-hour steady rain ahead of a mid-Atlantic winter storm' },
+        { name: 'Cirrus',  icon: Feather, color: BRAND.accent,  desc: '"Curl of hair" (Latin) — thin, wispy filaments at high altitude (above 6 km), composed entirely of ice crystals. Often the first sign of an approaching weather system. They look feathery because ice crystals fall and evaporate before reaching lower altitudes, leaving a streaky trail called a "fallstreak."', examples: 'Mares\' tails streaming ahead of a Pacific storm approaching the US West Coast · Cirrostratus halos seen in the UK 12–18 hours before frontal rain' },
       ],
     },
     {
@@ -54,6 +56,8 @@ Clouds are classified by two properties: **altitude** (how high they form) and *
 **No prefix** (low, below 2 km): Mostly water droplets.
 **Nimbo-** or **-nimbus**: Indicates precipitation. Cumulonimbus = thunderstorm.
 
+Think of the prefix system like a zip code for the atmosphere: the prefix tells you the altitude neighbourhood, the root word tells you the shape, and together they pinpoint exactly what you're looking at and what weather it brings.
+
 Quick forecast rules of thumb — what to look for:
 
 **Cirrus gradually thickening and lowering into altostratus** — a warm front is approaching; rain is likely within 12–24 hours.
@@ -61,6 +65,15 @@ Quick forecast rules of thumb — what to look for:
 **Cumulus base darkening and towers growing rapidly** — unstable air; expect thunderstorms within hours.
 
 **A halo around the sun or moon** — light refracting through cirrostratus ice crystals; often precedes rain by 12–24 hours.`,
+    },
+    {
+      type: 'concept',
+      title: 'Key takeaways',
+      body: `• **Cloud shape reveals air motion**: Puffy cumulus form in rising, unstable air; flat stratus form in stable, gently lifting air; wispy cirrus mark moisture at high altitudes where it is already freezing. Shape is a direct signature of how the atmosphere is moving.
+
+• **Altitude prefixes tell you what clouds are made of**: Cirro- clouds (above 6 km) are pure ice crystals; alto- clouds (2–6 km) are mixed ice and water; low clouds are mostly liquid droplets — and this difference determines whether they produce rain, snow, or nothing at all.
+
+• **Cloud sequences forecast weather**: Cirrus thickening into altostratus over 6–12 hours is one of the most reliable signs of an approaching warm front; rapidly growing cumulus towers with darkening bases warn of thunderstorms within hours. The sky gives you time to prepare if you know the pattern.`,
     },
     {
       type: 'quiz',

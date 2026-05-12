@@ -14,7 +14,6 @@ import {
   VOLC_101_MODULES, CLIM_101_MODULES, ASTR_101_MODULES,
   type CourseModule,
 } from '@/lessons/index'
-import { LESSONS_V2_LIST } from '@/lessons-v2/index'
 import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
 import StatCard from '@/components/ui/StatCard'
@@ -114,11 +113,7 @@ export default async function DashboardPage({ searchParams }: Props) {
   const xpForNextLevel = xpNeededForLevel(level)
   const xpToGo = xpForNextLevel - xpThisLevel
 
-  const v2BaseIds = new Set(LESSONS_V2_LIST.map(l => l.id.replace(/-v2$/, '')))
-  const combinedList = [
-    ...LESSONS_V2_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track, duration: l.duration })),
-    ...LESSON_LIST.filter(l => !v2BaseIds.has(l.id)).map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track, duration: l.duration })),
-  ]
+  const combinedList = LESSON_LIST.map(l => ({ id: l.id, title: l.title, trackName: l.trackName, level: l.level, description: l.description, xpReward: l.xpReward, track: l.track, duration: l.duration }))
   const lessonMap = Object.fromEntries(combinedList.map(l => [l.id, l]))
 
   // Per-course stats
