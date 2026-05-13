@@ -459,6 +459,13 @@ export const LEARNING_PATHS: LearningPath[] = [
         lessonIds: ['atmo-101-1-3-1', 'atmo-101-1-3-2', 'atmo-101-1-3-3', 'atmo-101-1-3-4'],
         iconId: 'chapter-clouds-forecasting',
       },
+      {
+        id: 'atmosphere-weather-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Atmosphere & Weather.',
+        lessonIds: ['atmo-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
     ],
   },
   {
