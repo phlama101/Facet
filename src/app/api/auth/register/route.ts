@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { sendEmail } from '@/lib/email'
+import { welcomeEmail } from '@/lib/emails/welcome'
 
 const USERNAME_MAX = 30
 const DISPLAY_NAME_MAX = 50
@@ -87,6 +89,10 @@ export async function POST(request: Request) {
       }
       return NextResponse.json({ error: error.message }, { status: 400 })
     }
+
+    const name = (displayName || username).trim()
+    const { subject, html } = welcomeEmail(name)
+    void sendEmail(email, subject, html)
 
     return NextResponse.json({ ok: true })
   } catch {
