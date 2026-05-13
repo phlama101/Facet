@@ -37,6 +37,31 @@ export const FREE_LESSON_IDS = new Set([
   'astr-101-1-1-2',
   'astr-101-1-1-3',
   'astr-101-1-1-4',
+  // Earthquakes & Seismology — Chapter 1: Seismic Waves
+  'seis-101-1-1-1',
+  'seis-101-1-1-2',
+  'seis-101-1-1-3',
+  'seis-101-1-1-4',
+  // Hydrology — Chapter 1: The Water Cycle
+  'hyd-101-1-1-1',
+  'hyd-101-1-1-2',
+  'hyd-101-1-1-3',
+  'hyd-101-1-1-4',
+  // Geomorphology — Chapter 1: Hillslopes & Weathering
+  'geom-101-1-1-1',
+  'geom-101-1-1-2',
+  'geom-101-1-1-3',
+  'geom-101-1-1-4',
+  // Glaciology — Chapter 1: Snow & Glaciers
+  'glac-101-1-1-1',
+  'glac-101-1-1-2',
+  'glac-101-1-1-3',
+  'glac-101-1-1-4',
+  // Astrobiology — Chapter 1: Origins of Life
+  'abio-101-1-1-1',
+  'abio-101-1-1-2',
+  'abio-101-1-1-3',
+  'abio-101-1-1-4',
 ])
 
 export function canAccessLesson(lessonId: string, subscription: string | null | undefined): boolean {
