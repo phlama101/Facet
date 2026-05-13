@@ -137,6 +137,19 @@ import liquefactionLandslides      from './seis-101-1-3-2'
 import seismicTsunamis             from './seis-101-1-3-3'
 import earthquakeEarlyWarning      from './seis-101-1-3-4'
 import seis101Capstone             from './seis-101-capstone'
+import globalWaterCycle           from './hyd-101-1-1-1'
+import precipitationET            from './hyd-101-1-1-2'
+import infiltrationRunoff         from './hyd-101-1-1-3'
+import snowHydrology              from './hyd-101-1-1-4'
+import drainageBasins             from './hyd-101-1-2-1'
+import streamDischarge            from './hyd-101-1-2-2'
+import fluvialGeomorphology       from './hyd-101-1-2-3'
+import floodHazards               from './hyd-101-1-2-4'
+import aquifersGroundwater        from './hyd-101-1-3-1'
+import groundwaterFlow            from './hyd-101-1-3-2'
+import springsGeothermal          from './hyd-101-1-3-3'
+import groundwaterSustainability  from './hyd-101-1-3-4'
+import hyd101Capstone             from './hyd-101-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -273,6 +286,19 @@ export const LESSONS: Record<string, Lesson> = {
   'seis-101-1-3-3':          seismicTsunamis,
   'seis-101-1-3-4':          earthquakeEarlyWarning,
   'seis-101-capstone':       seis101Capstone,
+  'hyd-101-1-1-1':           globalWaterCycle,
+  'hyd-101-1-1-2':           precipitationET,
+  'hyd-101-1-1-3':           infiltrationRunoff,
+  'hyd-101-1-1-4':           snowHydrology,
+  'hyd-101-1-2-1':           drainageBasins,
+  'hyd-101-1-2-2':           streamDischarge,
+  'hyd-101-1-2-3':           fluvialGeomorphology,
+  'hyd-101-1-2-4':           floodHazards,
+  'hyd-101-1-3-1':           aquifersGroundwater,
+  'hyd-101-1-3-2':           groundwaterFlow,
+  'hyd-101-1-3-3':           springsGeothermal,
+  'hyd-101-1-3-4':           groundwaterSustainability,
+  'hyd-101-capstone':        hyd101Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -679,6 +705,46 @@ export const LEARNING_PATHS: LearningPath[] = [
       },
     ],
   },
+  {
+    id: 'hydrology',
+    title: 'Hydrology',
+    subtitle: 'The water cycle, rivers and floods, and groundwater — how freshwater moves through, shapes, and sustains our world.',
+    track: 'geo',
+    level: 'Foundations',
+    color: BRAND.accent,
+    icon: Waves,
+    iconId: 'path-hydrology',
+    chapters: [
+      {
+        id: 'water-cycle',
+        title: 'The Water Cycle',
+        description: 'Global water budget, precipitation and evapotranspiration, infiltration and runoff, and snow hydrology.',
+        lessonIds: ['hyd-101-1-1-1', 'hyd-101-1-1-2', 'hyd-101-1-1-3', 'hyd-101-1-1-4'],
+        iconId: 'chapter-water-cycle',
+      },
+      {
+        id: 'rivers-watersheds',
+        title: 'Rivers & Watersheds',
+        description: 'Drainage basins, stream networks, discharge and hydrographs, fluvial geomorphology, and flood hazards.',
+        lessonIds: ['hyd-101-1-2-1', 'hyd-101-1-2-2', 'hyd-101-1-2-3', 'hyd-101-1-2-4'],
+        iconId: 'chapter-rivers-watersheds',
+      },
+      {
+        id: 'groundwater',
+        title: 'Groundwater',
+        description: 'Aquifer types, Darcy\'s Law, well hydraulics, springs, geothermal systems, and groundwater sustainability.',
+        lessonIds: ['hyd-101-1-3-1', 'hyd-101-1-3-2', 'hyd-101-1-3-3', 'hyd-101-1-3-4'],
+        iconId: 'chapter-groundwater',
+      },
+      {
+        id: 'hydrology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Hydrology.',
+        lessonIds: ['hyd-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
 ]
 
 // ─── Legacy named exports (derived from LEARNING_PATHS) ───────────────────────
@@ -692,6 +758,7 @@ export const VOLC_101_MODULES = LEARNING_PATHS.find(p => p.id === 'volcanoes')!.
 export const CLIM_101_MODULES = LEARNING_PATHS.find(p => p.id === 'climate-past-future')!.chapters
 export const ASTR_101_MODULES = LEARNING_PATHS.find(p => p.id === 'solar-system')!.chapters
 export const SEIS_101_MODULES = LEARNING_PATHS.find(p => p.id === 'earthquakes-seismology')!.chapters
+export const HYD_101_MODULES  = LEARNING_PATHS.find(p => p.id === 'hydrology')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
