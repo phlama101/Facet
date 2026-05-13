@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getStripe, PLANS } from '@/lib/stripe'
 import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 // Only allow price IDs that belong to our known plans.
 // This prevents a tampered client request from initiating a checkout session
@@ -31,14 +32,16 @@ export async function POST(req: NextRequest) {
 
   let customerId = profile?.stripe_customer_id ?? null
 
+  const admin = createAdminClient()
+
   if (!customerId) {
     const customer = await getStripe().customers.create({
       email: user.email,
       metadata: { supabase_user_id: user.id },
     })
     customerId = customer.id
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await (supabase.from('profiles') as any)
+    await admin
+      .from('profiles')
       .update({ stripe_customer_id: customerId })
       .eq('id', user.id)
   }
@@ -47,6 +50,9 @@ export async function POST(req: NextRequest) {
 
   const session = await getStripe().checkout.sessions.create({
     customer: customerId,
+    // client_reference_id lets the webhook grant access via Supabase user ID
+    // in case stripe_customer_id hasn't been stored on the profile yet.
+    client_reference_id: user.id,
     mode: 'subscription',
     payment_method_types: ['card'],
     line_items: [{ price: priceId, quantity: 1 }],

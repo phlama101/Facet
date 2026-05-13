@@ -171,16 +171,33 @@ export default async function DashboardPage({ searchParams }: Props) {
       )}
 
       {/* Upgrade banner */}
-      {justUpgraded && (
+      {justUpgraded && profile.subscription !== 'free' && (
         <div
           className="flex items-center gap-3 px-5 py-3.5 rounded-sm"
           style={{ backgroundColor: `${BRAND.jade}15`, border: `1px solid ${BRAND.jade}40` }}
         >
           <Trophy size={16} color={BRAND.jade} />
           <div className="flex-1">
-            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>Welcome to your new plan!</div>
+            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>Welcome to Naturalist!</div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-              Your subscription is active. All unlocked content is available immediately.
+              Your subscription is active. All learning paths are unlocked immediately.
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Processing banner — subscription webhook hasn't landed yet */}
+      {justUpgraded && profile.subscription === 'free' && (
+        <div
+          className="flex items-center gap-3 px-5 py-3.5 rounded-sm"
+          style={{ backgroundColor: `${BRAND.gold}12`, border: `1px solid ${BRAND.gold}40` }}
+        >
+          <div className="w-4 h-4 rounded-full border-2 shrink-0 animate-spin" style={{ borderColor: `${BRAND.gold}40`, borderTopColor: BRAND.gold }} />
+          <div className="flex-1">
+            <div className="text-sm font-medium" style={{ color: BRAND.gold }}>Activating your subscription…</div>
+            <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
+              This usually takes a few seconds.{' '}
+              <a href="/dashboard?upgraded=1" className="underline" style={{ color: BRAND.gold }}>Refresh</a> if it doesn&apos;t update.
             </div>
           </div>
         </div>
