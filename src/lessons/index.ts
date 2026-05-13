@@ -189,6 +189,58 @@ import habitableZones             from './abio-101-1-3-2'
 import biosignatures              from './abio-101-1-3-3'
 import fermiDrake                 from './abio-101-1-3-4'
 import abio101Capstone            from './abio-101-capstone'
+import seawaterCarbonateChemistry  from './ocea-201-1-1-1'
+import oceanAcidification201       from './ocea-201-1-1-2'
+import dissolvedOxygenDeadZones    from './ocea-201-1-1-3'
+import marineNutrientCycles        from './ocea-201-1-1-4'
+import biologicalPump              from './ocea-201-1-2-1'
+import marinePrimaryProduction     from './ocea-201-1-2-2'
+import deepSeaCarbonStorage        from './ocea-201-1-2-3'
+import methaneHydrates             from './ocea-201-1-2-4'
+import ensoOceanAtmosphere         from './ocea-201-1-3-1'
+import oceanHeatContent            from './ocea-201-1-3-2'
+import amocThermohaline            from './ocea-201-1-3-3'
+import seaIcePolarOceans           from './ocea-201-1-3-4'
+import ocea201Capstone             from './ocea-201-capstone'
+import globalCarbonCycle           from './clim-201-1-1-1'
+import landCarbonSinks             from './clim-201-1-1-2'
+import oceanCarbonUptake           from './clim-201-1-1-3'
+import carbonBudget                from './clim-201-1-1-4'
+import climateSensitivityForcing   from './clim-201-1-2-1'
+import waterVaporLapseRate         from './clim-201-1-2-2'
+import cloudAlbedoFeedbacks        from './clim-201-1-2-3'
+import carbonCycleFeedbacks        from './clim-201-1-2-4'
+import climateTippingPoints        from './clim-201-1-3-1'
+import earthSystemModels           from './clim-201-1-3-2'
+import climateProjectionsScenarios from './clim-201-1-3-3'
+import carbonRemovalGeoengineering from './clim-201-1-3-4'
+import clim201Capstone             from './clim-201-capstone'
+import partialMeltingMagmaGenesis  from './volc-201-1-1-1'
+import bowensReactionSeries        from './volc-201-1-1-2'
+import magmaTypesTectonicSettings  from './volc-201-1-1-3'
+import largeIgneousProvinces       from './volc-201-1-1-4'
+import magmaChambersMushSystems    from './volc-201-1-2-1'
+import calderasSupervolcanoes      from './volc-201-1-2-2'
+import oceanicIslandVolcanism      from './volc-201-1-2-3'
+import subductionZoneGeochemistry  from './volc-201-1-2-4'
+import planetaryVolcanism          from './volc-201-1-3-1'
+import floodBasaltsMassExtinctions from './volc-201-1-3-2'
+import midOceanRidgeVolcanism      from './volc-201-1-3-3'
+import volcanicGeochemistryTracers from './volc-201-1-3-4'
+import volc201Capstone             from './volc-201-capstone'
+import ensoAtmosphericCoupling            from './atmo-201-1-1-1'
+import pacificDecadalAMO                  from './atmo-201-1-1-2'
+import naoArcticOscillation               from './atmo-201-1-1-3'
+import asianMonsoonTropicalCirculations   from './atmo-201-1-1-4'
+import jetStreamsRossbyWaves              from './atmo-201-1-2-1'
+import atmosphericBlocking                from './atmo-201-1-2-2'
+import cyclogenesisExplosive              from './atmo-201-1-2-3'
+import mesoscaleConvectiveSystems         from './atmo-201-1-2-4'
+import heatWavesDrought                   from './atmo-201-1-3-1'
+import atmosphericRivers                  from './atmo-201-1-3-2'
+import tropicalCycloneIntensification     from './atmo-201-1-3-3'
+import polarVortexSSW                     from './atmo-201-1-3-4'
+import atmo201Capstone                    from './atmo-201-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -377,6 +429,58 @@ export const LESSONS: Record<string, Lesson> = {
   'abio-101-1-3-3':          biosignatures,
   'abio-101-1-3-4':          fermiDrake,
   'abio-101-capstone':       abio101Capstone,
+  'ocea-201-1-1-1':          seawaterCarbonateChemistry,
+  'ocea-201-1-1-2':          oceanAcidification201,
+  'ocea-201-1-1-3':          dissolvedOxygenDeadZones,
+  'ocea-201-1-1-4':          marineNutrientCycles,
+  'ocea-201-1-2-1':          biologicalPump,
+  'ocea-201-1-2-2':          marinePrimaryProduction,
+  'ocea-201-1-2-3':          deepSeaCarbonStorage,
+  'ocea-201-1-2-4':          methaneHydrates,
+  'ocea-201-1-3-1':          ensoOceanAtmosphere,
+  'ocea-201-1-3-2':          oceanHeatContent,
+  'ocea-201-1-3-3':          amocThermohaline,
+  'ocea-201-1-3-4':          seaIcePolarOceans,
+  'ocea-201-capstone':       ocea201Capstone,
+  'clim-201-1-1-1':          globalCarbonCycle,
+  'clim-201-1-1-2':          landCarbonSinks,
+  'clim-201-1-1-3':          oceanCarbonUptake,
+  'clim-201-1-1-4':          carbonBudget,
+  'clim-201-1-2-1':          climateSensitivityForcing,
+  'clim-201-1-2-2':          waterVaporLapseRate,
+  'clim-201-1-2-3':          cloudAlbedoFeedbacks,
+  'clim-201-1-2-4':          carbonCycleFeedbacks,
+  'clim-201-1-3-1':          climateTippingPoints,
+  'clim-201-1-3-2':          earthSystemModels,
+  'clim-201-1-3-3':          climateProjectionsScenarios,
+  'clim-201-1-3-4':          carbonRemovalGeoengineering,
+  'clim-201-capstone':       clim201Capstone,
+  'volc-201-1-1-1':          partialMeltingMagmaGenesis,
+  'volc-201-1-1-2':          bowensReactionSeries,
+  'volc-201-1-1-3':          magmaTypesTectonicSettings,
+  'volc-201-1-1-4':          largeIgneousProvinces,
+  'volc-201-1-2-1':          magmaChambersMushSystems,
+  'volc-201-1-2-2':          calderasSupervolcanoes,
+  'volc-201-1-2-3':          oceanicIslandVolcanism,
+  'volc-201-1-2-4':          subductionZoneGeochemistry,
+  'volc-201-1-3-1':          planetaryVolcanism,
+  'volc-201-1-3-2':          floodBasaltsMassExtinctions,
+  'volc-201-1-3-3':          midOceanRidgeVolcanism,
+  'volc-201-1-3-4':          volcanicGeochemistryTracers,
+  'volc-201-capstone':       volc201Capstone,
+  'atmo-201-1-1-1':          ensoAtmosphericCoupling,
+  'atmo-201-1-1-2':          pacificDecadalAMO,
+  'atmo-201-1-1-3':          naoArcticOscillation,
+  'atmo-201-1-1-4':          asianMonsoonTropicalCirculations,
+  'atmo-201-1-2-1':          jetStreamsRossbyWaves,
+  'atmo-201-1-2-2':          atmosphericBlocking,
+  'atmo-201-1-2-3':          cyclogenesisExplosive,
+  'atmo-201-1-2-4':          mesoscaleConvectiveSystems,
+  'atmo-201-1-3-1':          heatWavesDrought,
+  'atmo-201-1-3-2':          atmosphericRivers,
+  'atmo-201-1-3-3':          tropicalCycloneIntensification,
+  'atmo-201-1-3-4':          polarVortexSSW,
+  'atmo-201-capstone':       atmo201Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -904,6 +1008,170 @@ export const LEARNING_PATHS: LearningPath[] = [
     ],
   },
   {
+    id: 'marine-chemistry-biogeochemistry',
+    title: 'Marine Chemistry & Biogeochemistry',
+    subtitle: 'The ocean as a chemical reactor — carbonate equilibria, nutrient cycles, the biological pump, methane hydrates, and how the ocean regulates Earth\'s climate on million-year timescales.',
+    track: 'oce',
+    level: 'Intermediate',
+    color: BRAND.accent,
+    icon: Waves,
+    iconId: 'path-marine-chemistry-biogeochemistry',
+    prerequisites: ['ocean-systems'],
+    chapters: [
+      {
+        id: 'ocean-chemistry',
+        title: 'Ocean Chemistry & Dissolved Gases',
+        description: 'Carbonate equilibria, ocean acidification, oxygen minimum zones, and the marine nutrient cycles that sustain all ocean life.',
+        lessonIds: ['ocea-201-1-1-1', 'ocea-201-1-1-2', 'ocea-201-1-1-3', 'ocea-201-1-1-4'],
+        iconId: 'chapter-ocean-chemistry',
+      },
+      {
+        id: 'marine-carbon-export',
+        title: 'Marine Carbon Export & Storage',
+        description: 'The biological pump, marine primary production, deep-sea carbon storage, and methane hydrates as a vast submarine carbon reservoir.',
+        lessonIds: ['ocea-201-1-2-1', 'ocea-201-1-2-2', 'ocea-201-1-2-3', 'ocea-201-1-2-4'],
+        iconId: 'chapter-marine-carbon-export',
+      },
+      {
+        id: 'ocean-climate-coupling',
+        title: 'Ocean–Climate Coupling',
+        description: 'ENSO and the ocean\'s role in global climate, ocean heat content trends, AMOC and thermohaline circulation, and sea ice dynamics in polar oceans.',
+        lessonIds: ['ocea-201-1-3-1', 'ocea-201-1-3-2', 'ocea-201-1-3-3', 'ocea-201-1-3-4'],
+        iconId: 'chapter-ocean-climate-coupling',
+      },
+      {
+        id: 'marine-chemistry-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Marine Chemistry & Biogeochemistry.',
+        lessonIds: ['ocea-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'carbon-cycle-climate-feedbacks',
+    title: 'Carbon Cycle & Climate Feedbacks',
+    subtitle: 'How carbon moves between reservoirs, amplifies warming through feedbacks, and how the remaining carbon budget defines the climate challenge of the century.',
+    track: 'cli',
+    level: 'Intermediate',
+    color: BRAND.jade,
+    icon: Thermometer,
+    iconId: 'path-carbon-cycle-climate-feedbacks',
+    prerequisites: ['climate-past-future'],
+    chapters: [
+      {
+        id: 'global-carbon-cycle',
+        title: 'The Global Carbon Cycle',
+        description: 'Atmospheric CO₂ reservoirs and fluxes, land carbon sinks, ocean carbon uptake, and the global carbon budget.',
+        lessonIds: ['clim-201-1-1-1', 'clim-201-1-1-2', 'clim-201-1-1-3', 'clim-201-1-1-4'],
+        iconId: 'chapter-global-carbon-cycle',
+      },
+      {
+        id: 'climate-feedbacks',
+        title: 'Climate Sensitivity & Feedbacks',
+        description: 'Radiative forcing and climate sensitivity, water vapor and lapse rate feedbacks, cloud and albedo feedbacks, and carbon cycle amplification.',
+        lessonIds: ['clim-201-1-2-1', 'clim-201-1-2-2', 'clim-201-1-2-3', 'clim-201-1-2-4'],
+        iconId: 'chapter-climate-feedbacks',
+      },
+      {
+        id: 'climate-futures',
+        title: 'Tipping Points, Models & Futures',
+        description: 'Climate tipping elements, Earth system models and CMIP6, emissions scenarios and projections, carbon removal and solar geoengineering.',
+        lessonIds: ['clim-201-1-3-1', 'clim-201-1-3-2', 'clim-201-1-3-3', 'clim-201-1-3-4'],
+        iconId: 'chapter-climate-futures',
+      },
+      {
+        id: 'carbon-cycle-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Carbon Cycle & Climate Feedbacks.',
+        lessonIds: ['clim-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'magma-systems-igneous-petrology',
+    title: 'Magma Systems & Igneous Petrology',
+    subtitle: 'The deep origin and evolution of magma — from partial melting and crystallization to crystal mush systems, supervolcanoes, and the geochemical fingerprints that identify mantle source regions.',
+    track: 'vol',
+    level: 'Intermediate',
+    color: BRAND.ruby,
+    icon: Flame,
+    iconId: 'path-magma-systems-igneous-petrology',
+    prerequisites: ['volcanoes'],
+    chapters: [
+      {
+        id: 'magma-genesis',
+        title: 'Magma Genesis & Differentiation',
+        description: 'Partial melting mechanisms, Bowen\'s reaction series, magma classification by tectonic setting, and large igneous provinces.',
+        lessonIds: ['volc-201-1-1-1', 'volc-201-1-1-2', 'volc-201-1-1-3', 'volc-201-1-1-4'],
+        iconId: 'chapter-magma-genesis',
+      },
+      {
+        id: 'magmatic-systems',
+        title: 'Magmatic Systems & Calderas',
+        description: 'Crystal mush systems, calderas and supervolcanoes, oceanic island volcanism, and subduction zone geochemistry.',
+        lessonIds: ['volc-201-1-2-1', 'volc-201-1-2-2', 'volc-201-1-2-3', 'volc-201-1-2-4'],
+        iconId: 'chapter-magmatic-systems',
+      },
+      {
+        id: 'planetary-volcanology',
+        title: 'Planetary Volcanology & Tracers',
+        description: 'Volcanic processes across the solar system, flood basalts and mass extinctions, mid-ocean ridge volcanism, and isotopic tracers of mantle sources.',
+        lessonIds: ['volc-201-1-3-1', 'volc-201-1-3-2', 'volc-201-1-3-3', 'volc-201-1-3-4'],
+        iconId: 'chapter-planetary-volcanology',
+      },
+      {
+        id: 'magma-systems-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Magma Systems & Igneous Petrology.',
+        lessonIds: ['volc-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'climate-dynamics-variability',
+    title: 'Climate Dynamics & Variability',
+    subtitle: 'The engine of weather and climate — ENSO, multidecadal oscillations, monsoons, jet streams, blocking, cyclogenesis, and the extremes that define a changing atmosphere.',
+    track: 'atm',
+    level: 'Intermediate',
+    color: BRAND.gold,
+    icon: Wind,
+    iconId: 'path-climate-dynamics-variability',
+    prerequisites: ['atmosphere-weather'],
+    chapters: [
+      {
+        id: 'climate-modes',
+        title: 'Climate Modes & Teleconnections',
+        description: 'ENSO atmospheric teleconnections, PDO and AMO multidecadal variability, NAO and Arctic Oscillation, and the Asian monsoon system.',
+        lessonIds: ['atmo-201-1-1-1', 'atmo-201-1-1-2', 'atmo-201-1-1-3', 'atmo-201-1-1-4'],
+        iconId: 'chapter-climate-modes',
+      },
+      {
+        id: 'dynamic-meteorology',
+        title: 'Dynamic Meteorology',
+        description: 'Jet streams and Rossby waves, atmospheric blocking, cyclogenesis and bomb cyclones, and mesoscale convective systems.',
+        lessonIds: ['atmo-201-1-2-1', 'atmo-201-1-2-2', 'atmo-201-1-2-3', 'atmo-201-1-2-4'],
+        iconId: 'chapter-dynamic-meteorology',
+      },
+      {
+        id: 'atmospheric-extremes',
+        title: 'Atmospheric Extremes',
+        description: 'Heat waves and drought, atmospheric rivers, tropical cyclone intensification, and polar vortex dynamics and sudden stratospheric warming.',
+        lessonIds: ['atmo-201-1-3-1', 'atmo-201-1-3-2', 'atmo-201-1-3-3', 'atmo-201-1-3-4'],
+        iconId: 'chapter-atmospheric-extremes',
+      },
+      {
+        id: 'climate-dynamics-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Climate Dynamics & Variability.',
+        lessonIds: ['atmo-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
     id: 'astrobiology',
     title: 'Astrobiology',
     subtitle: 'From the origin of life on Earth to the search for it elsewhere — prebiotic chemistry, habitable worlds, and the cosmos as a life-detection problem.',
@@ -960,6 +1228,10 @@ export const HYD_101_MODULES  = LEARNING_PATHS.find(p => p.id === 'hydrology')!.
 export const GLAC_101_MODULES = LEARNING_PATHS.find(p => p.id === 'glaciology')!.chapters
 export const GEOM_101_MODULES = LEARNING_PATHS.find(p => p.id === 'geomorphology')!.chapters
 export const ABIO_101_MODULES = LEARNING_PATHS.find(p => p.id === 'astrobiology')!.chapters
+export const OCEA_201_MODULES = LEARNING_PATHS.find(p => p.id === 'marine-chemistry-biogeochemistry')!.chapters
+export const CLIM_201_MODULES = LEARNING_PATHS.find(p => p.id === 'carbon-cycle-climate-feedbacks')!.chapters
+export const VOLC_201_MODULES = LEARNING_PATHS.find(p => p.id === 'magma-systems-igneous-petrology')!.chapters
+export const ATMO_201_MODULES = LEARNING_PATHS.find(p => p.id === 'climate-dynamics-variability')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
