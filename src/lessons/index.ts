@@ -73,6 +73,10 @@ import laharsHydrologicalHazards   from './volc-101-1-3-1'
 import volcanicTsunamis            from './volc-101-1-3-2'
 import volcanicWinter              from './volc-101-1-3-3'
 import volcanicMonitoring          from './volc-101-1-3-4'
+import volcanoesAndClimate         from './volc-101-1-4-1'
+import supervolcanoesAndCalderas   from './volc-101-1-4-2'
+import volcanicResources           from './volc-101-1-4-3'
+import monitoringVolcanoes         from './volc-101-1-4-4'
 import climateSystemOverview       from './clim-101-1-1-1'
 import atmosphericCirculation      from './clim-101-1-1-2'
 import carbonCycle                 from './clim-101-1-1-3'
@@ -85,6 +89,10 @@ import observedWarming             from './clim-101-1-3-1'
 import seaLevelRise                from './clim-101-1-3-2'
 import climateImpacts              from './clim-101-1-3-3'
 import mitigationAdaptation        from './clim-101-1-3-4'
+import energyTransition            from './clim-101-1-4-1'
+import carbonDioxideRemoval        from './clim-101-1-4-2'
+import adaptation                  from './clim-101-1-4-3'
+import solarGeoengineering         from './clim-101-1-4-4'
 import clim101Capstone             from './clim-101-capstone'
 import solarSystemFormation        from './astr-101-1-1-1'
 import differentiationLHB          from './astr-101-1-1-2'
@@ -320,6 +328,10 @@ export const LESSONS: Record<string, Lesson> = {
   'volc-101-1-3-2':          volcanicTsunamis,
   'volc-101-1-3-3':          volcanicWinter,
   'volc-101-1-3-4':          volcanicMonitoring,
+  'volc-101-1-4-1':          volcanoesAndClimate,
+  'volc-101-1-4-2':          supervolcanoesAndCalderas,
+  'volc-101-1-4-3':          volcanicResources,
+  'volc-101-1-4-4':          monitoringVolcanoes,
   'clim-101-1-1-1':          climateSystemOverview,
   'clim-101-1-1-2':          atmosphericCirculation,
   'clim-101-1-1-3':          carbonCycle,
@@ -332,6 +344,10 @@ export const LESSONS: Record<string, Lesson> = {
   'clim-101-1-3-2':          seaLevelRise,
   'clim-101-1-3-3':          climateImpacts,
   'clim-101-1-3-4':          mitigationAdaptation,
+  'clim-101-1-4-1':          energyTransition,
+  'clim-101-1-4-2':          carbonDioxideRemoval,
+  'clim-101-1-4-3':          adaptation,
+  'clim-101-1-4-4':          solarGeoengineering,
   'clim-101-capstone':       clim101Capstone,
   'astr-101-1-1-1':          solarSystemFormation,
   'astr-101-1-1-2':          differentiationLHB,
@@ -755,9 +771,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-volcanic-hazards',
       },
       {
+        id: 'volcanic-legacy',
+        title: 'Volcanic Legacy',
+        description: 'Climate forcing, supervolcanoes, volcanic soils and mineral wealth, and the science of eruption forecasting.',
+        lessonIds: ['volc-101-1-4-1', 'volc-101-1-4-2', 'volc-101-1-4-3', 'volc-101-1-4-4'],
+        iconId: 'chapter-volcanic-legacy',
+      },
+      {
         id: 'volcanoes-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Volcanoes.',
+        description: 'Test your knowledge across all four chapters of Volcanoes.',
         lessonIds: ['volc-101-capstone'],
         iconId: 'chapter-assessment',
       },
@@ -795,9 +818,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-modern-climate-change',
       },
       {
+        id: 'responding-to-climate-change',
+        title: 'Responding to Climate Change',
+        description: 'The energy transition, carbon dioxide removal, climate adaptation, and solar geoengineering — the full toolkit for navigating a warming world.',
+        lessonIds: ['clim-101-1-4-1', 'clim-101-1-4-2', 'clim-101-1-4-3', 'clim-101-1-4-4'],
+        iconId: 'chapter-responding-to-climate-change',
+      },
+      {
         id: 'climate-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Climate, Past & Future.',
+        description: 'Test your knowledge across all four chapters of Climate, Past & Future.',
         lessonIds: ['clim-101-capstone'],
         iconId: 'chapter-assessment',
       },
