@@ -210,6 +210,10 @@ import exoplanetDetection         from './abio-101-1-3-1'
 import habitableZones             from './abio-101-1-3-2'
 import biosignatures              from './abio-101-1-3-3'
 import fermiDrake                 from './abio-101-1-3-4'
+import marsModernSearch            from './abio-101-1-4-1'
+import oceanWorlds                 from './abio-101-1-4-2'
+import atmosphericBiosignatures    from './abio-101-1-4-3'
+import fermiTechnoSignatures       from './abio-101-1-4-4'
 import abio101Capstone            from './abio-101-capstone'
 import seawaterCarbonateChemistry  from './ocea-201-1-1-1'
 import oceanAcidification201       from './ocea-201-1-1-2'
@@ -472,6 +476,10 @@ export const LESSONS: Record<string, Lesson> = {
   'abio-101-1-3-2':          habitableZones,
   'abio-101-1-3-3':          biosignatures,
   'abio-101-1-3-4':          fermiDrake,
+  'abio-101-1-4-1':          marsModernSearch,
+  'abio-101-1-4-2':          oceanWorlds,
+  'abio-101-1-4-3':          atmosphericBiosignatures,
+  'abio-101-1-4-4':          fermiTechnoSignatures,
   'abio-101-capstone':       abio101Capstone,
   'ocea-201-1-1-1':          seawaterCarbonateChemistry,
   'ocea-201-1-1-2':          oceanAcidification201,
@@ -1296,9 +1304,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-exoplanets-biosignatures',
       },
       {
+        id: 'search-for-life-beyond-earth',
+        title: 'The Search for Life Beyond Earth',
+        description: 'Mars habitability past and present, icy ocean worlds, atmospheric biosignatures detectable by JWST, and the Fermi paradox — why we haven\'t heard from anyone yet.',
+        lessonIds: ['abio-101-1-4-1', 'abio-101-1-4-2', 'abio-101-1-4-3', 'abio-101-1-4-4'],
+        iconId: 'chapter-search-for-life',
+      },
+      {
         id: 'astrobiology-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Astrobiology.',
+        description: 'Test your knowledge across all four chapters of Astrobiology.',
         lessonIds: ['abio-101-capstone'],
         iconId: 'chapter-assessment',
       },

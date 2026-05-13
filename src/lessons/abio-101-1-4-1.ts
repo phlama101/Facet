@@ -2,7 +2,7 @@ import { Globe, Droplets, Search, Activity, Shield } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
-const marsHabitability: Lesson = {
+const marsModernSearch: Lesson = {
   id: 'abio-101-1-4-1',
   title: 'Mars: From Ancient Habitability to Modern Search',
   track: 'ast',
@@ -217,4 +217,4 @@ Two unresolved questions define the modern Mars habitability debate. First, the 
   ],
 }
 
-export default marsHabitability
+export default marsModernSearch
