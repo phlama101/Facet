@@ -13,9 +13,9 @@ import SectionRenderer from './SectionRenderer'
 interface Props {
   lesson: Lesson
   onClose: () => void
-  onComplete: (xpEarned: number) => void
+  onComplete: (xpEarned: number, quizScore?: { correct: number; total: number }) => void
   nextLesson?: { id: string; title: string }
-  onCompleteAndNext?: (xpEarned: number) => void
+  onCompleteAndNext?: (xpEarned: number, quizScore?: { correct: number; total: number }) => void
 }
 
 export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext }: Props) {
@@ -26,7 +26,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   const [exitConfirm, setExitConfirm] = useState(false)
   const [shared, setShared] = useState(false)
 
-  const { xp: sessionXP, reset } = useProgressStore()
+  const { reset } = useProgressStore()
 
   const track = TRACK_MAP[lesson.track]
   const trackColor = track?.color ?? BRAND.accent
@@ -58,13 +58,12 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   }
 
   function handleFinish() {
-    const totalXP = sessionXP + lesson.xpReward
-    onComplete(totalXP)
+    onComplete(lesson.xpReward, quizResult ?? undefined)
     reset()
   }
 
   async function handleShare() {
-    const text = `Just completed "${lesson.title}" on Facet Earth Sciences — earning ${sessionXP + lesson.xpReward} XP! 🌍 facet.earth/learn/${lesson.id}`
+    const text = `Just completed "${lesson.title}" on Facet Earth Sciences — earning ${lesson.xpReward} XP! 🌍 facet.earth/learn/${lesson.id}`
     if (navigator.share) {
       try { await navigator.share({ text }) } catch { /* user dismissed */ }
     } else {
@@ -140,18 +139,6 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
               />
             </div>
           </div>
-
-          {/* Session XP */}
-          <motion.div
-            key={sessionXP}
-            initial={{ scale: 1.3, color: BRAND.gold }}
-            animate={{ scale: 1, color: BRAND.gold }}
-            transition={{ duration: 0.35 }}
-            className="flex items-center gap-1 text-[10px] font-mono tracking-widest"
-          >
-            <Zap size={10} />
-            {sessionXP} XP
-          </motion.div>
 
           <div className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
             {sectionIdx + 1} / {total}
@@ -258,9 +245,9 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                   className="inline-block px-6 py-4 rounded-xl mx-auto"
                   style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}`, boxShadow: `0 0 24px ${trackColor}25` }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-1" style={{ color: BRAND.textSubtle }}>Total XP Earned</p>
+                  <p className="text-xs uppercase tracking-widest mb-1" style={{ color: BRAND.textSubtle }}>XP Earned</p>
                   <p className="text-4xl font-mono font-bold" style={{ color: trackColor }}>
-                    +{sessionXP + lesson.xpReward}
+                    +{lesson.xpReward}
                   </p>
                 </motion.div>
 
@@ -290,7 +277,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      onClick={() => onCompleteAndNext(sessionXP + lesson.xpReward)}
+                      onClick={() => onCompleteAndNext(lesson.xpReward, quizResult ?? undefined)}
                       className="flex items-center gap-2 mx-auto px-8 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase"
                       style={{ backgroundColor: trackColor, color: BRAND.bg }}
                     >

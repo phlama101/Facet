@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { CheckCircle2, XCircle } from 'lucide-react'
+import { CheckCircle2, XCircle, RotateCcw } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import { useProgressStore } from '@/lib/progressStore'
+import { QUIZ_PASSING_SCORE } from '@/lib/quiz'
 import type { QuizSection } from '@/lessons/types'
 
 interface Props {
@@ -24,12 +25,15 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
   const { addXP, hasSectionXP } = useProgressStore()
   const xpPerQ = section.xpPerQuestion ?? 20
   const questions = section.questions
+  const passMark = Math.ceil(questions.length * QUIZ_PASSING_SCORE)
 
   useEffect(() => {
     if (!done) return
     setAnswered(prev => {
       const correct = prev.filter(a => a.correct).length
-      onComplete?.(correct, questions.length)
+      if (correct / questions.length >= QUIZ_PASSING_SCORE) {
+        onComplete?.(correct, questions.length)
+      }
       return prev
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,10 +67,76 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
     }, 1400)
   }
 
+  function handleRetry() {
+    setQIdx(0)
+    setSelected(null)
+    setAnswered([])
+    setDone(false)
+    processingRef.current = false
+  }
+
   const totalCorrect = answered.filter(a => a.correct).length
   const current = questions[qIdx]
 
   if (done) {
+    const passed = totalCorrect / questions.length >= QUIZ_PASSING_SCORE
+
+    if (!passed) {
+      return (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-5 text-center"
+        >
+          <div className="space-y-2">
+            <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz Result</p>
+            <motion.p
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.15, type: 'spring', stiffness: 260, damping: 18 }}
+              className="font-mono text-5xl font-bold"
+              style={{ color: BRAND.ruby }}
+            >
+              {totalCorrect}/{questions.length}
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm"
+              style={{ color: BRAND.textDim }}
+            >
+              You need at least {passMark}/{questions.length} to pass.
+            </motion.p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45 }}
+            className="inline-block px-4 py-3 rounded-sm text-xs leading-relaxed"
+            style={{ backgroundColor: `${BRAND.ruby}0d`, border: `1px solid ${BRAND.ruby}30`, color: BRAND.textDim }}
+          >
+            Review your notes and try again — no XP is awarded until you pass.
+          </motion.div>
+
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={handleRetry}
+            className="flex items-center gap-2 mx-auto px-6 py-2.5 rounded-sm text-xs font-semibold tracking-[0.12em] uppercase"
+            style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}`, color: BRAND.text }}
+          >
+            <RotateCcw size={12} /> Try Again
+          </motion.button>
+        </motion.div>
+      )
+    }
+
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
@@ -75,7 +145,7 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
         className="space-y-4 text-center"
       >
         <div className="space-y-2">
-          <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz Complete</p>
+          <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz Passed</p>
           <motion.p
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -92,7 +162,7 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
             className="text-sm"
             style={{ color: BRAND.textDim }}
           >
-            {totalCorrect === questions.length ? 'Perfect score!' : `+${totalCorrect * xpPerQ} XP earned`}
+            {totalCorrect === questions.length ? 'Perfect score!' : 'Nice work — lesson complete.'}
           </motion.p>
         </div>
       </motion.div>
@@ -102,7 +172,12 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz</p>
+        <div className="flex items-center gap-3">
+          <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz</p>
+          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded" style={{ color: BRAND.textSubtle, backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}>
+            Pass: {passMark}/{questions.length}
+          </span>
+        </div>
         <span className="text-xs font-mono" style={{ color: BRAND.textSubtle }}>
           {qIdx + 1} / {questions.length}
         </span>

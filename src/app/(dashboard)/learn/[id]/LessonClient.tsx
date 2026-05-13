@@ -30,6 +30,7 @@ export default function LessonClient({ id }: Props) {
   const [saveError, setSaveError] = useState(false)
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
+  const [pendingQuizScore, setPendingQuizScore] = useState<{ correct: number; total: number } | undefined>(undefined)
 
   const lesson = LESSONS[id]
 
@@ -37,15 +38,21 @@ export default function LessonClient({ id }: Props) {
 
   const nextLesson = findNextLesson(id)
 
-  async function saveProgress(xpEarned: number): Promise<boolean> {
+  async function saveProgress(xpEarned: number, quizScore?: { correct: number; total: number }): Promise<boolean> {
     setSaveError(false)
     setSaving(true)
     setPendingXp(xpEarned)
+    setPendingQuizScore(quizScore)
     try {
+      const body: Record<string, unknown> = { lessonId: lesson.id }
+      if (quizScore) {
+        body.quizCorrect = quizScore.correct
+        body.quizTotal = quizScore.total
+      }
       const res = await fetch('/api/complete-lesson', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lessonId: lesson.id }),
+        body: JSON.stringify(body),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       return true
@@ -56,21 +63,21 @@ export default function LessonClient({ id }: Props) {
     }
   }
 
-  async function handleComplete(xpEarned: number) {
-    if (await saveProgress(xpEarned)) {
+  async function handleComplete(xpEarned: number, quizScore?: { correct: number; total: number }) {
+    if (await saveProgress(xpEarned, quizScore)) {
       router.refresh()
       router.push('/dashboard')
     }
   }
 
-  async function handleCompleteAndNext(xpEarned: number) {
-    if (await saveProgress(xpEarned) && nextLesson) {
+  async function handleCompleteAndNext(xpEarned: number, quizScore?: { correct: number; total: number }) {
+    if (await saveProgress(xpEarned, quizScore) && nextLesson) {
       router.push(`/learn/${nextLesson.id}`)
     }
   }
 
   async function retry() {
-    if (pendingXp !== null) await handleComplete(pendingXp)
+    if (pendingXp !== null) await handleComplete(pendingXp, pendingQuizScore)
   }
 
   return (

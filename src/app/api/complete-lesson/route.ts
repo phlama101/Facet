@@ -5,6 +5,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { LESSONS } from '@/lessons/index'
 import { getDbLesson } from '@/lib/lesson-store'
 import { canAccessLesson } from '@/lib/access'
+import { QUIZ_PASSING_SCORE } from '@/lib/quiz'
 
 const DAILY_MISSIONS = [
   { target: 1, bonusXp: 25 },
@@ -17,8 +18,10 @@ const PG_UNIQUE_VIOLATION = '23505'
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json() as { lessonId?: unknown }
+    const body = await req.json() as { lessonId?: unknown; quizCorrect?: unknown; quizTotal?: unknown }
     const lessonId = typeof body.lessonId === 'string' ? body.lessonId.trim() : null
+    const quizCorrect = typeof body.quizCorrect === 'number' ? body.quizCorrect : null
+    const quizTotal = typeof body.quizTotal === 'number' ? body.quizTotal : null
 
     if (!lessonId) {
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 })
@@ -34,6 +37,20 @@ export async function POST(req: NextRequest) {
 
     if (xpReward === null) {
       return NextResponse.json({ error: 'Lesson not found' }, { status: 404 })
+    }
+
+    // If the lesson has quiz sections, enforce the server-side passing threshold.
+    // Quiz answers live in the TS bundle (not DB), so we trust the client-reported
+    // score but enforce the minimum fraction as defense-in-depth. The once-only
+    // unique constraint remains the primary anti-farming protection.
+    const hasQuiz = staticLesson?.sections.some(s => s.type === 'quiz') ?? false
+    if (hasQuiz) {
+      if (quizCorrect === null || quizTotal === null || quizTotal === 0) {
+        return NextResponse.json({ error: 'Quiz score required' }, { status: 422 })
+      }
+      if (quizCorrect / quizTotal < QUIZ_PASSING_SCORE) {
+        return NextResponse.json({ error: 'Quiz not passed' }, { status: 422 })
+      }
     }
 
     // Verify user session
