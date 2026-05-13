@@ -10,9 +10,11 @@ import {
   LESSON_LIST, LEARNING_PATHS,
 } from '@/lessons/index'
 import { levelFromXp, xpProgressPct, xpInLevel, xpNeededForLevel, levelTitle } from '@/lib/utils'
+import { ACHIEVEMENTS, computeUnlockedIds } from '@/lib/achievements'
 import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
 import StatCard from '@/components/ui/StatCard'
 import PathIcon from '@/components/ui/PathIcon'
+import AchievementNotifier from '@/components/features/AchievementNotifier'
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Dashboard' }
@@ -143,6 +145,15 @@ export default async function DashboardPage({ searchParams }: Props) {
     if (a.doneIds.length > 0 && b.doneIds.length === 0) return -1
     if (a.doneIds.length === 0 && b.doneIds.length > 0) return  1
     return b.doneIds.length - a.doneIds.length
+  })
+
+  const unlockedIds = computeUnlockedIds({
+    count: allProgress.length,
+    total: LESSON_LIST.length,
+    streak: profile.streak,
+    xp,
+    level,
+    ids: allProgress.map(r => r.lesson_id),
   })
 
   return (
@@ -470,6 +481,8 @@ export default async function DashboardPage({ searchParams }: Props) {
           </div>
         )
       })()}
+
+      <AchievementNotifier unlockedIds={unlockedIds} />
     </div>
   )
 }

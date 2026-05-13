@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Zap, X, Share2, Check as CheckIcon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
-import { TRACK_MAP } from '@/lessons/index'
+import { TRACK_MAP, LEARNING_PATHS, LESSONS } from '@/lessons/index'
 import { useProgressStore } from '@/lib/progressStore'
 import type { Lesson } from '@/lessons/types'
 import FacetBackground from '@/components/brand/FacetBackground'
@@ -16,9 +16,10 @@ interface Props {
   onComplete: (xpEarned: number, quizScore?: { correct: number; total: number }) => void
   nextLesson?: { id: string; title: string }
   onCompleteAndNext?: (xpEarned: number, quizScore?: { correct: number; total: number }) => void
+  onCompleteAndGoTo?: (xpEarned: number, quizScore: { correct: number; total: number } | undefined, lessonId: string) => void
 }
 
-export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext }: Props) {
+export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext, onCompleteAndGoTo }: Props) {
   const [sectionIdx, setSectionIdx] = useState(0)
   const [dir, setDir] = useState(1)
   const [quizDone, setQuizDone] = useState(false)
@@ -38,6 +39,25 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   const isLastSection = sectionIdx === total - 1
   const isQuizSection = cur?.type === 'quiz'
   const showNav = !isQuizSection && !(isLastSection && quizDone)
+
+  // Up to 2 lessons from the same path (skip those already adjacent via nextLesson)
+  const recommended: { id: string; title: string; color: string }[] = (() => {
+    const samePath = LEARNING_PATHS.find(p =>
+      p.chapters.some(ch => ch.lessonIds.includes(lesson.id))
+    )
+    if (!samePath) return []
+    const allIds = samePath.chapters.flatMap(ch => ch.lessonIds)
+    const skipId = nextLesson?.id
+    return allIds
+      .filter(id => id !== lesson.id && id !== skipId)
+      .slice(-3) // take lessons further along the path
+      .map(id => {
+        const l = LESSONS[id]
+        return l ? { id, title: l.title, color: TRACK_MAP[l.track]?.color ?? BRAND.accent } : null
+      })
+      .filter((x): x is { id: string; title: string; color: string } => x !== null)
+      .slice(0, 2)
+  })()
 
   function goNext() {
     if (sectionIdx < total - 1) {
@@ -296,6 +316,42 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                     {nextLesson ? 'Back to Dashboard' : 'Save & Continue'} {!nextLesson && <ArrowRight size={14} />}
                   </motion.button>
                 </motion.div>
+
+                {/* You might also like */}
+                {recommended.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9 }}
+                    className="w-full mt-2"
+                  >
+                    <div className="text-[9px] tracking-[0.2em] uppercase mb-2 text-center" style={{ color: BRAND.textSubtle }}>
+                      Also in this path
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      {recommended.map(rec => (
+                        <button
+                          key={rec.id}
+                          onClick={() => onCompleteAndGoTo
+                            ? onCompleteAndGoTo(lesson.xpReward, quizResult ?? undefined, rec.id)
+                            : onComplete(lesson.xpReward, quizResult ?? undefined)
+                          }
+                          className="flex items-center gap-3 px-4 py-2.5 rounded-sm text-left w-full transition-opacity hover:opacity-80"
+                          style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}` }}
+                        >
+                          <div
+                            className="w-1.5 h-6 rounded-full shrink-0"
+                            style={{ backgroundColor: rec.color }}
+                          />
+                          <span className="text-xs flex-1 truncate" style={{ color: BRAND.textDim }}>
+                            {rec.title}
+                          </span>
+                          <ArrowRight size={11} color={BRAND.textSubtle} />
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
               </motion.div>
             )}
           </AnimatePresence>

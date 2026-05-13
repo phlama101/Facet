@@ -76,6 +76,12 @@ export default function LessonClient({ id }: Props) {
     }
   }
 
+  async function handleCompleteAndGoTo(xpEarned: number, quizScore: { correct: number; total: number } | undefined, lessonId: string) {
+    if (await saveProgress(xpEarned, quizScore)) {
+      router.push(`/learn/${lessonId}`)
+    }
+  }
+
   async function retry() {
     if (pendingXp !== null) await handleComplete(pendingXp, pendingQuizScore)
   }
@@ -111,6 +117,7 @@ export default function LessonClient({ id }: Props) {
           onComplete={handleComplete}
           nextLesson={nextLesson ?? undefined}
           onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
+          onCompleteAndGoTo={handleCompleteAndGoTo}
         />
       </LessonErrorBoundary>
     </div>
