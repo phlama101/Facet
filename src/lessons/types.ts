@@ -140,7 +140,7 @@ export interface LearningPath {
   iconId?: string
 }
 
-export type LessonLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
+export type LessonLevel = 'Foundations' | 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'SME'
 
 export interface Source {
   org: string
