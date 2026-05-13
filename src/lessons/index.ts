@@ -1,4 +1,4 @@
-import { Mountain, Layers, Waves, Wind, Flame, Thermometer, Telescope, Activity } from 'lucide-react'
+import { Mountain, Layers, Waves, Wind, Flame, Thermometer, Telescope, Activity, Snowflake } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson, TrackId, Chapter, LearningPath } from './types'
@@ -150,6 +150,19 @@ import groundwaterFlow            from './hyd-101-1-3-2'
 import springsGeothermal          from './hyd-101-1-3-3'
 import groundwaterSustainability  from './hyd-101-1-3-4'
 import hyd101Capstone             from './hyd-101-capstone'
+import snowMetamorphism          from './glac-101-1-1-1'
+import glacierDynamics           from './glac-101-1-1-2'
+import glacierMassBalance        from './glac-101-1-1-3'
+import glacierTypes              from './glac-101-1-1-4'
+import greenlandIceSheet         from './glac-101-1-2-1'
+import antarcticIceSheet         from './glac-101-1-2-2'
+import seaIceArctic              from './glac-101-1-2-3'
+import iceShelvesInstability     from './glac-101-1-2-4'
+import glacialErosionLandforms   from './glac-101-1-3-1'
+import glacialSedimentsDeposits  from './glac-101-1-3-2'
+import seaLevelIsostasy          from './glac-101-1-3-3'
+import iceCoresPaleoclimate      from './glac-101-1-3-4'
+import glac101Capstone           from './glac-101-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -299,6 +312,19 @@ export const LESSONS: Record<string, Lesson> = {
   'hyd-101-1-3-3':           springsGeothermal,
   'hyd-101-1-3-4':           groundwaterSustainability,
   'hyd-101-capstone':        hyd101Capstone,
+  'glac-101-1-1-1':          snowMetamorphism,
+  'glac-101-1-1-2':          glacierDynamics,
+  'glac-101-1-1-3':          glacierMassBalance,
+  'glac-101-1-1-4':          glacierTypes,
+  'glac-101-1-2-1':          greenlandIceSheet,
+  'glac-101-1-2-2':          antarcticIceSheet,
+  'glac-101-1-2-3':          seaIceArctic,
+  'glac-101-1-2-4':          iceShelvesInstability,
+  'glac-101-1-3-1':          glacialErosionLandforms,
+  'glac-101-1-3-2':          glacialSedimentsDeposits,
+  'glac-101-1-3-3':          seaLevelIsostasy,
+  'glac-101-1-3-4':          iceCoresPaleoclimate,
+  'glac-101-capstone':       glac101Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -745,6 +771,46 @@ export const LEARNING_PATHS: LearningPath[] = [
       },
     ],
   },
+  {
+    id: 'glaciology',
+    title: 'Glaciology',
+    subtitle: 'From snowflake to ice sheet — the physics of glaciers, the dynamics of polar ice, and what frozen archives reveal about Earth\'s climate history.',
+    track: 'geo',
+    level: 'Foundations',
+    color: BRAND.accentHot,
+    icon: Snowflake,
+    iconId: 'path-glaciology',
+    chapters: [
+      {
+        id: 'snow-glaciers',
+        title: 'Snow, Ice, and Glacier Dynamics',
+        description: 'Snow metamorphism, firnification, Glen\'s flow law, basal sliding, mass balance, and the global distribution of glacier types.',
+        lessonIds: ['glac-101-1-1-1', 'glac-101-1-1-2', 'glac-101-1-1-3', 'glac-101-1-1-4'],
+        iconId: 'chapter-snow-glaciers',
+      },
+      {
+        id: 'ice-sheets-sea-ice',
+        title: 'Ice Sheets and Sea Ice',
+        description: 'The Greenland and Antarctic ice sheets, sea ice formation and albedo feedback, ice shelves, and Marine Ice Sheet Instability.',
+        lessonIds: ['glac-101-1-2-1', 'glac-101-1-2-2', 'glac-101-1-2-3', 'glac-101-1-2-4'],
+        iconId: 'chapter-ice-sheets-sea-ice',
+      },
+      {
+        id: 'glacial-record',
+        title: 'Glacial Landforms and Climate Archives',
+        description: 'Erosional and depositional landforms, glacial sediments, sea level change and isostasy, and reading past climates from ice cores.',
+        lessonIds: ['glac-101-1-3-1', 'glac-101-1-3-2', 'glac-101-1-3-3', 'glac-101-1-3-4'],
+        iconId: 'chapter-glacial-record',
+      },
+      {
+        id: 'glaciology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Glaciology.',
+        lessonIds: ['glac-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
 ]
 
 // ─── Legacy named exports (derived from LEARNING_PATHS) ───────────────────────
@@ -759,6 +825,7 @@ export const CLIM_101_MODULES = LEARNING_PATHS.find(p => p.id === 'climate-past-
 export const ASTR_101_MODULES = LEARNING_PATHS.find(p => p.id === 'solar-system')!.chapters
 export const SEIS_101_MODULES = LEARNING_PATHS.find(p => p.id === 'earthquakes-seismology')!.chapters
 export const HYD_101_MODULES  = LEARNING_PATHS.find(p => p.id === 'hydrology')!.chapters
+export const GLAC_101_MODULES = LEARNING_PATHS.find(p => p.id === 'glaciology')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
