@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { stripe, PLANS } from '@/lib/stripe'
+import { getStripe, PLANS } from '@/lib/stripe'
 import { createClient } from '@/lib/supabase/server'
 
 // Only allow price IDs that belong to our known plans.
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   let customerId = profile?.stripe_customer_id ?? null
 
   if (!customerId) {
-    const customer = await stripe.customers.create({
+    const customer = await getStripe().customers.create({
       email: user.email,
       metadata: { supabase_user_id: user.id },
     })
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     customer: customerId,
     mode: 'subscription',
     payment_method_types: ['card'],

@@ -102,6 +102,8 @@ import theMoon                     from './astr-101-1-2-3'
 import asteroidsAndMeteorites      from './astr-101-1-2-4'
 import jupiterInternalAtmosphereMagnetosphere from './astr-101-1-3-1'
 import galileanMoons               from './astr-101-1-3-2'
+import saturnRingsAtmosphere       from './astr-101-1-3-3'
+import titanEnceladus              from './astr-101-1-3-4'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -223,6 +225,8 @@ export const LESSONS: Record<string, Lesson> = {
   'astr-101-1-2-4':          asteroidsAndMeteorites,
   'astr-101-1-3-1':          jupiterInternalAtmosphereMagnetosphere,
   'astr-101-1-3-2':          galileanMoons,
+  'astr-101-1-3-3':          saturnRingsAtmosphere,
+  'astr-101-1-3-4':          titanEnceladus,
   'volc-101-capstone':       volc101Capstone,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
@@ -580,7 +584,7 @@ export const LEARNING_PATHS: LearningPath[] = [
         id: 'gas-giants',
         title: 'Gas Giants',
         description: 'Jupiter and Saturn — metallic hydrogen interiors, banded atmospheres, ring systems, and the magnetospheres that dwarf every other structure in the Solar System.',
-        lessonIds: ['astr-101-1-3-1', 'astr-101-1-3-2'],
+        lessonIds: ['astr-101-1-3-1', 'astr-101-1-3-2', 'astr-101-1-3-3', 'astr-101-1-3-4'],
         iconId: 'chapter-gas-giants',
       },
     ],
