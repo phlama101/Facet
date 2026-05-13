@@ -107,6 +107,10 @@ import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
 import weatherPrediction           from './atmo-101-1-3-4'
+import tropicalCyclonesFormation   from './atmo-101-1-4-1'
+import tornadoesConvection         from './atmo-101-1-4-2'
+import heatWavesDroughtBlocking    from './atmo-101-1-4-3'
+import blizzardsWinterHazards      from './atmo-101-1-4-4'
 import atmo101Capstone             from './atmo-101-capstone'
 import volc101Capstone             from './volc-101-capstone'
 import marineEcosystems            from './ocea-101-1-3-1'
@@ -299,6 +303,10 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-101-1-3-2':          precipitation,
   'atmo-101-1-3-3':          atmosphericStability,
   'atmo-101-1-3-4':          weatherPrediction,
+  'atmo-101-1-4-1':          tropicalCyclonesFormation,
+  'atmo-101-1-4-2':          tornadoesConvection,
+  'atmo-101-1-4-3':          heatWavesDroughtBlocking,
+  'atmo-101-1-4-4':          blizzardsWinterHazards,
   'atmo-101-capstone':       atmo101Capstone,
   'volc-101-1-1-1':          originOfMagma,
   'volc-101-1-1-2':          magmaComposition,
@@ -700,9 +708,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-clouds-forecasting',
       },
       {
+        id: 'extreme-weather-events',
+        title: 'Extreme Weather Events',
+        description: 'Tropical cyclones, tornadoes, heat waves, drought, and winter storms — the most dangerous and destructive weather phenomena on Earth.',
+        lessonIds: ['atmo-101-1-4-1', 'atmo-101-1-4-2', 'atmo-101-1-4-3', 'atmo-101-1-4-4'],
+        iconId: 'chapter-extreme-weather-events',
+      },
+      {
         id: 'atmosphere-weather-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Atmosphere & Weather.',
+        description: 'Test your knowledge across all four chapters of Atmosphere & Weather.',
         lessonIds: ['atmo-101-capstone'],
         iconId: 'chapter-assessment',
       },
