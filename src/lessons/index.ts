@@ -1,4 +1,4 @@
-import { Mountain, Layers, Waves, Wind, Flame, Thermometer, Telescope } from 'lucide-react'
+import { Mountain, Layers, Waves, Wind, Flame, Thermometer, Telescope, Activity } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson, TrackId, Chapter, LearningPath } from './types'
@@ -124,6 +124,18 @@ import oceanAcidification          from './ocea-101-1-4-2'
 import bioluminescence             from './ocea-101-1-4-3'
 import deepOceanSediments          from './ocea-101-1-4-4'
 import ocea101Capstone             from './ocea-101-capstone'
+import seismicWaveTypes            from './seis-101-1-1-1'
+import seismicWavePropagation      from './seis-101-1-1-2'
+import seismographsLocating        from './seis-101-1-1-3'
+import earthInteriorSeismology     from './seis-101-1-1-4'
+import faultsElasticRebound        from './seis-101-1-2-1'
+import seismicMagnitude            from './seis-101-1-2-2'
+import focalMechanisms             from './seis-101-1-2-3'
+import earthquakeCycle             from './seis-101-1-2-4'
+import groundMotionAmplification   from './seis-101-1-3-1'
+import liquefactionLandslides      from './seis-101-1-3-2'
+import seismicTsunamis             from './seis-101-1-3-3'
+import earthquakeEarlyWarning      from './seis-101-1-3-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -247,6 +259,18 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-4-3':          bioluminescence,
   'ocea-101-1-4-4':          deepOceanSediments,
   'ocea-101-capstone':       ocea101Capstone,
+  'seis-101-1-1-1':          seismicWaveTypes,
+  'seis-101-1-1-2':          seismicWavePropagation,
+  'seis-101-1-1-3':          seismographsLocating,
+  'seis-101-1-1-4':          earthInteriorSeismology,
+  'seis-101-1-2-1':          faultsElasticRebound,
+  'seis-101-1-2-2':          seismicMagnitude,
+  'seis-101-1-2-3':          focalMechanisms,
+  'seis-101-1-2-4':          earthquakeCycle,
+  'seis-101-1-3-1':          groundMotionAmplification,
+  'seis-101-1-3-2':          liquefactionLandslides,
+  'seis-101-1-3-3':          seismicTsunamis,
+  'seis-101-1-3-4':          earthquakeEarlyWarning,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -610,6 +634,39 @@ export const LEARNING_PATHS: LearningPath[] = [
         description: 'Test your knowledge across all four chapters of the Solar System path.',
         lessonIds: ['astr-101-capstone'],
         iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'earthquakes-seismology',
+    title: 'Earthquakes & Seismology',
+    subtitle: 'From P-waves to fault rupture — seismic waves, earthquake mechanics, ground motion hazards, and the science of keeping communities safe.',
+    track: 'geo',
+    level: 'Foundations',
+    color: BRAND.coral,
+    icon: Activity,
+    iconId: 'path-earthquakes-seismology',
+    chapters: [
+      {
+        id: 'seismic-waves',
+        title: 'Seismic Waves',
+        description: 'P-waves, S-waves, surface waves, seismographs, and how wave propagation reveals Earth\'s deep interior.',
+        lessonIds: ['seis-101-1-1-1', 'seis-101-1-1-2', 'seis-101-1-1-3', 'seis-101-1-1-4'],
+        iconId: 'chapter-seismic-waves',
+      },
+      {
+        id: 'earthquake-mechanics',
+        title: 'Earthquake Mechanics',
+        description: 'Fault types, elastic rebound, magnitude scales, focal mechanisms, and the seismic cycle.',
+        lessonIds: ['seis-101-1-2-1', 'seis-101-1-2-2', 'seis-101-1-2-3', 'seis-101-1-2-4'],
+        iconId: 'chapter-earthquake-mechanics',
+      },
+      {
+        id: 'earthquake-hazards',
+        title: 'Earthquake Hazards & Resilience',
+        description: 'Ground motion amplification, liquefaction, landslides, tsunamis, early warning systems, and community resilience.',
+        lessonIds: ['seis-101-1-3-1', 'seis-101-1-3-2', 'seis-101-1-3-3', 'seis-101-1-3-4'],
+        iconId: 'chapter-earthquake-hazards',
       },
     ],
   },
