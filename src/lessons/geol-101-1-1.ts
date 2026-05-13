@@ -38,7 +38,7 @@ This lesson introduces the four layers of Earth's interior, the seismic evidence
         },
         {
           term: 'Mantle',
-          def: "The thick layer of hot, mostly solid silicate rock between the crust and the core, extending from the base of the crust to about 2,900 km depth. It makes up the majority of Earth's volume.",
+          def: "The thick layer of silicate rock between the crust and the core, extending from the base of the crust to about 2,900 km depth. It is a plastic solid — technically solid (S-waves pass through it), yet it flows extremely slowly under sustained force, like cold butter or glacial ice. It makes up the majority of Earth's volume.",
         },
         {
           term: 'Core',
