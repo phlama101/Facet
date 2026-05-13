@@ -176,6 +176,10 @@ import glacialErosionLandforms   from './glac-101-1-3-1'
 import glacialSedimentsDeposits  from './glac-101-1-3-2'
 import seaLevelIsostasy          from './glac-101-1-3-3'
 import iceCoresPaleoclimate      from './glac-101-1-3-4'
+import measuringGlacierRetreat    from './glac-101-1-4-1'
+import iceSheetsSeaLevel          from './glac-101-1-4-2'
+import permafrostThaw             from './glac-101-1-4-3'
+import glacialHazards             from './glac-101-1-4-4'
 import glac101Capstone           from './glac-101-capstone'
 import chemicalPhysicalWeathering from './geom-101-1-1-1'
 import regolithSoils              from './geom-101-1-1-2'
@@ -189,6 +193,10 @@ import aeolianDeserts             from './geom-101-1-3-1'
 import duneCycles                 from './geom-101-1-3-2'
 import karstCaves                 from './geom-101-1-3-3'
 import periglacialPermafrost      from './geom-101-1-3-4'
+import tectonicGeomorphology        from './geom-101-1-4-1'
+import landslidesAndMassWasting     from './geom-101-1-4-2'
+import coastalGeomorphology         from './geom-101-1-4-3'
+import humanGeomorphology           from './geom-101-1-4-4'
 import geom101Capstone            from './geom-101-capstone'
 import chemicalEvolutionLife      from './abio-101-1-1-1'
 import earlyEarthLife             from './abio-101-1-1-2'
@@ -430,6 +438,10 @@ export const LESSONS: Record<string, Lesson> = {
   'glac-101-1-3-2':          glacialSedimentsDeposits,
   'glac-101-1-3-3':          seaLevelIsostasy,
   'glac-101-1-3-4':          iceCoresPaleoclimate,
+  'glac-101-1-4-1':          measuringGlacierRetreat,
+  'glac-101-1-4-2':          iceSheetsSeaLevel,
+  'glac-101-1-4-3':          permafrostThaw,
+  'glac-101-1-4-4':          glacialHazards,
   'glac-101-capstone':       glac101Capstone,
   'geom-101-1-1-1':          chemicalPhysicalWeathering,
   'geom-101-1-1-2':          regolithSoils,
@@ -443,6 +455,10 @@ export const LESSONS: Record<string, Lesson> = {
   'geom-101-1-3-2':          duneCycles,
   'geom-101-1-3-3':          karstCaves,
   'geom-101-1-3-4':          periglacialPermafrost,
+  'geom-101-1-4-1':          tectonicGeomorphology,
+  'geom-101-1-4-2':          landslidesAndMassWasting,
+  'geom-101-1-4-3':          coastalGeomorphology,
+  'geom-101-1-4-4':          humanGeomorphology,
   'geom-101-capstone':       geom101Capstone,
   'abio-101-1-1-1':          chemicalEvolutionLife,
   'abio-101-1-1-2':          earlyEarthLife,
@@ -1022,9 +1038,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-aeolian-karst-periglacial',
       },
       {
+        id: 'tectonic-geomorphology-hazards',
+        title: 'Tectonic Geomorphology and Hazards',
+        description: 'Fault-driven landscapes, knickpoints and tectonic uplift, landslides and mass wasting, coastal change under sea-level rise, and how human activity now rivals geological forces in reshaping Earth\'s surface.',
+        lessonIds: ['geom-101-1-4-1', 'geom-101-1-4-2', 'geom-101-1-4-3', 'geom-101-1-4-4'],
+        iconId: 'chapter-tectonic-geomorphology-hazards',
+      },
+      {
         id: 'geomorphology-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Geomorphology.',
+        description: 'Test your knowledge across all four chapters of Geomorphology.',
         lessonIds: ['geom-101-capstone'],
         iconId: 'chapter-assessment',
       },
@@ -1062,9 +1085,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-glacial-record',
       },
       {
+        id: 'ice-in-warming-world',
+        title: 'Ice in a Warming World',
+        description: 'Measuring glacier retreat from orbit and in the field, ice sheet contributions to sea level rise, thawing permafrost as a carbon feedback, and glacial outburst floods and ice-dam hazards.',
+        lessonIds: ['glac-101-1-4-1', 'glac-101-1-4-2', 'glac-101-1-4-3', 'glac-101-1-4-4'],
+        iconId: 'chapter-ice-in-warming-world',
+      },
+      {
         id: 'glaciology-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Glaciology.',
+        description: 'Test your knowledge across all four chapters of Glaciology.',
         lessonIds: ['glac-101-capstone'],
         iconId: 'chapter-assessment',
       },
