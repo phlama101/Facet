@@ -136,6 +136,7 @@ import groundMotionAmplification   from './seis-101-1-3-1'
 import liquefactionLandslides      from './seis-101-1-3-2'
 import seismicTsunamis             from './seis-101-1-3-3'
 import earthquakeEarlyWarning      from './seis-101-1-3-4'
+import seis101Capstone             from './seis-101-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -271,6 +272,7 @@ export const LESSONS: Record<string, Lesson> = {
   'seis-101-1-3-2':          liquefactionLandslides,
   'seis-101-1-3-3':          seismicTsunamis,
   'seis-101-1-3-4':          earthquakeEarlyWarning,
+  'seis-101-capstone':       seis101Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -668,6 +670,13 @@ export const LEARNING_PATHS: LearningPath[] = [
         lessonIds: ['seis-101-1-3-1', 'seis-101-1-3-2', 'seis-101-1-3-3', 'seis-101-1-3-4'],
         iconId: 'chapter-earthquake-hazards',
       },
+      {
+        id: 'earthquakes-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Earthquakes & Seismology.',
+        lessonIds: ['seis-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
     ],
   },
 ]
@@ -682,6 +691,7 @@ export const ATMO_101_MODULES = LEARNING_PATHS.find(p => p.id === 'atmosphere-we
 export const VOLC_101_MODULES = LEARNING_PATHS.find(p => p.id === 'volcanoes')!.chapters
 export const CLIM_101_MODULES = LEARNING_PATHS.find(p => p.id === 'climate-past-future')!.chapters
 export const ASTR_101_MODULES = LEARNING_PATHS.find(p => p.id === 'solar-system')!.chapters
+export const SEIS_101_MODULES = LEARNING_PATHS.find(p => p.id === 'earthquakes-seismology')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
