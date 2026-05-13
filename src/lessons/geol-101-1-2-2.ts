@@ -153,6 +153,17 @@ Luster alone rarely identifies a mineral uniquely, but in combination with hardn
           correct: 2,
           explain: "Conchoidal fracture (A) produces curved, smooth surfaces — like broken glass — not flat-faced fragments meeting at consistent angles; conchoidal fracture occurs precisely when bonds are equally strong in all directions, leaving no flat cleavage planes. Hardness (B) measures resistance to scratching, not how a mineral breaks; a hard mineral can shatter irregularly while a soft one can cleave perfectly. The correct answer is C: cleavage occurs when the crystal lattice has repeating planes where bonds are weaker than in surrounding directions; because the lattice is uniform throughout, those weak planes run parallel across the entire specimen, producing the same flat surface and the same inter-face angle every time the mineral is broken anywhere in the crystal. Streak (D) refers to the colour of powdered mineral dragged across a porcelain plate — it has nothing to do with the geometry of how intact specimens break.",
         },
+        {
+          q: "A mineral sample has a bright, golden-yellow, metallic surface. A geologist drags it across a streak plate and records a greenish-black powder. Which mineral is almost certainly identified, and why is the streak test decisive here?",
+          a: [
+            'Gold — its golden surface and greenish-black streak are consistent with native gold, which tarnishes to a dark colour when powdered',
+            'Pyrite (iron sulphide) — its metallic golden surface has long deceived prospectors, but its greenish-black streak immediately distinguishes it from native gold, whose streak is golden yellow',
+            'Chalcopyrite (copper iron sulphide) — all copper-bearing minerals have a greenish-black streak because copper oxide is green, and the golden surface comes from the copper content',
+            'Orthoclase feldspar — pink or golden feldspar varieties produce a dark streak when powdered because surface oxidation is removed to reveal the mineral\'s true pigment',
+          ],
+          correct: 1,
+          explain: "Native gold (A) does have a golden surface, but its streak is also golden yellow — not greenish-black; the greenish-black streak is the key field test that excludes gold. The correct answer is B: pyrite (FeS₂), nicknamed 'fool's gold,' has a bright pale brass-yellow metallic surface that has deceived miners throughout history, but when dragged across a streak plate it leaves a distinctive greenish-black powder; native gold, by contrast, produces a golden-yellow streak; this contrast is one of the most practical single tests in field mineralogy and can resolve the identification in seconds without any laboratory equipment. Chalcopyrite (C) does have a greenish-black streak, but its surface colour is a brassy yellow with a slight iridescent tarnish — not the bright golden yellow of pyrite; and the claim that all copper minerals have greenish-black streaks is an oversimplification. Orthoclase feldspar (D) has a white streak and would not produce a dark greenish-black powder regardless of surface oxidation — it is a non-metallic silicate mineral with no significant iron or sulphur content.",
+        },
       ],
     },
   ],
