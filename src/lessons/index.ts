@@ -110,6 +110,7 @@ import coralReefs                  from './ocea-101-1-3-3'
 import polarOceans                 from './ocea-101-1-3-4'
 import hydrothermalVents           from './ocea-101-1-4-1'
 import oceanAcidification          from './ocea-101-1-4-2'
+import bioluminescence             from './ocea-101-1-4-3'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -219,6 +220,7 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-3-4':          polarOceans,
   'ocea-101-1-4-1':          hydrothermalVents,
   'ocea-101-1-4-2':          oceanAcidification,
+  'ocea-101-1-4-3':          bioluminescence,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
