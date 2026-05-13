@@ -3,12 +3,6 @@ import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson, TrackId, Chapter, LearningPath } from './types'
 
-import rockCycle             from './rock-cycle'
-import rockCycleIntermediate  from './rock-cycle-intermediate'
-import plateTectonics         from './plate-tectonics'
-import minerals               from './minerals'
-import oceanCurrents          from './ocean-currents'
-import cloudTypes             from './cloud-types'
 import earthInternalStructure      from './geol-101-1-1'
 import crustContinentalVsOceanic   from './geol-101-1-2'
 import mantleConvection            from './geol-101-1-3'
@@ -243,12 +237,6 @@ import polarVortexSSW                     from './atmo-201-1-3-4'
 import atmo201Capstone                    from './atmo-201-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
-  'rock-cycle':              rockCycle,
-  'rock-cycle-intermediate': rockCycleIntermediate,
-  'plate-tectonics':         plateTectonics,
-  'minerals':                minerals,
-  'ocean-currents':          oceanCurrents,
-  'cloud-types':             cloudTypes,
   'geol-101-1-1':            earthInternalStructure,
   'geol-101-1-2':            crustContinentalVsOceanic,
   'geol-101-1-3':            mantleConvection,
