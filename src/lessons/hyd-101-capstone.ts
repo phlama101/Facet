@@ -4,7 +4,7 @@ import type { Lesson } from './types'
 const hyd101Capstone: Lesson = {
   id: 'hyd-101-capstone',
   title: 'Hydrology: Path Assessment',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Advanced',
   duration: '25 min',

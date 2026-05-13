@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const coastalEvolution: Lesson = {
   id: 'geom-101-1-2-4',
   title: 'Wave Processes and Rocky Coastline Evolution',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

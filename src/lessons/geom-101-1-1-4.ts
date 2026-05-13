@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const hillslopeEvolution: Lesson = {
   id: 'geom-101-1-1-4',
   title: 'Hillslope Processes and Landscape Evolution',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

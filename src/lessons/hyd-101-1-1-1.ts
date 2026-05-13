@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const globalWaterCycle: Lesson = {
   id: 'hyd-101-1-1-1',
   title: 'The Global Water Cycle and Water Budget',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

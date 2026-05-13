@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const channelMorphology: Lesson = {
   id: 'geom-101-1-2-1',
   title: 'River Channel Morphology and Sediment Transport',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

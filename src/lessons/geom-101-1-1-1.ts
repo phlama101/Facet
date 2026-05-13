@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const chemicalPhysicalWeathering: Lesson = {
   id: 'geom-101-1-1-1',
   title: 'Chemical and Physical Weathering',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

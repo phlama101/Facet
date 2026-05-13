@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const fluvialGeomorphology: Lesson = {
   id: 'hyd-101-1-2-3',
   title: 'Fluvial Geomorphology: How Rivers Shape Landscapes',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

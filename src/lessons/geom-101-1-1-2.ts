@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const regolithSoils: Lesson = {
   id: 'geom-101-1-1-2',
   title: 'Regolith, Saprolite, and Soil Formation',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

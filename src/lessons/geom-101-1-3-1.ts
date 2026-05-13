@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const aeolianDeserts: Lesson = {
   id: 'geom-101-1-3-1',
   title: 'Wind Erosion, Deflation, and Desert Landforms',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '13 min',

@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const periglacialPermafrost: Lesson = {
   id: 'geom-101-1-3-4',
   title: 'Periglacial Processes and Permafrost',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '13 min',

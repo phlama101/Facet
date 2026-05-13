@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const drainageBasins: Lesson = {
   id: 'hyd-101-1-2-1',
   title: 'Drainage Basins, Stream Networks, and Watershed Geometry',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

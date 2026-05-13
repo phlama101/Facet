@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const duneCycles: Lesson = {
   id: 'geom-101-1-3-2',
   title: 'Dune Types, Loess, and Desertification',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '13 min',

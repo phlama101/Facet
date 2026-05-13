@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const floodplainsTerraces: Lesson = {
   id: 'geom-101-1-2-2',
   title: 'Floodplains, River Terraces, and Tectonic Geomorphology',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

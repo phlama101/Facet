@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const deltasEstuaries: Lesson = {
   id: 'geom-101-1-2-3',
   title: 'Deltas, Estuaries, and Coastal Landforms',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

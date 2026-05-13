@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const streamDischarge: Lesson = {
   id: 'hyd-101-1-2-2',
   title: 'Stream Discharge, Rating Curves, and Flood Hydrographs',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

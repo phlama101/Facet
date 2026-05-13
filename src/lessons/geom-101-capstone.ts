@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const geom101Capstone: Lesson = {
   id: 'geom-101-capstone',
   title: 'Geomorphology: Path Assessment',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Advanced',
   duration: '25 min',

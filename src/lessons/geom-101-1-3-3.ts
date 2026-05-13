@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const karstCaves: Lesson = {
   id: 'geom-101-1-3-3',
   title: 'Karst Landscapes, Caves, and Speleothems',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '13 min',

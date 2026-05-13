@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const groundwaterFlow: Lesson = {
   id: 'hyd-101-1-3-2',
   title: 'Groundwater Flow, Darcy\'s Law, and Well Hydraulics',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '13 min',

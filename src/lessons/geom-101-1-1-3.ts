@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const massWasting: Lesson = {
   id: 'geom-101-1-1-3',
   title: 'Mass Wasting: Landslides, Debris Flows, and Slope Failure',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Geomorphology',
   level: 'Foundations',
   duration: '12 min',

@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const snowHydrology: Lesson = {
   id: 'hyd-101-1-1-4',
   title: 'Snow Hydrology and the Mountain Water Tower',
-  track: 'cli',
+  track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',
