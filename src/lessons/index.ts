@@ -163,6 +163,32 @@ import glacialSedimentsDeposits  from './glac-101-1-3-2'
 import seaLevelIsostasy          from './glac-101-1-3-3'
 import iceCoresPaleoclimate      from './glac-101-1-3-4'
 import glac101Capstone           from './glac-101-capstone'
+import chemicalPhysicalWeathering from './geom-101-1-1-1'
+import regolithSoils              from './geom-101-1-1-2'
+import massWasting                from './geom-101-1-1-3'
+import hillslopeEvolution         from './geom-101-1-1-4'
+import channelMorphology          from './geom-101-1-2-1'
+import floodplainsTerraces        from './geom-101-1-2-2'
+import deltasEstuaries            from './geom-101-1-2-3'
+import coastalEvolution           from './geom-101-1-2-4'
+import aeolianDeserts             from './geom-101-1-3-1'
+import duneCycles                 from './geom-101-1-3-2'
+import karstCaves                 from './geom-101-1-3-3'
+import periglacialPermafrost      from './geom-101-1-3-4'
+import geom101Capstone            from './geom-101-capstone'
+import chemicalEvolutionLife      from './abio-101-1-1-1'
+import earlyEarthLife             from './abio-101-1-1-2'
+import extremophiles              from './abio-101-1-1-3'
+import photosynthesisOxygenation  from './abio-101-1-1-4'
+import marsHabitability           from './abio-101-1-2-1'
+import europaIcyMoons             from './abio-101-1-2-2'
+import titanAstrobiology          from './abio-101-1-2-3'
+import venusRunawayGreenhouse     from './abio-101-1-2-4'
+import exoplanetDetection         from './abio-101-1-3-1'
+import habitableZones             from './abio-101-1-3-2'
+import biosignatures              from './abio-101-1-3-3'
+import fermiDrake                 from './abio-101-1-3-4'
+import abio101Capstone            from './abio-101-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -325,6 +351,32 @@ export const LESSONS: Record<string, Lesson> = {
   'glac-101-1-3-3':          seaLevelIsostasy,
   'glac-101-1-3-4':          iceCoresPaleoclimate,
   'glac-101-capstone':       glac101Capstone,
+  'geom-101-1-1-1':          chemicalPhysicalWeathering,
+  'geom-101-1-1-2':          regolithSoils,
+  'geom-101-1-1-3':          massWasting,
+  'geom-101-1-1-4':          hillslopeEvolution,
+  'geom-101-1-2-1':          channelMorphology,
+  'geom-101-1-2-2':          floodplainsTerraces,
+  'geom-101-1-2-3':          deltasEstuaries,
+  'geom-101-1-2-4':          coastalEvolution,
+  'geom-101-1-3-1':          aeolianDeserts,
+  'geom-101-1-3-2':          duneCycles,
+  'geom-101-1-3-3':          karstCaves,
+  'geom-101-1-3-4':          periglacialPermafrost,
+  'geom-101-capstone':       geom101Capstone,
+  'abio-101-1-1-1':          chemicalEvolutionLife,
+  'abio-101-1-1-2':          earlyEarthLife,
+  'abio-101-1-1-3':          extremophiles,
+  'abio-101-1-1-4':          photosynthesisOxygenation,
+  'abio-101-1-2-1':          marsHabitability,
+  'abio-101-1-2-2':          europaIcyMoons,
+  'abio-101-1-2-3':          titanAstrobiology,
+  'abio-101-1-2-4':          venusRunawayGreenhouse,
+  'abio-101-1-3-1':          exoplanetDetection,
+  'abio-101-1-3-2':          habitableZones,
+  'abio-101-1-3-3':          biosignatures,
+  'abio-101-1-3-4':          fermiDrake,
+  'abio-101-capstone':       abio101Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -772,6 +824,46 @@ export const LEARNING_PATHS: LearningPath[] = [
     ],
   },
   {
+    id: 'geomorphology',
+    title: 'Geomorphology',
+    subtitle: 'How landscapes form and evolve — weathering, rivers, coasts, dunes, karst, and permafrost shaping Earth\'s surface over millions of years.',
+    track: 'geo',
+    level: 'Foundations',
+    color: BRAND.coral,
+    icon: Mountain,
+    iconId: 'path-geomorphology',
+    chapters: [
+      {
+        id: 'hillslopes-weathering',
+        title: 'Weathering, Soils, and Hillslopes',
+        description: 'Chemical and physical weathering, regolith and soil formation, mass wasting, and the geomorphic transport laws that shape hillslope profiles.',
+        lessonIds: ['geom-101-1-1-1', 'geom-101-1-1-2', 'geom-101-1-1-3', 'geom-101-1-1-4'],
+        iconId: 'chapter-hillslopes-weathering',
+      },
+      {
+        id: 'fluvial-coastal',
+        title: 'Rivers, Coasts, and Deltas',
+        description: 'Channel morphology and bedload transport, floodplains and river terraces, delta systems and estuaries, and coastal evolution under sea-level rise.',
+        lessonIds: ['geom-101-1-2-1', 'geom-101-1-2-2', 'geom-101-1-2-3', 'geom-101-1-2-4'],
+        iconId: 'chapter-fluvial-coastal',
+      },
+      {
+        id: 'aeolian-karst-periglacial',
+        title: 'Aeolian, Karst, and Periglacial',
+        description: 'Aeolian processes, dune types and loess, karst and cave systems, periglacial environments, and permafrost dynamics.',
+        lessonIds: ['geom-101-1-3-1', 'geom-101-1-3-2', 'geom-101-1-3-3', 'geom-101-1-3-4'],
+        iconId: 'chapter-aeolian-karst-periglacial',
+      },
+      {
+        id: 'geomorphology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Geomorphology.',
+        lessonIds: ['geom-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
     id: 'glaciology',
     title: 'Glaciology',
     subtitle: 'From snowflake to ice sheet — the physics of glaciers, the dynamics of polar ice, and what frozen archives reveal about Earth\'s climate history.',
@@ -811,6 +903,46 @@ export const LEARNING_PATHS: LearningPath[] = [
       },
     ],
   },
+  {
+    id: 'astrobiology',
+    title: 'Astrobiology',
+    subtitle: 'From the origin of life on Earth to the search for it elsewhere — prebiotic chemistry, habitable worlds, and the cosmos as a life-detection problem.',
+    track: 'ast',
+    level: 'Foundations',
+    color: BRAND.amethyst,
+    icon: Activity,
+    iconId: 'path-astrobiology',
+    chapters: [
+      {
+        id: 'origins-of-life',
+        title: 'Origins of Life',
+        description: 'Chemical evolution and abiogenesis, early Earth and the first microfossils, extremophiles and the limits of life, and the Great Oxidation Event.',
+        lessonIds: ['abio-101-1-1-1', 'abio-101-1-1-2', 'abio-101-1-1-3', 'abio-101-1-1-4'],
+        iconId: 'chapter-origins-of-life',
+      },
+      {
+        id: 'habitable-worlds',
+        title: 'Habitable Worlds in the Solar System',
+        description: 'Mars habitability past and present, Europa and icy ocean worlds, Titan\'s organic chemistry, and Venus as a runaway greenhouse cautionary tale.',
+        lessonIds: ['abio-101-1-2-1', 'abio-101-1-2-2', 'abio-101-1-2-3', 'abio-101-1-2-4'],
+        iconId: 'chapter-habitable-worlds',
+      },
+      {
+        id: 'exoplanets-biosignatures',
+        title: 'Exoplanets and the Search for Life',
+        description: 'Detecting exoplanets, habitable zone theory, atmospheric biosignatures and false positives, and the Fermi paradox.',
+        lessonIds: ['abio-101-1-3-1', 'abio-101-1-3-2', 'abio-101-1-3-3', 'abio-101-1-3-4'],
+        iconId: 'chapter-exoplanets-biosignatures',
+      },
+      {
+        id: 'astrobiology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Astrobiology.',
+        lessonIds: ['abio-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
 ]
 
 // ─── Legacy named exports (derived from LEARNING_PATHS) ───────────────────────
@@ -826,6 +958,8 @@ export const ASTR_101_MODULES = LEARNING_PATHS.find(p => p.id === 'solar-system'
 export const SEIS_101_MODULES = LEARNING_PATHS.find(p => p.id === 'earthquakes-seismology')!.chapters
 export const HYD_101_MODULES  = LEARNING_PATHS.find(p => p.id === 'hydrology')!.chapters
 export const GLAC_101_MODULES = LEARNING_PATHS.find(p => p.id === 'glaciology')!.chapters
+export const GEOM_101_MODULES = LEARNING_PATHS.find(p => p.id === 'geomorphology')!.chapters
+export const ABIO_101_MODULES = LEARNING_PATHS.find(p => p.id === 'astrobiology')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
