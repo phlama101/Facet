@@ -100,10 +100,12 @@ import mercuryAndVenus             from './astr-101-1-2-1'
 import marsGeology                 from './astr-101-1-2-2'
 import theMoon                     from './astr-101-1-2-3'
 import asteroidsAndMeteorites      from './astr-101-1-2-4'
+import jupiterInternalAtmosphereMagnetosphere from './astr-101-1-3-1'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
 import weatherPrediction           from './atmo-101-1-3-4'
+import atmo101Capstone             from './atmo-101-capstone'
 import marineEcosystems            from './ocea-101-1-3-1'
 import phytoplanktonProduction     from './ocea-101-1-3-2'
 import coralReefs                  from './ocea-101-1-3-3'
@@ -112,6 +114,7 @@ import hydrothermalVents           from './ocea-101-1-4-1'
 import oceanAcidification          from './ocea-101-1-4-2'
 import bioluminescence             from './ocea-101-1-4-3'
 import deepOceanSediments          from './ocea-101-1-4-4'
+import ocea101Capstone             from './ocea-101-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -182,6 +185,7 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-101-1-3-2':          precipitation,
   'atmo-101-1-3-3':          atmosphericStability,
   'atmo-101-1-3-4':          weatherPrediction,
+  'atmo-101-capstone':       atmo101Capstone,
   'volc-101-1-1-1':          originOfMagma,
   'volc-101-1-1-2':          magmaComposition,
   'volc-101-1-1-3':          intrusiveBodies,
@@ -215,6 +219,7 @@ export const LESSONS: Record<string, Lesson> = {
   'astr-101-1-2-2':          marsGeology,
   'astr-101-1-2-3':          theMoon,
   'astr-101-1-2-4':          asteroidsAndMeteorites,
+  'astr-101-1-3-1':          jupiterInternalAtmosphereMagnetosphere,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
   'ocea-101-1-3-3':          coralReefs,
@@ -223,6 +228,7 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-4-2':          oceanAcidification,
   'ocea-101-1-4-3':          bioluminescence,
   'ocea-101-1-4-4':          deepOceanSediments,
+  'ocea-101-capstone':       ocea101Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -413,6 +419,13 @@ export const LEARNING_PATHS: LearningPath[] = [
         lessonIds: ['ocea-101-1-4-1', 'ocea-101-1-4-2', 'ocea-101-1-4-3', 'ocea-101-1-4-4'],
         iconId: 'chapter-deep-ocean',
       },
+      {
+        id: 'ocean-systems-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all four chapters of Ocean Systems.',
+        lessonIds: ['ocea-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
     ],
   },
   {
@@ -544,6 +557,13 @@ export const LEARNING_PATHS: LearningPath[] = [
         description: 'Mercury, Venus, Mars, the Moon, and asteroids — geology and surface evolution of rocky bodies.',
         lessonIds: ['astr-101-1-2-1', 'astr-101-1-2-2', 'astr-101-1-2-3', 'astr-101-1-2-4'],
         iconId: 'chapter-terrestrial-worlds',
+      },
+      {
+        id: 'gas-giants',
+        title: 'Gas Giants',
+        description: 'Jupiter and Saturn — metallic hydrogen interiors, banded atmospheres, ring systems, and the magnetospheres that dwarf every other structure in the Solar System.',
+        lessonIds: ['astr-101-1-3-1'],
+        iconId: 'chapter-gas-giants',
       },
     ],
   },
