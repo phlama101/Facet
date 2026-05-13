@@ -244,6 +244,10 @@ import climateTippingPoints        from './clim-201-1-3-1'
 import earthSystemModels           from './clim-201-1-3-2'
 import climateProjectionsScenarios from './clim-201-1-3-3'
 import carbonRemovalGeoengineering from './clim-201-1-3-4'
+import iceCoreArchives              from './clim-201-1-4-1'
+import oceanSedimentsSpeleothems    from './clim-201-1-4-2'
+import treeRingsPollenProxies       from './clim-201-1-4-3'
+import multiProxySynthesis          from './clim-201-1-4-4'
 import clim201Capstone             from './clim-201-capstone'
 import partialMeltingMagmaGenesis  from './volc-201-1-1-1'
 import bowensReactionSeries        from './volc-201-1-1-2'
@@ -257,6 +261,10 @@ import planetaryVolcanism          from './volc-201-1-3-1'
 import floodBasaltsMassExtinctions from './volc-201-1-3-2'
 import midOceanRidgeVolcanism      from './volc-201-1-3-3'
 import volcanicGeochemistryTracers from './volc-201-1-3-4'
+import eruptionColumnPhysics        from './volc-201-1-4-1'
+import lavaFlowModeling             from './volc-201-1-4-2'
+import volcanicGasMonitoring        from './volc-201-1-4-3'
+import volcanicHazardMapping        from './volc-201-1-4-4'
 import volc201Capstone             from './volc-201-capstone'
 import ensoAtmosphericCoupling            from './atmo-201-1-1-1'
 import pacificDecadalAMO                  from './atmo-201-1-1-2'
@@ -270,6 +278,10 @@ import heatWavesDrought                   from './atmo-201-1-3-1'
 import atmosphericRivers                  from './atmo-201-1-3-2'
 import tropicalCycloneIntensification     from './atmo-201-1-3-3'
 import polarVortexSSW                     from './atmo-201-1-3-4'
+import dataAssimilationObservationNetworks from './atmo-201-1-4-1'
+import ensembleForecastingUncertainty     from './atmo-201-1-4-2'
+import predictabilityLimitsChaosTheory    from './atmo-201-1-4-3'
+import machineLearningWeatherForecasting  from './atmo-201-1-4-4'
 import atmo201Capstone                    from './atmo-201-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
@@ -514,6 +526,10 @@ export const LESSONS: Record<string, Lesson> = {
   'clim-201-1-3-2':          earthSystemModels,
   'clim-201-1-3-3':          climateProjectionsScenarios,
   'clim-201-1-3-4':          carbonRemovalGeoengineering,
+  'clim-201-1-4-1':          iceCoreArchives,
+  'clim-201-1-4-2':          oceanSedimentsSpeleothems,
+  'clim-201-1-4-3':          treeRingsPollenProxies,
+  'clim-201-1-4-4':          multiProxySynthesis,
   'clim-201-capstone':       clim201Capstone,
   'volc-201-1-1-1':          partialMeltingMagmaGenesis,
   'volc-201-1-1-2':          bowensReactionSeries,
@@ -527,6 +543,10 @@ export const LESSONS: Record<string, Lesson> = {
   'volc-201-1-3-2':          floodBasaltsMassExtinctions,
   'volc-201-1-3-3':          midOceanRidgeVolcanism,
   'volc-201-1-3-4':          volcanicGeochemistryTracers,
+  'volc-201-1-4-1':          eruptionColumnPhysics,
+  'volc-201-1-4-2':          lavaFlowModeling,
+  'volc-201-1-4-3':          volcanicGasMonitoring,
+  'volc-201-1-4-4':          volcanicHazardMapping,
   'volc-201-capstone':       volc201Capstone,
   'atmo-201-1-1-1':          ensoAtmosphericCoupling,
   'atmo-201-1-1-2':          pacificDecadalAMO,
@@ -540,6 +560,10 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-201-1-3-2':          atmosphericRivers,
   'atmo-201-1-3-3':          tropicalCycloneIntensification,
   'atmo-201-1-3-4':          polarVortexSSW,
+  'atmo-201-1-4-1':          dataAssimilationObservationNetworks,
+  'atmo-201-1-4-2':          ensembleForecastingUncertainty,
+  'atmo-201-1-4-3':          predictabilityLimitsChaosTheory,
+  'atmo-201-1-4-4':          machineLearningWeatherForecasting,
   'atmo-201-capstone':       atmo201Capstone,
 }
 
@@ -1197,9 +1221,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-climate-futures',
       },
       {
+        id: 'paleoclimate-proxies',
+        title: 'Paleoclimate Proxies and Model-Data Comparison',
+        description: 'Ice core archives, ocean sediment and speleothem records, tree rings and pollen, and how multi-proxy synthesis validates Earth system models.',
+        lessonIds: ['clim-201-1-4-1', 'clim-201-1-4-2', 'clim-201-1-4-3', 'clim-201-1-4-4'],
+        iconId: 'chapter-paleoclimate-proxies',
+      },
+      {
         id: 'carbon-cycle-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Carbon Cycle & Climate Feedbacks.',
+        description: 'Test your knowledge across all four chapters of Carbon Cycle & Climate Feedbacks.',
         lessonIds: ['clim-201-capstone'],
         iconId: 'chapter-assessment',
       },
@@ -1238,9 +1269,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-planetary-volcanology',
       },
       {
+        id: 'eruption-dynamics-applied-volcanology',
+        title: 'Eruption Dynamics and Applied Volcanology',
+        description: 'Eruption column physics and ash dispersal, lava flow modeling, volcanic gas monitoring, and probabilistic hazard mapping and crisis communication.',
+        lessonIds: ['volc-201-1-4-1', 'volc-201-1-4-2', 'volc-201-1-4-3', 'volc-201-1-4-4'],
+        iconId: 'chapter-eruption-dynamics',
+      },
+      {
         id: 'magma-systems-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Magma Systems & Igneous Petrology.',
+        description: 'Test your knowledge across all four chapters of Magma Systems & Igneous Petrology.',
         lessonIds: ['volc-201-capstone'],
         iconId: 'chapter-assessment',
       },
@@ -1279,9 +1317,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-atmospheric-extremes',
       },
       {
+        id: 'numerical-weather-prediction',
+        title: 'Numerical Weather Prediction and Predictability',
+        description: 'Data assimilation and global observation networks, ensemble forecasting and uncertainty quantification, chaos theory and the limits of predictability, and machine learning in modern weather forecasting.',
+        lessonIds: ['atmo-201-1-4-1', 'atmo-201-1-4-2', 'atmo-201-1-4-3', 'atmo-201-1-4-4'],
+        iconId: 'chapter-numerical-weather-prediction',
+      },
+      {
         id: 'climate-dynamics-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Climate Dynamics & Variability.',
+        description: 'Test your knowledge across all four chapters of Climate Dynamics & Variability.',
         lessonIds: ['atmo-201-capstone'],
         iconId: 'chapter-assessment',
       },
