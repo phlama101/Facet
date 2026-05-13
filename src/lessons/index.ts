@@ -104,6 +104,11 @@ import jupiterInternalAtmosphereMagnetosphere from './astr-101-1-3-1'
 import galileanMoons               from './astr-101-1-3-2'
 import saturnRingsAtmosphere       from './astr-101-1-3-3'
 import titanEnceladus              from './astr-101-1-3-4'
+import uranusIceGiant              from './astr-101-1-4-1'
+import neptuneSupersonicWinds      from './astr-101-1-4-2'
+import kuiperBeltPluto             from './astr-101-1-4-3'
+import cometsOortCloud             from './astr-101-1-4-4'
+import astr101Capstone             from './astr-101-capstone'
 import cloudFormation              from './atmo-101-1-3-1'
 import precipitation               from './atmo-101-1-3-2'
 import atmosphericStability        from './atmo-101-1-3-3'
@@ -227,6 +232,11 @@ export const LESSONS: Record<string, Lesson> = {
   'astr-101-1-3-2':          galileanMoons,
   'astr-101-1-3-3':          saturnRingsAtmosphere,
   'astr-101-1-3-4':          titanEnceladus,
+  'astr-101-1-4-1':          uranusIceGiant,
+  'astr-101-1-4-2':          neptuneSupersonicWinds,
+  'astr-101-1-4-3':          kuiperBeltPluto,
+  'astr-101-1-4-4':          cometsOortCloud,
+  'astr-101-capstone':       astr101Capstone,
   'volc-101-capstone':       volc101Capstone,
   'ocea-101-1-3-1':          marineEcosystems,
   'ocea-101-1-3-2':          phytoplanktonProduction,
@@ -586,6 +596,20 @@ export const LEARNING_PATHS: LearningPath[] = [
         description: 'Jupiter and Saturn — metallic hydrogen interiors, banded atmospheres, ring systems, and the magnetospheres that dwarf every other structure in the Solar System.',
         lessonIds: ['astr-101-1-3-1', 'astr-101-1-3-2', 'astr-101-1-3-3', 'astr-101-1-3-4'],
         iconId: 'chapter-gas-giants',
+      },
+      {
+        id: 'ice-giants-beyond',
+        title: 'Ice Giants & Beyond',
+        description: 'Uranus and Neptune — tilted worlds with exotic magnetic fields; the Kuiper Belt and Pluto; comets, the Oort Cloud, and the first interstellar visitors.',
+        lessonIds: ['astr-101-1-4-1', 'astr-101-1-4-2', 'astr-101-1-4-3', 'astr-101-1-4-4'],
+        iconId: 'chapter-ice-giants-beyond',
+      },
+      {
+        id: 'solar-system-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all four chapters of the Solar System path.',
+        lessonIds: ['astr-101-capstone'],
+        iconId: 'chapter-assessment',
       },
     ],
   },
