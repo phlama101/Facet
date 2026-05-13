@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const iceCoresPaleoclimate: Lesson = {
   id: 'glac-101-1-3-4',
   title: 'Ice Cores and Paleoclimate: Reading Frozen Archives',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '13 min',

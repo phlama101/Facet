@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const seaIceArctic: Lesson = {
   id: 'glac-101-1-2-3',
   title: 'Sea Ice: Physics, Ecology, and Arctic Change',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

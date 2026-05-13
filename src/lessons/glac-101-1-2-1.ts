@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const greenlandIceSheet: Lesson = {
   id: 'glac-101-1-2-1',
   title: 'The Greenland Ice Sheet: Structure, Dynamics, and Change',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

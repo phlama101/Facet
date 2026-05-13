@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const iceShelvesInstability: Lesson = {
   id: 'glac-101-1-2-4',
   title: 'Ice Shelves, Grounding Lines, and Marine Ice Sheet Instability',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

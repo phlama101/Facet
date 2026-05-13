@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const glacialErosionLandforms: Lesson = {
   id: 'glac-101-1-3-1',
   title: 'Glacial Erosion and the Landscapes Ice Carves',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '13 min',

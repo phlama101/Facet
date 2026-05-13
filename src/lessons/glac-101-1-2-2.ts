@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const antarcticIceSheet: Lesson = {
   id: 'glac-101-1-2-2',
   title: 'The Antarctic Ice Sheet: Continent of Ice',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

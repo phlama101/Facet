@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const springsGeothermal: Lesson = {
   id: 'hyd-101-1-3-3',
   title: 'Springs, Geothermal Systems, and Groundwater-Surface Water Exchange',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '13 min',

@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const aquifersGroundwater: Lesson = {
   id: 'hyd-101-1-3-1',
   title: 'Aquifers, Porosity, and Groundwater Hydraulic Properties',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '13 min',

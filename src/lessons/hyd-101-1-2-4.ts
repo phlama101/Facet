@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const floodHazards: Lesson = {
   id: 'hyd-101-1-2-4',
   title: 'Flood Hazards, Floodplains, and Flood Risk Management',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

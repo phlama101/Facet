@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const glacierTypes: Lesson = {
   id: 'glac-101-1-1-4',
   title: 'Types and Global Distribution of Glaciers',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

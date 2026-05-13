@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const infiltrationRunoff: Lesson = {
   id: 'hyd-101-1-1-3',
   title: 'Infiltration, Soil Moisture, and Runoff Generation',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

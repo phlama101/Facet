@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const glacierMassBalance: Lesson = {
   id: 'glac-101-1-1-3',
   title: 'Glacier Mass Balance and Climate Response',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

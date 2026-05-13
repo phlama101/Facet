@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const precipitationET: Lesson = {
   id: 'hyd-101-1-1-2',
   title: 'Precipitation, Evapotranspiration, and the Energy Balance',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '12 min',

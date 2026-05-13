@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const seaLevelIsostasy: Lesson = {
   id: 'glac-101-1-3-3',
   title: 'Sea Level Change, Ice Volume, and Glacial Isostasy',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '13 min',

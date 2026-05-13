@@ -4,7 +4,7 @@ import type { Lesson } from './types'
 const glac101Capstone: Lesson = {
   id: 'glac-101-capstone',
   title: 'Glaciology: Path Assessment',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Advanced',
   duration: '25 min',

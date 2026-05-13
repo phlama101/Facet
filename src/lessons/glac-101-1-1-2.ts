@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const glacierDynamics: Lesson = {
   id: 'glac-101-1-1-2',
   title: 'Glacier Flow and Ice Dynamics',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',

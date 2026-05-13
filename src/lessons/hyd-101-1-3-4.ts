@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const groundwaterSustainability: Lesson = {
   id: 'hyd-101-1-3-4',
   title: 'Groundwater Depletion, Contamination, and Sustainability',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '13 min',

@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const glacialSedimentsDeposits: Lesson = {
   id: 'glac-101-1-3-2',
   title: 'Glacial Sediments, Till, and Depositional Landforms',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '13 min',

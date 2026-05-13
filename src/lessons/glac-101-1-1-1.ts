@@ -5,7 +5,7 @@ import type { Lesson } from './types'
 const snowMetamorphism: Lesson = {
   id: 'glac-101-1-1-1',
   title: 'Snow Metamorphism and Ice Formation',
-  track: 'geo',
+  track: 'cli',
   trackName: 'Glaciology',
   level: 'Foundations',
   duration: '12 min',
