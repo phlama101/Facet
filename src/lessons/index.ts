@@ -142,6 +142,10 @@ import groundMotionAmplification   from './seis-101-1-3-1'
 import liquefactionLandslides      from './seis-101-1-3-2'
 import seismicTsunamis             from './seis-101-1-3-3'
 import earthquakeEarlyWarning      from './seis-101-1-3-4'
+import probabilisticSeismicHazard      from './seis-101-1-4-1'
+import earthquakeEarlyWarningSystems   from './seis-101-1-4-2'
+import seismicEngineeringBuildingCodes from './seis-101-1-4-3'
+import inducedSeismicity               from './seis-101-1-4-4'
 import seis101Capstone             from './seis-101-capstone'
 import globalWaterCycle           from './hyd-101-1-1-1'
 import precipitationET            from './hyd-101-1-1-2'
@@ -155,6 +159,10 @@ import aquifersGroundwater        from './hyd-101-1-3-1'
 import groundwaterFlow            from './hyd-101-1-3-2'
 import springsGeothermal          from './hyd-101-1-3-3'
 import groundwaterSustainability  from './hyd-101-1-3-4'
+import globalFreshwaterScarcity        from './hyd-101-1-4-1'
+import damsReservoirs                  from './hyd-101-1-4-2'
+import groundwaterDepletionContamination from './hyd-101-1-4-3'
+import floodsRiskFuture                from './hyd-101-1-4-4'
 import hyd101Capstone             from './hyd-101-capstone'
 import snowMetamorphism          from './glac-101-1-1-1'
 import glacierDynamics           from './glac-101-1-1-2'
@@ -388,6 +396,10 @@ export const LESSONS: Record<string, Lesson> = {
   'seis-101-1-3-2':          liquefactionLandslides,
   'seis-101-1-3-3':          seismicTsunamis,
   'seis-101-1-3-4':          earthquakeEarlyWarning,
+  'seis-101-1-4-1':          probabilisticSeismicHazard,
+  'seis-101-1-4-2':          earthquakeEarlyWarningSystems,
+  'seis-101-1-4-3':          seismicEngineeringBuildingCodes,
+  'seis-101-1-4-4':          inducedSeismicity,
   'seis-101-capstone':       seis101Capstone,
   'hyd-101-1-1-1':           globalWaterCycle,
   'hyd-101-1-1-2':           precipitationET,
@@ -401,6 +413,10 @@ export const LESSONS: Record<string, Lesson> = {
   'hyd-101-1-3-2':           groundwaterFlow,
   'hyd-101-1-3-3':           springsGeothermal,
   'hyd-101-1-3-4':           groundwaterSustainability,
+  'hyd-101-1-4-1':           globalFreshwaterScarcity,
+  'hyd-101-1-4-2':           damsReservoirs,
+  'hyd-101-1-4-3':           groundwaterDepletionContamination,
+  'hyd-101-1-4-4':           floodsRiskFuture,
   'hyd-101-capstone':        hyd101Capstone,
   'glac-101-1-1-1':          snowMetamorphism,
   'glac-101-1-1-2':          glacierDynamics,
@@ -912,9 +928,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-earthquake-hazards',
       },
       {
+        id: 'seismic-risk-society',
+        title: 'Seismic Risk and Society',
+        description: 'Probabilistic hazard analysis, earthquake early warning systems, seismic building codes, and induced seismicity from human activity.',
+        lessonIds: ['seis-101-1-4-1', 'seis-101-1-4-2', 'seis-101-1-4-3', 'seis-101-1-4-4'],
+        iconId: 'chapter-seismic-risk-society',
+      },
+      {
         id: 'earthquakes-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Earthquakes & Seismology.',
+        description: 'Test your knowledge across all four chapters of Earthquakes & Seismology.',
         lessonIds: ['seis-101-capstone'],
         iconId: 'chapter-assessment',
       },
@@ -952,9 +975,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-groundwater',
       },
       {
+        id: 'water-resources-society',
+        title: 'Water Resources and Society',
+        description: 'Global freshwater scarcity, dams and river management, groundwater depletion and contamination, and the future of flood risk.',
+        lessonIds: ['hyd-101-1-4-1', 'hyd-101-1-4-2', 'hyd-101-1-4-3', 'hyd-101-1-4-4'],
+        iconId: 'chapter-water-resources-society',
+      },
+      {
         id: 'hydrology-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Hydrology.',
+        description: 'Test your knowledge across all four chapters of Hydrology.',
         lessonIds: ['hyd-101-capstone'],
         iconId: 'chapter-assessment',
       },
