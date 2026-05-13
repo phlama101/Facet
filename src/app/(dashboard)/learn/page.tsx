@@ -99,7 +99,7 @@ function LessonCard({
                 className="flex items-center gap-1 text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
                 style={{ backgroundColor: `${BRAND.textSubtle}18`, color: BRAND.textSubtle, border: `1px solid ${BRAND.border}` }}
               >
-                <Lock size={8} /> Scholar
+                <Lock size={8} /> Naturalist
               </span>
             )}
             {isCompleted && (

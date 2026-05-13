@@ -346,7 +346,7 @@ function LockedPanel({ onClose }: { onClose: () => void }) {
               className="text-[10px] tracking-[0.2em] uppercase font-mono font-bold"
               style={{ color: BRAND.accent }}
             >
-              Scholar Plan
+              Naturalist Plan
             </span>
           </div>
           <button
@@ -358,14 +358,14 @@ function LockedPanel({ onClose }: { onClose: () => void }) {
           </button>
         </div>
         <p className="text-[12px] leading-relaxed mb-3" style={{ color: BRAND.textDim }}>
-          Unlock volcanoes, ocean currents, mantle hotspots, hydrothermal vents, and coral reefs with a Scholar subscription.
+          Unlock volcanoes, ocean currents, mantle hotspots, hydrothermal vents, and coral reefs with a Naturalist subscription.
         </p>
         <Link
           href="/billing"
           className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-sm text-[10px] tracking-[0.12em] uppercase font-semibold transition-opacity hover:opacity-85"
           style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
         >
-          <Zap size={10} fill={BRAND.bg} /> Upgrade to Scholar
+          <Zap size={10} fill={BRAND.bg} /> Upgrade to Naturalist
         </Link>
       </div>
     </div>
@@ -635,7 +635,7 @@ export default function AtlasMap({ subscription, completedLessonIds }: Props) {
                     >
                       <Lock size={8} color={BRAND.accent} />
                       <span className="text-[9px] tracking-[0.1em] uppercase" style={{ color: BRAND.accent }}>
-                        Unlock with Scholar
+                        Unlock with Naturalist
                       </span>
                     </Link>
                   </div>

@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase/server'
 // This prevents a tampered client request from initiating a checkout session
 // for an arbitrary Stripe price.
 const VALID_PRICE_IDS = new Set(
-  [PLANS.pro.priceId, PLANS.expert.priceId].filter((id): id is string => Boolean(id))
+  [PLANS.pro.priceId].filter((id): id is string => Boolean(id))
 )
 
 export async function POST(req: NextRequest) {

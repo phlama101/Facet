@@ -44,7 +44,7 @@ export default async function SkillTreePage() {
     if (!path.prerequisites?.length) return { locked: false, reason: null }
     if (path.id === 'deep-time') {
       if (subscription === 'free') {
-        return { locked: true, reason: 'Scholar plan required — upgrade at /billing to unlock' }
+        return { locked: true, reason: 'Naturalist plan required — upgrade at /billing to unlock' }
       }
       if (efPct < 80) {
         const efPath = LEARNING_PATHS.find(p => p.id === 'earth-foundations')!

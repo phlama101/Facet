@@ -20,7 +20,7 @@ export default function LessonAccessGate({ lessonTitle }: Props) {
           <Lock size={22} style={{ color: BRAND.accent }} />
         </div>
         <div className="text-[10px] tracking-[0.25em] uppercase mb-3" style={{ color: BRAND.accent }}>
-          Scholar Plan Required
+          Naturalist Plan Required
         </div>
         <h1 className="font-serif mb-3" style={{ fontSize: '28px', lineHeight: 1.1 }}>
           Upgrade to unlock
@@ -29,7 +29,7 @@ export default function LessonAccessGate({ lessonTitle }: Props) {
           <strong style={{ color: BRAND.text }}>{lessonTitle}</strong>
         </p>
         <p className="text-sm leading-relaxed mb-8" style={{ color: BRAND.textDim }}>
-          is part of the Scholar plan. Get access to the full course catalog and interactive labs.
+          is part of the Naturalist plan. Get access to the full course catalog and interactive labs.
         </p>
         <div className="flex flex-col gap-3">
           <Link
@@ -37,7 +37,7 @@ export default function LessonAccessGate({ lessonTitle }: Props) {
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm text-sm font-semibold transition-opacity hover:opacity-80"
             style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
           >
-            Upgrade to Scholar <ArrowRight size={14} />
+            Upgrade to Naturalist <ArrowRight size={14} />
           </Link>
           <Link
             href="/pricing"

@@ -471,9 +471,10 @@ export default async function ProfilePage() {
       {/* ── Subscription ──────────────────────────────────────────────────── */}
       {(() => {
         const tier        = profile.subscription as 'free' | 'pro' | 'expert'
-        const plan        = PLANS[tier]
+        const planKey     = tier === 'expert' ? 'pro' : tier
+        const plan        = PLANS[planKey]
         const isPaid      = tier !== 'free'
-        const accentColor = tier === 'expert' ? BRAND.amethyst : tier === 'pro' ? BRAND.accent : BRAND.jade
+        const accentColor = isPaid ? BRAND.accent : BRAND.jade
 
         return (
           <div
@@ -526,7 +527,7 @@ export default async function ProfilePage() {
                 style={{ borderTop: `1px solid ${BRAND.border}`, color: BRAND.textDim }}
               >
                 You&apos;re on the free plan — Earth Foundations Ch. 1 & 2 plus Chapter 1 of every other path
-                are always free. Upgrade to Scholar to unlock all current and future learning paths.
+                are always free. Upgrade to Naturalist to unlock all current and future learning paths.
               </div>
             )}
           </div>

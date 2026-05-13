@@ -23,8 +23,8 @@ export const PLANS = {
     ],
   },
   pro: {
-    name: 'Scholar',
-    price: 12,
+    name: 'Naturalist',
+    price: 10,
     priceId: process.env.STRIPE_PRO_PRICE_ID,
     features: [
       'Everything in Explorer',
@@ -32,17 +32,6 @@ export const PLANS = {
       'Deep Time — Earth Through History',
       'All current & future learning paths',
       'New paths added regularly',
-    ],
-  },
-  expert: {
-    name: 'Earth Scientist',
-    price: 25,
-    priceId: process.env.STRIPE_EXPERT_PRICE_ID,
-    features: [
-      'Everything in Scholar',
-      'Expert & advanced paths',
-      'Early access before public launch',
-      'Priority support',
     ],
   },
 } as const

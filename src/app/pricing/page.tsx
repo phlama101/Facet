@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
   Check, X, Zap, ArrowRight, Sparkles, BookOpen,
-  Trophy, Download, GraduationCap, FlaskConical,
-  Users, Microscope, Star,
+  FlaskConical, Star,
 } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { PLANS } from '@/lib/stripe'
@@ -15,31 +14,23 @@ import FacetBackground from '@/components/brand/FacetBackground'
 
 // ─── feature comparison ───────────────────────────────────────────────────────
 
-const COMPARISON: { heading: string; rows: { label: string; free: boolean | string; pro: boolean | string; expert: boolean | string }[] }[] = [
+const COMPARISON: { heading: string; rows: { label: string; free: boolean | string; pro: boolean | string }[] }[] = [
   {
     heading: 'Content',
     rows: [
-      { label: 'Earth Foundations Ch. 1 & 2 (8 lessons)', free: true,  pro: true,  expert: true  },
-      { label: 'Chapter 1 of every other path',            free: true,  pro: true,  expert: true  },
-      { label: 'Earth Foundations — all 5 chapters',       free: false, pro: true,  expert: true  },
-      { label: 'Deep Time — Earth Through History',        free: false, pro: true,  expert: true  },
-      { label: 'All current & future learning paths',      free: false, pro: true,  expert: true  },
-      { label: 'Expert & advanced paths',                  free: false, pro: false, expert: true  },
+      { label: 'Earth Foundations Ch. 1 & 2 (8 lessons)', free: true,  pro: true  },
+      { label: 'Chapter 1 of every other path',            free: true,  pro: true  },
+      { label: 'Earth Foundations — all 5 chapters',       free: false, pro: true  },
+      { label: 'Deep Time — Earth Through History',        free: false, pro: true  },
+      { label: 'All current & future learning paths',      free: false, pro: true  },
     ],
   },
   {
     heading: 'Learning System',
     rows: [
-      { label: 'Quizzes, XP & level progression',      free: true, pro: true, expert: true },
-      { label: 'Achievement badges',                    free: true, pro: true, expert: true },
-      { label: 'Streak tracker & progress dashboard',   free: true, pro: true, expert: true },
-    ],
-  },
-  {
-    heading: 'Premium Access',
-    rows: [
-      { label: 'Early access to new paths', free: false, pro: false, expert: true },
-      { label: 'Priority support',          free: false, pro: false, expert: true },
+      { label: 'Quizzes, XP & level progression',    free: true, pro: true },
+      { label: 'Achievement badges',                  free: true, pro: true },
+      { label: 'Streak tracker & progress dashboard', free: true, pro: true },
     ],
   },
 ]
@@ -57,36 +48,27 @@ const PLANS_UI = [
     key: 'pro',
     ...PLANS.pro,
     accent: BRAND.accent,
-    badge: 'Most Popular' as string | null,
-    cta: 'Upgrade to Scholar',
+    badge: 'Full Access' as string | null,
+    cta: 'Upgrade to Naturalist',
     ctaHref: null as string | null,
     priceId: PLANS.pro.priceId ?? null,
   },
-  {
-    key: 'expert',
-    ...PLANS.expert,
-    accent: BRAND.amethyst,
-    badge: null as string | null,
-    cta: 'Upgrade to Earth Scientist',
-    ctaHref: null as string | null,
-    priceId: PLANS.expert.priceId ?? null,
-  },
 ]
 
-const PLAN_ICONS = [BookOpen, FlaskConical, Microscope]
+const PLAN_ICONS = [BookOpen, FlaskConical]
 
 const FAQ_ITEMS = [
   {
-    q: 'What\'s included in the free plan?',
-    a: 'The first two chapters of Earth Foundations are fully available at no cost — 8 lessons covering Earth\'s interior and minerals. It\'s a complete introduction to the foundations of geology, with no card required.',
+    q: "What's included in the free plan?",
+    a: "The first two chapters of Earth Foundations are fully available at no cost — 8 lessons covering Earth's interior and minerals. It's a complete introduction to the foundations of geology, with no card required.",
   },
   {
     q: 'Can I cancel my subscription at any time?',
-    a: 'Yes. Paid plans are billed monthly with no lock-in. Cancel from your billing page at any time and you\'ll retain access until the end of your billing period.',
+    a: "Yes. Paid plans are billed monthly with no lock-in. Cancel from your billing page at any time and you'll retain access until the end of your billing period.",
   },
   {
     q: 'What are interactive labs?',
-    a: 'Interactive labs are rich simulations built into lessons — drag-and-drop mineral sorters, plate tectonic simulators, rock cycle flow diagrams, and more. They\'re available in all Scholar and Earth Scientist lessons.',
+    a: "Interactive labs are rich simulations built into lessons — drag-and-drop mineral sorters, plate tectonic simulators, rock cycle flow diagrams, and more. They're available in all Naturalist lessons.",
   },
   {
     q: 'Where does the content come from?',
@@ -94,11 +76,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Will there be more paths beyond Earth Foundations and Deep Time?',
-    a: 'Yes — we\'re building paths in Oceanography, Atmospheric Science, Volcanology, and Planetary Science. Scholar and Earth Scientist plans include all future paths as they launch.',
+    a: "Yes — we're building paths in Oceanography, Atmospheric Science, Volcanology, and Planetary Science. The Naturalist plan includes all future paths as they launch.",
   },
   {
-    q: 'What\'s the difference between Scholar and Earth Scientist?',
-    a: 'Scholar unlocks the full path catalog — Earth Foundations, Deep Time, and all future paths as they launch. Earth Scientist adds expert advanced paths, early access before public launch, and priority support.',
+    q: "What does 'Naturalist' mean on Facet?",
+    a: "The great naturalists — Humboldt, Darwin, Wallace — were the original Earth scientists, driven by curiosity across geology, climate, and life. The Naturalist plan is for people who want to go beyond sampling and study Earth science in depth.",
   },
 ]
 
@@ -166,7 +148,7 @@ export default function PricingPage() {
         </div>
       </nav>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-5">
+      <div className="relative z-10 max-w-4xl mx-auto px-5">
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <div className="text-center pt-20 pb-16">
@@ -187,13 +169,13 @@ export default function PricingPage() {
             className="max-w-lg mx-auto leading-relaxed"
             style={{ fontSize: '16px', color: BRAND.textDim }}
           >
-            Start free with Earth Foundations — two complete chapters, no card required. Unlock the
-            full curriculum and interactive labs with a paid plan.
+            Start free with two complete chapters of Earth Foundations — no card required.
+            Unlock the full curriculum with a Naturalist plan.
           </p>
         </div>
 
         {/* ── Plan cards ───────────────────────────────────────────────────── */}
-        <div className="grid md:grid-cols-3 gap-4 pb-20">
+        <div className="grid md:grid-cols-2 gap-4 pb-20 max-w-2xl mx-auto">
           {PLANS_UI.map((plan, i) => {
             const Icon = PLAN_ICONS[i]
             return (
@@ -300,12 +282,12 @@ export default function PricingPage() {
           </h2>
 
           <div
-            className="rounded-sm overflow-hidden"
+            className="rounded-sm overflow-hidden max-w-2xl mx-auto"
             style={{ border: `1px solid ${BRAND.border}` }}
           >
             {/* Column headers */}
             <div
-              className="grid grid-cols-4 text-[10px] tracking-[0.2em] uppercase"
+              className="grid grid-cols-3 text-[10px] tracking-[0.2em] uppercase"
               style={{ backgroundColor: BRAND.surface, borderBottom: `1px solid ${BRAND.border}` }}
             >
               <div className="p-4" />
@@ -338,7 +320,7 @@ export default function PricingPage() {
                 {group.rows.map((row, ri) => (
                   <div
                     key={row.label}
-                    className="grid grid-cols-4 items-center"
+                    className="grid grid-cols-3 items-center"
                     style={{
                       borderBottom: ri < group.rows.length - 1 ? `1px solid ${BRAND.border}` : 'none',
                       backgroundColor: ri % 2 === 0 ? BRAND.bg : BRAND.surface,
@@ -347,7 +329,7 @@ export default function PricingPage() {
                     <div className="px-4 py-3 text-[13px]" style={{ color: BRAND.textDim }}>
                       {row.label}
                     </div>
-                    {([row.free, row.pro, row.expert] as (boolean | string)[]).map((val, ci) => (
+                    {([row.free, row.pro] as (boolean | string)[]).map((val, ci) => (
                       <div key={ci} className="py-3 flex justify-center">
                         {val === true ? (
                           <Check size={15} style={{ color: PLANS_UI[ci].accent }} strokeWidth={2.5} />
@@ -395,9 +377,9 @@ export default function PricingPage() {
           style={{ border: `1px solid ${BRAND.border}` }}
         >
           {[
-            { n: '50+', label: 'Structured lessons' },
-            { n: '10', label: 'Trusted source orgs' },
-            { n: '20+', label: 'Achievements to unlock' },
+            { n: '200+', label: 'Structured lessons' },
+            { n: '10',   label: 'Trusted source orgs' },
+            { n: '20+',  label: 'Achievements to unlock' },
             { n: '250 XP', label: 'Per lesson completed' },
           ].map(s => (
             <div

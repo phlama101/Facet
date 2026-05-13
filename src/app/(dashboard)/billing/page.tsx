@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   Check, Zap, CreditCard, BookOpen, FlaskConical,
-  Microscope, ArrowRight, CheckCircle2, Shield,
+  ArrowRight, CheckCircle2, Shield,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
@@ -16,9 +16,10 @@ export const metadata = { title: 'Billing' }
 type Tier = 'free' | 'pro' | 'expert'
 
 const TIER_META: Record<Tier, { label: string; color: string; icon: React.ElementType }> = {
-  free:   { label: 'Explorer',      color: BRAND.jade,     icon: BookOpen },
-  pro:    { label: 'Scholar',       color: BRAND.accent,   icon: FlaskConical },
-  expert: { label: 'Earth Scientist', color: BRAND.amethyst, icon: Microscope },
+  free:   { label: 'Explorer',    color: BRAND.jade,   icon: BookOpen    },
+  pro:    { label: 'Naturalist',  color: BRAND.accent, icon: FlaskConical },
+  // Legacy expert subscribers are treated identically to pro
+  expert: { label: 'Naturalist',  color: BRAND.accent, icon: FlaskConical },
 }
 
 export default async function BillingPage() {
@@ -39,8 +40,9 @@ export default async function BillingPage() {
   const tier = (profile.subscription ?? 'free') as Tier
   const { label: tierLabel, color: tierColor } = TIER_META[tier]
   const isPaid = tier !== 'free'
-  const isExpert = tier === 'expert'
-  const isPro = tier === 'pro'
+
+  // Determine which features to display — expert users show pro features
+  const planFeatures = isPaid ? PLANS.pro.features : PLANS.free.features
 
   return (
     <div className="space-y-6 animate-fade-in max-w-3xl mx-auto">
@@ -68,9 +70,10 @@ export default async function BillingPage() {
               className="w-9 h-9 rounded-sm flex items-center justify-center shrink-0"
               style={{ backgroundColor: `${tierColor}18`, border: `1px solid ${tierColor}35` }}
             >
-              {tier === 'free'   && <BookOpen   size={16} color={tierColor} />}
-              {tier === 'pro'    && <FlaskConical size={16} color={tierColor} />}
-              {tier === 'expert' && <Microscope  size={16} color={tierColor} />}
+              {isPaid
+                ? <FlaskConical size={16} color={tierColor} />
+                : <BookOpen     size={16} color={tierColor} />
+              }
             </div>
             <div>
               <div className="text-[10px] tracking-[0.25em] uppercase font-mono" style={{ color: tierColor }}>
@@ -80,7 +83,7 @@ export default async function BillingPage() {
                 {tierLabel}
                 {isPaid && (
                   <span className="ml-2 text-xs font-sans font-normal" style={{ color: BRAND.textSubtle }}>
-                    ${tier === 'pro' ? PLANS.pro.price : PLANS.expert.price}/mo
+                    ${PLANS.pro.price}/mo
                   </span>
                 )}
               </div>
@@ -114,7 +117,7 @@ export default async function BillingPage() {
             Included in your plan
           </div>
           <ul className="grid sm:grid-cols-2 gap-2">
-            {PLANS[tier].features.map(f => (
+            {planFeatures.map(f => (
               <li key={f} className="flex items-start gap-2 text-[13px]">
                 <Check size={12} className="mt-0.5 shrink-0" strokeWidth={2.5} style={{ color: tierColor }} />
                 <span style={{ color: BRAND.textDim }}>{f}</span>
@@ -149,45 +152,64 @@ export default async function BillingPage() {
         )}
       </div>
 
-      {/* Upgrade section — only shown if not already on highest plan */}
-      {!isExpert && (
+      {/* Upgrade section — only shown for free users */}
+      {!isPaid && (
         <div className="space-y-3">
           <div>
             <div className="text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.textSubtle }}>
-              {isPro ? 'Available upgrade' : 'Upgrade your plan'}
+              Upgrade your plan
             </div>
             <p className="text-sm" style={{ color: BRAND.textDim }}>
-              {isPro
-                ? 'Unlock expert & advanced paths, early access before public launch, and priority support.'
-                : 'Unlock the full path catalog — every current and future learning path.'}
+              Unlock the full path catalog — every current and future learning path.
             </p>
           </div>
 
-          <div className={`grid gap-4 ${isPro ? '' : 'sm:grid-cols-2'}`}>
-            {/* Pro card — only shown for free users */}
-            {!isPro && (
-              <UpgradeCard
-                tier="pro"
-                label="Scholar"
-                price={PLANS.pro.price}
-                priceId={PLANS.pro.priceId ?? ''}
-                color={BRAND.accent}
-                icon={FlaskConical}
-                features={PLANS.pro.features}
-                badge="Most Popular"
-              />
-            )}
+          <div
+            className="relative flex flex-col rounded-sm p-5"
+            style={{ border: `1px solid ${BRAND.accent}45`, backgroundColor: BRAND.surface }}
+          >
+            <div
+              className="absolute -top-2.5 left-4 px-2.5 py-0.5 rounded-sm text-[9px] tracking-[0.2em] uppercase font-semibold"
+              style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+            >
+              Full Access
+            </div>
 
-            {/* Expert card — shown for both free and pro users */}
-            <UpgradeCard
-              tier="expert"
-              label="Earth Scientist"
-              price={PLANS.expert.price}
-              priceId={PLANS.expert.priceId ?? ''}
-              color={BRAND.amethyst}
-              icon={Microscope}
-              features={PLANS.expert.features}
-              badge={isPro ? 'Upgrade' : null}
+            <div className="flex items-center gap-3 mb-4">
+              <div
+                className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
+                style={{ backgroundColor: `${BRAND.accent}18`, border: `1px solid ${BRAND.accent}30` }}
+              >
+                <FlaskConical size={14} style={{ color: BRAND.accent }} />
+              </div>
+              <div>
+                <div className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color: BRAND.accent }}>
+                  Naturalist
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="font-serif" style={{ fontSize: '22px' }}>${PLANS.pro.price}</span>
+                  <span className="text-xs" style={{ color: BRAND.textSubtle }}>/mo</span>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[11px] mb-4 -mt-1" style={{ color: BRAND.textSubtle }}>Cancel anytime · No lock-in</p>
+
+            <ul className="space-y-2 mb-5 flex-1">
+              {PLANS.pro.features.map(f => (
+                <li key={f} className="flex items-start gap-2 text-[12px]">
+                  <Check size={11} className="mt-0.5 shrink-0" strokeWidth={2.5} style={{ color: BRAND.accent }} />
+                  <span style={{ color: BRAND.textDim }}>{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <BillingUpgradeButton
+              priceId={PLANS.pro.priceId ?? ''}
+              planKey="pro"
+              label="Upgrade to Naturalist"
+              accent={BRAND.accent}
+              solid
             />
           </div>
         </div>
@@ -210,11 +232,11 @@ export default async function BillingPage() {
             q: 'How do I change my payment method or view invoices?',
             a: isPaid
               ? 'Click "Manage Billing" above to open the Stripe billing portal where you can update your card, download invoices, and manage your subscription.'
-              : 'Upgrade to a paid plan to access the billing portal for invoices and payment management.',
+              : 'Upgrade to the Naturalist plan to access the billing portal for invoices and payment management.',
           },
           {
-            q: "What's the difference between Scholar and Earth Scientist?",
-            a: "Scholar unlocks the full path catalog — Earth Foundations complete, Deep Time, and all future paths as they launch. Earth Scientist adds expert advanced paths, early access before public launch, and priority support.",
+            q: "What's included in the Naturalist plan?",
+            a: "Naturalist unlocks the full path catalog — Earth Foundations complete, Deep Time, and all future paths as they launch. New paths are added regularly at no extra cost.",
           },
         ].map(({ q, a }) => (
           <div key={q}>
@@ -233,72 +255,6 @@ export default async function BillingPage() {
         </div>
       </div>
 
-    </div>
-  )
-}
-
-function UpgradeCard({
-  tier, label, price, priceId, color, icon: Icon, features, badge,
-}: {
-  tier: string
-  label: string
-  price: number
-  priceId: string
-  color: string
-  icon: React.ElementType
-  features: readonly string[]
-  badge: string | null
-}) {
-  return (
-    <div
-      className="relative flex flex-col rounded-sm p-5"
-      style={{ border: `1px solid ${color}45`, backgroundColor: BRAND.surface }}
-    >
-      {badge && (
-        <div
-          className="absolute -top-2.5 left-4 px-2.5 py-0.5 rounded-sm text-[9px] tracking-[0.2em] uppercase font-semibold"
-          style={{ backgroundColor: color, color: BRAND.bg }}
-        >
-          {badge}
-        </div>
-      )}
-
-      <div className="flex items-center gap-3 mb-4">
-        <div
-          className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
-          style={{ backgroundColor: `${color}18`, border: `1px solid ${color}30` }}
-        >
-          <Icon size={14} style={{ color }} />
-        </div>
-        <div>
-          <div className="text-[10px] tracking-[0.2em] uppercase font-mono" style={{ color }}>
-            {label}
-          </div>
-          <div className="flex items-baseline gap-1">
-            <span className="font-serif" style={{ fontSize: '22px' }}>${price}</span>
-            <span className="text-xs" style={{ color: BRAND.textSubtle }}>/mo</span>
-          </div>
-        </div>
-      </div>
-
-      <p className="text-[11px] mb-4 -mt-1" style={{ color: BRAND.textSubtle }}>Cancel anytime · No lock-in</p>
-
-      <ul className="space-y-2 mb-5 flex-1">
-        {features.map(f => (
-          <li key={f} className="flex items-start gap-2 text-[12px]">
-            <Check size={11} className="mt-0.5 shrink-0" strokeWidth={2.5} style={{ color }} />
-            <span style={{ color: BRAND.textDim }}>{f}</span>
-          </li>
-        ))}
-      </ul>
-
-      <BillingUpgradeButton
-        priceId={priceId}
-        planKey={tier}
-        label={`Upgrade to ${label}`}
-        accent={color}
-        solid
-      />
     </div>
   )
 }
