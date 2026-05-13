@@ -85,7 +85,7 @@ export default function ConceptBlock({ section }: Props) {
 
       {section.cards && section.cards.length > 0 && (
         <motion.div
-          className="grid gap-3"
+          className="grid sm:grid-cols-2 gap-3"
           initial="hidden"
           animate="show"
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } } }}

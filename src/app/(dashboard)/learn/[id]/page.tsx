@@ -3,10 +3,14 @@ import { notFound, redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { LESSONS } from '@/lessons/index'
 import { getDbLesson } from '@/lib/lesson-store'
-import { canAccessLesson } from '@/lib/access'
+import { canAccessLesson, FREE_LESSON_IDS } from '@/lib/access'
 import LessonClient from './LessonClient'
 import DbLessonClient from './DbLessonClient'
 import LessonAccessGate from '@/components/features/LessonAccessGate'
+
+export async function generateStaticParams() {
+  return Object.keys(LESSONS).map(id => ({ id }))
+}
 
 interface Props {
   params: Promise<{ id: string }>
@@ -39,15 +43,14 @@ export default async function LessonPage({ params }: Props) {
   if (!dbLesson && !lesson) notFound()
 
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect(`/login?next=/learn/${id}`)
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('subscription')
-    .eq('id', user.id)
-    .single()
+  // Allow unauthenticated users to view free lessons (crawlers, guests)
+  if (!user && !FREE_LESSON_IDS.has(id)) redirect(`/login?next=/learn/${id}`)
 
-  const subscription = (profile as { subscription?: string } | null)?.subscription ?? 'free'
+  const subscription = user
+    ? await supabase.from('profiles').select('subscription').eq('id', user.id).single()
+        .then(({ data }) => (data as { subscription?: string } | null)?.subscription ?? 'free')
+    : 'free'
 
   if (!canAccessLesson(id, subscription)) {
     const title = dbLesson?.title ?? lesson?.title ?? 'This lesson'

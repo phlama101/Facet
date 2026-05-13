@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import AppNav from '@/components/layout/AppNav'
 import AppFooter from '@/components/layout/AppFooter'
 import GuestBanner from '@/components/layout/GuestBanner'
+import MobileNav from '@/components/layout/MobileNav'
 import FacetBackground from '@/components/brand/FacetBackground'
 import type { Profile } from '@/types'
 
@@ -45,10 +46,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <div className="relative z-10">
         <AppNav profile={profile} />
         {!user && <GuestBanner />}
-        <main className="max-w-6xl mx-auto px-5 py-6 md:py-8">
+        <main className="max-w-6xl mx-auto px-5 py-6 md:py-8 pb-24 sm:pb-8">
           {children}
         </main>
         <AppFooter />
+        {user && <MobileNav />}
       </div>
     </div>
   )

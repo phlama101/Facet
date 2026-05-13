@@ -122,8 +122,8 @@ export default function AppNav({ profile }: AppNavProps) {
         </div>
       </div>
 
-      {/* Tab row */}
-      <div className="max-w-6xl mx-auto px-5 flex items-stretch gap-0.5 overflow-x-auto">
+      {/* Tab row — hidden on mobile (replaced by MobileNav) */}
+      <div className="hidden sm:flex max-w-6xl mx-auto px-5 items-stretch gap-0.5 overflow-x-auto">
         {PRIMARY_TABS.map(tab => {
           const active = isTabActive(tab.href)
           return (

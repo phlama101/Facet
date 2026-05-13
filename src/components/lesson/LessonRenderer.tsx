@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Zap, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Zap, X, Share2, Check as CheckIcon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import { TRACK_MAP } from '@/lessons/index'
@@ -24,6 +24,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   const [quizDone, setQuizDone] = useState(false)
   const [quizResult, setQuizResult] = useState<{ correct: number; total: number } | null>(null)
   const [exitConfirm, setExitConfirm] = useState(false)
+  const [shared, setShared] = useState(false)
 
   const { xp: sessionXP, reset } = useProgressStore()
 
@@ -60,6 +61,17 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
     const totalXP = sessionXP + lesson.xpReward
     onComplete(totalXP)
     reset()
+  }
+
+  async function handleShare() {
+    const text = `Just completed "${lesson.title}" on Facet Earth Sciences — earning ${sessionXP + lesson.xpReward} XP! 🌍 facet.earth/learn/${lesson.id}`
+    if (navigator.share) {
+      try { await navigator.share({ text }) } catch { /* user dismissed */ }
+    } else {
+      await navigator.clipboard.writeText(text)
+      setShared(true)
+      setTimeout(() => setShared(false), 2500)
+    }
   }
 
   const nextLabel: Record<string, string> = {
@@ -251,6 +263,22 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                     +{sessionXP + lesson.xpReward}
                   </p>
                 </motion.div>
+
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.65 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={handleShare}
+                  className="flex items-center gap-2 mx-auto px-5 py-2 rounded-sm text-xs tracking-[0.1em] uppercase font-medium transition-colors"
+                  style={{ color: BRAND.textDim, border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
+                >
+                  {shared
+                    ? <><CheckIcon size={12} style={{ color: BRAND.jade }} /> Copied to clipboard</>
+                    : <><Share2 size={12} /> Share this lesson</>
+                  }
+                </motion.button>
 
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}

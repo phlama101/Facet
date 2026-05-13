@@ -54,7 +54,7 @@ function RegisterForm() {
       })
       if (signInErr) { setError(signInErr.message); setLoading(false); return }
       const next = searchParams.get('next')
-      router.push(next && next.startsWith('/') ? next : '/dashboard')
+      router.push(next && next.startsWith('/') ? next : '/onboard')
       router.refresh()
     } catch {
       setError('Something went wrong. Please try again.')
