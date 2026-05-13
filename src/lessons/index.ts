@@ -111,6 +111,7 @@ import polarOceans                 from './ocea-101-1-3-4'
 import hydrothermalVents           from './ocea-101-1-4-1'
 import oceanAcidification          from './ocea-101-1-4-2'
 import bioluminescence             from './ocea-101-1-4-3'
+import deepOceanSediments          from './ocea-101-1-4-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'rock-cycle':              rockCycle,
@@ -221,6 +222,7 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-101-1-4-1':          hydrothermalVents,
   'ocea-101-1-4-2':          oceanAcidification,
   'ocea-101-1-4-3':          bioluminescence,
+  'ocea-101-1-4-4':          deepOceanSediments,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -407,8 +409,8 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'deep-ocean',
         title: 'The Deep Ocean',
-        description: 'Hydrothermal vents and chemosynthetic life, and the ocean acidification crisis reshaping marine chemistry.',
-        lessonIds: ['ocea-101-1-4-1', 'ocea-101-1-4-2'],
+        description: 'Hydrothermal vents, ocean acidification, bioluminescence, and the sediments and mineral resources of the abyssal seafloor.',
+        lessonIds: ['ocea-101-1-4-1', 'ocea-101-1-4-2', 'ocea-101-1-4-3', 'ocea-101-1-4-4'],
         iconId: 'chapter-deep-ocean',
       },
     ],
