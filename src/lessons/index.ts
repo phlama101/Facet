@@ -227,6 +227,10 @@ import ensoOceanAtmosphere         from './ocea-201-1-3-1'
 import oceanHeatContent            from './ocea-201-1-3-2'
 import amocThermohaline            from './ocea-201-1-3-3'
 import seaIcePolarOceans           from './ocea-201-1-3-4'
+import marineHeatWaves              from './ocea-201-1-4-1'
+import oceanDeoxygenation           from './ocea-201-1-4-2'
+import oceanCDR                     from './ocea-201-1-4-3'
+import futureOceanProjections       from './ocea-201-1-4-4'
 import ocea201Capstone             from './ocea-201-capstone'
 import globalCarbonCycle           from './clim-201-1-1-1'
 import landCarbonSinks             from './clim-201-1-1-2'
@@ -493,6 +497,10 @@ export const LESSONS: Record<string, Lesson> = {
   'ocea-201-1-3-2':          oceanHeatContent,
   'ocea-201-1-3-3':          amocThermohaline,
   'ocea-201-1-3-4':          seaIcePolarOceans,
+  'ocea-201-1-4-1':          marineHeatWaves,
+  'ocea-201-1-4-2':          oceanDeoxygenation,
+  'ocea-201-1-4-3':          oceanCDR,
+  'ocea-201-1-4-4':          futureOceanProjections,
   'ocea-201-capstone':       ocea201Capstone,
   'clim-201-1-1-1':          globalCarbonCycle,
   'clim-201-1-1-2':          landCarbonSinks,
@@ -1141,9 +1149,16 @@ export const LEARNING_PATHS: LearningPath[] = [
         iconId: 'chapter-ocean-climate-coupling',
       },
       {
+        id: 'anthropocene-ocean',
+        title: 'The Anthropocene Ocean',
+        description: 'Marine heat waves, ocean deoxygenation, ocean-based carbon dioxide removal strategies, and what IPCC projections reveal about the ocean\'s future under different emissions scenarios.',
+        lessonIds: ['ocea-201-1-4-1', 'ocea-201-1-4-2', 'ocea-201-1-4-3', 'ocea-201-1-4-4'],
+        iconId: 'chapter-anthropocene-ocean',
+      },
+      {
         id: 'marine-chemistry-assessment',
         title: 'Path Assessment',
-        description: 'Test your knowledge across all three chapters of Marine Chemistry & Biogeochemistry.',
+        description: 'Test your knowledge across all four chapters of Marine Chemistry & Biogeochemistry.',
         lessonIds: ['ocea-201-capstone'],
         iconId: 'chapter-assessment',
       },
