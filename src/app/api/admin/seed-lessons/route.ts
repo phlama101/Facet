@@ -1,14 +1,13 @@
 // POST /api/admin/seed-lessons
 //
-// Migrates all static TypeScript V1 lessons into cms_lessons as 'draft' records.
-// Only seeds lessons that don't already exist in the DB.
+// Migrates all static TypeScript lessons into cms_lessons.
+// Body: { autoPublish?: boolean }
+//   autoPublish=false (default): only seeds new lessons as 'draft'
+//   autoPublish=true: seeds new lessons AND promotes existing drafts/reviews to 'published'
 // Concept card icons are converted from LucideIcon components to name strings
 // by looking up the component's displayName.
-//
-// This is a one-time operation used to bootstrap the CMS from the existing
-// static lesson files. Run it once per environment after applying migration 005.
 
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { upsertDbLesson, getAllDbLessons } from '@/lib/lesson-store'
 import { LESSONS } from '@/lessons/index'
@@ -57,7 +56,7 @@ function convertSection(section: Section): DbSection {
   return dbCs
 }
 
-function convertLesson(lesson: Lesson) {
+function convertLesson(lesson: Lesson, status: 'draft' | 'published') {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -70,33 +69,47 @@ function convertLesson(lesson: Lesson) {
     sources: lesson.sources ?? [],
     sections: lesson.sections.map(convertSection),
     isPremium: false,
-    status: 'draft' as const,
+    status,
   }
 }
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   const auth = await requireAdmin()
   if (auth instanceof NextResponse) return auth
 
-  const existing = await getAllDbLessons()
-  const existingIds = new Set(existing.map(l => l.id))
+  const body = await req.json().catch(() => ({})) as { autoPublish?: boolean }
+  const autoPublish = body.autoPublish === true
+  const targetStatus = autoPublish ? 'published' : 'draft'
 
-  const toSeed = Object.values(LESSONS).filter(l => !existingIds.has(l.id))
+  const existing = await getAllDbLessons()
+  const existingById = new Map(existing.map(l => [l.id, l]))
+
+  const allLessons = Object.values(LESSONS)
+
+  // autoPublish: include new lessons + existing ones not yet published
+  // default: only include lessons not yet in the DB
+  const toSeed = autoPublish
+    ? allLessons.filter(l => {
+        const ex = existingById.get(l.id)
+        return !ex || ex.status !== 'published'
+      })
+    : allLessons.filter(l => !existingById.has(l.id))
 
   const results: { id: string; ok: boolean; error?: string }[] = []
 
   for (const lesson of toSeed) {
-    const converted = convertLesson(lesson as Lesson)
+    const converted = convertLesson(lesson as Lesson, targetStatus)
     const result = await upsertDbLesson(converted, auth.userId)
     results.push({ id: lesson.id, ...result })
   }
 
   const succeeded = results.filter(r => r.ok).length
   const failed = results.filter(r => !r.ok)
+  const skipped = allLessons.length - toSeed.length
 
   return NextResponse.json({
     seeded: succeeded,
-    skipped: existingIds.size,
+    skipped,
     failed: failed.length,
     errors: failed.map(f => ({ id: f.id, error: f.error })),
   })
