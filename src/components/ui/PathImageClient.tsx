@@ -3,8 +3,9 @@
 import { useState } from 'react'
 
 export default function PathImageClient({ src, size }: { src: string; size: number }) {
-  const [visible, setVisible] = useState(true)
-  if (!visible) return null
+  const [loaded, setLoaded] = useState(false)
+  const [errored, setErrored] = useState(false)
+  if (errored) return null
   return (
     <img
       src={src}
@@ -12,8 +13,14 @@ export default function PathImageClient({ src, size }: { src: string; size: numb
       height={size}
       alt=""
       draggable={false}
-      onError={() => setVisible(false)}
-      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }}
+      onLoad={() => setLoaded(true)}
+      onError={() => setErrored(true)}
+      style={{
+        position: 'absolute', inset: 0,
+        width: '100%', height: '100%',
+        objectFit: 'contain',
+        opacity: loaded ? 1 : 0,
+      }}
     />
   )
 }
