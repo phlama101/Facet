@@ -1,24 +1,41 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { notFound, useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
+import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import LessonRenderer from '@/components/lesson/LessonRenderer'
 import LessonErrorBoundary from '@/components/lesson/LessonErrorBoundary'
 import { BRAND } from '@/lib/brand'
-import type { Lesson } from '@/lessons/types'
 
 interface Props {
-  lesson: Lesson
-  nextLesson: { id: string; title: string } | null
+  id: string
 }
 
-export default function LessonClient({ lesson, nextLesson }: Props) {
+function findNextLesson(currentId: string): { id: string; title: string } | null {
+  for (const path of LEARNING_PATHS) {
+    const allIds = path.chapters.flatMap(ch => ch.lessonIds)
+    const idx = allIds.indexOf(currentId)
+    if (idx !== -1 && idx < allIds.length - 1) {
+      const nextId = allIds[idx + 1]
+      const next = LESSONS[nextId]
+      if (next) return { id: nextId, title: next.title }
+    }
+  }
+  return null
+}
+
+export default function LessonClient({ id }: Props) {
   const router = useRouter()
   const [saveError, setSaveError] = useState(false)
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
   const [pendingQuizScore, setPendingQuizScore] = useState<{ correct: number; total: number } | undefined>(undefined)
+
+  const lesson = LESSONS[id]
+  if (!lesson) notFound()
+
+  const nextLesson = findNextLesson(id)
 
   async function saveProgress(xpEarned: number, quizScore?: { correct: number; total: number }): Promise<boolean> {
     setSaveError(false)
