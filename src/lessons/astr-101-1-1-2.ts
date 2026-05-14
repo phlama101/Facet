@@ -42,6 +42,12 @@ The story of the early inner Solar System is also one of catastrophic impacts. T
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'Mars hosts the largest volcano in the solar system',
+      body: 'Mars hosts Olympus Mons — the largest volcano in the solar system at 22 km high and 600 km wide. It dwarfs Mauna Kea (Earth\'s tallest volcano from ocean floor) by a factor of 3. Mars was able to build such a massive volcano because, unlike Earth, it lacks plate tectonics to move the crust over the hotspot.',
+    },
+    {
       type: 'concept',
       title: 'Core formation, the Giant Impact, and the bombardment that followed',
       body: `**Planetary differentiation: iron sinks, silicates rise.** The energy released by planetesimal accretion Think of differentiation like a bottle of Italian salad dressing shaken vigorously — given enough heat and time, the denser oil-equivalent (iron) inevitably sinks to the bottom while the lighter vinegar-equivalent (silicate rock) rises, sorting an initially mixed body into clean layers. — kinetic energy converted to heat as each impactor strikes — is enormous; for a planet the size of Earth, the accretional energy is sufficient to raise temperatures by thousands of degrees if retained. Combined with the heat from ²⁶Al decay (particularly critical for early-forming planetesimals within ~2 Myr of t₀), temperatures in growing embryos quickly exceeded the iron-nickel melting point (~1,200–1,500°C at relevant pressures). Once molten iron forms, its much greater density (~7,900 kg/m³) relative to silicate rock (~3,000 kg/m³) drives it downward through the partially-molten silicate in a process called **iron rain** or **diapir sinking** — forming a metallic core within millions to tens of millions of years. This density-driven separation is **planetary differentiation**.
@@ -82,6 +88,50 @@ The dynamical explanation for the LHB is the **Nice model** (named after the Cô
           examples: 'Apollo 14 Fra Mauro samples: 3.85 Ga impact melt → Fra Mauro formation is ejecta blanket from the Imbrium Basin-forming impact, one of the last giant impacts of the LHB · Orientale Basin (Moon): youngest large multi-ring lunar basin (~3.7 Ga), well-preserved; Lunar Reconnaissance Orbiter mapped its full structure in 2016, constraining late LHB timing · Pluto and Charon (New Horizons July 2015): Sputnik Planitia nitrogen ice plain and cratered highlands preserve independent record of Kuiper Belt bombardment — provides LHB constraints beyond the biased lunar sample set · Nectaris, Crisium, Imbrium, Serenitatis multi-ring basins: ages cluster 3.8–4.1 Ga, the core evidence for the LHB spike',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/1200px-OSIRIS_Mars_true_color.jpg',
+        alt: 'True-colour image of Mars showing Valles Marineris canyon, Olympus Mons volcano, polar ice cap, Hellas Basin, and southern highlands',
+        aspectRatio: '1/1',
+        credit: 'ESA / MPS / UPD / LAM / IAA / RSSD / INTA / UPM / DASP / IDA — Wikimedia Commons',
+        annotations: [
+          {
+            id: 'valles-marineris',
+            x: 45,
+            y: 50,
+            label: 'Valles Marineris',
+            description: 'Valles Marineris is a system of canyons stretching ~4,000 km along the Martian equator — roughly the width of the United States. Up to 7 km deep and 200 km wide, it dwarfs Earth\'s Grand Canyon. The canyon system formed through tectonic rifting and collapse rather than river erosion.',
+          },
+          {
+            id: 'olympus-mons',
+            x: 25,
+            y: 40,
+            label: 'Olympus Mons',
+            description: 'Olympus Mons is the largest volcano in the solar system: 22 km tall and ~600 km wide. It grew so large because Mars lacks plate tectonics — the crust never moved away from the underlying mantle hotspot, allowing lava to pile up in the same location for billions of years.',
+          },
+          {
+            id: 'north-polar-cap',
+            x: 50,
+            y: 15,
+            label: 'North polar ice cap',
+            description: 'Mars\'s north polar cap is a layered deposit of water ice and CO₂ ice up to 3 km thick, recording hundreds of thousands of years of Martian climate cycles. During northern summer, the seasonal CO₂ frost sublimes away, leaving a residual water ice cap ~1,000 km across.',
+          },
+          {
+            id: 'hellas-basin',
+            x: 60,
+            y: 65,
+            label: 'Hellas Basin',
+            description: 'Hellas Basin is one of the largest impact craters in the solar system — ~2,300 km wide and ~7 km deep. It formed during the Late Heavy Bombardment ~4.0–3.9 Ga. The atmospheric pressure at the basin floor is high enough that liquid water could theoretically be stable there today under the right temperature conditions.',
+          },
+          {
+            id: 'southern-highlands',
+            x: 70,
+            y: 55,
+            label: 'Southern highlands',
+            description: 'The heavily cratered southern highlands are among the oldest terrain on Mars (~4.0–4.1 Ga), preserving the record of the Late Heavy Bombardment. The striking topographic dichotomy between the rugged, ancient southern highlands and the smoother, lower northern lowlands remains one of the major unresolved puzzles in Martian geology.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',
