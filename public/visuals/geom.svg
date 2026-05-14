@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Sky -->
+  <rect x="0" y="0" width="800" height="180" fill="#060F1E"/>
+  <!-- Hillslope cross-section -->
+  <!-- Bedrock at bottom -->
+  <path d="M 0,400 Q 200,380 400,360 Q 600,340 800,350 L 800,450 L 0,450 Z" fill="#1F1A10"/>
+  <!-- Saprolite / weathered rock -->
+  <path d="M 0,370 Q 200,348 400,325 Q 600,305 800,312 L 800,400 Q 600,390 400,405 Q 200,420 0,440 Z" fill="#2D2414"/>
+  <!-- Regolith -->
+  <path d="M 0,340 Q 200,315 400,290 Q 600,268 800,275 L 800,355 Q 600,348 400,365 Q 200,380 0,400 Z" fill="#3D3218"/>
+  <!-- Soil A horizon (dark topsoil) -->
+  <path d="M 0,310 Q 200,283 400,258 Q 600,235 800,242 L 800,275 Q 600,268 400,290 Q 200,315 0,340 Z" fill="#2A2010"/>
+  <!-- Vegetation on surface -->
+  <path d="M 0,308 Q 200,281 400,256 Q 600,233 800,240" stroke="#1A4A0A" stroke-width="3" fill="none"/>
+  <!-- Trees / vegetation -->
+  <line x1="80" y1="308" x2="80" y2="275" stroke="#2D4A1A" stroke-width="2"/>
+  <ellipse cx="80" cy="268" rx="15" ry="12" fill="#1A4A0A"/>
+  <line x1="160" y1="297" x2="160" y2="262" stroke="#2D4A1A" stroke-width="2"/>
+  <ellipse cx="160" cy="255" rx="14" ry="11" fill="#1A4A0A"/>
+  <line x1="240" y1="286" x2="240" y2="250" stroke="#2D4A1A" stroke-width="2"/>
+  <ellipse cx="240" cy="243" rx="15" ry="12" fill="#1A4A0A"/>
+  <!-- Frost wedge cracking -->
+  <path d="M 510,242 L 530,275 L 520,275" stroke="#60A5FA" stroke-width="2" fill="#0F1F3D" opacity="0.8"/>
+  <text x="540" y="258" font-family="monospace" font-size="10" fill="#60A5FA">Frost wedging</text>
+  <!-- Mass movement / landslide scar -->
+  <path d="M 380,256 Q 420,290 460,330 Q 480,350 500,370" stroke="#EF4444" stroke-width="2.5" fill="none" stroke-dasharray="5,3"/>
+  <text x="505" y="360" font-family="monospace" font-size="10" fill="#EF4444">Failure plane</text>
+  <!-- Debris at base -->
+  <path d="M 480,370 Q 550,390 620,380 Q 660,375 700,385" stroke="#B45309" stroke-width="2" fill="none"/>
+  <text x="580" y="405" font-family="monospace" font-size="10" fill="#B45309" text-anchor="middle">Colluvium / debris</text>
+  <!-- Stream at base -->
+  <path d="M 0,430 Q 200,420 400,425 Q 600,430 800,420" stroke="#3B82F6" stroke-width="3" fill="none"/>
+  <text x="700" y="445" font-family="monospace" font-size="10" fill="#3B82F6">Stream channel</text>
+  <!-- Slope angle indicator -->
+  <line x1="80" y1="308" x2="400" y2="258" stroke="#E8A045" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="230" y="295" font-family="monospace" font-size="10" fill="#E8A045" transform="rotate(-9,230,295)">Slope gradient</text>
+  <!-- Layer labels (left) -->
+  <text x="15" y="265" font-family="monospace" font-size="10" fill="#E2E8F0">A: Topsoil</text>
+  <text x="15" y="298" font-family="monospace" font-size="10" fill="#D4A574">B: Subsoil/Regolith</text>
+  <text x="15" y="330" font-family="monospace" font-size="10" fill="#92400E">C: Saprolite</text>
+  <text x="15" y="363" font-family="monospace" font-size="10" fill="#78350F">R: Bedrock</text>
+  <!-- Title -->
+  <text x="400" y="28" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">HILLSLOPE PROCESSES — GEOMORPHOLOGY</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Sky -->
+  <rect x="0" y="0" width="800" height="160" fill="#060F1E"/>
+  <!-- Mountain peaks -->
+  <polygon points="0,280 80,80 180,280" fill="#1F2937"/>
+  <polygon points="120,280 220,60 340,280" fill="#263340"/>
+  <!-- Glacier body -->
+  <path d="M 80,120 Q 200,110 320,140 Q 420,165 500,200 Q 580,230 640,270 Q 680,295 710,320 L 710,350 Q 680,335 640,310 Q 580,278 500,248 Q 420,213 320,188 Q 200,155 80,165 Z" fill="#BFDBFE" opacity="0.9"/>
+  <!-- Glacier surface detail -->
+  <path d="M 100,148 Q 200,138 320,165 Q 420,185 500,218" stroke="#93C5FD" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M 120,158 Q 220,148 340,175 Q 440,195 520,228" stroke="#93C5FD" stroke-width="1" fill="none" opacity="0.4"/>
+  <!-- Accumulation zone (upper part) -->
+  <path d="M 80,120 Q 200,110 320,140 L 320,188 Q 200,155 80,165 Z" fill="#DBEAFE" opacity="0.8"/>
+  <!-- Firn line / equilibrium line -->
+  <line x1="320" y1="140" x2="320" y2="188" stroke="#E8A045" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="325" y="168" font-family="monospace" font-size="10" fill="#E8A045">ELA (Firn line)</text>
+  <!-- Crevasses in ablation zone -->
+  <path d="M 430,195 L 445,235" stroke="#0F172A" stroke-width="2.5"/>
+  <path d="M 465,210 L 478,250" stroke="#0F172A" stroke-width="2.5"/>
+  <path d="M 495,228 L 505,268" stroke="#0F172A" stroke-width="2.5"/>
+  <!-- Medial moraine (dark stripe) -->
+  <path d="M 200,158 Q 320,178 450,215 Q 560,245 640,280" stroke="#4B5563" stroke-width="5" fill="none" opacity="0.8"/>
+  <!-- Lateral moraines -->
+  <path d="M 90,162 Q 200,150 330,180 Q 440,205 560,250 Q 620,273 680,305" stroke="#78350F" stroke-width="3" fill="none"/>
+  <!-- Terminus and meltwater lake -->
+  <ellipse cx="720" cy="345" rx="60" ry="22" fill="#0F2A44"/>
+  <ellipse cx="720" cy="345" rx="50" ry="17" fill="#1D4ED8" opacity="0.5"/>
+  <text x="720" y="348" font-family="monospace" font-size="10" fill="#93C5FD" text-anchor="middle">Proglacial lake</text>
+  <!-- Ice cliff / terminus -->
+  <line x1="710" y1="320" x2="710" y2="360" stroke="#60A5FA" stroke-width="3"/>
+  <!-- Glacier labels -->
+  <text x="185" y="145" font-family="monospace" font-size="11" fill="#0F172A" text-anchor="middle" font-weight="bold">Accumulation zone</text>
+  <text x="185" y="158" font-family="monospace" font-size="9" fill="#1E3A5F" text-anchor="middle">(snowfall &gt; melt)</text>
+  <text x="560" y="248" font-family="monospace" font-size="11" fill="#0F172A" text-anchor="middle">Ablation zone</text>
+  <text x="560" y="261" font-family="monospace" font-size="9" fill="#1E3A5F" text-anchor="middle">(melt &gt; snowfall)</text>
+  <!-- Ground beneath glacier -->
+  <path d="M 60,280 Q 200,265 400,285 Q 600,305 800,295 L 800,450 L 0,450 L 0,350 Z" fill="#1F1A10"/>
+  <!-- Bedrock label -->
+  <text x="400" y="420" font-family="monospace" font-size="11" fill="#78350F" text-anchor="middle">Bedrock (glacially scoured)</text>
+  <!-- Snow annotation top left -->
+  <text x="100" y="110" font-family="monospace" font-size="10" fill="#E2E8F0">Snow &amp; firn</text>
+  <!-- Title -->
+  <text x="400" y="28" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">GLACIER ANATOMY &amp; MASS BALANCE</text>
+</svg>

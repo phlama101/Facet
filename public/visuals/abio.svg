@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Deep ocean background -->
+  <rect x="0" y="0" width="800" height="450" fill="#060B14"/>
+  <!-- Ocean floor -->
+  <path d="M 0,370 Q 200,360 400,365 Q 600,370 800,360 L 800,450 L 0,450 Z" fill="#1A1208"/>
+  <!-- Water columns with thermal gradient -->
+  <rect x="0" y="0" width="800" height="370" fill="#060F20" opacity="0.5"/>
+  <!-- Alkaline vent chimney (Lost City style) -->
+  <polygon points="340,365 355,160 370,365" fill="#D97706" opacity="0.85"/>
+  <polygon points="350,365 362,200 374,365" fill="#E8A045" opacity="0.75"/>
+  <!-- Smaller chimneys -->
+  <polygon points="420,365 432,240 444,365" fill="#B45309" opacity="0.8"/>
+  <polygon points="460,365 470,270 480,365" fill="#92400E" opacity="0.7"/>
+  <!-- Hydrothermal fluid plume -->
+  <path d="M 355,160 Q 340,120 320,80 Q 300,50 280,30" stroke="#FBBF24" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 362,200 Q 380,160 400,130 Q 420,100 430,70" stroke="#F59E0B" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="280" y="100" font-family="monospace" font-size="10" fill="#FCD34D">Alkaline fluid plume</text>
+  <text x="265" y="115" font-family="monospace" font-size="10" fill="#FCD34D">(H₂-rich, pH 9–11)</text>
+  <!-- Microbial mats -->
+  <ellipse cx="300" cy="368" rx="55" ry="8" fill="#4ADE80" opacity="0.7"/>
+  <ellipse cx="490" cy="368" rx="45" ry="7" fill="#4ADE80" opacity="0.6"/>
+  <ellipse cx="550" cy="363" rx="60" ry="6" fill="#22C55E" opacity="0.5"/>
+  <text x="300" y="385" font-family="monospace" font-size="10" fill="#4ADE80" text-anchor="middle">Microbial mats (chemolithotrophs)</text>
+  <!-- Iron-sulfide micropores in chimney wall -->
+  <rect x="342" y="260" width="16" height="80" fill="#78350F" opacity="0.4"/>
+  <circle cx="347" cy="275" r="3" fill="#D97706" opacity="0.6"/>
+  <circle cx="353" cy="290" r="2.5" fill="#D97706" opacity="0.6"/>
+  <circle cx="348" cy="305" r="3" fill="#D97706" opacity="0.6"/>
+  <circle cx="354" cy="320" r="2.5" fill="#D97706" opacity="0.5"/>
+  <text x="330" y="255" font-family="monospace" font-size="9" fill="#D97706">Micropores (Fe-S)</text>
+  <!-- RNA/molecule schematic floating in water -->
+  <path d="M 150,200 Q 170,180 190,200 Q 210,220 230,200 Q 250,180 270,200" stroke="#C084FC" stroke-width="2" fill="none"/>
+  <circle cx="150" cy="200" r="4" fill="#C084FC" opacity="0.7"/>
+  <circle cx="270" cy="200" r="4" fill="#C084FC" opacity="0.7"/>
+  <text x="210" y="175" font-family="monospace" font-size="10" fill="#C084FC" text-anchor="middle">RNA / protocell</text>
+  <!-- Proton gradient arrow -->
+  <line x1="380" y1="300" x2="410" y2="300" stroke="#60A5FA" stroke-width="2" marker-end="url(#a2)"/>
+  <text x="420" y="298" font-family="monospace" font-size="9" fill="#60A5FA">H⁺ gradient</text>
+  <!-- Seafloor label -->
+  <text x="650" y="382" font-family="monospace" font-size="10" fill="#78350F">Seafloor</text>
+  <text x="650" y="395" font-family="monospace" font-size="10" fill="#6B7280">~700–2,000 m depth</text>
+  <!-- Cold seawater label -->
+  <text x="650" y="200" font-family="monospace" font-size="10" fill="#60A5FA">Cold seawater</text>
+  <text x="650" y="215" font-family="monospace" font-size="10" fill="#6B7280">(~2°C, slightly acidic)</text>
+  <!-- Title -->
+  <text x="400" y="28" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">ALKALINE HYDROTHERMAL VENT — ORIGIN OF LIFE</text>
+  <text x="400" y="45" font-family="monospace" font-size="10" fill="#6B7280" text-anchor="middle">Lost City-type vent system — leading candidate for life's birthplace</text>
+</svg>

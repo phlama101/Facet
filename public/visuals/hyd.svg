@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Sky -->
+  <rect x="0" y="0" width="800" height="220" fill="#060F1E"/>
+  <!-- Ground surface -->
+  <path d="M 0,310 Q 100,290 200,300 Q 300,310 400,295 Q 500,280 600,300 Q 700,315 800,300 L 800,450 L 0,450 Z" fill="#1A3A0A"/>
+  <!-- Underground zone -->
+  <rect x="0" y="370" width="800" height="80" fill="#0F2A08" opacity="0.8"/>
+  <!-- Ocean / water body left -->
+  <path d="M 0,280 Q 50,270 100,280 L 100,450 L 0,450 Z" fill="#0F2A44"/>
+  <!-- River right side -->
+  <path d="M 700,300 Q 720,310 740,305 Q 760,310 780,305 L 800,320 L 800,450 L 680,450 L 700,300" fill="#0F2A44"/>
+  <!-- Mountain / high terrain -->
+  <polygon points="480,150 560,80 640,150" fill="#1F2937"/>
+  <polygon points="510,150 580,95 650,150" fill="#263340"/>
+  <!-- EVAPORATION arrows from ocean -->
+  <path d="M 50,260 Q 60,220 70,180 Q 80,140 100,100" stroke="#60A5FA" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 80,255 Q 90,215 110,170 Q 125,130 145,90" stroke="#60A5FA" stroke-width="2" fill="none"/>
+  <text x="30" y="280" font-family="monospace" font-size="10" fill="#60A5FA">Evaporation</text>
+  <!-- Cloud formation -->
+  <ellipse cx="240" cy="95" rx="65" ry="30" fill="#374151"/>
+  <ellipse cx="290" cy="80" rx="50" ry="25" fill="#4B5563"/>
+  <ellipse cx="200" cy="100" rx="45" ry="22" fill="#374151"/>
+  <text x="250" y="140" font-family="monospace" font-size="10" fill="#E2E8F0" text-anchor="middle">Cloud formation</text>
+  <!-- PRECIPITATION arrows down from cloud -->
+  <line x1="230" y1="125" x2="210" y2="190" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="255" y1="125" x2="250" y2="200" stroke="#93C5FD" stroke-width="1.5"/>
+  <line x1="275" y1="123" x2="285" y2="185" stroke="#93C5FD" stroke-width="1.5"/>
+  <text x="310" y="175" font-family="monospace" font-size="10" fill="#93C5FD">Precipitation</text>
+  <!-- Transpiration from vegetation -->
+  <text x="430" y="275" font-family="monospace" font-size="10" fill="#4ADE80">Transpiration</text>
+  <line x1="450" y1="295" x2="440" y2="255" stroke="#4ADE80" stroke-width="1.5"/>
+  <!-- Surface runoff -->
+  <path d="M 400,300 Q 500,310 600,305 Q 650,305 690,310" stroke="#3B82F6" stroke-width="2.5" fill="none"/>
+  <text x="520" y="295" font-family="monospace" font-size="10" fill="#3B82F6">Surface runoff</text>
+  <!-- Groundwater flow arrows (underground) -->
+  <text x="400" y="395" font-family="monospace" font-size="10" fill="#1D4ED8" text-anchor="middle">Groundwater flow</text>
+  <line x1="300" y1="400" x2="200" y2="400" stroke="#1D4ED8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="400" x2="600" y2="400" stroke="#1D4ED8" stroke-width="1.5"/>
+  <!-- Infiltration arrow -->
+  <line x1="350" y1="310" x2="350" y2="370" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="360" y="350" font-family="monospace" font-size="9" fill="#1D4ED8">Infiltration</text>
+  <!-- Title -->
+  <text x="400" y="28" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">THE WATER CYCLE (HYDROLOGICAL CYCLE)</text>
+</svg>

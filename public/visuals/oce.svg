@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Water body background -->
+  <rect x="0" y="80" width="800" height="370" fill="#0F2A44"/>
+  <!-- Ocean floor profile -->
+  <path d="M 0,200 L 100,200 Q 130,200 150,220 L 180,260 Q 200,280 220,280 L 380,280 Q 400,281 420,260 L 450,200 Q 480,160 520,155 L 560,155 Q 580,155 600,175 L 640,320 Q 660,370 680,375 L 700,375 L 720,280 L 760,250 L 800,250 L 800,450 L 0,450 Z" fill="#1E3A5F" stroke="#2563EB" stroke-width="1.5"/>
+  <!-- Seafloor solid fill -->
+  <path d="M 0,200 L 100,200 Q 130,200 150,220 L 180,260 Q 200,280 220,280 L 380,280 Q 400,281 420,260 L 450,200 Q 480,160 520,155 L 560,155 Q 580,155 600,175 L 640,320 Q 660,370 680,375 L 700,375 L 720,280 L 760,250 L 800,250 L 800,450 L 0,450 Z" fill="#162032"/>
+  <!-- Surface water glimmer -->
+  <line x1="0" y1="85" x2="800" y2="85" stroke="#3B82F6" stroke-width="1.5" opacity="0.5"/>
+  <text x="400" y="72" font-family="monospace" font-size="11" fill="#60A5FA" text-anchor="middle">Ocean Surface</text>
+  <!-- Labels for ocean features -->
+  <!-- Continental shelf (left) -->
+  <rect x="0" y="190" width="155" height="12" fill="#374151" rx="2"/>
+  <text x="70" y="185" font-family="monospace" font-size="11" fill="#E2E8F0" text-anchor="middle">Continental Shelf</text>
+  <text x="70" y="170" font-family="monospace" font-size="10" fill="#6B7280" text-anchor="middle">0–200 m</text>
+  <!-- Continental slope -->
+  <text x="180" y="248" font-family="monospace" font-size="10" fill="#94A3B8">Slope</text>
+  <!-- Abyssal plain -->
+  <rect x="220" y="273" width="160" height="10" fill="#1D4ED8" opacity="0.4" rx="2"/>
+  <text x="300" y="268" font-family="monospace" font-size="11" fill="#93C5FD" text-anchor="middle">Abyssal Plain</text>
+  <text x="300" y="295" font-family="monospace" font-size="10" fill="#6B7280" text-anchor="middle">~4,000 m deep</text>
+  <!-- Mid-ocean ridge -->
+  <text x="520" y="143" font-family="monospace" font-size="11" fill="#7AD7F0" text-anchor="middle">Mid-Ocean Ridge</text>
+  <text x="520" y="128" font-family="monospace" font-size="10" fill="#6B7280" text-anchor="middle">Seafloor spreading</text>
+  <!-- Deep ocean trench -->
+  <text x="665" y="388" font-family="monospace" font-size="10" fill="#C084FC" text-anchor="middle">Trench</text>
+  <text x="665" y="403" font-family="monospace" font-size="10" fill="#6B7280" text-anchor="middle">&gt;6,000 m</text>
+  <!-- Seamount -->
+  <text x="750" y="238" font-family="monospace" font-size="10" fill="#E8A045" text-anchor="middle">Seamount</text>
+  <!-- Depth scale -->
+  <line x1="770" y1="85" x2="770" y2="420" stroke="#374151" stroke-width="1"/>
+  <line x1="763" y1="85" x2="770" y2="85" stroke="#374151" stroke-width="1"/>
+  <line x1="763" y1="200" x2="770" y2="200" stroke="#374151" stroke-width="1"/>
+  <line x1="763" y1="280" x2="770" y2="280" stroke="#374151" stroke-width="1"/>
+  <line x1="763" y1="375" x2="770" y2="375" stroke="#374151" stroke-width="1"/>
+  <text x="775" y="90" font-family="monospace" font-size="9" fill="#6B7280">0 m</text>
+  <text x="775" y="204" font-family="monospace" font-size="9" fill="#6B7280">200 m</text>
+  <text x="775" y="284" font-family="monospace" font-size="9" fill="#6B7280">4 km</text>
+  <text x="775" y="379" font-family="monospace" font-size="9" fill="#6B7280">10 km</text>
+  <!-- Title -->
+  <text x="400" y="30" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">OCEAN FLOOR TOPOGRAPHY</text>
+</svg>

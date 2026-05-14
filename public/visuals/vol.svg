@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Sky gradient -->
+  <rect x="0" y="0" width="800" height="180" fill="#0F172A"/>
+  <!-- Eruption column -->
+  <ellipse cx="400" cy="80" rx="90" ry="55" fill="#374151" opacity="0.8"/>
+  <ellipse cx="400" cy="60" rx="60" ry="35" fill="#6B7280" opacity="0.7"/>
+  <ellipse cx="400" cy="45" rx="35" ry="20" fill="#9CA3AF" opacity="0.6"/>
+  <!-- Ash cloud spreading -->
+  <ellipse cx="560" cy="90" rx="120" ry="40" fill="#374151" opacity="0.5"/>
+  <ellipse cx="240" cy="100" rx="90" ry="30" fill="#374151" opacity="0.4"/>
+  <!-- Ground / cross section -->
+  <rect x="0" y="280" width="800" height="170" fill="#1F1005"/>
+  <!-- Volcanic edifice -->
+  <polygon points="200,280 400,100 600,280" fill="#292010" stroke="#3D2C0A" stroke-width="2"/>
+  <!-- Crater at top -->
+  <ellipse cx="400" cy="102" rx="25" ry="8" fill="#7F1D1D"/>
+  <!-- Main conduit -->
+  <path d="M 390,102 L 380,280 L 420,280 L 410,102" fill="#7F1D1D" opacity="0.9"/>
+  <!-- Magma chamber -->
+  <ellipse cx="400" cy="370" rx="130" ry="55" fill="#7F1D1D" opacity="0.85"/>
+  <ellipse cx="400" cy="370" rx="100" ry="40" fill="#DC2626" opacity="0.7"/>
+  <text x="400" y="376" font-family="monospace" font-size="12" fill="#FCA5A5" text-anchor="middle" font-weight="bold">MAGMA CHAMBER</text>
+  <!-- Lava flows -->
+  <path d="M 200,280 Q 150,290 80,310 Q 40,320 0,315" stroke="#DC2626" stroke-width="6" fill="none" opacity="0.8"/>
+  <path d="M 600,280 Q 650,290 720,305 Q 760,312 800,308" stroke="#B45309" stroke-width="5" fill="none" opacity="0.7"/>
+  <!-- Pyroclastic layers in edifice -->
+  <path d="M 260,280 Q 320,230 400,200 Q 480,230 540,280" stroke="#78350F" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <path d="M 290,280 Q 340,250 400,220 Q 460,250 510,280" stroke="#92400E" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <!-- Secondary vent -->
+  <path d="M 500,280 L 490,230 L 510,230 L 500,280" fill="#7F1D1D" opacity="0.6"/>
+  <circle cx="500" cy="228" r="6" fill="#EF4444" opacity="0.8"/>
+  <!-- Labels -->
+  <text x="400" y="30" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">STRATOVOLCANO — CROSS SECTION</text>
+  <text x="115" y="305" font-family="monospace" font-size="10" fill="#F87171">Lava flow</text>
+  <text x="400" y="195" font-family="monospace" font-size="10" fill="#D97706" text-anchor="middle">Pyroclastic layers</text>
+  <text x="510" y="220" font-family="monospace" font-size="10" fill="#F87171">Parasitic vent</text>
+  <text x="400" y="80" font-family="monospace" font-size="11" fill="#D1D5DB" text-anchor="middle">Eruption column</text>
+  <!-- Conduit label -->
+  <text x="435" y="200" font-family="monospace" font-size="10" fill="#FCA5A5">Central conduit</text>
+</svg>

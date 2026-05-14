@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0D1117"/>
+  <!-- Atmospheric layers (bottom to top) -->
+  <!-- Ground -->
+  <rect x="0" y="400" width="800" height="50" fill="#1F2937"/>
+  <text x="400" y="432" font-family="monospace" font-size="12" fill="#6B7280" text-anchor="middle">EARTH'S SURFACE</text>
+  <!-- Troposphere -->
+  <rect x="0" y="310" width="800" height="90" fill="#1E3A5F" opacity="0.7"/>
+  <!-- Stratosphere -->
+  <rect x="0" y="210" width="800" height="100" fill="#1E3354" opacity="0.6"/>
+  <!-- Mesosphere -->
+  <rect x="0" y="130" width="800" height="80" fill="#1E2D4A" opacity="0.55"/>
+  <!-- Thermosphere -->
+  <rect x="0" y="40" width="800" height="90" fill="#110D22" opacity="0.5"/>
+  <!-- Layer boundary lines -->
+  <line x1="0" y1="310" x2="800" y2="310" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <line x1="0" y1="210" x2="800" y2="210" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <line x1="0" y1="130" x2="800" y2="130" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <line x1="0" y1="40" x2="800" y2="40" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <!-- Boundary labels -->
+  <text x="630" y="307" font-family="monospace" font-size="10" fill="#3B82F6">Tropopause  ~12 km</text>
+  <text x="630" y="207" font-family="monospace" font-size="10" fill="#8B5CF6">Stratopause  ~50 km</text>
+  <text x="630" y="127" font-family="monospace" font-size="10" fill="#EC4899">Mesopause  ~85 km</text>
+  <!-- Layer name labels (left) -->
+  <text x="30" y="363" font-family="monospace" font-size="14" fill="#60A5FA" font-weight="bold">TROPOSPHERE</text>
+  <text x="30" y="380" font-family="monospace" font-size="10" fill="#6B7280">0 – 12 km · All weather · 75% of mass</text>
+  <text x="30" y="265" font-family="monospace" font-size="14" fill="#A78BFA" font-weight="bold">STRATOSPHERE</text>
+  <text x="30" y="282" font-family="monospace" font-size="10" fill="#6B7280">12 – 50 km · Ozone layer · UV absorption</text>
+  <text x="30" y="175" font-family="monospace" font-size="14" fill="#F472B6" font-weight="bold">MESOSPHERE</text>
+  <text x="30" y="192" font-family="monospace" font-size="10" fill="#6B7280">50 – 85 km · Meteors burn up here</text>
+  <text x="30" y="90" font-family="monospace" font-size="14" fill="#FCD34D" font-weight="bold">THERMOSPHERE</text>
+  <text x="30" y="107" font-family="monospace" font-size="10" fill="#6B7280">85+ km · ISS orbits here · Auroras</text>
+  <!-- Ozone layer highlight -->
+  <rect x="580" y="255" width="180" height="30" fill="#4ADE80" opacity="0.15" rx="3"/>
+  <text x="670" y="274" font-family="monospace" font-size="10" fill="#4ADE80" text-anchor="middle">OZONE LAYER</text>
+  <!-- Temperature curve (right side) -->
+  <path d="M 700,400 L 680,310 L 720,210 L 660,130 L 740,40" stroke="#F59E0B" stroke-width="2" fill="none"/>
+  <text x="750" y="30" font-family="monospace" font-size="10" fill="#F59E0B">Temp →</text>
+  <!-- Title -->
+  <text x="400" y="22" font-family="monospace" font-size="14" fill="#7AD7F0" text-anchor="middle" font-weight="bold">ATMOSPHERIC LAYERS</text>
+</svg>
