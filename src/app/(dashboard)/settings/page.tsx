@@ -13,11 +13,11 @@ export default async function SettingsPage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('username, display_name')
+    .select('username, display_name, subscription, stripe_customer_id')
     .eq('id', user.id)
     .single()
 
-  const p = profile as Pick<Profile, 'username' | 'display_name'> | null
+  const p = profile as Pick<Profile, 'username' | 'display_name' | 'subscription'> & { stripe_customer_id: string | null } | null
 
   return (
     <div className="animate-fade-in">
@@ -30,6 +30,8 @@ export default async function SettingsPage() {
         email={user.email ?? ''}
         displayName={p?.display_name ?? null}
         username={p?.username ?? user.email?.split('@')[0] ?? 'explorer'}
+        subscription={(p?.subscription ?? 'free') as 'free' | 'pro' | 'expert'}
+        hasStripeCustomer={!!p?.stripe_customer_id}
       />
     </div>
   )

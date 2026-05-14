@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import {
   Zap, Flame, LogOut, UserPlus,
-  LayoutDashboard, BookOpen, GitBranch, Trophy, Map, User, CreditCard, Library, Settings,
+  LayoutDashboard, BookOpen, GitBranch, Trophy, Map, User, Settings,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
@@ -24,8 +24,6 @@ const PRIMARY_TABS: TabDef[] = [
 
 const SECONDARY_TABS: TabDef[] = [
   { href: '/profile',  label: 'Profile',  icon: User },
-  { href: '/billing',  label: 'Billing',  icon: CreditCard },
-  { href: '/sources',  label: 'Sources',  icon: Library },
   { href: '/settings', label: 'Settings', icon: Settings },
 ]
 
