@@ -61,5 +61,5 @@ export default async function LessonPage({ params }: Props) {
     return <DbLessonClient dbLesson={dbLesson} />
   }
 
-  return <LessonClient id={id} />
+  return <LessonClient id={id} isGuest={!user} />
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Zap, X, Share2, Check as CheckIcon } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Zap, X, Share2, Check as CheckIcon, UserPlus } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/brand'
 import { TRACK_MAP, LEARNING_PATHS, LESSONS } from '@/lessons/index'
@@ -17,9 +17,10 @@ interface Props {
   nextLesson?: { id: string; title: string }
   onCompleteAndNext?: (xpEarned: number, quizScore?: { correct: number; total: number }) => void
   onCompleteAndGoTo?: (xpEarned: number, quizScore: { correct: number; total: number } | undefined, lessonId: string) => void
+  isGuest?: boolean
 }
 
-export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext, onCompleteAndGoTo }: Props) {
+export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext, onCompleteAndGoTo, isGuest = false }: Props) {
   const [sectionIdx, setSectionIdx] = useState(0)
   const [dir, setDir] = useState(1)
   const [quizDone, setQuizDone] = useState(false)
@@ -320,9 +321,41 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                       ? { color: BRAND.textDim, border: `1px solid ${BRAND.border}`, borderRadius: '0.5rem', padding: '0.5rem 1.5rem' }
                       : { backgroundColor: trackColor, color: BRAND.bg }}
                   >
-                    {nextLesson ? 'Back to Dashboard' : 'Save & Continue'} {!nextLesson && <ArrowRight size={14} />}
+                    {nextLesson
+                      ? (isGuest ? 'Back to Library' : 'Back to Dashboard')
+                      : (isGuest ? 'Explore More Lessons' : 'Save & Continue')
+                    }
+                    {!nextLesson && <ArrowRight size={14} />}
                   </motion.button>
                 </motion.div>
+
+                {/* Guest sign-up nudge */}
+                {isGuest && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 }}
+                    className="w-full px-4 py-3 rounded-sm flex items-center justify-between gap-3"
+                    style={{
+                      backgroundColor: `${BRAND.accent}0D`,
+                      border: `1px solid ${BRAND.accent}30`,
+                    }}
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <UserPlus size={14} style={{ color: BRAND.accent, flexShrink: 0 }} />
+                      <span className="text-xs" style={{ color: BRAND.textDim }}>
+                        Create a free account to save your progress and earn XP.
+                      </span>
+                    </div>
+                    <a
+                      href="/register"
+                      className="shrink-0 text-xs px-3 py-1.5 rounded-sm font-semibold"
+                      style={{ backgroundColor: BRAND.accent, color: '#0A0E1A' }}
+                    >
+                      Sign up free
+                    </a>
+                  </motion.div>
+                )}
 
                 {/* Next path recommendation */}
                 {nextPath && (() => {

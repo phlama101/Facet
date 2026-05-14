@@ -10,6 +10,7 @@ import { BRAND } from '@/lib/brand'
 
 interface Props {
   id: string
+  isGuest?: boolean
 }
 
 function findNextLesson(currentId: string): { id: string; title: string } | null {
@@ -25,7 +26,7 @@ function findNextLesson(currentId: string): { id: string; title: string } | null
   return null
 }
 
-export default function LessonClient({ id }: Props) {
+export default function LessonClient({ id, isGuest = false }: Props) {
   const router = useRouter()
   const [saveError, setSaveError] = useState(false)
   const [saving, setSaving] = useState(false)
@@ -38,6 +39,9 @@ export default function LessonClient({ id }: Props) {
   const nextLesson = findNextLesson(id)
 
   async function saveProgress(xpEarned: number, quizScore?: { correct: number; total: number }): Promise<boolean> {
+    // Guests have no session — skip the API call and let navigation proceed.
+    if (isGuest) return true
+
     setSaveError(false)
     setSaving(true)
     setPendingXp(xpEarned)
@@ -64,8 +68,12 @@ export default function LessonClient({ id }: Props) {
 
   async function handleComplete(xpEarned: number, quizScore?: { correct: number; total: number }) {
     if (await saveProgress(xpEarned, quizScore)) {
-      router.refresh()
-      router.push('/dashboard')
+      if (isGuest) {
+        router.push('/learn')
+      } else {
+        router.refresh()
+        router.push('/dashboard')
+      }
     }
   }
 
@@ -117,6 +125,7 @@ export default function LessonClient({ id }: Props) {
           nextLesson={nextLesson ?? undefined}
           onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
           onCompleteAndGoTo={handleCompleteAndGoTo}
+          isGuest={isGuest}
         />
       </LessonErrorBoundary>
     </div>
