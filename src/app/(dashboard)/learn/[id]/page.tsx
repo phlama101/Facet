@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { LESSONS } from '@/lessons/index'
+import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import { getDbLesson } from '@/lib/lesson-store'
 import { canAccessLesson, FREE_LESSON_IDS } from '@/lib/access'
 import LessonClient from './LessonClient'
@@ -10,6 +10,19 @@ import LessonAccessGate from '@/components/features/LessonAccessGate'
 
 export async function generateStaticParams() {
   return Object.keys(LESSONS).map(id => ({ id }))
+}
+
+function findNextLesson(currentId: string): { id: string; title: string } | null {
+  for (const path of LEARNING_PATHS) {
+    const allIds = path.chapters.flatMap(ch => ch.lessonIds)
+    const idx = allIds.indexOf(currentId)
+    if (idx !== -1 && idx < allIds.length - 1) {
+      const nextId = allIds[idx + 1]
+      const next = LESSONS[nextId]
+      if (next) return { id: nextId, title: next.title }
+    }
+  }
+  return null
 }
 
 interface Props {
@@ -61,5 +74,5 @@ export default async function LessonPage({ params }: Props) {
     return <DbLessonClient dbLesson={dbLesson} />
   }
 
-  return <LessonClient id={id} />
+  return <LessonClient lesson={lesson!} nextLesson={findNextLesson(id)} />
 }

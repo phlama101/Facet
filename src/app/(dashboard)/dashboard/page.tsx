@@ -15,6 +15,7 @@ import FacetedProgressRing from '@/components/brand/FacetedProgressRing'
 import StatCard from '@/components/ui/StatCard'
 import PathIcon from '@/components/ui/PathIcon'
 import AchievementNotifier from '@/components/features/AchievementNotifier'
+import UpgradePoller from './UpgradePoller'
 import type { Profile } from '@/types'
 
 export const metadata = { title: 'Dashboard' }
@@ -199,19 +200,21 @@ export default async function DashboardPage({ searchParams }: Props) {
 
       {/* Processing banner — subscription webhook hasn't landed yet */}
       {justUpgraded && profile.subscription === 'free' && (
-        <div
-          className="flex items-center gap-3 px-5 py-3.5 rounded-sm"
-          style={{ backgroundColor: `${BRAND.gold}12`, border: `1px solid ${BRAND.gold}40` }}
-        >
-          <div className="w-4 h-4 rounded-full border-2 shrink-0 animate-spin" style={{ borderColor: `${BRAND.gold}40`, borderTopColor: BRAND.gold }} />
-          <div className="flex-1">
-            <div className="text-sm font-medium" style={{ color: BRAND.gold }}>Activating your subscription…</div>
-            <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-              This usually takes a few seconds.{' '}
-              <a href="/dashboard?upgraded=1" className="underline" style={{ color: BRAND.gold }}>Refresh</a> if it doesn&apos;t update.
+        <>
+          <UpgradePoller />
+          <div
+            className="flex items-center gap-3 px-5 py-3.5 rounded-sm"
+            style={{ backgroundColor: `${BRAND.gold}12`, border: `1px solid ${BRAND.gold}40` }}
+          >
+            <div className="w-4 h-4 rounded-full border-2 shrink-0 animate-spin" style={{ borderColor: `${BRAND.gold}40`, borderTopColor: BRAND.gold }} />
+            <div className="flex-1">
+              <div className="text-sm font-medium" style={{ color: BRAND.gold }}>Activating your subscription…</div>
+              <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
+                This usually takes a few seconds and will update automatically.
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* Hero */}
