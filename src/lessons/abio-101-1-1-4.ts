@@ -71,6 +71,50 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
       type: 'concept',
       title: 'The Oxygen Revolution: Steps from Anoxic to Oxic Earth',
       body: `Earth\'s transformation from a world with no atmospheric oxygen to one with ~21% O₂ unfolded over more than two billion years through a sequence of biological innovations, geochemical threshold crossings, and planetary feedbacks. Each step depended on the one before it: oxygenic photosynthesis produced the O₂; geochemical sinks buffered accumulation until saturation; the GOE permanently altered the redox landscape; and the resulting oxygen-rich atmosphere ultimately permitted the evolution of complex, aerobic life — including the multicellular metazoans that gave rise to all animal life today.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mars_Curiosity_Rover_-_Conglomerate_Rock.jpg/1200px-Mars_Curiosity_Rover_-_Conglomerate_Rock.jpg',
+        alt: 'Conglomerate rock at Gale Crater, Mars, photographed by the Curiosity rover — rounded pebbles embedded in a sedimentary matrix, indicating ancient water transport',
+        aspectRatio: '16/9',
+        credit: 'NASA/JPL-Caltech / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'rounded-clasts',
+            x: 40,
+            y: 55,
+            label: 'Rounded Conglomerate Clasts',
+            description: 'Small pebbles with smoothly rounded edges — a shape that forms only when rocks are tumbled by flowing water over significant distances. The degree of rounding indicates sustained transport in a river or stream, not a brief or localised wetting event. This is direct physical evidence of ancient Martian rivers.',
+          },
+          {
+            id: 'sedimentary-matrix',
+            x: 60,
+            y: 50,
+            label: 'Sedimentary Matrix',
+            description: 'The fine-grained material surrounding the pebbles, consisting of sand and silt-sized particles cemented together. The mixture of coarse clasts in a finer matrix is called a conglomerate — a rock type that forms in high-energy water environments such as river channels and alluvial fans.',
+          },
+          {
+            id: 'drill-hole',
+            x: 45,
+            y: 65,
+            label: 'Curiosity Rover Drill Sample',
+            description: 'A drill hole made by the Curiosity rover to collect powdered rock for chemical analysis. Analysis of drill samples revealed clay minerals, sulfates, and organic molecules — chemical signatures of a past environment that was not only wet but potentially habitable, with neutral pH and low salinity.',
+          },
+          {
+            id: 'bedding-surfaces',
+            x: 30,
+            y: 45,
+            label: 'Bedding Surfaces',
+            description: 'Near-horizontal planes marking successive layers of sediment deposited by water. Each bedding surface represents a discrete depositional event. The preserved layering indicates that this rock formed in a stable depositional environment — likely the floor of a shallow lake or stream — that persisted long enough for multiple layers to accumulate and lithify.',
+          },
+          {
+            id: 'mars-context',
+            x: 20,
+            y: 30,
+            label: 'Gale Crater Context',
+            description: 'The conglomerate sits at the base of Mount Sharp (Aeolis Mons) inside Gale Crater, an ancient impact basin filled with layered sedimentary rock. Orbital data show that the crater once contained a lake fed by rivers draining its rim — a body of liquid water that may have persisted for millions of years in the early Noachian period (~3.8–4.1 Ga).',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Anoxygenic vs. Oxygenic Photosynthesis',
