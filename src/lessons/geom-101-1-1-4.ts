@@ -60,6 +60,12 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Sand dunes migrate by a process called saltation',
+      body: 'Sand dunes migrate by a process called saltation — grains are lifted by wind, travel through the air, then impact the surface causing other grains to jump. A large desert dune can migrate 10-30 metres per year. In parts of the Sahara, entire villages have been buried by advancing dune fields.',
+    },
+    {
       type: 'concept',
       title: 'Hillslope Form and Process',
       body: `Hillslope morphology reflects the balance between the processes acting on it and the boundary conditions imposed by climate, tectonics, and the fluvial network. Four key concepts underpin hillslope geomorphology: the convexo-concave profile, diffusive creep, base-level coupling, and cosmogenic nuclide dating of erosion rates.`,

@@ -42,6 +42,12 @@ Energy from the Sun drives the climate system. The solar constant (the flux of s
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'Antarctic ice: enough to drown every coastal city',
+      body: 'Antarctic ice sheets contain 26.5 million km³ of ice — enough, if melted, to raise global sea levels by approximately 58 metres and inundate every coastal city on Earth.',
+    },
+    {
       type: 'concept',
       title: 'Energy budget, components, feedbacks, and timescales',
       body: `**The global energy budget.** Earth's climate is fundamentally a heat engine driven by solar energy. Think of the climate system like a bathtub: the Sun fills it with energy, and outgoing infrared radiation is the drain. When you add a thicker blanket of greenhouse gases, you partially block the drain — the tub fills higher (warms) until the drain rate catches up to the fill rate at a new, warmer equilibrium. The current energy imbalance of +0.87 W m⁻² means the tub is still filling. The planet absorbs ~238 W m⁻² of shortwave solar radiation and emits approximately the same amount of longwave infrared radiation to space (when in equilibrium). The current measured **energy imbalance** — about +0.87 W m⁻² — indicates that Earth is absorbing more energy than it emits: this imbalance is the physical signature of anthropogenic climate change. Ocean heat content measurements are the most reliable way to detect this imbalance because the ocean absorbs ~93% of the excess energy; the global ocean has been warming at all depths (including the deep ocean below 2,000 m) since at least the 1950s. Energy flows within the climate system are as important as the top-of-atmosphere budget: solar radiation is absorbed primarily at the surface (especially the tropical ocean) and transported to higher latitudes and altitudes by the atmospheric general circulation (Hadley, Ferrel, and Polar cells) and ocean circulation (thermohaline circulation, wind-driven gyres).
@@ -74,6 +80,50 @@ Energy from the Sun drives the climate system. The solar constant (the flux of s
           examples: '1997–98 El Niño: strongest on record at the time; global temperature +0.2°C anomaly; drought in SE Asia, floods in Peru · 2015–16 El Niño: strongest recorded; contributed to record 2016 global temperature · 2020–22 triple La Niña: temporarily offset global mean temperature while anthropogenic warming continued',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Antarctic_iceberg.jpg/1200px-Antarctic_iceberg.jpg',
+        alt: 'An Antarctic iceberg showing the exposed surface ice above the waterline and the vast submerged mass below the ocean surface',
+        aspectRatio: '16/9',
+        credit: 'National Science Foundation / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'ice-surface',
+            x: 50,
+            y: 30,
+            label: 'Ice surface above water',
+            description: 'Only about 10% of an iceberg\'s total volume is visible above the waterline. This exposed surface reflects most incoming solar radiation (albedo ~0.8), contributing to the cryosphere\'s role in Earth\'s energy budget.',
+          },
+          {
+            id: 'submerged-mass',
+            x: 50,
+            y: 65,
+            label: 'Submerged ice mass',
+            description: 'Approximately 90% of the iceberg lies below the ocean surface, where it exchanges cold freshwater with the surrounding seawater as it melts. This freshwater input can reduce surface salinity and potentially affect thermohaline circulation.',
+          },
+          {
+            id: 'meltwater-zone',
+            x: 30,
+            y: 45,
+            label: 'Meltwater zone',
+            description: 'The active melting interface at the waterline, where relatively warm ocean water contacts the ice. Melt rates are accelerating as ocean temperatures rise — the Amundsen Sea sector of West Antarctica is losing ice mass at an accelerating rate.',
+          },
+          {
+            id: 'ocean-surface',
+            x: 20,
+            y: 38,
+            label: 'Ocean surface',
+            description: 'The boundary between the cryosphere and hydrosphere. Open ocean has an albedo of only 0.06, absorbing 94% of incident solar radiation — contrasting sharply with the high-albedo ice surface above. Ice loss exposes dark ocean, amplifying warming through the ice-albedo feedback.',
+          },
+          {
+            id: 'blue-ice',
+            x: 70,
+            y: 55,
+            label: 'Blue ice interior',
+            description: 'The distinctive blue colour of deep glacial ice results from the absorption of red wavelengths by dense, bubble-free ice. Air bubbles trapped during snow compaction are squeezed out as ice deepens — ancient ice cores preserve 800,000 years of atmospheric composition in this form.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

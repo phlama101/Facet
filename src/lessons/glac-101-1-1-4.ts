@@ -52,9 +52,59 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The Vostok ice core from Antarctica records four complete glacial cycles spanning 420,000 years.',
+      body: 'Temperature, CO₂, and methane all vary in near-perfect synchrony with Earth\'s orbital cycles (Milankovitch cycles), confirming that astronomical forcing triggers glacial-interglacial transitions — with greenhouse gases amplifying the signal.',
+    },
+    {
       type: 'concept',
       title: 'Glacier Types, Thermal Regimes, and Ice Sheets',
       body: 'Glaciers are classified by their relationship to underlying topography and by their internal thermal structure. These two frameworks together determine how a glacier flows, how sensitive it is to climate, and how it contributes to sea level. Ice sheets and ice shelves operate at continental scale, with dynamics that differ fundamentally from mountain glaciers.',
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Vostok_420ky_4curves_insolation.jpg/1200px-Vostok_420ky_4curves_insolation.jpg',
+        alt: 'Vostok ice core climate records spanning 420,000 years — four curves showing temperature, CO₂, CH₄, and insolation over four glacial-interglacial cycles',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'temperature-curve',
+            x: 50,
+            y: 20,
+            label: 'Temperature Record',
+            description: 'Antarctic temperature anomaly reconstructed from deuterium (δD) isotope ratios in the ice. Temperature swings of ~10–12°C between glacial minima and interglacial maxima are recorded across four complete cycles. Each interglacial peak is a warm period analogous to today.',
+          },
+          {
+            id: 'co2-curve',
+            x: 50,
+            y: 45,
+            label: 'CO₂ Concentration',
+            description: 'Atmospheric CO₂ trapped in ice bubbles at pore close-off, ranging from ~180 ppm (glacial maximum) to ~280 ppm (interglacial). The near-perfect correlation with temperature confirms CO₂ as a major amplifying feedback in glacial cycles. Today\'s ~420 ppm is far above any value in this record.',
+          },
+          {
+            id: 'ch4-curve',
+            x: 50,
+            y: 60,
+            label: 'CH₄ Concentration',
+            description: 'Methane concentration from ice bubbles, ranging from ~350 ppb (glacial) to ~700 ppb (interglacial). CH₄ responds rapidly to changes in tropical wetland extent driven by monsoon intensity, making it a sensitive proxy for low-latitude climate and ecosystem changes.',
+          },
+          {
+            id: 'insolation-curve',
+            x: 50,
+            y: 75,
+            label: 'Insolation Forcing (Milankovitch)',
+            description: 'Summer insolation at 65°N calculated from orbital mechanics — changes in Earth\'s eccentricity (100 kyr cycle), obliquity (41 kyr cycle), and precession (23 kyr cycle). These Milankovitch cycles pace the timing of glacial transitions, demonstrating astronomical forcing of Earth\'s climate.',
+          },
+          {
+            id: 'glacial-maximum',
+            x: 25,
+            y: 25,
+            label: 'Glacial Maximum',
+            description: 'A period of minimum temperature and minimum greenhouse gas concentrations corresponding to maximum global ice volume. Sea levels were ~120 m lower than today; continental ice sheets covered much of North America and northern Europe. The last such maximum occurred approximately 21,000 years ago.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Morphological Classification',

@@ -52,9 +52,59 @@ Flow regime — extending versus compressive — controls glacier structure. In 
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'The Athabasca Glacier in Canada has retreated 1.5 km and lost half its volume since 1844.',
+      body: 'The bare rock and sediment you see at glacier margins was covered by ice within living memory. Signs mark where the ice surface stood in different decades — some dating back to your grandparents\' era.',
+    },
+    {
       type: 'concept',
       title: 'Four Mechanisms of Glacier Motion',
       body: `Glacier flow integrates contributions from crystal-scale creep, basal sliding, till deformation, and the influence of water pressure. Each mechanism dominates under different thermal and substrate conditions, and their relative importance determines whether a glacier moves metres or kilometres per year.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Athabasca_Glacier_2.jpg/1200px-Athabasca_Glacier_2.jpg',
+        alt: 'Athabasca Glacier, Columbia Icefield, Canadian Rockies — a classic valley glacier showing retreat, crevassing, and lateral moraines',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'glacier-terminus',
+            x: 55,
+            y: 75,
+            label: 'Glacier Terminus',
+            description: 'The current snout of the Athabasca Glacier, now more than 1.5 km upvalley from its 1844 position. Meltwater streams emerge from subglacial drainage tunnels beneath the ice here.',
+          },
+          {
+            id: 'crevasse-field',
+            x: 40,
+            y: 40,
+            label: 'Crevasse Field',
+            description: 'Tensile fractures in the ice surface marking a zone of extending flow. Crevasses open perpendicular to the direction of greatest tensile stress, typically in the upper ablation zone where ice accelerates over a convex bed.',
+          },
+          {
+            id: 'icefall',
+            x: 30,
+            y: 30,
+            label: 'Icefall',
+            description: 'A zone of extreme extending flow where the glacier descends a steep bedrock step, producing a chaotic jumble of seracs and deep crevasses. Flow velocity peaks here; ice deforms and fractures faster than it can heal.',
+          },
+          {
+            id: 'lateral-moraine',
+            x: 15,
+            y: 55,
+            label: 'Lateral Moraine Ridge',
+            description: 'A ridge of glacially eroded and transported rock debris deposited along the glacier margin. The height of this moraine marks where the glacier surface stood decades ago, providing a visual record of thinning.',
+          },
+          {
+            id: 'bare-rock',
+            x: 70,
+            y: 60,
+            label: 'Bare Rock Exposed by Retreat',
+            description: 'Bedrock and glacial sediment freshly deglaciated as the glacier thinned and retreated. The pale, unweathered rock surface shows how recently it was covered by ice; dark lichenous coatings will take decades to form.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Glen\'s Flow Law and Ice Creep',

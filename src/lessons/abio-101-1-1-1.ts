@@ -54,6 +54,12 @@ Step (3) — the formation of protocells — requires that organic polymers beco
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'The Lost City Hydrothermal Field, discovered in 2000 on the Mid-Atlantic Ridge, contains towering carbonate chimneys up to 60 metres tall.',
+      body: 'Its alkaline, hydrogen-rich fluids and natural proton gradients are so similar to those used by living cells that many researchers now consider alkaline vents the most likely birthplace of life on Earth.',
+    },
+    {
       type: 'concept',
       title: 'Four Pillars of Abiogenesis Research',
       body: 'Modern abiogenesis research is built on four interlocking conceptual frameworks that together explain how simple chemistry transitions to Darwinian biology. Each framework addresses a different layer of the problem — from raw molecular synthesis, through information storage and catalysis, to cellular compartmentalisation — and all four are supported by experimental evidence gathered over the past seven decades.',

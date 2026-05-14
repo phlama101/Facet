@@ -42,6 +42,12 @@ Beyond our own Solar System, astronomers have now directly observed the process 
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The Sun contains 99.86% of all mass in the solar system',
+      body: 'The solar system formed 4.568 billion years ago from a collapsing molecular cloud. The Sun contains 99.86% of all the mass in the solar system. Jupiter alone contains 2.5 times more mass than all the other planets combined.',
+    },
+    {
       type: 'concept',
       title: 'Collapse, accretion, and chemistry: building a solar system from scratch',
       body: `**The collapse of the solar nebula and the Jeans mass.** A molecular cloud does not collapse spontaneously everywhere at once. Think of it like a crowd that stays orderly as long as no one pushes — the cloud is held up by thermal pressure and turbulence until its own gravity finally wins, and then the collapse cascades inward like a dam breaking. For a given region to collapse gravitationally, its mass must exceed the **Jeans mass** — the critical mass at which self-gravity overcomes the thermal pressure and turbulent motions that support the cloud. For typical molecular cloud conditions (~10 K, ~10⁴ H₂ molecules cm⁻³), the Jeans mass is roughly 1–10 solar masses, comparable to the mass of a typical star-forming clump. Once a region marginally exceeds its Jeans mass, collapse accelerates as the gas becomes denser and the Jeans mass decreases further, in a runaway process called inside-out collapse. The trigger for the collapse of the solar nebula is recorded in meteorites: the presence of ²⁶Mg — the daughter product of ²⁶Al — distributed throughout chondritic meteorites at abundances consistent with injection of live ²⁶Al by a supernova explosion roughly 1–2 million years before t₀. Because ²⁶Al has a half-life of only 0.72 Myr, this radioisotope must have been injected very shortly before or during nebular collapse; it could not have persisted from earlier nucleosynthetic events. The same supernova shockwave that delivered ²⁶Al almost certainly provided the compression that pushed the proto-solar cloud over the Jeans mass threshold and started the collapse.
@@ -76,6 +82,50 @@ Once ~100-km planetesimals exist in sufficient numbers, gravitational interactio
           examples: 'Jupiter at 5.2 AU: beyond snow line, core reached ~10 M⊕ before disc dispersal → captured 318 M⊕ of gas in runaway accretion · Saturn at 9.5 AU: similar beyond-snowline advantage; 95 M⊕ total; its rings are 90% water ice condensed beyond the snow line · Mars at 1.52 AU: inside snow line, embryo stayed small (~0.107 M⊕); growth stunted by Jupiter resonances · Allende CV3 carbonaceous chondrite (fell Chihuahua, Mexico, February 1969): CAIs dated 4.5673 Ga → gold standard for Solar System t₀, still the most precisely dated event in Earth science',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Solar-system.jpg/1200px-Solar-system.jpg',
+        alt: 'The solar system showing the Sun, inner rocky planets, asteroid belt, Jupiter, and outer gas giants in relative position',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'the-sun',
+            x: 8,
+            y: 50,
+            label: 'The Sun',
+            description: 'The Sun contains 99.86% of all mass in the solar system. It formed at the centre of the collapsing solar nebula ~4.568 billion years ago. Its gravitational dominance governs the orbital periods of all planets, and its radiation and solar wind shaped the composition and atmosphere of every world in the system.',
+          },
+          {
+            id: 'inner-rocky-planets',
+            x: 25,
+            y: 50,
+            label: 'Inner rocky planets',
+            description: 'Mercury, Venus, Earth, and Mars formed inside the snow line (~2.7 AU) where only refractory silicates and iron-nickel metal could condense as solids. Their masses range from 0.055 (Mars) to 1.0 (Earth) Earth masses — limited by the relatively low surface density of solid material available interior to the snow line.',
+          },
+          {
+            id: 'asteroid-belt',
+            x: 40,
+            y: 50,
+            label: 'Asteroid belt',
+            description: 'The asteroid belt between ~2.2 and 3.2 AU contains surviving planetesimals — the leftover building blocks that were never incorporated into a planet. Jupiter\'s gravitational resonances prevented this material from accreting into a planet. The total mass of the asteroid belt is only ~4% of the Moon\'s mass.',
+          },
+          {
+            id: 'jupiter',
+            x: 50,
+            y: 50,
+            label: 'Jupiter',
+            description: 'Jupiter formed beyond the snow line where water ice doubled the available solid surface density, allowing its core to reach ~10 Earth masses and trigger runaway gas accretion. With 318 Earth masses, Jupiter contains more mass than all other planets combined and played a decisive role in shaping the inner Solar System through its gravitational influence.',
+          },
+          {
+            id: 'outer-gas-giants',
+            x: 70,
+            y: 50,
+            label: 'Outer gas giants',
+            description: 'Saturn, Uranus, and Neptune formed in the outer disc beyond Jupiter. Saturn (~95 Earth masses) completed its gas accretion before the disc dispersed; Uranus and Neptune (~14–17 Earth masses each) are ice giants that accreted insufficient gas to become full gas giants, possibly because the disc was thinning by the time they reached the critical core mass.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

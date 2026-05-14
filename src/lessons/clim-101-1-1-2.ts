@@ -42,6 +42,12 @@ The **ocean** transports approximately 40% of the total equator-to-pole heat flu
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'Atmospheric CO₂: a 50% rise in under 200 years',
+      body: 'Atmospheric CO₂ has risen from 280 ppm (pre-industrial) to over 420 ppm today — a 50% increase in less than 200 years. The last time CO₂ was this high was during the Pliocene epoch, 3-5 million years ago, when sea levels were 15-25 metres higher.',
+    },
+    {
       type: 'concept',
       title: 'The general circulation, thermohaline conveyor, and ENSO',
       body: `**The three-cell atmospheric circulation model.** The global atmospheric circulation is classically described by a three-cell model per hemisphere. A useful analogy for the Hadley cell: imagine a pot of water boiling on a stove. Hot water rises at the centre (like the ITCZ), flows outward across the surface, cools, and sinks at the edges (like the subtropical high-pressure zones) before returning along the bottom. The Hadley cell is exactly this convective overturning, scaled to a hemisphere, tilted by Earth's rotation. The **Hadley cell** (equator to ~30°) is the most energetic: rising moist air at the ITCZ releases enormous quantities of latent heat (the tropics receive ~40% of global solar radiation and account for ~60% of global evaporation), driving a vigorous overturning. The descending branch at ~30° creates the subtropical high-pressure zones that are associated with the world's major hot deserts (Sahara, Arabian Desert, Sonoran Desert, Atacama, Namib, Australian desert) — because the subsiding dry air suppresses convection and precipitation. The **Ferrel cell** (30° to ~60°) is thermodynamically indirect (mechanically driven by Hadley and Polar cells) and transports heat poleward through the baroclinic eddies (mid-latitude cyclones) that dominate mid-latitude weather. The **Polar cell** (60° to poles) is a small, direct cell with cold surface air flowing equatorward and warmer air aloft. The boundaries between cells are marked by the subtropical and polar front jet streams.
@@ -74,6 +80,50 @@ The **ocean** transports approximately 40% of the total equator-to-pole heat flu
           examples: '1997–98 El Niño: strongest pre-2015; California floods, Indonesia forest fires (smoke blanketed SE Asia), Peru floods · 2015–16 El Niño: strongest recorded; 2016 hottest year on record partly attributable · 2020–22 triple La Niña: 3 consecutive La Niña winters; global T temporarily suppressed despite continued CO₂ rise',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/CO2_emissions_vs_concentrations_1751-2022.png/1200px-CO2_emissions_vs_concentrations_1751-2022.png',
+        alt: 'Graph showing atmospheric CO₂ concentrations and fossil fuel emissions from 1751 to 2022, illustrating the Keeling Curve and industrial acceleration',
+        aspectRatio: '16/9',
+        credit: 'Global Carbon Project / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'pre-industrial',
+            x: 10,
+            y: 60,
+            label: 'Pre-industrial baseline',
+            description: 'Before ~1750, atmospheric CO₂ was stable at approximately 280 ppm for thousands of years — a concentration sustained by the balance between natural sources (volcanic degassing) and sinks (silicate weathering, ocean uptake, photosynthesis).',
+          },
+          {
+            id: 'industrial-revolution',
+            x: 30,
+            y: 55,
+            label: 'Industrial Revolution inflection',
+            description: 'The onset of widespread coal burning in the mid-19th century marks the beginning of the measurable anthropogenic CO₂ increase. Emissions were initially modest (~0.1 GtC/year in 1850) but grew exponentially with industrialisation.',
+          },
+          {
+            id: 'postwar-acceleration',
+            x: 55,
+            y: 40,
+            label: 'Post-WWII acceleration',
+            description: 'The "Great Acceleration" of the 1950s–1970s saw rapid growth in fossil fuel consumption, petrochemicals, and motorisation. Global CO₂ emissions roughly doubled between 1950 and 1975, driving the steepening of the Keeling Curve.',
+          },
+          {
+            id: 'present-day',
+            x: 90,
+            y: 20,
+            label: 'Present day (>420 ppm)',
+            description: 'Atmospheric CO₂ exceeded 420 ppm in 2023 — 50% above pre-industrial levels. Annual emissions now reach ~10.2 GtC from fossil fuels alone, about 100× the natural geological carbon flux from volcanism.',
+          },
+          {
+            id: 'keeling-curve',
+            x: 60,
+            y: 35,
+            label: 'Keeling Curve trajectory',
+            description: 'The Keeling Curve — the continuous Mauna Loa CO₂ record begun in 1958 — shows both the long-term anthropogenic rise and a seasonal oscillation of ~6–8 ppm driven by Northern Hemisphere photosynthesis. It is arguably the most important environmental dataset ever collected.',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

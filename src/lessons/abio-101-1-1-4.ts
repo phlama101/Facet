@@ -62,6 +62,12 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'The Curiosity rover found rounded conglomerate pebbles at Gale Crater — rocks that could only have been rounded by sustained liquid water flow over long distances.',
+      body: 'This confirmed that ancient Mars had rivers and lakes that persisted for millions of years, substantially increasing the case that Mars once had conditions suitable for life.',
+    },
+    {
       type: 'concept',
       title: 'The Oxygen Revolution: Steps from Anoxic to Oxic Earth',
       body: `Earth\'s transformation from a world with no atmospheric oxygen to one with ~21% O₂ unfolded over more than two billion years through a sequence of biological innovations, geochemical threshold crossings, and planetary feedbacks. Each step depended on the one before it: oxygenic photosynthesis produced the O₂; geochemical sinks buffered accumulation until saturation; the GOE permanently altered the redox landscape; and the resulting oxygen-rich atmosphere ultimately permitted the evolution of complex, aerobic life — including the multicellular metazoans that gave rise to all animal life today.`,

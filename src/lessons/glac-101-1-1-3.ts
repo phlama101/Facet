@@ -52,9 +52,59 @@ Mass balance measurements also reveal teleconnections between glaciers and regio
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Yosemite Valley was carved to its current U-shape by glaciers up to 1,200 metres thick during the last Ice Age.',
+      body: 'El Capitan — the world-famous 900 m granite wall — was formed when the glacier deepened the valley on one side while the cliff remained unglaciated above the ice surface.',
+    },
+    {
       type: 'concept',
       title: 'Mass Balance Processes and Measurement',
       body: `Understanding how mass enters and leaves a glacier — and how scientists measure those fluxes — is central to interpreting glacier change in the context of climate. Accumulation and ablation are governed by different physical processes and respond to climate variables in different ways. Measurement methods each capture different components of mass change with different spatial and temporal resolution.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Yosemite_Valley_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg/1200px-Yosemite_Valley_from_Glacier_Point%2C_Yosemite_NP_-_Diliff.jpg',
+        alt: 'Yosemite Valley from Glacier Point — a classic U-shaped glacially carved valley with near-vertical walls, hanging valleys, and waterfalls',
+        aspectRatio: '16/9',
+        credit: 'Diliff / Wikimedia Commons (CC BY-SA 3.0)',
+        annotations: [
+          {
+            id: 'u-shaped-valley',
+            x: 50,
+            y: 65,
+            label: 'U-Shaped Valley Floor',
+            description: 'The flat, broad valley floor is a signature of glacial erosion. Unlike V-shaped river valleys, glaciers erode laterally as well as vertically, producing the characteristic U-profile. The Merced River now occupies the valley bottom carved by ice up to 1,200 m thick.',
+          },
+          {
+            id: 'valley-walls',
+            x: 25,
+            y: 45,
+            label: 'Vertical Valley Walls',
+            description: 'The near-vertical granite walls were plucked and abraded by the glacier. Glacial plucking (quarrying) removes joint-bounded blocks of rock from the lee side of bedrock knobs; abrasion grinds exposed surfaces smooth. The combination produces the dramatic sheer faces Yosemite is famous for.',
+          },
+          {
+            id: 'hanging-valley',
+            x: 75,
+            y: 40,
+            label: 'Hanging Valley and Waterfall',
+            description: 'A tributary valley whose floor is elevated high above the main valley floor. The main glacier eroded its floor much deeper than the smaller tributary glacier could, leaving the tributary "hanging". Today, streams drop as waterfalls — including Bridalveil Fall — from these elevated tributary mouths.',
+          },
+          {
+            id: 'rock-steps',
+            x: 60,
+            y: 60,
+            label: 'Rock Steps (Riegels)',
+            description: 'Bedrock steps on the valley floor where the glacier encountered more resistant rock. Glaciers erode selectively — softer or more jointed rock is removed more rapidly, leaving steps of harder rock that create basins (often filled with lakes) and falls in the river that follows.',
+          },
+          {
+            id: 'glacial-polish',
+            x: 30,
+            y: 55,
+            label: 'Glacially Polished Rock',
+            description: 'Rock surfaces abraded to a mirror-like sheen by rock fragments embedded in the base of the glacier, which acts like sandpaper. Glacial polish is preserved on sheltered rock faces and records the direction of former ice flow from striations (parallel scratches) left by larger rock clasts.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Accumulation Processes',

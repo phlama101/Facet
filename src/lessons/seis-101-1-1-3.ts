@@ -28,6 +28,50 @@ Modern seismometers are broadband instruments capable of recording ground motion
 Reading a seismogram requires recognising the characteristic signatures of each wave type. The P-wave arrival appears as a small abrupt onset in the vertical component — the first sign that an earthquake has occurred. Several seconds to minutes later (depending on distance), S-waves arrive with larger amplitude on horizontal components. Then the surface waves roll in — Love waves on the horizontal components, Rayleigh waves on all three — with the longest periods and highest amplitudes. The time between the P and S arrivals (the S-P time) directly gives the distance to the earthquake: for a rough estimate, multiply the S-P time in seconds by ~8 km. But a single station only gives distance, not direction. Locating the earthquake precisely requires at least three stations: each station defines a sphere (or circle on the surface) of possible earthquake locations at the calculated distance; the intersection of three spheres gives the hypocenter in three dimensions.
 
 The Global Seismographic Network (GSN), operated by USGS and EarthScope (formerly IRIS), consists of 150 high-quality broadband seismograph stations distributed across all continents and ocean islands. Together with regional networks (SCSN in southern California, TexNet in Texas, the Japanese Hi-net with 800 stations), these networks provide near-real-time earthquake locations worldwide. After a large earthquake, USGS can issue a preliminary hypocenter location within minutes and a more refined solution within hours as more waveform data arrive. The Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO) operates the International Monitoring System (IMS) — 170 seismic stations globally — specifically to detect covert nuclear tests by their distinctive seismic signatures; this network also provides valuable scientific data.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kinemetrics_seismograph.jpg/800px-Kinemetrics_seismograph.jpg',
+        alt: 'Kinemetrics broadband seismograph showing the seismometer sensor, recording drum, pendulum mass, base mount, and amplifier unit',
+        aspectRatio: '4/3',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'seismometer-sensor',
+            x: 50,
+            y: 45,
+            label: 'Seismometer sensor',
+            description: 'The seismometer sensor contains a proof mass suspended by springs or a pendulum. When the ground moves, the sensor housing moves with it while the inertial mass momentarily stays behind, creating a relative displacement that is converted to a voltage signal proportional to ground velocity.',
+          },
+          {
+            id: 'recording-drum',
+            x: 70,
+            y: 35,
+            label: 'Recording drum',
+            description: 'In traditional seismographs, ground motion was traced onto paper wrapped around a rotating drum driven by a clock motor. Modern instruments record digitally at 100–200 samples per second, but drum recorders remain in use for visual monitoring and public display at observatories.',
+          },
+          {
+            id: 'pendulum-mass',
+            x: 45,
+            y: 55,
+            label: 'Pendulum mass',
+            description: 'The pendulum mass acts as the inertial reference: its tendency to remain stationary while the ground shakes beneath it is the core operating principle of any seismometer. The longer the pendulum, the lower the natural frequency and the longer the periods the instrument can record faithfully.',
+          },
+          {
+            id: 'base-mount',
+            x: 50,
+            y: 75,
+            label: 'Base mount',
+            description: 'The base mount couples the instrument firmly to bedrock or a concrete pier, ensuring the instrument case moves faithfully with the ground. Isolation from vibrations caused by wind, traffic, and temperature fluctuations is critical for detecting the tiny ground motions of distant earthquakes.',
+          },
+          {
+            id: 'amplifier-unit',
+            x: 65,
+            y: 60,
+            label: 'Amplifier unit',
+            description: 'Early seismographs used photographic or mechanical amplification to make tiny ground motions visible. Modern instruments use electronic amplification with 24-bit analogue-to-digital converters providing a dynamic range of ~140 dB — able to record both a nearby M5 earthquake and the faintest teleseismic arrivals without saturating.',
+          },
+        ],
+      },
       keyTerms: [
         {
           term: 'Seismometer',
@@ -50,6 +94,12 @@ The Global Seismographic Network (GSN), operated by USGS and EarthScope (formerl
           def: `A network of 150 broadband, three-component seismograph stations worldwide, operated by USGS and EarthScope (formerly IRIS). Stations transmit real-time data via satellite to the IRIS Data Management Center (now EarthScope). Data are freely available for scientific research and support earthquake location, seismic tomography, nuclear test monitoring, and studies of Earth\'s internal structure.`,
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Modern seismometers can detect earthquakes anywhere on Earth above magnitude 5.5',
+      body: 'Modern broadband seismometers are so sensitive they can detect ground motion of 1 nanometre — about 1/80,000th the diameter of a human hair. At this sensitivity, the seismograph at a quiet station can detect earthquakes anywhere on Earth above magnitude 5.5.',
     },
     {
       type: 'concept',

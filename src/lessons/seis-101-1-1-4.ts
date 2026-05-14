@@ -28,6 +28,50 @@ The Mohorovičić discontinuity (Moho) marks the base of the crust — Earth's o
 The core-mantle boundary (CMB) at 2,891 km depth is the most dramatic velocity discontinuity in Earth. P-wave velocity drops abruptly from ~13.7 km/s (at the base of the D" layer, the lowermost mantle) to ~8.1 km/s (at the top of the liquid outer core). S-wave velocity drops from ~7.3 km/s to zero, because the outer core is liquid iron (with ~10% light elements — oxygen, silicon, sulphur, hydrogen — mixed in to lower the density from pure iron to Earth's observed core density). The outer core, 2,891-5,150 km depth, is the site of Earth's geodynamo: convection in the liquid iron driven by secular cooling, solidification of the inner core, and chemical buoyancy generates the electric currents that produce Earth's magnetic field. The inner core boundary (ICB) at 5,150 km depth marks the transition to a solid iron-nickel inner core ~1,220 km in radius, discovered in 1936 by Inge Lehmann from anomalous P-wave arrivals (PKIKP phases) within the P-wave shadow zone.
 
 The D" layer (D-double-prime) — the ~200-300 km thick zone immediately above the CMB — is one of the most seismologically complex regions in Earth. It shows dramatic lateral velocity heterogeneities (hot upwelling plumes vs cold subducted slabs reaching the CMB), a seismic discontinuity that may represent a phase transition from bridgmanite to post-perovskite at ~125 GPa, and ultralow velocity zones (ULVZs) where P-wave velocity decreases by 5-10% over distances of just 5-40 km — possibly partial melt from ancient subducted oceanic crust at the CMB temperature. The D" layer is where Earth's two great heat reservoirs — the mantle and the core — exchange thermal energy, and where the deepest mantle plumes originate, rising to produce hotspot volcanism at the surface billions of years later.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Northridge_earthquake_fault.jpg/1200px-Northridge_earthquake_fault.jpg',
+        alt: 'Northridge earthquake fault rupture showing surface rupture trace, displacement, and damaged zone used to measure earthquake size',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'fault-rupture-trace',
+            x: 50,
+            y: 45,
+            label: 'Fault rupture trace',
+            description: 'The fault rupture trace is the line where the fault plane intersects the ground surface. Its length is a key parameter in estimating earthquake magnitude: longer ruptures release more seismic moment. The 1994 Northridge earthquake had a blind thrust fault with no surface rupture, while the 1999 Hector Mine M7.1 produced ~45 km of visible surface rupture.',
+          },
+          {
+            id: 'surface-rupture-displacement',
+            x: 40,
+            y: 55,
+            label: 'Surface rupture displacement',
+            description: 'The offset measured across the fault at the surface directly records the slip — the relative motion of the two fault blocks during the earthquake. Typical coseismic slip in large earthquakes ranges from 1 to 10 metres. This displacement, integrated over the entire rupture area, yields the seismic moment M₀ = μ × A × D (shear modulus × area × average slip).',
+          },
+          {
+            id: 'undisturbed-ground',
+            x: 20,
+            y: 40,
+            label: 'Undisturbed ground',
+            description: 'Rock and sediment far from the fault plane remain largely intact, preserving the pre-earthquake ground surface as a reference datum. Comparing displaced markers — roads, fences, stream channels — across the fault to undisturbed terrain allows geologists to measure both horizontal and vertical components of coseismic slip.',
+          },
+          {
+            id: 'damaged-zone',
+            x: 60,
+            y: 50,
+            label: 'Damaged zone',
+            description: 'A zone of fractured and brecciated rock several metres to tens of metres wide surrounds the main fault plane. This damage zone is created by repeated earthquake ruptures and by off-fault stress concentrations. The width and properties of the damage zone affect how seismic waves propagate through the fault zone and influence aftershock patterns.',
+          },
+          {
+            id: 'measuring-tape-offset',
+            x: 45,
+            y: 60,
+            label: 'Measuring offset',
+            description: 'Field geologists measure coseismic surface displacement by stretching measuring tapes across offset features — fences, roads, and drainage channels provide ideal reference markers. These field measurements constrain the magnitude and style of faulting and validate geodetic measurements from GPS and satellite radar interferometry (InSAR).',
+          },
+        ],
+      },
       keyTerms: [
         {
           term: 'Mohorovičić discontinuity',
@@ -50,6 +94,12 @@ The D" layer (D-double-prime) — the ~200-300 km thick zone immediately above t
           def: `The boundary at 5,150 km depth (inner core radius ~1,221 km) between the liquid outer core and the solid inner core. P-wave velocity increases from ~10.4 km/s to ~11.0 km/s; S-waves reappear in the inner core at ~3.5 km/s, confirming it is solid. The inner core displays seismic anisotropy — ~3-4% faster along Earth\'s rotation axis — and differential rotation ~0.3-0.5°/yr faster than the mantle. The inner core grows at ~1 mm/yr as Earth cools. Discovered by Inge Lehmann in 1936 from anomalous PKIKP arrivals.`,
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'Each magnitude step releases ~32 times more energy',
+      body: 'The moment magnitude scale (Mw) is logarithmic: each whole number increase represents about 32 times more energy released. A magnitude 9.0 earthquake releases ~1,000 times more energy than a magnitude 7.0 — which itself releases 32,000 times more energy than a magnitude 5.0.',
     },
     {
       type: 'concept',

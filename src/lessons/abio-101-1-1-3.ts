@@ -68,6 +68,12 @@ The collective lesson of extremophile research for astrobiology is profound: the
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The Grand Prismatic Spring in Yellowstone reaches 87°C — near boiling — yet is teeming with life.',
+      body: 'The vivid colours are from heat-loving microorganisms (thermophiles and hyperthermophiles) at the edges. The discovery of these extremophiles in the 1960s revolutionised our understanding of where life can exist — and expanded the search for life on other worlds.',
+    },
+    {
       type: 'concept',
       title: 'The Major Categories of Extremophilic Life',
       body: `Extremophiles are classified by the type of extreme condition they inhabit. Each category has yielded model organisms whose molecular adaptations illuminate both the outer limits of life on Earth and the plausibility of life in analogous planetary environments elsewhere in the Solar System. Understanding these categories reveals that extremophily is not rare — it is pervasive, phylogenetically widespread, and mechanistically diverse.`,

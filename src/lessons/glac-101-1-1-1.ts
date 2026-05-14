@@ -54,9 +54,59 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'Glaciers and ice sheets contain approximately 69% of all freshwater on Earth.',
+      body: 'If all of Antarctica\'s ice melted, global sea levels would rise by about 58 metres. At current rates of mass loss, the Greenland Ice Sheet alone is losing approximately 280 billion tonnes of ice per year.',
+    },
+    {
       type: 'concept',
       title: 'The Four Stages of Snow-to-Ice Transformation',
       body: 'From fresh dendrites to deep glacier ice, each stage of the transformation is governed by distinct physical processes. Temperature, overburden pressure, and the presence or absence of liquid water all control how rapidly the transition occurs.',
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG/1200px-Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG',
+        alt: 'Perito Moreno Glacier, Patagonia, Argentina — a large temperate valley glacier calving into Lago Argentino',
+        aspectRatio: '16/9',
+        credit: 'Luca Galuzzi / Wikimedia Commons (CC BY-SA 2.5)',
+        annotations: [
+          {
+            id: 'calving-front',
+            x: 55,
+            y: 65,
+            label: 'Calving Front',
+            description: 'The terminus where glacier ice meets Lago Argentino. Blocks of ice break off (calve) as buoyancy and tensile stress fracture the ice cliff, contributing mass directly to the lake.',
+          },
+          {
+            id: 'glacier-surface',
+            x: 40,
+            y: 35,
+            label: 'Glacier Surface',
+            description: 'The ablation zone surface of blue glacier ice, where summer melting removes the seasonal snow cover to expose compacted, recrystallised ice with densities above 830 kg/m³.',
+          },
+          {
+            id: 'medial-moraine',
+            x: 45,
+            y: 40,
+            label: 'Medial Moraine',
+            description: 'A dark stripe of englacial debris running down the glacier centre, formed where two tributary ice streams merged and their lateral moraines were buried and transported together within the ice.',
+          },
+          {
+            id: 'accumulation-zone',
+            x: 30,
+            y: 20,
+            label: 'Accumulation Zone',
+            description: 'The upper snowfield above the equilibrium line altitude (ELA), where annual snowfall exceeds melt. Firn accumulates here and is progressively densified into glacier ice under burial.',
+          },
+          {
+            id: 'lake-fjord',
+            x: 70,
+            y: 70,
+            label: 'Lago Argentino',
+            description: 'The glacially carved lake into which Perito Moreno calves. Its turquoise colour comes from rock flour — fine glacially ground sediment suspended in meltwater — a hallmark of glacial lakes worldwide.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Snow Crystal Metamorphism',

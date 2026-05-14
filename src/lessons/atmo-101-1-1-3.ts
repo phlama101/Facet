@@ -42,6 +42,12 @@ The energy budget also involves the atmosphere itself as an active participant. 
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: "Earth's energy budget in numbers",
+      body: "Earth absorbs about 239 W/m² of solar energy on average. The difference between what any given planet absorbs and what it radiates back is called 'energy imbalance' — Earth currently has a positive imbalance of about 0.9 W/m², causing ongoing warming.",
+    },
+    {
       type: 'concept',
       title: 'How solar energy flows through the climate system',
       body: `**The geometry of solar heating.** The sun delivers ~1,361 W m⁻² to the sunward face of Earth (the solar constant), but this energy is distributed over Earth's spherical surface. The effective average insolation is 1,361/4 ≈ 340 W m⁻², because the cross-sectional area intercepting sunlight is πr², while the total surface area is 4πr². Of these 340 W m⁻², about 30% (102 W m⁻²) is reflected back to space by clouds, ice, and land surfaces (**albedo**), leaving about 238 W m⁻² absorbed. For energy balance, Earth must emit 238 W m⁻² back to space as infrared radiation. Using the Stefan-Boltzmann law, this corresponds to an effective radiating temperature of ~255 K (−18°C). Earth's actual average surface temperature is ~288 K (+15°C) — the 33°C difference is the **greenhouse effect**, provided by naturally occurring greenhouse gases.
@@ -76,6 +82,50 @@ The energy budget also involves the atmosphere itself as an active participant. 
           examples: 'Gulf Stream: transports ~1.3 PW poleward, keeps northwestern Europe ~5–10°C warmer than equivalent latitudes without it · ITCZ (Intertropical Convergence Zone): where Hadley cell rising air drives tropical rains — follows the sun northward and southward seasonally · Polar jet stream: driven by the sharp temperature gradient between tropical and polar air',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The-NASA-Earth%27s-Energy-Budget-Poster-Radiant-Energy-System-satellite-infrared-radiation-fluxes.jpg/1200px-The-NASA-Earth%27s-Energy-Budget-Poster-Radiant-Energy-System-satellite-infrared-radiation-fluxes.jpg',
+        alt: "NASA diagram of Earth's energy budget showing incoming solar radiation, reflected energy, and outgoing infrared fluxes",
+        aspectRatio: '16/9',
+        credit: 'NASA / CERES Science Team',
+        annotations: [
+          {
+            id: 'incoming-solar',
+            x: 30,
+            y: 20,
+            label: 'Incoming Solar Radiation',
+            description: 'The solar constant of 1,361 W/m² is distributed over Earth\'s spherical surface, giving an average of ~340 W/m². This shortwave visible radiation is the ultimate energy source for all weather, climate, and life on Earth.',
+          },
+          {
+            id: 'reflected-solar',
+            x: 60,
+            y: 20,
+            label: 'Reflected Solar (Albedo)',
+            description: 'About 30% of incoming solar radiation (~102 W/m²) is reflected back to space by clouds, ice, and land surfaces without being absorbed. This reflected fraction — Earth\'s albedo — is one of the key controls on planetary temperature.',
+          },
+          {
+            id: 'outgoing-infrared',
+            x: 70,
+            y: 50,
+            label: 'Outgoing Infrared Radiation',
+            description: 'Earth must radiate ~239 W/m² of longwave infrared energy to space to maintain energy balance. Greenhouse gases intercept much of this outgoing IR, trapping energy in the lower atmosphere and warming the surface.',
+          },
+          {
+            id: 'greenhouse-reemission',
+            x: 50,
+            y: 65,
+            label: 'Greenhouse Re-emission',
+            description: 'Greenhouse gases absorb outgoing infrared radiation and re-emit it in all directions, including back toward the surface (downwelling longwave radiation ~340 W/m²). This back-radiation is the direct physical mechanism of the greenhouse effect.',
+          },
+          {
+            id: 'surface-absorption',
+            x: 40,
+            y: 80,
+            label: 'Surface Absorption',
+            description: 'The surface absorbs both direct solar radiation and downwelling longwave from the atmosphere, totalling ~500 W/m². It balances this input by emitting longwave radiation upward and losing energy through evaporation (latent heat) and conduction (sensible heat).',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

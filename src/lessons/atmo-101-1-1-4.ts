@@ -42,6 +42,12 @@ The concept of **radiative forcing** quantifies how much any given change — in
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'A thunderstorm equals 10 atomic bombs',
+      body: "A mature cumulonimbus thunderstorm cell can extend from the surface to 18 km altitude — higher than most commercial aircraft fly — and release energy equivalent to 10 Hiroshima atomic bombs through latent heat of condensation.",
+    },
+    {
       type: 'concept',
       title: 'Physics of the greenhouse effect, feedbacks, and forcing',
       body: `**The molecular mechanism of the greenhouse effect.** Greenhouse gases absorb infrared radiation because their molecules can vibrate in ways that interact with specific IR wavelengths. Nitrogen (N₂) and oxygen (O₂) are symmetric diatomic molecules — they have no change in electric dipole moment when they vibrate, so they cannot interact with IR photons. Greenhouse gases are polyatomic or asymmetric molecules (CO₂, H₂O, CH₄, N₂O) with vibrational modes that do produce changing dipole moments, absorbing photons at specific wavelengths. CO₂, for example, absorbs strongly near 15 μm; water vapour has very broad absorption across many wavelengths; methane absorbs near 7.7 μm. After absorbing an IR photon, a greenhouse gas molecule re-emits a photon at the same or similar wavelength but in a random direction — approximately half back toward the surface, half toward space. This recycling of outgoing IR warms the surface.
@@ -76,6 +82,50 @@ The concept of **radiative forcing** quantifies how much any given change — in
           examples: 'Past climate evidence: last glacial maximum (~7 W m⁻² forcing from ice + CO₂) produced ~5–6°C global cooling → consistent with ~3°C/doubling · Paleocene-Eocene Thermal Maximum (PETM 56 Ma): rapid carbon injection → +5–8°C in <20,000 yr · Transient climate response (TCR): ~1.8°C — faster response, measured at time of CO₂ doubling before full equilibrium',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Cumulonimbus_cloud_over_Africa_%28color%29.jpg/1200px-Cumulonimbus_cloud_over_Africa_%28color%29.jpg',
+        alt: 'Cumulonimbus thunderstorm cloud over Africa showing anvil top, updraft tower, and precipitation shaft',
+        aspectRatio: '16/9',
+        credit: 'NASA / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'anvil-top',
+            x: 50,
+            y: 10,
+            label: 'Anvil Top',
+            description: 'The flat, spreading top of a cumulonimbus cloud that forms when the rising tower reaches the tropopause (~12–18 km). The stable stratosphere above prevents further upward growth, forcing the cloud to spread horizontally into the characteristic anvil shape.',
+          },
+          {
+            id: 'overshooting-top',
+            x: 50,
+            y: 5,
+            label: 'Overshooting Top',
+            description: 'A dome of cloud that momentarily punches through the tropopause into the lower stratosphere, driven by an exceptionally powerful updraft. Overshooting tops indicate the most intense storm cores and can inject water vapour and aerosols into the stratosphere.',
+          },
+          {
+            id: 'main-updraft',
+            x: 50,
+            y: 40,
+            label: 'Main Updraft Tower',
+            description: 'The vigorous column of warm, moist air rising at speeds of 30–70 m/s through the storm\'s core. Latent heat released by condensation and freezing of water vapour drives and sustains the updraft, releasing enormous amounts of energy — equivalent to several nuclear weapons per hour in a large storm.',
+          },
+          {
+            id: 'precipitation-shaft',
+            x: 45,
+            y: 75,
+            label: 'Precipitation Shaft',
+            description: 'The dark column beneath the storm where rain, hail, or snow falls from the cloud base to the surface. Heavy precipitation and associated downdrafts create the dangerous gusty winds and microbursts associated with severe thunderstorms.',
+          },
+          {
+            id: 'anvil-spreading',
+            x: 75,
+            y: 15,
+            label: 'Anvil Spreading',
+            description: 'Ice crystals and cloud debris spread downwind from the anvil top, often extending hundreds of kilometres from the storm. This thin cirrus outflow can persist for hours after the main storm dissipates, affecting local radiation balance.',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

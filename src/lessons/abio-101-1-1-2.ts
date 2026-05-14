@@ -72,6 +72,12 @@ Taken together, the Jack Hills zircons (liquid water by 4.4 Ga), the Isua biosig
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'The Murchison meteorite, which fell in Australia in 1969, contains over 90 amino acids — including many not found in biology.',
+      body: 'It also contains nucleobases, sugars, and other organic molecules, demonstrating that the chemical building blocks of life form spontaneously in space and were delivered to early Earth.',
+    },
+    {
       type: 'concept',
       title: 'Four Windows into Archean Life',
       body: `Scientists reconstruct the history of life on the early Earth through four complementary lines of evidence, each probing a different aspect of the Hadean and Archean record. Together they build a picture of a biosphere that was microbial, chemically active, and globally widespread far earlier than was imagined just decades ago.`,
