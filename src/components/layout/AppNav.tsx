@@ -14,12 +14,18 @@ import type { Profile } from '@/types'
 
 type TabDef = { href: string; label: string; icon: LucideIcon }
 
-const PRIMARY_TABS: TabDef[] = [
+const AUTH_PRIMARY_TABS: TabDef[] = [
   { href: '/dashboard',   label: 'Dashboard',   icon: LayoutDashboard },
   { href: '/learn',       label: 'Learn',       icon: BookOpen },
   { href: '/skill-tree',  label: 'Skill Tree',  icon: GitBranch },
   { href: '/leaderboard', label: 'Leaderboard', icon: Trophy },
   { href: '/atlas',       label: 'Atlas',       icon: Map },
+]
+
+const GUEST_PRIMARY_TABS: TabDef[] = [
+  { href: '/learn',       label: 'Learn',       icon: BookOpen },
+  { href: '/skill-tree',  label: 'Skill Tree',  icon: GitBranch },
+  { href: '/leaderboard', label: 'Leaderboard', icon: Trophy },
 ]
 
 const SECONDARY_TABS: TabDef[] = [
@@ -35,6 +41,9 @@ export default function AppNav({ profile }: AppNavProps) {
   const pathname = usePathname()
   const router = useRouter()
 
+  const isGuest = !profile
+  const primaryTabs = isGuest ? GUEST_PRIMARY_TABS : AUTH_PRIMARY_TABS
+
   async function handleSignOut() {
     const supabase = createClient()
     await supabase.auth.signOut()
@@ -49,8 +58,8 @@ export default function AppNav({ profile }: AppNavProps) {
   return (
     <nav style={{ borderBottom: `1px solid ${BRAND.border}` }}>
       <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/dashboard" className="flex items-center gap-3">
+        {/* Logo — guests land on /learn, signed-in users go to /dashboard */}
+        <Link href={isGuest ? '/learn' : '/dashboard'} className="flex items-center gap-3">
           <FacetLogo size={30} />
           <div>
             <div className="font-serif leading-none" style={{ fontSize: '24px' }}>Facet</div>
@@ -123,7 +132,7 @@ export default function AppNav({ profile }: AppNavProps) {
 
       {/* Tab row — hidden on mobile (replaced by MobileNav) */}
       <div className="hidden sm:flex max-w-6xl mx-auto px-5 items-stretch gap-0.5 overflow-x-auto">
-        {PRIMARY_TABS.map(tab => {
+        {primaryTabs.map(tab => {
           const active = isTabActive(tab.href)
           return (
             <Link
@@ -141,10 +150,10 @@ export default function AppNav({ profile }: AppNavProps) {
           )
         })}
 
-        {/* Divider between primary and secondary tabs */}
-        <div className="w-px my-2.5 mx-1 self-stretch" style={{ backgroundColor: BRAND.border }} />
+        {/* Divider + secondary tabs only for signed-in users */}
+        {!isGuest && <div className="w-px my-2.5 mx-1 self-stretch" style={{ backgroundColor: BRAND.border }} />}
 
-        {SECONDARY_TABS.map(tab => {
+        {!isGuest && SECONDARY_TABS.map(tab => {
           const active = isTabActive(tab.href)
           return (
             <Link

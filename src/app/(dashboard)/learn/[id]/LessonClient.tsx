@@ -120,7 +120,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       <LessonErrorBoundary>
         <LessonRenderer
           lesson={lesson}
-          onClose={() => router.back()}
+          onClose={() => isGuest ? router.push('/learn') : router.back()}
           onComplete={handleComplete}
           nextLesson={nextLesson ?? undefined}
           onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
