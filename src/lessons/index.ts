@@ -320,6 +320,8 @@ import hydrologicalExtremes                  from './hyd-201-1-3-2'
 import cryosphereHydrology                   from './hyd-201-1-3-3'
 import integratedWaterManagement             from './hyd-201-1-3-4'
 import hyd201Capstone                        from './hyd-201-capstone'
+import astr201Capstone                       from './astr-201-capstone'
+import seis201Capstone                       from './seis-201-capstone'
 
 export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-1':            earthInternalStructure,
@@ -639,6 +641,8 @@ export const LESSONS: Record<string, Lesson> = {
   'hyd-201-1-3-3':           cryosphereHydrology,
   'hyd-201-1-3-4':           integratedWaterManagement,
   'hyd-201-capstone':        hyd201Capstone,
+  'astr-201-capstone':       astr201Capstone,
+  'seis-201-capstone':       seis201Capstone,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
