@@ -1,13 +1,26 @@
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Lock, Check, Zap, Star } from 'lucide-react'
+import { Lock, Check, Zap, Star, Trophy, ArrowRight } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LEARNING_PATHS, LESSON_LIST } from '@/lessons/index'
+import { ACHIEVEMENTS } from '@/lib/achievements'
+import type { Achievement, AchCtx } from '@/lib/achievements'
 import type { LearningPath } from '@/lessons/types'
 import type { Profile } from '@/types'
+import { xpInLevel, xpNeededForLevel, xpProgressPct } from '@/lib/utils'
 
 export const metadata = { title: 'Skill Tree' }
+
+// Map path IDs to their achievement objects (some IDs differ from path IDs)
+const PATH_ACHIEVEMENT_ID: Record<string, string> = {
+  'atmosphere-weather':    'path-atmosphere',
+  'climate-past-future':  'path-climate',
+}
+function pathAchievement(pathId: string): Achievement | undefined {
+  const achId = PATH_ACHIEVEMENT_ID[pathId] ?? `path-${pathId}`
+  return ACHIEVEMENTS.find(a => a.id === achId)
+}
 
 export default async function SkillTreePage() {
   const supabase = await createClient()
@@ -29,6 +42,18 @@ export default async function SkillTreePage() {
   const completed = new Set(((progressRows ?? []) as { lesson_id: string }[]).map(r => r.lesson_id))
 
   const lessonMap = Object.fromEntries(LESSON_LIST.map(l => [l.id, l]))
+  const subscription = profile.subscription ?? 'free'
+  const isPaid = subscription === 'pro' || subscription === 'expert'
+
+  // Achievement context for evaluating which are earned
+  const achCtx: AchCtx = {
+    count: completed.size,
+    total: LESSON_LIST.length,
+    streak: profile.streak,
+    xp: profile.xp,
+    level: profile.level,
+    ids: [...completed],
+  }
 
   function calcPct(path: LearningPath): number {
     const available = path.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
@@ -37,81 +62,141 @@ export default async function SkillTreePage() {
   }
 
   const pctMap = Object.fromEntries(LEARNING_PATHS.map(p => [p.id, calcPct(p)]))
-  const efPct = pctMap['earth-foundations'] ?? 0
-  const subscription = profile.subscription ?? 'free'
+
+  // Which advanced paths does each path unlock?
+  const pathUnlocks: Record<string, LearningPath[]> = {}
+  for (const p of LEARNING_PATHS) {
+    for (const prereqId of (p.prerequisites ?? [])) {
+      if (!pathUnlocks[prereqId]) pathUnlocks[prereqId] = []
+      pathUnlocks[prereqId].push(p)
+    }
+  }
 
   function getLockInfo(path: LearningPath): { locked: boolean; reason: string | null } {
     if (!path.prerequisites?.length) return { locked: false, reason: null }
-    if (path.id === 'deep-time') {
-      if (subscription === 'free') {
-        return { locked: true, reason: 'Naturalist plan required — upgrade at /billing to unlock' }
-      }
-      if (efPct < 80) {
-        const efPath = LEARNING_PATHS.find(p => p.id === 'earth-foundations')!
-        const efAvail = efPath.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
-        const efDone = efAvail.filter(id => completed.has(id))
-        const needed = Math.ceil(efAvail.length * 0.8) - efDone.length
+
+    // All paths with prerequisites require a paid subscription
+    if (!isPaid) {
+      return { locked: true, reason: 'Naturalist plan required — upgrade to unlock' }
+    }
+
+    // Check each prerequisite path meets the 80% threshold
+    for (const prereqId of path.prerequisites) {
+      const prereqPct = pctMap[prereqId] ?? 0
+      if (prereqPct < 80) {
+        const prereqPath = LEARNING_PATHS.find(p => p.id === prereqId)!
+        const prereqAvail = prereqPath.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
+        const needed = Math.ceil(prereqAvail.length * 0.8) - prereqAvail.filter(id => completed.has(id)).length
         return {
           locked: true,
-          reason: `${needed} more lesson${needed !== 1 ? 's' : ''} needed in Earth Foundations (${efPct}% → 80%)`,
+          reason: `${needed} more lesson${needed !== 1 ? 's' : ''} needed in ${prereqPath.title} (${prereqPct}% → 80%)`,
         }
       }
     }
+
     return { locked: false, reason: null }
   }
 
-  // Total stats across all paths
-  const totalAvail  = LEARNING_PATHS.flatMap(p => p.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id])))
-  const totalDone   = totalAvail.filter(id => completed.has(id))
-  const overallPct  = totalAvail.length ? Math.round((totalDone.length / totalAvail.length) * 100) : 0
+  // Overall stats
+  const totalAvail = LEARNING_PATHS.flatMap(p => p.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id])))
+  const totalDone  = totalAvail.filter(id => completed.has(id))
+  const overallPct = totalAvail.length ? Math.round((totalDone.length / totalAvail.length) * 100) : 0
+
+  // Level / XP bar
+  const xpThis  = xpInLevel(profile.xp)
+  const xpNext  = xpNeededForLevel(profile.level)
+  const xpPct   = xpProgressPct(profile.xp)
 
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* Header */}
-      <div className="flex items-end justify-between gap-4">
+
+      {/* ── Header ─────────────────────────────────────────────────────────── */}
+      <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <div className="text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: BRAND.textSubtle }}>
             Curriculum
           </div>
           <h1 className="font-serif" style={{ fontSize: 'clamp(26px, 4vw, 38px)' }}>Skill Tree</h1>
           <p className="text-sm mt-1 max-w-xl" style={{ color: BRAND.textDim }}>
-            Master earth science by completing chapters in sequence — each lesson earns XP and unlocks the next.
+            Complete lessons to earn XP, unlock achievements, and advance through every earth science discipline.
           </p>
         </div>
 
-        {/* Overall progress pill */}
-        <div
-          className="shrink-0 px-4 py-3 rounded-sm text-center hidden sm:block"
-          style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
-        >
-          <div className="text-[9px] tracking-[0.15em] uppercase font-mono mb-1" style={{ color: BRAND.textSubtle }}>
-            Overall
+        {/* Level + XP progress + overall progress */}
+        <div className="flex items-stretch gap-3 shrink-0">
+          {/* Level / XP bar */}
+          <div
+            className="hidden sm:flex flex-col justify-center px-4 py-3 rounded-sm min-w-[160px]"
+            style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+          >
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-[9px] tracking-[0.15em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
+                Level {profile.level}
+              </span>
+              <span className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>
+                {xpThis.toLocaleString()} / {xpNext.toLocaleString()} XP
+              </span>
+            </div>
+            <div className="h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
+              <div
+                className="h-full rounded-full transition-all duration-700"
+                style={{
+                  width: `${xpPct}%`,
+                  background: `linear-gradient(90deg, ${BRAND.accent}, ${BRAND.amethyst})`,
+                  boxShadow: `0 0 6px ${BRAND.accent}60`,
+                }}
+              />
+            </div>
+            <div className="mt-1.5 text-[9px] font-mono" style={{ color: BRAND.accent }}>
+              {(xpNext - xpThis).toLocaleString()} XP to level {profile.level + 1}
+            </div>
           </div>
-          <div className="text-xl font-bold font-mono" style={{ color: BRAND.accent }}>
-            {overallPct}%
-          </div>
-          <div className="text-[9px] font-mono mt-0.5" style={{ color: BRAND.textSubtle }}>
-            {totalDone.length}/{totalAvail.length}
+
+          {/* Overall progress pill */}
+          <div
+            className="hidden sm:flex flex-col items-center justify-center px-4 py-3 rounded-sm"
+            style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+          >
+            <div className="text-[9px] tracking-[0.15em] uppercase font-mono mb-1" style={{ color: BRAND.textSubtle }}>
+              Overall
+            </div>
+            <div className="text-xl font-bold font-mono" style={{ color: BRAND.accent }}>
+              {overallPct}%
+            </div>
+            <div className="text-[9px] font-mono mt-0.5" style={{ color: BRAND.textSubtle }}>
+              {totalDone.length}/{totalAvail.length}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Learning paths */}
+      {/* ── Learning paths ──────────────────────────────────────────────────── */}
       <div className="space-y-4">
         {LEARNING_PATHS.map((path) => {
           const { locked, reason: lockReason } = getLockInfo(path)
-          const pct     = pctMap[path.id] ?? 0
-          const isComplete = pct === 100
-          const PathIcon   = path.icon
+          const pct         = pctMap[path.id] ?? 0
+          const isComplete  = pct === 100
+          const PathIcon    = path.icon
 
-          const allAvail   = path.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
+          const allAvail    = path.chapters.flatMap(ch => ch.lessonIds.filter(id => lessonMap[id]))
           const doneLessons = allAvail.filter(id => completed.has(id))
-          const nextId     = locked ? null : (allAvail.find(id => !completed.has(id)) ?? null)
+          const nextId      = locked ? null : (allAvail.find(id => !completed.has(id)) ?? null)
+
+          // XP totals
+          const pathXpTotal  = allAvail.reduce((s, id) => s + (lessonMap[id]?.xpReward ?? 0), 0)
+          const pathXpEarned = doneLessons.reduce((s, id) => s + (lessonMap[id]?.xpReward ?? 0), 0)
+
+          // Achievement for this path
+          const ach        = pathAchievement(path.id)
+          const achEarned  = ach ? ach.check(achCtx) : false
+
+          // Paths this one unlocks
+          const unlocks = pathUnlocks[path.id] ?? []
 
           // Derived colors
-          const accentColor  = isComplete ? BRAND.jade : path.color
-          const borderColor  = locked ? BRAND.border : `${accentColor}40`
-          const headerBg     = `${locked ? BRAND.border : accentColor}0C`
+          const accentColor = isComplete ? BRAND.jade : path.color
+          const borderColor = locked ? BRAND.border : `${accentColor}40`
+          const headerBg    = `${locked ? BRAND.border : accentColor}0C`
 
           return (
             <div
@@ -123,7 +208,7 @@ export default async function SkillTreePage() {
                 boxShadow: isComplete ? `0 0 24px ${BRAND.jade}12` : 'none',
               }}
             >
-              {/* ── Path header ── */}
+              {/* ── Path header ────────────────────────────────────────────── */}
               <div
                 className="px-5 py-5"
                 style={{
@@ -132,7 +217,7 @@ export default async function SkillTreePage() {
                 }}
               >
                 <div className="flex items-start gap-4">
-                  {/* Track icon */}
+                  {/* Icon */}
                   <div
                     className="w-11 h-11 rounded-sm flex items-center justify-center shrink-0"
                     style={{
@@ -140,11 +225,7 @@ export default async function SkillTreePage() {
                       border: `1px solid ${locked ? BRAND.border : accentColor}38`,
                     }}
                   >
-                    <PathIcon
-                      size={21}
-                      strokeWidth={1.5}
-                      style={{ color: locked ? BRAND.textSubtle : accentColor }}
-                    />
+                    <PathIcon size={21} strokeWidth={1.5} style={{ color: locked ? BRAND.textSubtle : accentColor }} />
                   </div>
 
                   {/* Title + badges */}
@@ -164,11 +245,7 @@ export default async function SkillTreePage() {
                       {isComplete && (
                         <span
                           className="text-[9px] tracking-[0.1em] uppercase font-mono px-1.5 py-0.5 rounded-sm flex items-center gap-1 animate-path-shimmer"
-                          style={{
-                            backgroundColor: `${BRAND.jade}18`,
-                            color: BRAND.jade,
-                            border: `1px solid ${BRAND.jade}38`,
-                          }}
+                          style={{ backgroundColor: `${BRAND.jade}18`, color: BRAND.jade, border: `1px solid ${BRAND.jade}38` }}
                         >
                           <Star size={8} fill={BRAND.jade} strokeWidth={0} />
                           Path Mastered
@@ -197,39 +274,100 @@ export default async function SkillTreePage() {
                     >
                       {lockReason ?? path.subtitle}
                     </div>
+
+                    {/* Unlocks → indicator */}
+                    {!locked && unlocks.length > 0 && (
+                      <div className="flex flex-wrap items-center gap-2 mt-2">
+                        {unlocks.map(u => (
+                          <span
+                            key={u.id}
+                            className="inline-flex items-center gap-1 text-[9px] tracking-[0.08em] uppercase font-mono px-1.5 py-0.5 rounded-sm"
+                            style={{
+                              backgroundColor: `${u.color}10`,
+                              border: `1px solid ${u.color}30`,
+                              color: isComplete ? u.color : BRAND.textSubtle,
+                            }}
+                          >
+                            <ArrowRight size={7} />
+                            Unlocks {u.title}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
-                  {/* Progress */}
-                  <div className="shrink-0 text-right hidden sm:flex flex-col items-end gap-1">
-                    <div
-                      className="text-sm font-mono font-bold"
-                      style={{ color: accentColor }}
-                    >
+                  {/* Progress + XP totals */}
+                  <div className="shrink-0 hidden sm:flex flex-col items-end gap-1">
+                    <div className="text-sm font-mono font-bold" style={{ color: accentColor }}>
                       {pct}%
                     </div>
-                    <div
-                      className="w-20 h-1 rounded-full overflow-hidden"
-                      style={{ backgroundColor: BRAND.border }}
-                    >
+                    <div className="w-20 h-1 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
                       <div
                         className="h-full rounded-full transition-all duration-700"
                         style={{ width: `${pct}%`, backgroundColor: accentColor }}
                       />
                     </div>
                     <div className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>
-                      {doneLessons.length} / {allAvail.length}
+                      {doneLessons.length} / {allAvail.length} lessons
+                    </div>
+                    {/* XP earned vs total */}
+                    <div className="flex items-center gap-1 mt-0.5" style={{ color: isComplete ? BRAND.jade : BRAND.textSubtle }}>
+                      <Zap size={8} />
+                      <span className="text-[9px] font-mono">
+                        {pathXpEarned.toLocaleString()} / {pathXpTotal.toLocaleString()} XP
+                      </span>
                     </div>
                   </div>
                 </div>
+
+                {/* Achievement badge — shown for all paths that have one */}
+                {ach && (
+                  <div
+                    className="mt-3 flex items-center gap-2 px-3 py-2 rounded-sm w-fit"
+                    style={{
+                      backgroundColor: achEarned ? `${ach.color}12` : `${BRAND.border}40`,
+                      border: `1px solid ${achEarned ? `${ach.color}40` : BRAND.border}`,
+                      opacity: achEarned ? 1 : 0.55,
+                    }}
+                  >
+                    <Trophy
+                      size={11}
+                      style={{ color: achEarned ? ach.color : BRAND.textSubtle }}
+                      fill={achEarned ? `${ach.color}40` : 'none'}
+                    />
+                    <span
+                      className="text-[9px] tracking-[0.12em] uppercase font-mono font-semibold"
+                      style={{ color: achEarned ? ach.color : BRAND.textSubtle }}
+                    >
+                      {ach.name}
+                    </span>
+                    <span
+                      className="text-[9px] font-mono"
+                      style={{ color: achEarned ? ach.color : BRAND.textSubtle, opacity: 0.75 }}
+                    >
+                      +{ach.xpBonus.toLocaleString()} XP
+                    </span>
+                    {achEarned && (
+                      <span
+                        className="text-[8px] tracking-[0.15em] uppercase font-mono px-1 py-0.5 rounded-sm"
+                        style={{ backgroundColor: `${BRAND.jade}20`, color: BRAND.jade, border: `1px solid ${BRAND.jade}35` }}
+                      >
+                        Earned
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
 
-              {/* ── Chapters ── */}
+              {/* ── Chapters ───────────────────────────────────────────────── */}
               <div style={{ backgroundColor: BRAND.surface }}>
                 {path.chapters.map((chapter, ci) => {
-                  const lessonIds        = chapter.lessonIds.filter(id => lessonMap[id])
-                  const chDone           = lessonIds.filter(id => completed.has(id))
+                  const lessonIds         = chapter.lessonIds.filter(id => lessonMap[id])
+                  const chDone            = lessonIds.filter(id => completed.has(id))
                   const isChapterComplete = lessonIds.length > 0 && chDone.length === lessonIds.length
-                  const isStarted        = chDone.length > 0
+                  const isStarted         = chDone.length > 0
+                  const chXpTotal         = lessonIds.reduce((s, id) => s + (lessonMap[id]?.xpReward ?? 0), 0)
+                  const chXpEarned        = chDone.reduce((s, id) => s + (lessonMap[id]?.xpReward ?? 0), 0)
 
                   const chapterAccent = isChapterComplete ? BRAND.jade : isStarted ? path.color : 'transparent'
 
@@ -266,7 +404,18 @@ export default async function SkillTreePage() {
                             {chapter.title}
                           </span>
 
-                          <div className="flex items-center gap-1.5 shrink-0">
+                          <div className="flex items-center gap-2 shrink-0">
+                            {/* Chapter XP */}
+                            <span
+                              className="flex items-center gap-0.5 text-[9px] font-mono"
+                              style={{ color: isChapterComplete ? BRAND.jade : BRAND.textSubtle }}
+                            >
+                              <Zap size={8} />
+                              {isChapterComplete
+                                ? chXpTotal.toLocaleString()
+                                : `${chXpEarned.toLocaleString()}/${chXpTotal.toLocaleString()}`
+                              }
+                            </span>
                             {isChapterComplete && (
                               <span
                                 className="text-[8px] tracking-[0.08em] uppercase font-mono px-1.5 py-0.5 rounded-sm flex items-center gap-1"
@@ -281,27 +430,25 @@ export default async function SkillTreePage() {
                           </div>
                         </div>
 
-                        {/* Horizontal lesson nodes with connectors */}
+                        {/* Horizontal lesson nodes */}
                         <div className="overflow-x-auto" style={{ paddingBottom: '2px' }}>
                           <div className="flex items-start" style={{ minWidth: 'max-content', paddingLeft: '28px' }}>
                             {lessonIds.map((id, li) => {
-                              const lesson  = lessonMap[id]
+                              const lesson   = lessonMap[id]
                               if (!lesson) return null
 
-                              const isDone  = completed.has(id)
-                              const isNext  = id === nextId
-                              const prevId  = li > 0 ? lessonIds[li - 1] : null
+                              const isDone   = completed.has(id)
+                              const isNext   = id === nextId
+                              const prevId   = li > 0 ? lessonIds[li - 1] : null
                               const prevDone = prevId ? completed.has(prevId) : false
 
                               const lineColor = prevDone
-                                ? isDone
-                                  ? BRAND.jade
-                                  : `${path.color}70`
+                                ? isDone ? BRAND.jade : `${path.color}70`
                                 : BRAND.border
 
                               return (
                                 <div key={id} className="flex items-start">
-                                  {/* Connector line */}
+                                  {/* Connector */}
                                   {li > 0 && (
                                     <div
                                       className="shrink-0 transition-colors duration-500"
@@ -309,9 +456,8 @@ export default async function SkillTreePage() {
                                     />
                                   )}
 
-                                  {/* Node column */}
+                                  {/* Node */}
                                   <div className="flex flex-col items-center gap-1" style={{ width: '54px' }}>
-                                    {/* Circle */}
                                     {locked ? (
                                       <div
                                         className="w-11 h-11 rounded-full flex items-center justify-center border-2 shrink-0"
@@ -336,10 +482,7 @@ export default async function SkillTreePage() {
                                             boxShadow: `0 0 14px ${path.color}45`,
                                           }}
                                         >
-                                          <span
-                                            className="text-[12px] font-bold font-mono"
-                                            style={{ color: path.color }}
-                                          >
+                                          <span className="text-[12px] font-bold font-mono" style={{ color: path.color }}>
                                             {li + 1}
                                           </span>
                                         </div>

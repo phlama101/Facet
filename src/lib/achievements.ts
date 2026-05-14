@@ -102,6 +102,46 @@ export const ACHIEVEMENTS: Achievement[] = [
     check: c => { const ids = availableInPath('solar-system'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
   },
   {
+    id: 'path-hydrology', name: 'Hydrologist', desc: 'Complete all Hydrology lessons',
+    category: 'path', rarity: 'rare', color: BRAND.accent, xpBonus: 750,
+    check: c => { const ids = availableInPath('hydrology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-earthquakes-seismology', name: 'Seismologist', desc: 'Complete all Earthquakes & Seismology lessons',
+    category: 'path', rarity: 'rare', color: BRAND.coral, xpBonus: 750,
+    check: c => { const ids = availableInPath('earthquakes-seismology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-geomorphology', name: 'Geomorphologist', desc: 'Complete all Geomorphology lessons',
+    category: 'path', rarity: 'rare', color: BRAND.gold, xpBonus: 750,
+    check: c => { const ids = availableInPath('geomorphology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-glaciology', name: 'Glaciologist', desc: 'Complete all Glaciology lessons',
+    category: 'path', rarity: 'rare', color: BRAND.accent, xpBonus: 750,
+    check: c => { const ids = availableInPath('glaciology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-astrobiology', name: 'Astrobiologist', desc: 'Complete all Astrobiology lessons',
+    category: 'path', rarity: 'rare', color: BRAND.amethyst, xpBonus: 750,
+    check: c => { const ids = availableInPath('astrobiology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-planetary-geology', name: 'Planetary Geologist', desc: 'Complete all Planetary Geology lessons',
+    category: 'path', rarity: 'epic', color: BRAND.amethyst, xpBonus: 1500,
+    check: c => { const ids = availableInPath('planetary-geology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-advanced-seismology', name: 'Advanced Seismologist', desc: 'Complete all Advanced Seismology lessons',
+    category: 'path', rarity: 'epic', color: BRAND.coral, xpBonus: 1500,
+    check: c => { const ids = availableInPath('advanced-seismology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
+    id: 'path-advanced-hydrology', name: 'Advanced Hydrologist', desc: 'Complete all Advanced Hydrology lessons',
+    category: 'path', rarity: 'epic', color: BRAND.accent, xpBonus: 1500,
+    check: c => { const ids = availableInPath('advanced-hydrology'); return ids.length > 0 && ids.every(id => c.ids.includes(id)) },
+  },
+  {
     id: 'path-all-complete', name: 'Grand Naturalist', desc: 'Complete every learning path',
     category: 'path', rarity: 'legendary', color: BRAND.amethyst, xpBonus: 5000,
     check: c => {
