@@ -63,6 +63,50 @@ Step (3) — the formation of protocells — requires that organic polymers beco
       type: 'concept',
       title: 'Four Pillars of Abiogenesis Research',
       body: 'Modern abiogenesis research is built on four interlocking conceptual frameworks that together explain how simple chemistry transitions to Darwinian biology. Each framework addresses a different layer of the problem — from raw molecular synthesis, through information storage and catalysis, to cellular compartmentalisation — and all four are supported by experimental evidence gathered over the past seven decades.',
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Lost_City_Hydrothermal_Field.jpg/1200px-Lost_City_Hydrothermal_Field.jpg',
+        alt: 'Lost City Hydrothermal Field on the Mid-Atlantic Ridge — white carbonate chimneys rising from the seafloor, venting alkaline hydrogen-rich fluids',
+        aspectRatio: '16/9',
+        credit: 'NOAA / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'carbonate-chimney',
+            x: 45,
+            y: 40,
+            label: 'Carbonate Chimney',
+            description: 'Tall white chimneys of aragonite and brucite (calcium and magnesium carbonate/hydroxide minerals), precipitated where alkaline vent fluid contacts cold seawater. Some structures at Lost City exceed 60 m in height — among the tallest hydrothermal chimneys known.',
+          },
+          {
+            id: 'alkaline-plume',
+            x: 50,
+            y: 25,
+            label: 'Alkaline Fluid Plume',
+            description: 'Hydrogen-rich, alkaline (pH 9–11) fluid produced by serpentinisation — the reaction of seawater with ultramafic mantle rocks (peridotite). Temperatures are 40–90°C, far cooler than black smoker vents, making them compatible with RNA chemistry and fatty acid membrane stability.',
+          },
+          {
+            id: 'chimney-micropores',
+            x: 55,
+            y: 55,
+            label: 'Chimney Micropores',
+            description: 'The labyrinthine interior of carbonate chimneys is riddled with cell-sized pores (micrometres across) formed as mineral precipitation creates compartments. These natural micro-reactors could have concentrated organic molecules and maintained proton gradients — functions analogous to a primitive cell membrane.',
+          },
+          {
+            id: 'seafloor-base',
+            x: 50,
+            y: 80,
+            label: 'Seafloor Base',
+            description: 'The basaltic and ultramafic seafloor of the Mid-Atlantic Ridge, where the Lost City field sits atop the Atlantis Massif — a block of exhumed mantle rock. Serpentinisation reactions here drive the system, producing H₂ and CH₄ as chemical energy sources for vent microorganisms.',
+          },
+          {
+            id: 'mineral-deposits',
+            x: 30,
+            y: 60,
+            label: 'Mineral Deposits',
+            description: 'Accumulations of carbonate, sulfide, and iron-nickel minerals that coat chimney walls and seafloor sediments. Iron-sulfide minerals in particular can catalyse key reactions relevant to the origin of life, including carbon fixation and peptide bond formation.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Miller-Urey and Prebiotic Chemistry',

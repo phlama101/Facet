@@ -77,6 +77,50 @@ The collective lesson of extremophile research for astrobiology is profound: the
       type: 'concept',
       title: 'The Major Categories of Extremophilic Life',
       body: `Extremophiles are classified by the type of extreme condition they inhabit. Each category has yielded model organisms whose molecular adaptations illuminate both the outer limits of life on Earth and the plausibility of life in analogous planetary environments elsewhere in the Solar System. Understanding these categories reveals that extremophily is not rare — it is pervasive, phylogenetically widespread, and mechanistically diverse.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Grand_prismatic_spring.jpg/1200px-Grand_prismatic_spring.jpg',
+        alt: 'Grand Prismatic Spring, Yellowstone National Park — the largest hot spring in the United States, showing vivid concentric rings of thermophilic microbial mats',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'thermophile-mats',
+            x: 30,
+            y: 60,
+            label: 'Thermophile Microbial Mats',
+            description: 'The brilliant orange and yellow rings are dense mats of thermophilic and hyperthermophilic bacteria and archaea — including Thermus aquaticus (source of Taq polymerase used in PCR) and various Archaea. Pigment colour shifts with temperature: yellow/orange pigments in organisms at 50–65°C, brown at higher temperatures.',
+          },
+          {
+            id: 'hyperthermophile-zone',
+            x: 50,
+            y: 50,
+            label: 'Hyperthermophile Zone',
+            description: 'The transition zone approaching the scalding spring centre, where temperatures exceed 70°C. Only hyperthermophilic archaea with ether-linked isoprenoid membrane lipids and heat-stable enzymes can survive here. The deep blue colour of the centre is due to light scattering in the extremely clear, near-sterile 87°C water.',
+          },
+          {
+            id: 'green-mat',
+            x: 70,
+            y: 65,
+            label: 'Green Phototrophic Mat',
+            description: 'Cooler outer edges (40–55°C) support green and brown mats of thermophilic cyanobacteria and Chloroflexus (a filamentous anoxygenic phototroph). These photosynthetic thermophiles fix carbon using sunlight and are among the closest modern analogues to early Earth photosynthetic communities.',
+          },
+          {
+            id: 'spring-centre',
+            x: 50,
+            y: 45,
+            label: 'Hot Spring Centre (87°C)',
+            description: 'The geothermally heated source, fed by a hydrothermal conduit extending kilometres into the Yellowstone caldera. Water emerges at ~87°C — near the boiling point at this altitude. The intense blue is characteristic of deep, hot, low-turbidity water. Very few organisms can tolerate these conditions, even among hyperthermophiles.',
+          },
+          {
+            id: 'steam-rising',
+            x: 50,
+            y: 20,
+            label: 'Steam Rising',
+            description: 'Water vapour evaporating from the hot spring surface. The steam obscures aerial views of the spring on cool days and is visible from kilometres away. It contains traces of hydrogen sulfide (H₂S) and other volcanic gases that serve as electron donors for chemolithotrophic microorganisms living in the vent environment.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Temperature Extremes: Thermophiles and Psychrophiles',

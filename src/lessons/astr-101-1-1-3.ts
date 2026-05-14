@@ -27,6 +27,50 @@ const theSunStructureAndSolarWind: Lesson = {
 The Sun is also a dynamic, magnetically active star whose explosive events shape the space environment all the way out to the outer edges of the heliosphere — the vast bubble of solar influence ~120 astronomical units (AU) in diameter. The continuous outflow of charged particles known as the **solar wind** fills this bubble, deflects cometary tails, shapes planetary magnetospheres, and drives space weather effects on Earth. Coronal mass ejections — billion-tonne plasma clouds hurled at thousands of kilometres per second — can disrupt power grids, satellite communications, and navigation systems, illustrating that the Sun is not merely a passive heat source but an active participant in the near-Earth environment.
 
 Understanding solar structure and the solar wind is foundational for planetary science. The very compositions and present-day conditions of the planets were shaped during the Sun's formation and early activity: the early intense solar wind may have stripped away the primordial atmospheres of the inner planets; the Sun's gradual brightening over 4.6 billion years has influenced atmospheric evolution; and future solar evolution — including the Sun's eventual expansion into a red giant — will determine the ultimate fate of the Solar System's inner worlds.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/1200px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg',
+        alt: 'Jupiter showing the Great Red Spot anticyclonic storm, equatorial cloud bands, polar vortex, white oval storms, and cloud band detail',
+        aspectRatio: '16/9',
+        credit: 'NASA / ESA / Hubble Heritage Team — Wikimedia Commons',
+        annotations: [
+          {
+            id: 'great-red-spot',
+            x: 45,
+            y: 55,
+            label: 'Great Red Spot',
+            description: 'The Great Red Spot is an anticyclonic storm larger than Earth that has been observed continuously for at least 350 years. Winds within the storm reach 540 km/h. The storm has been slowly shrinking — from ~40,000 km wide in the 1800s to about 16,000 km today — and its cause of coloration (red chromophores from UV-processed chemicals) is still debated.',
+          },
+          {
+            id: 'equatorial-bands',
+            x: 50,
+            y: 40,
+            label: 'Equatorial cloud bands',
+            description: 'Jupiter\'s alternating light zones and dark belts are driven by differential atmospheric rotation and deep convection. The zones are regions of rising gas (high pressure, lighter coloured ammonia ice clouds) and belts are descending gas (lower pressure, revealing darker cloud layers below). Jupiter\'s equatorial winds reach ~620 km/h.',
+          },
+          {
+            id: 'polar-vortex',
+            x: 50,
+            y: 10,
+            label: 'Polar vortex',
+            description: 'Juno spacecraft images revealed that Jupiter\'s poles host clusters of massive cyclonic storms rather than a single polar vortex. The north pole has a central cyclone surrounded by 8 circumpolar storms; the south pole has a central cyclone surrounded by 5. These polygon-shaped patterns are maintained by turbulent interactions between adjacent vortices.',
+          },
+          {
+            id: 'white-oval-storms',
+            x: 70,
+            y: 55,
+            label: 'White oval storms',
+            description: 'White oval storms are smaller anticyclonic features similar in structure to the Great Red Spot but younger and white in colour. Three white ovals formed in the late 1930s; two merged in 1998 and the third merged with the pair in 2000, forming Oval BA. Oval BA later turned red, earning the nickname "Red Spot Jr."',
+          },
+          {
+            id: 'cloud-band-detail',
+            x: 30,
+            y: 45,
+            label: 'Cloud band turbulence',
+            description: 'At the boundaries between belts and zones, complex wave patterns and turbulent eddies are visible. These features arise from wind shear — adjacent atmospheric bands moving at different velocities — creating Kelvin-Helmholtz instabilities analogous to ripples on a windy lake surface. The Juno mission revealed that Jupiter\'s jet streams extend ~3,000 km deep into the atmosphere.',
+          },
+        ],
+      },
       keyTerms: [
         {
           term: 'Proton-proton chain',
@@ -49,6 +93,12 @@ Understanding solar structure and the solar wind is foundational for planetary s
           def: `The vast bubble of solar influence surrounding the Sun and extending to ~120 AU, where the pressure of the solar wind approximately balances the pressure of the interstellar medium. Within the heliosphere, the structure from inside out is: (1) the supersonic solar wind (~1–85 AU); (2) the termination shock (~85 AU) where the solar wind abruptly decelerates to subsonic speeds; (3) the heliosheath, a turbulent compressed region; and (4) the heliopause, the outermost boundary. Voyager 1 crossed the heliopause in August 2012 at ~121 AU, becoming the first human-made object to enter interstellar space. The shape of the heliosphere may be elongated in the direction of the Sun\'s motion through the local interstellar medium.`,
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Jupiter\'s Great Red Spot has been raging for at least 350 years',
+      body: 'Jupiter\'s Great Red Spot is an anticyclonic storm larger than Earth that has been observed continuously for at least 350 years. Its winds reach 540 km/h. Yet the spot has been slowly shrinking — from 40,000 km wide in the 1800s to about 16,000 km today.',
     },
     {
       type: 'concept',

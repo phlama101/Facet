@@ -27,6 +27,50 @@ const comparativePlanetology: Lesson = {
 Inside the snow line, only refractory materials (silicates, metals) could condense as solid particles, limiting the total amount of solid building material available. Terrestrial planet embryos therefore grew to modest sizes — insufficient to gravitationally capture large quantities of hydrogen and helium from the nebular gas. Beyond the snow line, the addition of water ice (and later ammonia and methane ices at greater distances) dramatically increased the surface density of solid material, allowing planetary cores to grow rapidly to ~10–20 Earth masses. At this threshold — the runaway accretion threshold — the core became massive enough to gravitationally capture and retain the abundant H/He disc gas, growing to hundreds of Earth masses in perhaps a few million years via **core accretion**. This process had to complete before the protoplanetary disc dissipated (typically within 1–10 million years of stellar formation), placing a tight time constraint on giant planet formation.
 
 Comparative planetology — the systematic comparison of planetary bodies to understand their similarities and differences — has been transformed in recent decades by two parallel revolutions. First, spacecraft exploration has provided close-up data from every planet and dozens of moons in the Solar System. Second, the discovery of more than 5,700 exoplanets around other stars has revealed that many aspects of our Solar System that were once considered generic are in fact unusual: the absence of planets between Earth and Neptune in size (no super-Earths or mini-Neptunes in our Solar System), the relatively ordered orbital architecture, and Jupiter's current position are all features that set our system apart from the majority of known planetary systems. Understanding *why* our Solar System is the way it is — and what that means for habitability — is one of the central questions of 21st-century planetary science.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Europa_G1_true_2.jpg/1200px-Europa_G1_true_2.jpg',
+        alt: 'Europa\'s icy surface showing ice cracks and lineae, ridge system, chaos terrain, smooth ice plains, and impact crater',
+        aspectRatio: '1/1',
+        credit: 'NASA / JPL / DLR — Wikimedia Commons',
+        annotations: [
+          {
+            id: 'ice-surface-cracks',
+            x: 50,
+            y: 45,
+            label: 'Ice surface cracks (lineae)',
+            description: 'Europa\'s surface is crisscrossed by a network of linear and curved cracks called lineae. These features form when tidal flexing from Jupiter\'s gravity repeatedly stresses and fractures the ice shell, allowing dark reddish material (possibly salts from the subsurface ocean) to well up and freeze along the crack margins.',
+          },
+          {
+            id: 'ridge-system',
+            x: 30,
+            y: 35,
+            label: 'Ridge system',
+            description: 'Double ridges are the most common landform on Europa, typically 100–300 m high and running for thousands of kilometres. They form along fractures where tidal pumping forces ocean water or warm ice upward through the ice shell, creating parallel ridges flanking a central trough. They are direct evidence of ongoing tidal activity.',
+          },
+          {
+            id: 'chaos-terrain',
+            x: 65,
+            y: 55,
+            label: 'Chaos terrain',
+            description: 'Chaos terrain consists of disrupted blocks of older surface ice that have rotated, tilted, and rafted apart on a matrix of refrozen slush or liquid water. These regions indicate that the ice shell above the subsurface ocean is thin enough (perhaps only a few kilometres) to locally melt through, allowing the ocean to interact directly with the surface.',
+          },
+          {
+            id: 'smooth-ice-plains',
+            x: 40,
+            y: 70,
+            label: 'Smooth ice plains',
+            description: 'Smooth plains represent relatively young resurfaced areas where liquid water or warm ice welled up from below and re-froze, erasing older terrain. The geological youth of these surfaces — suggested by the low crater density — indicates Europa has been geologically active in the geologically recent past, consistent with ongoing tidal heating.',
+          },
+          {
+            id: 'impact-crater',
+            x: 75,
+            y: 30,
+            label: 'Impact crater',
+            description: 'Impact craters on Europa are rare compared to other icy moons, confirming that the surface is geologically young — probably only ~40–90 million years old on average. Europan craters have shallow, flat floors (the weak ice flows to erase topography) and some show central pits or multi-ring structures formed when impactors punched through thin ice into the underlying ocean.',
+          },
+        ],
+      },
       keyTerms: [
         {
           term: 'Terrestrial planet',
@@ -49,6 +93,12 @@ Comparative planetology — the systematic comparison of planetary bodies to und
           def: `The inward or outward movement of a forming planet due to angular momentum exchange with the surrounding protoplanetary gas disc. Type I migration affects low-mass planets embedded in the disc and is generally inward; Type II migration occurs when a giant planet opens a gap in the disc and migrates with the gap on the disc\'s viscous timescale. Disc migration is the mechanism required to explain hot Jupiters — gas giants found within 0.1 AU of their host stars, far inside where they must have formed beyond the snow line. In our Solar System, the "Grand Tack" model invokes Type II inward migration of Jupiter to ~1.5 AU, followed by outward migration driven by resonance with Saturn, which may explain the low mass of Mars and the depletion of material in the inner Solar System.`,
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'Europa\'s ocean contains twice as much water as all of Earth\'s oceans',
+      body: 'Jupiter\'s moon Europa has a global saltwater ocean beneath its icy crust containing twice as much liquid water as all of Earth\'s oceans combined. The ocean is kept liquid by tidal flexing from Jupiter\'s gravity — and it has been liquid for billions of years, making Europa one of the best candidates in the solar system for extraterrestrial life.',
     },
     {
       type: 'concept',

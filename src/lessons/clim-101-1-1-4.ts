@@ -42,6 +42,12 @@ Understanding attribution science is important not just for academic understandi
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'warning',
+      headline: 'Unprecedented warming: a rate unseen in 2,000 years',
+      body: "The IPCC's 'hockey stick' temperature record shows that the rate of warming since 1950 is unprecedented in at least 2,000 years. We are currently on track for 2.5-3°C of warming by 2100 under current policies — a level not seen on Earth in over 3 million years.",
+    },
+    {
       type: 'concept',
       title: 'The physics of climate extremes, attribution methods, and real-world examples',
       body: `**Why a shift in the mean shifts the tail disproportionately.** The connection between mean climate change and extreme event frequency is best understood through the lens of probability distributions. Weather follows roughly normal (Gaussian) distributions around seasonal mean values; the tails of these distributions correspond to rare extreme events. When the mean temperature shifts by 1°C (typical of the current warming), rare hot events become common: an event at the 95th percentile (occurring 5% of the time) moves to a new threshold that may correspond to the 80th or 85th percentile — much more frequent. An event previously at the 99.9th percentile may move to the 99th percentile — a 10× increase in frequency. This mathematical amplification of tail risk is why climate scientists say that even modest mean warming translates to dramatic increases in extreme heat event frequency. It is also why the difference between 1.5°C and 2°C of global warming — only 0.5°C — corresponds to approximately a 2× increase in the frequency of extreme heat events and a substantial increase in the area of the world that experiences potentially lethal wet-bulb temperatures regularly.
@@ -74,6 +80,50 @@ Understanding attribution science is important not just for academic understandi
           examples: 'SW US megadrought: attributable 42% to climate change; Lake Mead at 27% capacity (2022) · Australia Black Summer 2019–20: 18M hectares; 3B animals killed or displaced; climate change made occurrence 4–5× more likely · California 2020 fires: 4M acres; 31 deaths; fire weather driven by record heat and drought',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Common_Era_Temperature.svg/1200px-Common_Era_Temperature.svg',
+        alt: 'The Common Era temperature reconstruction showing the medieval warm period, little ice age, industrial revolution warming, and the dramatic 20th century rise — the hockey stick curve',
+        aspectRatio: '16/9',
+        credit: 'NASA / PAGES 2k Consortium / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'medieval-warm',
+            x: 25,
+            y: 45,
+            label: 'Medieval Warm Period',
+            description: 'A period of relatively warm temperatures in parts of the Northern Hemisphere from roughly 900–1300 CE, associated with Viking settlement of Greenland. Regional in character and not globally synchronous — it does not represent a global temperature anomaly comparable to modern warming.',
+          },
+          {
+            id: 'little-ice-age',
+            x: 45,
+            y: 55,
+            label: 'Little Ice Age',
+            description: 'A period of cooler temperatures from approximately 1300–1850 CE, characterised by glacier advances in Europe and North America. Driven by a combination of reduced solar activity (Maunder Minimum) and increased volcanic forcing. Global mean temperatures were approximately 0.5°C below 20th-century norms.',
+          },
+          {
+            id: 'industrial-start',
+            x: 60,
+            y: 48,
+            label: 'Industrial Revolution onset',
+            description: 'The beginning of large-scale fossil fuel combustion in the mid-19th century marks the start of the anthropogenic warming signal. Initially subtle, the forced warming becomes increasingly clear as emissions accelerate through the early 20th century.',
+          },
+          {
+            id: 'twentieth-century',
+            x: 80,
+            y: 30,
+            label: '20th century rise',
+            description: 'Rapid warming through the 20th century — approximately +0.6°C between 1900 and 2000 — driven primarily by rising greenhouse gas concentrations. The rate of warming accelerates in the latter half of the century, consistent with increasing CO₂ emissions.',
+          },
+          {
+            id: 'present-anomaly',
+            x: 95,
+            y: 15,
+            label: 'Present anomaly',
+            description: 'Current global temperatures (~1.2°C above pre-industrial) are unprecedented in the entire 2,000-year Common Era record. The rapid ascent forms the iconic "blade" of the hockey stick — a rate of warming with no natural analogue in the palaeoclimate record of at least the past two millennia.',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

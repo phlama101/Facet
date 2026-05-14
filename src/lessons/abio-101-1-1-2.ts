@@ -81,6 +81,50 @@ Taken together, the Jack Hills zircons (liquid water by 4.4 Ga), the Isua biosig
       type: 'concept',
       title: 'Four Windows into Archean Life',
       body: `Scientists reconstruct the history of life on the early Earth through four complementary lines of evidence, each probing a different aspect of the Hadean and Archean record. Together they build a picture of a biosphere that was microbial, chemically active, and globally widespread far earlier than was imagined just decades ago.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Murchison_Meteorite.jpg/800px-Murchison_Meteorite.jpg',
+        alt: 'The Murchison meteorite — a carbonaceous chondrite that fell in Australia in 1969, sliced to show its dark interior rich in organic compounds',
+        aspectRatio: '4/3',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'fusion-crust',
+            x: 50,
+            y: 20,
+            label: 'Fusion Crust',
+            description: 'The dark outer layer formed by ablation heating as the meteorite passed through Earth\'s atmosphere. Temperatures exceeding 1,600°C briefly melt and vitrify the outer millimetres of rock, forming a glassy crust that seals the interior from terrestrial contamination — preserving the original extraterrestrial organic chemistry within.',
+          },
+          {
+            id: 'rock-matrix',
+            x: 50,
+            y: 55,
+            label: 'Interior Rock Matrix',
+            description: 'The dark carbonaceous matrix making up most of the meteorite, consisting of fine-grained phyllosilicate minerals (hydrated silicates) with embedded chondrules. The matrix contains ~2–3% organic carbon by mass — an extraordinarily high concentration that includes amino acids, nucleobases, fatty acids, and hundreds of other biologically relevant molecules.',
+          },
+          {
+            id: 'carbonaceous-inclusions',
+            x: 35,
+            y: 50,
+            label: 'Carbonaceous Inclusions',
+            description: 'Darker zones enriched in organic material, including macromolecular carbon (insoluble organic matter) that makes up ~70% of the total organic content. This kerogen-like material is thought to be the remnant of interstellar organic molecules that survived incorporation into the Solar System.',
+          },
+          {
+            id: 'cut-face',
+            x: 65,
+            y: 45,
+            label: 'Cut Face Showing Interior',
+            description: 'This prepared cross-section reveals the pristine interior of the meteorite, protected from weathering by the fusion crust. The Murchison meteorite fell in September 1969 and was collected quickly, minimising terrestrial contamination. Over 90 amino acids have been identified in this interior material, including glycine, alanine, and many non-biological forms.',
+          },
+          {
+            id: 'crystalline-inclusions',
+            x: 45,
+            y: 65,
+            label: 'Crystalline Inclusions',
+            description: 'Calcium-aluminium-rich inclusions (CAIs) and chondrules — the oldest dated solids in the Solar System at ~4.567 billion years. Their isotopic compositions record the earliest stages of Solar System formation, making the Murchison meteorite both a chemical laboratory and a time capsule from the dawn of the Solar System.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Hadean Conditions and Water',
