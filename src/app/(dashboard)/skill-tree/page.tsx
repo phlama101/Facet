@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Lock, Check, Zap, Star, Trophy, ArrowRight } from 'lucide-react'
+import { Lock, Check, Zap, Star, Trophy, ArrowRight, UserPlus } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
 import { LEARNING_PATHS, LESSON_LIST } from '@/lessons/index'
@@ -9,6 +8,7 @@ import type { Achievement, AchCtx } from '@/lib/achievements'
 import type { LearningPath } from '@/lessons/types'
 import type { Profile } from '@/types'
 import { xpInLevel, xpNeededForLevel, xpProgressPct } from '@/lib/utils'
+import { FREE_LESSON_IDS } from '@/lib/access'
 
 export const metadata = { title: 'Skill Tree' }
 
@@ -25,21 +25,28 @@ function pathAchievement(pathId: string): Achievement | undefined {
 export default async function SkillTreePage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login')
+  const isGuest = !user
 
-  const { data: profileRow } = await supabase.from('profiles').select('*').eq('id', user.id).single()
-  const profile: Profile = (profileRow as Profile | null) ?? {
-    id: user.id, username: '', display_name: null, bio: null, avatar_color: '#7AD7F0',
+  const blankProfile: Profile = {
+    id: '', username: '', display_name: null, bio: null, avatar_color: '#7AD7F0',
     xp: 0, level: 1, streak: 0, longest_streak: 0, last_active: new Date().toISOString(),
     subscription: 'free', created_at: new Date().toISOString(),
   }
 
-  const { data: progressRows } = await supabase
-    .from('user_lesson_progress' as never)
-    .select('lesson_id')
-    .eq('user_id', user.id)
-    .eq('completed', true)
-  const completed = new Set(((progressRows ?? []) as { lesson_id: string }[]).map(r => r.lesson_id))
+  let profile: Profile = blankProfile
+  let completed = new Set<string>()
+
+  if (user) {
+    const { data: profileRow } = await supabase.from('profiles').select('*').eq('id', user.id).single()
+    profile = (profileRow as Profile | null) ?? { ...blankProfile, id: user.id }
+
+    const { data: progressRows } = await supabase
+      .from('user_lesson_progress' as never)
+      .select('lesson_id')
+      .eq('user_id', user.id)
+      .eq('completed', true)
+    completed = new Set(((progressRows ?? []) as { lesson_id: string }[]).map(r => r.lesson_id))
+  }
 
   const lessonMap = Object.fromEntries(LESSON_LIST.map(l => [l.id, l]))
   const subscription = profile.subscription ?? 'free'
@@ -110,6 +117,40 @@ export default async function SkillTreePage() {
   return (
     <div className="space-y-6 animate-fade-in">
 
+      {/* ── Guest banner ────────────────────────────────────────────────────── */}
+      {isGuest && (
+        <div
+          className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 rounded-sm"
+          style={{
+            backgroundColor: `${BRAND.accent}0D`,
+            border: `1px solid ${BRAND.accent}35`,
+          }}
+        >
+          <div className="flex items-center gap-2">
+            <UserPlus size={15} style={{ color: BRAND.accent, flexShrink: 0 }} />
+            <span className="text-sm" style={{ color: BRAND.text }}>
+              Create a free account to track progress, earn XP, and unlock achievements.
+            </span>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <Link
+              href="/login"
+              className="text-xs px-3 py-1.5 rounded-sm transition-opacity hover:opacity-80"
+              style={{ color: BRAND.textDim, border: `1px solid ${BRAND.border}` }}
+            >
+              Sign in
+            </Link>
+            <Link
+              href="/register"
+              className="text-xs px-3 py-1.5 rounded-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ backgroundColor: BRAND.accent, color: '#0A0E1A' }}
+            >
+              Sign up free
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* ── Header ─────────────────────────────────────────────────────────── */}
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
@@ -122,52 +163,54 @@ export default async function SkillTreePage() {
           </p>
         </div>
 
-        {/* Level + XP progress + overall progress */}
-        <div className="flex items-stretch gap-3 shrink-0">
-          {/* Level / XP bar */}
-          <div
-            className="hidden sm:flex flex-col justify-center px-4 py-3 rounded-sm min-w-[160px]"
-            style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
-          >
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="text-[9px] tracking-[0.15em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
-                Level {profile.level}
-              </span>
-              <span className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>
-                {xpThis.toLocaleString()} / {xpNext.toLocaleString()} XP
-              </span>
+        {/* Level + XP progress + overall progress — authenticated users only */}
+        {!isGuest && (
+          <div className="flex items-stretch gap-3 shrink-0">
+            {/* Level / XP bar */}
+            <div
+              className="hidden sm:flex flex-col justify-center px-4 py-3 rounded-sm min-w-[160px]"
+              style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+            >
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-[9px] tracking-[0.15em] uppercase font-mono" style={{ color: BRAND.textSubtle }}>
+                  Level {profile.level}
+                </span>
+                <span className="text-[9px] font-mono" style={{ color: BRAND.textSubtle }}>
+                  {xpThis.toLocaleString()} / {xpNext.toLocaleString()} XP
+                </span>
+              </div>
+              <div className="h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
+                <div
+                  className="h-full rounded-full transition-all duration-700"
+                  style={{
+                    width: `${xpPct}%`,
+                    background: `linear-gradient(90deg, ${BRAND.accent}, ${BRAND.amethyst})`,
+                    boxShadow: `0 0 6px ${BRAND.accent}60`,
+                  }}
+                />
+              </div>
+              <div className="mt-1.5 text-[9px] font-mono" style={{ color: BRAND.accent }}>
+                {(xpNext - xpThis).toLocaleString()} XP to level {profile.level + 1}
+              </div>
             </div>
-            <div className="h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
-              <div
-                className="h-full rounded-full transition-all duration-700"
-                style={{
-                  width: `${xpPct}%`,
-                  background: `linear-gradient(90deg, ${BRAND.accent}, ${BRAND.amethyst})`,
-                  boxShadow: `0 0 6px ${BRAND.accent}60`,
-                }}
-              />
-            </div>
-            <div className="mt-1.5 text-[9px] font-mono" style={{ color: BRAND.accent }}>
-              {(xpNext - xpThis).toLocaleString()} XP to level {profile.level + 1}
-            </div>
-          </div>
 
-          {/* Overall progress pill */}
-          <div
-            className="hidden sm:flex flex-col items-center justify-center px-4 py-3 rounded-sm"
-            style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
-          >
-            <div className="text-[9px] tracking-[0.15em] uppercase font-mono mb-1" style={{ color: BRAND.textSubtle }}>
-              Overall
-            </div>
-            <div className="text-xl font-bold font-mono" style={{ color: BRAND.accent }}>
-              {overallPct}%
-            </div>
-            <div className="text-[9px] font-mono mt-0.5" style={{ color: BRAND.textSubtle }}>
-              {totalDone.length}/{totalAvail.length}
+            {/* Overall progress pill */}
+            <div
+              className="hidden sm:flex flex-col items-center justify-center px-4 py-3 rounded-sm"
+              style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
+            >
+              <div className="text-[9px] tracking-[0.15em] uppercase font-mono mb-1" style={{ color: BRAND.textSubtle }}>
+                Overall
+              </div>
+              <div className="text-xl font-bold font-mono" style={{ color: BRAND.accent }}>
+                {overallPct}%
+              </div>
+              <div className="text-[9px] font-mono mt-0.5" style={{ color: BRAND.textSubtle }}>
+                {totalDone.length}/{totalAvail.length}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* ── Learning paths ──────────────────────────────────────────────────── */}
@@ -437,10 +480,13 @@ export default async function SkillTreePage() {
                               const lesson   = lessonMap[id]
                               if (!lesson) return null
 
-                              const isDone   = completed.has(id)
-                              const isNext   = id === nextId
-                              const prevId   = li > 0 ? lessonIds[li - 1] : null
-                              const prevDone = prevId ? completed.has(prevId) : false
+                              const isDone      = completed.has(id)
+                              const isNext      = id === nextId
+                              const isFree      = FREE_LESSON_IDS.has(id)
+                              // For guests, non-free lessons in otherwise-unlocked paths are gated
+                              const isGuestLocked = isGuest && !isFree
+                              const prevId      = li > 0 ? lessonIds[li - 1] : null
+                              const prevDone    = prevId ? completed.has(prevId) : false
 
                               const lineColor = prevDone
                                 ? isDone ? BRAND.jade : `${path.color}70`
@@ -458,13 +504,19 @@ export default async function SkillTreePage() {
 
                                   {/* Node */}
                                   <div className="flex flex-col items-center gap-1" style={{ width: '54px' }}>
-                                    {locked ? (
-                                      <div
-                                        className="w-11 h-11 rounded-full flex items-center justify-center border-2 shrink-0"
-                                        style={{ backgroundColor: BRAND.surfaceHi, borderColor: BRAND.border }}
+                                    {locked || isGuestLocked ? (
+                                      <Link
+                                        href={isGuestLocked ? '/register' : '#'}
+                                        className="block shrink-0"
+                                        title={isGuestLocked ? 'Sign up free to access' : undefined}
                                       >
-                                        <Lock size={11} style={{ color: BRAND.textSubtle }} />
-                                      </div>
+                                        <div
+                                          className="w-11 h-11 rounded-full flex items-center justify-center border-2 shrink-0"
+                                          style={{ backgroundColor: BRAND.surfaceHi, borderColor: BRAND.border }}
+                                        >
+                                          <Lock size={11} style={{ color: BRAND.textSubtle }} />
+                                        </div>
+                                      </Link>
                                     ) : isDone ? (
                                       <div
                                         className="w-11 h-11 rounded-full flex items-center justify-center border-2 shrink-0"
@@ -516,14 +568,26 @@ export default async function SkillTreePage() {
                                       {lesson.title}
                                     </div>
 
-                                    {/* XP chip */}
-                                    <div
-                                      className="flex items-center gap-0.5"
-                                      style={{ color: isDone ? BRAND.jade : BRAND.textSubtle }}
-                                    >
-                                      <Zap size={7} />
-                                      <span style={{ fontSize: '8px' }} className="font-mono">{lesson.xpReward}</span>
-                                    </div>
+                                    {/* XP chip / Free badge */}
+                                    {isGuest && isFree ? (
+                                      <div
+                                        className="flex items-center gap-0.5 px-1 rounded-sm"
+                                        style={{
+                                          backgroundColor: `${BRAND.jade}15`,
+                                          border: `1px solid ${BRAND.jade}30`,
+                                        }}
+                                      >
+                                        <span style={{ fontSize: '7px', color: BRAND.jade }} className="font-mono font-semibold">FREE</span>
+                                      </div>
+                                    ) : (
+                                      <div
+                                        className="flex items-center gap-0.5"
+                                        style={{ color: isDone ? BRAND.jade : BRAND.textSubtle }}
+                                      >
+                                        <Zap size={7} />
+                                        <span style={{ fontSize: '8px' }} className="font-mono">{lesson.xpReward}</span>
+                                      </div>
+                                    )}
                                   </div>
                                 </div>
                               )
