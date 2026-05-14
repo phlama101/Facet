@@ -20,7 +20,7 @@ const seaIceArctic: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'The Arctic\'s floating thermostat: how sea ice shapes climate, ocean, and life',
+      title: `The Arctic\'s floating thermostat: how sea ice shapes climate, ocean, and life`,
       body: `Sea ice is frozen seawater, typically 2–3 m thick, and is fundamentally different from glacier ice, which forms from compressed snow and can reach kilometres in thickness. Sea ice forms directly from the ocean surface and carries dissolved salts (at reduced concentration) within its crystal structure, while glacier ice is nearly pure water. This distinction matters for both physical properties and the role each plays in Earth\'s climate system.
 
 Sea ice forms through a progression of stages as seawater cools. The first crystals to appear are frazil ice — tiny, disc-shaped platelets roughly 1 mm across that give the ocean surface a greasy sheen, known as grease ice. As cooling continues, crystals consolidate into thin, elastic sheets called nilas, or in wavy conditions into circular pancake ice discs with characteristic raised rims from collisions. Through winter, pancakes and nilas thicken and consolidate into first-year ice, which typically reaches 1.5–2 m by spring. Ice that survives at least one summer melt season becomes multi-year ice — thicker (3–4 m), less salty (brine has drained out), and mechanically stronger than first-year ice.
@@ -65,7 +65,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
           icon: Activity,
           color: BRAND.accent,
           desc: 'Seawater freezes at −1.8°C (salinity ~34 psu); progressive stages from frazil to consolidated pack ice; multi-year ice (thicker, less saline, stronger) vs. first-year ice.',
-          examples: 'Frazil ice: ~1 mm ice crystals form first, giving the ocean a greasy appearance (\'grease ice\'). Pancake ice: circular discs 30 cm–3 m diameter with raised rims from collisions — forms in wavy conditions. First-year ice reaches 1.5–2 m thickness by spring; multi-year ice can exceed 3–4 m after surviving summer melt.',
+          examples: `Frazil ice: ~1 mm ice crystals form first, giving the ocean a greasy appearance (\'grease ice\'). Pancake ice: circular discs 30 cm–3 m diameter with raised rims from collisions — forms in wavy conditions. First-year ice reaches 1.5–2 m thickness by spring; multi-year ice can exceed 3–4 m after surviving summer melt.`,
         },
         {
           name: 'Sea Ice and the Global Thermohaline Circulation',
@@ -85,7 +85,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
           name: 'Sea Ice Ecology and Indigenous Communities',
           icon: Zap,
           color: BRAND.gold,
-          desc: 'Sea ice supports ice-associated ecosystems (sympagic algae, polar bears, walrus, ringed seals, bowhead whales) and is central to Arctic Indigenous communities\' food security, travel, and culture.',
+          desc: `Sea ice supports ice-associated ecosystems (sympagic algae, polar bears, walrus, ringed seals, bowhead whales) and is central to Arctic Indigenous communities\' food security, travel, and culture.`,
           examples: 'Ice algae blooms under sea ice in spring provide the first food source for Arctic marine food webs. Polar bears depend on sea ice as a platform for hunting seals; shorter ice seasons reduce hunting success. Inuit, Inupiat, Yupik and Iñupiat communities report that thinning, unpredictable ice is disrupting traditional travel and hunting routes.',
         },
       ],

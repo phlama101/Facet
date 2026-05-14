@@ -4,16 +4,16 @@ import type { Lesson } from './types'
 
 const globalFreshwaterScarcity: Lesson = {
   id: 'hyd-101-1-4-1',
-  title: 'Global Freshwater Scarcity and the Water Cycle\'s Future',
+  title: `Global Freshwater Scarcity and the Water Cycle\'s Future`,
   track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '14 min',
   xpReward: 150,
-  description: 'Only 2.5% of Earth\'s water is fresh, and just 0.3% of all water is accessible surface water — yet growing populations, agricultural demand, and shifting precipitation patterns are pushing this sliver of supply toward the edge. This lesson examines who faces water stress today, what drives it, and how the water cycle itself is changing under a warming climate.',
+  description: `Only 2.5% of Earth\'s water is fresh, and just 0.3% of all water is accessible surface water — yet growing populations, agricultural demand, and shifting precipitation patterns are pushing this sliver of supply toward the edge. This lesson examines who faces water stress today, what drives it, and how the water cycle itself is changing under a warming climate.`,
   sources: [
     { org: 'WRI',  title: 'WRI Aqueduct Water Risk Atlas',                                               url: 'https://www.wri.org/aqueduct' },
-    { org: 'USGS', title: 'USGS — Where Is Earth\'s Water?',                                            url: 'https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water' },
+    { org: 'USGS', title: `USGS — Where Is Earth\'s Water?`,                                            url: 'https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water' },
     { org: 'NASA', title: 'NASA GRACE-FO — Groundwater and Drought Monitoring',                         url: 'https://grace.jpl.nasa.gov/applications/groundwater/' },
     { org: 'UN',   title: 'UN-Water — World Water Development Report 2023',                             url: 'https://www.unwater.org/publications/un-world-water-development-report-2023' },
     { org: 'IPCC', title: 'IPCC AR6 — Water Chapter (Chapter 4, WG II)',                               url: 'https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-4/' },
@@ -46,15 +46,15 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
         },
         {
           term: 'GRACE Satellites',
-          def: 'NASA twin satellites (2002–present) that detect groundwater depletion by measuring minute changes in Earth\'s gravity field caused by shifting water mass. Revealed global groundwater loss of ~280 km³/year.',
+          def: `NASA twin satellites (2002–present) that detect groundwater depletion by measuring minute changes in Earth\'s gravity field caused by shifting water mass. Revealed global groundwater loss of ~280 km³/year.`,
         },
         {
           term: 'Day Zero',
-          def: 'Term coined during Cape Town\'s 2018 drought crisis: the projected date when municipal water supply would be shut off and residents would queue at distribution points. Averted through emergency demand reduction.',
+          def: `Term coined during Cape Town\'s 2018 drought crisis: the projected date when municipal water supply would be shut off and residents would queue at distribution points. Averted through emergency demand reduction.`,
         },
         {
           term: 'Aral Sea Collapse',
-          def: 'Catastrophic shrinkage of Central Asia\'s Aral Sea from 68,000 km² (1960) to <10% of original volume by 2007, caused by Soviet irrigation diversions; a defining example of large-scale hydrological mismanagement.',
+          def: `Catastrophic shrinkage of Central Asia\'s Aral Sea from 68,000 km² (1960) to <10% of original volume by 2007, caused by Soviet irrigation diversions; a defining example of large-scale hydrological mismanagement.`,
         },
       ],
     },
@@ -68,7 +68,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           icon: Droplets,
           color: BRAND.accent,
           desc: 'Agriculture consumes ~70% of all global freshwater withdrawals, mostly for irrigation. Irrigated land covers only 20% of cultivated area but produces 40% of global food supply.',
-          examples: 'India withdraws ~761 km³/year for agriculture — more than any other nation. Pakistan\'s Indus basin irrigation network is the world\'s largest contiguous system, covering ~14 million ha.',
+          examples: `India withdraws ~761 km³/year for agriculture — more than any other nation. Pakistan\'s Indus basin irrigation network is the world\'s largest contiguous system, covering ~14 million ha.`,
         },
         {
           name: 'Population & Urbanisation',
@@ -82,7 +82,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           icon: TrendingDown,
           color: BRAND.coral,
           desc: 'Overpumping fossil aquifers mines water accumulated over millennia. GRACE satellites detected loss of ~280 km³/year of groundwater globally 2002–2016, largely irreplaceable on human timescales.',
-          examples: 'Saudi Arabia depleted the majority of its non-renewable fossil aquifer reserves irrigating wheat in the 1980s–2000s. Libya\'s Great Man-Made River pumps Saharan fossil water formed 10,000–38,000 years ago.',
+          examples: `Saudi Arabia depleted the majority of its non-renewable fossil aquifer reserves irrigating wheat in the 1980s–2000s. Libya\'s Great Man-Made River pumps Saharan fossil water formed 10,000–38,000 years ago.`,
         },
         {
           name: 'Climate Shift',
@@ -110,14 +110,14 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           icon: Droplets,
           color: BRAND.jade,
           desc: 'Drip irrigation applies water directly to root zones, reducing consumption by 30–50% vs. flood irrigation. Precision agriculture using soil sensors and satellite data further optimises timing and application.',
-          examples: 'Israel pioneered drip irrigation in the 1960s; now irrigates with ~90% drip/micro systems. India\'s PM-KUSUM scheme targets expanding drip and sprinkler systems to 10 million ha.',
+          examples: `Israel pioneered drip irrigation in the 1960s; now irrigates with ~90% drip/micro systems. India\'s PM-KUSUM scheme targets expanding drip and sprinkler systems to 10 million ha.`,
         },
         {
           name: 'Water Recycling',
           icon: Globe,
           color: BRAND.accent,
-          desc: 'Treated wastewater reused for agriculture, industry, or (via aquifer recharge) drinking water. Singapore\'s NEWater recycles >40% of wastewater to near-ultrapure quality for industrial and indirect potable use.',
-          examples: 'Orange County, California produces 130 million gallons/day of purified recycled water for aquifer injection. Windhoek, Namibia has used direct potable reuse since 1968 — the world\'s longest-running scheme.',
+          desc: `Treated wastewater reused for agriculture, industry, or (via aquifer recharge) drinking water. Singapore\'s NEWater recycles >40% of wastewater to near-ultrapure quality for industrial and indirect potable use.`,
+          examples: `Orange County, California produces 130 million gallons/day of purified recycled water for aquifer injection. Windhoek, Namibia has used direct potable reuse since 1968 — the world\'s longest-running scheme.`,
         },
       ],
     },
@@ -181,7 +181,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
       type: 'quiz',
       questions: [
         {
-          q: 'What percentage of all Earth\'s water is accessible surface freshwater (rivers, lakes, swamps)?',
+          q: `What percentage of all Earth\'s water is accessible surface freshwater (rivers, lakes, swamps)?`,
           a: [
             'About 2.5% — the total fraction of Earth\'s water that is fresh',
             'About 0.3% — the thin sliver of fresh surface water accessible in rivers, lakes, and swamps',
@@ -203,7 +203,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           explain: 'A is wrong; virtual water has nothing to do with computer models. B is correct: the concept of virtual water (introduced by John Allan in the 1990s) refers to the volume of freshwater consumed in producing goods and services. When water-scarce countries import water-intensive products like grain or meat, they avoid using their own scarce domestic water — effectively importing the water that production would have required. This matters globally because ~2,300 km³ of virtual water is traded annually via food, helping water-stressed nations survive deficits they could not otherwise bridge. C and D are incorrect; these describe physical, not virtual, water resources.',
         },
         {
-          q: 'How did NASA\'s GRACE satellites detect groundwater depletion, and what did they find globally?',
+          q: `How did NASA\'s GRACE satellites detect groundwater depletion, and what did they find globally?`,
           a: [
             'GRACE used radar to image aquifer surfaces directly, finding that most major aquifers had declined by 50% since 2002',
             'GRACE measured tiny changes in Earth\'s gravitational field caused by shifting masses of water; between 2002 and 2016 it detected global groundwater loss of ~280 km³/year',
@@ -211,10 +211,10 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
             'GRACE used multispectral imaging to map the colour of rivers and lakes, inferring that freshwater bodies had shrunk by 15% since 2000',
           ],
           correct: 1,
-          explain: 'A is wrong: GRACE cannot image aquifer surfaces directly; radar cannot see through rock to measure water table depth at basin scale. B is correct: the GRACE twin satellites, launched in 2002, measured microscopic month-to-month changes in Earth\'s gravitational field. Because water mass is measurable through gravity, redistributions of groundwater cause detectable gravity anomalies. By comparing monthly gravity maps, scientists found that major aquifer systems — including the Ogallala, Central Valley, Arabian Peninsula, Ganges–Brahmaputra, and North China Plain aquifers — are losing groundwater far faster than they are being recharged, totalling roughly 280 km³/year globally. C and D describe unrelated remote sensing methods (NDVI for vegetation, optical for surface water) and are wrong.',
+          explain: `A is wrong: GRACE cannot image aquifer surfaces directly; radar cannot see through rock to measure water table depth at basin scale. B is correct: the GRACE twin satellites, launched in 2002, measured microscopic month-to-month changes in Earth\'s gravitational field. Because water mass is measurable through gravity, redistributions of groundwater cause detectable gravity anomalies. By comparing monthly gravity maps, scientists found that major aquifer systems — including the Ogallala, Central Valley, Arabian Peninsula, Ganges–Brahmaputra, and North China Plain aquifers — are losing groundwater far faster than they are being recharged, totalling roughly 280 km³/year globally. C and D describe unrelated remote sensing methods (NDVI for vegetation, optical for surface water) and are wrong.`,
         },
         {
-          q: 'Cape Town\'s 2018 "Day Zero" crisis illustrated which key vulnerability of urban water systems?',
+          q: `Cape Town\'s 2018 "Day Zero" crisis illustrated which key vulnerability of urban water systems?`,
           a: [
             'That desalination plants can fail simultaneously during heatwaves, cutting off the only source of freshwater for coastal cities',
             'That cities highly dependent on surface reservoir storage from rain-fed catchments are acutely vulnerable to multi-year droughts, particularly as climate change increases drought frequency in Mediterranean-climate regions',
@@ -222,7 +222,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
             'That groundwater over-pumping beneath Cape Town caused land subsidence, preventing reservoirs from filling to capacity',
           ],
           correct: 1,
-          explain: 'A is wrong: Cape Town\'s crisis was not related to desalination failure; the city had very little desalination capacity at the time, which was part of the problem. B is correct: Cape Town\'s Western Cape system relies almost entirely on six surface reservoirs fed by winter rainfall in the Fynbos mountains. Three consecutive dry winters (2015–17) depleted combined storage from ~100% to below 14% of capacity by early 2018. The city imposed strict per-capita limits (50 L/day) and Day Zero — when taps would be shut off — was projected for April 2018 before rains arrived. IPCC projections indicate Mediterranean-climate regions (California, Chile, SW Australia, SW South Africa, and the Mediterranean basin) face significantly increased drought risk under continued warming, making this crisis a preview of future challenges. C (pipe leakage) and D (subsidence) were not the primary factors.',
+          explain: `A is wrong: Cape Town\'s crisis was not related to desalination failure; the city had very little desalination capacity at the time, which was part of the problem. B is correct: Cape Town\'s Western Cape system relies almost entirely on six surface reservoirs fed by winter rainfall in the Fynbos mountains. Three consecutive dry winters (2015–17) depleted combined storage from ~100% to below 14% of capacity by early 2018. The city imposed strict per-capita limits (50 L/day) and Day Zero — when taps would be shut off — was projected for April 2018 before rains arrived. IPCC projections indicate Mediterranean-climate regions (California, Chile, SW Australia, SW South Africa, and the Mediterranean basin) face significantly increased drought risk under continued warming, making this crisis a preview of future challenges. C (pipe leakage) and D (subsidence) were not the primary factors.`,
         },
         {
           q: 'The WRI Aqueduct tool defines "extremely high water stress" as annual withdrawals exceeding what fraction of available renewable supply?',

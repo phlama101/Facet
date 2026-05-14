@@ -10,7 +10,7 @@ const oceanHeatContent: Lesson = {
   level: 'Intermediate',
   duration: '13 min',
   xpReward: 130,
-  description: 'How the ocean stores over 90 % of Earth\'s excess heat — Argo floats, energy imbalance, and the role of ocean heat in sea level rise',
+  description: `How the ocean stores over 90 % of Earth\'s excess heat — Argo floats, energy imbalance, and the role of ocean heat in sea level rise`,
   sources: [
     { org: 'NOAA',   title: 'NOAA Ocean Heat Content',          url: 'https://www.noaa.gov/' },
     { org: 'NASA',   title: 'NASA Earth Energy Imbalance',       url: 'https://www.nasa.gov/' },
@@ -20,7 +20,7 @@ const oceanHeatContent: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'The ocean as Earth\'s thermal memory',
+      title: `The ocean as Earth\'s thermal memory`,
       body: `The climate system is fundamentally an energy accounting problem. Earth absorbs shortwave radiation from the Sun and emits longwave radiation to space; in a stable climate these fluxes balance precisely. But since the mid-twentieth century, rising greenhouse gas concentrations have altered the atmospheric composition sufficiently to create a **planetary energy imbalance**: Earth currently absorbs approximately **0.87 W/m²** more energy than it radiates away. That persistent surplus — less than one watt per square metre averaged over the entire planetary surface — is the engine of ongoing global warming. The question is: where does all that extra energy go?
 
 The answer, overwhelmingly, is the ocean. The ocean covers 71% of Earth\'s surface, has enormous thermal mass, and circulates heat to great depth. Of every 100 joules of excess heat accumulating in the Earth system since the 1970s, more than **90 joules** have been absorbed by seawater. Atmosphere, land, and ice share the remainder. This enormous heat uptake by the ocean is both a buffer — the ocean\'s capacity to absorb heat has slowed surface air temperature rise considerably — and a commitment: heat already sequestered in the deep ocean will continue to influence sea level and ecosystems for centuries even if emissions cease today.
@@ -107,10 +107,10 @@ Ocean heat transport also shapes global climate patterns: ocean currents carry a
     {
       type: 'visualization',
       title: 'From Greenhouse Forcing to Sea Level Rise and Marine Heatwaves',
-      body: 'How anthropogenic greenhouse gas forcing drives Earth\'s energy imbalance, which the ocean absorbs, producing rising OHC with cascading consequences for sea level and marine ecosystems.',
+      body: `How anthropogenic greenhouse gas forcing drives Earth\'s energy imbalance, which the ocean absorbs, producing rising OHC with cascading consequences for sea level and marine ecosystems.`,
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'showing how anthropogenic greenhouse forcing leads to Earth\'s energy imbalance, ocean heat uptake, OHC increase, and downstream consequences for sea level rise and marine heatwaves',
+        description: `showing how anthropogenic greenhouse forcing leads to Earth\'s energy imbalance, ocean heat uptake, OHC increase, and downstream consequences for sea level rise and marine heatwaves`,
         nodes: [
           {
             id: 'ghg-forcing',
@@ -127,13 +127,13 @@ Ocean heat transport also shapes global climate patterns: ocean currents carry a
           {
             id: 'ocean-uptake',
             label: 'Ocean Absorbs 90%+ of Excess Heat',
-            description: 'High heat capacity and volume of the ocean make it the dominant heat reservoir. ~90–93% of Earth\'s energy imbalance accumulates in seawater. Atmosphere, land, and cryosphere share the remaining 7–10%. Ocean uptake slows surface air temperature rise but commits future warming.',
+            description: `High heat capacity and volume of the ocean make it the dominant heat reservoir. ~90–93% of Earth\'s energy imbalance accumulates in seawater. Atmosphere, land, and cryosphere share the remaining 7–10%. Ocean uptake slows surface air temperature rise but commits future warming.`,
             color: BRAND.accent,
           },
           {
             id: 'ohc-increase',
             label: 'OHC Increase in 0–2,000 m Layer',
-            description: 'Ocean heat content rises ~10 ZJ/yr in the 0–2,000 m layer. Observed by >4,000 Argo floats since 2005. Since 1955, total 0–2,000 m OHC gain ~400+ ZJ. OHC is more robust metric of warming than surface air temperature due to ocean\'s thermal inertia.',
+            description: `Ocean heat content rises ~10 ZJ/yr in the 0–2,000 m layer. Observed by >4,000 Argo floats since 2005. Since 1955, total 0–2,000 m OHC gain ~400+ ZJ. OHC is more robust metric of warming than surface air temperature due to ocean\'s thermal inertia.`,
             color: BRAND.jade,
           },
           {
@@ -163,7 +163,7 @@ Ocean heat transport also shapes global climate patterns: ocean currents carry a
       type: 'quiz',
       questions: [
         {
-          q: 'What fraction of Earth\'s excess heat does the ocean absorb, and why is ocean heat content considered a more robust indicator of planetary warming than surface air temperature?',
+          q: `What fraction of Earth\'s excess heat does the ocean absorb, and why is ocean heat content considered a more robust indicator of planetary warming than surface air temperature?`,
           a: [
             'The ocean absorbs about 50% of excess heat; surface air temperature is more robust because it responds faster to changes in the energy balance, giving earlier warning of warming trends',
             'The ocean absorbs more than 90% of Earth\'s excess heat; OHC is more robust than surface air temperature because the thermal inertia of the ocean integrates over short-term atmospheric variability — ENSO, volcanic aerosols, and other fluctuations — producing a steadily rising signal that tracks the underlying energy imbalance more faithfully than the noisier surface temperature record',
@@ -171,7 +171,7 @@ Ocean heat transport also shapes global climate patterns: ocean currents carry a
             'The ocean absorbs about 30% of excess heat; most warming occurs in the atmosphere and land surface, with the ocean serving mainly as a short-term buffer that returns heat within decades',
           ],
           correct: 1,
-          explain: 'The ocean absorbs >90% of Earth\'s excess heat — a fraction confirmed by energy budget analyses and direct OHC measurements. Surface air temperature fluctuates substantially on interannual timescales: El Niño years are anomalously warm; La Niña years and years following major volcanic eruptions (e.g., Pinatubo 1991) are anomalously cool, creating the appearance of "pauses" or "accelerations" in warming. OHC, by contrast, shows a near-monotonic increase because the ocean\'s enormous thermal mass averages over these atmospheric fluctuations. During the so-called warming "hiatus" of the early 2000s, when global surface temperatures temporarily plateaued, OHC continued rising without interruption — the energy imbalance had not changed; it was simply being stored in the deeper ocean rather than expressed at the surface. This is why climate scientists argue OHC is the most physically meaningful metric of the pace of planetary warming.',
+          explain: `The ocean absorbs >90% of Earth\'s excess heat — a fraction confirmed by energy budget analyses and direct OHC measurements. Surface air temperature fluctuates substantially on interannual timescales: El Niño years are anomalously warm; La Niña years and years following major volcanic eruptions (e.g., Pinatubo 1991) are anomalously cool, creating the appearance of "pauses" or "accelerations" in warming. OHC, by contrast, shows a near-monotonic increase because the ocean\'s enormous thermal mass averages over these atmospheric fluctuations. During the so-called warming "hiatus" of the early 2000s, when global surface temperatures temporarily plateaued, OHC continued rising without interruption — the energy imbalance had not changed; it was simply being stored in the deeper ocean rather than expressed at the surface. This is why climate scientists argue OHC is the most physically meaningful metric of the pace of planetary warming.`,
         },
         {
           q: 'What is the Argo float programme, what does it measure, and what was the state of deep ocean heat monitoring before Argo achieved global coverage?',
@@ -204,7 +204,7 @@ Ocean heat transport also shapes global climate patterns: ocean currents carry a
             'OHC is a more sensitive metric because it amplifies small temperature changes; the "hiatus" demonstrated that OHC paused even while surface temperatures continued rising, showing OHC is too smooth to detect real climate variability',
           ],
           correct: 2,
-          explain: 'The so-called surface temperature "hiatus" or "slowdown" of the early 2000s was a period when globally averaged surface air temperature increased more slowly than the long-term trend, attracting considerable attention and some misuse in public discourse. The resolution of the apparent paradox illustrates a fundamental point about OHC versus surface temperature as metrics. During this period, stronger La Niña conditions strengthened Pacific trade winds, subducting warm surface water into the western Pacific subsurface. This transferred heat from the surface (where it would register as surface warming) to the 300–700 m subsurface (where it registered as OHC increase but not as surface warming). Argo data clearly showed OHC rising continuously throughout the "hiatus." The Earth\'s energy imbalance — the root cause of warming — had not changed. Surface air temperature had temporarily paused not because warming stopped but because the ocean was routing the excess heat to depth rather than the atmosphere. This episode confirmed that OHC is the more reliable metric of Earth\'s total heat accumulation.',
+          explain: `The so-called surface temperature "hiatus" or "slowdown" of the early 2000s was a period when globally averaged surface air temperature increased more slowly than the long-term trend, attracting considerable attention and some misuse in public discourse. The resolution of the apparent paradox illustrates a fundamental point about OHC versus surface temperature as metrics. During this period, stronger La Niña conditions strengthened Pacific trade winds, subducting warm surface water into the western Pacific subsurface. This transferred heat from the surface (where it would register as surface warming) to the 300–700 m subsurface (where it registered as OHC increase but not as surface warming). Argo data clearly showed OHC rising continuously throughout the "hiatus." The Earth\'s energy imbalance — the root cause of warming — had not changed. Surface air temperature had temporarily paused not because warming stopped but because the ocean was routing the excess heat to depth rather than the atmosphere. This episode confirmed that OHC is the more reliable metric of Earth\'s total heat accumulation.`,
         },
         {
           q: 'What caused the North Pacific "Blob" marine heatwave of 2013–2016 and what were its main ecological consequences?',

@@ -61,7 +61,7 @@ Desertification affects 24% of global land area and directly threatens 250 milli
           icon: Wind,
           color: BRAND.accent,
           desc: 'Fryberger sand drift potential matrix links wind regime to dune type. Barchan: sparse supply, unidirectional wind → crescent, migrating. Transverse: moderate supply, unidirectional → ridges ⊥ wind. Linear/seif: bimodal wind, moderate supply → ridges ∥ resultant wind. Star: multidirectional wind, high supply → stationary, multi-armed. Parabolic: vegetated margins anchor trailing arms, nose migrates downwind.',
-          examples: 'Namibian barchans migrating 15 m/yr; Empty Quarter (Rub\' al Khali) star dunes 250 m tall.',
+          examples: `Namibian barchans migrating 15 m/yr; Empty Quarter (Rub\' al Khali) star dunes 250 m tall.`,
         },
         {
           name: 'Dune Anatomy: Stoss, Brink, and Slip Face',
@@ -82,7 +82,7 @@ Desertification affects 24% of global land area and directly threatens 250 milli
           icon: Activity,
           color: BRAND.gold,
           desc: '24% of global land area degraded by desertification; dryland agriculture, overgrazing, and fuelwood collection remove vegetation; increased erosion → soil loss → positive feedback. Sahel famine 1968–1984 illustrates vulnerability. Farmer-managed natural regeneration (FMNR) and Great Green Wall initiative demonstrate recovery is possible when land use pressure is reduced.',
-          examples: 'Aral Sea desiccation: 60,000 km² of new desert; Sahel: 200–300 km southward shift of Sahara during droughts; China\'s Three-North Shelterbelt (\'Green Wall\') planted 35 billion trees.',
+          examples: `Aral Sea desiccation: 60,000 km² of new desert; Sahel: 200–300 km southward shift of Sahara during droughts; China\'s Three-North Shelterbelt (\'Green Wall\') planted 35 billion trees.`,
         },
       ],
     },
@@ -127,7 +127,7 @@ Desertification affects 24% of global land area and directly threatens 250 milli
           {
             id: 'paleoclimate-archive',
             label: 'Paleoclimate Archive',
-            description: 'Alternating loess (glacial) and paleosol (interglacial) layers record millions of years of climate change. The Chinese Loess Plateau\'s 2.6 Ma sequence rivals deep-sea oxygen isotope records as a continental climate archive.',
+            description: `Alternating loess (glacial) and paleosol (interglacial) layers record millions of years of climate change. The Chinese Loess Plateau\'s 2.6 Ma sequence rivals deep-sea oxygen isotope records as a continental climate archive.`,
             color: BRAND.ruby,
           },
         ],
@@ -144,7 +144,7 @@ Desertification affects 24% of global land area and directly threatens 250 milli
       type: 'quiz',
       questions: [
         {
-          q: 'Barchan dunes form in environments with low sand supply and a unidirectional wind. What happens to a barchan\'s horns (tips) compared to its central crest?',
+          q: `Barchan dunes form in environments with low sand supply and a unidirectional wind. What happens to a barchan\'s horns (tips) compared to its central crest?`,
           a: [
             'The horns migrate more slowly than the crest because they are exposed to stronger lateral winds that impede forward motion',
             'The horns migrate faster than the crest: the horns are lower and have less mass to move; they extend downwind more rapidly than the higher, more massive central part',
@@ -185,10 +185,10 @@ Desertification affects 24% of global land area and directly threatens 250 milli
             'Bimodal wind: two dominant wind directions at an acute angle produce a resultant wind direction parallel to the dune crests; sand moves obliquely up both flanks alternately, building the ridge longitudinally; seif dunes can extend for hundreds of km across the Rub\' al Khali and Australian deserts; in contrast, purely unimodal winds create transverse ridges and (with low sand supply) barchans',
           ],
           correct: 3,
-          explain: 'Bimodal wind: two dominant wind directions at an acute angle produce a resultant wind direction parallel to the dune crests; sand moves obliquely up both flanks alternately, building the ridge longitudinally; seif dunes can extend for hundreds of km across the Rub\' al Khali and Australian deserts; in contrast, purely unimodal winds create transverse ridges and (with low sand supply) barchans.',
+          explain: `Bimodal wind: two dominant wind directions at an acute angle produce a resultant wind direction parallel to the dune crests; sand moves obliquely up both flanks alternately, building the ridge longitudinally; seif dunes can extend for hundreds of km across the Rub\' al Khali and Australian deserts; in contrast, purely unimodal winds create transverse ridges and (with low sand supply) barchans.`,
         },
         {
-          q: 'Desertification in the Sahel accelerated dramatically during the 1968–1984 drought. However, recent satellite data shows the Sahel has partially \'re-greened\' since then. What explains this recovery?',
+          q: `Desertification in the Sahel accelerated dramatically during the 1968–1984 drought. However, recent satellite data shows the Sahel has partially \'re-greened\' since then. What explains this recovery?`,
           a: [
             'Large-scale afforestation programmes funded by international aid organisations planted fast-growing exotic tree species across the Sahel, providing immediate canopy cover that stabilised soil and reduced wind erosion',
             'Increased rainfall from shifting ITCZ patterns plus farmer-managed natural regeneration (FMNR): farmers in Niger and elsewhere protected and managed natural tree regeneration rather than clearing, dramatically increasing vegetation cover without expensive tree planting; satellite NDVI (vegetation index) data shows 3–5 million ha greened since the 1980s; climate recovery from the drought was necessary but insufficient alone — land management was critical; this demonstrates the resilience of dryland ecosystems when grazing pressure is reduced and trees are protected',

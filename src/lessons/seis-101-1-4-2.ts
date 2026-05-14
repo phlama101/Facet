@@ -73,14 +73,14 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
           icon: AlertTriangle,
           color: BRAND.gold,
           desc: 'The system only sends public alerts if estimated shaking at a user location exceeds a threshold (e.g., MMI IV, light shaking). This filtering reduces false alerts from small earthquakes while ensuring warnings for potentially damaging events.',
-          examples: 'ShakeAlert WEA alert threshold: predicted MMI ≥ 4 at the user\'s location. Japan JMA: magnitude estimate ≥ 5.0 OR predicted intensity ≥ 4 at any station. Tuning these thresholds trades false-alarm rate vs. missed-alert rate.',
+          examples: `ShakeAlert WEA alert threshold: predicted MMI ≥ 4 at the user\'s location. Japan JMA: magnitude estimate ≥ 5.0 OR predicted intensity ≥ 4 at any station. Tuning these thresholds trades false-alarm rate vs. missed-alert rate.`,
         },
         {
           name: 'Delivery Infrastructure',
           icon: Wifi,
           color: BRAND.jade,
           desc: 'Alerts propagate through redundant paths: WEA cell broadcast (milliseconds, reaches all phones without app), MyShake and third-party apps (customisable thresholds), and industry API feeds for automated safety systems.',
-          examples: 'Japan EEW reaches 126 million people via TV interrupts, mobile phone broadcasts, and loudspeakers in factories and schools. Mexico\'s CIRES system uses a dedicated radio broadcast network with public loudspeakers — effective for a low-smartphone-penetration population.',
+          examples: `Japan EEW reaches 126 million people via TV interrupts, mobile phone broadcasts, and loudspeakers in factories and schools. Mexico\'s CIRES system uses a dedicated radio broadcast network with public loudspeakers — effective for a low-smartphone-penetration population.`,
         },
         {
           name: 'Automated Safety Actions',
@@ -115,7 +115,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
           icon: AlertTriangle,
           color: BRAND.ruby,
           desc: 'Sensor malfunctions, lightning strikes, and instrument noise can trigger false alerts. Each false alarm erodes public trust and compliance — the "cry wolf" effect. System designers accept some missed events to keep false-alert rates below ~1 per year per region.',
-          examples: 'Japan JMA issued a false nationwide EEW alert in 2016 due to simultaneous noise on two sensors. South Korea\'s EEW falsely triggered alerts during 2016 Gyeongju M 5.8 due to processing errors. Both events required immediate public communication and system audits.',
+          examples: `Japan JMA issued a false nationwide EEW alert in 2016 due to simultaneous noise on two sensors. South Korea\'s EEW falsely triggered alerts during 2016 Gyeongju M 5.8 due to processing errors. Both events required immediate public communication and system audits.`,
         },
       ],
     },
@@ -188,7 +188,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
           explain: 'B is correct: S-wave travel time = 60 km ÷ 3.5 km/s ≈ 17 s. Lead time = S-wave travel time − system latency = 17 − 7 = 10 s. A is wrong: latency reduces lead time but does not define it. C is wrong: S-wave travel time is the maximum possible lead time, reduced by system latency. D is wrong: the blind zone radius at 7 s latency is approximately 7 s × 3.5 km/s = 24.5 km; a city at 60 km is well outside the blind zone.',
         },
         {
-          q: 'During the 2011 Tōhoku Mw 9.1 earthquake, Japan\'s EEW system initially estimated the magnitude as M 7.2, not M 9.1. What physical limitation caused this underestimation, and why does it matter for warning quality?',
+          q: `During the 2011 Tōhoku Mw 9.1 earthquake, Japan\'s EEW system initially estimated the magnitude as M 7.2, not M 9.1. What physical limitation caused this underestimation, and why does it matter for warning quality?`,
           a: [
             'The seismic network was too sparse to record the full wavefield in the first seconds',
             'EEW algorithms characterise magnitude from the first 3–4 seconds of P-wave data, capturing only the early part of a rupture that grew over ~3 minutes; this produces systematically low estimates for M >7 events, reducing predicted shaking and geographic coverage of the alert',
@@ -196,7 +196,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
             'Japanese sensors were saturated (clipped) by the violent shaking and could not record accurate amplitudes',
           ],
           correct: 1,
-          explain: 'B is correct: large earthquake ruptures take time to develop. The M 9.1 Tōhoku rupture propagated over ~3 minutes and ~500 km of fault. In the first 3–4 s that EEW algorithms analyse, only the initial small patch has ruptured, producing signals consistent with M ~7. The underestimate matters because the WEA alert coverage area and automated responses (e.g., Shinkansen braking distance and speed reduction level) depend on the magnitude estimate. An M 7.2 estimate triggers a smaller-magnitude alert than the actual threat warrants. A is wrong: Japan\'s ~4,000-station network has excellent coverage. C is wrong: subduction geometry affects waveforms but not the first-principles timing argument. D has some truth (clipping of near-field sensors) but is not the primary reason for the global magnitude underestimate.',
+          explain: `B is correct: large earthquake ruptures take time to develop. The M 9.1 Tōhoku rupture propagated over ~3 minutes and ~500 km of fault. In the first 3–4 s that EEW algorithms analyse, only the initial small patch has ruptured, producing signals consistent with M ~7. The underestimate matters because the WEA alert coverage area and automated responses (e.g., Shinkansen braking distance and speed reduction level) depend on the magnitude estimate. An M 7.2 estimate triggers a smaller-magnitude alert than the actual threat warrants. A is wrong: Japan\'s ~4,000-station network has excellent coverage. C is wrong: subduction geometry affects waveforms but not the first-principles timing argument. D has some truth (clipping of near-field sensors) but is not the primary reason for the global magnitude underestimate.`,
         },
         {
           q: 'What distinguishes the "epicentral blind zone" from a technical limitation that could eventually be engineered away?',
@@ -207,7 +207,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
             'The blind zone can be eliminated by placing sensors directly on known fault traces so P-waves arrive at zero delay',
           ],
           correct: 1,
-          explain: 'B is correct: the blind zone represents a physical irreducibility. Even with instantaneous processing (zero latency), you cannot issue an alert until at least one sensor has detected a P-wave — and that takes time proportional to the sensor\'s distance from the hypocenter. In practice, the minimum detection latency is 1–3 seconds. Multiply by the S-wave velocity to get a minimum blind zone radius of ~4–10 km even in the best possible system. For sites within that radius, S-waves cannot be outrun by any alert system. A is wrong: faster computers reduce processing latency by 1–2 s at most, not to zero. C is wrong: location above or below ground doesn\'t change wave travel time. D is partially correct (sensors on faults reduce detection latency) but still cannot eliminate the finite travel time to even the nearest sensor.',
+          explain: `B is correct: the blind zone represents a physical irreducibility. Even with instantaneous processing (zero latency), you cannot issue an alert until at least one sensor has detected a P-wave — and that takes time proportional to the sensor\'s distance from the hypocenter. In practice, the minimum detection latency is 1–3 seconds. Multiply by the S-wave velocity to get a minimum blind zone radius of ~4–10 km even in the best possible system. For sites within that radius, S-waves cannot be outrun by any alert system. A is wrong: faster computers reduce processing latency by 1–2 s at most, not to zero. C is wrong: location above or below ground doesn\'t change wave travel time. D is partially correct (sensors on faults reduce detection latency) but still cannot eliminate the finite travel time to even the nearest sensor.`,
         },
         {
           q: 'Why do EEW system designers set a minimum shaking threshold (e.g., MMI IV) before issuing a public WEA alert, rather than alerting for all detected earthquakes?',
@@ -218,7 +218,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
             'Legal liability prevents alerting below MMI IV since below this level no damage occurs',
           ],
           correct: 1,
-          explain: 'B is correct: public EEW effectiveness depends critically on appropriate human and automated response. If alerts are issued for every M 2–3 microearthquake, people will habituate and ignore or disable alerts, defeating the system\'s purpose. The MMI IV threshold (~light shaking, felt by most) represents a balance: low enough to warn before structural damage, high enough to suppress alerts for the dozens of unfelt events that occur weekly in California. A is wrong: sensor density is driven by detection capability, not alert thresholding. C is wrong: WEA can carry variable-content messages with intensity information. D is partially true (MMI IV is roughly the onset of minor damage potential) but the primary driver is behavioural science and system credibility, not legal constraints.',
+          explain: `B is correct: public EEW effectiveness depends critically on appropriate human and automated response. If alerts are issued for every M 2–3 microearthquake, people will habituate and ignore or disable alerts, defeating the system\'s purpose. The MMI IV threshold (~light shaking, felt by most) represents a balance: low enough to warn before structural damage, high enough to suppress alerts for the dozens of unfelt events that occur weekly in California. A is wrong: sensor density is driven by detection capability, not alert thresholding. C is wrong: WEA can carry variable-content messages with intensity information. D is partially true (MMI IV is roughly the onset of minor damage potential) but the primary driver is behavioural science and system credibility, not legal constraints.`,
         },
         {
           q: 'Mexico City and Tokyo both receive EEW alerts despite being far from their primary seismic source zones. Which statement best explains why distance is advantageous for EEW in these cities?',

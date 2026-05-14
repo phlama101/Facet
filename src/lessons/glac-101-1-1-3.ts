@@ -20,7 +20,7 @@ const glacierMassBalance: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'The glacier\'s bank account: accumulation, ablation, and what the balance reveals',
+      title: `The glacier\'s bank account: accumulation, ablation, and what the balance reveals`,
       body: `Mass balance is the difference between how much mass a glacier gains and how much it loses over a balance year — typically from the end of one melt season to the end of the next. The gain side is accumulation: snowfall, wind-drifted snow, avalanche input, and refreezing of percolation water. The loss side is ablation: surface melting and runoff, calving of icebergs, and sublimation. Specific mass balance (bₙ) is expressed in metres of water equivalent (m w.e.) — the thickness of the water layer that would result if the ice were melted — allowing direct comparison between glaciers of different sizes. Glacier-wide mass balance (B = bₙ × glacier area) converts that to a total mass in kg or Gt.
 
 When annual accumulation exceeds annual ablation, bₙ is positive: the glacier thickens and eventually advances its terminus. When ablation exceeds accumulation, bₙ is negative: the glacier thins throughout and the terminus retreats upvalley. The equilibrium line altitude (ELA) is the elevation where annual accumulation exactly equals annual ablation. Below the ELA lies the ablation zone (net loss, blue glacier ice exposed by melt); above it lies the accumulation zone (net gain, firn preserved year to year). A rising ELA — driven by warming temperatures — shrinks the accumulation zone and is the primary mechanism by which climate change reduces glacier mass.
@@ -68,7 +68,7 @@ Mass balance measurements also reveal teleconnections between glaciers and regio
           icon: Globe,
           color: BRAND.coral,
           desc: 'Surface melting (dominant in most glaciers), calving (dominant in tidewater/marine-terminating glaciers), sublimation (significant in cold polar and high-altitude settings), and subaqueous melt; energy balance controls surface melt.',
-          examples: 'Turbulent heat exchange (sensible + latent heat) can exceed net radiation in summer ablation · Calving from marine-terminating outlet glaciers accounts for ~50% of Greenland\'s total mass loss · Sublimation at the dry Sahara-altitude glaciers of the tropical Andes can account for 30–50% of ablation',
+          examples: `Turbulent heat exchange (sensible + latent heat) can exceed net radiation in summer ablation · Calving from marine-terminating outlet glaciers accounts for ~50% of Greenland\'s total mass loss · Sublimation at the dry Sahara-altitude glaciers of the tropical Andes can account for 30–50% of ablation`,
         },
         {
           name: 'Mass Balance Measurement Methods',

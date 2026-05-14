@@ -228,7 +228,7 @@ Each question has exactly one correct answer. Distractors are designed to probe 
         },
         // ── Q15: Earth's energy imbalance / OHC trends ───────────────────────
         {
-          q: 'Earth\'s energy imbalance (EEI) is the difference between incoming solar radiation absorbed by Earth and outgoing longwave radiation emitted to space. How is ocean heat content (OHC) used to estimate EEI, and what does the observed OHC trend imply?',
+          q: `Earth\'s energy imbalance (EEI) is the difference between incoming solar radiation absorbed by Earth and outgoing longwave radiation emitted to space. How is ocean heat content (OHC) used to estimate EEI, and what does the observed OHC trend imply?`,
           a: [
             'Because the ocean absorbs more than 90 % of the excess energy accumulating in the Earth system due to greenhouse forcing, changes in full-depth OHC are the best direct measure of EEI; the observed OHC increase of ~10 × 10²² J per decade (0–2,000 m, Argo era) corresponds to an EEI of approximately +0.5 to +1 W m⁻² averaged over Earth\'s surface, confirming that the planet is out of radiative balance and accumulating heat at an accelerating rate',
             'OHC cannot be used to estimate EEI because the ocean is only one of several energy reservoirs; EEI must be calculated from satellite measurements alone, and ocean data are irrelevant to the energy budget',

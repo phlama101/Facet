@@ -64,8 +64,8 @@ Human impacts have profoundly disrupted coastal sediment systems. Dam constructi
           name: 'Delta Classification: River, Wave, and Tide Dominance',
           icon: Waves,
           color: BRAND.accent,
-          desc: 'Galloway\'s ternary diagram places every delta in a triangle of three competing forces. River-dominated deltas prograde rapidly; wave-dominated deltas are smoothed into arcuate shorelines; tide-dominated deltas develop funnel mouths with parallel sand bars. Most deltas occupy intermediate positions, shifting over time as climate and sea level change.',
-          examples: 'Mississippi bird-foot (river-dominated): distributary lobes extend ~300 km into the Gulf. Nile arcuate (wave-dominated): ~250 km smooth shoreline. Ganges-Brahmaputra tidal funnel: world\'s largest delta, shaped by 4–6 m tidal range.',
+          desc: `Galloway\'s ternary diagram places every delta in a triangle of three competing forces. River-dominated deltas prograde rapidly; wave-dominated deltas are smoothed into arcuate shorelines; tide-dominated deltas develop funnel mouths with parallel sand bars. Most deltas occupy intermediate positions, shifting over time as climate and sea level change.`,
+          examples: `Mississippi bird-foot (river-dominated): distributary lobes extend ~300 km into the Gulf. Nile arcuate (wave-dominated): ~250 km smooth shoreline. Ganges-Brahmaputra tidal funnel: world\'s largest delta, shaped by 4–6 m tidal range.`,
         },
         {
           name: 'Estuaries: Where Salt Meets Fresh Water',
@@ -148,7 +148,7 @@ Human impacts have profoundly disrupted coastal sediment systems. Dam constructi
       type: 'quiz',
       questions: [
         {
-          q: 'The Mississippi River delta has a distinctive \'bird-foot\' morphology. What process dominates its formation, and why?',
+          q: `The Mississippi River delta has a distinctive \'bird-foot\' morphology. What process dominates its formation, and why?`,
           a: [
             'River dominance: high sediment supply and weak wave energy allow distributary channels to extend far into the Gulf of Mexico without being reworked into an arcuate form; the low wave energy of the Gulf means sediment is not redistributed laterally; weak tides also prevent tidal shaping; the result is finger-like distributary lobes extending hundreds of km offshore',
             'Wave dominance: strong Gulf of Mexico waves continuously redistribute delta sediment into elongate finger-like lobes aligned with the prevailing wave direction, creating the distinctive radiating pattern',
@@ -192,7 +192,7 @@ Human impacts have profoundly disrupted coastal sediment systems. Dam constructi
           explain: `Groins work by interrupting longshore drift — they extend seaward from the beach far enough to intercept the moving sediment stream, trapping sand on the updrift side and building up the protected beach. The fundamental problem is that the longshore drift continues downdrift of the last groin with the same energy but a reduced sediment load, because the groin field has already sequestered the available sand. The downdrift beach is therefore in sediment deficit: the same wave energy that would normally transport sediment along the coast now has excess energy relative to supply, and begins eroding the beach instead. This problem is well-documented at groin fields worldwide — the protected stretch gains sand while immediately adjacent unprotected beaches lose it. This is why modern coastal management increasingly favours beach nourishment (adding sand to restore the sediment budget) over hard structures that simply redistribute the erosion problem.`,
         },
         {
-          q: 'A river\'s sediment supply is reduced 80% after dam construction. What geomorphic response is expected in the downstream delta over decades?',
+          q: `A river\'s sediment supply is reduced 80% after dam construction. What geomorphic response is expected in the downstream delta over decades?`,
           a: [
             'Delta progradation accelerates because clearer water carries the remaining sediment more efficiently to the delta front, concentrating deposition in a narrower zone',
             'Delta recession and subsidence: with reduced sediment input, the delta lobe no longer receives enough material to offset compaction, subsidence, and wave erosion; the shoreline retreats; delta plain elevation decreases; saltwater intrudes; low-lying delta areas flood; this is occurring at the Aswan-dammed Nile, Colorado dammed delta in the Gulf of California, and many other regulated rivers globally',

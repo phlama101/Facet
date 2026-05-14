@@ -20,7 +20,7 @@ const snowHydrology: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Snowpack as nature\'s reservoir: storing winter precipitation for summer rivers',
+      title: `Snowpack as nature\'s reservoir: storing winter precipitation for summer rivers`,
       body: `In cold climates and mountains worldwide, winter snowpack functions as a natural reservoir, storing precipitation as snow from November through April and releasing it gradually as meltwater during spring and summer. Mountains have been called "water towers of the world": the Hindu Kush-Himalaya, the Andes, the Western US Rockies, the Alps, and the Tianshan collectively supply freshwater to over 1.9 billion people downstream. In the Colorado River basin, snowmelt provides ~85% of annual flow; in the Sacramento-San Joaquin watershed of California, mountain snowpack provides over 30% of the state\'s water supply.
 
 Snow water equivalent (SWE) is the depth of liquid water that would result from melting a snowpack. SWE integrates the full winter accumulation history and is the critical metric for water supply forecasting. In the Western United States, April 1 SWE historically explained ~70% of annual streamflow variability in snow-dominated basins. Snowmelt is driven by the energy balance of the snowpack: net radiation dominates during clear spring days (accounting for 60–80% of melt energy), while turbulent fluxes (sensible and latent heat from warm, moist air) dominate during rain-on-snow events. The simple degree-day (temperature index) method — melt rate = degree-day factor × (T − 0°C) — captures 70–80% of melt variability with just air temperature data.
@@ -110,7 +110,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
           {
             id: 'snowpack-storage',
             label: 'Snowpack Storage',
-            description: 'Peak SWE typically reached around April 1 in western North America. Integrates the entire winter\'s precipitation. Measured by snow courses, SNOTEL sensors, Landsat.',
+            description: `Peak SWE typically reached around April 1 in western North America. Integrates the entire winter\'s precipitation. Measured by snow courses, SNOTEL sensors, Landsat.`,
             color: BRAND.accent,
           },
           {

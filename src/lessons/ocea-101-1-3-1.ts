@@ -75,7 +75,7 @@ Marine ecosystems are organised vertically (by depth) and horizontally (by latit
       type: 'quiz',
       questions: [
         {
-          q: 'A blue whale weighs up to 200 tonnes and is the largest animal in Earth\'s history. It feeds almost exclusively on krill — small crustaceans typically a few centimetres long. How can such an enormous animal sustain itself on tiny prey, and why couldn\'t it instead feed on the largest fish in the ocean?',
+          q: `A blue whale weighs up to 200 tonnes and is the largest animal in Earth\'s history. It feeds almost exclusively on krill — small crustaceans typically a few centimetres long. How can such an enormous animal sustain itself on tiny prey, and why couldn\'t it instead feed on the largest fish in the ocean?`,
           a: [
             'Krill are easier to catch than fish, so the blue whale prefers them despite the smaller size of each individual; it could equally well feed on fish if it chose to',
             'The blue whale feeds at a low trophic level (level 3, just above herbivores) by eating krill that eat phytoplankton; each step up a food chain loses ~90% of the energy, so feeding low on the chain provides far more total energy than feeding on large fish at high trophic levels would',

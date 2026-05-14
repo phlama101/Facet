@@ -81,7 +81,7 @@ Long-term earthquake resilience integrates hazard maps (Probabilistic Seismic Ha
           name: 'Operational Forecasting',
           icon: Activity,
           color: BRAND.amethyst,
-          desc: 'Real-time aftershock probability updates using Omori\'s Law and ETAS models. Guides emergency decisions.',
+          desc: `Real-time aftershock probability updates using Omori\'s Law and ETAS models. Guides emergency decisions.`,
           examples: 'USGS provides hourly aftershock forecasts after M 5+ US events. Used in NZ Canterbury sequence 2010-2011.',
         },
         {
@@ -192,7 +192,7 @@ Long-term earthquake resilience integrates hazard maps (Probabilistic Seismic Ha
             'AI-based prediction of earthquake sequences using historical seismicity pattern matching',
           ],
           correct: 1,
-          explain: 'OEF provides probabilistic statements about near-future seismicity (e.g., "40% probability of M ≥ 5 in the next week in the Canterbury region") based on current seismicity rates, Omori\'s Law decay parameters, and fault interaction models. It is explicitly NOT a deterministic prediction of a specific event. OEF is used by emergency managers to make decisions about building re-entry timelines after damaging earthquakes, school closure policies, and public communication. USGS provides automated OEF reports for any M 5+ US earthquake, and these are actively consulted by state emergency management agencies.',
+          explain: `OEF provides probabilistic statements about near-future seismicity (e.g., "40% probability of M ≥ 5 in the next week in the Canterbury region") based on current seismicity rates, Omori\'s Law decay parameters, and fault interaction models. It is explicitly NOT a deterministic prediction of a specific event. OEF is used by emergency managers to make decisions about building re-entry timelines after damaging earthquakes, school closure policies, and public communication. USGS provides automated OEF reports for any M 5+ US earthquake, and these are actively consulted by state emergency management agencies.`,
         },
         {
           q: 'Japan has very high seismic exposure but relatively low per-capita earthquake fatalities. Which combination of factors best explains this?',
@@ -203,7 +203,7 @@ Long-term earthquake resilience integrates hazard maps (Probabilistic Seismic Ha
             'Japan\'s mountainous terrain shields most population centres from strong seismic shaking',
           ],
           correct: 1,
-          explain: 'Japan\'s low fatality rate relative to seismic hazard results from decades of layered investment in earthquake resilience: (1) strict building codes updated after each damaging earthquake (1981 New Seismic Design Code, 2000 revisions for soft-soil response); (2) mandatory retrofit programmes for pre-1981 buildings; (3) the world\'s most extensive EEW system serving 126 million people; (4) Bousai Day (September 1) nationwide drills involving millions of participants; (5) land-use regulations restricting development in liquefaction-prone and tsunami-inundation zones. The 2011 Tōhoku Mw 9.0 — the fourth-largest instrumentally recorded earthquake — killed ~18,500 people (mostly from tsunami). A comparable event striking an unprepared nation would likely have killed hundreds of thousands.',
+          explain: `Japan\'s low fatality rate relative to seismic hazard results from decades of layered investment in earthquake resilience: (1) strict building codes updated after each damaging earthquake (1981 New Seismic Design Code, 2000 revisions for soft-soil response); (2) mandatory retrofit programmes for pre-1981 buildings; (3) the world\'s most extensive EEW system serving 126 million people; (4) Bousai Day (September 1) nationwide drills involving millions of participants; (5) land-use regulations restricting development in liquefaction-prone and tsunami-inundation zones. The 2011 Tōhoku Mw 9.0 — the fourth-largest instrumentally recorded earthquake — killed ~18,500 people (mostly from tsunami). A comparable event striking an unprepared nation would likely have killed hundreds of thousands.`,
         },
       ],
     },

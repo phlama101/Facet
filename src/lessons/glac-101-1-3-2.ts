@@ -61,7 +61,7 @@ Together, these sediments and landforms allow geologists to reconstruct the geom
           icon: Layers,
           color: BRAND.accent,
           desc: 'till is debris deposited directly by glacier ice without water sorting; it is a diamicton — a mixture of clast sizes from clay to boulders; lodgement till (deposited under moving ice) vs. melt-out till (released by stagnant melting ice); erratic boulders are transported far from their source',
-          examples: 'Erratics carried by Pleistocene ice sheets can be traced hundreds of km: the \'Boulders of Beekmantown\' in New York originated from Ontario, Canada. Lodgement till has a preferred clast orientation parallel to ice flow — useful for reconstructing palaeoglaciology. The \'Claygate Beds\' under London are Anglian glaciation till (MIS 12, ~450,000 years ago) compressed by ice overburden.',
+          examples: `Erratics carried by Pleistocene ice sheets can be traced hundreds of km: the \'Boulders of Beekmantown\' in New York originated from Ontario, Canada. Lodgement till has a preferred clast orientation parallel to ice flow — useful for reconstructing palaeoglaciology. The \'Claygate Beds\' under London are Anglian glaciation till (MIS 12, ~450,000 years ago) compressed by ice overburden.`,
         },
         {
           name: 'Moraines: Ice-Contact Ridges',
@@ -75,7 +75,7 @@ Together, these sediments and landforms allow geologists to reconstruct the geom
           icon: Activity,
           color: BRAND.coral,
           desc: 'meltwater streams beyond the ice margin deposit stratified glaciofluvial sediment in a broad outwash plain (sandur); eskers are sinuous ridges of sand and gravel deposited in subglacial or englacial meltwater tunnels; kames are mounds of stratified drift deposited in ice-contact environments',
-          examples: 'Iceland\'s Skeiðarársandur is the world\'s largest active sandur (~1,000 km²), regularly flooded by jökulhlaups (glacial outburst floods) from Vatnajökull. The Brampton esker system in Ontario is 250 km long — one of North America\'s longest, formed in subglacial tunnels under the Laurentide Ice Sheet. Kettle lakes form when buried ice blocks melt: Minnesota\'s 10,000 lakes are predominantly kettle lakes from Laurentide deglaciation.',
+          examples: `Iceland\'s Skeiðarársandur is the world\'s largest active sandur (~1,000 km²), regularly flooded by jökulhlaups (glacial outburst floods) from Vatnajökull. The Brampton esker system in Ontario is 250 km long — one of North America\'s longest, formed in subglacial tunnels under the Laurentide Ice Sheet. Kettle lakes form when buried ice blocks melt: Minnesota\'s 10,000 lakes are predominantly kettle lakes from Laurentide deglaciation.`,
         },
         {
           name: 'Varves and Glaciolacustrine Records',
@@ -175,10 +175,10 @@ Together, these sediments and landforms allow geologists to reconstruct the geom
             'In ice-marginal lakes where delta sedimentation builds sandy ridges',
           ],
           correct: 1,
-          explain: 'Eskers form from sediment deposited in meltwater conduits (tunnels or channels) within or at the base of glaciers. Subglacial meltwater flows under hydrostatic pressure — the water pressure equals or approaches the ice overburden pressure, allowing it to flow upslope if necessary (Röthlisberger channels). These conduits transport large volumes of meltwater and sediment. When the glacier thins or melts, the conduit sediment is let down onto the substrate as a sinuous ridge (esker). The ridge\'s long-axis direction records the subglacial drainage direction, which is not always parallel to ice flow. The Brampton esker (Ontario, 250 km), Punkaharju esker (Finland, 25 km), and the esker systems of central Sweden are classic examples. Eskers are important sand and gravel resources and good aquifers.',
+          explain: `Eskers form from sediment deposited in meltwater conduits (tunnels or channels) within or at the base of glaciers. Subglacial meltwater flows under hydrostatic pressure — the water pressure equals or approaches the ice overburden pressure, allowing it to flow upslope if necessary (Röthlisberger channels). These conduits transport large volumes of meltwater and sediment. When the glacier thins or melts, the conduit sediment is let down onto the substrate as a sinuous ridge (esker). The ridge\'s long-axis direction records the subglacial drainage direction, which is not always parallel to ice flow. The Brampton esker (Ontario, 250 km), Punkaharju esker (Finland, 25 km), and the esker systems of central Sweden are classic examples. Eskers are important sand and gravel resources and good aquifers.`,
         },
         {
-          q: 'Kettle lakes form a large proportion of the lakes in glaciated regions of North America (e.g., Minnesota\'s \'10,000 lakes\'). How do kettles form?',
+          q: `Kettle lakes form a large proportion of the lakes in glaciated regions of North America (e.g., Minnesota\'s \'10,000 lakes\'). How do kettles form?`,
           a: [
             'Kettles are depressions carved by the rotational flow of small cirque glaciers',
             'As ice sheets retreated, isolated ice blocks were buried by outwash sediment. When these \'dead ice\' blocks eventually melted, they left bowl-shaped depressions (kettles) that filled with water.',
@@ -186,7 +186,7 @@ Together, these sediments and landforms allow geologists to reconstruct the geom
             'Kettle lakes are formed by meteorite impacts that coincidentally cluster in glaciated regions',
           ],
           correct: 1,
-          explain: 'Kettle formation occurs during deglaciation when ice blocks become detached from the retreating glacier margin and are buried (partially or fully) by outwash sediment deposited by proglacial meltwater streams. These isolated \'dead ice\' blocks may be insulated by sediment and persist for decades before melting. When they finally melt, the overlying sediment collapses into the void, leaving a circular to oval depression (kettle). If the water table is high enough, the kettle fills with water to form a kettle lake. Kettle lakes have no inflow streams, are typically circular, and have sandy or gravelly shores. They can range from a few metres to several kilometres in diameter. The Minnesota lake district, the Finger Lakes region of New York, and the lake-rich landscapes of Finland and Sweden are products of this process.',
+          explain: `Kettle formation occurs during deglaciation when ice blocks become detached from the retreating glacier margin and are buried (partially or fully) by outwash sediment deposited by proglacial meltwater streams. These isolated \'dead ice\' blocks may be insulated by sediment and persist for decades before melting. When they finally melt, the overlying sediment collapses into the void, leaving a circular to oval depression (kettle). If the water table is high enough, the kettle fills with water to form a kettle lake. Kettle lakes have no inflow streams, are typically circular, and have sandy or gravelly shores. They can range from a few metres to several kilometres in diameter. The Minnesota lake district, the Finger Lakes region of New York, and the lake-rich landscapes of Finland and Sweden are products of this process.`,
         },
         {
           q: 'Varve chronologies provide annual-resolution records of glacial retreat. What are the two layers in a single annual varve couplet?',

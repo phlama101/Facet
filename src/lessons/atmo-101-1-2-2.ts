@@ -60,7 +60,7 @@ Understanding mid-latitude cyclones is essential not only for weather forecastin
           icon: Globe,
           color: BRAND.jade,
           desc: 'North of centre: cold air, overcast, light precipitation. Warm sector: warm/moist, often low cloud, fog, drizzle. Ahead of warm front (E of centre): Ci→Cs→As→Ns cloud sequence, steady rain/snow over 500–1000 km. At/behind cold front (W of centre): squall line or broken convective showers, rapid clearing. Comma cloud pattern visible from satellite: the cloud wraps counterclockwise around the low centre.',
-          examples: 'Nor\'easter: strong mP cyclone tracking up US East Coast, nor\'easterly winds at coast, heavy snow inland · European depression: steered by Atlantic jet stream, typically tracks from Atlantic into UK/Norway · "Miller B" cyclone: forms over Gulf of Mexico, tracks NE — classic US Southeast snowstorm track',
+          examples: `Nor\'easter: strong mP cyclone tracking up US East Coast, nor\'easterly winds at coast, heavy snow inland · European depression: steered by Atlantic jet stream, typically tracks from Atlantic into UK/Norway · "Miller B" cyclone: forms over Gulf of Mexico, tracks NE — classic US Southeast snowstorm track`,
         },
         {
           name: 'Pressure, Winds, and Coriolis',

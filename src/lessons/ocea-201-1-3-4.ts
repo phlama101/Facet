@@ -89,7 +89,7 @@ Antarctic sea ice shows a strikingly different pattern. Unlike the Arctic, the A
           icon: Waves,
           color: BRAND.jade,
           desc: 'Coastal polynyas — kept open by katabatic winds — allow continuous sea ice formation and brine rejection, producing Antarctic Bottom Water (~2–5 Sv) that ventilates the global abyss. Open-ocean polynyas like the 1970s Weddell Polynya drive deep convection. Ice algae in brine channels sustain polar food webs through winter.',
-          examples: 'Ross Sea polynya: largest Antarctic coastal polynya · Weddell Sea polynya 1974–76: anomalous open-ocean convection, not repeated at scale · AABW: ~34.65 psu, ~−0.5 °C, spreads across global ocean floor · Coastal polynya ice-algae: 10–50% of some Arctic regions\' total primary production',
+          examples: `Ross Sea polynya: largest Antarctic coastal polynya · Weddell Sea polynya 1974–76: anomalous open-ocean convection, not repeated at scale · AABW: ~34.65 psu, ~−0.5 °C, spreads across global ocean floor · Coastal polynya ice-algae: 10–50% of some Arctic regions\' total primary production`,
         },
         {
           name: 'Albedo Feedback and Arctic Amplification',

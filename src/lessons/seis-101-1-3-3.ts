@@ -74,7 +74,7 @@ The Pacific Tsunami Warning System (PTWS), operated by NOAA and IOC UNESCO, inte
           name: 'Shoaling',
           icon: Waves,
           color: BRAND.gold,
-          desc: 'As depth decreases: speed drops, amplitude rises. Energy conservation: A ∝ d^(-1/4) (Green\'s Law).',
+          desc: `As depth decreases: speed drops, amplitude rises. Energy conservation: A ∝ d^(-1/4) (Green\'s Law).`,
           examples: '2011 Tōhoku: deep-ocean amplitude ~1 m shoaled to 15-40 m runup on Sanriku coast.',
         },
         {

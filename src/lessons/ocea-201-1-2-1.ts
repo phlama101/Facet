@@ -10,7 +10,7 @@ const biologicalPump: Lesson = {
   level: 'Intermediate',
   duration: '13 min',
   xpReward: 130,
-  description: 'How photosynthesis and sinking organic matter transfer carbon from the surface ocean to the deep — Earth\'s most important long-term carbon sink',
+  description: `How photosynthesis and sinking organic matter transfer carbon from the surface ocean to the deep — Earth\'s most important long-term carbon sink`,
   sources: [
     { org: 'NOAA',   title: 'NOAA Ocean Carbon',                  url: 'https://www.noaa.gov/' },
     { org: 'MBARI',  title: 'MBARI Biological Pump',              url: 'https://www.mbari.org/' },
@@ -20,7 +20,7 @@ const biologicalPump: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'The ocean\'s carbon conveyor: from sunlight to the seafloor',
+      title: `The ocean\'s carbon conveyor: from sunlight to the seafloor`,
       body: `Every year, the surface ocean absorbs roughly 2–3 Pg of anthropogenic carbon dioxide from the atmosphere. A large fraction of that uptake is driven not by physical chemistry alone, but by life. In the sunlit upper ocean, phytoplankton — microscopic algae and cyanobacteria — fix dissolved CO₂ into organic carbon through photosynthesis at a global rate of approximately **50 Pg C per year** (primary production). That number rivals the entire terrestrial biosphere. When cells die, are eaten, or aggregate, a fraction of that organic carbon sinks out of the surface layer, carrying carbon from the atmosphere-equilibrated surface ocean to the dark interior. This process — the **biological pump** — is Earth\'s most important long-term mechanism for sequestering carbon from the atmosphere on timescales of centuries to millennia.
 
 The biological pump has two distinct components. The **soft-tissue pump** transfers organic carbon (proteins, lipids, carbohydrates) to depth in the form of sinking particles: dead cells, fecal pellets, and loosely bound aggregates called **marine snow**. Marine snow forms when transparent exopolymer particles (TEP) — sticky polysaccharides exuded by phytoplankton — glue individual cells and detritus into centimetre-scale flocs that sink at speeds of 1–100 m per day, far faster than individual cells. The **carbonate pump** (or counter pump) operates in parallel: calcifying organisms such as coccolithophores, foraminifera, and pteropods build shells of calcium carbonate (CaCO₃). When they die, their dense shells sink rapidly, carrying inorganic carbon to depth. The carbonate pump is partially counteractive: the formation of CaCO₃ temporarily releases CO₂ into surface seawater — though the net effect over geological time is carbon burial in sediment.
@@ -39,7 +39,7 @@ The efficiency of the biological pump is not fixed. **Pump efficiency** is often
         },
         {
           term: 'export production',
-          def: 'The flux of organic carbon that sinks below the base of the euphotic zone (~100–200 m) or the mixed layer, typically expressed as a fraction of gross primary production (the e-ratio). Globally ~5–20% of primary production is exported, amounting to roughly 5–12 Pg C yr⁻¹. Export production, not primary production, determines the pump\'s net climate impact.',
+          def: `The flux of organic carbon that sinks below the base of the euphotic zone (~100–200 m) or the mixed layer, typically expressed as a fraction of gross primary production (the e-ratio). Globally ~5–20% of primary production is exported, amounting to roughly 5–12 Pg C yr⁻¹. Export production, not primary production, determines the pump\'s net climate impact.`,
         },
         {
           term: 'marine snow',
@@ -165,7 +165,7 @@ The efficiency of the biological pump is not fixed. **Pump efficiency** is often
             'The biological pump is the calcium carbonate shell production by corals and molluscs; it matters for climate because shell burial in reef sediments stores CO₂ permanently on human timescales',
           ],
           correct: 1,
-          explain: 'The thermohaline circulation (option A) is a physical, not biological, pump — it plays an important role in carbon transport but is a separate mechanism. Direct gas exchange by organisms (option C) is not what the biological pump means — the relevant process is photosynthesis, which reduces dissolved CO₂, driving atmospheric CO₂ into the ocean by air-sea exchange. Coral reef carbonate production (option D) is part of the carbonate pump, one component of the biological pump, but the reef system itself is not the full concept. Option B is correct: the biological pump encompasses photosynthetic CO₂ fixation by phytoplankton, the aggregation of organic matter into sinking particles (marine snow, fecal pellets), and the transport of that particulate organic carbon to the ocean interior. Without the biological pump, pre-industrial atmospheric CO₂ would be approximately 430–450 ppm rather than ~280 ppm — a climate impact comparable to all current anthropogenic emissions. The pump sustains the deep ocean\'s ~10× larger carbon inventory relative to the atmosphere by continuously exporting newly fixed carbon from the surface.',
+          explain: `The thermohaline circulation (option A) is a physical, not biological, pump — it plays an important role in carbon transport but is a separate mechanism. Direct gas exchange by organisms (option C) is not what the biological pump means — the relevant process is photosynthesis, which reduces dissolved CO₂, driving atmospheric CO₂ into the ocean by air-sea exchange. Coral reef carbonate production (option D) is part of the carbonate pump, one component of the biological pump, but the reef system itself is not the full concept. Option B is correct: the biological pump encompasses photosynthetic CO₂ fixation by phytoplankton, the aggregation of organic matter into sinking particles (marine snow, fecal pellets), and the transport of that particulate organic carbon to the ocean interior. Without the biological pump, pre-industrial atmospheric CO₂ would be approximately 430–450 ppm rather than ~280 ppm — a climate impact comparable to all current anthropogenic emissions. The pump sustains the deep ocean\'s ~10× larger carbon inventory relative to the atmosphere by continuously exporting newly fixed carbon from the surface.`,
         },
         {
           q: 'What is the Martin curve?',

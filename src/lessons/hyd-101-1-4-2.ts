@@ -48,7 +48,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
         },
         {
           term: 'Hydropower',
-          def: 'Electricity generated from the potential energy of falling water. Provides ~16% of global electricity and ~71% of renewable electricity globally; the world\'s dominant renewable energy source.',
+          def: `Electricity generated from the potential energy of falling water. Provides ~16% of global electricity and ~71% of renewable electricity globally; the world\'s dominant renewable energy source.`,
         },
         {
           term: 'Dam Removal',
@@ -87,7 +87,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
           icon: Globe,
           color: BRAND.coral,
           desc: 'Storage reservoirs capture wet-season flow for release during dry growing seasons. Essential in monsoon and snowmelt-dependent systems where peak flow and peak demand are out of phase.',
-          examples: 'Aswan High Dam stores ~132 km³, enabling year-round irrigation of Egypt\'s Nile Valley. Without it, Egyptian agriculture would be limited to the 3-month flood season as before 1970.',
+          examples: `Aswan High Dam stores ~132 km³, enabling year-round irrigation of Egypt\'s Nile Valley. Without it, Egyptian agriculture would be limited to the 3-month flood season as before 1970.`,
         },
       ],
     },
@@ -226,7 +226,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
             'About 30%; run-of-river dams generate the most power because unrestricted river flow through turbines is more efficient than regulated storage releases',
           ],
           correct: 1,
-          explain: 'A is wrong: hydropower\'s global share is ~16%, not 5%; run-of-river dams produce variable, not firm, power because output mirrors natural flow fluctuations. B is correct: hydropower provides approximately 16% of global electricity (and ~71% of renewable electricity). Storage dams provide "firm" power — reliable capacity regardless of season — because large reservoirs allow operators to release water at optimal rates during peak demand periods, even during droughts. They can also provide peaking power (ramping output up and down within hours), making them valuable for grid stabilisation. C confuses total hydropower with pumped-storage hydro specifically; pumped storage is ~3% of global capacity and is used for grid balancing, not large-scale generation. D overstates hydropower\'s share and misidentifies which dam type provides firm capacity.',
+          explain: `A is wrong: hydropower\'s global share is ~16%, not 5%; run-of-river dams produce variable, not firm, power because output mirrors natural flow fluctuations. B is correct: hydropower provides approximately 16% of global electricity (and ~71% of renewable electricity). Storage dams provide "firm" power — reliable capacity regardless of season — because large reservoirs allow operators to release water at optimal rates during peak demand periods, even during droughts. They can also provide peaking power (ramping output up and down within hours), making them valuable for grid stabilisation. C confuses total hydropower with pumped-storage hydro specifically; pumped storage is ~3% of global capacity and is used for grid balancing, not large-scale generation. D overstates hydropower\'s share and misidentifies which dam type provides firm capacity.`,
         },
         {
           q: 'The Elwha River dam removal project (2012–2014) in Washington State produced which ecological outcomes, and what made it significant?',

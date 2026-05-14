@@ -92,7 +92,7 @@ In the next lesson we will zoom into the crust and discover why a thick continen
           icon: Waves,
           color: BRAND.accent,
           desc: "A layer about 2,200 km thick composed of liquid iron-nickel alloy. Its molten state is directly established by the S-wave shadow zone — shear waves cannot travel through liquid and are absorbed at the outer core boundary. Temperatures here reach roughly 4,000–5,000 °C. The motion of this electrically conducting liquid is associated with Earth's magnetic field.",
-          examples: '~2,900–5,100 km depth · Liquid iron-nickel · ~2,200 km thick (similar width to the Moon\'s diameter) · S-wave shadow zone proves liquid state · Geodynamo powers Earth\'s magnetic field from here',
+          examples: `~2,900–5,100 km depth · Liquid iron-nickel · ~2,200 km thick (similar width to the Moon\'s diameter) · S-wave shadow zone proves liquid state · Geodynamo powers Earth\'s magnetic field from here`,
         },
         {
           name: 'Inner Core',
@@ -205,7 +205,7 @@ In the next lesson we will zoom into the crust and discover why a thick continen
             'The asthenosphere — the slowly deforming zone within the upper mantle',
           ],
           correct: 2,
-          explain: 'The crust (A) is solid silicate rock at the surface — not metallic and not liquid. The mantle (B) is also solid silicate, far thicker than the crust but compositionally different from the core; it flows slowly as solid rock, not as liquid metal. The outer core (C) is correct: approximately 2,200 km of liquid iron-nickel alloy whose molten state is established by the S-wave shadow zone, surrounding the solid inner core at Earth\'s center. The asthenosphere (D) is a mechanical zone in the upper mantle that flows slowly as solid rock under heat and pressure — it is not metallic, not liquid, and entirely different from the outer core.',
+          explain: `The crust (A) is solid silicate rock at the surface — not metallic and not liquid. The mantle (B) is also solid silicate, far thicker than the crust but compositionally different from the core; it flows slowly as solid rock, not as liquid metal. The outer core (C) is correct: approximately 2,200 km of liquid iron-nickel alloy whose molten state is established by the S-wave shadow zone, surrounding the solid inner core at Earth\'s center. The asthenosphere (D) is a mechanical zone in the upper mantle that flows slowly as solid rock under heat and pressure — it is not metallic, not liquid, and entirely different from the outer core.`,
         },
         {
           q: "What does the S-wave shadow zone — the region beyond ~104° from an earthquake where no direct S-waves arrive — prove about Earth's interior?",

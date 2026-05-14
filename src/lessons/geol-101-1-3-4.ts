@@ -87,7 +87,7 @@ This lesson introduces the two settings where metamorphism occurs, the key textu
           icon: Gem,
           color: BRAND.gold,
           desc: "Form when the protolith lacks flat minerals, so there is nothing to align under pressure. Marble: recrystallised limestone — interlocking equidimensional calcite crystals, smooth and sparkling, no foliation. White (Carrara) to coloured by impurities. Used in sculpture and architecture for millennia. Quartzite: recrystallised sandstone — fused quartz grains, extremely hard, breaks through grains not around them; forms resistant ridges in eroded mountain belts.",
-          examples: 'Marble: recrystallised limestone, Michelangelo\'s medium · Quartzite: fused quartz, very hard, ridge-forming · Hornfels: baked shale near intrusions',
+          examples: `Marble: recrystallised limestone, Michelangelo\'s medium · Quartzite: fused quartz, very hard, ridge-forming · Hornfels: baked shale near intrusions`,
         },
         {
           name: 'Metamorphic Conditions',

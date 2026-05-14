@@ -10,7 +10,7 @@ const largeIgneousProvinces: Lesson = {
   level: 'Intermediate',
   duration: '13 min',
   xpReward: 130,
-  description: 'The most voluminous volcanic events in Earth\'s history — how mantle plumes generate large igneous provinces, their role in mass extinctions, and the plume head vs. tail model.',
+  description: `The most voluminous volcanic events in Earth\'s history — how mantle plumes generate large igneous provinces, their role in mass extinctions, and the plume head vs. tail model.`,
   sources: [
     { org: 'USGS',    title: 'Large Igneous Provinces and Their Volcanic Systems',                  url: 'https://volcanoes.usgs.gov/vhp/large_igneous.html' },
     { org: 'LIP Commission', title: 'Large Igneous Provinces Commission — LIP Record Database',   url: 'https://www.largeigneousprovinces.org/' },
@@ -20,7 +20,7 @@ const largeIgneousProvinces: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'When Earth\'s interior erupts at planetary scale',
+      title: `When Earth\'s interior erupts at planetary scale`,
       body: `Ordinary volcanoes are impressive: a Plinian eruption column reaching the stratosphere, a lava flow advancing across a Hawaiian plain, a caldera collapse swallowing a mountainside. But set any of these against a **large igneous province** and the comparison dissolves. A LIP is not a single eruption or even a single volcano — it is the output of an entire mantle upwelling, a thermal anomaly the size of a continent, delivering more than 100,000 cubic kilometres of magma to the surface in geologically rapid succession, typically within one to five million years. The Siberian Traps, emplaced 252 million years ago, produced an estimated four million cubic kilometres of basalt — enough to bury the entire contiguous United States under more than 400 metres of lava. They also coincided, almost precisely, with the end-Permian mass extinction: the most catastrophic biotic crisis in the history of complex life, in which an estimated 96 percent of marine species and 70 percent of terrestrial vertebrate species disappeared.
 
 That coincidence — LIPs at extinction boundaries — is one of the most contentious and consequential problems in Earth science. It is not unique to the end-Permian. The Deccan Traps of India were emplaced around 66 million years ago, overlapping the Cretaceous-Paleogene boundary and the extinction of non-avian dinosaurs. The Central Atlantic Magmatic Province erupted at 201 million years ago, synchronous with the end-Triassic extinction. The Karoo-Ferrar LIP at 183 million years ago coincides with a major Toarcian oceanic anoxic event. The pattern is striking enough that it demands explanation — and the mechanism most commonly invoked involves the catastrophic injection of volcanic gases into the atmosphere.
@@ -33,7 +33,7 @@ Not every large igneous province fits neatly into the plume model. Alternative m
       keyTerms: [
         {
           term: 'Large Igneous Province (LIP)',
-          def: 'A region of Earth\'s crust that has been emplaced with an anomalously large volume of predominantly mafic magma (>10^5 km³) over a geologically short interval (<1–5 Ma). LIPs include continental flood basalts (e.g., Siberian Traps, Deccan Traps), volcanic passive margins, oceanic plateaus (e.g., Ontong Java Plateau), and oceanic basin flood basalts. Defined formally by Coffin & Eldholm (1992) and refined by subsequent workers.',
+          def: `A region of Earth\'s crust that has been emplaced with an anomalously large volume of predominantly mafic magma (>10^5 km³) over a geologically short interval (<1–5 Ma). LIPs include continental flood basalts (e.g., Siberian Traps, Deccan Traps), volcanic passive margins, oceanic plateaus (e.g., Ontong Java Plateau), and oceanic basin flood basalts. Defined formally by Coffin & Eldholm (1992) and refined by subsequent workers.`,
         },
         {
           term: 'Mantle plume',
@@ -71,7 +71,7 @@ Not every large igneous province fits neatly into the plume model. Alternative m
           icon: Flame,
           color: BRAND.ruby,
           desc: 'Siberian Traps: ~252 Ma, ~4 × 10^6 km³, emplaced in ~300,000 yr, linked to end-Permian extinction (96% marine species lost). Intrusions into coal/evaporites amplified toxic volatile output. Deccan Traps: ~66 Ma, ~1–1.5 × 10^6 km³, contemporaneous with Chicxulub impact and K-Pg boundary; eruption rate accelerated post-impact.',
-          examples: 'Siberian Traps: Norilsk region, Russia — hosts world\'s largest Ni-Cu-PGE deposits (magmatic sulfide) · Deccan: Western Ghats escarpment, India, up to 2 km thick lava pile',
+          examples: `Siberian Traps: Norilsk region, Russia — hosts world\'s largest Ni-Cu-PGE deposits (magmatic sulfide) · Deccan: Western Ghats escarpment, India, up to 2 km thick lava pile`,
         },
         {
           name: 'CAMP & Karoo LIPs',
@@ -166,7 +166,7 @@ Not every large igneous province fits neatly into the plume model. Alternative m
           explain: 'The carbon isotope system in ocean carbonates records the mean isotopic composition of dissolved inorganic carbon (DIC) in seawater. Mantle CO₂ has δ¹³C ≈ −5‰; thermogenic gases from coal and organic matter have δ¹³C ≈ −20 to −30‰; biogenic methane is even lighter (δ¹³C ≈ −60‰). Mass balance calculations show that an 8‰ shift in the global ocean DIC reservoir — which is enormous — requires either very large volumes of mantle carbon or more modest volumes of highly depleted thermogenic or biogenic carbon. Siberian Traps intrusions are now well-documented to have penetrated thick Tunguska coal and evaporite sequences, and geochemical models show that contact metamorphism of these sediments could produce sufficient thermogenic carbon to explain the excursion without requiring unrealistically large lava volumes. The magnitude of δ¹³C excursions at LIP-extinction boundaries is therefore a diagnostic tool: small excursions point toward direct magmatic degassing; large excursions (>3–4‰) require sedimentary carbon mobilisation. Temperature fractionation (option C) produces only small δ¹³C shifts (~0.01–0.02‰/°C) — far too small to explain an 8‰ excursion. The extinction-as-cause argument (option D) predicts a positive δ¹³C shift as ¹²C-preferring photosynthesis declines, not a negative one; the observed signal is the opposite.',
         },
         {
-          q: 'The Hawaiian-Emperor seamount chain shows a clear age progression: Kauai (~5 Ma) is the oldest current Hawaiian island, while the Detroit Seamount at the chain\'s far northwestern end is ~76 Ma. There is a prominent bend in the chain at ~47 Ma. A geologist claims that this chain records a stationary mantle plume beneath a moving Pacific Plate, with the bend recording a change in plate motion direction. What evidence would support this interpretation, and what alternative explanation challenges it?',
+          q: `The Hawaiian-Emperor seamount chain shows a clear age progression: Kauai (~5 Ma) is the oldest current Hawaiian island, while the Detroit Seamount at the chain\'s far northwestern end is ~76 Ma. There is a prominent bend in the chain at ~47 Ma. A geologist claims that this chain records a stationary mantle plume beneath a moving Pacific Plate, with the bend recording a change in plate motion direction. What evidence would support this interpretation, and what alternative explanation challenges it?`,
           a: [
             'The age progression alone is sufficient to prove a stationary plume; the bend at 47 Ma records a global plate reorganisation confirmed by similar bends in other Pacific seamount chains; the only alternative hypothesis is that the entire Pacific Plate moved in a straight line and the bend is a measurement error',
             'The age progression (older with distance from active Kilauea) directly supports a fixed deep mantle plume: if the plume moved with the asthenosphere, no age gradient would develop. The bend at ~47 Ma — if matched by contemporaneous bends in other Pacific seamount chains — would strongly support a change in Pacific Plate motion direction. However, the plume fixity assumption is challenged by paleomagnetic studies showing the Hawaiian plume itself may have moved southward at ~30–40 mm/yr during the Cretaceous-Paleogene, and by some tomographic models that show no deep mantle anomaly beneath Hawaii; alternative models invoke lithospheric cracking along pre-existing fracture zones as a non-plume origin for the chain',

@@ -10,7 +10,7 @@ const globalWaterCycle: Lesson = {
   level: 'Beginner',
   duration: '12 min',
   xpReward: 120,
-  description: '97% ocean, 2% ice, 0.01% rivers: following a water molecule through Earth\'s endless cycle',
+  description: `97% ocean, 2% ice, 0.01% rivers: following a water molecule through Earth\'s endless cycle`,
   sources: [
     { org: 'USGS',  title: 'USGS — The Water Cycle',               url: 'https://www.usgs.gov/special-topics/water-science-school/science/water-cycle' },
     { org: 'NOAA',  title: 'NOAA — Water Cycle',                   url: 'https://oceanservice.noaa.gov/facts/water-cycle.html' },
@@ -20,7 +20,7 @@ const globalWaterCycle: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: '97% ocean, 2% ice, 0.01% rivers: following a water molecule through Earth\'s endless cycle',
+      title: `97% ocean, 2% ice, 0.01% rivers: following a water molecule through Earth\'s endless cycle`,
       body: `Water is Earth\'s most abundant surface compound and the foundation of all known life. Of the approximately 1.386 billion km³ of water on Earth, 97.5% is saline ocean water and only 2.5% is fresh. Of that freshwater, 68.9% is locked in ice caps and glaciers, 30.8% is groundwater, and only 0.3% flows through rivers, lakes, and streams — the surface freshwater that most land life depends on. The atmosphere holds another 12,900 km³ of water vapour, equivalent to a global layer just 25 mm deep, yet this tiny reservoir drives the entire precipitation-evaporation cycle.
 
 The water cycle (hydrological cycle) describes the continuous movement of water through Earth\'s reservoirs via evaporation, condensation, precipitation, runoff, and infiltration. Solar energy powers the cycle: roughly 86,000 km³ of water evaporates from the oceans each year, while 78,000 km³ falls back as ocean precipitation. The net transport to land — about 8,000 km³/year — balances the river and groundwater discharge back to the sea. The water balance equation summarises this at any watershed scale: Precipitation (P) = Evapotranspiration (ET) + Streamflow (Q) + Change in Storage (ΔS). Over a long average, ΔS ≈ 0 and P = ET + Q.
@@ -53,7 +53,7 @@ Human activities have significantly altered the water cycle. Dams store ~10,000 
     },
     {
       type: 'concept',
-      title: 'Earth\'s Water Reservoirs',
+      title: `Earth\'s Water Reservoirs`,
       body: `The global water budget is dominated by the ocean. Each terrestrial reservoir has a characteristic size, residence time, and role in the cycle. Residence time determines how quickly a reservoir responds to climate change — fast reservoirs (soil moisture, atmosphere) respond in weeks; slow reservoirs (deep groundwater, ice sheets) respond over centuries to millennia.`,
       cards: [
         {
@@ -96,10 +96,10 @@ Human activities have significantly altered the water cycle. Dams store ~10,000 
     {
       type: 'visualization',
       title: 'The Global Water Cycle: Fluxes and Reservoirs',
-      body: 'Follow the major water fluxes connecting Earth\'s reservoirs, with volumes and transfer rates.',
+      body: `Follow the major water fluxes connecting Earth\'s reservoirs, with volumes and transfer rates.`,
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'Follow the major water fluxes connecting Earth\'s reservoirs, with volumes and transfer rates.',
+        description: `Follow the major water fluxes connecting Earth\'s reservoirs, with volumes and transfer rates.`,
         nodes: [
           {
             id: 'ocean',
@@ -155,7 +155,7 @@ Human activities have significantly altered the water cycle. Dams store ~10,000 
       type: 'quiz',
       questions: [
         {
-          q: 'What percentage of Earth\'s total water is accessible as liquid freshwater in rivers and lakes?',
+          q: `What percentage of Earth\'s total water is accessible as liquid freshwater in rivers and lakes?`,
           a: [
             'About 30% of total water',
             'About 2.5% of total water',

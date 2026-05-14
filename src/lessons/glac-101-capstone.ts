@@ -49,7 +49,7 @@ const glac101Capstone: Lesson = {
           explain: 'Pore close-off occurs at approximately 820–840 kg/m³ (commonly cited as ~830 kg/m³). At this density, the interconnected network of air passages between firn grains becomes isolated into discrete, sealed bubbles. This is the moment that ancient atmospheric air is permanently trapped inside the ice, forming the gas archive exploited by ice core palaeoclimatologists. Above this depth the air is still in contact with the atmosphere; below it the gas archive is closed. The depth of pore close-off ranges from ~60–70 m in Greenland to over 100 m at cold, low-accumulation Antarctic sites, introducing a gas age–ice age offset (Δage) that must be modelled when interpreting ice core records.',
         },
         {
-          q: 'Glen\'s flow law describes the creep of polycrystalline ice: έ = A τⁿ, where n ≈ 3. If basal shear stress doubles, by what factor does the strain rate increase?',
+          q: `Glen\'s flow law describes the creep of polycrystalline ice: έ = A τⁿ, where n ≈ 3. If basal shear stress doubles, by what factor does the strain rate increase?`,
           a: [
             '2× because stress and strain rate are linearly proportional',
             '4× because the square of the stress ratio governs flow at high stresses',
@@ -57,7 +57,7 @@ const glac101Capstone: Lesson = {
             '6× because the flow exponent n = 3 adds a factor of 3 to the doubling',
           ],
           correct: 2,
-          explain: 'Glen\'s flow law is nonlinear: strain rate έ is proportional to τⁿ, with n ≈ 3 for most natural ice deformation conditions. If stress doubles (τ → 2τ), the strain rate scales as (2τ)³ = 8τ³ — an eightfold increase. This strong nonlinearity has profound implications: small variations in driving stress cause disproportionately large changes in ice velocity, making fast-flowing outlet glaciers and ice streams highly sensitive to small perturbations in geometry or basal conditions. The value of A (the rate factor or softness parameter) is temperature-dependent, increasing by approximately three orders of magnitude between −50°C and 0°C, so warm ice at the base deforms far more readily than cold ice above.',
+          explain: `Glen\'s flow law is nonlinear: strain rate έ is proportional to τⁿ, with n ≈ 3 for most natural ice deformation conditions. If stress doubles (τ → 2τ), the strain rate scales as (2τ)³ = 8τ³ — an eightfold increase. This strong nonlinearity has profound implications: small variations in driving stress cause disproportionately large changes in ice velocity, making fast-flowing outlet glaciers and ice streams highly sensitive to small perturbations in geometry or basal conditions. The value of A (the rate factor or softness parameter) is temperature-dependent, increasing by approximately three orders of magnitude between −50°C and 0°C, so warm ice at the base deforms far more readily than cold ice above.`,
         },
         {
           q: 'In a glacier where ice motion is dominated by internal deformation (creep) rather than basal sliding, where is horizontal velocity at its maximum?',
@@ -79,7 +79,7 @@ const glac101Capstone: Lesson = {
             '−0.7 m w.e.; the glacier is losing mass and is likely retreating',
           ],
           correct: 3,
-          explain: 'Net mass balance = accumulation − ablation = 1.8 − 2.5 = −0.7 m w.e. per year. A negative net balance means the glacier is losing more mass than it gains, so it will thin and, if this persists, retreat. This is the situation for the vast majority of the world\'s glaciers under current climate conditions. The WGMS global glacier mass balance reference record shows a cumulative loss of over 25 m w.e. since the 1970s. Sustained negative balances raise sea level, reduce freshwater availability for downstream communities, and eventually lead to complete glacier disappearance if the ELA rises above the highest point of the glacier.',
+          explain: `Net mass balance = accumulation − ablation = 1.8 − 2.5 = −0.7 m w.e. per year. A negative net balance means the glacier is losing more mass than it gains, so it will thin and, if this persists, retreat. This is the situation for the vast majority of the world\'s glaciers under current climate conditions. The WGMS global glacier mass balance reference record shows a cumulative loss of over 25 m w.e. since the 1970s. Sustained negative balances raise sea level, reduce freshwater availability for downstream communities, and eventually lead to complete glacier disappearance if the ELA rises above the highest point of the glacier.`,
         },
         {
           q: 'What is the equilibrium line altitude (ELA)?',
@@ -90,7 +90,7 @@ const glac101Capstone: Lesson = {
             'The altitude of the snowpack\'s maximum winter extent before spring melt begins',
           ],
           correct: 2,
-          explain: 'The ELA is the altitude on a glacier where annual accumulation exactly equals annual ablation, yielding zero net mass balance for that elevation. Above the ELA lies the accumulation zone (net mass gain); below lies the ablation zone (net mass loss). The ELA is a sensitive indicator of climate: a warmer or drier year raises the ELA, shrinking the accumulation zone and often resulting in a negative annual mass balance. In extreme cases the ELA can rise above the glacier\'s highest point, meaning the entire glacier is in the ablation zone and must retreat regardless of its dynamics. Long-term ELA rise is one of the clearest observational signatures of climate warming on mountain glaciers worldwide.',
+          explain: `The ELA is the altitude on a glacier where annual accumulation exactly equals annual ablation, yielding zero net mass balance for that elevation. Above the ELA lies the accumulation zone (net mass gain); below lies the ablation zone (net mass loss). The ELA is a sensitive indicator of climate: a warmer or drier year raises the ELA, shrinking the accumulation zone and often resulting in a negative annual mass balance. In extreme cases the ELA can rise above the glacier\'s highest point, meaning the entire glacier is in the ablation zone and must retreat regardless of its dynamics. Long-term ELA rise is one of the clearest observational signatures of climate warming on mountain glaciers worldwide.`,
         },
         {
           q: 'Meltwater drains from the glacier surface through moulins to the subglacial drainage system. What is the immediate dynamical effect on ice velocity?',
@@ -101,7 +101,7 @@ const glac101Capstone: Lesson = {
             'Drainage through moulins removes heat from the base, freezing pore water and increasing bed friction',
           ],
           correct: 0,
-          explain: 'When surface meltwater reaches the glacier bed via moulins (vertical drainage shafts through the ice), it elevates subglacial water pressure. Effective stress — the difference between ice overburden pressure and water pressure — controls the frictional resistance at the bed. Higher water pressure reduces effective stress, weakening the bed\'s grip on the ice and allowing faster basal sliding. This mechanism drives the well-documented summer speed-up on the Greenland Ice Sheet, where surface melt events cause sudden velocity increases of 10–100%. However, as the drainage system evolves from inefficient distributed cavities to efficient channelised conduits (Röthlisberger channels), water pressure drops and velocities may return toward baseline or even decrease.',
+          explain: `When surface meltwater reaches the glacier bed via moulins (vertical drainage shafts through the ice), it elevates subglacial water pressure. Effective stress — the difference between ice overburden pressure and water pressure — controls the frictional resistance at the bed. Higher water pressure reduces effective stress, weakening the bed\'s grip on the ice and allowing faster basal sliding. This mechanism drives the well-documented summer speed-up on the Greenland Ice Sheet, where surface melt events cause sudden velocity increases of 10–100%. However, as the drainage system evolves from inefficient distributed cavities to efficient channelised conduits (Röthlisberger channels), water pressure drops and velocities may return toward baseline or even decrease.`,
         },
         {
           q: 'The Greenland Ice Sheet contains approximately 2.85 million km³ of ice. What is its sea level equivalent (SLE)?',
@@ -126,7 +126,7 @@ const glac101Capstone: Lesson = {
           explain: 'Marine Ice Sheet Instability (MISI) was theorised by Weertman (1974) and Mercer (1978) and formalised in subsequent work. On a retrograde bed (one that deepens inland), if the grounding line retreats even slightly into deeper water, the ice column at the grounding line becomes thicker, which by the shallow-ice approximation increases the driving stress and ice flux. More ice is discharged than is replaced by upstream flow, so the grounding line retreats further — a positive feedback that can continue without any additional external forcing. This makes the West Antarctic Ice Sheet (WAIS), much of which rests on a retrograde bed below sea level, potentially susceptible to irreversible destabilisation. Parts of Thwaites and Pine Island glaciers show evidence of ongoing MISI.',
         },
         {
-          q: 'What happens to Earth\'s energy balance when sea ice melts and exposes open ocean, and why does this amplify warming?',
+          q: `What happens to Earth\'s energy balance when sea ice melts and exposes open ocean, and why does this amplify warming?`,
           a: [
             'Open ocean (albedo ~0.06) absorbs far more solar radiation than sea ice (albedo ~0.85), so more energy enters the climate system — a positive feedback that further warms the Arctic',
             'Meltwater from sea ice reduces ocean salinity, suppressing deep-water formation and cooling the North Atlantic',
@@ -145,7 +145,7 @@ const glac101Capstone: Lesson = {
             'Ice shelves provide buttressing: back-stress transmitted upstream through the ice shelf slows the flow of tributary ice streams and glaciers feeding it',
           ],
           correct: 3,
-          explain: 'Ice shelves — floating extensions of grounded ice — exert a back-stress (buttressing) on the grounded ice upstream because they are constricted by embayment walls and pinned by bathymetric highs (ice rises). This stress is transmitted upstream, effectively slowing the flow of the tributary ice streams and outlet glaciers that feed the shelf. When ice shelves collapse (as with Larsen B in 2002), the buttressing is lost and upstream glaciers accelerate dramatically — Larsen B\'s tributaries sped up 2–8× within months of collapse. Quantifying buttressing and its sensitivity to basal melt from warming Circumpolar Deep Water is central to projecting future ice sheet contributions to sea level rise.',
+          explain: `Ice shelves — floating extensions of grounded ice — exert a back-stress (buttressing) on the grounded ice upstream because they are constricted by embayment walls and pinned by bathymetric highs (ice rises). This stress is transmitted upstream, effectively slowing the flow of the tributary ice streams and outlet glaciers that feed the shelf. When ice shelves collapse (as with Larsen B in 2002), the buttressing is lost and upstream glaciers accelerate dramatically — Larsen B\'s tributaries sped up 2–8× within months of collapse. Quantifying buttressing and its sensitivity to basal melt from warming Circumpolar Deep Water is central to projecting future ice sheet contributions to sea level rise.`,
         },
         {
           q: 'At approximately what temperature does seawater of typical open-ocean salinity (~34 psu) begin to freeze?',

@@ -10,7 +10,7 @@ const greenlandIceSheet: Lesson = {
   level: 'Foundations',
   duration: '12 min',
   xpReward: 120,
-  description: 'Architecture, ice streams, surface melt processes, and accelerating mass loss of the world\'s second-largest ice sheet',
+  description: `Architecture, ice streams, surface melt processes, and accelerating mass loss of the world\'s second-largest ice sheet`,
   sources: [
     { org: 'NSIDC',    title: 'NSIDC — Greenland Ice Sheet Today',                              url: 'https://nsidc.org/greenland-today' },
     { org: 'NASA',     title: 'NASA — Oceans Melting Greenland',                                url: 'https://omg.jpl.nasa.gov' },
@@ -20,7 +20,7 @@ const greenlandIceSheet: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'A 3-kilometre-thick island of ice: Greenland\'s frozen heritage and uncertain future',
+      title: `A 3-kilometre-thick island of ice: Greenland\'s frozen heritage and uncertain future`,
       body: `The Greenland Ice Sheet (GIS) covers approximately 1.71 million km² — about 80% of Greenland\'s land area — and reaches a maximum thickness of ~3,400 m near the Camp Century area in the northwest. Its total ice volume is estimated at ~2.85 million km³, equivalent to ~7.4 m of global mean sea level rise if fully melted. The ice sheet is not simply a featureless dome: bed topography is highly irregular, with deep subglacial troughs and basins in the central and northern interior lying well below sea level, while peripheral mountain ranges along the eastern and western coasts confine ice flow into discrete outlet fjords.
 
 Two primary mechanisms drain ice from the Greenland Ice Sheet. The first is surface meltwater runoff: summer warming melts the lower-elevation ablation zone, producing meltwater that drains to the ocean via supraglacial streams and rivers, moulins, and subglacial conduits. The second is dynamic ice discharge: fast-moving outlet glaciers — ice streams — carry interior ice to the coast, where icebergs calve directly into the ocean. The partitioning between these two pathways, and their relative acceleration under warming, is a central question in cryosphere science.
@@ -65,7 +65,7 @@ Total Greenland mass loss has accelerated markedly. IMBIE assessments estimate a
           icon: Globe,
           color: BRAND.accentHot,
           desc: 'Central dome ~3,200 m above sea level; peripheral mountains channel ice into outlet fjords; BedMachine dataset reveals deep troughs below sea level vulnerable to ocean intrusion.',
-          examples: 'BedMachine v3 (Morlighem et al. 2017) shows deep fjords: Jakobshavn trough reaches 1,500 m below sea level. The central basin (\'Camp Century\' area) lies 500–1,000 m below sea level under 3 km of ice. Peripheral mountains (Watkins Range, Stauning Alps) act as barriers that channel ice into discrete outlet glaciers.',
+          examples: `BedMachine v3 (Morlighem et al. 2017) shows deep fjords: Jakobshavn trough reaches 1,500 m below sea level. The central basin (\'Camp Century\' area) lies 500–1,000 m below sea level under 3 km of ice. Peripheral mountains (Watkins Range, Stauning Alps) act as barriers that channel ice into discrete outlet glaciers.`,
         },
         {
           name: 'Jakobshavn and the Major Ice Streams',
@@ -79,14 +79,14 @@ Total Greenland mass loss has accelerated markedly. IMBIE assessments estimate a
           icon: Layers,
           color: BRAND.coral,
           desc: 'Summer surface melt area expands from peripheral ablation zones; supraglacial lakes drain rapidly through moulins, delivering large pulses of meltwater to the bed; englacial and subglacial drainage evolves seasonally.',
-          examples: 'In July 2012, >97% of Greenland\'s surface experienced melt — an unprecedented event in satellite records. A single supraglacial lake (7 km diameter) can drain through a moulin in 2 hours, routing 0.044 km³ to the bed. Efficient channelised subglacial drainage develops by midsummer, reducing the velocity response to meltwater inputs.',
+          examples: `In July 2012, >97% of Greenland\'s surface experienced melt — an unprecedented event in satellite records. A single supraglacial lake (7 km diameter) can drain through a moulin in 2 hours, routing 0.044 km³ to the bed. Efficient channelised subglacial drainage develops by midsummer, reducing the velocity response to meltwater inputs.`,
         },
         {
           name: 'Ocean-Driven Melt and Mass Loss Acceleration',
           icon: Zap,
           color: BRAND.gold,
           desc: 'Warm salty Atlantic Water (AW) at depth intrudes into Greenland fjords, melting marine-terminating glacier fronts from below; subaqueous melt rates 10–100× higher than surface melt rates.',
-          examples: 'OMG mission (NASA) found AW warming of up to 4°C above freezing at terminus depths of 300–600 m. Jakobshavn\'s acceleration is linked to warming of Ilulissat Icefjord by 1–2°C of AW intrusion since the 1990s. Greenland total mass loss 2002–2020: ~4,700 Gt — equivalent to ~13 mm of global sea level rise.',
+          examples: `OMG mission (NASA) found AW warming of up to 4°C above freezing at terminus depths of 300–600 m. Jakobshavn\'s acceleration is linked to warming of Ilulissat Icefjord by 1–2°C of AW intrusion since the 1990s. Greenland total mass loss 2002–2020: ~4,700 Gt — equivalent to ~13 mm of global sea level rise.`,
         },
       ],
     },
@@ -160,7 +160,7 @@ Total Greenland mass loss has accelerated markedly. IMBIE assessments estimate a
           explain: `Converting ice volume to sea level equivalent requires accounting for ice density (~917 kg/m³) vs. seawater (~1,025 kg/m³), the area of the global ocean (3.62 × 10¹⁴ m²), and the fact that not all Greenland ice is above the marine floatation line. The standard estimate is ~7.4 m of global mean sea level rise if Greenland melted completely. This would be catastrophic: it would inundate coastal cities including Mumbai, Miami, Amsterdam, Shanghai, and New York. The 7.4 m estimate assumes current ocean area; as land formerly below sea level is flooded, the ocean area would increase, reducing the final level slightly. At current melt rates (~280 Gt/yr), Greenland contributes ~0.75 mm/yr — contributing ~7.4 m on a ~10,000 year time scale at today\'s rate (though rates will accelerate with warming).`,
         },
         {
-          q: 'Jakobshavn Isbrae is notable for being one of the world\'s fastest glaciers. What is the primary physical reason for its extreme velocity?',
+          q: `Jakobshavn Isbrae is notable for being one of the world\'s fastest glaciers. What is the primary physical reason for its extreme velocity?`,
           a: [
             'It receives exceptional snowfall accumulation that drives unusually high driving stress',
             'It occupies a deep bedrock trough that channels warm ocean water to the calving front, while the trough geometry concentrates ice flux and basal sliding',

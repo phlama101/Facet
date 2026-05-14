@@ -61,7 +61,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
           icon: Activity,
           color: BRAND.accent,
           desc: 'Power-law relationship between strain rate and shear stress; ice deforms by dislocation creep within individual crystals and grain boundary sliding; temperature strongly controls ice viscosity.',
-          examples: 'Glen\'s flow law: ε̇ = A × τⁿ (n ≈ 3); doubling stress increases strain rate ~8×. Cold polar ice (−30°C) is ~1,000× more viscous than temperate ice near 0°C. Crystal fabric development (preferred c-axis orientation) enhances deformation in fast-flowing ice.',
+          examples: `Glen\'s flow law: ε̇ = A × τⁿ (n ≈ 3); doubling stress increases strain rate ~8×. Cold polar ice (−30°C) is ~1,000× more viscous than temperate ice near 0°C. Crystal fabric development (preferred c-axis orientation) enhances deformation in fast-flowing ice.`,
         },
         {
           name: 'Basal Sliding and Meltwater Lubrication',
@@ -75,7 +75,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
           icon: Globe,
           color: BRAND.coral,
           desc: 'Narrow zones of fast flow (km/yr) draining interior ice sheets, bounded by slow-moving inter-stream ice ridges; controlled by subglacial topography, geology, and water.',
-          examples: 'Jakobshavn Isbrae, Greenland: ~40–50 m/day — one of the world\'s fastest glaciers. West Antarctic Ice Streams (Pine Island, Thwaites) drain ~30% of the WAIS into the Amundsen Sea. Ice stream margins are zones of intense shear, producing highly crevassed chaotic ice.',
+          examples: `Jakobshavn Isbrae, Greenland: ~40–50 m/day — one of the world\'s fastest glaciers. West Antarctic Ice Streams (Pine Island, Thwaites) drain ~30% of the WAIS into the Amundsen Sea. Ice stream margins are zones of intense shear, producing highly crevassed chaotic ice.`,
         },
         {
           name: 'Extending and Compressive Flow Regimes',
@@ -109,7 +109,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
           {
             id: 'internal-deform',
             label: 'Internal Deformation Zone',
-            description: 'Glen\'s flow law governs creep. Ice velocity profile parabolic — fastest at surface.',
+            description: `Glen\'s flow law governs creep. Ice velocity profile parabolic — fastest at surface.`,
             color: BRAND.jade,
           },
           {
@@ -144,7 +144,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
       type: 'quiz',
       questions: [
         {
-          q: 'Glen\'s flow law relates shear stress (τ) to strain rate (ε̇) as ε̇ = A × τⁿ with n ≈ 3. If shear stress triples, by approximately what factor does ice strain rate increase?',
+          q: `Glen\'s flow law relates shear stress (τ) to strain rate (ε̇) as ε̇ = A × τⁿ with n ≈ 3. If shear stress triples, by approximately what factor does ice strain rate increase?`,
           a: [
             '3× (linear relationship)',
             '27× (stress cubed)',

@@ -61,7 +61,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
           icon: Zap,
           color: BRAND.coral,
           desc: 'Unstable air rises rapidly. Short, intense precipitation. Afternoon peaks in tropics and continental interiors.',
-          examples: 'Amazon basin: 2,000-3,000 mm/yr convective rainfall. ITCZ receives most of world\'s convective rain.',
+          examples: `Amazon basin: 2,000-3,000 mm/yr convective rainfall. ITCZ receives most of world\'s convective rain.`,
         },
         {
           name: 'Orographic',
@@ -160,7 +160,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
             'Orographic precipitation forms when cold fronts stall at mountain ranges; only occurs in winter',
           ],
           correct: 1,
-          explain: 'Orographic precipitation occurs when horizontally moving moist air encounters a topographic barrier and is forced to rise. As it ascends, the air cools at the dry adiabatic lapse rate (~9.8°C/km) until saturation, then at the moist adiabatic rate (~6°C/km). Condensation forms clouds and precipitation on the windward slope. The descending air on the leeward side warms and dries — creating rain shadows. Cherrapunji, India (mean ~11,430 mm/yr) and the Ko\'olau Range in Hawaii both experience intense orographic rainfall from moist trade winds. The Pacific Northwest Cascades, Olympic Peninsula, and the western Western Ghats are other examples of extreme orographic precipitation.',
+          explain: `Orographic precipitation occurs when horizontally moving moist air encounters a topographic barrier and is forced to rise. As it ascends, the air cools at the dry adiabatic lapse rate (~9.8°C/km) until saturation, then at the moist adiabatic rate (~6°C/km). Condensation forms clouds and precipitation on the windward slope. The descending air on the leeward side warms and dries — creating rain shadows. Cherrapunji, India (mean ~11,430 mm/yr) and the Ko\'olau Range in Hawaii both experience intense orographic rainfall from moist trade winds. The Pacific Northwest Cascades, Olympic Peninsula, and the western Western Ghats are other examples of extreme orographic precipitation.`,
         },
         {
           q: 'What is the Penman-Monteith equation used to calculate?',
@@ -193,7 +193,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
             'GPM specifically measures soil moisture directly, from which precipitation can be calculated',
           ],
           correct: 1,
-          explain: 'Traditional rain gauges sample only the point where they are located. Networks are dense in populated regions but sparse over oceans, rainforests, polar areas, and developing nations — covering only a tiny fraction of Earth\'s surface. GPM\'s core satellite combines a dual-frequency precipitation radar (DPR) measuring vertical structure of precipitation with passive microwave radiometers. Combined with a constellation of partner satellites, GPM estimates precipitation at 0.1° × 0.1° spatial resolution every 30 minutes globally. This near-global coverage is essential for understanding global water fluxes, improving weather forecasting, and studying climate change effects on precipitation patterns — especially over the 70% of Earth covered by ocean.',
+          explain: `Traditional rain gauges sample only the point where they are located. Networks are dense in populated regions but sparse over oceans, rainforests, polar areas, and developing nations — covering only a tiny fraction of Earth\'s surface. GPM\'s core satellite combines a dual-frequency precipitation radar (DPR) measuring vertical structure of precipitation with passive microwave radiometers. Combined with a constellation of partner satellites, GPM estimates precipitation at 0.1° × 0.1° spatial resolution every 30 minutes globally. This near-global coverage is essential for understanding global water fluxes, improving weather forecasting, and studying climate change effects on precipitation patterns — especially over the 70% of Earth covered by ocean.`,
         },
         {
           q: 'In a humid climate watershed receiving 1,200 mm/yr of precipitation, approximately how much becomes annual streamflow?',

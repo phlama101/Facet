@@ -10,7 +10,7 @@ const floodBasaltsMassExtinctions: Lesson = {
   level: 'Intermediate',
   duration: '13 min',
   xpReward: 130,
-  description: 'The deadliest volcanic events in Earth\'s history — how flood basalt eruptions released massive SO2 and CO2 pulses that drove mass extinctions, from the Siberian Traps to the Deccan.',
+  description: `The deadliest volcanic events in Earth\'s history — how flood basalt eruptions released massive SO2 and CO2 pulses that drove mass extinctions, from the Siberian Traps to the Deccan.`,
   sources: [
     { org: 'USGS',    title: 'Large Igneous Provinces and Mass Extinctions — Volcanic Hazards Program',         url: 'https://volcanoes.usgs.gov/vhp/lip.html' },
     { org: 'BGS',     title: 'Large Igneous Provinces — British Geological Survey',                            url: 'https://www.bgs.ac.uk/discovering-geology/earth-hazards/volcanoes/large-igneous-provinces/' },
@@ -33,7 +33,7 @@ Understanding flood basalts requires integrating volcanology, geochemistry, pale
       keyTerms: [
         {
           term: 'Large Igneous Province (LIP)',
-          def: 'A vast accumulation of predominantly mafic (basaltic) igneous rock, both extrusive (lava flows) and intrusive (dykes, sills), emplaced in a geologically short interval (typically <5 Ma) and covering an area >10⁵ km². LIPs form by decompression melting of anomalously hot mantle, often associated with mantle plume heads or rifting events. They are divided into continental flood basalt provinces (e.g., Siberian Traps, Deccan Traps), oceanic plateaus (e.g., Ontong Java), and volcanic passive margins. LIPs are the primary geological record of episodes of extreme magmatic flux in Earth\'s history and are closely correlated with mass extinctions and oceanic anoxic events.',
+          def: `A vast accumulation of predominantly mafic (basaltic) igneous rock, both extrusive (lava flows) and intrusive (dykes, sills), emplaced in a geologically short interval (typically <5 Ma) and covering an area >10⁵ km². LIPs form by decompression melting of anomalously hot mantle, often associated with mantle plume heads or rifting events. They are divided into continental flood basalt provinces (e.g., Siberian Traps, Deccan Traps), oceanic plateaus (e.g., Ontong Java), and volcanic passive margins. LIPs are the primary geological record of episodes of extreme magmatic flux in Earth\'s history and are closely correlated with mass extinctions and oceanic anoxic events.`,
         },
         {
           term: 'Flood basalt',
@@ -49,7 +49,7 @@ Understanding flood basalts requires integrating volcanology, geochemistry, pale
         },
         {
           term: 'Oceanic Anoxic Event (OAE)',
-          def: 'An interval in Earth\'s history during which large portions of the ocean became depleted in dissolved oxygen (anoxic) or near-anoxic (dysoxic), resulting in widespread deposition of organic-rich black shales. OAEs are associated with volcanic CO₂ injection (from LIPs), greenhouse warming, accelerated hydrological cycling, and increased nutrient flux to the oceans — all of which stimulate biological productivity but deplete oxygen during organic matter decomposition. Major OAEs: Toarcian OAE (183 Ma, Karoo-Ferrar LIP); OAE 1a (120 Ma, Ontong Java Plateau); OAE 2 (Cenomanian-Turonian, 94 Ma). OAEs are marked by a negative δ¹³C excursion and a positive δ¹³Corg shift in organic carbon.',
+          def: `An interval in Earth\'s history during which large portions of the ocean became depleted in dissolved oxygen (anoxic) or near-anoxic (dysoxic), resulting in widespread deposition of organic-rich black shales. OAEs are associated with volcanic CO₂ injection (from LIPs), greenhouse warming, accelerated hydrological cycling, and increased nutrient flux to the oceans — all of which stimulate biological productivity but deplete oxygen during organic matter decomposition. Major OAEs: Toarcian OAE (183 Ma, Karoo-Ferrar LIP); OAE 1a (120 Ma, Ontong Java Plateau); OAE 2 (Cenomanian-Turonian, 94 Ma). OAEs are marked by a negative δ¹³C excursion and a positive δ¹³Corg shift in organic carbon.`,
         },
       ],
     },
@@ -121,7 +121,7 @@ Understanding flood basalts requires integrating volcanology, geochemistry, pale
           {
             id: 'atmosphere',
             label: 'Atmospheric Disruption',
-            description: 'Repeated SO₂ pulses — each mimicking a super-Laki eruption — prevent biotic recovery between pulses, creating cumulative environmental stress. Acid rain (from SO₂ and HCl) damages terrestrial vegetation and acidifies shallow marine waters. Ozone destruction (from halogens) increases UV flux at Earth\'s surface. CO₂ accumulation drives long-term warming, intensifies continental weathering, and alters the hydrological cycle. The interplay of short-term cooling (SO₂) and long-term warming (CO₂) creates a volatile, unpredictable climate envelope hostile to biodiversity.',
+            description: `Repeated SO₂ pulses — each mimicking a super-Laki eruption — prevent biotic recovery between pulses, creating cumulative environmental stress. Acid rain (from SO₂ and HCl) damages terrestrial vegetation and acidifies shallow marine waters. Ozone destruction (from halogens) increases UV flux at Earth\'s surface. CO₂ accumulation drives long-term warming, intensifies continental weathering, and alters the hydrological cycle. The interplay of short-term cooling (SO₂) and long-term warming (CO₂) creates a volatile, unpredictable climate envelope hostile to biodiversity.`,
             color: BRAND.gold,
           },
           {

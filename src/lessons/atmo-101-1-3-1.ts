@@ -50,8 +50,8 @@ The appearance and behaviour of clouds encode the state of the atmosphere above 
           name: 'Cloud Types by Altitude',
           icon: Wind,
           color: BRAND.accent,
-          desc: 'High (>6 km, ice): Cirrus (wisps, mare\'s tails, warm front precursor), Cirrocumulus (mackerel sky), Cirrostratus (halo-producing sheet). Mid (2–6 km, mixed): Altocumulus (grey puffs, instability), Altostratus (sun-through-glass, warm front). Low (<2 km, water): Stratus (fog-like, drizzle), Stratocumulus (most common globally, lumpy), Nimbostratus (thick dark precipitating). Vertical: Cumulus (heaped, flat base), Cumulonimbus (Cb; full-troposphere, lightning, hail).',
-          examples: 'Contrails: artificial cirrus from jet exhaust (ice nucleation on soot) · "Mackerel sky" cirrocumulus: sailors\' traditional rain warning · Kelvin-Helmholtz waves (billows): instability waves in altostratus, resemble breaking ocean waves',
+          desc: `High (>6 km, ice): Cirrus (wisps, mare\'s tails, warm front precursor), Cirrocumulus (mackerel sky), Cirrostratus (halo-producing sheet). Mid (2–6 km, mixed): Altocumulus (grey puffs, instability), Altostratus (sun-through-glass, warm front). Low (<2 km, water): Stratus (fog-like, drizzle), Stratocumulus (most common globally, lumpy), Nimbostratus (thick dark precipitating). Vertical: Cumulus (heaped, flat base), Cumulonimbus (Cb; full-troposphere, lightning, hail).`,
+          examples: `Contrails: artificial cirrus from jet exhaust (ice nucleation on soot) · "Mackerel sky" cirrocumulus: sailors\' traditional rain warning · Kelvin-Helmholtz waves (billows): instability waves in altostratus, resemble breaking ocean waves`,
         },
         {
           name: 'Formation Mechanisms',

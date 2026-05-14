@@ -15,7 +15,7 @@ const solarRadiation: Lesson = {
     { org: 'NASA',     title: 'Earth Energy Budget',                                       url: 'https://science.nasa.gov/earth-science/earthexpeditions/energy-budget/' },
     { org: 'NOAA',     title: 'Earth Radiation Budget',                                    url: 'https://www.noaa.gov/' },
     { org: 'OpenStax', title: 'Introduction to Atmospheric Science, Ch. 3 (CC-BY 4.0)',   url: 'https://openstax.org/books/introduction-oceanography' },
-    { org: 'UCAR',     title: 'The Sun and Earth\'s Energy Budget',                       url: 'https://scied.ucar.edu/learning-zone/atmosphere' },
+    { org: 'UCAR',     title: `The Sun and Earth\'s Energy Budget`,                       url: 'https://scied.ucar.edu/learning-zone/atmosphere' },
     { org: 'NASA',     title: 'CERES Energy Budget Experiment',                            url: 'https://ceres.larc.nasa.gov/' },
   ],
   sections: [
@@ -59,7 +59,7 @@ The energy budget also involves the atmosphere itself as an active participant. 
           icon: Sun,
           color: BRAND.gold,
           desc: 'Solar constant: 1,361 W m⁻². Divided by 4 for spherical Earth: 340 W m⁻² average. Reflected by albedo (30%): 102 W m⁻². Absorbed: 238 W m⁻². Effective radiating temperature (from Stefan-Boltzmann): 255 K (−18°C). Actual surface temperature: 288 K (+15°C). Greenhouse effect: +33°C. Current anthropogenic imbalance: +0.3–0.9 W m⁻² (net heat gain, mostly into ocean).',
-          examples: 'CERES satellite: measures Earth\'s radiation budget continuously since 2000 · Moon comparison: no atmosphere, same distance from sun, but surface swings from 127°C (day) to −173°C (night) — no heat redistribution · Venus: runaway greenhouse effect, surface 465°C despite reflecting 70% of sunlight',
+          examples: `CERES satellite: measures Earth\'s radiation budget continuously since 2000 · Moon comparison: no atmosphere, same distance from sun, but surface swings from 127°C (day) to −173°C (night) — no heat redistribution · Venus: runaway greenhouse effect, surface 465°C despite reflecting 70% of sunlight`,
         },
         {
           name: 'Albedo and Climate Feedbacks',

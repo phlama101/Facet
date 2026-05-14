@@ -39,7 +39,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Rayleigh waves',
           ],
           correct: 1,
-          explain: 'P-waves (primary or compressional waves) propagate by alternating compression and dilation of the medium in the direction of travel. Because all three states of matter resist compression (have a non-zero bulk modulus), P-waves can travel through solids, liquids, and gases. This distinguishes them from S-waves, which require shear rigidity and therefore cannot travel through liquids. The ability of P-waves to pass through Earth\'s liquid outer core while S-waves cannot was the key observation that established the outer core\'s liquid state.',
+          explain: `P-waves (primary or compressional waves) propagate by alternating compression and dilation of the medium in the direction of travel. Because all three states of matter resist compression (have a non-zero bulk modulus), P-waves can travel through solids, liquids, and gases. This distinguishes them from S-waves, which require shear rigidity and therefore cannot travel through liquids. The ability of P-waves to pass through Earth\'s liquid outer core while S-waves cannot was the key observation that established the outer core\'s liquid state.`,
         },
         {
           q: 'What happens to seismic waves at the Mohorovičić discontinuity?',
@@ -61,10 +61,10 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Surface wave interference constructively cancels P-wave energy between 105° and 140°',
           ],
           correct: 0,
-          explain: 'As P-waves enter the liquid outer core, velocity drops sharply from ~13 km/s in the lowermost mantle to ~8 km/s in the outer core. By Snell\'s law, this velocity decrease causes refraction away from the normal, bending waves toward the Earth\'s axis. Waves entering the core at the critical angle emerge on the opposite side of Earth at angles > 140°. The zone between 105° (last direct mantle P-wave) and 140° (first refracted core P-wave) receives no P-wave energy — this is the shadow zone. Its discovery in the early 20th century was the first evidence that Earth has a liquid core.',
+          explain: `As P-waves enter the liquid outer core, velocity drops sharply from ~13 km/s in the lowermost mantle to ~8 km/s in the outer core. By Snell\'s law, this velocity decrease causes refraction away from the normal, bending waves toward the Earth\'s axis. Waves entering the core at the critical angle emerge on the opposite side of Earth at angles > 140°. The zone between 105° (last direct mantle P-wave) and 140° (first refracted core P-wave) receives no P-wave energy — this is the shadow zone. Its discovery in the early 20th century was the first evidence that Earth has a liquid core.`,
         },
         {
-          q: 'Which seismic wave type travels as horizontal shear motion and can only propagate along Earth\'s surface in the uppermost layers?',
+          q: `Which seismic wave type travels as horizontal shear motion and can only propagate along Earth\'s surface in the uppermost layers?`,
           a: [
             'Rayleigh waves',
             'Love waves',
@@ -75,7 +75,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
           explain: 'Love waves are surface waves that travel as horizontal transverse (shear) motion perpendicular to the direction of propagation, confined to the surface layers of the Earth. They require a velocity increase with depth to exist — they are essentially shear waves trapped by constructive interference in the surface layer. Love waves typically arrive before Rayleigh waves on a seismogram and produce the horizontal "shearing" ground motion that is particularly damaging to building foundations. They were theoretically described by A.E.H. Love in 1911. Love waves travel only in the horizontal plane; Rayleigh waves produce both vertical and horizontal (retrograde elliptical) motion.',
         },
         {
-          q: 'Inge Lehmann\'s 1936 discovery was based on seismic waves arriving in the P-wave shadow zone. What did she conclude?',
+          q: `Inge Lehmann\'s 1936 discovery was based on seismic waves arriving in the P-wave shadow zone. What did she conclude?`,
           a: [
             'The mantle is divided into upper and lower sections by a velocity discontinuity at 660 km',
             'Earth has a solid inner core that refracts P-waves into the shadow zone as PKIKP phases',
@@ -83,7 +83,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Deep-focus earthquakes occur in the transition zone between the upper and lower mantle',
           ],
           correct: 1,
-          explain: 'By carefully analysing seismograms from large earthquakes, Inge Lehmann noticed that small P-wave arrivals appeared within the shadow zone (105°–140°) where no P-waves were expected if Earth had only a uniform liquid outer core. She proposed in her 1936 paper "P\'" that these arrivals were P-waves that had been refracted by a solid inner core — the PKIKP phase (P-wave that travels through the outer core, reflects off the inner core boundary, travels through the inner core, and emerges on the far side). This correctly identified the inner core as a distinct solid body ~1,220 km in radius, confirmed by later studies of normal modes and inner core anisotropy.',
+          explain: `By carefully analysing seismograms from large earthquakes, Inge Lehmann noticed that small P-wave arrivals appeared within the shadow zone (105°–140°) where no P-waves were expected if Earth had only a uniform liquid outer core. She proposed in her 1936 paper "P\'" that these arrivals were P-waves that had been refracted by a solid inner core — the PKIKP phase (P-wave that travels through the outer core, reflects off the inner core boundary, travels through the inner core, and emerges on the far side). This correctly identified the inner core as a distinct solid body ~1,220 km in radius, confirmed by later studies of normal modes and inner core anisotropy.`,
         },
         // ── Chapter 2: Earthquake Mechanics ──────────────────────────────────
         {
@@ -139,7 +139,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Aftershocks migrated away from the Düzce segment due to the stress shadow effect',
           ],
           correct: 1,
-          explain: 'Coulomb stress transfer (ΔCFS = Δτ − μ\'Δσ_n) provides a physical mechanism for earthquake triggering. When a mainshock ruptures, it increases shear stress (Δτ > 0) and/or decreases normal (clamping) stress (Δσ_n < 0) on adjacent fault segments, bringing them closer to failure. The 1999 Izmit earthquake loaded the Düzce segment of the North Anatolian Fault; the positive ΔCFS of ~0.5–1 bar was estimated to advance its next rupture by decades. The Mw 7.2 Düzce earthquake 87 days later is one of the most compelling examples of mainshock-triggered secondary rupture through Coulomb stress transfer.',
+          explain: `Coulomb stress transfer (ΔCFS = Δτ − μ\'Δσ_n) provides a physical mechanism for earthquake triggering. When a mainshock ruptures, it increases shear stress (Δτ > 0) and/or decreases normal (clamping) stress (Δσ_n < 0) on adjacent fault segments, bringing them closer to failure. The 1999 Izmit earthquake loaded the Düzce segment of the North Anatolian Fault; the positive ΔCFS of ~0.5–1 bar was estimated to advance its next rupture by decades. The Mw 7.2 Düzce earthquake 87 days later is one of the most compelling examples of mainshock-triggered secondary rupture through Coulomb stress transfer.`,
         },
         // ── Chapter 3: Hazards and Risk Reduction ────────────────────────────
         {
@@ -162,7 +162,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'The earthquake triggered massive liquefaction of the lake-bed sediment, causing widespread subsidence',
           ],
           correct: 1,
-          explain: 'Mexico City\'s catastrophe is the canonical example of site resonance amplification. The city sits on soft clay from drained Lake Texcoco with shear-wave velocities as low as 60 m/s and thicknesses of 50–100 m. Natural period T = 4H/Vs ≈ 4 × 75 / 60 ≈ 5 s (0.2 Hz) to T = 2 s (0.5 Hz) for different areas. The Mw 8.1 Michoacán earthquake 350 km away generated strong surface waves at these exact periods. Mexico City\'s lake sediments amplified shaking 5–50× over nearby rock sites. Buildings of 8–15 storeys (natural period ~0.8–1.5 s) in the resonant frequency band experienced catastrophic collapse. Over 10,000 people died. The disaster became a landmark study in site effects and urban seismic risk.',
+          explain: `Mexico City\'s catastrophe is the canonical example of site resonance amplification. The city sits on soft clay from drained Lake Texcoco with shear-wave velocities as low as 60 m/s and thicknesses of 50–100 m. Natural period T = 4H/Vs ≈ 4 × 75 / 60 ≈ 5 s (0.2 Hz) to T = 2 s (0.5 Hz) for different areas. The Mw 8.1 Michoacán earthquake 350 km away generated strong surface waves at these exact periods. Mexico City\'s lake sediments amplified shaking 5–50× over nearby rock sites. Buildings of 8–15 storeys (natural period ~0.8–1.5 s) in the resonant frequency band experienced catastrophic collapse. Over 10,000 people died. The disaster became a landmark study in site effects and urban seismic risk.`,
         },
         {
           q: 'Which soil condition makes a site most susceptible to liquefaction?',
@@ -195,7 +195,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Speed decreases by exactly 50% from 200 m/s to 100 m/s',
           ],
           correct: 1,
-          explain: 'Tsunami phase speed follows v = √(g×d). If depth d decreases from 4,000 m to 2,000 m, the speed changes by √(2,000/4,000) = √(0.5) = 1/√2 ≈ 0.707. So speed decreases by factor √2: from √(9.8×4000) ≈ 198 m/s to √(9.8×2000) ≈ 140 m/s. This deceleration causes energy concentration and amplitude increase (shoaling). Note: the factor is exactly √2 ≈ 1.414, not 2 (speed doesn\'t halve when depth halves). This square-root relationship means tsunamis slow down relatively gradually in moderate depth changes but decelerate rapidly in shallow coastal waters.',
+          explain: `Tsunami phase speed follows v = √(g×d). If depth d decreases from 4,000 m to 2,000 m, the speed changes by √(2,000/4,000) = √(0.5) = 1/√2 ≈ 0.707. So speed decreases by factor √2: from √(9.8×4000) ≈ 198 m/s to √(9.8×2000) ≈ 140 m/s. This deceleration causes energy concentration and amplitude increase (shoaling). Note: the factor is exactly √2 ≈ 1.414, not 2 (speed doesn\'t halve when depth halves). This square-root relationship means tsunamis slow down relatively gradually in moderate depth changes but decelerate rapidly in shallow coastal waters.`,
         },
         {
           q: 'What is the "blind zone" in earthquake early warning systems?',
@@ -228,7 +228,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'The Fukushima nuclear accident occurred simultaneously, preventing emergency response',
           ],
           correct: 1,
-          explain: 'The Tōhoku tsunami\'s ~18,500 deaths resulted from several compounding factors: (1) near-source communities within the 20–30 km blind zone had only 15–20 minutes from initial shaking to first wave arrival — insufficient for full evacuation; (2) the initial JMA magnitude estimate (M 7.9) predicted 3–6 m waves; actual runup reached 15–40 m, overtopping seawalls designed for smaller historical tsunamis; (3) the Sendai Plain extends 10 km inland — unprecedented inundation distances cut off evacuation routes; (4) some community members trusted seawalls and did not evacuate, a behaviour called "tsunami complacency" from the period of no large Sanriku tsunamis since 1960. The disaster has since driven major improvements in EEW magnitude estimation, seawall design philosophy (resilience vs. protection), and evacuation culture.',
+          explain: `The Tōhoku tsunami\'s ~18,500 deaths resulted from several compounding factors: (1) near-source communities within the 20–30 km blind zone had only 15–20 minutes from initial shaking to first wave arrival — insufficient for full evacuation; (2) the initial JMA magnitude estimate (M 7.9) predicted 3–6 m waves; actual runup reached 15–40 m, overtopping seawalls designed for smaller historical tsunamis; (3) the Sendai Plain extends 10 km inland — unprecedented inundation distances cut off evacuation routes; (4) some community members trusted seawalls and did not evacuate, a behaviour called "tsunami complacency" from the period of no large Sanriku tsunamis since 1960. The disaster has since driven major improvements in EEW magnitude estimation, seawall design philosophy (resilience vs. protection), and evacuation culture.`,
         },
         {
           q: 'What geological evidence do paleoseismologists look for in trenches to identify past earthquake events?',

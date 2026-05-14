@@ -68,14 +68,14 @@ Beach morphology reflects the balance between wave energy input and sediment sup
           icon: Activity,
           color: BRAND.jade,
           desc: 'Wave quarrying at the cliff base creates a notch, then an overhang, then collapse. Cliff retreat rates range 0.01–2 m/yr depending on lithology. The wave-cut platform extends seaward as the cliff retreats; resistant rocks produce slower retreat.',
-          examples: 'Chalk cliffs of Dover retreat ~25 cm/yr; Holderness coast (unlithified glacial till) retreats ~2 m/yr — one of Europe\'s fastest eroding coastlines; Twelve Apostles sea stacks (Victoria, Australia) illustrate sea cave → arch → stack → stump progression.',
+          examples: `Chalk cliffs of Dover retreat ~25 cm/yr; Holderness coast (unlithified glacial till) retreats ~2 m/yr — one of Europe\'s fastest eroding coastlines; Twelve Apostles sea stacks (Victoria, Australia) illustrate sea cave → arch → stack → stump progression.`,
         },
         {
           name: 'Beach Dynamics and Equilibrium Profile',
           icon: Globe,
           color: BRAND.coral,
-          desc: 'Summer swell (low steepness) moves sand onshore, building the berm; winter storms (high steepness) strip the berm and deposit an offshore bar. Dean\'s equilibrium profile: h = Ax^(2/3). The beach face, surf zone, and offshore bar migrate seasonally.',
-          examples: 'Summer berm building at US Atlantic beaches; winter drawdown and bar formation during nor\'easters; Chesil Beach (England) shows coarse sediment grading from west to east by wave sorting.',
+          desc: `Summer swell (low steepness) moves sand onshore, building the berm; winter storms (high steepness) strip the berm and deposit an offshore bar. Dean\'s equilibrium profile: h = Ax^(2/3). The beach face, surf zone, and offshore bar migrate seasonally.`,
+          examples: `Summer berm building at US Atlantic beaches; winter drawdown and bar formation during nor\'easters; Chesil Beach (England) shows coarse sediment grading from west to east by wave sorting.`,
         },
         {
           name: 'Coastal Classification and Response to Sea Level Change',

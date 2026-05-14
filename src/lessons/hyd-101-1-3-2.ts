@@ -4,13 +4,13 @@ import type { Lesson } from './types'
 
 const groundwaterFlow: Lesson = {
   id: 'hyd-101-1-3-2',
-  title: 'Groundwater Flow, Darcy\'s Law, and Well Hydraulics',
+  title: `Groundwater Flow, Darcy\'s Law, and Well Hydraulics`,
   track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '13 min',
   xpReward: 130,
-  description: 'Darcy\'s Law and the cone of depression: the physics that governs groundwater movement',
+  description: `Darcy\'s Law and the cone of depression: the physics that governs groundwater movement`,
   sources: [
     { org: 'USGS', title: 'USGS — Groundwater Flow',                                                    url: 'https://www.usgs.gov/special-topics/water-science-school/science/groundwater-flow' },
     { org: 'USGS', title: 'USGS — Groundwater and Surface Water: A Single Resource',                    url: 'https://pubs.usgs.gov/circ/circ1139/' },
@@ -20,7 +20,7 @@ const groundwaterFlow: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Darcy\'s Law and the cone of depression: the physics that governs groundwater movement',
+      title: `Darcy\'s Law and the cone of depression: the physics that governs groundwater movement`,
       body: `Groundwater flow is governed by Darcy\'s Law, formulated by Henry Darcy in 1856 from experiments on sand filters in Dijon, France. Darcy observed that the volumetric flow rate (Q) through a porous medium is proportional to the cross-sectional area (A), the hydraulic gradient (dh/dl — the change in hydraulic head per unit distance in the flow direction), and the hydraulic conductivity of the material (K): Q = -K × A × (dh/dl). The negative sign indicates flow from high to low hydraulic head. Darcy flux (q = Q/A) has units of velocity (m/s) but represents volume flux per unit area, not the actual velocity of water molecules through pores (which is q/φ, where φ is effective porosity — typically 3–10× faster than the Darcy flux).
 
 Hydraulic head (h) is the mechanical energy per unit weight of groundwater, combining elevation head (z) and pressure head (ψ): h = z + ψ. In an unconfined aquifer, h equals the water table elevation. In a confined aquifer, h is the level to which water rises in a tightly cased piezometer — the potentiometric surface. Groundwater flows from areas of high head to low head, following the negative gradient of the head field. Flow nets — graphical solutions showing equipotential lines (equal head) and flow lines (perpendicular to equipotentials in isotropic media) — visualise regional groundwater flow patterns and were the primary analysis tool before numerical models.
@@ -151,7 +151,7 @@ Regional groundwater systems include gaining streams (where groundwater discharg
       type: 'quiz',
       questions: [
         {
-          q: 'According to Darcy\'s Law (Q = -KA dh/dl), what happens to groundwater discharge through a cross-section if the hydraulic gradient doubles while K and A remain constant?',
+          q: `According to Darcy\'s Law (Q = -KA dh/dl), what happens to groundwater discharge through a cross-section if the hydraulic gradient doubles while K and A remain constant?`,
           a: [
             'Discharge decreases by half because the gradient creates more resistance',
             'Discharge doubles because flow is proportional to the hydraulic gradient',
@@ -159,7 +159,7 @@ Regional groundwater systems include gaining streams (where groundwater discharg
             'Discharge stays the same because Darcy\'s Law only applies to steady-state conditions',
           ],
           correct: 1,
-          explain: 'Darcy\'s Law is a linear relationship: Q = -K × A × (dh/dl). Doubling the hydraulic gradient dh/dl while holding K (hydraulic conductivity) and A (cross-sectional area) constant doubles the discharge Q. This linear relationship holds for laminar flow through porous media, which applies for virtually all natural groundwater flow (Reynolds numbers << 10). It breaks down in karst conduits and very coarse gravels where turbulent flow occurs. The linear relationship is a key insight: it means that regional groundwater flow patterns scale predictably with the head gradient, and that pumping wells in aquifers with higher gradients to the well (steeper cones of depression) capture proportionally more water.',
+          explain: `Darcy\'s Law is a linear relationship: Q = -K × A × (dh/dl). Doubling the hydraulic gradient dh/dl while holding K (hydraulic conductivity) and A (cross-sectional area) constant doubles the discharge Q. This linear relationship holds for laminar flow through porous media, which applies for virtually all natural groundwater flow (Reynolds numbers << 10). It breaks down in karst conduits and very coarse gravels where turbulent flow occurs. The linear relationship is a key insight: it means that regional groundwater flow patterns scale predictably with the head gradient, and that pumping wells in aquifers with higher gradients to the well (steeper cones of depression) capture proportionally more water.`,
         },
         {
           q: 'What is a "cone of depression" and what factors control its size?',
@@ -170,7 +170,7 @@ Regional groundwater systems include gaining streams (where groundwater discharg
             'A conical groundwater mound that forms around an injection well, the inverse of a pumping cone',
           ],
           correct: 1,
-          explain: 'When a well pumps from an aquifer, it removes water faster than it can flow in from surrounding sediments, creating a localised drop in head called the cone of depression. The cone spreads outward over time as the head gradient steepens to drive more water toward the well. The cone\'s size is controlled by: (1) pumping rate Q — higher rate = larger cone; (2) transmissivity T — low T (tight aquifer) = steep, narrow cone; high T (productive aquifer) = shallow, wide cone; (3) storage coefficient S — low S (confined aquifer) = cone spreads rapidly; high S (unconfined) = cone spreads slowly. Multiple wells with overlapping cones of depression compete for the same groundwater — well interference that reduces individual well yields in densely developed aquifer systems.',
+          explain: `When a well pumps from an aquifer, it removes water faster than it can flow in from surrounding sediments, creating a localised drop in head called the cone of depression. The cone spreads outward over time as the head gradient steepens to drive more water toward the well. The cone\'s size is controlled by: (1) pumping rate Q — higher rate = larger cone; (2) transmissivity T — low T (tight aquifer) = steep, narrow cone; high T (productive aquifer) = shallow, wide cone; (3) storage coefficient S — low S (confined aquifer) = cone spreads rapidly; high S (unconfined) = cone spreads slowly. Multiple wells with overlapping cones of depression compete for the same groundwater — well interference that reduces individual well yields in densely developed aquifer systems.`,
         },
         {
           q: 'What is the hyporheic zone and why does it matter ecologically?',

@@ -96,7 +96,7 @@ Urbanisation profoundly alters the infiltration-runoff relationship. Impermeable
     {
       type: 'visualization',
       title: 'Rainfall to Runoff: Partitioning at the Soil Surface',
-      body: 'How a rainstorm\'s water is partitioned into overland flow, soil storage, subsurface flow, and deep drainage.',
+      body: `How a rainstorm\'s water is partitioned into overland flow, soil storage, subsurface flow, and deep drainage.`,
       interaction: {
         type: 'flow-simulator' as const,
         description: 'showing how rainfall at the soil surface is partitioned between Hortonian overland flow, soil moisture storage, saturation-excess runoff, and deep groundwater recharge depending on infiltration capacity and antecedent soil moisture',

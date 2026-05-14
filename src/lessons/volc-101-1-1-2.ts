@@ -51,14 +51,14 @@ The relationship between magma composition and eruption style has a simple rule 
           icon: Flame,
           color: BRAND.ruby,
           desc: 'Basalt (45–52% SiO₂): fluid, 1,000–1,300°C, viscosity 10–1,000 Pa·s, dark. Flows fast; effusive. Andesite (52–63%): intermediate, 800–1,000°C, moderate viscosity, grey. Mixed eruption styles. Dacite (63–68%): viscous, explosive, pale grey, dome-forming. Rhyolite (68–75%+): most viscous, 700–900°C (hot), viscosity 10⁸–10¹⁴ Pa·s, light-colored. Catastrophically explosive. Ultrabasic (kimberlite, komatiite): <45%, very fluid, rare, mostly ancient; some carry diamonds from mantle.',
-          examples: 'Basalt: Kīlauea 2018 LERZ (1.2 km³ lava, 700 homes destroyed, 0 explosive deaths), Piton de la Fournaise (Réunion, erupts annually), all mid-ocean ridges · Andesite: Merapi 2010 (VEI 4, 353 dead), Popocatépetl (Mexico, near Mexico City, 9 million people at risk) · Dacite: Mt. St. Helens 1980 (VEI 5, 57 dead, 600 km² devastated) · Rhyolite: Yellowstone (640 ka caldera, 1,000 km³), Taupo 26.5 ka (New Zealand\'s largest eruption, 530 km³)',
+          examples: `Basalt: Kīlauea 2018 LERZ (1.2 km³ lava, 700 homes destroyed, 0 explosive deaths), Piton de la Fournaise (Réunion, erupts annually), all mid-ocean ridges · Andesite: Merapi 2010 (VEI 4, 353 dead), Popocatépetl (Mexico, near Mexico City, 9 million people at risk) · Dacite: Mt. St. Helens 1980 (VEI 5, 57 dead, 600 km² devastated) · Rhyolite: Yellowstone (640 ka caldera, 1,000 km³), Taupo 26.5 ka (New Zealand\'s largest eruption, 530 km³)`,
         },
         {
           name: 'Viscosity Controls',
           icon: Globe,
           color: BRAND.jade,
           desc: 'SiO₂ content: dominant control; higher SiO₂ → more polymerisation → higher viscosity (10⁴× difference from basalt to rhyolite). Temperature: hotter = less viscous (cooling basalt 1200→900°C: viscosity up 1,000×). Dissolved water: H₂O breaks Si-O bonds → lower viscosity; subduction zone magmas higher H₂O → can erupt more explosively when water exsolves. Crystal content: crystals suspended in melt increase effective viscosity. CO₂: less effect on viscosity but critical for deep exsolution.',
-          examples: 'Kazumura Cave, Hawai\'i: world\'s longest lava tube at 65 km — possible only because basalt viscosity is low enough to flow that far before solidifying · Obsidian Cliff, Yellowstone: rhyolite quenched so rapidly that crystals never formed; obsidian tools were traded by Indigenous peoples across 1,500 km · Pumice from Pinatubo 1991: so vesicular it floated on the South China Sea for weeks after the eruption',
+          examples: `Kazumura Cave, Hawai\'i: world\'s longest lava tube at 65 km — possible only because basalt viscosity is low enough to flow that far before solidifying · Obsidian Cliff, Yellowstone: rhyolite quenched so rapidly that crystals never formed; obsidian tools were traded by Indigenous peoples across 1,500 km · Pumice from Pinatubo 1991: so vesicular it floated on the South China Sea for weeks after the eruption`,
         },
         {
           name: 'Volatile Exsolution and Explosivity',

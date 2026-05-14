@@ -45,7 +45,7 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
         },
         {
           term: 'exfoliation',
-          def: 'Formation of curved sheeting joints parallel to the rock surface, caused by stress release as overlying rock is removed by erosion and confining pressure decreases; responsible for features such as Yosemite\'s Half Dome.',
+          def: `Formation of curved sheeting joints parallel to the rock surface, caused by stress release as overlying rock is removed by erosion and confining pressure decreases; responsible for features such as Yosemite\'s Half Dome.`,
         },
         {
           term: 'laterite',
@@ -63,7 +63,7 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
           icon: Layers,
           color: BRAND.accent,
           desc: 'Mechanical disintegration without chemical change. Key mechanisms: freeze-thaw cycling (frost wedging), thermal expansion and contraction (thermoclasty), salt crystallisation (haloclasty), and pressure unloading (exfoliation). All increase rock surface area, amplifying subsequent chemical weathering.',
-          examples: 'Frost wedging drives alpine rockfalls in the Alps and Himalayas; thermal spalling produces ventifacts and desert pavements; pressure-release exfoliation creates domes like Yosemite\'s Half Dome and Stone Mountain, Georgia.',
+          examples: `Frost wedging drives alpine rockfalls in the Alps and Himalayas; thermal spalling produces ventifacts and desert pavements; pressure-release exfoliation creates domes like Yosemite\'s Half Dome and Stone Mountain, Georgia.`,
         },
         {
           name: 'Chemical Weathering: Hydrolysis and Carbonation',
@@ -99,7 +99,7 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
           {
             id: 'fresh-bedrock',
             label: 'Fresh Bedrock',
-            description: 'Intact, unweathered rock (granite, limestone, basalt). Primary minerals — quartz, feldspars, micas, carbonates — are thermodynamically unstable at Earth\'s surface. Permeability is low; chemical weathering is slow until fractures develop.',
+            description: `Intact, unweathered rock (granite, limestone, basalt). Primary minerals — quartz, feldspars, micas, carbonates — are thermodynamically unstable at Earth\'s surface. Permeability is low; chemical weathering is slow until fractures develop.`,
             color: BRAND.textDim,
           },
           {
@@ -129,7 +129,7 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
           {
             id: 'regolith-saprolite',
             label: 'Regolith / Saprolite',
-            description: 'The complete weathering mantle — from freshly fractured rock at the base to fully altered material at the surface. Saprolite retains the original rock\'s texture and fabric but is chemically transformed. Thickness ranges from centimetres in polar regions to 100+ m in humid tropics. Foundation for all terrestrial soils.',
+            description: `The complete weathering mantle — from freshly fractured rock at the base to fully altered material at the surface. Saprolite retains the original rock\'s texture and fabric but is chemically transformed. Thickness ranges from centimetres in polar regions to 100+ m in humid tropics. Foundation for all terrestrial soils.`,
             color: BRAND.amethyst,
           },
         ],

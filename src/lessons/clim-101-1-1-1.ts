@@ -13,8 +13,8 @@ const climateSystemOverview: Lesson = {
   description: "Earth's climate is not simply 'the weather' — it is a complex, coupled system of five interacting components: the atmosphere, hydrosphere, cryosphere, biosphere, and lithosphere. Understanding how energy flows between these components, what drives their natural variability, and how human activity perturbs the system is the foundation of climate science.",
   sources: [
     { org: 'NOAA',     title: 'NOAA Climate — The Climate System Components',                        url: 'https://www.climate.gov/teaching/essential-principles-climate-literacy/climate-system' },
-    { org: 'NASA',     title: 'NASA Global Climate Change — Earth\'s Energy Budget',                 url: 'https://climate.nasa.gov/vital-signs/energy-budget/' },
-    { org: 'OpenStax', title: 'Environmental Science — Earth\'s Climate System (CC-BY 4.0)',         url: 'https://openstax.org/books/environmental-science-ap' },
+    { org: 'NASA',     title: `NASA Global Climate Change — Earth\'s Energy Budget`,                 url: 'https://climate.nasa.gov/vital-signs/energy-budget/' },
+    { org: 'OpenStax', title: `Environmental Science — Earth\'s Climate System (CC-BY 4.0)`,         url: 'https://openstax.org/books/environmental-science-ap' },
     { org: 'NOAA',     title: 'NOAA Earth System Research Lab — Climate Feedbacks',                 url: 'https://www.esrl.noaa.gov' },
     { org: 'AGI',      title: 'Glossary of Geology — Climate System and Climate Variability',       url: 'https://www.americangeosciences.org/' },
   ],
@@ -64,7 +64,7 @@ Energy from the Sun drives the climate system. The solar constant (the flux of s
           icon: Thermometer,
           color: BRAND.gold,
           desc: 'Solar constant: 1,361 W/m². Effective insolation: 340 W/m² (÷4 for geometry). Planetary albedo: 0.30 → 100 W/m² reflected. Absorbed: ~240 W/m². Current imbalance: +0.87 W/m² (net warming). Planck feedback: primary negative — more warming → more LW emission to space. Water vapour feedback: positive — most powerful amplifier; doubles CO₂ warming. Ice-albedo: positive — ice loss → lower albedo → more warming. Cloud feedbacks: uncertain sign, largest uncertainty in climate sensitivity. Lapse rate feedback: negative (tropics), positive (polar). Net feedback = climate sensitivity; IPCC best estimate ECS = 3°C.',
-          examples: 'ECS 3°C: doubling CO₂ from 280→560 ppm causes 3°C equilibrium warming · Water vapour: amplifies CO₂ alone by ~2× · Polar amplification: Arctic warming ~4× global mean since 1979 · Earth\'s energy imbalance (EEI): measured by CERES satellite and Argo floats',
+          examples: `ECS 3°C: doubling CO₂ from 280→560 ppm causes 3°C equilibrium warming · Water vapour: amplifies CO₂ alone by ~2× · Polar amplification: Arctic warming ~4× global mean since 1979 · Earth\'s energy imbalance (EEI): measured by CERES satellite and Argo floats`,
         },
         {
           name: 'Internal Variability: ENSO and Decadal Modes',

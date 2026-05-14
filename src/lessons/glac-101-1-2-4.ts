@@ -33,7 +33,7 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
       keyTerms: [
         {
           term: 'grounding line',
-          def: 'The boundary where a grounded ice sheet transitions to a floating ice shelf; position governed by Archimedes\' principle — ice floats when its thickness is ~10/11 of the local water depth.',
+          def: `The boundary where a grounded ice sheet transitions to a floating ice shelf; position governed by Archimedes\' principle — ice floats when its thickness is ~10/11 of the local water depth.`,
         },
         {
           term: 'ice shelf buttressing',
@@ -63,7 +63,7 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
           icon: Layers,
           color: BRAND.accent,
           desc: 'Ice shelves form where glacier ice extends over the ocean and floats; they are in hydrostatic equilibrium with ~10% above water and ~90% submerged; fed by upstream glaciers and surface snow accumulation; lost by calving and basal melt.',
-          examples: 'Ross Ice Shelf (~500,000 km², ~200 m thick average) is the world\'s largest floating ice body — roughly the size of France. The Ronne-Filchner Ice Shelf (450,000 km²) in the Weddell Sea receives ice from both EAIS and WAIS outlet glaciers. Ice shelves are typically 100–1,000 m thick where they meet the grounding line, thinning to 100–300 m at the calving front.',
+          examples: `Ross Ice Shelf (~500,000 km², ~200 m thick average) is the world\'s largest floating ice body — roughly the size of France. The Ronne-Filchner Ice Shelf (450,000 km²) in the Weddell Sea receives ice from both EAIS and WAIS outlet glaciers. Ice shelves are typically 100–1,000 m thick where they meet the grounding line, thinning to 100–300 m at the calving front.`,
         },
         {
           name: 'The Grounding Line: Where Ice Meets Ocean',
@@ -77,7 +77,7 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
           icon: Activity,
           color: BRAND.coral,
           desc: 'On retrograde beds (deepening inland), grounding line retreat is unstable — thicker ice flux at the new grounding line exceeds the flux it can sustain, driving further retreat without additional forcing; theoretical prediction by Weertman (1974) confirmed by observations.',
-          examples: 'Thwaites\' East Thwaites Ice Shelf grounding line retreated onto a retrograde sill in 2019 — a potential MISI trigger. Schoof (2007) and Gudmundsson (2013) extended Weertman\'s model to include ice streams and buttressing effects. Models suggest Thwaites grounding line could retreat 100+ km into the deep WAIS basin within decades if MISI is underway.',
+          examples: `Thwaites\' East Thwaites Ice Shelf grounding line retreated onto a retrograde sill in 2019 — a potential MISI trigger. Schoof (2007) and Gudmundsson (2013) extended Weertman\'s model to include ice streams and buttressing effects. Models suggest Thwaites grounding line could retreat 100+ km into the deep WAIS basin within decades if MISI is underway.`,
         },
         {
           name: 'Marine Ice Cliff Instability (MICI) and Tipping Points',
@@ -191,7 +191,7 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
           explain: `Ice shelves lose mass by: (1) calving — the periodic detachment of icebergs at the calving front; (2) basal melting — ocean heat fluxed to the ice shelf bottom through cavity circulation; and (3) surface processes (melt, sublimation) — minor for most Antarctic shelves. In West Antarctica, basal melting by intrusion of warm Circumpolar Deep Water (CDW, +1.5°C above freezing point) is the dominant thinning mechanism. Basal melt rates under Pine Island Glacier\'s ice shelf reach ~100 m/yr; under Thwaites ~70 m/yr. This is 10–100× higher than calving flux and >1,000× higher than surface processes. Conversely, on the Antarctic Peninsula (Larsen shelves), surface melt and hydrofracture (meltwater penetrating crevasses and wedging them open) drove the Larsen A (1995) and B (2002) collapses, as warm summer air temperatures exceeded the −9°C annual mean threshold for ice shelf viability.`,
         },
         {
-          q: 'Why is Thwaites Glacier in West Antarctica sometimes called the \'Doomsday Glacier\'?',
+          q: `Why is Thwaites Glacier in West Antarctica sometimes called the \'Doomsday Glacier\'?`,
           a: [
             'It is the largest glacier in Antarctica and contains more ice than any other single glacier',
             'Its potential collapse could trigger broader WAIS destabilisation: the glacier alone contains ~0.5 m of sea level equivalent, and its loss could raise sea level by ~3.3 m (the full WAIS contribution) through dynamic effects',

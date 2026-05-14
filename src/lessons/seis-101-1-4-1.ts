@@ -10,7 +10,7 @@ const probabilisticSeismicHazard: Lesson = {
   level: 'Beginner',
   duration: '14 min',
   xpReward: 150,
-  description: 'How do engineers decide how strong a building must be to survive earthquakes that haven\'t happened yet? Probabilistic Seismic Hazard Analysis (PSHA) transforms centuries of fault data and ground-motion physics into design-ready probabilities, revealing which communities face the greatest long-term risk and why the "Big One" might not be the most important earthquake to prepare for.',
+  description: `How do engineers decide how strong a building must be to survive earthquakes that haven\'t happened yet? Probabilistic Seismic Hazard Analysis (PSHA) transforms centuries of fault data and ground-motion physics into design-ready probabilities, revealing which communities face the greatest long-term risk and why the "Big One" might not be the most important earthquake to prepare for.`,
   sources: [
     { org: 'USGS', title: 'USGS — National Seismic Hazard Model (NSHM) 2023', url: 'https://earthquake.usgs.gov/hazards/hazmaps/' },
     { org: 'USGS', title: 'USGS — ShakeMap Science and Technology', url: 'https://earthquake.usgs.gov/data/shakemap/' },
@@ -108,7 +108,7 @@ The cornerstone of PSHA is the **hazard curve**: a graph plotting annual probabi
           icon: TrendingUp,
           color: BRAND.jade,
           desc: 'ASCE 7 (American Society of Civil Engineers) and IBC (International Building Code) convert NSHM hazard maps into site-class-adjusted design spectra. The MCE_R (Risk-Targeted Maximum Considered Earthquake) level targets a 1% collapse probability in 50 years for code-conforming buildings.',
-          examples: 'A hospital in Seattle (Site Class D) must be designed for spectral accelerations derived from the 2,475-year hazard, further adjusted for soil amplification. Equivalent demand in Tokyo uses Japan\'s Level 2 spectrum from a similar PSHA framework.',
+          examples: `A hospital in Seattle (Site Class D) must be designed for spectral accelerations derived from the 2,475-year hazard, further adjusted for soil amplification. Equivalent demand in Tokyo uses Japan\'s Level 2 spectrum from a similar PSHA framework.`,
         },
         {
           name: 'ShakeMap and PSHA Validation',
@@ -160,7 +160,7 @@ The cornerstone of PSHA is the **hazard curve**: a graph plotting annual probabi
           {
             id: 'design-spectrum',
             label: 'Design Spectrum (UHS)',
-            description: 'The Uniform Hazard Spectrum assembles the target spectral acceleration at each structural period (0.1–4 s) at the chosen probability level. Engineers use this spectrum to size beams, columns, and isolation systems for the building\'s natural period.',
+            description: `The Uniform Hazard Spectrum assembles the target spectral acceleration at each structural period (0.1–4 s) at the chosen probability level. Engineers use this spectrum to size beams, columns, and isolation systems for the building\'s natural period.`,
             color: BRAND.accent,
           },
         ],
@@ -207,7 +207,7 @@ The cornerstone of PSHA is the **hazard curve**: a graph plotting annual probabi
             'It provides a decision tree for emergency managers to choose between evacuation and shelter-in-place responses',
           ],
           correct: 1,
-          explain: 'B is correct: PSHA distinguishes between aleatory uncertainty (inherent randomness, captured by GMPE sigma) and epistemic uncertainty (scientific disagreement about the correct model). Logic trees address epistemic uncertainty by assigning weights to alternative plausible models — different fault geometries, maximum magnitudes, slip rates, and GMPE families. The hazard is computed separately for each branch combination, and results are combined as a weighted mean and fractile distribution. A is wrong: the logic tree does not blend return periods. C is wrong: aleatory uncertainty is handled within each GMPE\'s sigma, not by the logic tree. D is wrong: the logic tree is a scientific tool, not an emergency response protocol.',
+          explain: `B is correct: PSHA distinguishes between aleatory uncertainty (inherent randomness, captured by GMPE sigma) and epistemic uncertainty (scientific disagreement about the correct model). Logic trees address epistemic uncertainty by assigning weights to alternative plausible models — different fault geometries, maximum magnitudes, slip rates, and GMPE families. The hazard is computed separately for each branch combination, and results are combined as a weighted mean and fractile distribution. A is wrong: the logic tree does not blend return periods. C is wrong: aleatory uncertainty is handled within each GMPE\'s sigma, not by the logic tree. D is wrong: the logic tree is a scientific tool, not an emergency response protocol.`,
         },
         {
           q: 'A PSHA deaggregation for a site in Los Angeles at the 475-year return period shows that M 6.5–7.0 events at 10–30 km dominate the hazard, while the San Andreas fault (M 7.8, 60 km away) contributes only 15%. Why might the San Andreas contribute so little despite its larger magnitude?',

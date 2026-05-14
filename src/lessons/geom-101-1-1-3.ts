@@ -35,7 +35,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
         },
         {
           term: 'Mohr-Coulomb Failure',
-          def: 'Shear strength criterion τ = c + σ\'tanφ; failure occurs when applied shear stress exceeds cohesion plus frictional resistance on the failure plane.',
+          def: `Shear strength criterion τ = c + σ\'tanφ; failure occurs when applied shear stress exceeds cohesion plus frictional resistance on the failure plane.`,
         },
         {
           term: 'Debris Flow',
@@ -67,7 +67,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
           name: 'Factor of Safety and Slope Stability',
           icon: Layers,
           color: BRAND.jade,
-          desc: 'FS = τ_resisting / τ_driving. Resisting forces depend on cohesion (c), friction angle (φ), and effective normal stress (σ\' = σ − u). Rainfall raises pore pressure u, reducing σ\' and shear strength while slope geometry (driving stress) is unchanged — FS decreases toward failure. Engineering slopes are designed to FS ≥ 1.3–1.5.',
+          desc: `FS = τ_resisting / τ_driving. Resisting forces depend on cohesion (c), friction angle (φ), and effective normal stress (σ\' = σ − u). Rainfall raises pore pressure u, reducing σ\' and shear strength while slope geometry (driving stress) is unchanged — FS decreases toward failure. Engineering slopes are designed to FS ≥ 1.3–1.5.`,
           examples: '2014 Oso, Washington: weeks of above-normal rainfall saturated glacial outwash deposits; FS dropped below 1 producing a debris avalanche that killed 43 and buried 1 km² of valley floor in seconds. Post-failure analysis showed the deposit had low residual friction angle (~20°).',
         },
         {
@@ -82,7 +82,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
           icon: ArrowRight,
           color: BRAND.gold,
           desc: 'Water-saturated debris moves as a viscous slurry at 1–30 m/s; pressure surges and boulders in the flow front cause structural destruction. Lahars (volcanic debris flows) incorporate ash and hydrothermally altered material and can travel 100+ km. Alluvial fans mark past deposition zones and define future hazard footprints.',
-          examples: '1985 Nevado del Ruiz lahar buried Armero, Colombia, killing ~23,000 — the deadliest volcanic disaster of the 20th century. Hong Kong\'s 1976 rainstorm triggered hundreds of debris flows killing 18 people, directly driving the establishment of the Geotechnical Engineering Office (GEO) and systematic slope safety programmes.',
+          examples: `1985 Nevado del Ruiz lahar buried Armero, Colombia, killing ~23,000 — the deadliest volcanic disaster of the 20th century. Hong Kong\'s 1976 rainstorm triggered hundreds of debris flows killing 18 people, directly driving the establishment of the Geotechnical Engineering Office (GEO) and systematic slope safety programmes.`,
         },
       ],
     },
@@ -103,7 +103,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
           {
             id: 'pore-pressure',
             label: 'Pore Pressure Increase',
-            description: 'Rising pore pressure u reduces effective normal stress σ\' = σ − u. By the Mohr-Coulomb equation τ = c + σ\'tanφ, lower σ\' means lower shear strength on the failure plane. The Factor of Safety (FS) begins declining toward 1.',
+            description: `Rising pore pressure u reduces effective normal stress σ\' = σ − u. By the Mohr-Coulomb equation τ = c + σ\'tanφ, lower σ\' means lower shear strength on the failure plane. The Factor of Safety (FS) begins declining toward 1.`,
             color: BRAND.jade,
           },
           {

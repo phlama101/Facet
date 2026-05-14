@@ -10,7 +10,7 @@ const groundwaterDepletionContamination: Lesson = {
   level: 'Beginner',
   duration: '14 min',
   xpReward: 150,
-  description: 'Beneath our feet, the world\'s largest reserve of liquid freshwater is being depleted and poisoned faster than it can recover. From the shrinking Ogallala Aquifer under the American Great Plains to arsenic in Bangladesh\'s drinking wells and PFAS "forever chemicals" spreading silently through suburban aquifers, this lesson explores the hidden crisis threatening the water supply of billions.',
+  description: `Beneath our feet, the world\'s largest reserve of liquid freshwater is being depleted and poisoned faster than it can recover. From the shrinking Ogallala Aquifer under the American Great Plains to arsenic in Bangladesh\'s drinking wells and PFAS "forever chemicals" spreading silently through suburban aquifers, this lesson explores the hidden crisis threatening the water supply of billions.`,
   sources: [
     { org: 'USGS',  title: 'USGS — Groundwater Depletion in the United States',                          url: 'https://pubs.usgs.gov/sir/2013/5079/' },
     { org: 'NASA',  title: 'NASA GRACE-FO — Groundwater Monitoring',                                     url: 'https://grace.jpl.nasa.gov/applications/groundwater/' },
@@ -36,7 +36,7 @@ Groundwater contamination takes multiple forms. **Arsenic** released from aquife
         },
         {
           term: 'Land Subsidence',
-          def: 'Irreversible compaction and sinking of the ground surface caused by removal of groundwater from clay-rich aquifer sediments. Jakarta has subsided 4 m; California\'s Central Valley up to 9 m.',
+          def: `Irreversible compaction and sinking of the ground surface caused by removal of groundwater from clay-rich aquifer sediments. Jakarta has subsided 4 m; California\'s Central Valley up to 9 m.`,
         },
         {
           term: 'Geogenic Contamination',
@@ -205,7 +205,7 @@ Groundwater contamination takes multiple forms. **Arsenic** released from aquife
             'Subsidence occurs because wells introduce surface air into aquifers, oxidising organic matter in sediments and releasing CO₂ that escapes upward, leaving voids that collapse',
           ],
           correct: 1,
-          explain: 'A describes karst sinkhole collapse, which is a different mechanism; groundwater extraction-driven subsidence in alluvial aquifers does not involve cave-roof collapse. B is correct: in a saturated sediment, the weight of overlying material is supported partly by the solid grain skeleton and partly by pore water pressure. When pumping reduces pore pressure, effective stress on grains increases. Coarse sediments (sand and gravel) deform elastically — they compress slightly under stress and rebound when stress is released. Fine-grained clays and silts have a plastic response: platelet rearrangement under increased stress is permanent and does not reverse when water returns. Clay layers may constitute only 10–20% of aquifer thickness but contribute 80–90% of total subsidence. Jakarta\'s 4 m and California\'s Central Valley\'s 9 m subsidences both resulted from this inelastic clay compaction. C and D are physically incorrect mechanisms.',
+          explain: `A describes karst sinkhole collapse, which is a different mechanism; groundwater extraction-driven subsidence in alluvial aquifers does not involve cave-roof collapse. B is correct: in a saturated sediment, the weight of overlying material is supported partly by the solid grain skeleton and partly by pore water pressure. When pumping reduces pore pressure, effective stress on grains increases. Coarse sediments (sand and gravel) deform elastically — they compress slightly under stress and rebound when stress is released. Fine-grained clays and silts have a plastic response: platelet rearrangement under increased stress is permanent and does not reverse when water returns. Clay layers may constitute only 10–20% of aquifer thickness but contribute 80–90% of total subsidence. Jakarta\'s 4 m and California\'s Central Valley\'s 9 m subsidences both resulted from this inelastic clay compaction. C and D are physically incorrect mechanisms.`,
         },
         {
           q: 'The Bangladesh arsenic crisis affected approximately 50 million people. What is the source of this arsenic and what triggered its release?',
@@ -238,7 +238,7 @@ Groundwater contamination takes multiple forms. **Arsenic** released from aquife
             'MAR is only beneficial in limestone karst aquifers; in alluvial aquifers like Orange County\'s, the main purpose is contamination dilution rather than water supply augmentation',
           ],
           correct: 0,
-          explain: 'A is correct: managed aquifer recharge offers multiple advantages over surface storage. (1) Evaporation: surface reservoirs in California lose 0.5–2 m/yr to evaporation; underground storage loses essentially none. (2) Water quality improvement: as water percolates through unsaturated soils (soil-aquifer treatment), pathogens, organic compounds, and some nutrients are removed through filtration, adsorption, and biodegradation — this is part of Orange County\'s purification train. (3) Drought resilience: aquifer storage can hold water for years without loss; reservoirs evaporate and cannot hold rain years\' water for decade-scale droughts. (4) Saltwater barrier: maintaining positive freshwater head in coastal aquifers through injection prevents saltwater intrusion. Orange County\'s Water Factory 21 / GWRS system purifies secondary-treated wastewater to near-distilled quality using reverse osmosis and advanced oxidation for aquifer injection. B is physically impossible (gravity-fed infiltration generates no electricity). C is oversimplified; costs depend on site conditions. D is wrong: alluvial aquifers are ideal for MAR.',
+          explain: `A is correct: managed aquifer recharge offers multiple advantages over surface storage. (1) Evaporation: surface reservoirs in California lose 0.5–2 m/yr to evaporation; underground storage loses essentially none. (2) Water quality improvement: as water percolates through unsaturated soils (soil-aquifer treatment), pathogens, organic compounds, and some nutrients are removed through filtration, adsorption, and biodegradation — this is part of Orange County\'s purification train. (3) Drought resilience: aquifer storage can hold water for years without loss; reservoirs evaporate and cannot hold rain years\' water for decade-scale droughts. (4) Saltwater barrier: maintaining positive freshwater head in coastal aquifers through injection prevents saltwater intrusion. Orange County\'s Water Factory 21 / GWRS system purifies secondary-treated wastewater to near-distilled quality using reverse osmosis and advanced oxidation for aquifer injection. B is physically impossible (gravity-fed infiltration generates no electricity). C is oversimplified; costs depend on site conditions. D is wrong: alluvial aquifers are ideal for MAR.`,
         },
       ],
     },

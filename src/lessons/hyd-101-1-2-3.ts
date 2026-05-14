@@ -10,7 +10,7 @@ const fluvialGeomorphology: Lesson = {
   level: 'Beginner',
   duration: '12 min',
   xpReward: 120,
-  description: 'Hjulström\'s diagram, Lane\'s balance, meanders and braids: the dynamic geometry of rivers',
+  description: `Hjulström\'s diagram, Lane\'s balance, meanders and braids: the dynamic geometry of rivers`,
   sources: [
     { org: 'USGS', title: 'USGS — Rivers, Streams, and Creeks',                          url: 'https://www.usgs.gov/special-topics/water-science-school/science/rivers-streams-and-creeks' },
     { org: 'USGS', title: 'USGS — Channel Processes and Geomorphology',                  url: 'https://www.usgs.gov/centers/gecsc/science/channel-processes-geomorphology' },
@@ -20,7 +20,7 @@ const fluvialGeomorphology: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Hjulström\'s diagram, Lane\'s balance, meanders and braids: the dynamic geometry of rivers',
+      title: `Hjulström\'s diagram, Lane\'s balance, meanders and braids: the dynamic geometry of rivers`,
       body: `Rivers simultaneously erode, transport, and deposit sediment, sculpting valleys and floodplains over timescales from days to millennia. The fundamental control is the balance between the energy available in flowing water (governed by discharge and slope) and the resistance of the bed and banks (governed by sediment size, cohesion, and vegetation). When energy exceeds resistance, erosion occurs; when transport capacity falls below sediment supply, deposition occurs; balanced conditions produce a graded, stable channel.
 
 The Hjulström diagram (1935) plots flow velocity versus grain size and defines three fields: erosion (velocity high enough to entrain particles), transport (velocity sufficient to keep particles moving but not entrain new ones), and deposition (velocity too low to move particles). Paradoxically, clay and silt require higher velocities to erode than fine sand because cohesion and electrostatic forces between clay particles must be overcome. Once clay is eroded and suspended, however, it settles only at very low velocities. Bedload (coarse sand, gravel, cobbles rolling and saltating along the bed) and suspended load (fine sand, silt, clay carried in the water column) respond to flow differently and transport at different concentrations.
@@ -89,7 +89,7 @@ Channel planform varies systematically with slope and sediment supply. Meanderin
           icon: Globe,
           color: BRAND.amethyst,
           desc: 'Flat land flanking a channel, built and periodically inundated by overbank floods. Contains oxbow lakes, point bar deposits, and backswamp clays.',
-          examples: 'Mississippi floodplain: up to 100 km wide in places. Supports 12 million people and some of North America\'s most productive farmland.',
+          examples: `Mississippi floodplain: up to 100 km wide in places. Supports 12 million people and some of North America\'s most productive farmland.`,
         },
       ],
     },
@@ -134,7 +134,7 @@ Channel planform varies systematically with slope and sediment supply. Meanderin
           {
             id: 'floodplain-deposit',
             label: 'Floodplain Sequence',
-            description: 'Repeated cut-off and migration events build the floodplain: interbedded point-bar sands, overbank silts, oxbow lake clays. Record of river\'s lateral migration preserved in stratigraphy.',
+            description: `Repeated cut-off and migration events build the floodplain: interbedded point-bar sands, overbank silts, oxbow lake clays. Record of river\'s lateral migration preserved in stratigraphy.`,
             color: BRAND.amethyst,
           },
         ],
@@ -162,7 +162,7 @@ Channel planform varies systematically with slope and sediment supply. Meanderin
           explain: 'The Hjulström diagram reveals an apparent paradox: fine sediments (clay, silt) require higher flow velocities to initiate erosion than medium sand, even though they are lighter. The reason is cohesion: clay minerals carry negative surface charges and adsorb cations from porewater, creating strong electrostatic and van der Waals forces between adjacent particles. Clay beds are effectively "glued together" and require significant shear stress to disrupt. Once eroded, however, clay particles are so fine that they remain in suspension at very low velocities (< 1 cm/s). This means that clay-rich floodplains and estuarine muds are resistant to initial erosion but, once disturbed, transport clay far into the ocean as turbid plumes.',
         },
         {
-          q: 'What does Lane\'s balance equation (Q_s × D₅₀ ∝ Q_w × S) predict about channel behaviour when a dam is built upstream?',
+          q: `What does Lane\'s balance equation (Q_s × D₅₀ ∝ Q_w × S) predict about channel behaviour when a dam is built upstream?`,
           a: [
             'The channel will aggrade (fill with sediment) immediately downstream of the dam as sediment accumulates behind the structure',
             'The channel will degrade (incise into its bed) because the dam traps sediment (reducing Q_s) while releasing relatively clear water that still has erosional capacity',
@@ -170,7 +170,7 @@ Channel planform varies systematically with slope and sediment supply. Meanderin
             'The channel will steepen its gradient in the years after dam construction, increasing flood risk at downstream communities',
           ],
           correct: 1,
-          explain: 'Lane\'s balance tells us that Q_s × D₅₀ must balance Q_w × S. When a dam is built, it traps most of the sediment that would normally flow downstream (Q_s decreases dramatically), but releases nearly the same water (Q_w is roughly maintained). To re-establish balance, the channel must reduce Q_w × S — since water cannot be reduced, the channel must reduce slope (S) by incising into its bed. The clear, sediment-free water released from the dam has excess energy and picks up bed sediment to compensate for the missing supply. This downstream channel degradation has occurred below most major dams worldwide: the Colorado River degraded 7.5 m below Hoover Dam over 14 years, and similar patterns occur below the Three Gorges Dam on the Yangtze.',
+          explain: `Lane\'s balance tells us that Q_s × D₅₀ must balance Q_w × S. When a dam is built, it traps most of the sediment that would normally flow downstream (Q_s decreases dramatically), but releases nearly the same water (Q_w is roughly maintained). To re-establish balance, the channel must reduce Q_w × S — since water cannot be reduced, the channel must reduce slope (S) by incising into its bed. The clear, sediment-free water released from the dam has excess energy and picks up bed sediment to compensate for the missing supply. This downstream channel degradation has occurred below most major dams worldwide: the Colorado River degraded 7.5 m below Hoover Dam over 14 years, and similar patterns occur below the Three Gorges Dam on the Yangtze.`,
         },
         {
           q: 'What physical process drives lateral meander migration?',

@@ -92,7 +92,7 @@ The ridge system was first identified as a continuous global structure by Marie 
           icon: Waves,
           color: BRAND.accent,
           desc: 'Chemosynthesis drives vent food webs instead of photosynthesis. Bacteria and Archaea oxidise H₂S → organic carbon. Tubeworms (Riftia pachyptila): up to 2 m long, no mouth or gut, feed entirely via chemosynthetic symbionts in trophosome. Giant clams, mussels, shrimp, crabs, eelpout fish. Individual vent lifespan: decades to centuries. Species disperse across ocean basins via bottom currents between active vents.',
-          examples: 'Riftia pachyptila: growth rate up to 85 cm/yr, world\'s fastest animal growth · Yeti crab: "farms" bacterial mats on its hairy claws · 700+ species unique to hydrothermal vents globally',
+          examples: `Riftia pachyptila: growth rate up to 85 cm/yr, world\'s fastest animal growth · Yeti crab: "farms" bacterial mats on its hairy claws · 700+ species unique to hydrothermal vents globally`,
         },
       ],
     },
@@ -142,7 +142,7 @@ The ridge system was first identified as a continuous global structure by Marie 
           explain: 'The names are not simply a mapping distinction (A) — they describe genuinely different structural and seismic characteristics of the same underlying fracture. Transform faults are not vertical offsets (C) — they are strike-slip (horizontal) faults, and fracture zones are not confined to opposite-direction spreading. Coriolis effects (D) do not create transform faults — the mechanism is the differential spreading along a curved ridge axis, which requires lateral accommodation regardless of hemisphere. The correct answer is B: at a transform fault, the two segments of ridge on either side are offset along the fracture, and the crust between the two ridge segments is moving in opposite directions (away from each respective ridge); this creates a right-lateral or left-lateral strike-slip motion between the two plates, producing shallow earthquakes; beyond the ridge offsets, on either side, both sides of the fracture are on the same plate moving in the same direction (both moving away from their respective ridges), so there is no relative motion across the fault — making it seismically inactive; these inactive extensions are fracture zones and can be traced as visible scarps across thousands of kilometres of ocean floor.',
         },
         {
-          q: 'Hydrothermal circulation at mid-ocean ridges is described as processing the entire volume of the world\'s ocean every 8–10 million years. What does this mean for the chemical composition of seawater over geological time?',
+          q: `Hydrothermal circulation at mid-ocean ridges is described as processing the entire volume of the world\'s ocean every 8–10 million years. What does this mean for the chemical composition of seawater over geological time?`,
           a: [
             'It means the ocean becomes progressively saltier over time, because hydrothermal vents add dissolved metals and salts faster than any removal process can extract them; over millions of years, seawater salinity is slowly increasing',
             'It means the deep ocean is heated to near-boiling temperatures by hydrothermal activity; the 8–10 million year cycling timescale is how long it takes for this heat to distribute through the water column and warm the entire ocean',

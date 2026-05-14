@@ -61,7 +61,7 @@ The world\'s most iconic landscapes bear the unmistakable signature of glacial e
           icon: Layers,
           color: BRAND.accent,
           desc: 'abrasion — debris entrained in basal ice acts as sandpaper, grinding bedrock into smooth polished surfaces and producing rock flour; plucking — basal meltwater refreezes in rock joints, and hydraulic pressure lifts and quarries joint blocks, creating rough, jagged downstream faces',
-          examples: 'Polished roches moutonnées have smooth stoss (upstream) faces from abrasion and rough, plucked lee (downstream) faces. Rock flour (0.001–0.1 mm particles) produced by abrasion creates the turquoise \'glacial milk\' colour of proglacial lakes. Norwegian fjords show polished bedrock walls from intense abrasion during the Last Glacial Maximum.',
+          examples: `Polished roches moutonnées have smooth stoss (upstream) faces from abrasion and rough, plucked lee (downstream) faces. Rock flour (0.001–0.1 mm particles) produced by abrasion creates the turquoise \'glacial milk\' colour of proglacial lakes. Norwegian fjords show polished bedrock walls from intense abrasion during the Last Glacial Maximum.`,
         },
         {
           name: 'Cirques, Arêtes, and Horns',
@@ -197,7 +197,7 @@ The world\'s most iconic landscapes bear the unmistakable signature of glacial e
             'Hanging valleys form when main valley glaciers deposit moraines that dam and elevate tributary valleys',
           ],
           correct: 1,
-          explain: 'In a glaciated mountain system, the trunk (main valley) glacier is much thicker and more erosionally powerful than its tributaries. The trunk glacier erodes its valley floor to a much lower elevation than the tributary glaciers erode theirs. The surface of each glacier was near the same level (tributaries fed ice into the trunk at the ice surface), but the depth of erosion was proportional to ice thickness and velocity. After deglaciation, the main valley floor has been eroded much deeper than the tributary floors, which now \'hang\' above the main valley at their pre-glacial level relative to the trough floor. The mismatch in elevation is bridged by waterfalls — Bridalveil Fall (189 m) and Yosemite Falls (739 m) in Yosemite Valley are iconic examples. The height of hanging valleys directly records the differential erosion between trunk and tributary glaciers.',
+          explain: `In a glaciated mountain system, the trunk (main valley) glacier is much thicker and more erosionally powerful than its tributaries. The trunk glacier erodes its valley floor to a much lower elevation than the tributary glaciers erode theirs. The surface of each glacier was near the same level (tributaries fed ice into the trunk at the ice surface), but the depth of erosion was proportional to ice thickness and velocity. After deglaciation, the main valley floor has been eroded much deeper than the tributary floors, which now \'hang\' above the main valley at their pre-glacial level relative to the trough floor. The mismatch in elevation is bridged by waterfalls — Bridalveil Fall (189 m) and Yosemite Falls (739 m) in Yosemite Valley are iconic examples. The height of hanging valleys directly records the differential erosion between trunk and tributary glaciers.`,
         },
       ],
     },

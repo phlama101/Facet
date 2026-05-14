@@ -21,7 +21,7 @@ const volcanicLandformsLesson: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'A volcano\'s shape tells its story',
+      title: `A volcano\'s shape tells its story`,
       body: `No two volcanoes look exactly alike — and this variety is not random. The shape of a volcanic edifice is a direct physical consequence of eruption style, magma composition, and the balance between construction (lava and tephra added) and destruction (erosion, collapse). A gentle, broad shield volcano with slopes of 2–5° broadcasts its nature immediately: low-viscosity basaltic magma, effusive eruptions, a long history of lava flows accumulating at low angles. A steep-sided stratovolcano rising to 3,000 metres at a 30° angle says something completely different: high-viscosity andesitic or dacitic magma, alternating explosive and effusive eruptions, alternating layers of lava and pyroclastic material that build a composite cone over thousands of years.
 
 The diversity of volcanic landforms also reflects the diversity of volcanic settings. Mid-ocean ridges produce **pillow basalts** — the most abundant volcanic rock on Earth — by submarine effusive eruption. Hotspot systems beneath oceanic plates build enormous **shield volcanoes** that can grow to heights of 10,000 metres from the seafloor (Mauna Loa is taller than Mt. Everest if measured from its base on the ocean floor). Subduction zone arcs produce the classic **stratovolcanoes** (composite cones) that most people picture when they think of volcanoes: Fuji, Rainier, Shasta, Merapi, Pinatubo, Popocatépetl. Continental hotspot systems produce the most dangerous volcanic landforms of all: **calderas** — collapsed craters formed by the catastrophic emptying of a shallow magma reservoir during a supervolcanic eruption.
@@ -67,7 +67,7 @@ Understanding volcanic landform types is one of the first skills a volcanologist
           icon: Globe,
           color: BRAND.jade,
           desc: 'Lava dome: dacite/rhyolite, too viscous to flow, piles up at vent, endogenous+exogenous growth, unstable flanks collapse → block-and-ash flows (PDC). Monitoring: GPS, seismicity, thermal cameras detect dome growth. Volcanic field: hundreds of monogenetic vents (cinder cones, maars, shields) over wide area; eruption can occur anywhere in field. Auckland: 53 volcanoes over 360 km², beneath 1.7 million people, last eruption 550 yr ago.',
-          examples: 'Mt. St. Helens dome: 1980–86 original + 2004–08 renewed growth (150 m/hr) · Soufrière Hills, Montserrat 1997: dome collapse → block-and-ash flows buried Plymouth · Maar: Ukinrek Maars (Alaska) formed in 1977 in 10 days from phreatomagmatic explosions; Eifel Maars (Germany) contain Europe\'s deepest lakes',
+          examples: `Mt. St. Helens dome: 1980–86 original + 2004–08 renewed growth (150 m/hr) · Soufrière Hills, Montserrat 1997: dome collapse → block-and-ash flows buried Plymouth · Maar: Ukinrek Maars (Alaska) formed in 1977 in 10 days from phreatomagmatic explosions; Eifel Maars (Germany) contain Europe\'s deepest lakes`,
         },
       ],
     },

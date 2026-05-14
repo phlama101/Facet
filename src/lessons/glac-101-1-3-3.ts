@@ -20,7 +20,7 @@ const seaLevelIsostasy: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Rising seas and rebounding land: the linked story of ice, ocean, and Earth\'s crust',
+      title: `Rising seas and rebounding land: the linked story of ice, ocean, and Earth\'s crust`,
       body: `Eustasy refers to global mean sea level change driven by changes in the total volume of ocean water. On glacial-interglacial timescales, ice volume changes are the dominant control — glacio-eustasy — while thermal expansion of seawater (steric sea level change) dominates over shorter decadal timescales. At the Last Glacial Maximum (LGM) ~20,000 years ago, so much water was locked in continental ice sheets that global sea level stood approximately 120–130 m below its present level. North Sea, the English Channel, and the Bering Strait were dry land; coastlines lay hundreds of kilometres seaward of their present positions.
 
 Glacial isostasy is the crustal response to ice loading and unloading. When a large ice sheet accumulates, its weight depresses the lithosphere downward into the viscous mantle — a process taking thousands of years controlled by mantle viscosity. When the ice melts, the mantle slowly flows back and the crust rebounds upward in a process called postglacial rebound or glacial isostatic adjustment (GIA). The Holocene transgression — the post-LGM rise in sea level — raised global sea levels from −120 m at ~20,000 BP to near-present levels by ~6,000 BP, representing a mean rate of ~10 mm/yr. Some records indicate brief sea level highstands slightly above present during the mid-Holocene in certain regions.
@@ -35,7 +35,7 @@ Relative sea level (RSL) is the sea level experienced at any specific coastal lo
         },
         {
           term: 'Glacial Isostatic Adjustment',
-          def: 'The ongoing deformation of Earth\'s crust and mantle in response to past ice sheet loading (subsidence) and unloading (rebound); also called postglacial rebound. Timescale is thousands to tens of thousands of years.',
+          def: `The ongoing deformation of Earth\'s crust and mantle in response to past ice sheet loading (subsidence) and unloading (rebound); also called postglacial rebound. Timescale is thousands to tens of thousands of years.`,
         },
         {
           term: 'Relative Sea Level',
@@ -47,7 +47,7 @@ Relative sea level (RSL) is the sea level experienced at any specific coastal lo
         },
         {
           term: 'Postglacial Rebound',
-          def: 'The upward movement of Earth\'s crust following the removal of ice sheet load after deglaciation; driven by viscous mantle flow returning to equilibrium. Scandinavia is still rebounding at up to +8 mm/yr.',
+          def: `The upward movement of Earth\'s crust following the removal of ice sheet load after deglaciation; driven by viscous mantle flow returning to equilibrium. Scandinavia is still rebounding at up to +8 mm/yr.`,
         },
       ],
     },
@@ -164,7 +164,7 @@ Relative sea level (RSL) is the sea level experienced at any specific coastal lo
             'The temperature of the ice sheet — cold ice depresses the crust more deeply than warm ice',
           ],
           correct: 1,
-          explain: 'When an ice sheet loads the lithosphere, the crust flexes down (over timescales of thousands of years) as mantle material flows outward. The elastic part of the lithospheric response is nearly instantaneous (flexural isostasy); the viscous mantle flow (relaxation) determines the rebound timescale. Mantle viscosity (η) controls the relaxation time: τ ≈ η × L / (Δρ × g), where L is wavelength of the loading, Δρ is density contrast between mantle and crust, and g is gravity. Upper mantle viscosity ~10¹⁹–10²¹ Pa·s gives relaxation times of 1,000–100,000 years. Scandinavia began deglaciation ~10,000 years ago and is still rebounding — it won\'t reach equilibrium for another ~5,000–10,000 years. GIA models use GPS uplift data to constrain mantle viscosity structure.',
+          explain: `When an ice sheet loads the lithosphere, the crust flexes down (over timescales of thousands of years) as mantle material flows outward. The elastic part of the lithospheric response is nearly instantaneous (flexural isostasy); the viscous mantle flow (relaxation) determines the rebound timescale. Mantle viscosity (η) controls the relaxation time: τ ≈ η × L / (Δρ × g), where L is wavelength of the loading, Δρ is density contrast between mantle and crust, and g is gravity. Upper mantle viscosity ~10¹⁹–10²¹ Pa·s gives relaxation times of 1,000–100,000 years. Scandinavia began deglaciation ~10,000 years ago and is still rebounding — it won\'t reach equilibrium for another ~5,000–10,000 years. GIA models use GPS uplift data to constrain mantle viscosity structure.`,
         },
         {
           q: 'Relative sea level (RSL) is the sea level experienced at a specific coastal location. Why can RSL be falling in some locations while global mean sea level is rising?',
@@ -175,10 +175,10 @@ Relative sea level (RSL) is the sea level experienced at any specific coastal lo
             'Cold water at high latitudes is denser, so sea surface stands lower near the poles despite global mean sea level rise',
           ],
           correct: 1,
-          explain: 'Relative sea level = eustatic sea level + vertical land movement (VLM) + tectonic effects. VLM includes: (1) glacial isostatic adjustment (GIA) uplift in formerly glaciated areas; (2) tectonic uplift or subsidence; (3) sediment compaction; (4) groundwater/oil extraction. In Scandinavia, GIA uplift exceeds +8 mm/yr near the Gulf of Bothnia, while global mean sea level rise is ~3.6 mm/yr — net RSL fall of ~4 mm/yr. Stockholm\'s tide gauge record shows the sea level falling at ~4 mm/yr over the 20th century. The Baltic coastline of Sweden is extending seaward as new land emerges. This is the \'land of the rising coast\' phenomenon. Conversely, in Jakarta (groundwater extraction), New Orleans (sediment compaction), and the Mekong delta (reduced sediment supply), RSL rises at 5–40× the global rate.',
+          explain: `Relative sea level = eustatic sea level + vertical land movement (VLM) + tectonic effects. VLM includes: (1) glacial isostatic adjustment (GIA) uplift in formerly glaciated areas; (2) tectonic uplift or subsidence; (3) sediment compaction; (4) groundwater/oil extraction. In Scandinavia, GIA uplift exceeds +8 mm/yr near the Gulf of Bothnia, while global mean sea level rise is ~3.6 mm/yr — net RSL fall of ~4 mm/yr. Stockholm\'s tide gauge record shows the sea level falling at ~4 mm/yr over the 20th century. The Baltic coastline of Sweden is extending seaward as new land emerges. This is the \'land of the rising coast\' phenomenon. Conversely, in Jakarta (groundwater extraction), New Orleans (sediment compaction), and the Mekong delta (reduced sediment supply), RSL rises at 5–40× the global rate.`,
         },
         {
-          q: 'During deglaciation, episodic \'meltwater pulses\' caused abrupt rapid sea level rise. The most dramatic, Meltwater Pulse 1A (MWP-1A), is estimated to have raised sea level by ~14–18 m in ~300 years (~50 mm/yr). What is the likely source of this freshwater pulse?',
+          q: `During deglaciation, episodic \'meltwater pulses\' caused abrupt rapid sea level rise. The most dramatic, Meltwater Pulse 1A (MWP-1A), is estimated to have raised sea level by ~14–18 m in ~300 years (~50 mm/yr). What is the likely source of this freshwater pulse?`,
           a: [
             'Intensified rainfall over the subtropical oceans that temporarily increased ocean volume',
             'Partial collapse of the Laurentide or Antarctic Ice Sheet (or both), releasing ice equivalent to a 14–18 m rise in ~300 years — ~10× the current rate of sea level rise',
@@ -197,7 +197,7 @@ Relative sea level (RSL) is the sea level experienced at any specific coastal lo
             'Uncertainty in tidal patterns and ocean circulation, which could amplify or suppress regional sea level change',
           ],
           correct: 1,
-          explain: 'While future emissions pathways do contribute uncertainty (different scenarios give different central estimates), the dominant scientific uncertainty is the potential for non-linear, rapid ice loss from Antarctica. Current process models based on observed ice dynamics give relatively constrained estimates (~0.03–0.28 m of Antarctic contribution by 2100). However, Marine Ice Sheet Instability (MISI) and especially Marine Ice Cliff Instability (MICI — hypothetical rapid calving from tall ice cliffs after shelf removal) could potentially contribute much more. DeConto & Pollard (2016) suggested up to 1+ m from Antarctica alone under high emissions — approximately doubling the total projection. Later analyses (Edwards et al. 2019) disputed this, and IPCC AR6 treats >1 m scenarios as \'low likelihood but high impact.\' This genuine scientific uncertainty about Antarctic behavior drives the wide upper end of sea level projections and motivates the \'storylines\' approach to planning for low-probability, high-consequence outcomes.',
+          explain: `While future emissions pathways do contribute uncertainty (different scenarios give different central estimates), the dominant scientific uncertainty is the potential for non-linear, rapid ice loss from Antarctica. Current process models based on observed ice dynamics give relatively constrained estimates (~0.03–0.28 m of Antarctic contribution by 2100). However, Marine Ice Sheet Instability (MISI) and especially Marine Ice Cliff Instability (MICI — hypothetical rapid calving from tall ice cliffs after shelf removal) could potentially contribute much more. DeConto & Pollard (2016) suggested up to 1+ m from Antarctica alone under high emissions — approximately doubling the total projection. Later analyses (Edwards et al. 2019) disputed this, and IPCC AR6 treats >1 m scenarios as \'low likelihood but high impact.\' This genuine scientific uncertainty about Antarctic behavior drives the wide upper end of sea level projections and motivates the \'storylines\' approach to planning for low-probability, high-consequence outcomes.`,
         },
       ],
     },

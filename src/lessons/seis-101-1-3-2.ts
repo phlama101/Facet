@@ -116,7 +116,7 @@ Fire following earthquake is a historically devastating secondary hazard. The 19
           {
             id: 'pore-pressure',
             label: 'Pore Pressure Build-Up',
-            description: 'Water cannot drain fast enough; pore water pressure increases. Effective stress (σ\' = σ - u) decreases toward zero.',
+            description: `Water cannot drain fast enough; pore water pressure increases. Effective stress (σ\' = σ - u) decreases toward zero.`,
             color: BRAND.gold,
           },
           {

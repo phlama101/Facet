@@ -40,7 +40,7 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
         },
         {
           term: 'Abyssal plain',
-          def: 'The vast, nearly flat ocean floor at depths of 3,000–6,000 m, accounting for about 40% of Earth\'s total surface. Formed by the gradual accumulation of fine-grained sediment that buries the rough basaltic topography of old oceanic crust. The flattest terrain on Earth.',
+          def: `The vast, nearly flat ocean floor at depths of 3,000–6,000 m, accounting for about 40% of Earth\'s total surface. Formed by the gradual accumulation of fine-grained sediment that buries the rough basaltic topography of old oceanic crust. The flattest terrain on Earth.`,
         },
         {
           term: 'Mid-ocean ridge',
@@ -93,7 +93,7 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           name: 'Trenches & Ridges',
           icon: Globe,
           color: BRAND.amethyst,
-          desc: 'Mid-ocean ridges (65,000 km) are Earth\'s longest mountain range, continuously creating oceanic crust. Ocean trenches (max ~11,034 m at Mariana Trench) are where old crust returns to the mantle. Together they form a conveyor belt: crust is born at ridges and destroyed at trenches. The age of ocean floor is 0–~200 Ma — far younger than the >4 Ga oldest continental crust.',
+          desc: `Mid-ocean ridges (65,000 km) are Earth\'s longest mountain range, continuously creating oceanic crust. Ocean trenches (max ~11,034 m at Mariana Trench) are where old crust returns to the mantle. Together they form a conveyor belt: crust is born at ridges and destroyed at trenches. The age of ocean floor is 0–~200 Ma — far younger than the >4 Ga oldest continental crust.`,
           examples: 'Mid-Atlantic Ridge: 2.5 cm/yr spreading, Iceland sits above it · East Pacific Rise: 15 cm/yr, broadest ridge on Earth · Mariana Trench: 11,034 m depth, Challenger Deep',
         },
       ],
@@ -124,13 +124,13 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           {
             id: 'ridge',
             label: 'Mid-Ocean Ridge',
-            description: 'Magma erupts at the rift valley at the ridge crest, forming new basaltic oceanic crust. The 65,000 km ridge system is Earth\'s most volcanically active zone. Spreading rates range from 2–3 cm/yr (Mid-Atlantic Ridge) to up to 15 cm/yr (East Pacific Rise).',
+            description: `Magma erupts at the rift valley at the ridge crest, forming new basaltic oceanic crust. The 65,000 km ridge system is Earth\'s most volcanically active zone. Spreading rates range from 2–3 cm/yr (Mid-Atlantic Ridge) to up to 15 cm/yr (East Pacific Rise).`,
             color: BRAND.coral,
           },
           {
             id: 'spreading',
             label: 'Seafloor Spreading',
-            description: 'New crust moves laterally away from the ridge as more magma intrudes behind it. The seafloor records Earth\'s magnetic polarity reversals as symmetrical stripes on either side — the paleomagnetic "barcode" that proved seafloor spreading in the 1960s.',
+            description: `New crust moves laterally away from the ridge as more magma intrudes behind it. The seafloor records Earth\'s magnetic polarity reversals as symmetrical stripes on either side — the paleomagnetic "barcode" that proved seafloor spreading in the 1960s.`,
             color: BRAND.gold,
           },
           {
@@ -174,7 +174,7 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
             'Continental shelves are underlain by dense oceanic crust and are maintained by the accumulation of calcium carbonate from marine organisms; warm tropical waters produce wider shelves because coral reef growth is faster',
           ],
           correct: 1,
-          explain: 'Oceanic basalt (A) does not underlie continental shelves — the crust under shelves is the same felsic, granitic continental rock that underlies the adjacent land surface; the shelf is simply the flooded edge of the continent. Transitional crust (C) exists as a concept, but shelf width is not primarily controlled by continental age. Calcium carbonate and coral reefs (D) contribute to shallow tropical sediment but do not explain global shelf width patterns. The correct answer is B: continental shelves are underlain by continental crust and are legally and geologically part of the continent; passive margins — where no subduction occurs and sediment can accumulate undisturbed over hundreds of millions of years — develop broad shelves hundreds of kilometres wide (e.g. the US Atlantic margin, the North Sea, Australia\'s northwest shelf); active margins — where the subducting plate steepens the adjacent continental slope and where tectonic compression inhibits sediment accumulation — have narrow or absent shelves (e.g. the US Pacific margin, Chile).',
+          explain: `Oceanic basalt (A) does not underlie continental shelves — the crust under shelves is the same felsic, granitic continental rock that underlies the adjacent land surface; the shelf is simply the flooded edge of the continent. Transitional crust (C) exists as a concept, but shelf width is not primarily controlled by continental age. Calcium carbonate and coral reefs (D) contribute to shallow tropical sediment but do not explain global shelf width patterns. The correct answer is B: continental shelves are underlain by continental crust and are legally and geologically part of the continent; passive margins — where no subduction occurs and sediment can accumulate undisturbed over hundreds of millions of years — develop broad shelves hundreds of kilometres wide (e.g. the US Atlantic margin, the North Sea, Australia\'s northwest shelf); active margins — where the subducting plate steepens the adjacent continental slope and where tectonic compression inhibits sediment accumulation — have narrow or absent shelves (e.g. the US Pacific margin, Chile).`,
         },
         {
           q: 'Abyssal plains are described as the flattest terrain on Earth, yet the oceanic crust beneath them is rough and irregular. What process creates this extreme flatness?',
@@ -196,7 +196,7 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
             'Sea level has risen over geological time, and the weight of increasing water has caused older ocean floor to be forced downward into the mantle through a process of gravitational foundering',
           ],
           correct: 2,
-          explain: 'Early ocean floor was basaltic just like today\'s (A) — there is no evidence for a fundamentally different rock type that was selectively dissolved. Meteorite impacts (B) did not globally resurface the ocean floor — the Late Heavy Bombardment predates any surviving oceanic crust by billions of years, and impact resurfacing of the ocean floor is not a recognised mechanism. Gravitational foundering from water weight (D) is not a mechanism for crust removal — water pressure is hydrostatic and does not force subduction. The correct answer is C: the plate tectonic cycle creates new oceanic crust at mid-ocean ridges and destroys old oceanic crust at subduction zones; because oceanic crust (basalt and gabbro, density ~3.0 g/cm³) is denser than the mantle asthenosphere at depth (once cooled and loaded), it will sink into the mantle when it encounters a subduction zone; unlike continental crust (granitic, density ~2.7 g/cm³), which is too buoyant to subduct to significant depth, oceanic crust is routinely consumed; the conveyor belt operates continuously — the western Pacific contains the oldest surviving ocean floor at ~200 million years, and even this is within reach of nearby trenches.',
+          explain: `Early ocean floor was basaltic just like today\'s (A) — there is no evidence for a fundamentally different rock type that was selectively dissolved. Meteorite impacts (B) did not globally resurface the ocean floor — the Late Heavy Bombardment predates any surviving oceanic crust by billions of years, and impact resurfacing of the ocean floor is not a recognised mechanism. Gravitational foundering from water weight (D) is not a mechanism for crust removal — water pressure is hydrostatic and does not force subduction. The correct answer is C: the plate tectonic cycle creates new oceanic crust at mid-ocean ridges and destroys old oceanic crust at subduction zones; because oceanic crust (basalt and gabbro, density ~3.0 g/cm³) is denser than the mantle asthenosphere at depth (once cooled and loaded), it will sink into the mantle when it encounters a subduction zone; unlike continental crust (granitic, density ~2.7 g/cm³), which is too buoyant to subduct to significant depth, oceanic crust is routinely consumed; the conveyor belt operates continuously — the western Pacific contains the oldest surviving ocean floor at ~200 million years, and even this is within reach of nearby trenches.`,
         },
         {
           q: 'Satellite altimetry can infer the locations of mid-ocean ridges, seamounts, and trenches without a ship ever sailing over them. What physical property of the ocean surface makes this possible?',

@@ -10,7 +10,7 @@ const iceCoresPaleoclimate: Lesson = {
   level: 'Foundations',
   duration: '13 min',
   xpReward: 130,
-  description: 'How ice cores from Antarctica and Greenland preserve 800,000-year records of temperature, greenhouse gases, and atmospheric dust — and what they reveal about Earth\'s climate cycles',
+  description: `How ice cores from Antarctica and Greenland preserve 800,000-year records of temperature, greenhouse gases, and atmospheric dust — and what they reveal about Earth\'s climate cycles`,
   sources: [
     { org: 'NSIDC', title: 'NSIDC — Ice Core Paleoclimatology',                                              url: 'https://nsidc.org' },
     { org: 'NOAA', title: 'NOAA — National Centers for Environmental Information: Paleoclimatology',         url: 'https://ncei.noaa.gov/access/paleo-search' },
@@ -20,7 +20,7 @@ const iceCoresPaleoclimate: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Drilling back 800,000 years: what trapped bubbles, dust, and chemistry reveal about Earth\'s climate',
+      title: `Drilling back 800,000 years: what trapped bubbles, dust, and chemistry reveal about Earth\'s climate`,
       body: `Ice cores drilled from the Antarctic and Greenland ice sheets are among the most information-rich climate archives on Earth. Each annual layer of ice preserves a snapshot of the atmosphere at the time the snow fell. Stable water isotopes — δ¹⁸O (oxygen-18 to oxygen-16 ratio) and δD (deuterium to hydrogen ratio) — record the temperature at which precipitation condensed: colder temperatures produce more negative isotope values through Rayleigh distillation as heavy isotopes rain out preferentially during poleward vapour transport. When firn compacts to ice at pore close-off depth (~830 kg/m³), air bubbles are sealed inside, locking in the atmospheric composition at that moment — providing direct measurements of past CO₂, CH₄, and N₂O concentrations. Dust layers in the ice record aeolian transport from arid source regions: glacial periods show dust fluxes 10–25× higher than interglacials, reflecting expanded deserts and stronger winds. Volcanic tephra layers and sulphate spikes from major eruptions provide precise age markers (isochrons) used to synchronise and date ice core chronologies. Sea salt records storminess and sea ice extent; black carbon records fire activity across continents.
 
 The major ice core sites span a range of time depths and resolutions. The Soviet/Russian Vostok core (East Antarctica) extended the continuous climate record to 420,000 years and four glacial-interglacial cycles when it was completed in 1998. The EPICA (European Project for Ice Coring in Antarctica) Dome C core, drilled to 3,270 m depth and completed in 2004, extended the record to 800,000 years — eight complete glacial cycles. The NEEM (North Greenland Eemian Ice Drilling) core captured the Last Interglacial (Marine Isotope Stage 5e, ~125,000 BP) at high resolution, revealing Greenland temperatures 3–5°C warmer than pre-industrial during that period when global sea level was ~6 m higher. The WAIS Divide core in West Antarctica provides the last 68,000 years at near-annual resolution, enabling precise comparison with Greenland records of abrupt climate events (Dansgaard-Oeschger cycles).
@@ -37,7 +37,7 @@ Over 800,000 years, atmospheric CO₂ oscillated between approximately 180 ppm (
         },
         {
           term: 'Milankovitch cycle',
-          def: 'Orbital cycles modulating Earth\'s insolation: eccentricity (~100 kyr), obliquity (~41 kyr), precession (~23 kyr); pacemaker of glacial-interglacial cycles.',
+          def: `Orbital cycles modulating Earth\'s insolation: eccentricity (~100 kyr), obliquity (~41 kyr), precession (~23 kyr); pacemaker of glacial-interglacial cycles.`,
         },
         {
           term: 'ice age cycle',
@@ -184,10 +184,10 @@ Over 800,000 years, atmospheric CO₂ oscillated between approximately 180 ppm (
             'The correlation is spurious — CO₂ and temperature happen to cycle at similar frequencies due to independent orbital forcing of each',
           ],
           correct: 1,
-          explain: 'The CO₂-temperature relationship in EPICA has been extensively analysed. On orbital timescales, the initial response to changing insolation (obliquity and precession) appears in temperature first, with CO₂ lagging by ~0–1,000 years at glacial terminations. This has sometimes been misinterpreted as \'temperature causes CO₂,\' but this is incomplete: the initial trigger is orbital forcing (insolation), which slightly warms the ocean, releasing dissolved CO₂ (solubility decreases with temperature). The CO₂ increase then acts as a powerful positive feedback, amplifying the warming through the greenhouse effect. Without CO₂ feedback, orbital forcing alone cannot produce the full 8–10°C amplitude of glacial cycles. The tight correlation (r ≈ 0.92) over 800,000 years demonstrates that CO₂ and temperature are intimately coupled — and that the current rapid CO₂ rise from fossil fuel combustion represents a fundamentally different forcing than any seen in the ice core record.',
+          explain: `The CO₂-temperature relationship in EPICA has been extensively analysed. On orbital timescales, the initial response to changing insolation (obliquity and precession) appears in temperature first, with CO₂ lagging by ~0–1,000 years at glacial terminations. This has sometimes been misinterpreted as \'temperature causes CO₂,\' but this is incomplete: the initial trigger is orbital forcing (insolation), which slightly warms the ocean, releasing dissolved CO₂ (solubility decreases with temperature). The CO₂ increase then acts as a powerful positive feedback, amplifying the warming through the greenhouse effect. Without CO₂ feedback, orbital forcing alone cannot produce the full 8–10°C amplitude of glacial cycles. The tight correlation (r ≈ 0.92) over 800,000 years demonstrates that CO₂ and temperature are intimately coupled — and that the current rapid CO₂ rise from fossil fuel combustion represents a fundamentally different forcing than any seen in the ice core record.`,
         },
         {
-          q: 'Volcanic tephra layers in ice cores serve as \'time markers\' for chronological correlation. How can a single tephra layer help correlate records from Greenland and Antarctic ice cores?',
+          q: `Volcanic tephra layers in ice cores serve as \'time markers\' for chronological correlation. How can a single tephra layer help correlate records from Greenland and Antarctic ice cores?`,
           a: [
             'Tephra layers always produce identical chemical signatures worldwide, allowing any core to be dated to within ±10 years',
             'Major volcanic eruptions inject SO₂ globally, producing distinctive sulphate spikes in ice cores worldwide that are synchronous (same eruption, same year) and can be geochemically fingerprinted — allowing independent dating and correlation between widely separated cores',
@@ -195,7 +195,7 @@ Over 800,000 years, atmospheric CO₂ oscillated between approximately 180 ppm (
             'Tephra always contains enough U-series isotopes for radiometric dating, providing absolute ages',
           ],
           correct: 1,
-          explain: 'Large volcanic eruptions inject SO₂ (and sometimes tephra particles) into the stratosphere, where it oxidises to sulphuric acid (H₂SO₄) aerosol. This aerosol is globally distributed within 1–2 years, depositing a sulphate spike in both polar ice sheets. The spike can be detected by continuous electrical conductivity measurement (ECM) of ice cores. Additionally, visible tephra (glass shards) with distinctive major-element geochemistry can be extracted from the ice and matched to specific volcanic sources via electron microprobe analysis. The 1257 Samalas (Indonesia), 1815 Tambora, and 1783 Laki (Iceland) eruptions appear as sulphate peaks in both Greenland and Antarctic cores at the same calendar year, providing synchronisation points with annual to sub-annual precision. This \'tephrochronology\' approach is fundamental to ice core chronology and enables comparison of climate signals between the two hemispheres.',
+          explain: `Large volcanic eruptions inject SO₂ (and sometimes tephra particles) into the stratosphere, where it oxidises to sulphuric acid (H₂SO₄) aerosol. This aerosol is globally distributed within 1–2 years, depositing a sulphate spike in both polar ice sheets. The spike can be detected by continuous electrical conductivity measurement (ECM) of ice cores. Additionally, visible tephra (glass shards) with distinctive major-element geochemistry can be extracted from the ice and matched to specific volcanic sources via electron microprobe analysis. The 1257 Samalas (Indonesia), 1815 Tambora, and 1783 Laki (Iceland) eruptions appear as sulphate peaks in both Greenland and Antarctic cores at the same calendar year, providing synchronisation points with annual to sub-annual precision. This \'tephrochronology\' approach is fundamental to ice core chronology and enables comparison of climate signals between the two hemispheres.`,
         },
       ],
     },

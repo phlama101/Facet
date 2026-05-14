@@ -8,7 +8,7 @@ const geol101Capstone: Lesson = {
   level: 'Beginner',
   duration: '45 min',
   xpReward: 500,
-  description: 'A 25-question cumulative assessment covering all five Earth Foundations chapters: Earth\'s interior, minerals, the three rock families, plate tectonics, and reading the landscape.',
+  description: `A 25-question cumulative assessment covering all five Earth Foundations chapters: Earth\'s interior, minerals, the three rock families, plate tectonics, and reading the landscape.`,
   sources: [
     { org: 'USGS',     title: 'Science Topics — Geology (Public Domain)',        url: 'https://www.usgs.gov/science/science-explorer/geology' },
     { org: 'NPS',      title: 'Geology Fieldnotes series',                        url: 'https://www.nps.gov/subjects/geology/index.htm' },

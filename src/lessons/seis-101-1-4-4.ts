@@ -21,7 +21,7 @@ const inducedSeismicity: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'From One Earthquake per Decade to One per Day: Oklahoma\'s Induced Seismicity Surge',
+      title: `From One Earthquake per Decade to One per Day: Oklahoma\'s Induced Seismicity Surge`,
       body: `For most of the 20th century, Oklahoma experienced roughly one to two magnitude 3.0 or greater earthquakes per year — background seismicity consistent with the low tectonic strain of the midcontinent. Then, between 2009 and 2015, earthquake rates surged by a factor of more than 300. By 2015, Oklahoma was recording over 900 M 3+ events annually, more than California. The cause was not a sudden change in the tectonic stress field but the injection of enormous volumes of saltwater — a byproduct of oil and gas production — into deep disposal wells that intersected pre-existing, critically-stressed faults in the Precambrian crystalline basement.
 
 The physical mechanism linking fluid injection to seismicity is **pore pressure diffusion**. When high-pressure wastewater is injected into a permeable formation, elevated fluid pressure migrates outward through connected pore space and along fault planes. **Effective stress** on a fault equals total normal stress minus pore fluid pressure. When pore pressure increases sufficiently to reduce effective normal stress, the **Coulomb failure criterion** — which governs fault slip — can be satisfied by the existing tectonic shear stress, triggering slip on faults that were previously locked. Critically, injection need not directly contact a fault: pressure diffusion can activate faults kilometres from the injection well over timescales of months to years.
@@ -161,7 +161,7 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
           {
             id: 'earthquake',
             label: 'Induced Earthquake',
-            description: 'Magnitude depends on fault size, stress drop, and prior seismic history. Oklahoma events ranged from M 2 microseismicity to M 5.8 Pawnee. Aftershock sequences follow normal Omori\'s Law decay. Unlike tectonic events, induced sequences can be truncated by halting injection.',
+            description: `Magnitude depends on fault size, stress drop, and prior seismic history. Oklahoma events ranged from M 2 microseismicity to M 5.8 Pawnee. Aftershock sequences follow normal Omori\'s Law decay. Unlike tectonic events, induced sequences can be truncated by halting injection.`,
             color: BRAND.amethyst,
           },
           {
@@ -185,7 +185,7 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
       type: 'quiz',
       questions: [
         {
-          q: 'Oklahoma\'s seismicity surge from 2009–2016 is primarily attributed to wastewater disposal rather than hydraulic fracturing (fracking). What physical distinction between these two operations explains the difference in their induced seismicity profiles?',
+          q: `Oklahoma\'s seismicity surge from 2009–2016 is primarily attributed to wastewater disposal rather than hydraulic fracturing (fracking). What physical distinction between these two operations explains the difference in their induced seismicity profiles?`,
           a: [
             'Hydraulic fracturing uses more chemically reactive fluids that dissolve fault-sealing minerals',
             'Wastewater disposal involves sustained high-volume injection over months to years into formations adjacent to basement faults, generating pore pressure diffusion fronts that can activate distant pre-existing faults; fracking injects briefly at high pressure near the wellbore and rarely triggers events above M 2.5',
@@ -207,7 +207,7 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
           explain: 'B is correct: hydraulic diffusivity D = k/(μ × S), where k is permeability, μ is fluid viscosity, and S is specific storage (compressibility). For the Arbuckle formation in Oklahoma, estimated diffusivity values of ~0.1–1 m²/s mean pressure fronts advance ~100–300 m/month — consistent with earthquake locations migrating outward from injection wells over months to years. A is wrong: total volume matters for pressure maintenance but does not directly control diffusion geometry. C is wrong: temperature-driven convection plays a negligible role compared to pressure-gradient-driven Darcy flow at these depths. D is wrong: while gravity affects vertical migration somewhat, lateral migration through permeable formations is the dominant pathway for basement fault activation.',
         },
         {
-          q: 'Traffic Light Protocols (TLPs) define operational thresholds for induced seismicity management. The UK uses an M 0.5 red-light threshold for fracking, while Oklahoma\'s disposal well TLPs typically trigger action at M 2.5–3.5. What trade-off drives the choice of threshold level?',
+          q: `Traffic Light Protocols (TLPs) define operational thresholds for induced seismicity management. The UK uses an M 0.5 red-light threshold for fracking, while Oklahoma\'s disposal well TLPs typically trigger action at M 2.5–3.5. What trade-off drives the choice of threshold level?`,
           a: [
             'Higher thresholds save money by allowing more injection before shutdown, while lower thresholds prevent any felt seismicity regardless of economic impact',
             'Lower thresholds impose more frequent operational interruptions and higher costs, but limit the maximum magnitude of induced events before they cause public felt shaking or structural damage; the threshold reflects a policy choice between economic efficiency and seismic risk tolerance',
@@ -226,10 +226,10 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
             'Geothermal fluid is more chemically reactive than oil-field brine, dissolving fault gouge and reducing friction',
           ],
           correct: 1,
-          explain: 'B is correct: EGS faces a fundamental tension between the technology\'s purpose and seismic risk. Creating a permeable heat-exchange zone requires fracturing low-permeability rock through sustained fluid injection at elevated pressures — but this is exactly the operation that builds pore pressure on nearby faults. Unlike a disposal well (where reducing injection rate is operationally simple), reducing EGS injection pressure also reduces fracture network development and heat extraction, compromising the energy production goal. At Pohang, the EGS project injected fluid at 4–5 km depth in a region with critically-stressed basement faults; an independent panel concluded EGS stimulation most likely advanced the fault to failure. A is wrong: EGS is subject to permitting and regulation in all jurisdictions that have deployed it. C is wrong: many high-volume disposal fields are near population centres (Oklahoma, Netherlands). D is wrong: chemistry plays a minor role in fault activation compared to pore pressure.',
+          explain: `B is correct: EGS faces a fundamental tension between the technology\'s purpose and seismic risk. Creating a permeable heat-exchange zone requires fracturing low-permeability rock through sustained fluid injection at elevated pressures — but this is exactly the operation that builds pore pressure on nearby faults. Unlike a disposal well (where reducing injection rate is operationally simple), reducing EGS injection pressure also reduces fracture network development and heat extraction, compromising the energy production goal. At Pohang, the EGS project injected fluid at 4–5 km depth in a region with critically-stressed basement faults; an independent panel concluded EGS stimulation most likely advanced the fault to failure. A is wrong: EGS is subject to permitting and regulation in all jurisdictions that have deployed it. C is wrong: many high-volume disposal fields are near population centres (Oklahoma, Netherlands). D is wrong: chemistry plays a minor role in fault activation compared to pore pressure.`,
         },
         {
-          q: 'Following Oklahoma\'s M 5.8 Pawnee earthquake in 2016, state regulators reduced permitted injection volumes in the Arbuckle formation. Within three years, M 3+ earthquake rates dropped by ~75%. What does this response demonstrate about induced seismicity compared to natural seismicity, and what residual risks remain?',
+          q: `Following Oklahoma\'s M 5.8 Pawnee earthquake in 2016, state regulators reduced permitted injection volumes in the Arbuckle formation. Within three years, M 3+ earthquake rates dropped by ~75%. What does this response demonstrate about induced seismicity compared to natural seismicity, and what residual risks remain?`,
           a: [
             'It demonstrates that all seismicity in Oklahoma was induced and that complete cessation of injection would produce zero earthquakes within weeks',
             'It demonstrates that induced seismicity is partially controllable through operational management — earthquake rates respond to injection changes — but residual seismicity can persist for years after injection reduction because pore pressure diffuses slowly and pre-loaded faults may slip independently',

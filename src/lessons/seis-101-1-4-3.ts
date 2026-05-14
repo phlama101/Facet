@@ -21,7 +21,7 @@ const seismicEngineeringBuildingCodes: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Earthquakes Don\'t Kill People — Buildings Do',
+      title: `Earthquakes Don\'t Kill People — Buildings Do`,
       body: `The phrase is attributed to seismologist Nicholas Ambraseys, and the data back it up. The vast majority of earthquake fatalities result not from ground shaking itself but from the structural failure of the buildings people occupy. The 2023 Turkey-Syria earthquake sequence (Mw 7.8 and Mw 7.5) killed over 56,000 people — overwhelmingly through building collapse — despite the same region having survived comparable historical earthquakes. Modern seismic engineering and building codes exist to break this pattern; the Turkey-Syria disaster demonstrated what happens when codes are not enforced, construction quality is inadequate, and soft-storey configurations proliferate.
 
 **Ductility** is the cornerstone concept of seismic engineering. A brittle material or structure breaks suddenly when deformed beyond its elastic limit; a ductile one deforms substantially — absorbing and dissipating energy — before failure. The goal of modern seismic design is not to prevent all damage but to ensure ductile failure modes: structural members yield and bend without fracturing, allowing a building to absorb the energy of an earthquake while remaining standing. **Reinforced concrete** achieves ductility through careful detailing of steel rebar at beam-column joints; **unreinforced masonry** (stone, brick, or concrete block without internal steel) is inherently brittle and the predominant killer in low-income seismic zones worldwide.
@@ -52,7 +52,7 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
         },
         {
           term: 'Soil-Structure Resonance',
-          def: 'Amplified structural response that occurs when a building\'s natural period closely matches the dominant period of the site\'s soil column, causing mutual reinforcement of motion between structure and ground; responsible for disproportionate collapse of medium-height buildings on soft sediment.',
+          def: `Amplified structural response that occurs when a building\'s natural period closely matches the dominant period of the site\'s soil column, causing mutual reinforcement of motion between structure and ground; responsible for disproportionate collapse of medium-height buildings on soft sediment.`,
         },
       ],
     },
@@ -66,20 +66,20 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
           icon: Building,
           color: BRAND.coral,
           desc: 'Steel or reinforced-concrete frames with rigid beam-column connections designed to yield at beam ends ("strong column, weak beam" principle). Ductile post-yield behaviour allows 3–5% inter-storey drift before collapse — far exceeding brittle systems.',
-          examples: 'California\'s concrete moment frames, revised after the 1971 Sylmar earthquake revealed poor rebar detailing, now require closely-spaced confinement ties. San Francisco\'s 55-storey Millennium Tower uses a concrete core-wall plus perimeter moment frame system.',
+          examples: `California\'s concrete moment frames, revised after the 1971 Sylmar earthquake revealed poor rebar detailing, now require closely-spaced confinement ties. San Francisco\'s 55-storey Millennium Tower uses a concrete core-wall plus perimeter moment frame system.`,
         },
         {
           name: 'Shear Walls and Dual Systems',
           icon: Shield,
           color: BRAND.jade,
           desc: 'Reinforced concrete or structural steel shear walls provide stiff lateral resistance that limits drift; combined with moment frames in "dual systems," shear walls carry most lateral load while moment frames provide ductile reserve capacity if walls crack.',
-          examples: 'Japan\'s multi-family apartment towers (mansions) almost universally use RC shear-wall construction. San Francisco City Hall\'s 1990s retrofit added steel braced frames and a base isolation system beneath the historic masonry structure.',
+          examples: `Japan\'s multi-family apartment towers (mansions) almost universally use RC shear-wall construction. San Francisco City Hall\'s 1990s retrofit added steel braced frames and a base isolation system beneath the historic masonry structure.`,
         },
         {
           name: 'Base Isolation',
           icon: Gauge,
           color: BRAND.gold,
-          desc: 'Flexible bearings at the building base lengthen the structure\'s effective period to 2–4 seconds, shifting its response away from the dominant period of earthquake ground motion. Floor accelerations are typically reduced by 60–80% compared to fixed-base designs.',
+          desc: `Flexible bearings at the building base lengthen the structure\'s effective period to 2–4 seconds, shifting its response away from the dominant period of earthquake ground motion. Floor accelerations are typically reduced by 60–80% compared to fixed-base designs.`,
           examples: 'Tokyo Skytree (634 m): uses a central concrete shaft with viscous oil dampers. San Francisco City Hall retrofit (1999): 530 lead-rubber and high-damping rubber isolators allow 50 cm of relative displacement. Christchurch Cathedral repair plan uses lead-rubber isolators to preserve historic fabric while meeting NZS1170.5.',
         },
         {
@@ -137,7 +137,7 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
           {
             id: 'ground-motion',
             label: 'Seismic Ground Motion',
-            description: 'Horizontal accelerations and velocities at the building base. PGA of 0.3–0.6 g is typical for a damaging near-field event. Spectral accelerations at the building\'s natural period govern structural demands.',
+            description: `Horizontal accelerations and velocities at the building base. PGA of 0.3–0.6 g is typical for a damaging near-field event. Spectral accelerations at the building\'s natural period govern structural demands.`,
             color: BRAND.coral,
           },
           {
@@ -149,7 +149,7 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
           {
             id: 'lateral-force',
             label: 'Lateral Inertial Force',
-            description: 'As the ground accelerates, the building\'s mass wants to stay still. The result is a horizontal force = mass × acceleration applied at each floor. Taller buildings concentrate force at upper floors; soft stories concentrate demand at the weak level.',
+            description: `As the ground accelerates, the building\'s mass wants to stay still. The result is a horizontal force = mass × acceleration applied at each floor. Taller buildings concentrate force at upper floors; soft stories concentrate demand at the weak level.`,
             color: BRAND.jade,
           },
           {
@@ -204,7 +204,7 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
             'Lead plugs within the isolators convert seismic energy to heat, completely eliminating horizontal floor motion',
           ],
           correct: 1,
-          explain: 'B is correct: earthquake ground motion contains most energy at periods of 0.1–1 second. A fixed-base 3-storey building has a natural period of ~0.3 s, squarely in the high-energy range. Base isolators make the building-isolator system behave as if the building sits on a very long pendulum with period 2–4 s, far outside the peak energy content. Floor accelerations (and therefore forces on the structure and its contents) are typically reduced by 60–80%. A is wrong: isolators permit relative displacement between ground and building; they do not block wave transmission. C is wrong: mass increase marginally raises demand, not reduce it; Newton\'s F=ma works the other way. D has partial truth (lead plugs do dissipate energy as heat) but this is a secondary damping effect, not the primary period-lengthening mechanism.',
+          explain: `B is correct: earthquake ground motion contains most energy at periods of 0.1–1 second. A fixed-base 3-storey building has a natural period of ~0.3 s, squarely in the high-energy range. Base isolators make the building-isolator system behave as if the building sits on a very long pendulum with period 2–4 s, far outside the peak energy content. Floor accelerations (and therefore forces on the structure and its contents) are typically reduced by 60–80%. A is wrong: isolators permit relative displacement between ground and building; they do not block wave transmission. C is wrong: mass increase marginally raises demand, not reduce it; Newton\'s F=ma works the other way. D has partial truth (lead plugs do dissipate energy as heat) but this is a secondary damping effect, not the primary period-lengthening mechanism.`,
         },
         {
           q: 'Why does a "soft storey" at the ground floor of a building create a disproportionate collapse risk compared to a uniformly stiff structure of the same total height?',
@@ -226,7 +226,7 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
             'Soft soil amplification in the Kahramanmaraş basin was unexpectedly severe and not captured in the national seismic hazard model',
           ],
           correct: 1,
-          explain: 'B is correct: post-earthquake investigations by AFAD, university teams, and international reconnaissance groups consistently found that collapsed buildings had concrete compressive strengths well below the code minimum of 20 MPa (many tested at 8–12 MPa), rebar with inadequate hooks, lap splices, and confinement ties, and structural configurations (soft stories, short columns) prohibited by code. Turkey\'s 2018 imar barışı (construction amnesty) legalised approximately 7.5 million non-compliant structures by fee payment, not structural upgrade. A is wrong: while some sites exceeded median PSHA predictions, field survey data show well-constructed code-compliant buildings near collapse zones survived. C is wrong: Turkey adopted a modern code with full ductility provisions in 2007, updated in 2018. D is true in some areas but explains a fraction of collapses; structural quality is the dominant variable.',
+          explain: `B is correct: post-earthquake investigations by AFAD, university teams, and international reconnaissance groups consistently found that collapsed buildings had concrete compressive strengths well below the code minimum of 20 MPa (many tested at 8–12 MPa), rebar with inadequate hooks, lap splices, and confinement ties, and structural configurations (soft stories, short columns) prohibited by code. Turkey\'s 2018 imar barışı (construction amnesty) legalised approximately 7.5 million non-compliant structures by fee payment, not structural upgrade. A is wrong: while some sites exceeded median PSHA predictions, field survey data show well-constructed code-compliant buildings near collapse zones survived. C is wrong: Turkey adopted a modern code with full ductility provisions in 2007, updated in 2018. D is true in some areas but explains a fraction of collapses; structural quality is the dominant variable.`,
         },
         {
           q: 'An engineer compares two 10-storey reinforced concrete buildings on the same soil: Building A uses a ductile special moment frame; Building B uses unreinforced masonry infill walls with a thin RC frame. Both are designed for the same gravity loads. In a Mw 6.5 earthquake at 15 km, which is more likely to collapse, and why?',
@@ -237,7 +237,7 @@ Building codes translate PSHA-derived seismic hazard into structural requirement
             'Building B performs better because the masonry infill walls stiffen the structure, reducing lateral deflection during the earthquake',
           ],
           correct: 1,
-          explain: 'B is correct: unreinforced masonry has very low shear tensile strength (~0.1–0.3 MPa) and zero ductility. When seismic forces produce diagonal tensile stress exceeding this limit, masonry walls fail suddenly and completely, shedding load to the frame and often triggering progressive collapse. Building A\'s special moment frame is designed with closely-spaced confinement steel at beam-column joints, allowing columns and beams to yield and absorb energy through plastic deformation over many cycles before failure. A is wrong: larger drift in a ductile system is a feature, not a failure mode; the structure can accommodate it. C is wrong: structural system determines collapse vulnerability far more than gravity load levels. D is partially true for stiffness (masonry infill does stiffen initially) but the sudden brittle failure when the masonry cracks eliminates this advantage and often triggers worse behaviour through short-column effects.',
+          explain: `B is correct: unreinforced masonry has very low shear tensile strength (~0.1–0.3 MPa) and zero ductility. When seismic forces produce diagonal tensile stress exceeding this limit, masonry walls fail suddenly and completely, shedding load to the frame and often triggering progressive collapse. Building A\'s special moment frame is designed with closely-spaced confinement steel at beam-column joints, allowing columns and beams to yield and absorb energy through plastic deformation over many cycles before failure. A is wrong: larger drift in a ductile system is a feature, not a failure mode; the structure can accommodate it. C is wrong: structural system determines collapse vulnerability far more than gravity load levels. D is partially true for stiffness (masonry infill does stiffen initially) but the sudden brittle failure when the masonry cracks eliminates this advantage and often triggers worse behaviour through short-column effects.`,
         },
       ],
     },

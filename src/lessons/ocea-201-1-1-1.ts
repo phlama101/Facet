@@ -45,7 +45,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
         },
         {
           term: 'total alkalinity',
-          def: 'A measure of seawater\'s acid-neutralising capacity, defined as the excess of proton acceptors over proton donors relative to a reference level. In seawater it is dominated by bicarbonate and carbonate ions (~2,300–2,400 μmol kg⁻¹ in open-ocean surface water). Alkalinity quantifies the buffering capacity of seawater and is altered by CaCO₃ formation and dissolution, not by CO₂ dissolution alone.',
+          def: `A measure of seawater\'s acid-neutralising capacity, defined as the excess of proton acceptors over proton donors relative to a reference level. In seawater it is dominated by bicarbonate and carbonate ions (~2,300–2,400 μmol kg⁻¹ in open-ocean surface water). Alkalinity quantifies the buffering capacity of seawater and is altered by CaCO₃ formation and dissolution, not by CO₂ dissolution alone.`,
         },
         {
           term: 'Revelle factor',
@@ -57,7 +57,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
         },
         {
           term: 'partial pressure of CO₂ (pCO₂)',
-          def: 'The pressure exerted by CO₂ in a gas mixture, or the equivalent equilibrium pressure of a dissolved gas in seawater (also called fugacity for dissolved CO₂). By Henry\'s Law, dissolved CO₂ concentration is proportional to pCO₂. Surface-ocean pCO₂ has risen from ~280 μatm in pre-industrial times to over 420 μatm today, tracking atmospheric levels and driving net CO₂ flux into the ocean.',
+          def: `The pressure exerted by CO₂ in a gas mixture, or the equivalent equilibrium pressure of a dissolved gas in seawater (also called fugacity for dissolved CO₂). By Henry\'s Law, dissolved CO₂ concentration is proportional to pCO₂. Surface-ocean pCO₂ has risen from ~280 μatm in pre-industrial times to over 420 μatm today, tracking atmospheric levels and driving net CO₂ flux into the ocean.`,
         },
       ],
     },
@@ -85,7 +85,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
           name: 'Alkalinity and Buffering Capacity',
           icon: Globe,
           color: BRAND.jade,
-          desc: 'Total alkalinity (~2,300–2,400 μmol kg⁻¹ in open ocean) measures the seawater\'s ability to resist pH change. CO₂ dissolution does not change TA — it shifts the DIC speciation, consuming CO₃²⁻ as it buffers H⁺. CaCO₃ formation lowers TA (removes 2 mol of alkalinity per mol precipitated); CaCO₃ dissolution raises it.',
+          desc: `Total alkalinity (~2,300–2,400 μmol kg⁻¹ in open ocean) measures the seawater\'s ability to resist pH change. CO₂ dissolution does not change TA — it shifts the DIC speciation, consuming CO₃²⁻ as it buffers H⁺. CaCO₃ formation lowers TA (removes 2 mol of alkalinity per mol precipitated); CaCO₃ dissolution raises it.`,
           examples: 'Open-ocean surface TA ~2,350 μmol kg⁻¹ · Mediterranean higher TA due to evaporation · CaCO₃ dissolution raises TA and partially re-absorbs CO₂ · Riverine weathering of silicates and carbonates delivers alkalinity to ocean',
         },
         {
@@ -99,7 +99,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
           name: 'CO₂ Exchange at the Air-Sea Interface',
           icon: Thermometer,
           color: BRAND.gold,
-          desc: 'Net CO₂ flux follows the pCO₂ gradient (Henry\'s Law): ocean pCO₂ < atmospheric pCO₂ drives uptake; the reverse drives outgassing. Cold polar water absorbs more CO₂ per unit area. The Revelle factor (~10 today, rising) limits uptake efficiency. Station ALOHA shows surface pCO₂ tracking atmospheric CO₂ rise, pH declining ~0.1 units since 1750.',
+          desc: `Net CO₂ flux follows the pCO₂ gradient (Henry\'s Law): ocean pCO₂ < atmospheric pCO₂ drives uptake; the reverse drives outgassing. Cold polar water absorbs more CO₂ per unit area. The Revelle factor (~10 today, rising) limits uptake efficiency. Station ALOHA shows surface pCO₂ tracking atmospheric CO₂ rise, pH declining ~0.1 units since 1750.`,
           examples: 'Pre-industrial atmospheric pCO₂ ~280 μatm; current >420 μatm · North Atlantic and Southern Ocean are major CO₂ sinks · Equatorial Pacific is a net CO₂ source (upwelling of deep CO₂-rich water) · Ocean has absorbed ~26% of anthropogenic CO₂ emissions',
         },
       ],
@@ -115,7 +115,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
           {
             id: 'atm-co2',
             label: 'Atmospheric CO₂',
-            description: 'Carbon dioxide in the atmosphere currently exceeds 420 ppm, up from ~280 ppm in 1750. Its partial pressure (pCO₂) drives dissolution into surface seawater according to Henry\'s Law. Cold, high-latitude surface waters have lower pCO₂ and absorb more CO₂ per unit area than warm tropical waters.',
+            description: `Carbon dioxide in the atmosphere currently exceeds 420 ppm, up from ~280 ppm in 1750. Its partial pressure (pCO₂) drives dissolution into surface seawater according to Henry\'s Law. Cold, high-latitude surface waters have lower pCO₂ and absorb more CO₂ per unit area than warm tropical waters.`,
             color: BRAND.gold,
           },
           {
@@ -181,7 +181,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
             'The Revelle factor measures the ratio of total alkalinity to DIC and determines the pH of seawater; a higher ratio corresponds to higher pH and lower CO₂ absorption',
           ],
           correct: 2,
-          explain: 'A high Revelle factor (option A) does not indicate high uptake efficiency — it indicates the opposite. The Revelle factor is defined as (ΔpCO₂/pCO₂) / (ΔDIC/DIC). A value of ~10 means that a 1% increase in DIC drives a ~10% increase in seawater pCO₂. Working in reverse: to maintain equilibrium with a rising atmosphere, the ocean\'s DIC needs to increase only about one-tenth as much as the atmospheric pCO₂ change — but precisely because the pCO₂ response is amplified, the ocean must absorb less carbon than a simple linear solubility would suggest. Option B describes the biological pump and upwelling, not the Revelle factor. Option D confuses Revelle factor with the alkalinity-to-DIC ratio. The key implication is that as ocean CO₂ absorption continues, the Revelle factor increases from ~10 today toward ~12–14 in high-CO₂ scenarios, making each additional tonne of atmospheric CO₂ harder for the ocean to absorb.',
+          explain: `A high Revelle factor (option A) does not indicate high uptake efficiency — it indicates the opposite. The Revelle factor is defined as (ΔpCO₂/pCO₂) / (ΔDIC/DIC). A value of ~10 means that a 1% increase in DIC drives a ~10% increase in seawater pCO₂. Working in reverse: to maintain equilibrium with a rising atmosphere, the ocean\'s DIC needs to increase only about one-tenth as much as the atmospheric pCO₂ change — but precisely because the pCO₂ response is amplified, the ocean must absorb less carbon than a simple linear solubility would suggest. Option B describes the biological pump and upwelling, not the Revelle factor. Option D confuses Revelle factor with the alkalinity-to-DIC ratio. The key implication is that as ocean CO₂ absorption continues, the Revelle factor increases from ~10 today toward ~12–14 in high-CO₂ scenarios, making each additional tonne of atmospheric CO₂ harder for the ocean to absorb.`,
         },
         {
           q: 'What happens to aragonite saturation state (Ω-aragonite) as seawater pH decreases due to rising atmospheric CO₂?',

@@ -10,7 +10,7 @@ const floodHazards: Lesson = {
   level: 'Beginner',
   duration: '12 min',
   xpReward: 120,
-  description: 'The 100-year flood isn\'t what you think: probability, floodplains, and the science of managing water excess',
+  description: `The 100-year flood isn\'t what you think: probability, floodplains, and the science of managing water excess`,
   sources: [
     { org: 'FEMA',  title: 'FEMA — National Flood Insurance Program',                         url: 'https://www.fema.gov/flood-insurance' },
     { org: 'USGS',  title: 'USGS — Floods',                                                   url: 'https://www.usgs.gov/special-topics/water-science-school/science/floods-and-recurrence-intervals' },
@@ -20,7 +20,7 @@ const floodHazards: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'The 100-year flood isn\'t what you think: probability, floodplains, and the science of managing water excess',
+      title: `The 100-year flood isn\'t what you think: probability, floodplains, and the science of managing water excess`,
       body: `Floods are the most costly and deadly natural hazard globally, causing an average $40–60 billion in annual damages and 5,000–10,000 deaths per year. A flood occurs when water inundates land that is normally dry — through river overbank flow, coastal storm surge, flash flooding, urban drainage failure, or dam/levee breach. Understanding flood hydrology is essential for land-use planning, infrastructure design, emergency management, and insurance.
 
 The "100-year flood" is one of the most misunderstood concepts in natural hazard communication. It does not mean a flood that occurs once per century. It means a flood with a 1% annual exceedance probability (AEP) — a 1-in-100 chance of being equalled or exceeded in any given year. This implies a ~26% probability of being exceeded during a 30-year mortgage period, and a ~40% probability during a typical 50-year building design life. FEMA replaced the "100-year flood" language with "1% annual chance flood" in official communications precisely because the return period framing misleads the public into believing such events are rare. Houston experienced three separate "500-year" flood events in three consecutive years (2015, 2016, Harvey 2017) — a reminder that rare events do occur.
@@ -89,7 +89,7 @@ Flood risk management integrates structural and non-structural measures. Structu
           icon: ArrowRight,
           color: BRAND.amethyst,
           desc: 'Floodplain reconnection, wetland restoration, urban green infrastructure. Often cheaper and more resilient than hard structures.',
-          examples: 'New York City\'s "Big U" park protects Manhattan\'s Lower East Side from storm surge. Reconnected floodplains on Rhine reduced peak floods 10-20%.',
+          examples: `New York City\'s "Big U" park protects Manhattan\'s Lower East Side from storm surge. Reconnected floodplains on Rhine reduced peak floods 10-20%.`,
         },
       ],
     },
@@ -159,7 +159,7 @@ Flood risk management integrates structural and non-structural measures. Structu
             'The probability decreases by 1% each year after the flood occurs',
           ],
           correct: 1,
-          explain: 'Annual exceedance probability (AEP) describes the chance of a flood of given magnitude being exceeded in any single year. A 1% AEP flood has a 1-in-100 chance per year. Crucially, each year is an independent trial — like flipping a biased coin. The 1% chance applies every year regardless of when the last flood occurred. This means: (1) the flood can occur in consecutive years; (2) over a 30-year mortgage period, P(at least one occurrence) = 1 - (0.99)^30 ≈ 26%; (3) over 50 years, P ≈ 40%. This probabilistic framing replaced the misleading "100-year flood" terminology in FEMA communications because it correctly conveys the cumulative risk over a building\'s lifetime.',
+          explain: `Annual exceedance probability (AEP) describes the chance of a flood of given magnitude being exceeded in any single year. A 1% AEP flood has a 1-in-100 chance per year. Crucially, each year is an independent trial — like flipping a biased coin. The 1% chance applies every year regardless of when the last flood occurred. This means: (1) the flood can occur in consecutive years; (2) over a 30-year mortgage period, P(at least one occurrence) = 1 - (0.99)^30 ≈ 26%; (3) over 50 years, P ≈ 40%. This probabilistic framing replaced the misleading "100-year flood" terminology in FEMA communications because it correctly conveys the cumulative risk over a building\'s lifetime.`,
         },
         {
           q: 'Why do levees sometimes increase total flood damages compared to having no levee?',
@@ -184,7 +184,7 @@ Flood risk management integrates structural and non-structural measures. Structu
           explain: 'Compound flooding occurs when multiple flood drivers co-occur in ways that amplify total impact. For example: heavy rainfall raises river levels (fluvial flooding) at the same time a storm surge blocks drainage at the river mouth (coastal flooding) — the combination produces deeper, longer-lasting inundation than either alone. Hurricane Harvey (2017) exemplified this: record rainfall (1,350 mm in 5 days) inundated Houston from above, while storm surge in Galveston Bay backed up into Galveston Bay tributaries from below, while the pre-existing urban drainage system was already overwhelmed. Compound events are increasing in frequency as sea level rise extends the coastal influence farther inland and climate change intensifies extreme precipitation.',
         },
         {
-          q: 'FEMA\'s Flood Insurance Rate Maps (FIRMs) define the Special Flood Hazard Area (SFHA). What is a key limitation of these maps?',
+          q: `FEMA\'s Flood Insurance Rate Maps (FIRMs) define the Special Flood Hazard Area (SFHA). What is a key limitation of these maps?`,
           a: [
             'FIRMs are classified documents not available to homeowners or insurance companies',
             'FIRMs are often outdated, based on older elevation data and not accounting for recent urbanisation, climate change trends, or compound event scenarios',
@@ -192,7 +192,7 @@ Flood risk management integrates structural and non-structural measures. Structu
             'FIRMs show storm surge risk only; river flooding is mapped by the Army Corps of Engineers on separate, incompatible maps',
           ],
           correct: 1,
-          explain: 'FEMA\'s FIRMs are critical regulatory tools but have well-documented limitations. Many maps were last updated 10–30 years ago, before significant watershed development, climate trend changes, and improvements in topographic data (lidar). They use a deterministic "Line A" approach showing the 1% chance flood boundary without confidence intervals, suggesting false precision. Most critically, research by First Street Foundation and others has found that FIRMs substantially undercount flood risk: First Street estimates that the US has 14.6 million properties at substantial flood risk, compared to 8.7 million shown on FIRMs. This matters because NFIP mandatory purchase requirements only apply within SFHA, so millions of at-risk properties go without flood insurance.',
+          explain: `FEMA\'s FIRMs are critical regulatory tools but have well-documented limitations. Many maps were last updated 10–30 years ago, before significant watershed development, climate trend changes, and improvements in topographic data (lidar). They use a deterministic "Line A" approach showing the 1% chance flood boundary without confidence intervals, suggesting false precision. Most critically, research by First Street Foundation and others has found that FIRMs substantially undercount flood risk: First Street estimates that the US has 14.6 million properties at substantial flood risk, compared to 8.7 million shown on FIRMs. This matters because NFIP mandatory purchase requirements only apply within SFHA, so millions of at-risk properties go without flood insurance.`,
         },
         {
           q: 'Which flood risk reduction strategy typically provides the best long-term benefit-cost ratio for repeatedly flooded properties?',
@@ -203,7 +203,7 @@ Flood risk management integrates structural and non-structural measures. Structu
             'Deepening and widening river channels to increase their capacity to contain large floods',
           ],
           correct: 1,
-          explain: 'Managed retreat — purchasing and demolishing repeatedly flooded properties and converting the land to open space or restored floodplain — consistently shows the highest benefit-cost ratios in FEMA analyses. Once a property is removed from the floodplain and the land returned to natural condition, there are no more flood insurance claims from that property forever. FEMA\'s Hazard Mitigation Grant Program has funded over 45,000 acquisitions since 1989. For properties that flood repeatedly (some with NFIP claims exceeding the structure value multiple times), buyout costs are typically recovered in 5–10 years of avoided future claims. Channel enlargement has a poor track record — channels enlarged to handle bigger floods then encourage more development, requiring further enlargement in a cycle of infrastructure escalation.',
+          explain: `Managed retreat — purchasing and demolishing repeatedly flooded properties and converting the land to open space or restored floodplain — consistently shows the highest benefit-cost ratios in FEMA analyses. Once a property is removed from the floodplain and the land returned to natural condition, there are no more flood insurance claims from that property forever. FEMA\'s Hazard Mitigation Grant Program has funded over 45,000 acquisitions since 1989. For properties that flood repeatedly (some with NFIP claims exceeding the structure value multiple times), buyout costs are typically recovered in 5–10 years of avoided future claims. Channel enlargement has a poor track record — channels enlarged to handle bigger floods then encourage more development, requiring further enlargement in a cycle of infrastructure escalation.`,
         },
       ],
     },

@@ -10,7 +10,7 @@ const lavaFlowModeling: Lesson = {
   level: 'Intermediate',
   duration: '16 min',
   xpReward: 200,
-  description: 'How rheology, topography, and effusion rate combine to determine where lava flows go and how fast — from Kilauea\'s 2018 lower East Rift Zone flows that advanced 13 km in 12 hours, to probabilistic flow mapping with MOLASSES and PyFLOWGO that now guides land-use planning in volcanic hazard zones.',
+  description: `How rheology, topography, and effusion rate combine to determine where lava flows go and how fast — from Kilauea\'s 2018 lower East Rift Zone flows that advanced 13 km in 12 hours, to probabilistic flow mapping with MOLASSES and PyFLOWGO that now guides land-use planning in volcanic hazard zones.`,
   sources: [
     { org: 'USGS', title: 'Hawaiian Volcano Observatory — 2018 Kīlauea Lower East Rift Zone Eruption Reports', url: 'https://www.usgs.gov/observatories/hvo/news/leilani-estates-lower-east-rift-zone-eruption-2018' },
     { org: 'Smithsonian GVP', title: 'Global Volcanism Program — Mauna Loa 2022 Eruption Bulletin', url: 'https://volcano.si.edu/volcano.cfm?vn=332020' },
@@ -169,7 +169,7 @@ Crystal content amplifies viscosity non-linearly: the **Einstein-Roscoe relation
       type: 'quiz',
       questions: [
         {
-          q: 'A basaltic lava flow at 1,200°C has viscosity ~500 Pa·s. After advancing 5 km in an open channel and cooling to 1,050°C, its crystallinity increases from 5% to 40 vol%. Using the Einstein-Roscoe relationship, which best describes the approximate change in bulk viscosity and the flow\'s behaviour?',
+          q: `A basaltic lava flow at 1,200°C has viscosity ~500 Pa·s. After advancing 5 km in an open channel and cooling to 1,050°C, its crystallinity increases from 5% to 40 vol%. Using the Einstein-Roscoe relationship, which best describes the approximate change in bulk viscosity and the flow\'s behaviour?`,
           a: [
             'Viscosity increases by a factor of ~2, from ~500 to ~1,000 Pa·s — a modest change that allows the flow to continue advancing at a slightly reduced rate on the same slope',
             'Viscosity increases by 3–4 orders of magnitude (to ~10⁶–10⁷ Pa·s) as the crystal network approaches maximum packing, effectively stalling the open-channel flow front; the flow can only continue if new lava is supplied from the vent to maintain the pressure gradient and if a tube system provides insulation against further cooling',

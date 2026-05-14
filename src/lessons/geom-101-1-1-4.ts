@@ -83,7 +83,7 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
           icon: Globe,
           color: BRAND.coral,
           desc: 'Rivers set the basal boundary elevation for hillslopes. Channel incision lowers base level, steepening the adjacent hillslope and increasing sediment delivery — a positive feedback. Tectonic uplift raises rock relative to the erosional base, driving channel incision and progressive hillslope steepening. Sea-level fall propagates incision waves (knickpoints) upstream. Steady-state hillslopes exist when erosion rate equals uplift rate.',
-          examples: 'The Colorado Plateau has been deeply dissected by the Colorado River\'s incision over the past 5–6 Ma, producing steep canyon walls and rapid hillslope retreat. Post-glacial stream incision in UK valleys (e.g., the Wye, the Derwent) has steepened valley-side hillslopes, triggering renewed landsliding.',
+          examples: `The Colorado Plateau has been deeply dissected by the Colorado River\'s incision over the past 5–6 Ma, producing steep canyon walls and rapid hillslope retreat. Post-glacial stream incision in UK valleys (e.g., the Wye, the Derwent) has steepened valley-side hillslopes, triggering renewed landsliding.`,
         },
         {
           name: 'Erosion Rates and Cosmogenic Nuclide Dating',
@@ -185,7 +185,7 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
           explain: `Tectonic uplift steepens river channels by raising the source region relative to the ocean base level. Steeper channels incise faster (E = K × A^m × S^n), lowering the valley floor and reducing the base level at the foot of adjacent hillslopes. This steepens the hillslopes, increasing both creep flux (qs = −K × dz/dx) and overland flow erosion. Over time, if uplift is sustained, hillslopes reach a new, steeper steady state where the erosion rate matches the uplift rate — the classic concept of dynamic equilibrium. Rapidly uplifting mountain belts (Himalaya, Southern Alps of New Zealand) therefore have steep hillslopes, thin soils, frequent landslides, and high erosion rates measured by cosmogenic nuclides (1–10 mm/yr).`,
         },
         {
-          q: 'Cosmogenic nuclide dating uses ¹⁰Be produced in quartz minerals at Earth\'s surface. If a soil sample has very low ¹⁰Be concentration, what does this suggest?',
+          q: `Cosmogenic nuclide dating uses ¹⁰Be produced in quartz minerals at Earth\'s surface. If a soil sample has very low ¹⁰Be concentration, what does this suggest?`,
           a: [
             'The sample has been deeply buried for a long time, shielding it from cosmic rays and preventing ¹⁰Be accumulation',
             'The landscape is very old and stable; low concentrations indicate that ¹⁰Be has decayed away over millions of years',

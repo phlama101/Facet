@@ -65,7 +65,7 @@ At a more localised scale, volcanic **ashfall** — the deposition of tephra fro
           icon: Globe,
           color: BRAND.jade,
           desc: 'Ash destroys jet engines: melts at >1,000°C in turbine hot section, re-solidifies on blades, blocks cooling holes → flame-out. Abrades windscreens to opacity. Invisible to weather radar (unlike rain). VAAC (Volcanic Ash Advisory Centre) network: 9 VAACs globally (e.g., London for North Atlantic/Europe), run continuous ash dispersal modelling, issue NOTAMs (Notices to Airmen). Post-Eyjafjallajökull 2010: ICAO revised zero-tolerance to concentration-threshold model with three ash density zones. TROPOMI satellite: near-real-time SO₂ detection enables rapid VAAC alerting. British Airways Flight 9 (1982): all 4 engines failed in Galunggung ash; benchmark event.',
-          examples: 'Eyjafjallajökull 2010: 20 days, 100,000 flights, €1.3 billion industry loss → complete overhaul of ash safety protocols · BA Flight 9, 1982: all 4 engines failed; restarted below ash cloud; passengers saw St. Elmo\'s fire on wings · Galunggung 1982 also hit a second aircraft (Singapore Airlines) same week',
+          examples: `Eyjafjallajökull 2010: 20 days, 100,000 flights, €1.3 billion industry loss → complete overhaul of ash safety protocols · BA Flight 9, 1982: all 4 engines failed; restarted below ash cloud; passengers saw St. Elmo\'s fire on wings · Galunggung 1982 also hit a second aircraft (Singapore Airlines) same week`,
         },
       ],
     },

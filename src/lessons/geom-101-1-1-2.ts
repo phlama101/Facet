@@ -10,7 +10,7 @@ const regolithSoils: Lesson = {
   level: 'Foundations',
   duration: '12 min',
   xpReward: 120,
-  description: 'The weathered mantle covering Earth\'s surface — from fresh saprolite to developed soil horizons — and the five factors that control pedogenesis',
+  description: `The weathered mantle covering Earth\'s surface — from fresh saprolite to developed soil horizons — and the five factors that control pedogenesis`,
   sources: [
     { org: 'USDA NRCS', title: 'USDA Natural Resources Conservation Service — Soils', url: 'https://www.nrcs.usda.gov/conservation-basics/natural-resource-concerns/soils' },
     { org: 'FAO',       title: 'FAO Soils Portal',                                     url: 'https://www.fao.org/soils-portal' },
@@ -20,7 +20,7 @@ const regolithSoils: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'The weathered mantle covering Earth\'s surface — from fresh saprolite to developed soil horizons — and the five factors that control pedogenesis',
+      title: `The weathered mantle covering Earth\'s surface — from fresh saprolite to developed soil horizons — and the five factors that control pedogenesis`,
       body: `Regolith is the collective term for all unconsolidated material at Earth\'s surface — a blanket that can include saprolite, soil, alluvium, colluvium, volcanic ash, and glacial till. Wherever bedrock weathers in place, the first product is saprolite: rock that has been chemically transformed yet retains the original fabric of the parent material, including foliation planes, vein networks, and crystal outlines visible in thin section. In deeply weathered tropical terrains, saprolite may extend 50–100 m below the surface before giving way to fresh rock. Above the saprolite, pedogenic processes reorganise material into a soil profile — a vertical sequence of horizons that serves as a fingerprint of environmental history.
 
 The classic master horizons run from surface downward. The O horizon is organic litter and humus above the mineral soil, best developed under forest. The A horizon is humus-rich topsoil where organic matter and mineral grains are intimately mixed; it is the biologically most active layer. The E horizon, where developed, is the eluviation zone — clay, iron, and aluminium are selectively leached downward, leaving a pale, coarse-textured layer. Below lies the B horizon, the illuviation zone where translocated clays, iron oxides, organic complexes, or carbonates accumulate; its character depends on climate and vegetation. The C horizon is weakly altered parent material retaining much of the original rock structure, grading down to the R horizon of unweathered bedrock.
@@ -31,7 +31,7 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
       keyTerms: [
         {
           term: 'Regolith',
-          def: 'All unconsolidated material at Earth\'s surface, including saprolite, soil, alluvium, colluvium, volcanic ash, and glacial sediment.',
+          def: `All unconsolidated material at Earth\'s surface, including saprolite, soil, alluvium, colluvium, volcanic ash, and glacial sediment.`,
         },
         {
           term: 'Saprolite',
@@ -67,7 +67,7 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
           name: 'Soil Horizons and Profile Development',
           icon: Globe,
           color: BRAND.jade,
-          desc: 'The O/A/E/B/C/R horizon sequence records pedogenic history; each horizon\'s thickness, colour, and texture reflects the dominant processes acting at that depth.',
+          desc: `The O/A/E/B/C/R horizon sequence records pedogenic history; each horizon\'s thickness, colour, and texture reflects the dominant processes acting at that depth.`,
           examples: 'Classic New England spodosol with bleached white E horizon and rust-coloured Bhs; prairie mollisol with a thick, dark A horizon exceeding 1 m in Illinois.',
         },
         {
@@ -166,7 +166,7 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
           explain: `The B horizon is the illuviation zone where material translocated from overlying horizons accumulates. Depending on the dominant pedogenic process, the B horizon may be designated Bt (argillic — accumulated clay), Bhs or Bs (spodic — accumulated humus and sesquioxides in podzolized soils), or Bk (calcic — accumulated CaCO₃). The E horizon above it is the complementary eluviation zone — depleted of the same materials. The A horizon is where organic matter mixes with mineral soil at the surface; the C horizon is weakly altered parent material below the zone of strong pedogenic activity.`,
         },
         {
-          q: 'According to Jenny\'s factorial model, which two factors are generally considered most important in controlling soil type globally?',
+          q: `According to Jenny\'s factorial model, which two factors are generally considered most important in controlling soil type globally?`,
           a: [
             'Relief and parent material — they set the local physical and geochemical template',
             'Climate and organisms — temperature, precipitation, and vegetation type exert the strongest global controls on weathering and organic matter dynamics',

@@ -20,7 +20,7 @@ const glacierTypes: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'From cirque hollows to continent-covering ice sheets: a guide to the world\'s ice',
+      title: `From cirque hollows to continent-covering ice sheets: a guide to the world\'s ice`,
       body: `The Randolph Glacier Inventory (RGI) catalogues approximately 220,000 glaciers covering roughly 705,000 km² of Earth\'s surface — and that figure excludes the Greenland and Antarctic Ice Sheets entirely. Including those giants, the cryosphere stores roughly 26.9 million km³ of ice, enough to raise global sea level by ~65 m if melted completely. Understanding this ice requires two classification frameworks: morphological (how a glacier relates to underlying topography) and thermal (the temperature structure of the ice).
 
 Morphological classification divides glaciers into unconstrained types — ice caps and ice sheets, which spread independently of bedrock relief — and topographically constrained types, which are shaped by the terrain they occupy. Cirque glaciers occupy the armchair-shaped hollows (cirques) eroded into mountain flanks; they are small, highly climate-sensitive, and found on every major mountain range. Valley glaciers flow down pre-existing river valleys, can extend tens to hundreds of kilometres, and transport ice from high accumulation zones to lower ablation zones. Piedmont glaciers spread onto flat plains after leaving a confining valley. Ice fields are plateau ice masses drained by outlet glaciers that follow underlying topography, while ice caps are smooth domes whose flow is independent of the bed. Ice sheets are continental-scale ice caps exceeding 50,000 km²; only two exist today — Antarctica and Greenland.
@@ -39,7 +39,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
         },
         {
           term: 'ice sheet',
-          def: 'A continental-scale ice mass exceeding 50,000 km²; only Antarctica and Greenland qualify today, containing 99% of Earth\'s glacier ice.',
+          def: `A continental-scale ice mass exceeding 50,000 km²; only Antarctica and Greenland qualify today, containing 99% of Earth\'s glacier ice.`,
         },
         {
           term: 'polythermal glacier',
@@ -61,7 +61,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           icon: Globe,
           color: BRAND.accent,
           desc: 'Glaciers classified by their relationship to underlying topography; unconstrained (ice caps, ice sheets) vs. topographically constrained (cirque, valley, piedmont).',
-          examples: 'Cirque glaciers occupy armchair-shaped hollows eroded into mountain sides; common in high peaks worldwide. Valley glaciers flow down pre-existing valleys; can be 10s–100s km long (e.g., Hubbard Glacier, Alaska: 122 km). Ice caps are dome-shaped, unconstrained by topography; Vatnajökull, Iceland (8,100 km²) is Europe\'s largest.',
+          examples: `Cirque glaciers occupy armchair-shaped hollows eroded into mountain sides; common in high peaks worldwide. Valley glaciers flow down pre-existing valleys; can be 10s–100s km long (e.g., Hubbard Glacier, Alaska: 122 km). Ice caps are dome-shaped, unconstrained by topography; Vatnajökull, Iceland (8,100 km²) is Europe\'s largest.`,
         },
         {
           name: 'Thermal Classification: Cold, Warm, and Polythermal',
@@ -127,7 +127,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           {
             id: 'ice-sheet',
             label: 'Ice Sheet (>50,000 km²)',
-            description: 'Continental-scale: Antarctica and Greenland. 99% of Earth\'s glacier ice. Contains centuries of sea level.',
+            description: `Continental-scale: Antarctica and Greenland. 99% of Earth\'s glacier ice. Contains centuries of sea level.`,
             color: BRAND.ruby,
           },
         ],
@@ -189,7 +189,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           explain: `Ice shelves exert back-stress (buttressing) on the grounded ice flowing into them from the interior. Where an ice shelf is pinned by submarine ridges (ice rises and rumples), it transmits this resistance upstream, slowing the ice streams that feed it. When ice shelves collapse or thin, the buttressing force is lost and upstream ice accelerates. The dramatic collapse of the Larsen B Ice Shelf in 2002 (3,250 km² disintegrated in ~35 days) was followed by 2–8× acceleration of the tributary glaciers — a real-world experiment demonstrating buttressing. This is why the stability of ice shelves like the Ross (500,000 km²) and Filchner-Ronne (440,000 km²) is critical for West Antarctic Ice Sheet stability and long-term sea level projections.`,
         },
         {
-          q: 'The term \'temperate glacier\' refers to which glaciological property?',
+          q: `The term \'temperate glacier\' refers to which glaciological property?`,
           a: [
             'A glacier located in a temperate climate zone (30°–60° latitude)',
             'A glacier whose ice is at the pressure-melting point throughout its thickness, allowing liquid water to exist within the ice',

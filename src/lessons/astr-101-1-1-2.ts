@@ -65,13 +65,13 @@ The dynamical explanation for the LHB is the **Nice model** (named after the Cô
           icon: Globe,
           color: BRAND.amethyst,
           desc: 'Accretional heating + ²⁶Al/⁶⁰Fe decay → iron melting → iron rain and diapir sinking; iron density (~7,900 kg/m³) vs silicate (~3,000 kg/m³) drives rapid core formation. Siderophile elements (Ni, Co, PGEs) stripped from mantle into core; Earth mantle PGE excess → late veneer hypothesis (~0.5% chondritic mass accreted after core formation). Hf-W chronometer (t½ = 9 Myr): ¹⁸²Hf stays in silicate; ¹⁸²W goes into metal at core formation; ¹⁸²W excess in mantle places Earth core formation within ~30 Myr of t₀. Earth: liquid outer core + solid inner core → geodynamo → magnetosphere protecting atmosphere. Mars/Moon: smaller bodies, faster core solidification, weak or no dipole field → solar wind erosion of atmosphere.',
-          examples: 'Vesta (525 km asteroid): fully differentiated into iron core, mantle, and basaltic crust; Dawn spacecraft (2011–2018) mapped its surface and confirmed layered interior; HED meteorite suite (howardite-eucrite-diogenite) samples its crust and lower crust, available in museum collections · Mars: MAVEN spacecraft (2014–present) directly measures ongoing atmospheric ion loss at ~100 g/s to the solar wind — a direct consequence of no global dipole field after core solidification at ~4 Ga · Earth mantle PGEs: ~3.5 ppb Ir in peridotite xenoliths (50× more than predicted post-core-formation) → quantifies the late veneer at ~2 × 10²² kg (~0.5% of Earth mass) · Hf-W chronometry applied to martian SNC meteorites: places Mars core formation within ~4 Myr of t₀ — far faster than Earth\'s ~30 Myr',
+          examples: `Vesta (525 km asteroid): fully differentiated into iron core, mantle, and basaltic crust; Dawn spacecraft (2011–2018) mapped its surface and confirmed layered interior; HED meteorite suite (howardite-eucrite-diogenite) samples its crust and lower crust, available in museum collections · Mars: MAVEN spacecraft (2014–present) directly measures ongoing atmospheric ion loss at ~100 g/s to the solar wind — a direct consequence of no global dipole field after core solidification at ~4 Ga · Earth mantle PGEs: ~3.5 ppb Ir in peridotite xenoliths (50× more than predicted post-core-formation) → quantifies the late veneer at ~2 × 10²² kg (~0.5% of Earth mass) · Hf-W chronometry applied to martian SNC meteorites: places Mars core formation within ~4 Myr of t₀ — far faster than Earth\'s ~30 Myr`,
         },
         {
           name: 'The Giant Impact and Lunar Formation',
           icon: Telescope,
           color: BRAND.amethyst,
-          desc: 'Mars-sized Theia impacted proto-Earth ~50–100 Myr after t₀ at oblique angle (~45°) and ~4–8 km/s. Vaporised Theia + Earth mantle material formed a circumterrestrial disc; Moon accreted from this disc within ~10³ years. Isotopic identity: Earth and Moon share Δ¹⁷O, ε⁴⁸Ti, δ³⁰Si, Δ⁵³Cr within analytical uncertainty (unlike any meteorite class) → thorough mixing of Theia and Earth material. Lunar iron depletion: Moon core ~2% of mass (vs Earth ~32%) → most of Theia\'s iron merged with Earth\'s core. Volatile depletion: Moon has K/U ratio ~1,000× lower than Earth → extreme heating (>4,000 K) drove off volatiles. Angular momentum: Earth-Moon system L matches high-energy oblique impact simulations.',
+          desc: `Mars-sized Theia impacted proto-Earth ~50–100 Myr after t₀ at oblique angle (~45°) and ~4–8 km/s. Vaporised Theia + Earth mantle material formed a circumterrestrial disc; Moon accreted from this disc within ~10³ years. Isotopic identity: Earth and Moon share Δ¹⁷O, ε⁴⁸Ti, δ³⁰Si, Δ⁵³Cr within analytical uncertainty (unlike any meteorite class) → thorough mixing of Theia and Earth material. Lunar iron depletion: Moon core ~2% of mass (vs Earth ~32%) → most of Theia\'s iron merged with Earth\'s core. Volatile depletion: Moon has K/U ratio ~1,000× lower than Earth → extreme heating (>4,000 K) drove off volatiles. Angular momentum: Earth-Moon system L matches high-energy oblique impact simulations.`,
           examples: 'Apollo 11 samples (Mare Tranquillitatis, 1969): anorthositic highland chips → solidified floating crust of primordial lunar magma ocean, formed within ~200 Myr of t₀ · Apollo 15 Genesis Rock (sample 15415): nearly pure anorthosite dated ~4.5 Ga — direct material evidence for the LMO flotation crust hypothesis · Lunar laser ranging: retroreflectors placed by Apollo 11, 14, 15 still active; Moon receding ~3.82 cm/yr — total angular momentum conserved back-extrapolates to post-impact configuration · Giant Impact simulations (Canup & Asphaug 2001; Ćuk & Stewart 2012): reproduce Moon mass and angular momentum but struggle simultaneously with perfect Δ¹⁷O isotopic match — active research frontier',
         },
         {
@@ -92,7 +92,7 @@ The dynamical explanation for the LHB is the **Nice model** (named after the Cô
       type: 'quiz',
       questions: [
         {
-          q: 'Earth\'s upper mantle contains ~50× more platinum-group elements (PGEs) than expected after iron differentiated into the core. What does the late veneer hypothesis propose to explain this?',
+          q: `Earth\'s upper mantle contains ~50× more platinum-group elements (PGEs) than expected after iron differentiated into the core. What does the late veneer hypothesis propose to explain this?`,
           a: [
             'A small fraction of chondritic material accreted after core formation, adding PGEs to the mantle before they could be stripped into the core',
             'PGEs are incompatible with iron and were rejected from the core as it solidified, re-enriching the mantle over time',
@@ -100,7 +100,7 @@ The dynamical explanation for the LHB is the **Nice model** (named after the Cô
             'The Hf-W chronometer indicates core formation was incomplete, leaving PGEs partially in the mantle',
           ],
           correct: 0,
-          explain: 'If PGEs arrived after the iron core had segregated, they had no iron phase to partition into and instead distributed through the silicate mantle. The late veneer is estimated at ~0.5 % of Earth\'s mass — enough to explain the observed PGE excess while also delivering the bulk of Earth\'s water and organic carbon.',
+          explain: `If PGEs arrived after the iron core had segregated, they had no iron phase to partition into and instead distributed through the silicate mantle. The late veneer is estimated at ~0.5 % of Earth\'s mass — enough to explain the observed PGE excess while also delivering the bulk of Earth\'s water and organic carbon.`,
         },
         {
           q: 'The Giant Impact hypothesis is strongly supported by the near-identical oxygen isotope ratios of Earth and Moon. Why is isotopic similarity between two bodies unusual, and what does it imply?',
@@ -111,7 +111,7 @@ The dynamical explanation for the LHB is the **Nice model** (named after the Cô
             'The Moon formed from Earth\'s outer mantle through rotational fission, which naturally conserves isotopic ratios',
           ],
           correct: 0,
-          explain: 'Meteorite groups from different heliocentric distances have distinct Δ¹⁷O values. That Earth and Moon share nearly identical values means either Theia formed at the same distance from the Sun as Earth, or the violent impact mixed and equilibrated both bodies\' material in the vapour plume. This isotopic constraint is one of the hardest tests for Giant Impact models.',
+          explain: `Meteorite groups from different heliocentric distances have distinct Δ¹⁷O values. That Earth and Moon share nearly identical values means either Theia formed at the same distance from the Sun as Earth, or the violent impact mixed and equilibrated both bodies\' material in the vapour plume. This isotopic constraint is one of the hardest tests for Giant Impact models.`,
         },
         {
           q: 'The Nice model explains the Late Heavy Bombardment as a consequence of planetary migration. What orbital event is the direct trigger?',

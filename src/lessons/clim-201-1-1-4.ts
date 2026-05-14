@@ -51,7 +51,7 @@ Most 1.5 °C scenarios require achieving **net-zero CO₂ emissions** globally b
         },
         {
           term: 'Nationally Determined Contribution (NDC)',
-          def: 'A country\'s self-determined climate action plan submitted to the UNFCCC under the Paris Agreement, specifying emission reduction targets and adaptation policies for approximately 5-year cycles. NDCs are updated progressively ("ratchet mechanism"). As of 2023, current unconditional NDCs combined put the world on track for ~2.5–2.9 °C, well above the 1.5 °C target. The gap between NDC ambition and 1.5 °C-compatible pathways is the central challenge of international climate diplomacy.',
+          def: `A country\'s self-determined climate action plan submitted to the UNFCCC under the Paris Agreement, specifying emission reduction targets and adaptation policies for approximately 5-year cycles. NDCs are updated progressively ("ratchet mechanism"). As of 2023, current unconditional NDCs combined put the world on track for ~2.5–2.9 °C, well above the 1.5 °C target. The gap between NDC ambition and 1.5 °C-compatible pathways is the central challenge of international climate diplomacy.`,
         },
         {
           term: 'SSP scenario',

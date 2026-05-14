@@ -39,11 +39,11 @@ The recognition that liquid water oceans persist beneath ice shells in the cold 
       keyTerms: [
         {
           term: 'tidal heating',
-          def: 'The generation of internal heat within a moon through tidal flexing caused by periodic gravitational forces from the host planet and orbital resonances with sibling moons. As the moon\'s orbit is forced to remain elliptical by gravitational resonance, the changing distance from the planet causes periodic deformation of the interior. This mechanical deformation produces friction and heat. Tidal heating sustains Europa\'s subsurface ocean by preventing it from freezing, and drives intense volcanism on Io. The power dissipated scales with the square of the eccentricity, so resonance-maintained eccentricity is the key factor.',
+          def: `The generation of internal heat within a moon through tidal flexing caused by periodic gravitational forces from the host planet and orbital resonances with sibling moons. As the moon\'s orbit is forced to remain elliptical by gravitational resonance, the changing distance from the planet causes periodic deformation of the interior. This mechanical deformation produces friction and heat. Tidal heating sustains Europa\'s subsurface ocean by preventing it from freezing, and drives intense volcanism on Io. The power dissipated scales with the square of the eccentricity, so resonance-maintained eccentricity is the key factor.`,
         },
         {
           term: 'Laplace resonance',
-          def: 'A gravitational orbital resonance among three of Jupiter\'s Galilean moons: Io, Europa, and Ganymede orbit Jupiter in the ratio 4:2:1. This three-body resonance prevents the orbits from circularising — which would otherwise dampen tidal heating — by maintaining a forced orbital eccentricity in all three moons. The resonance was first described mathematically by Pierre-Simon Laplace in 1805. Without the Laplace resonance, tidal heating at Europa would have diminished long ago and the subsurface ocean would likely have frozen.',
+          def: `A gravitational orbital resonance among three of Jupiter\'s Galilean moons: Io, Europa, and Ganymede orbit Jupiter in the ratio 4:2:1. This three-body resonance prevents the orbits from circularising — which would otherwise dampen tidal heating — by maintaining a forced orbital eccentricity in all three moons. The resonance was first described mathematically by Pierre-Simon Laplace in 1805. Without the Laplace resonance, tidal heating at Europa would have diminished long ago and the subsurface ocean would likely have frozen.`,
         },
         {
           term: 'chaos terrain',
@@ -51,11 +51,11 @@ The recognition that liquid water oceans persist beneath ice shells in the cold 
         },
         {
           term: 'Europa Clipper',
-          def: 'NASA\'s flagship mission dedicated to investigating Europa\'s habitability. Launched October 2024, arrival at Jupiter 2030. The spacecraft will conduct approximately 50 flybys of Europa at altitudes as low as 25 km. Key instruments: REASON (ice-penetrating radar to map ice shell thickness and brine pockets), magnetometer and plasma sensors (to characterise the ocean), MASPEX (mass spectrometer for potential plume sampling), E-THEMIS (thermal imager to detect active sites), and cameras. The mission does not land or attempt to penetrate the ice but will characterise habitability parameters — ocean depth, ice shell structure, surface chemistry — to inform future landing missions.',
+          def: `NASA\'s flagship mission dedicated to investigating Europa\'s habitability. Launched October 2024, arrival at Jupiter 2030. The spacecraft will conduct approximately 50 flybys of Europa at altitudes as low as 25 km. Key instruments: REASON (ice-penetrating radar to map ice shell thickness and brine pockets), magnetometer and plasma sensors (to characterise the ocean), MASPEX (mass spectrometer for potential plume sampling), E-THEMIS (thermal imager to detect active sites), and cameras. The mission does not land or attempt to penetrate the ice but will characterise habitability parameters — ocean depth, ice shell structure, surface chemistry — to inform future landing missions.`,
         },
         {
           term: 'Enceladus plumes',
-          def: 'Active water vapour and particle jets erupting from the south polar terrain of Saturn\'s moon Enceladus, discovered by NASA\'s Cassini spacecraft in 2005. The plumes emerge from warm linear fissures called "tiger stripes." Cassini\'s INMS instrument detected H₂O, NaCl, CO₂, CH₄, H₂, NH₃, and complex organic molecules including low-mass hydrocarbons and nitrogen/oxygen compounds. SiO₂ nanoparticles indicate water–rock interaction at ~90 °C. H₂ indicates ongoing serpentinisation reactions at the seafloor. The plumes feed Saturn\'s E-ring. They represent the only place in the Solar System beyond Earth where we can directly sample a subsurface ocean without drilling through ice.',
+          def: `Active water vapour and particle jets erupting from the south polar terrain of Saturn\'s moon Enceladus, discovered by NASA\'s Cassini spacecraft in 2005. The plumes emerge from warm linear fissures called "tiger stripes." Cassini\'s INMS instrument detected H₂O, NaCl, CO₂, CH₄, H₂, NH₃, and complex organic molecules including low-mass hydrocarbons and nitrogen/oxygen compounds. SiO₂ nanoparticles indicate water–rock interaction at ~90 °C. H₂ indicates ongoing serpentinisation reactions at the seafloor. The plumes feed Saturn\'s E-ring. They represent the only place in the Solar System beyond Earth where we can directly sample a subsurface ocean without drilling through ice.`,
         },
       ],
     },
@@ -68,21 +68,21 @@ The recognition that liquid water oceans persist beneath ice shells in the cold 
           name: 'Europa\'s Subsurface Ocean',
           icon: Waves,
           color: BRAND.accent,
-          desc: 'Europa\'s global subsurface ocean is ~100 km deep, containing more water than all Earth\'s oceans. Galileo magnetometer evidence (induced magnetic field) confirmed a conductive saltwater layer. The ice shell is 15–25 km thick. Ocean composition includes MgSO₄ and NaCl; seafloor likely rocky with potential hydrothermal activity. Radiolysis of surface ice creates oxidants that may be transported into the ocean via ice recycling, driving redox gradients that could support chemolithotrophs.',
+          desc: `Europa\'s global subsurface ocean is ~100 km deep, containing more water than all Earth\'s oceans. Galileo magnetometer evidence (induced magnetic field) confirmed a conductive saltwater layer. The ice shell is 15–25 km thick. Ocean composition includes MgSO₄ and NaCl; seafloor likely rocky with potential hydrothermal activity. Radiolysis of surface ice creates oxidants that may be transported into the ocean via ice recycling, driving redox gradients that could support chemolithotrophs.`,
           examples: 'Galileo flyby E4 (1996): magnetometer detected induced field 70–100% consistent with a saline ocean · Conamara Chaos: 190 × 180 km ice block disruption, evidence of subsurface thermal activity · Double ridges: global network of paired ridges up to 300 m high formed by tidal cracking and material upwelling · Surface O₂ and H₂O₂ detected by Hubble UV spectroscopy — radiolytic oxidants potentially cycling into the ocean',
         },
         {
           name: 'Tidal Heating and Energy Sources',
           icon: Zap,
           color: BRAND.accentHot,
-          desc: 'The Io–Europa–Ganymede Laplace resonance (4:2:1 orbital ratio) locks Europa\'s orbit into a forced eccentricity of ~0.009, generating tidal flexing and internal heat. This heat sustains the liquid ocean and may drive hydrothermal circulation at the ice–rock boundary. Io, in the innermost resonance orbit, dissipates the most tidal energy and is the most volcanically active body in the Solar System — direct evidence the Laplace resonance delivers enormous power to inner moons.',
+          desc: `The Io–Europa–Ganymede Laplace resonance (4:2:1 orbital ratio) locks Europa\'s orbit into a forced eccentricity of ~0.009, generating tidal flexing and internal heat. This heat sustains the liquid ocean and may drive hydrothermal circulation at the ice–rock boundary. Io, in the innermost resonance orbit, dissipates the most tidal energy and is the most volcanically active body in the Solar System — direct evidence the Laplace resonance delivers enormous power to inner moons.`,
           examples: 'Io heat flow: ~2 W/m² (Earth geothermal average ~0.087 W/m²) — resonance-driven tidal dissipation · Europa tidal power estimate: ~10¹² W total interior heating, sufficient to maintain liquid ocean · Enceladus south polar heat: 15.8 GW measured by Cassini CIRS — anomalously high for a moon only 252 km radius · Ganymede: receives ~4× less tidal heating than Europa due to greater orbital distance but still inferred to have a subsurface ocean',
         },
         {
           name: 'Enceladus — Active Plumes and Chemistry',
           icon: Globe,
           color: BRAND.jade,
-          desc: 'Enceladus (radius 252 km, Saturn moon) erupts active plumes from south polar tiger-stripe fissures, providing direct sampling of its subsurface ocean. Cassini INMS detected H₂O, NaCl, CO₂, H₂, organics, and SiO₂ nanoparticles — signatures of hydrothermal water–rock reactions at ~90 °C and serpentinisation. Ocean pH ~11 (alkaline). H₂ production via serpentinisation provides a potential energy source for methanogenic or acetogenic microorganisms, mirroring conditions at Earth\'s Lost City hydrothermal field.',
+          desc: `Enceladus (radius 252 km, Saturn moon) erupts active plumes from south polar tiger-stripe fissures, providing direct sampling of its subsurface ocean. Cassini INMS detected H₂O, NaCl, CO₂, H₂, organics, and SiO₂ nanoparticles — signatures of hydrothermal water–rock reactions at ~90 °C and serpentinisation. Ocean pH ~11 (alkaline). H₂ production via serpentinisation provides a potential energy source for methanogenic or acetogenic microorganisms, mirroring conditions at Earth\'s Lost City hydrothermal field.`,
           examples: 'Cassini E21 flyby (2015): deepest plume dive at 49 km altitude; INMS detected H₂ at ~0.9% by volume · SiO₂ nanoparticles 2–8 nm diameter: require hot (>90 °C) alkaline water dissolving silica then precipitating upon cooling · Saturn E-ring: composed primarily of Enceladus plume material — entire ring is effectively a sampled ocean · Lost City hydrothermal field (Atlantic): pH 9–11, serpentinisation-driven H₂ production, hosting chemolithotrophic communities — closest Earth analogue',
         },
         {
@@ -90,7 +90,7 @@ The recognition that liquid water oceans persist beneath ice shells in the cold 
           icon: Activity,
           color: BRAND.gold,
           desc: 'Europa Clipper (NASA, launched Oct 2024, arrival 2030) will conduct ~50 Europa flybys with ice-penetrating radar (REASON), magnetometer, mass spectrometer (MASPEX), thermal imager, and cameras to characterise ocean depth, ice shell structure, surface chemistry, and potential plumes. JUICE (ESA, launched Apr 2023, arrival 2031) will orbit Ganymede and fly by Europa and Callisto, becoming the first spacecraft to orbit a body other than our Moon. Together these missions will map the full spectrum of Jovian ocean world habitability.',
-          examples: 'REASON radar: will image ice shell internal structure at 9 and 60 MHz; detect liquid water pockets within the ice · MASPEX mass spectrometer: resolution to distinguish molecular masses at 1 part in 25,000 — capable of identifying amino acid precursors in plumes · JUICE GALA lidar: will measure Ganymede tidal deformation to ±0.1 m, directly constraining ocean depth · Dragonfly (NASA, launch ~2028): not an ocean world mission but will explore Titan\'s organic chemistry relevant to prebiotic processes',
+          examples: `REASON radar: will image ice shell internal structure at 9 and 60 MHz; detect liquid water pockets within the ice · MASPEX mass spectrometer: resolution to distinguish molecular masses at 1 part in 25,000 — capable of identifying amino acid precursors in plumes · JUICE GALA lidar: will measure Ganymede tidal deformation to ±0.1 m, directly constraining ocean depth · Dragonfly (NASA, launch ~2028): not an ocean world mission but will explore Titan\'s organic chemistry relevant to prebiotic processes`,
         },
       ],
     },
@@ -100,30 +100,30 @@ The recognition that liquid water oceans persist beneath ice shells in the cold 
       body: `Europa\'s layered interior — from the radiation-bombarded surface ice through the thick ice shell to the deep liquid ocean and rocky seafloor — defines the pathway by which surface-generated oxidants might reach hydrothermal environments below. Each layer plays a distinct role in the moon\'s potential habitability.`,
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'tracing energy and chemical flows through Europa\'s layered interior, from Jupiter\'s tidal forces through the ice shell and ocean to potential hydrothermal life at the seafloor',
+        description: `tracing energy and chemical flows through Europa\'s layered interior, from Jupiter\'s tidal forces through the ice shell and ocean to potential hydrothermal life at the seafloor`,
         nodes: [
           {
             id: 'jupiter-tidal',
             label: 'Jupiter Tidal Forces',
-            description: 'Jupiter\'s immense gravity and the Laplace resonance with Io and Ganymede force Europa\'s orbit to remain elliptical (eccentricity ~0.009). The periodic change in distance from Jupiter causes rhythmic gravitational flexing of the entire moon with each 3.55-day orbit. This is the ultimate energy source driving all geological and chemical activity within Europa.',
+            description: `Jupiter\'s immense gravity and the Laplace resonance with Io and Ganymede force Europa\'s orbit to remain elliptical (eccentricity ~0.009). The periodic change in distance from Jupiter causes rhythmic gravitational flexing of the entire moon with each 3.55-day orbit. This is the ultimate energy source driving all geological and chemical activity within Europa.`,
             color: BRAND.gold,
           },
           {
             id: 'tidal-heating',
             label: 'Tidal Heating',
-            description: 'Tidal flexing deforms Europa\'s interior, generating frictional heat throughout the rocky mantle and at the base of the ice shell. Total estimated tidal power dissipation: ~10¹² W. This internal heat maintains the subsurface ocean in liquid form despite Europa\'s surface temperature of −160 °C and prevents the ocean from freezing through from below.',
+            description: `Tidal flexing deforms Europa\'s interior, generating frictional heat throughout the rocky mantle and at the base of the ice shell. Total estimated tidal power dissipation: ~10¹² W. This internal heat maintains the subsurface ocean in liquid form despite Europa\'s surface temperature of −160 °C and prevents the ocean from freezing through from below.`,
             color: BRAND.accentHot,
           },
           {
             id: 'ice-shell',
             label: 'Ice Shell Dynamics',
-            description: 'The ice shell (15–25 km thick) is not static. Tidal stresses crack the surface, forming double ridges and chaos terrain. Warm ice convects upward while cold ice sinks. Radiolysis of surface ice by Jupiter\'s radiation belt generates oxidants (O₂, H₂O₂). Ice recycling may transport these surface-generated oxidants downward into the ocean, critical for sustaining redox chemistry below.',
+            description: `The ice shell (15–25 km thick) is not static. Tidal stresses crack the surface, forming double ridges and chaos terrain. Warm ice convects upward while cold ice sinks. Radiolysis of surface ice by Jupiter\'s radiation belt generates oxidants (O₂, H₂O₂). Ice recycling may transport these surface-generated oxidants downward into the ocean, critical for sustaining redox chemistry below.`,
             color: BRAND.accent,
           },
           {
             id: 'subsurface-ocean',
             label: 'Subsurface Ocean',
-            description: 'A global liquid water ocean ~100 km deep lies beneath the ice shell, confirmed by Galileo\'s induced magnetic field measurements. The ocean likely contains MgSO₄, NaCl, and other dissolved salts leached from the rocky seafloor. It receives oxidants from above (through ice recycling) and reductants from below (through hydrothermal venting), creating potential redox gradients that could support chemolithotrophic life.',
+            description: `A global liquid water ocean ~100 km deep lies beneath the ice shell, confirmed by Galileo\'s induced magnetic field measurements. The ocean likely contains MgSO₄, NaCl, and other dissolved salts leached from the rocky seafloor. It receives oxidants from above (through ice recycling) and reductants from below (through hydrothermal venting), creating potential redox gradients that could support chemolithotrophic life.`,
             color: BRAND.jade,
           },
           {
@@ -135,7 +135,7 @@ The recognition that liquid water oceans persist beneath ice shells in the cold 
           {
             id: 'chemo-life',
             label: 'Potential Chemolithotrophic Life',
-            description: 'If oxidants (O₂, SO₄²⁻) from above meet reductants (H₂, H₂S, Fe²⁺) from hydrothermal sources in the ocean, the resulting redox gradient could support microorganisms that harvest energy from inorganic chemical reactions — analogous to chemolithotrophs at Earth\'s deep-sea hydrothermal vents. Such organisms require no sunlight, only liquid water, chemical energy, and bioessential elements (C, H, N, O, P, S).',
+            description: `If oxidants (O₂, SO₄²⁻) from above meet reductants (H₂, H₂S, Fe²⁺) from hydrothermal sources in the ocean, the resulting redox gradient could support microorganisms that harvest energy from inorganic chemical reactions — analogous to chemolithotrophs at Earth\'s deep-sea hydrothermal vents. Such organisms require no sunlight, only liquid water, chemical energy, and bioessential elements (C, H, N, O, P, S).`,
             color: BRAND.amethyst,
           },
         ],

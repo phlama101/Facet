@@ -81,7 +81,7 @@ The central question driving Mars exploration today is whether microbial life ar
             'The absence of erosion by water and wind preserves the full height of Martian volcanoes, while Earth\'s volcanoes are eroded down',
           ],
           correct: 0,
-          explain: 'On Earth, plate tectonics carries the lithosphere over mantle plumes, creating chains of progressively older volcanoes (e.g., Hawaiian-Emperor chain). Each volcano is active for a limited time before moving off the hotspot. On Mars, the plate doesn\'t move, so magma from a single plume has been feeding one location for over a billion years, stacking enormous volumes of lava into one giant structure.',
+          explain: `On Earth, plate tectonics carries the lithosphere over mantle plumes, creating chains of progressively older volcanoes (e.g., Hawaiian-Emperor chain). Each volcano is active for a limited time before moving off the hotspot. On Mars, the plate doesn\'t move, so magma from a single plume has been feeding one location for over a billion years, stacking enormous volumes of lava into one giant structure.`,
         },
         {
           q: 'Curiosity rover found well-rounded conglomerate pebbles at the base of Mount Sharp in Gale Crater. What is the geological significance?',
@@ -103,7 +103,7 @@ The central question driving Mars exploration today is whether microbial life ar
             'Mars cooled so rapidly that its volcanoes became extinct within 1 Gyr, eliminating CO₂ sources before the atmosphere could thicken',
           ],
           correct: 0,
-          explain: 'MAVEN spacecraft measurements directly detected solar wind stripping of Mars\'s upper atmosphere and measured the historical escape rates. The magnetic field loss is the pivotal event: Earth\'s magnetosphere deflects the solar wind; without a dipole field, Mars\'s ionosphere is directly exposed to solar wind pressure and energetic particle bombardment. While Mars\'s lower gravity enhances Jeans escape for light atoms, solar wind stripping is the dominant mechanism for heavier species like O, C, and N.',
+          explain: `MAVEN spacecraft measurements directly detected solar wind stripping of Mars\'s upper atmosphere and measured the historical escape rates. The magnetic field loss is the pivotal event: Earth\'s magnetosphere deflects the solar wind; without a dipole field, Mars\'s ionosphere is directly exposed to solar wind pressure and energetic particle bombardment. While Mars\'s lower gravity enhances Jeans escape for light atoms, solar wind stripping is the dominant mechanism for heavier species like O, C, and N.`,
         },
       ],
     },

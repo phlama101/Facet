@@ -51,7 +51,7 @@ The gases that magma releases are not just a byproduct of eruption — they are 
           icon: Flame,
           color: BRAND.ruby,
           desc: 'H₂O: dominant volatile (1–6 wt%); exsolves at <5 km depth; drives explosive eruptions. CO₂: exsolves at depth >10 km; first to degas; CO₂:SO₂ ratio = depth indicator. SO₂: exsolves at 1–5 km depth; monitored as eruption precursor; oxidises to stratospheric sulfate aerosol. HCl and HF: late-stage volatiles; HF extremely toxic; causes acid rain. H₂S: hazardous near vents; heavier than air; pools in depressions. Fumaroles: vents emitting volcanic gas between eruptions. Passive degassing: ongoing gas release without eruption (Kīlauea SO₂ ~500–1,000 t/day normal).',
-          examples: 'Kīlauea SO₂: up to 2,000 t/day during high eruptive periods — causes \'vog\' (volcanic smog) affecting downwind communities · Lake Nyos (Cameroon) 1986: CO₂ eruption (limnic eruption from CO₂-saturated lake) released 1.6 Mt CO₂, killed 1,800 people in minutes by asphyxiation in CO₂ cloud flowing downhill · Masaya (Nicaragua): persistent passive SO₂ emitter, 1,000+ t/day, acid rain damages crops 30 km downwind',
+          examples: `Kīlauea SO₂: up to 2,000 t/day during high eruptive periods — causes \'vog\' (volcanic smog) affecting downwind communities · Lake Nyos (Cameroon) 1986: CO₂ eruption (limnic eruption from CO₂-saturated lake) released 1.6 Mt CO₂, killed 1,800 people in minutes by asphyxiation in CO₂ cloud flowing downhill · Masaya (Nicaragua): persistent passive SO₂ emitter, 1,000+ t/day, acid rain damages crops 30 km downwind`,
         },
         {
           name: 'Stratospheric Aerosols and Climate Forcing',

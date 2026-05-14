@@ -53,7 +53,7 @@ Fronts are not vertical walls. They are gently sloping surfaces, tilting at angl
           icon: Wind,
           color: BRAND.accent,
           desc: 'cA (continental Arctic): very cold, dry — source: Siberia, northern Canada in winter. cP (continental Polar): cold, dry — major N. American/Asian winter weather driver. mP (maritime Polar): cool, moist — N. Atlantic/Pacific. mT (maritime Tropical): warm, moist — Gulf of Mexico, Caribbean, subtropical Pacific; primary moisture source for US precipitation and thunderstorms. cT (continental Tropical): hot, dry — SW deserts, Sahara.',
-          examples: 'cP outbreak: "polar vortex" events sending −30°C air into US Midwest and East · mT intrusion: "Gulf surge" bringing warm humid air northward into Plains, fuelling tornado outbreaks · Nor\'easter: mP air from Atlantic combined with cold Continental air → heavy coastal snowstorms',
+          examples: `cP outbreak: "polar vortex" events sending −30°C air into US Midwest and East · mT intrusion: "Gulf surge" bringing warm humid air northward into Plains, fuelling tornado outbreaks · Nor\'easter: mP air from Atlantic combined with cold Continental air → heavy coastal snowstorms`,
         },
         {
           name: 'Cold and Warm Fronts',

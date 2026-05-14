@@ -103,7 +103,7 @@ Beyond sea level, the broader cryosphere — sea ice, permafrost, and mountain g
             'Permafrost is only found in areas where warming is below the global average, so the local feedback does not influence global temperature',
           ],
           correct: 0,
-          explain: 'Permafrost contains ~1,500 GtC — roughly twice the current atmospheric CO₂ burden. Abrupt thaw processes (thermokarst lake formation, retrogressive slumps) can release carbon 10× faster than the gradual top-down thaw captured by most land-surface models. Methane\'s high warming potential and the enormous carbon inventory make this a first-order concern that current models consistently underestimate.',
+          explain: `Permafrost contains ~1,500 GtC — roughly twice the current atmospheric CO₂ burden. Abrupt thaw processes (thermokarst lake formation, retrogressive slumps) can release carbon 10× faster than the gradual top-down thaw captured by most land-surface models. Methane\'s high warming potential and the enormous carbon inventory make this a first-order concern that current models consistently underestimate.`,
         },
         {
           q: 'Global mean sea level rise projections for 2100 range from ~0.3 m under aggressive emissions reductions to >1 m under high-emission scenarios, with low-likelihood high-impact scenarios exceeding 2 m. Why is the upper end of sea level projections so uncertain, and what physical processes are responsible for the asymmetry between the likely range and the high-impact tail?',

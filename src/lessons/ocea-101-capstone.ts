@@ -96,7 +96,7 @@ Take your time — precision matters in oceanography.`,
         // ── CHAPTER 2 — SEAWATER & OCEAN STRUCTURE ───────────────────────────
 
         {
-          q: 'The Mediterranean Sea has surface salinities of 37–39 psu (practical salinity units), substantially higher than the Atlantic\'s ~35 psu. What set of processes explains this anomaly?',
+          q: `The Mediterranean Sea has surface salinities of 37–39 psu (practical salinity units), substantially higher than the Atlantic\'s ~35 psu. What set of processes explains this anomaly?`,
           a: [
             'The Mediterranean is saltier because major rivers — the Nile, Rhône, and Po — deliver large quantities of dissolved minerals directly into a semi-enclosed basin with no outlet; freshwater evaporates leaving salts behind',
             'The Mediterranean is saltier because it sits at a lower latitude than most of the Atlantic, receiving more intense solar radiation that drives stronger evaporation; the Strait of Gibraltar is wide enough to allow full exchange with the Atlantic, so the salinity difference represents only a small, transient fluctuation',

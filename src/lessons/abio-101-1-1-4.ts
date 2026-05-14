@@ -10,7 +10,7 @@ const photosynthesisOxygenation: Lesson = {
   level: 'Foundations',
   duration: '12 min',
   xpReward: 120,
-  description: 'How cyanobacteria oxygenated Earth\'s atmosphere ~2.4 billion years ago and transformed the biosphere forever',
+  description: `How cyanobacteria oxygenated Earth\'s atmosphere ~2.4 billion years ago and transformed the biosphere forever`,
   sources: [
     { org: 'NASA',   title: 'NASA Astrobiology Program',   url: 'https://astrobiology.nasa.gov/' },
     { org: 'USGS',   title: 'USGS — Geologic History',     url: 'https://www.usgs.gov/' },
@@ -20,7 +20,7 @@ const photosynthesisOxygenation: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'From anoxic to oxic: how cyanobacteria changed Earth\'s atmosphere and made complex life possible',
+      title: `From anoxic to oxic: how cyanobacteria changed Earth\'s atmosphere and made complex life possible`,
       body: `For the first two billion years of Earth\'s history, the atmosphere contained essentially no free molecular oxygen. The oceans were rich in dissolved iron (Fe²⁺), hydrogen sulfide (H₂S), and other reduced compounds; any organism that could exploit these electron donors for photosynthesis had an enormous metabolic advantage. The earliest photosynthesisers — appearing by at least ~3.5 billion years ago (Ga) — practised **anoxygenic photosynthesis**, stripping electrons from H₂S, Fe²⁺, or organic molecules rather than water. Crucially, these reactions produce no oxygen byproduct: the electron donors are consumed silently, leaving behind sulfur, oxidised iron, or CO₂, but not O₂. Life had been harvesting sunlight for hundreds of millions of years without altering the redox state of the atmosphere.
 
 That changed with the evolution of **oxygenic photosynthesis** in cyanobacteria, estimated to have first appeared by ~2.7 Ga. Cyanobacteria evolved a unique two-photosystem reaction centre — Photosystem I coupled with Photosystem II — capable of splitting water (H₂O) as the electron donor. The reaction is thermodynamically demanding: water is a far more stable, less reactive molecule than H₂S or Fe²⁺, requiring a powerful oxidant (the oxygen-evolving complex in PSII, centred on a manganese cluster) to extract electrons from it. But water is essentially unlimited in abundance, freeing oxygenic photosynthesisers from dependence on scarcer reduced substrates. The byproduct of water-splitting is molecular oxygen — O₂ — released as a waste gas with every photosynthetic cycle.
@@ -41,7 +41,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
       keyTerms: [
         {
           term: 'Great Oxidation Event',
-          def: 'The geologically abrupt rise of free molecular oxygen (O₂) in Earth\'s atmosphere approximately 2.4 billion years ago, driven by cyanobacterial oxygenic photosynthesis overwhelming the planet\'s geochemical oxygen sinks (dissolved iron, sulfide, crustal minerals). Evidenced by the disappearance of mass-independent sulfur isotope fractionation (MIF-S), the end of detrital pyrite and uraninite in riverbeds, the first appearance of continental red beds and oxidised paleosols, and the decline of banded iron formations. The GOE permanently transformed Earth\'s surface chemistry, atmosphere, and biosphere.',
+          def: `The geologically abrupt rise of free molecular oxygen (O₂) in Earth\'s atmosphere approximately 2.4 billion years ago, driven by cyanobacterial oxygenic photosynthesis overwhelming the planet\'s geochemical oxygen sinks (dissolved iron, sulfide, crustal minerals). Evidenced by the disappearance of mass-independent sulfur isotope fractionation (MIF-S), the end of detrital pyrite and uraninite in riverbeds, the first appearance of continental red beds and oxidised paleosols, and the decline of banded iron formations. The GOE permanently transformed Earth\'s surface chemistry, atmosphere, and biosphere.`,
         },
         {
           term: 'Cyanobacteria',
@@ -49,7 +49,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
         },
         {
           term: 'Banded iron formation',
-          def: 'Laminated Precambrian sedimentary rocks consisting of alternating iron-rich (magnetite, hematite, siderite) and silica-rich layers, typically deposited in marine basins between ~3.5 and ~1.8 Ga with a peak between ~2.6 and ~1.8 Ga. BIFs record the episodic oxidation of dissolved ferrous iron (Fe²⁺) by photosynthetically produced O₂: Fe²⁺ + O₂ → Fe³⁺ oxides that precipitate. They constitute the world\'s largest iron ore deposits (e.g., Hamersley Basin, Australia; Transvaal, South Africa) and are a direct geological archive of the oxygenation of the early ocean.',
+          def: `Laminated Precambrian sedimentary rocks consisting of alternating iron-rich (magnetite, hematite, siderite) and silica-rich layers, typically deposited in marine basins between ~3.5 and ~1.8 Ga with a peak between ~2.6 and ~1.8 Ga. BIFs record the episodic oxidation of dissolved ferrous iron (Fe²⁺) by photosynthetically produced O₂: Fe²⁺ + O₂ → Fe³⁺ oxides that precipitate. They constitute the world\'s largest iron ore deposits (e.g., Hamersley Basin, Australia; Transvaal, South Africa) and are a direct geological archive of the oxygenation of the early ocean.`,
         },
         {
           term: 'Mass-independent sulfur isotope fractionation',
@@ -84,7 +84,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
           name: 'BIFs as Oxygen Sinks',
           icon: Layers,
           color: BRAND.coral,
-          desc: 'Banded iron formations (~3.5–1.8 Ga) acted as a giant geochemical buffer: dissolved Fe²⁺ in the anoxic deep ocean reacted with photosynthetic O₂ to precipitate Fe³⁺ oxides (hematite, magnetite), absorbing O₂ and preventing its atmospheric accumulation. BIFs peaked in deposition ~2.6–1.8 Ga, then declined as Fe²⁺ was exhausted and the deep ocean became oxygenated. They constitute the world\'s major iron ore reserves today.',
+          desc: `Banded iron formations (~3.5–1.8 Ga) acted as a giant geochemical buffer: dissolved Fe²⁺ in the anoxic deep ocean reacted with photosynthetic O₂ to precipitate Fe³⁺ oxides (hematite, magnetite), absorbing O₂ and preventing its atmospheric accumulation. BIFs peaked in deposition ~2.6–1.8 Ga, then declined as Fe²⁺ was exhausted and the deep ocean became oxygenated. They constitute the world\'s major iron ore reserves today.`,
           examples: 'Hamersley Basin (Western Australia) and Transvaal Basin (South Africa): together contain >50% of global identified iron ore reserves, all Paleoproterozoic BIFs representing billions of years of O₂ buffering locked in rock.',
         },
         {
@@ -92,7 +92,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
           icon: Activity,
           color: BRAND.accent,
           desc: 'O₂ and its photochemical derivative O₃ (ozone) are considered strong biosignatures because abiotic O₂ sources (CO₂/H₂O photolysis) produce far too little to sustain detectable atmospheric concentrations without continuous biological replenishment. Detection of O₂ alongside CH₄ is especially compelling: the two gases react rapidly and cannot coexist without separate biological sources. JWST and future direct-imaging missions will search for O₂/O₃ spectral features in rocky exoplanet atmospheres.',
-          examples: 'Earth\'s O₃ layer produces a strong UV absorption feature at 0.25 μm detectable remotely; JWST detected CO₂ in TRAPPIST-1b\'s atmosphere (2023) as a proof of concept, with O₂/O₃ detection in habitable-zone planets a future goal for missions like the Habitable Worlds Observatory.',
+          examples: `Earth\'s O₃ layer produces a strong UV absorption feature at 0.25 μm detectable remotely; JWST detected CO₂ in TRAPPIST-1b\'s atmosphere (2023) as a proof of concept, with O₂/O₃ detection in habitable-zone planets a future goal for missions like the Habitable Worlds Observatory.`,
         },
       ],
     },
@@ -102,12 +102,12 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
       body: `The oxygenation of Earth\'s atmosphere was not a single event but a cascade of linked biological and geochemical processes spanning more than two billion years. Each stage was both a consequence of what came before and a precondition for what followed. Trace the flow from the earliest anoxygenic photosynthesisers to the O₂-rich atmosphere that made complex animal life possible.`,
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'Causal chain linking early photosynthesis to the oxygenation of Earth\'s atmosphere and the emergence of complex life',
+        description: `Causal chain linking early photosynthesis to the oxygenation of Earth\'s atmosphere and the emergence of complex life`,
         nodes: [
           {
             id: 'anoxygenic',
             label: 'Anoxygenic Photosynthesis',
-            description: 'The earliest photosynthetic bacteria (~3.5 Ga) harvested sunlight using H₂S, Fe²⁺, or organic molecules as electron donors — reactions that produce no O₂. Preserved in ancient stromatolites (e.g., Apex Chert, Western Australia) and in modern analogue environments (hot springs, anoxic lake basins). Established the enzymatic machinery of light harvesting and carbon fixation that oxygenic photosynthesis would later build upon, but left Earth\'s atmosphere chemically reducing for hundreds of millions of years.',
+            description: `The earliest photosynthetic bacteria (~3.5 Ga) harvested sunlight using H₂S, Fe²⁺, or organic molecules as electron donors — reactions that produce no O₂. Preserved in ancient stromatolites (e.g., Apex Chert, Western Australia) and in modern analogue environments (hot springs, anoxic lake basins). Established the enzymatic machinery of light harvesting and carbon fixation that oxygenic photosynthesis would later build upon, but left Earth\'s atmosphere chemically reducing for hundreds of millions of years.`,
             color: BRAND.jade,
           },
           {
@@ -155,7 +155,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
       type: 'quiz',
       questions: [
         {
-          q: 'What made oxygenic photosynthesis, as practised by cyanobacteria, revolutionary compared to the anoxygenic photosynthesis of earlier bacteria — both in terms of the chemistry involved and its consequences for Earth\'s geochemical environment?',
+          q: `What made oxygenic photosynthesis, as practised by cyanobacteria, revolutionary compared to the anoxygenic photosynthesis of earlier bacteria — both in terms of the chemistry involved and its consequences for Earth\'s geochemical environment?`,
           a: [
             'Cyanobacteria evolved the ability to use water (H₂O) as the electron donor for photosynthesis — a thermodynamically demanding reaction requiring the Photosystem II manganese-cluster oxidant — which releases O₂ as a byproduct; because water is essentially unlimited compared to H₂S or Fe²⁺, this dramatically expanded photosynthetic productivity, and the continuous release of O₂ waste gas began the multi-billion-year process of oxygenating Earth\'s oceans and atmosphere',
             'Cyanobacteria evolved a new pigment — chlorophyll b — that absorbed a wider range of solar wavelengths, making them far more energetically efficient than anoxygenic photosynthesisers; this efficiency advantage allowed them to outcompete all other autotrophs and dominate the global ocean, producing biomass at unprecedented rates without changing the atmosphere\'s chemistry',
@@ -207,7 +207,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
             'O₂ is useful as a biosignature only for planets orbiting G-type stars like the Sun, because M-dwarf stars emit insufficient UV radiation to drive photochemical false-positive O₂ production; around M dwarfs, any detected O₂ must be biological; around G dwarfs, O₂ has too many abiotic sources to be a reliable biosignature and must be discarded in favour of alternative biomarkers',
           ],
           correct: 1,
-          explain: 'O₂ is considered a compelling biosignature for several interconnected reasons. Thermodynamic instability: in the absence of a continuous source, O₂ is rapidly consumed by reactions with volcanic reducing gases (H₂, CO, H₂S), crustal minerals (Fe²⁺, sulfides), and UV-driven photochemistry. Earth\'s atmosphere maintains ~21% O₂ only because photosynthesis produces approximately 300 Gt of O₂ per year — a flow that is balanced by respiration and combustion consuming roughly the same amount. If photosynthesis stopped tomorrow, atmospheric O₂ would be consumed by geological processes within ~4 million years. Scale of production: abiotic sources such as CO₂ photolysis on early Venus-like planets or H₂O photolysis on water-rich planets near the inner habitable zone edge can produce O₂, but typically at orders of magnitude lower levels than biological photosynthesis can sustain. Contextual power: the combination of O₂ with CH₄ is a particularly powerful diagnostic. These gases react on timescales of ~10 years (CH₄ + 2O₂ → CO₂ + 2H₂O), so their simultaneous detection at significant concentrations requires separate, ongoing biological sources for each gas — making the combined signal extraordinarily unlikely to be abiotic. However, O₂ false positives are a serious concern: (1) photolysis of CO₂ or H₂O on worlds without efficient hydrogen escape can accumulate abiotic O₂; (2) planets near the inner habitable zone edge may lose hydrogen via runaway greenhouse photolysis, leaving behind O₂; (3) some M-dwarf scenarios can produce detectably high abiotic O₂. This means that context — the host star type, planetary orbital position, atmospheric CO₂ levels, presence of water, and detection of companion gases — is essential before declaring a biological origin. Option B overstates certainty; option C sets an arbitrary and incorrect 1% threshold and ignores false-positive scenarios; option D inverts the actual situation, since M-dwarf planets are actually *more* susceptible to abiotic O₂ false positives due to their high UV flaring activity and the extended pre-main-sequence phase.',
+          explain: `O₂ is considered a compelling biosignature for several interconnected reasons. Thermodynamic instability: in the absence of a continuous source, O₂ is rapidly consumed by reactions with volcanic reducing gases (H₂, CO, H₂S), crustal minerals (Fe²⁺, sulfides), and UV-driven photochemistry. Earth\'s atmosphere maintains ~21% O₂ only because photosynthesis produces approximately 300 Gt of O₂ per year — a flow that is balanced by respiration and combustion consuming roughly the same amount. If photosynthesis stopped tomorrow, atmospheric O₂ would be consumed by geological processes within ~4 million years. Scale of production: abiotic sources such as CO₂ photolysis on early Venus-like planets or H₂O photolysis on water-rich planets near the inner habitable zone edge can produce O₂, but typically at orders of magnitude lower levels than biological photosynthesis can sustain. Contextual power: the combination of O₂ with CH₄ is a particularly powerful diagnostic. These gases react on timescales of ~10 years (CH₄ + 2O₂ → CO₂ + 2H₂O), so their simultaneous detection at significant concentrations requires separate, ongoing biological sources for each gas — making the combined signal extraordinarily unlikely to be abiotic. However, O₂ false positives are a serious concern: (1) photolysis of CO₂ or H₂O on worlds without efficient hydrogen escape can accumulate abiotic O₂; (2) planets near the inner habitable zone edge may lose hydrogen via runaway greenhouse photolysis, leaving behind O₂; (3) some M-dwarf scenarios can produce detectably high abiotic O₂. This means that context — the host star type, planetary orbital position, atmospheric CO₂ levels, presence of water, and detection of companion gases — is essential before declaring a biological origin. Option B overstates certainty; option C sets an arbitrary and incorrect 1% threshold and ignores false-positive scenarios; option D inverts the actual situation, since M-dwarf planets are actually *more* susceptible to abiotic O₂ false positives due to their high UV flaring activity and the extended pre-main-sequence phase.`,
         },
       ],
     },

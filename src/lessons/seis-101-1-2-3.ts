@@ -15,7 +15,7 @@ const focalMechanisms: Lesson = {
     { org: 'USGS', title: 'USGS — Focal Mechanisms Explained',                       url: 'https://earthquake.usgs.gov/learn/topics/beachball.php' },
     { org: 'IRIS', title: 'IRIS — Beach Ball Diagrams',                              url: 'https://www.iris.edu/hq/inclass/animation/focal_mechanisms_beachball' },
     { org: 'AGU',  title: 'AGU — Coulomb Stress Transfer',                           url: 'https://agupubs.onlinelibrary.wiley.com/' },
-    { org: 'USGS', title: 'USGS — Aftershock Sequences and Omori\'s Law',            url: 'https://earthquake.usgs.gov/learn/glossary/?term=aftershock' },
+    { org: 'USGS', title: `USGS — Aftershock Sequences and Omori\'s Law`,            url: 'https://earthquake.usgs.gov/learn/glossary/?term=aftershock' },
   ],
   sections: [
     {
@@ -81,7 +81,7 @@ Aftershock sequences follow Omori\'s Law: the aftershock rate decays as 1/(t + c
           name: 'Coulomb Stress',
           icon: Zap,
           color: BRAND.amethyst,
-          desc: 'ΔCFS = Δτ − μ\'Δσ_n. Positive = closer to failure; negative = stress shadow.',
+          desc: `ΔCFS = Δτ − μ\'Δσ_n. Positive = closer to failure; negative = stress shadow.`,
           examples: '1999 Izmit (M 7.6) raised ΔCFS on the Düzce segment; Düzce ruptured 87 days later (M 7.2).',
         },
         {
@@ -99,7 +99,7 @@ Aftershock sequences follow Omori\'s Law: the aftershock rate decays as 1/(t + c
       body: 'How a mainshock redistributes stress and triggers aftershocks on nearby fault segments.',
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'showing how a mainshock redistributes Coulomb stress across the surrounding crust, loading some fault segments toward failure while unloading others, and generating an aftershock sequence that decays following Omori\'s Law',
+        description: `showing how a mainshock redistributes Coulomb stress across the surrounding crust, loading some fault segments toward failure while unloading others, and generating an aftershock sequence that decays following Omori\'s Law`,
         nodes: [
           {
             id: 'mainshock',
@@ -110,7 +110,7 @@ Aftershock sequences follow Omori\'s Law: the aftershock rate decays as 1/(t + c
           {
             id: 'coulomb-calc',
             label: 'Coulomb Stress Calculation',
-            description: 'ΔCFS = Δτ − μ\'Δσ_n computed on surrounding fault planes. Positive values raise failure probability.',
+            description: `ΔCFS = Δτ − μ\'Δσ_n computed on surrounding fault planes. Positive values raise failure probability.`,
             color: BRAND.gold,
           },
           {
@@ -128,7 +128,7 @@ Aftershock sequences follow Omori\'s Law: the aftershock rate decays as 1/(t + c
           {
             id: 'aftershock-seq',
             label: 'Aftershock Sequence',
-            description: 'Triggered earthquakes follow Omori\'s Law: n(t) = K/(t+c)^p. Rate highest immediately after mainshock.',
+            description: `Triggered earthquakes follow Omori\'s Law: n(t) = K/(t+c)^p. Rate highest immediately after mainshock.`,
             color: BRAND.jade,
           },
           {
@@ -181,10 +181,10 @@ Aftershock sequences follow Omori\'s Law: the aftershock rate decays as 1/(t + c
             'The segment experienced extensional stress, reducing fault friction',
           ],
           correct: 2,
-          explain: 'Coulomb stress change ΔCFS = Δτ − μ\'Δσ_n: positive values mean increased shear stress and/or reduced normal (clamping) stress on the fault plane. Both effects bring the fault closer to the Coulomb failure criterion. After the 1999 Izmit earthquake, ΔCFS on the adjacent Düzce fault segment was positive; the Düzce segment ruptured 87 days later in an M 7.2 event, consistent with stress transfer triggering.',
+          explain: `Coulomb stress change ΔCFS = Δτ − μ\'Δσ_n: positive values mean increased shear stress and/or reduced normal (clamping) stress on the fault plane. Both effects bring the fault closer to the Coulomb failure criterion. After the 1999 Izmit earthquake, ΔCFS on the adjacent Düzce fault segment was positive; the Düzce segment ruptured 87 days later in an M 7.2 event, consistent with stress transfer triggering.`,
         },
         {
-          q: 'Omori\'s Law describes aftershock rate as n(t) = K/(t+c)^p with p ≈ 1. What does this mean practically?',
+          q: `Omori\'s Law describes aftershock rate as n(t) = K/(t+c)^p with p ≈ 1. What does this mean practically?`,
           a: [
             'Aftershock rates are constant for weeks after the mainshock',
             'Aftershock rates increase over time as stress re-accumulates',
@@ -192,7 +192,7 @@ Aftershock sequences follow Omori\'s Law: the aftershock rate decays as 1/(t + c
             'The largest aftershock always occurs exactly one day after the mainshock',
           ],
           correct: 2,
-          explain: 'With p ≈ 1, Omori\'s Law gives n(t) ∝ 1/t (for t >> c). This means if the aftershock rate is 100/day on day 1, it will be ~50/day on day 2, ~33/day on day 3, etc. Within a week most sequences have decayed substantially from peak rates. However, significant aftershocks (within 1–2 magnitudes of the mainshock) can still occur weeks to months later, which is why post-earthquake safety assessments extend well beyond the first few days.',
+          explain: `With p ≈ 1, Omori\'s Law gives n(t) ∝ 1/t (for t >> c). This means if the aftershock rate is 100/day on day 1, it will be ~50/day on day 2, ~33/day on day 3, etc. Within a week most sequences have decayed substantially from peak rates. However, significant aftershocks (within 1–2 magnitudes of the mainshock) can still occur weeks to months later, which is why post-earthquake safety assessments extend well beyond the first few days.`,
         },
         {
           q: 'How many nodal planes appear in a focal mechanism solution, and how do seismologists determine which is the actual fault plane?',

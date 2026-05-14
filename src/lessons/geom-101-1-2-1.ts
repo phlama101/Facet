@@ -69,7 +69,7 @@ Width-depth ratio W/D is a key discriminator: meandering channels typically have
           name: 'Bedforms and the Velocity-Depth Regime',
           icon: Globe,
           color: BRAND.jade,
-          desc: 'Ripples form in fine sand (D < 0.7 mm) at low velocity; dunes form at higher velocity and dominate most sandy rivers; upper-regime plane bed and antidunes develop at Froude numbers approaching and exceeding 1. Bedforms control hydraulic roughness — dunes can double Manning\'s n compared to a plane bed.',
+          desc: `Ripples form in fine sand (D < 0.7 mm) at low velocity; dunes form at higher velocity and dominate most sandy rivers; upper-regime plane bed and antidunes develop at Froude numbers approaching and exceeding 1. Bedforms control hydraulic roughness — dunes can double Manning\'s n compared to a plane bed.`,
           examples: 'Sand dunes 0.5–2 m high migrate through the Missouri River at flood stage; antidunes are visible as standing waves in steep mountain rapids on the Salmon River, Idaho.',
         },
         {
@@ -83,7 +83,7 @@ Width-depth ratio W/D is a key discriminator: meandering channels typically have
           name: 'Hydraulic Geometry and Channel Adjustment',
           icon: ArrowRight,
           color: BRAND.gold,
-          desc: 'Leopold & Maddock\'s at-a-station relationships (w ∝ Q^0.5, d ∝ Q^0.4, v ∝ Q^0.1) show how a single cross-section responds to rising discharge. Downstream hydraulic geometry describes systematic widening and deepening from headwaters to mouth. Channels are not static — they adjust form within years to decades after perturbations such as dam construction.',
+          desc: `Leopold & Maddock\'s at-a-station relationships (w ∝ Q^0.5, d ∝ Q^0.4, v ∝ Q^0.1) show how a single cross-section responds to rising discharge. Downstream hydraulic geometry describes systematic widening and deepening from headwaters to mouth. Channels are not static — they adjust form within years to decades after perturbations such as dam construction.`,
           examples: 'Channel width roughly doubles for each order-of-magnitude increase in discharge along a river system. Below Hoover Dam on the Colorado River, the channel narrowed and incised by ~2 m within 15 years of dam closure as sediment-starved flows cut the bed.',
         },
       ],

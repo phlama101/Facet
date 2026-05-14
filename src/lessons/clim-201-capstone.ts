@@ -32,7 +32,7 @@ Allow yourself the full twenty-five minutes.`,
       questions: [
         // ── Q1: Global carbon cycle — atmospheric CO₂ annual increase ─────────
         {
-          q: 'The Global Carbon Project\'s 2023 carbon budget shows that approximately 11.2 Pg C/yr of CO₂ is emitted by fossil fuel combustion and land use change. Of this, roughly 5 Pg C/yr accumulates in the atmosphere. What annual increase in atmospheric CO₂ concentration does an accumulation of ~5 Pg C/yr correspond to, and what fraction of total emissions does the land biosphere absorb?',
+          q: `The Global Carbon Project\'s 2023 carbon budget shows that approximately 11.2 Pg C/yr of CO₂ is emitted by fossil fuel combustion and land use change. Of this, roughly 5 Pg C/yr accumulates in the atmosphere. What annual increase in atmospheric CO₂ concentration does an accumulation of ~5 Pg C/yr correspond to, and what fraction of total emissions does the land biosphere absorb?`,
           a: [
             'Approximately 1.0 ppm/yr; the land biosphere absorbs roughly 50% of total emissions',
             'Approximately 2.4 ppm/yr; the land biosphere absorbs roughly 28% of total emissions (~3.1 Pg C/yr)',

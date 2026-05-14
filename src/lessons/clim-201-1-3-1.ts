@@ -50,7 +50,7 @@ const climateTippingPoints: Lesson = {
         },
         {
           term: 'critical slowing down',
-          def: 'A statistical precursor to a tipping point in which a system\'s resilience diminishes as it approaches a critical threshold. As the restoring force toward the current equilibrium weakens near the bifurcation point, the system recovers more slowly from small perturbations — producing a measurable increase in the autocorrelation of fluctuations (the current state becomes a better predictor of the future state) and an increase in variance. Critical slowing down has been detected in AMOC fingerprints (rising autocorrelation in North Atlantic sea surface temperatures over the 20th century) and in Amazon vegetation resilience indices (slower recovery after drought stress). It is used as an early warning signal of approaching tipping thresholds.',
+          def: `A statistical precursor to a tipping point in which a system\'s resilience diminishes as it approaches a critical threshold. As the restoring force toward the current equilibrium weakens near the bifurcation point, the system recovers more slowly from small perturbations — producing a measurable increase in the autocorrelation of fluctuations (the current state becomes a better predictor of the future state) and an increase in variance. Critical slowing down has been detected in AMOC fingerprints (rising autocorrelation in North Atlantic sea surface temperatures over the 20th century) and in Amazon vegetation resilience indices (slower recovery after drought stress). It is used as an early warning signal of approaching tipping thresholds.`,
         },
         {
           term: 'marine ice sheet instability (MISI)',
@@ -71,7 +71,7 @@ const climateTippingPoints: Lesson = {
           name: 'Bifurcation, Hysteresis & Irreversibility',
           icon: Activity,
           color: BRAND.accentHot,
-          desc: 'Tipping points arise at bifurcations where a system\'s equilibrium structure changes. Hysteresis makes recovery harder than tipping: Greenland needs cooling far below its tipping temperature to re-glaciate. Once crossed, feedbacks sustain the new state independently of the original forcing. This irreversibility defines the unique risk of tipping elements versus gradual climate change.',
+          desc: `Tipping points arise at bifurcations where a system\'s equilibrium structure changes. Hysteresis makes recovery harder than tipping: Greenland needs cooling far below its tipping temperature to re-glaciate. Once crossed, feedbacks sustain the new state independently of the original forcing. This irreversibility defines the unique risk of tipping elements versus gradual climate change.`,
           examples: 'Greenland Ice Sheet: elevation-temperature feedback makes collapse self-sustaining below ~1.5°C threshold · AMOC: Stommel two-box model predicts salinity-driven bistability — once overturning halts, it requires large freshwater flux reversal to restart · Coral reefs: annual bleaching above 1.5°C prevents recovery; system shifts to algae-dominated state',
         },
         {

@@ -32,7 +32,7 @@ The deepest ocean — conventionally defined as water below 6,000 metres, called
       keyTerms: [
         {
           term: 'Subduction zone',
-          def: 'The region where one tectonic plate descends beneath another into the mantle. Subduction zones are the sites of ocean trenches, volcanic arcs, and the world\'s largest earthquakes (megathrust earthquakes). Oceanic plates subduct preferentially because their mafic rock (density ~3.0 g/cm³) is denser than the felsic continental crust (~2.7 g/cm³) they encounter.',
+          def: `The region where one tectonic plate descends beneath another into the mantle. Subduction zones are the sites of ocean trenches, volcanic arcs, and the world\'s largest earthquakes (megathrust earthquakes). Oceanic plates subduct preferentially because their mafic rock (density ~3.0 g/cm³) is denser than the felsic continental crust (~2.7 g/cm³) they encounter.`,
         },
         {
           term: 'Megathrust earthquake',

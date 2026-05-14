@@ -10,7 +10,7 @@ const seismicWaveTypes: Lesson = {
   level: 'Beginner',
   duration: '12 min',
   xpReward: 120,
-  description: 'Every earthquake sends out four distinct wave types — P-waves, S-waves, Love waves, and Rayleigh waves — each travelling at different speeds and shaking the ground in different ways. Understanding these wave families is the foundation of seismology, earthquake engineering, and our ability to image Earth\'s deep interior.',
+  description: `Every earthquake sends out four distinct wave types — P-waves, S-waves, Love waves, and Rayleigh waves — each travelling at different speeds and shaking the ground in different ways. Understanding these wave families is the foundation of seismology, earthquake engineering, and our ability to image Earth\'s deep interior.`,
   sources: [
     { org: 'USGS',      title: 'USGS Earthquake Hazards Program — Seismic Waves',                          url: 'https://earthquake.usgs.gov/learn/topics/seismology/seismicwaves.php' },
     { org: 'EarthScope', title: 'EarthScope Consortium — Understanding Earthquakes',                       url: 'https://www.earthscope.org/education/' },
@@ -31,15 +31,15 @@ Surface waves arise from the interaction of body waves with Earth\'s free surfac
       keyTerms: [
         {
           term: 'P-wave',
-          def: 'A compressional (primary) body wave in which particle motion is parallel to the direction of wave propagation — the rock alternately compresses and extends along the travel direction, like sound waves in air. P-waves travel at 5–8 km/s in continental crust and can propagate through solids, liquids, and gases, including Earth\'s liquid outer core. They are always the first seismic wave type to arrive at a seismograph after an earthquake.',
+          def: `A compressional (primary) body wave in which particle motion is parallel to the direction of wave propagation — the rock alternately compresses and extends along the travel direction, like sound waves in air. P-waves travel at 5–8 km/s in continental crust and can propagate through solids, liquids, and gases, including Earth\'s liquid outer core. They are always the first seismic wave type to arrive at a seismograph after an earthquake.`,
         },
         {
           term: 'S-wave',
-          def: 'A shear (secondary) body wave in which particle motion is perpendicular to the direction of wave propagation — the rock distorts sideways relative to the travel direction, like a transverse wave in a rope. S-waves travel at 3–5 km/s in continental crust and can only propagate through materials with a non-zero shear modulus (μ > 0). Because liquids have μ = 0, S-waves cannot enter Earth\'s liquid outer core, creating the S-wave shadow zone and proving the outer core is molten.',
+          def: `A shear (secondary) body wave in which particle motion is perpendicular to the direction of wave propagation — the rock distorts sideways relative to the travel direction, like a transverse wave in a rope. S-waves travel at 3–5 km/s in continental crust and can only propagate through materials with a non-zero shear modulus (μ > 0). Because liquids have μ = 0, S-waves cannot enter Earth\'s liquid outer core, creating the S-wave shadow zone and proving the outer core is molten.`,
         },
         {
           term: 'Love wave',
-          def: 'A surface wave in which particle motion is purely horizontal shear, directed transverse to the propagation direction, with no vertical component. Love waves are generally the fastest-travelling surface wave type and are particularly destructive to structures and foundations susceptible to horizontal shear forces. They are guided by a low-velocity layer near Earth\'s surface and were named after A.E.H. Love, who derived the mathematical theory of their existence in 1911.',
+          def: `A surface wave in which particle motion is purely horizontal shear, directed transverse to the propagation direction, with no vertical component. Love waves are generally the fastest-travelling surface wave type and are particularly destructive to structures and foundations susceptible to horizontal shear forces. They are guided by a low-velocity layer near Earth\'s surface and were named after A.E.H. Love, who derived the mathematical theory of their existence in 1911.`,
         },
         {
           term: 'Rayleigh wave',
@@ -47,7 +47,7 @@ Surface waves arise from the interaction of body waves with Earth\'s free surfac
         },
         {
           term: 'S-P time',
-          def: 'The time interval between the arrival of the S-wave and the arrival of the P-wave at a seismograph station. Because P-waves travel faster than S-waves, the S-P time grows proportionally with the distance from the earthquake to the station: distance (km) ≈ S-P time (seconds) × ~8 km/s. By measuring the S-P time at three or more stations and drawing circles of the corresponding distances, seismologists triangulate the earthquake\'s epicentre and locate the hypocenter.',
+          def: `The time interval between the arrival of the S-wave and the arrival of the P-wave at a seismograph station. Because P-waves travel faster than S-waves, the S-P time grows proportionally with the distance from the earthquake to the station: distance (km) ≈ S-P time (seconds) × ~8 km/s. By measuring the S-P time at three or more stations and drawing circles of the corresponding distances, seismologists triangulate the earthquake\'s epicentre and locate the hypocenter.`,
         },
       ],
     },
@@ -76,7 +76,7 @@ Understanding wave types matters enormously for both earthquake engineering and 
           name: 'Wave Velocities and Earth\'s Composition',
           icon: Zap,
           color: BRAND.amethyst,
-          desc: 'Velocity depends on bulk modulus K (resistance to compression), shear modulus μ (resistance to shear), and density ρ. Velocity generally increases with depth because rising pressure increases K and μ faster than ρ. Sudden velocity changes occur at major boundaries: Moho (~6.5 → ~8.0 km/s P-wave), 410 km discontinuity, 660 km discontinuity, and core-mantle boundary (v_S drops to 0 — liquid outer core; v_P drops from ~13.7 to ~8.1 km/s then rises to ~10.4 km/s at base of outer core). Inner core: v_S re-appears (~3.5 km/s), confirming it is solid. Poisson\'s ratio σ = (v_P² − 2v_S²)/(2(v_P² − v_S²)) changes with fluid saturation — useful for detecting fluids in the crust.',
+          desc: `Velocity depends on bulk modulus K (resistance to compression), shear modulus μ (resistance to shear), and density ρ. Velocity generally increases with depth because rising pressure increases K and μ faster than ρ. Sudden velocity changes occur at major boundaries: Moho (~6.5 → ~8.0 km/s P-wave), 410 km discontinuity, 660 km discontinuity, and core-mantle boundary (v_S drops to 0 — liquid outer core; v_P drops from ~13.7 to ~8.1 km/s then rises to ~10.4 km/s at base of outer core). Inner core: v_S re-appears (~3.5 km/s), confirming it is solid. Poisson\'s ratio σ = (v_P² − 2v_S²)/(2(v_P² − v_S²)) changes with fluid saturation — useful for detecting fluids in the crust.`,
           examples: 'Moho: P-wave velocity jumps from ~6.5 to ~8.0 km/s. Outer core: v_S = 0 (liquid iron alloy); v_P falls from ~13.7 to ~8.1 km/s at CMB then rises to ~10.4 km/s at base of outer core. Inner core: v_S ~3.5 km/s (solid). Granite: v_P ≈ 5.5–6.0 km/s. Basalt: v_P ≈ 6.4–7.0 km/s. Water-saturated sand: v_P ≈ 1.5–2.0 km/s, v_S near 0 (liquefaction risk).',
         },
       ],
@@ -104,13 +104,13 @@ Understanding wave types matters enormously for both earthquake engineering and 
           {
             id: 's-waves',
             label: 'S-Waves (Shear, 3–5 km/s)',
-            description: 'S-waves depart the hypocenter simultaneously with P-waves but travel ~40% more slowly, so the S-P time at any station directly encodes the source-to-station distance. Their shear particle motion cannot be sustained in the liquid outer core, creating a large S-wave shadow zone from 105° to 180° epicentral distance. Within the shadow zone the absence of S arrivals was the first seismological evidence that Earth\'s outer core is liquid. At moderate distances S-waves are responsible for the strongest felt shaking.',
+            description: `S-waves depart the hypocenter simultaneously with P-waves but travel ~40% more slowly, so the S-P time at any station directly encodes the source-to-station distance. Their shear particle motion cannot be sustained in the liquid outer core, creating a large S-wave shadow zone from 105° to 180° epicentral distance. Within the shadow zone the absence of S arrivals was the first seismological evidence that Earth\'s outer core is liquid. At moderate distances S-waves are responsible for the strongest felt shaking.`,
             color: BRAND.gold,
           },
           {
             id: 'surface-waves',
             label: 'Surface Waves (Love + Rayleigh, 2–4 km/s)',
-            description: 'Surface waves are generated where body waves interact with Earth\'s free surface, and they travel more slowly than either P or S waves, arriving last on the seismogram. Their energy is confined to within roughly one wavelength of the surface, but because their amplitude decays as 1/r rather than 1/r², they become the dominant signal at large epicentral distances. Periods of 1–10 seconds match the natural resonance of multi-storey buildings, making surface waves the primary cause of structural damage in large distant earthquakes.',
+            description: `Surface waves are generated where body waves interact with Earth\'s free surface, and they travel more slowly than either P or S waves, arriving last on the seismogram. Their energy is confined to within roughly one wavelength of the surface, but because their amplitude decays as 1/r rather than 1/r², they become the dominant signal at large epicentral distances. Periods of 1–10 seconds match the natural resonance of multi-storey buildings, making surface waves the primary cause of structural damage in large distant earthquakes.`,
             color: BRAND.amethyst,
           },
           {

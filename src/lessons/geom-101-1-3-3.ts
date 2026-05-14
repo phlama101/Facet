@@ -109,7 +109,7 @@ Speleothems (cave mineral deposits) grow wherever CaCO₃-saturated drip water e
           {
             id: 'surface-dissolution',
             label: 'Surface Dissolution: Karren & Dolines',
-            description: 'Aggressive water etches exposed limestone surfaces (karren) and preferentially dissolves along joints and bedding planes. Enlarging voids create dolines (sinkholes) by solution from above or cavity collapse. ~20% of Earth\'s land surface underlies karst.',
+            description: `Aggressive water etches exposed limestone surfaces (karren) and preferentially dissolves along joints and bedding planes. Enlarging voids create dolines (sinkholes) by solution from above or cavity collapse. ~20% of Earth\'s land surface underlies karst.`,
             color: BRAND.coral,
           },
           {
@@ -174,7 +174,7 @@ Speleothems (cave mineral deposits) grow wherever CaCO₃-saturated drip water e
             'Coastal wave erosion undercuts limestone cliffs, leaving isolated sea stacks that become towers as sea level falls and exposes the surrounding seafloor as flat plains',
           ],
           correct: 0,
-          explain: 'High rainfall intensity in tropical/subtropical humid climate combined with a high water table in the surrounding plain: intense dissolution produces aggressive water that attacks limestone from all sides; the water table in the surrounding alluvium controls the level to which towers can be undercut; as the plain is lowered, towers become increasingly isolated; the warm, humid conditions maximize dissolution rates and biogenic soil CO₂; similar morphology occurs in Halong Bay (Vietnam), Puerto Rico\'s mogotes, and Cuba.',
+          explain: `High rainfall intensity in tropical/subtropical humid climate combined with a high water table in the surrounding plain: intense dissolution produces aggressive water that attacks limestone from all sides; the water table in the surrounding alluvium controls the level to which towers can be undercut; as the plain is lowered, towers become increasingly isolated; the warm, humid conditions maximize dissolution rates and biogenic soil CO₂; similar morphology occurs in Halong Bay (Vietnam), Puerto Rico\'s mogotes, and Cuba.`,
         },
         {
           q: 'U-Th (uranium-thorium) dating is the preferred method for dating speleothems. Why is this method particularly well-suited to cave calcite?',
@@ -196,7 +196,7 @@ Speleothems (cave mineral deposits) grow wherever CaCO₃-saturated drip water e
             'Cave calcite in tropical monsoon regions recrystallises seasonally due to high temperatures, erasing the original temperature signal and leaving only the hydrological signal intact',
           ],
           correct: 1,
-          explain: 'The \'amount effect\': in tropical and subtropical monsoon regions, intense rainfall events are isotopically lighter (more negative δ¹⁸O) than light rainfall events, because intense convective rainfall preferentially rains out heavy isotopes in the updraft column, delivering isotopically depleted water to the surface; this is the dominant control in Asian and South American monsoon regions; in contrast, polar and high-latitude sites record temperature (the \'temperature effect\'); distinguishing these effects is critical for paleoclimate interpretation of cave records.',
+          explain: `The \'amount effect\': in tropical and subtropical monsoon regions, intense rainfall events are isotopically lighter (more negative δ¹⁸O) than light rainfall events, because intense convective rainfall preferentially rains out heavy isotopes in the updraft column, delivering isotopically depleted water to the surface; this is the dominant control in Asian and South American monsoon regions; in contrast, polar and high-latitude sites record temperature (the \'temperature effect\'); distinguishing these effects is critical for paleoclimate interpretation of cave records.`,
         },
       ],
     },

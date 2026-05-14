@@ -10,7 +10,7 @@ const seismicMagnitude: Lesson = {
   level: 'Beginner',
   duration: '12 min',
   xpReward: 120,
-  description: 'From Richter\'s wiggles to moment magnitude: how we put a number on an earthquake',
+  description: `From Richter\'s wiggles to moment magnitude: how we put a number on an earthquake`,
   sources: [
     { org: 'USGS', title: 'USGS — Earthquake Magnitude, Energy, and Shaking', url: 'https://earthquake.usgs.gov/learn/topics/magnitude_vs_intensity.php' },
     { org: 'USGS', title: 'USGS — Seismic Moment',                            url: 'https://earthquake.usgs.gov/learn/glossary/?term=seismic+moment' },
@@ -20,7 +20,7 @@ const seismicMagnitude: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'From Richter\'s wiggles to moment magnitude: how we put a number on an earthquake',
+      title: `From Richter\'s wiggles to moment magnitude: how we put a number on an earthquake`,
       body: `When Charles Richter devised his local magnitude scale in 1935, he simply compared the largest wave amplitude recorded on a Wood-Anderson seismometer at 100 km to a reference amplitude. The result was logarithmic: each whole number step represents a 10× increase in ground shaking amplitude and roughly 31.6× more released energy. Richter\'s scale worked beautifully for shallow Californian earthquakes but broke down for very large or distant events — it saturated, reporting nothing bigger than about M 8.
 
 Modern seismology uses the moment magnitude scale (Mw), derived from the seismic moment M₀ = μ × A × D, where μ is the shear modulus of the rock (~30 GPa in the crust), A is the area of the fault rupture, and D is the average displacement across that area. From M₀ (measured in newton-metres), Mw = (2/3) log₁₀(M₀) − 6.07. Mw is consistent across all sizes and distances, and it is now the standard for scientific reporting and hazard assessment.
@@ -192,7 +192,7 @@ The energy difference between magnitude steps is dramatic. A M 8.0 releases abou
             '10,000 times more',
           ],
           correct: 2,
-          explain: 'Each magnitude step corresponds to about 31.6× more energy (10^1.5). Over two steps (M 6 to M 8), that\'s 31.6² ≈ 1,000×. This is why large earthquakes dominate global seismic energy release: a single M 9.0 earthquake releases more energy than all M ≤ 8 earthquakes combined in a typical year.',
+          explain: `Each magnitude step corresponds to about 31.6× more energy (10^1.5). Over two steps (M 6 to M 8), that\'s 31.6² ≈ 1,000×. This is why large earthquakes dominate global seismic energy release: a single M 9.0 earthquake releases more energy than all M ≤ 8 earthquakes combined in a typical year.`,
         },
         {
           q: 'Which earthquake scale does NOT saturate for the largest events?',

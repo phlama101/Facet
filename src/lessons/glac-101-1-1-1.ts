@@ -70,7 +70,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
           icon: Globe,
           color: BRAND.jade,
           desc: 'Progressive compaction and recrystallisation from snow to firn to ice; role of overburden pressure and vapor transport. Firn retains open pore spaces that allow air communication with the atmosphere.',
-          examples: 'Firn (400–550 kg/m³) accumulates in the percolation zone where meltwater refreezes. Annual layers are identifiable in firn by density and chemistry contrasts. Antarctica\'s cold, dry firn takes 1,000–2,500 years to reach pore close-off at 830 kg/m³.',
+          examples: `Firn (400–550 kg/m³) accumulates in the percolation zone where meltwater refreezes. Annual layers are identifiable in firn by density and chemistry contrasts. Antarctica\'s cold, dry firn takes 1,000–2,500 years to reach pore close-off at 830 kg/m³.`,
         },
         {
           name: 'Pore Close-Off and Air Bubble Trapping',
@@ -84,7 +84,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
           icon: Zap,
           color: BRAND.gold,
           desc: 'Once ice density exceeds ~917 kg/m³ and air permeability reaches zero, the material is glacier ice. The accumulation zone builds mass above the equilibrium line altitude (ELA); the ablation zone loses it below.',
-          examples: 'Temperate alpine glaciers reach ice density in 25–40 years; polar ice sheets take centuries. The ELA marks where annual accumulation equals ablation — the glacier\'s \'break-even\' line. Below the ELA, blue glacier ice is exposed where firn has been stripped by summer melting.',
+          examples: `Temperate alpine glaciers reach ice density in 25–40 years; polar ice sheets take centuries. The ELA marks where annual accumulation equals ablation — the glacier\'s \'break-even\' line. Below the ELA, blue glacier ice is exposed where firn has been stripped by summer melting.`,
         },
       ],
     },

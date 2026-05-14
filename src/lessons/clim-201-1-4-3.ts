@@ -10,7 +10,7 @@ const treeRingsPollenProxies: Lesson = {
   level: 'Intermediate',
   duration: '16 min',
   xpReward: 200,
-  description: 'A bristlecone pine in California\'s White Mountains can carry nearly 5,000 years of summer temperature history in the width and density of its annual growth rings. Pollen grains preserved in lake sediments reveal how entire plant communities — and the climates that sustained them — shifted across Holocene millennia. Varved lakes, coral skeletons, and tree ring networks now resolve seasonal climate variability at annual precision, filling the critical bridge between instrumental records and the deep paleoclimate archive.',
+  description: `A bristlecone pine in California\'s White Mountains can carry nearly 5,000 years of summer temperature history in the width and density of its annual growth rings. Pollen grains preserved in lake sediments reveal how entire plant communities — and the climates that sustained them — shifted across Holocene millennia. Varved lakes, coral skeletons, and tree ring networks now resolve seasonal climate variability at annual precision, filling the critical bridge between instrumental records and the deep paleoclimate archive.`,
   sources: [
     { org: 'NOAA NCEI', title: 'NOAA International Tree-Ring Data Bank (ITRDB)', url: 'https://www.ncei.noaa.gov/products/paleoclimatology/tree-ring' },
     { org: 'PAGES2k Consortium', title: 'PAGES 2k Consortium — 2,000 years of climate history from 692 proxy records (Scientific Data, 2017)', url: 'https://www.nature.com/articles/sdata201788' },
@@ -128,7 +128,7 @@ const treeRingsPollenProxies: Lesson = {
           {
             id: 'standardisation',
             label: 'Standardisation and Age Detrending',
-            description: 'Young trees grow faster than old trees regardless of climate — the biological age trend must be removed before climate signal can be extracted. Standardisation fits an expected growth curve (negative exponential, linear regression, or cubic smoothing spline) to each individual sample\'s raw ring-width series and computes the ratio of observed to expected width (ring-width index, RWI). The choice of smoothing wavelength is critical: aggressive detrending (short spline) removes decadal and longer variability that might contain real climate signals; conservative detrending preserves low-frequency variability but risks retaining non-climate biological trends. Regional Curve Standardisation (RCS) uses a mean growth curve from the entire regional sample pool, better preserving centennial-scale signals.',
+            description: `Young trees grow faster than old trees regardless of climate — the biological age trend must be removed before climate signal can be extracted. Standardisation fits an expected growth curve (negative exponential, linear regression, or cubic smoothing spline) to each individual sample\'s raw ring-width series and computes the ratio of observed to expected width (ring-width index, RWI). The choice of smoothing wavelength is critical: aggressive detrending (short spline) removes decadal and longer variability that might contain real climate signals; conservative detrending preserves low-frequency variability but risks retaining non-climate biological trends. Regional Curve Standardisation (RCS) uses a mean growth curve from the entire regional sample pool, better preserving centennial-scale signals.`,
             color: BRAND.gold,
           },
           {

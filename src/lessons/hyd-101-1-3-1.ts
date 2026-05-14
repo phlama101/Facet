@@ -74,7 +74,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
           name: 'Hydraulic Conductivity',
           icon: Zap,
           color: BRAND.gold,
-          desc: 'K (m/s) varies 10¹⁰× from granite (10⁻¹²) to clean gravel (10⁻²). Darcy\'s law: q = -K(dh/dl). Controls well yield.',
+          desc: `K (m/s) varies 10¹⁰× from granite (10⁻¹²) to clean gravel (10⁻²). Darcy\'s law: q = -K(dh/dl). Controls well yield.`,
           examples: 'Sand aquifer K = 10⁻⁵ m/s; silty sand K = 10⁻⁷ m/s. A 100× reduction in K reduces well yield ~100× at same drawdown.',
         },
         {
@@ -172,7 +172,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
             'Artesian conditions require the aquifer to be at least 1,000 m below the surface; shallower confined aquifers cannot develop artesian pressure',
           ],
           correct: 0,
-          explain: 'Confined aquifers are bounded above and below by low-permeability layers (aquitards). Recharge occurs where the aquifer outcrops at the surface, often in a topographically elevated area. The hydraulic head (energy level) in the confined aquifer is set by the elevation of the recharge zone — this creates the potentiometric surface, an imaginary surface representing where water would stand in tightly cased wells. When the potentiometric surface is above the top of the aquifer, the water is under positive pressure (artesian condition). When the potentiometric surface rises above the land surface at a well location, water flows freely from the well without pumping — a flowing artesian well. The Great Artesian Basin of Australia, one of the world\'s largest and deepest artesian basins, has sustained pastoral activities in arid Australia since the 1880s through naturally flowing wells.',
+          explain: `Confined aquifers are bounded above and below by low-permeability layers (aquitards). Recharge occurs where the aquifer outcrops at the surface, often in a topographically elevated area. The hydraulic head (energy level) in the confined aquifer is set by the elevation of the recharge zone — this creates the potentiometric surface, an imaginary surface representing where water would stand in tightly cased wells. When the potentiometric surface is above the top of the aquifer, the water is under positive pressure (artesian condition). When the potentiometric surface rises above the land surface at a well location, water flows freely from the well without pumping — a flowing artesian well. The Great Artesian Basin of Australia, one of the world\'s largest and deepest artesian basins, has sustained pastoral activities in arid Australia since the 1880s through naturally flowing wells.`,
         },
         {
           q: 'Why are karst aquifers more vulnerable to contamination than porous-media aquifers of similar size?',
@@ -194,7 +194,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
             'K is the recharge rate to an aquifer (m/yr); it varies by about 5 orders of magnitude from desert (0.1 mm/yr) to humid tropics (500 mm/yr)',
           ],
           correct: 1,
-          explain: 'Hydraulic conductivity (K) quantifies how easily water flows through a material, combining the effects of grain size, sorting, pore connectivity, and fluid viscosity. It is used in Darcy\'s law: q = -K × dh/dl (Darcy flux = K × hydraulic gradient). K spans roughly 10 orders of magnitude (10¹⁰×): unfractured granite/shale: ~10⁻¹² m/s; silty clay: ~10⁻⁹ m/s; silty sand: ~10⁻⁶ m/s; clean sand: ~10⁻⁵ to 10⁻⁴ m/s; clean gravel: ~10⁻² m/s; karst conduits (equivalent K): ~10⁻¹ m/s and higher. This extraordinary range — greater than for almost any other physical rock property — explains why groundwater well yields in different geological settings differ by equally dramatic factors: a well in gravel may yield 10,000× more water than an identical well in silty clay.',
+          explain: `Hydraulic conductivity (K) quantifies how easily water flows through a material, combining the effects of grain size, sorting, pore connectivity, and fluid viscosity. It is used in Darcy\'s law: q = -K × dh/dl (Darcy flux = K × hydraulic gradient). K spans roughly 10 orders of magnitude (10¹⁰×): unfractured granite/shale: ~10⁻¹² m/s; silty clay: ~10⁻⁹ m/s; silty sand: ~10⁻⁶ m/s; clean sand: ~10⁻⁵ to 10⁻⁴ m/s; clean gravel: ~10⁻² m/s; karst conduits (equivalent K): ~10⁻¹ m/s and higher. This extraordinary range — greater than for almost any other physical rock property — explains why groundwater well yields in different geological settings differ by equally dramatic factors: a well in gravel may yield 10,000× more water than an identical well in silty clay.`,
         },
         {
           q: 'Groundwater provides approximately what fraction of global drinking water, and which type of aquifer system stores the most water?',
@@ -205,7 +205,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
             'About 25%; glacial aquifers formed during the last ice age contain most of the world\'s fresh groundwater',
           ],
           correct: 1,
-          explain: 'Groundwater supplies approximately 50% of global drinking water (ranging from ~25% in developed nations with diversified supply to >90% in many developing nations without surface water treatment infrastructure). The largest volumes of accessible groundwater are stored in major unconsolidated sedimentary aquifer systems: alluvial valley fill along major river systems, coastal plain sedimentary sequences (Atlantic Coastal Plain aquifers), and continental interior sedimentary basins (High Plains Ogallala Aquifer, Paris Basin, North Africa\'s Nubian Sandstone, Arabian Peninsula aquifers). Unconsolidated sand and gravel aquifers dominate both volume and extraction because their high hydraulic conductivity allows wells to yield large quantities of water with modest drawdown.',
+          explain: `Groundwater supplies approximately 50% of global drinking water (ranging from ~25% in developed nations with diversified supply to >90% in many developing nations without surface water treatment infrastructure). The largest volumes of accessible groundwater are stored in major unconsolidated sedimentary aquifer systems: alluvial valley fill along major river systems, coastal plain sedimentary sequences (Atlantic Coastal Plain aquifers), and continental interior sedimentary basins (High Plains Ogallala Aquifer, Paris Basin, North Africa\'s Nubian Sandstone, Arabian Peninsula aquifers). Unconsolidated sand and gravel aquifers dominate both volume and extraction because their high hydraulic conductivity allows wells to yield large quantities of water with modest drawdown.`,
         },
       ],
     },

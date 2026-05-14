@@ -35,7 +35,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
       keyTerms: [
         {
           term: 'Permafrost',
-          def: 'Ground remaining at or below 0°C for ≥2 consecutive years. Covers ~25% of Earth\'s land; classified as continuous (>90%), discontinuous (50–90%), or sporadic (<10%).',
+          def: `Ground remaining at or below 0°C for ≥2 consecutive years. Covers ~25% of Earth\'s land; classified as continuous (>90%), discontinuous (50–90%), or sporadic (<10%).`,
         },
         {
           term: 'Active Layer',
@@ -79,7 +79,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
           icon: Globe,
           color: BRAND.coral,
           desc: 'Hydraulic (open-system) pingos: artesian groundwater forced upward through thin permafrost freezes near the surface, arching a mound — common in valley floors. Hydrostatic (closed-system) pingos: refreezing talik beneath a drained lake traps pressurised porewater that uplifts the surface — common on drained lake floors in groups. Solifluction lobes: saturated active layer flows at 1–25 cm/yr on slopes as low as 2–3°. Stone circles and stripes form by differential frost heave.',
-          examples: 'Ibyuk Pingo in the Mackenzie Delta, Canada stands 49 m tall and is one of the world\'s largest — a classic closed-system (hydrostatic) pingo. Solifluction terraces are widespread on Scottish mountain slopes, recording Pleistocene periglacial conditions. Stone circles and stone stripes in Svalbard are actively forming today, with frost heave rates measurable by repeat survey.',
+          examples: `Ibyuk Pingo in the Mackenzie Delta, Canada stands 49 m tall and is one of the world\'s largest — a classic closed-system (hydrostatic) pingo. Solifluction terraces are widespread on Scottish mountain slopes, recording Pleistocene periglacial conditions. Stone circles and stone stripes in Svalbard are actively forming today, with frost heave rates measurable by repeat survey.`,
         },
         {
           name: 'Permafrost Carbon Feedback and Climate Change',
@@ -101,7 +101,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
           {
             id: 'cold-climate',
             label: 'Cold Climate',
-            description: 'Mean annual air temperatures below 0°C sustain frozen ground year-round. Arctic and alpine zones; ~25% of Earth\'s land surface. Snow cover modulates ground temperature: thick snow insulates, thin snow allows deep freeze.',
+            description: `Mean annual air temperatures below 0°C sustain frozen ground year-round. Arctic and alpine zones; ~25% of Earth\'s land surface. Snow cover modulates ground temperature: thick snow insulates, thin snow allows deep freeze.`,
             color: BRAND.accent,
           },
           {
@@ -178,7 +178,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
             'Open-system pingos form by extrusion of liquid water through a ruptured permafrost surface that then refreezes into a dome; closed-system pingos form entirely by in-situ freezing of sediment porewater without any water movement toward the growing ice core',
           ],
           correct: 1,
-          explain: 'The fundamental distinction is the water source and pressure mechanism. Open-system (hydraulic) pingos: subpermafrost groundwater flowing under artesian pressure (head provided by distant recharge areas at higher elevation) is forced upward where permafrost is locally thin or absent, typically in valley floors or taliks beneath rivers. As this pressurised water freezes near the surface, the expanding ice dome lifts the overlying sediment. These pingos can be continuously recharged and may persist for thousands of years; they are common in Greenland, Svalbard, and alpine areas. Closed-system (hydrostatic) pingos: when a lake drains (by channel capture, shoreline erosion, or human drainage), the talik beneath — which was kept unfrozen by the relatively warm lake — begins to refreeze. As freezing progresses from above and the sides, the remaining porewater in the shrinking talik is pressurised by the volume increase of freezing. This water is injected as an intrusive ice mass that domes the overlying sediment. The Mackenzie Delta, Northwest Territories, Canada contains over 1,400 pingos — the world\'s highest density — primarily of closed-system origin on drained lake floors.',
+          explain: `The fundamental distinction is the water source and pressure mechanism. Open-system (hydraulic) pingos: subpermafrost groundwater flowing under artesian pressure (head provided by distant recharge areas at higher elevation) is forced upward where permafrost is locally thin or absent, typically in valley floors or taliks beneath rivers. As this pressurised water freezes near the surface, the expanding ice dome lifts the overlying sediment. These pingos can be continuously recharged and may persist for thousands of years; they are common in Greenland, Svalbard, and alpine areas. Closed-system (hydrostatic) pingos: when a lake drains (by channel capture, shoreline erosion, or human drainage), the talik beneath — which was kept unfrozen by the relatively warm lake — begins to refreeze. As freezing progresses from above and the sides, the remaining porewater in the shrinking talik is pressurised by the volume increase of freezing. This water is injected as an intrusive ice mass that domes the overlying sediment. The Mackenzie Delta, Northwest Territories, Canada contains over 1,400 pingos — the world\'s highest density — primarily of closed-system origin on drained lake floors.`,
         },
         {
           q: 'Solifluction lobes are common on sub-Arctic and alpine hillslopes. Why does the water-saturated active layer flow downslope even on gentle gradients of just 2–3°?',

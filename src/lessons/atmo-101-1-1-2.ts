@@ -66,7 +66,7 @@ Understanding atmospheric composition is the foundation of understanding climate
           icon: Sun,
           color: BRAND.gold,
           desc: 'Water vapour (H₂O): 0–4%, most powerful GHG, rapid feedback (doubles CO₂ forcing), drives weather. CO₂ (422 ppm 2024, +50% since pre-industrial): long-term thermostat, absorbs 15 μm IR band. CH₄ (1,930 ppb): 80× CO₂ potency/20yr, 9-yr residence time, sources: wetlands/agriculture/fossil fuels. N₂O (336 ppb): 273× CO₂/100yr, ozone destroyer, source: agriculture.',
-          examples: 'Keeling Curve (1958–present): continuous CO₂ rise at Mauna Loa, with seasonal oscillation from NH vegetation · Ice core record: CO₂ ranged 180–280 ppm through 800,000 yr of glacial cycles, never approached today\'s 422 ppm · CH₄ and Arctic permafrost: warming permafrost releases stored CH₄ and CO₂ as positive feedback',
+          examples: `Keeling Curve (1958–present): continuous CO₂ rise at Mauna Loa, with seasonal oscillation from NH vegetation · Ice core record: CO₂ ranged 180–280 ppm through 800,000 yr of glacial cycles, never approached today\'s 422 ppm · CH₄ and Arctic permafrost: warming permafrost releases stored CH₄ and CO₂ as positive feedback`,
         },
         {
           name: 'Ozone: Good Up High, Bad Nearby',

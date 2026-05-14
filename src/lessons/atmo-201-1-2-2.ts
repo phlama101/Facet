@@ -131,7 +131,7 @@ The **predictability** of blocking onset is limited to roughly 7–10 days in mo
           {
             id: 'flanks',
             label: 'Flanks: Diverted Jet & Persistent Cyclones',
-            description: 'The split westerly flow channels cyclones and fronts around the block\'s northern and southern edges. Regions beneath the flanking troughs experience persistent cyclonic activity — continuous frontal passages, heavy rainfall, and flooding lasting weeks. The 2002 Elbe floods coincided with a European blocking pattern.',
+            description: `The split westerly flow channels cyclones and fronts around the block\'s northern and southern edges. Regions beneath the flanking troughs experience persistent cyclonic activity — continuous frontal passages, heavy rainfall, and flooding lasting weeks. The 2002 Elbe floods coincided with a European blocking pattern.`,
             color: BRAND.coral,
           },
           {

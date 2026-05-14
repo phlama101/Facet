@@ -50,7 +50,7 @@ Despite these limitations, modern NWP is extraordinarily useful. 5-day forecasts
           name: 'How NWP Models Work',
           icon: Wind,
           color: BRAND.accent,
-          desc: 'Six governing equations (momentum, thermodynamics, continuity, moisture, equation of state) solved numerically on 3D global grid. Global models: ECMWF IFS (~9 km), GFS (~13 km), ICON (~13 km). Regional: NAM, RAP/HRRR (3 km US). Time step: 5–10 minutes. Forecast runs: 4× daily at 00Z, 06Z, 12Z, 18Z using latest observations. ECMWF runs on one of the world\'s fastest supercomputers (>5 PetaFLOPS). 10-day global forecast: ~30 minutes to compute.',
+          desc: `Six governing equations (momentum, thermodynamics, continuity, moisture, equation of state) solved numerically on 3D global grid. Global models: ECMWF IFS (~9 km), GFS (~13 km), ICON (~13 km). Regional: NAM, RAP/HRRR (3 km US). Time step: 5–10 minutes. Forecast runs: 4× daily at 00Z, 06Z, 12Z, 18Z using latest observations. ECMWF runs on one of the world\'s fastest supercomputers (>5 PetaFLOPS). 10-day global forecast: ~30 minutes to compute.`,
           examples: 'ECMWF ensemble: 51 members, 15-day forecast. GFS: US model, free public access, 16-day. Spaghetti plots: ensemble tracks of a hurricane, showing the "cone" of uncertainty. Model "upgrade cycles": ECMWF improves model every 6 months; each upgrade saves ≈1 forecast day in skill',
         },
         {
@@ -65,7 +65,7 @@ Despite these limitations, modern NWP is extraordinarily useful. 5-day forecasts
           icon: Sun,
           color: BRAND.gold,
           desc: 'Lorenz (1963): discovered chaos in simplified atmospheric equations; "butterfly effect" coined 1972. Predictability horizon: ~2 weeks for large-scale flow; 5–7 days for cyclone track; 3–5 days for precipitation; 0–24 hr for convective initiation. Cannot be extended by better computers — intrinsic chaos limit. Ensemble (1992–): 50 perturbed members → probability distribution of outcomes. Spaghetti ensemble tracks → "cone of uncertainty" for hurricane track.',
-          examples: 'Lorenz attractor: iconic chaos figure, never repeats but stays in bounded phase space · Hurricane Sandy (2012): ECMWF ensemble predicted unprecedented left turn into NJ 7+ days in advance; GFS operational didn\'t; evacuations saved lives · Winter storm Jonas (2016): ensemble guidance correctly showed heavy Mid-Atlantic snowstorm 6 days in advance',
+          examples: `Lorenz attractor: iconic chaos figure, never repeats but stays in bounded phase space · Hurricane Sandy (2012): ECMWF ensemble predicted unprecedented left turn into NJ 7+ days in advance; GFS operational didn\'t; evacuations saved lives · Winter storm Jonas (2016): ensemble guidance correctly showed heavy Mid-Atlantic snowstorm 6 days in advance`,
         },
       ],
     },

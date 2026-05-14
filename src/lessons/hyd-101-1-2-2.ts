@@ -10,7 +10,7 @@ const streamDischarge: Lesson = {
   level: 'Beginner',
   duration: '12 min',
   xpReward: 120,
-  description: 'Measuring rivers: from wading rods to ADCP to the hydrograph that predicts a flood\'s arrival',
+  description: `Measuring rivers: from wading rods to ADCP to the hydrograph that predicts a flood\'s arrival`,
   sources: [
     { org: 'USGS', title: 'USGS — Streamflow Measurement',                              url: 'https://www.usgs.gov/special-topics/water-science-school/science/how-usgs-measures-streamflow' },
     { org: 'USGS', title: 'USGS — National Water Information System',                   url: 'https://waterdata.usgs.gov/nwis' },
@@ -20,7 +20,7 @@ const streamDischarge: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: 'Measuring rivers: from wading rods to ADCP to the hydrograph that predicts a flood\'s arrival',
+      title: `Measuring rivers: from wading rods to ADCP to the hydrograph that predicts a flood\'s arrival`,
       body: `Streamflow — the volume of water passing a cross-section per unit time — is measured as discharge (Q) in cubic metres per second (m³/s) or cubic feet per second (cfs). The fundamental measurement equation is Q = A × V, where A is the cross-sectional area of the channel and V is the mean velocity of the water. Historical streamflow measurement required hydrologists to physically wade into rivers with current meters; today, Acoustic Doppler Current Profilers (ADCPs) mounted on boats or cableways measure velocity profiles across the entire channel width in minutes. The USGS operates over 11,000 active streamgauging stations in the United States, representing one of the world\'s most comprehensive hydrological monitoring networks.
 
 At a permanent gauging station, continuous water level (stage) is measured by a pressure transducer or float gauge every 15 minutes. Stage is converted to discharge using a rating curve — an empirically derived relationship between stage and discharge established by repeated discharge measurements at various flow levels. Rating curves are typically power-law relationships: Q = a(h − h₀)^b, where h is stage, h₀ is the stage at zero flow, and a, b are fitted parameters. Rating curves must be periodically updated because channel geometry changes due to sediment deposition, scour, and vegetation. Manning\'s equation (V = (1/n) × R^(2/3) × S^(1/2), where n is roughness, R is hydraulic radius, S is water surface slope) provides an independent check on velocities.
@@ -162,7 +162,7 @@ Flood frequency analysis relates flood magnitude to recurrence interval (return 
           explain: 'Directly measuring discharge (Q = A × V) requires measuring the velocity at many points across the channel cross-section — historically done by wading with a current meter, now by ADCP. This is expensive, dangerous during floods, and cannot be automated continuously. Stage (water level) can be measured automatically every 15 minutes with inexpensive pressure transducers or float gauges. Hydrologists establish a rating curve — a calibration relationship between stage and discharge — by conducting many direct discharge measurements at various flow levels over years. Once calibrated, the continuously monitored stage is converted to discharge using the rating curve. The rating curve must be periodically updated because channel geometry changes due to erosion, deposition, or vegetation growth.',
         },
         {
-          q: 'Manning\'s equation V = (1/n) × R^(2/3) × S^(1/2) relates channel velocity to three variables. What does "n" represent and what affects its value?',
+          q: `Manning\'s equation V = (1/n) × R^(2/3) × S^(1/2) relates channel velocity to three variables. What does "n" represent and what affects its value?`,
           a: [
             'n is the channel cross-sectional area; increases with flood stage',
             'n is the roughness coefficient; higher n means slower flow. Smooth concrete channels: n ≈ 0.013; natural channels with boulders: n ≈ 0.04-0.10',
@@ -170,7 +170,7 @@ Flood frequency analysis relates flood magnitude to recurrence interval (return 
             'n is the Froude number; below 1 indicates subcritical flow',
           ],
           correct: 1,
-          explain: 'Manning\'s roughness coefficient n quantifies the resistance to flow from channel boundary friction. Smooth surfaces have low n (fast flow): concrete flumes ~0.013, straight clean natural channels ~0.025–0.033. Rough, vegetated, or irregular channels have high n: channels with heavy brush and weeds ~0.05–0.10; mountain streams with large boulders ~0.04–0.07. For a given hydraulic radius (R, cross-sectional area / wetted perimeter) and water surface slope (S), doubling n roughly halves the velocity. During floods, vegetation on floodplains dramatically increases effective n, slowing floodplain flows while the main channel carries faster water — an important consideration for flood routing models.',
+          explain: `Manning\'s roughness coefficient n quantifies the resistance to flow from channel boundary friction. Smooth surfaces have low n (fast flow): concrete flumes ~0.013, straight clean natural channels ~0.025–0.033. Rough, vegetated, or irregular channels have high n: channels with heavy brush and weeds ~0.05–0.10; mountain streams with large boulders ~0.04–0.07. For a given hydraulic radius (R, cross-sectional area / wetted perimeter) and water surface slope (S), doubling n roughly halves the velocity. During floods, vegetation on floodplains dramatically increases effective n, slowing floodplain flows while the main channel carries faster water — an important consideration for flood routing models.`,
         },
         {
           q: 'A stream gauge has a 90-year record. How confident should you be in its estimated 100-year flood discharge?',
@@ -203,7 +203,7 @@ Flood frequency analysis relates flood magnitude to recurrence interval (return 
             'It separates baseflow from storm runoff automatically; baseflow is defined as the unit hydrograph baseline',
           ],
           correct: 1,
-          explain: 'The unit hydrograph (UH) concept (Sherman, 1932) is based on linear systems theory: if the UH is the response to 1 mm of effective rainfall uniformly distributed in time, then the response to any other effective rainfall can be estimated by scaling and time-shifting the UH. For a complex multi-hour storm with varying intensity, the total runoff hydrograph is the sum of UH contributions from each time period, each scaled by that period\'s effective rainfall. This superposition principle allows engineers to compute the design flood hydrograph for any synthetic design storm (e.g., the 24-hour PMP or 100-year 24-hour rainfall) from measurements made during historical storms. Engineers use UH-derived peak flows to design culverts, bridges, detention basins, and spillways.',
+          explain: `The unit hydrograph (UH) concept (Sherman, 1932) is based on linear systems theory: if the UH is the response to 1 mm of effective rainfall uniformly distributed in time, then the response to any other effective rainfall can be estimated by scaling and time-shifting the UH. For a complex multi-hour storm with varying intensity, the total runoff hydrograph is the sum of UH contributions from each time period, each scaled by that period\'s effective rainfall. This superposition principle allows engineers to compute the design flood hydrograph for any synthetic design storm (e.g., the 24-hour PMP or 100-year 24-hour rainfall) from measurements made during historical storms. Engineers use UH-derived peak flows to design culverts, bridges, detention basins, and spillways.`,
         },
       ],
     },

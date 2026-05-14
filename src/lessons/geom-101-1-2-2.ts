@@ -39,7 +39,7 @@ Tectonic geomorphology interprets landscape relief and river network geometry as
         },
         {
           term: 'Knickpoint',
-          def: 'An abrupt break in a river\'s longitudinal profile that migrates headward as a wave of incision; triggered by base-level fall, uplift, or resistant lithology.',
+          def: `An abrupt break in a river\'s longitudinal profile that migrates headward as a wave of incision; triggered by base-level fall, uplift, or resistant lithology.`,
         },
         {
           term: 'Meander Cutoff',
@@ -89,7 +89,7 @@ Tectonic geomorphology interprets landscape relief and river network geometry as
     {
       type: 'visualization',
       title: 'Base-Level Change to New Steady State: The Incision Cascade',
-      body: 'Trace the sequence of landscape responses triggered when a river\'s base level falls — through tectonics or sea-level change — from initial incision through terrace formation, knickpoint migration, hillslope adjustment, and eventual re-establishment of a graded profile.',
+      body: `Trace the sequence of landscape responses triggered when a river\'s base level falls — through tectonics or sea-level change — from initial incision through terrace formation, knickpoint migration, hillslope adjustment, and eventual re-establishment of a graded profile.`,
       interaction: {
         type: 'flow-simulator' as const,
         description: 'Trace the cascade of geomorphic responses triggered by a base-level fall event, from river incision through hillslope adjustment to a new landscape steady state.',
@@ -97,7 +97,7 @@ Tectonic geomorphology interprets landscape relief and river network geometry as
           {
             id: 'base-level-fall',
             label: 'Base Level Fall (Tectonics/Sea Level)',
-            description: 'Rock uplift or sea-level fall lowers the river\'s base level — the elevation to which it grades. This steepens the channel gradient near the mouth, providing excess stream power that drives incision into the bed.',
+            description: `Rock uplift or sea-level fall lowers the river\'s base level — the elevation to which it grades. This steepens the channel gradient near the mouth, providing excess stream power that drives incision into the bed.`,
             color: BRAND.ruby,
           },
           {

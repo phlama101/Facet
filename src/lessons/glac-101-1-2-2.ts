@@ -10,7 +10,7 @@ const antarcticIceSheet: Lesson = {
   level: 'Foundations',
   duration: '12 min',
   xpReward: 120,
-  description: 'Structure, dynamics, and vulnerabilities of the Antarctic Ice Sheet — Earth\'s largest reservoir of ice and fresh water',
+  description: `Structure, dynamics, and vulnerabilities of the Antarctic Ice Sheet — Earth\'s largest reservoir of ice and fresh water`,
   sources: [
     { org: 'BAS',   title: 'British Antarctic Survey — Ice Sheet Science',                  url: 'https://www.bas.ac.uk' },
     { org: 'IMBIE', title: 'IMBIE — Ice Sheet Mass Balance Inter-comparison Exercise',       url: 'https://imbie.org' },
@@ -20,7 +20,7 @@ const antarcticIceSheet: Lesson = {
   sections: [
     {
       type: 'intro',
-      title: '26.5 million cubic kilometres of ice: Antarctica\'s role in Earth\'s climate and sea level',
+      title: `26.5 million cubic kilometres of ice: Antarctica\'s role in Earth\'s climate and sea level`,
       body: `Antarctica is the coldest, driest, and windiest continent on Earth, yet it holds the planet\'s greatest concentration of freshwater: approximately 26.5 million km³ of ice covering an area of 14 million km². At its thickest, the ice reaches 4,776 m at Astrolabe Subglacial Basin — deep enough to bury the Alps. This single reservoir contains roughly 58 m of sea level equivalent (SLE), dwarfing all other freshwater sources combined.
 
 The ice sheet is divided into two distinct regions by the Transantarctic Mountains. The East Antarctic Ice Sheet (EAIS) sits primarily on bedrock above sea level and holds approximately 54 m SLE — the majority of Antarctica\'s ice. Its high elevation and cold temperatures make it relatively stable under current climate projections. The West Antarctic Ice Sheet (WAIS) is fundamentally different: grounded largely below sea level on a bed that deepens inland from the coast, holding approximately 3.3 m SLE, and theoretically vulnerable to self-reinforcing retreat. The Antarctic Peninsula, the northernmost arm of the continent, holds a further ~0.2 m SLE and has already experienced dramatic ice shelf collapses.
@@ -83,7 +83,7 @@ The most urgent concern is the Amundsen Sea sector of the WAIS. Thwaites and Pin
           name: 'Antarctic Ice Shelves and Buttressing',
           icon: Zap,
           color: BRAND.gold,
-          desc: 'Ice shelves fringe 75% of Antarctica\'s coastline; they slow discharge by providing back-stress; Larsen B collapse (2002) demonstrated how ice shelf loss accelerates tributary glaciers; warm oceans threaten shelf stability.',
+          desc: `Ice shelves fringe 75% of Antarctica\'s coastline; they slow discharge by providing back-stress; Larsen B collapse (2002) demonstrated how ice shelf loss accelerates tributary glaciers; warm oceans threaten shelf stability.`,
           examples: 'Larsen B Ice Shelf (3,250 km²) collapsed in 35 days in 2002; tributary glaciers accelerated 2–8× within months. Ross Ice Shelf (500,000 km²) provides critical buttressing to WAIS — its loss would be transformative for sea level. Basal melt rates under the Amundsen Sea ice shelves: 20–70 m/yr from CDW — among the highest on Earth.',
         },
       ],
@@ -191,7 +191,7 @@ The most urgent concern is the Amundsen Sea sector of the WAIS. Thwaites and Pin
           explain: `The Larsen B collapse was a natural experiment that directly confirmed the buttressing hypothesis. Before collapse, the ice shelf exerted back-stress on eight tributary glaciers, restraining their flow. Within months of the February–March 2002 collapse (3,250 km² in ~35 days), Eric Rignot and Robert Thomas measured glacier velocities using InSAR. Glaciers that had flowed into Larsen B accelerated 2–8× — the Crane Glacier quadrupled from ~0.7 to ~3 km/yr within one year. Glaciers that flowed into the remaining Larsen C shelf (which has not collapsed) showed no change. This direct before-and-after comparison provided the clearest evidence that ice shelves actively buttress inland ice, and by extension that ice shelf loss from ocean warming can directly accelerate ice sheet discharge and sea level contribution.`,
         },
         {
-          q: 'Antarctica\'s total ice volume of ~26.5 million km³ represents approximately how much potential sea level rise?',
+          q: `Antarctica\'s total ice volume of ~26.5 million km³ represents approximately how much potential sea level rise?`,
           a: [
             'About 5.8 m — roughly equal to Greenland\'s contribution',
             'About 58 m — enough to transform Earth\'s coastlines beyond recognition',

@@ -76,7 +76,7 @@ Read each question carefully. Distractors are constructed to target the most com
 
         // ── Q3: Bowen's reaction series — first mineral ─────────────────────
         {
-          q: 'According to Bowen\'s reaction series, which mineral is the first to crystallise from a cooling basaltic melt at atmospheric pressure?',
+          q: `According to Bowen\'s reaction series, which mineral is the first to crystallise from a cooling basaltic melt at atmospheric pressure?`,
           a: [
             'Quartz, because it has the simplest silicate structure (isolated SiO₄ tetrahedra) and crystallises at the highest temperature in the continuous series',
             'Plagioclase feldspar (anorthite-rich end), because it forms the backbone of the discontinuous series and anchors all subsequent crystallisation',

@@ -51,13 +51,13 @@ Understanding stability is what distinguishes a meteorologist's analysis of the 
           icon: Wind,
           color: BRAND.accent,
           desc: 'Absolutely stable (ELR < MALR ~6°C/km): even saturated parcels sink back → layered stratiform cloud, no convection. Common in subsiding air. Conditionally unstable (6 < ELR < 10°C/km): stable if unsaturated, unstable if saturated and forced to LFC → most common regime, basis of severe weather. Absolutely unstable (ELR > DALR 10°C/km): even dry parcels rise freely → rare at large scale, common in lowest 10–100 m of atmosphere on hot sunny afternoons (dust devils).',
-          examples: 'Clear, hazy summer day: afternoon ELR near 10°C/km in boundary layer → small cumulus; ELR flattens aloft → stable, clouds don\'t grow · "Popcorn" convection: afternoon cumulus appearing over warm terrain with no organized forcing · Dust devil: super-adiabatic surface layer, dry convection within lowest 100 m',
+          examples: `Clear, hazy summer day: afternoon ELR near 10°C/km in boundary layer → small cumulus; ELR flattens aloft → stable, clouds don\'t grow · "Popcorn" convection: afternoon cumulus appearing over warm terrain with no organized forcing · Dust devil: super-adiabatic surface layer, dry convection within lowest 100 m`,
         },
         {
           name: 'Inversions and Their Effects',
           icon: Sun,
           color: BRAND.gold,
-          desc: 'Radiation inversion: clear night → surface cools → temperature increases upward from surface. Fog, stratus, trapped pollution. Burns off by midmorning as solar heating warms surface. Subsidence inversion: Hadley cell descent compresses air, warms it → capping layer. Persistent clear skies, marine layer, haze. Frontal inversion: warm air above frontal surface. The stratosphere is Earth\'s permanent global inversion. All inversions cap convection.',
+          desc: `Radiation inversion: clear night → surface cools → temperature increases upward from surface. Fog, stratus, trapped pollution. Burns off by midmorning as solar heating warms surface. Subsidence inversion: Hadley cell descent compresses air, warms it → capping layer. Persistent clear skies, marine layer, haze. Frontal inversion: warm air above frontal surface. The stratosphere is Earth\'s permanent global inversion. All inversions cap convection.`,
           examples: 'Los Angeles basin: persistent subsidence inversion from Pacific High → traps smog at surface · London Great Smog 1952: radiation + subsidence inversion → 4,000+ deaths in 5 days · Valley fog: cold air drains into valleys, pools, radiation inversion → morning fog blankets',
         },
         {

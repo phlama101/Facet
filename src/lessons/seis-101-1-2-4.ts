@@ -96,10 +96,10 @@ Seismic gaps — segments of a fault system that have not ruptured recently comp
     {
       type: 'visualization',
       title: 'The Cascadia Seismic Cycle',
-      body: 'Trace the evidence chain that reconstructed Cascadia\'s earthquake history and informs modern hazard estimates.',
+      body: `Trace the evidence chain that reconstructed Cascadia\'s earthquake history and informs modern hazard estimates.`,
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'Trace the evidence chain that reconstructed Cascadia\'s earthquake history and informs modern hazard estimates.',
+        description: `Trace the evidence chain that reconstructed Cascadia\'s earthquake history and informs modern hazard estimates.`,
         nodes: [
           {
             id: 'plate-motion',

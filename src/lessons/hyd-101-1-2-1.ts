@@ -61,7 +61,7 @@ Digital elevation models (DEMs) and GIS tools have transformed watershed analysi
           icon: Globe,
           color: BRAND.accent,
           desc: 'Primary control on peak discharge: larger area → more water, but longer lag time. Q ∝ A^0.7-0.8 empirically.',
-          examples: 'Mississippi Basin: 3.2 M km². Congo: 3.7 M km². Amazon: 6.1 M km² (world\'s largest). All drain to single ocean outlet.',
+          examples: `Mississippi Basin: 3.2 M km². Congo: 3.7 M km². Amazon: 6.1 M km² (world\'s largest). All drain to single ocean outlet.`,
         },
         {
           name: 'Stream Order',
@@ -184,7 +184,7 @@ Digital elevation models (DEMs) and GIS tools have transformed watershed analysi
           explain: 'Trellis drainage develops where the landscape has a regular alternating pattern of resistant and weak rock — typically folded or faulted sedimentary sequences. Main streams follow valleys carved in soft rock (shale, limestone); tributaries cut through the ridges of harder rock (sandstone, quartzite) at nearly right angles. The Valley and Ridge province of the Appalachians is the classic example: resistant Silurian sandstone ridges alternate with valleys in more erodible Devonian shale and limestone, creating the characteristic trellis pattern visible from satellite. The pattern is essentially a geological map readable from drainage geometry alone.',
         },
         {
-          q: 'What does a high drainage density (km of stream per km² of watershed) indicate about a watershed\'s hydrological behaviour?',
+          q: `What does a high drainage density (km of stream per km² of watershed) indicate about a watershed\'s hydrological behaviour?`,
           a: [
             'High drainage density indicates deep, permeable soils that rapidly convey water underground to the stream network',
             'High drainage density means more total stream length is available to route water quickly to the outlet, producing flashier flood responses and more rapid runoff',

@@ -82,7 +82,7 @@ USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-m
           icon: Zap,
           color: BRAND.amethyst,
           desc: 'NEHRP site classes: A (rock, VS30 >1500) to E (soft soil, VS30 <180). Class E can amplify 3-5× vs Class A.',
-          examples: 'Seattle\'s glacial outwash (VS30 ~300) vs underlying glaciomarine clay (VS30 ~100): 2-3× additional amplification.',
+          examples: `Seattle\'s glacial outwash (VS30 ~300) vs underlying glaciomarine clay (VS30 ~100): 2-3× additional amplification.`,
         },
         {
           name: 'ShakeMap',
