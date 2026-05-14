@@ -40,13 +40,14 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   const isQuizSection = cur?.type === 'quiz'
   const showNav = !isQuizSection && !(isLastSection && quizDone)
 
+  const currentPath = LEARNING_PATHS.find(p =>
+    p.chapters.some(ch => ch.lessonIds.includes(lesson.id))
+  )
+
   // Up to 2 lessons from the same path (skip those already adjacent via nextLesson)
   const recommended: { id: string; title: string; color: string }[] = (() => {
-    const samePath = LEARNING_PATHS.find(p =>
-      p.chapters.some(ch => ch.lessonIds.includes(lesson.id))
-    )
-    if (!samePath) return []
-    const allIds = samePath.chapters.flatMap(ch => ch.lessonIds)
+    if (!currentPath) return []
+    const allIds = currentPath.chapters.flatMap(ch => ch.lessonIds)
     const skipId = nextLesson?.id
     return allIds
       .filter(id => id !== lesson.id && id !== skipId)
@@ -57,6 +58,12 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
       })
       .filter((x): x is { id: string; title: string; color: string } => x !== null)
       .slice(0, 2)
+  })()
+
+  // When this is the last lesson in the path, suggest the next path to start
+  const nextPath = (() => {
+    if (nextLesson || !currentPath) return null
+    return LEARNING_PATHS.find(p => p.prerequisites?.includes(currentPath.id)) ?? null
   })()
 
   function goNext() {
@@ -316,6 +323,51 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                     {nextLesson ? 'Back to Dashboard' : 'Save & Continue'} {!nextLesson && <ArrowRight size={14} />}
                   </motion.button>
                 </motion.div>
+
+                {/* Next path recommendation */}
+                {nextPath && (() => {
+                  const firstLessonId = nextPath.chapters[0]?.lessonIds[0]
+                  if (!firstLessonId) return null
+                  return (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.85 }}
+                      className="w-full mt-2"
+                    >
+                      <div className="text-[9px] tracking-[0.2em] uppercase mb-2 text-center" style={{ color: BRAND.textSubtle }}>
+                        Up Next — Start a new path
+                      </div>
+                      <button
+                        onClick={() => onCompleteAndGoTo
+                          ? onCompleteAndGoTo(lesson.xpReward, quizResult ?? undefined, firstLessonId)
+                          : onComplete(lesson.xpReward, quizResult ?? undefined)
+                        }
+                        className="w-full flex items-center gap-4 px-5 py-4 rounded-sm text-left transition-opacity hover:opacity-85"
+                        style={{
+                          backgroundColor: `${nextPath.color}12`,
+                          border: `1px solid ${nextPath.color}40`,
+                        }}
+                      >
+                        <div
+                          className="w-2 h-8 rounded-full shrink-0"
+                          style={{ backgroundColor: nextPath.color }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm font-semibold truncate" style={{ color: BRAND.text }}>
+                            {nextPath.title}
+                          </div>
+                          {nextPath.subtitle && (
+                            <div className="text-[11px] mt-0.5 truncate" style={{ color: BRAND.textDim }}>
+                              {nextPath.subtitle}
+                            </div>
+                          )}
+                        </div>
+                        <ArrowRight size={14} color={nextPath.color} className="shrink-0" />
+                      </button>
+                    </motion.div>
+                  )
+                })()}
 
                 {/* You might also like */}
                 {recommended.length > 0 && (

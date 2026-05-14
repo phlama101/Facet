@@ -75,14 +75,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    const todayUTC = new Date().toISOString().slice(0, 10)
+    // Single reference timestamp anchors both the progress row and the streak
+    // calculation. Without this, a lesson completed at 23:59:59 UTC could be
+    // inserted with completed_at = Jan 15 but award_xp could run at 00:00:01
+    // Jan 16, seeing a 2-day gap and incorrectly resetting the streak.
+    const nowISO = new Date().toISOString()
+    const todayUTC = nowISO.slice(0, 10)
     const todayUTCStart = `${todayUTC}T00:00:00.000Z`
 
     // INSERT first. The unique constraint on (user_id, lesson_id) ensures atomicity —
     // two concurrent requests for the same lesson can't both succeed.
     const { error: insertError } = await admin
       .from('user_lesson_progress')
-      .insert({ user_id: user.id, lesson_id: lessonId, completed: true, completed_at: new Date().toISOString() })
+      .insert({ user_id: user.id, lesson_id: lessonId, completed: true, completed_at: nowISO })
 
     if (insertError) {
       if (insertError.code === PG_UNIQUE_VIOLATION) {
@@ -119,6 +124,7 @@ export async function POST(req: NextRequest) {
     const { data: awardRows, error: awardError } = await admin.rpc('award_xp', {
       p_user_id: user.id,
       p_xp: xpToAward,
+      p_now: nowISO,
     }) as { data: { new_xp: number; new_level: number; new_streak: number }[] | null; error: unknown }
 
     if (awardError || !awardRows?.length) {
