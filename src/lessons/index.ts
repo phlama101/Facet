@@ -283,6 +283,42 @@ import ensembleForecastingUncertainty     from './atmo-201-1-4-2'
 import predictabilityLimitsChaosTheory    from './atmo-201-1-4-3'
 import machineLearningWeatherForecasting  from './atmo-201-1-4-4'
 import atmo201Capstone                    from './atmo-201-capstone'
+import impactCrateringMechanics              from './astr-201-1-1-1'
+import craterMorphologyAndClassification     from './astr-201-1-1-2'
+import lunarCrateringRecordAndPlanetaryChronology from './astr-201-1-1-3'
+import impactHazardsOnEarth                  from './astr-201-1-1-4'
+import atmosphericOriginEvolution            from './astr-201-1-2-1'
+import runawayGreenhouseVenus                from './astr-201-1-2-2'
+import marsAtmosphereClimate                 from './astr-201-1-2-3'
+import titanAtmosphereOrganics               from './astr-201-1-2-4'
+import probingPlanetaryInteriors             from './astr-201-1-3-1'
+import planetaryMagneticFields               from './astr-201-1-3-2'
+import stagnantLidTectonics                  from './astr-201-1-3-3'
+import volcanismSolarSystem                  from './astr-201-1-3-4'
+import bodyWaveTomography                    from './seis-201-1-1-1'
+import surfaceWaveTomography                 from './seis-201-1-1-2'
+import seismicDiscontinuities                from './seis-201-1-1-3'
+import mantlePlumesSlabs                     from './seis-201-1-1-4'
+import seismicMomentRuptureDynamics          from './seis-201-1-2-1'
+import faultFrictionRateState                from './seis-201-1-2-2'
+import paleoseismologyLongTermRecord         from './seis-201-1-2-3'
+import slowEarthquakesTremorSlip             from './seis-201-1-2-4'
+import gpsGeodeticPlatemotion                from './seis-201-1-3-1'
+import insarSurfaceDeformation               from './seis-201-1-3-2'
+import subductionCouplingTsunami             from './seis-201-1-3-3'
+import volcanoSeismicSystems                 from './seis-201-1-3-4'
+import runoffGenerationMechanisms            from './hyd-201-1-1-1'
+import hydrographAnalysis                    from './hyd-201-1-1-2'
+import streamflowRouting                     from './hyd-201-1-1-3'
+import catchmentWaterBalance                 from './hyd-201-1-1-4'
+import transpirationEcohydrology             from './hyd-201-1-2-1'
+import nutrientCyclingWaterQuality           from './hyd-201-1-2-2'
+import sedimentTransportGeomorphodynamics    from './hyd-201-1-2-3'
+import contaminantHydrogeology               from './hyd-201-1-2-4'
+import streamflowTrendsClimate               from './hyd-201-1-3-1'
+import hydrologicalExtremes                  from './hyd-201-1-3-2'
+import cryosphereHydrology                   from './hyd-201-1-3-3'
+import integratedWaterManagement             from './hyd-201-1-3-4'
 
 export const LESSONS: Record<string, Lesson> = {
   'geol-101-1-1':            earthInternalStructure,
@@ -565,6 +601,42 @@ export const LESSONS: Record<string, Lesson> = {
   'atmo-201-1-4-3':          predictabilityLimitsChaosTheory,
   'atmo-201-1-4-4':          machineLearningWeatherForecasting,
   'atmo-201-capstone':       atmo201Capstone,
+  'astr-201-1-1-1':          impactCrateringMechanics,
+  'astr-201-1-1-2':          craterMorphologyAndClassification,
+  'astr-201-1-1-3':          lunarCrateringRecordAndPlanetaryChronology,
+  'astr-201-1-1-4':          impactHazardsOnEarth,
+  'astr-201-1-2-1':          atmosphericOriginEvolution,
+  'astr-201-1-2-2':          runawayGreenhouseVenus,
+  'astr-201-1-2-3':          marsAtmosphereClimate,
+  'astr-201-1-2-4':          titanAtmosphereOrganics,
+  'astr-201-1-3-1':          probingPlanetaryInteriors,
+  'astr-201-1-3-2':          planetaryMagneticFields,
+  'astr-201-1-3-3':          stagnantLidTectonics,
+  'astr-201-1-3-4':          volcanismSolarSystem,
+  'seis-201-1-1-1':          bodyWaveTomography,
+  'seis-201-1-1-2':          surfaceWaveTomography,
+  'seis-201-1-1-3':          seismicDiscontinuities,
+  'seis-201-1-1-4':          mantlePlumesSlabs,
+  'seis-201-1-2-1':          seismicMomentRuptureDynamics,
+  'seis-201-1-2-2':          faultFrictionRateState,
+  'seis-201-1-2-3':          paleoseismologyLongTermRecord,
+  'seis-201-1-2-4':          slowEarthquakesTremorSlip,
+  'seis-201-1-3-1':          gpsGeodeticPlatemotion,
+  'seis-201-1-3-2':          insarSurfaceDeformation,
+  'seis-201-1-3-3':          subductionCouplingTsunami,
+  'seis-201-1-3-4':          volcanoSeismicSystems,
+  'hyd-201-1-1-1':           runoffGenerationMechanisms,
+  'hyd-201-1-1-2':           hydrographAnalysis,
+  'hyd-201-1-1-3':           streamflowRouting,
+  'hyd-201-1-1-4':           catchmentWaterBalance,
+  'hyd-201-1-2-1':           transpirationEcohydrology,
+  'hyd-201-1-2-2':           nutrientCyclingWaterQuality,
+  'hyd-201-1-2-3':           sedimentTransportGeomorphodynamics,
+  'hyd-201-1-2-4':           contaminantHydrogeology,
+  'hyd-201-1-3-1':           streamflowTrendsClimate,
+  'hyd-201-1-3-2':           hydrologicalExtremes,
+  'hyd-201-1-3-3':           cryosphereHydrology,
+  'hyd-201-1-3-4':           integratedWaterManagement,
 }
 
 export const LESSON_LIST: Lesson[] = Object.values(LESSONS)
@@ -664,7 +736,7 @@ export const LEARNING_PATHS: LearningPath[] = [
   {
     id: 'deep-time',
     title: 'Deep Time',
-    subtitle: 'Billions of years of Earth history — reading the rock record, dating ancient events, and tracing life\'s story.',
+    subtitle: `Billions of years of Earth history — reading the rock record, dating ancient events, and tracing life\'s story.`,
     tagline: 'Intermediate geology.',
     track: 'geo',
     level: 'Intermediate',
@@ -965,7 +1037,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'seismic-waves',
         title: 'Seismic Waves',
-        description: 'P-waves, S-waves, surface waves, seismographs, and how wave propagation reveals Earth\'s deep interior.',
+        description: `P-waves, S-waves, surface waves, seismographs, and how wave propagation reveals Earth\'s deep interior.`,
         lessonIds: ['seis-101-1-1-1', 'seis-101-1-1-2', 'seis-101-1-1-3', 'seis-101-1-1-4'],
         iconId: 'chapter-seismic-waves',
       },
@@ -1026,7 +1098,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'groundwater',
         title: 'Groundwater',
-        description: 'Aquifer types, Darcy\'s Law, well hydraulics, springs, geothermal systems, and groundwater sustainability.',
+        description: `Aquifer types, Darcy\'s Law, well hydraulics, springs, geothermal systems, and groundwater sustainability.`,
         lessonIds: ['hyd-101-1-3-1', 'hyd-101-1-3-2', 'hyd-101-1-3-3', 'hyd-101-1-3-4'],
         iconId: 'chapter-groundwater',
       },
@@ -1049,7 +1121,7 @@ export const LEARNING_PATHS: LearningPath[] = [
   {
     id: 'geomorphology',
     title: 'Geomorphology',
-    subtitle: 'How landscapes form and evolve — weathering, rivers, coasts, dunes, karst, and permafrost shaping Earth\'s surface over millions of years.',
+    subtitle: `How landscapes form and evolve — weathering, rivers, coasts, dunes, karst, and permafrost shaping Earth\'s surface over millions of years.`,
     track: 'cli',
     level: 'Foundations',
     color: BRAND.coral,
@@ -1080,7 +1152,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'tectonic-geomorphology-hazards',
         title: 'Tectonic Geomorphology and Hazards',
-        description: 'Fault-driven landscapes, knickpoints and tectonic uplift, landslides and mass wasting, coastal change under sea-level rise, and how human activity now rivals geological forces in reshaping Earth\'s surface.',
+        description: `Fault-driven landscapes, knickpoints and tectonic uplift, landslides and mass wasting, coastal change under sea-level rise, and how human activity now rivals geological forces in reshaping Earth\'s surface.`,
         lessonIds: ['geom-101-1-4-1', 'geom-101-1-4-2', 'geom-101-1-4-3', 'geom-101-1-4-4'],
         iconId: 'chapter-tectonic-geomorphology-hazards',
       },
@@ -1096,7 +1168,7 @@ export const LEARNING_PATHS: LearningPath[] = [
   {
     id: 'glaciology',
     title: 'Glaciology',
-    subtitle: 'From snowflake to ice sheet — the physics of glaciers, the dynamics of polar ice, and what frozen archives reveal about Earth\'s climate history.',
+    subtitle: `From snowflake to ice sheet — the physics of glaciers, the dynamics of polar ice, and what frozen archives reveal about Earth\'s climate history.`,
     track: 'cli',
     level: 'Foundations',
     color: BRAND.accentHot,
@@ -1106,7 +1178,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'snow-glaciers',
         title: 'Snow, Ice, and Glacier Dynamics',
-        description: 'Snow metamorphism, firnification, Glen\'s flow law, basal sliding, mass balance, and the global distribution of glacier types.',
+        description: `Snow metamorphism, firnification, Glen\'s flow law, basal sliding, mass balance, and the global distribution of glacier types.`,
         lessonIds: ['glac-101-1-1-1', 'glac-101-1-1-2', 'glac-101-1-1-3', 'glac-101-1-1-4'],
         iconId: 'chapter-snow-glaciers',
       },
@@ -1143,7 +1215,7 @@ export const LEARNING_PATHS: LearningPath[] = [
   {
     id: 'marine-chemistry-biogeochemistry',
     title: 'Marine Chemistry & Biogeochemistry',
-    subtitle: 'The ocean as a chemical reactor — carbonate equilibria, nutrient cycles, the biological pump, methane hydrates, and how the ocean regulates Earth\'s climate on million-year timescales.',
+    subtitle: `The ocean as a chemical reactor — carbonate equilibria, nutrient cycles, the biological pump, methane hydrates, and how the ocean regulates Earth\'s climate on million-year timescales.`,
     track: 'oce',
     level: 'Intermediate',
     color: BRAND.accent,
@@ -1168,14 +1240,14 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'ocean-climate-coupling',
         title: 'Ocean–Climate Coupling',
-        description: 'ENSO and the ocean\'s role in global climate, ocean heat content trends, AMOC and thermohaline circulation, and sea ice dynamics in polar oceans.',
+        description: `ENSO and the ocean\'s role in global climate, ocean heat content trends, AMOC and thermohaline circulation, and sea ice dynamics in polar oceans.`,
         lessonIds: ['ocea-201-1-3-1', 'ocea-201-1-3-2', 'ocea-201-1-3-3', 'ocea-201-1-3-4'],
         iconId: 'chapter-ocean-climate-coupling',
       },
       {
         id: 'anthropocene-ocean',
         title: 'The Anthropocene Ocean',
-        description: 'Marine heat waves, ocean deoxygenation, ocean-based carbon dioxide removal strategies, and what IPCC projections reveal about the ocean\'s future under different emissions scenarios.',
+        description: `Marine heat waves, ocean deoxygenation, ocean-based carbon dioxide removal strategies, and what IPCC projections reveal about the ocean\'s future under different emissions scenarios.`,
         lessonIds: ['ocea-201-1-4-1', 'ocea-201-1-4-2', 'ocea-201-1-4-3', 'ocea-201-1-4-4'],
         iconId: 'chapter-anthropocene-ocean',
       },
@@ -1250,7 +1322,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'magma-genesis',
         title: 'Magma Genesis & Differentiation',
-        description: 'Partial melting mechanisms, Bowen\'s reaction series, magma classification by tectonic setting, and large igneous provinces.',
+        description: `Partial melting mechanisms, Bowen\'s reaction series, magma classification by tectonic setting, and large igneous provinces.`,
         lessonIds: ['volc-201-1-1-1', 'volc-201-1-1-2', 'volc-201-1-1-3', 'volc-201-1-1-4'],
         iconId: 'chapter-magma-genesis',
       },
@@ -1352,7 +1424,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'habitable-worlds',
         title: 'Habitable Worlds in the Solar System',
-        description: 'Mars habitability past and present, Europa and icy ocean worlds, Titan\'s organic chemistry, and Venus as a runaway greenhouse cautionary tale.',
+        description: `Mars habitability past and present, Europa and icy ocean worlds, Titan\'s organic chemistry, and Venus as a runaway greenhouse cautionary tale.`,
         lessonIds: ['abio-101-1-2-1', 'abio-101-1-2-2', 'abio-101-1-2-3', 'abio-101-1-2-4'],
         iconId: 'chapter-habitable-worlds',
       },
@@ -1366,7 +1438,7 @@ export const LEARNING_PATHS: LearningPath[] = [
       {
         id: 'search-for-life-beyond-earth',
         title: 'The Search for Life Beyond Earth',
-        description: 'Mars habitability past and present, icy ocean worlds, atmospheric biosignatures detectable by JWST, and the Fermi paradox — why we haven\'t heard from anyone yet.',
+        description: `Mars habitability past and present, icy ocean worlds, atmospheric biosignatures detectable by JWST, and the Fermi paradox — why we haven\'t heard from anyone yet.`,
         lessonIds: ['abio-101-1-4-1', 'abio-101-1-4-2', 'abio-101-1-4-3', 'abio-101-1-4-4'],
         iconId: 'chapter-search-for-life',
       },
@@ -1375,6 +1447,129 @@ export const LEARNING_PATHS: LearningPath[] = [
         title: 'Path Assessment',
         description: 'Test your knowledge across all four chapters of Astrobiology.',
         lessonIds: ['abio-101-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'planetary-geology',
+    title: 'Planetary Geology',
+    subtitle: `Impact craters to magnetic dynamos — how planets build interiors, surfaces, and atmospheres, and what their geologic records reveal about the solar system's history.`,
+    track: 'ast',
+    level: 'Intermediate',
+    color: BRAND.amethyst,
+    icon: Telescope,
+    iconId: 'path-planetary-geology',
+    prerequisites: ['solar-system'],
+    chapters: [
+      {
+        id: 'impact-cratering',
+        title: 'Impact Cratering and Planetary Surfaces',
+        description: 'Hypervelocity impact mechanics, crater morphology from simple to multi-ring basins, shock metamorphism, planetary chronology from crater counts, and impact hazards on Earth.',
+        lessonIds: ['astr-201-1-1-1', 'astr-201-1-1-2', 'astr-201-1-1-3', 'astr-201-1-1-4'],
+        iconId: 'chapter-impact-cratering',
+      },
+      {
+        id: 'planetary-atmospheres',
+        title: 'Planetary Atmospheres and Climate',
+        description: `Atmospheric origins and evolution, Venus's runaway greenhouse, Mars's climate history and atmospheric loss, and Titan's exotic nitrogen-methane chemistry.`,
+        lessonIds: ['astr-201-1-2-1', 'astr-201-1-2-2', 'astr-201-1-2-3', 'astr-201-1-2-4'],
+        iconId: 'chapter-planetary-atmospheres',
+      },
+      {
+        id: 'planetary-interiors-tectonics',
+        title: 'Planetary Interiors and Tectonics',
+        description: 'Probing planetary interiors with seismology and gravity, magnetic field dynamos across the solar system, stagnant lid vs plate tectonics, and volcanism from Io to Enceladus.',
+        lessonIds: ['astr-201-1-3-1', 'astr-201-1-3-2', 'astr-201-1-3-3', 'astr-201-1-3-4'],
+        iconId: 'chapter-planetary-interiors-tectonics',
+      },
+      {
+        id: 'planetary-geology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Planetary Geology.',
+        lessonIds: ['astr-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'advanced-seismology',
+    title: 'Advanced Seismology',
+    subtitle: 'From seismic tomography and mantle plumes to earthquake source physics and space geodesy — the tools that image the hidden Earth.',
+    track: 'geo',
+    level: 'Intermediate',
+    color: BRAND.coral,
+    icon: Activity,
+    iconId: 'path-advanced-seismology',
+    prerequisites: ['earthquakes-seismology'],
+    chapters: [
+      {
+        id: 'seismic-tomography',
+        title: 'Seismic Tomography and Earth Structure',
+        description: 'Body-wave and surface-wave tomography, ambient noise cross-correlation, seismic discontinuities from Moho to CMB, and the debate over mantle plumes and stagnant slabs.',
+        lessonIds: ['seis-201-1-1-1', 'seis-201-1-1-2', 'seis-201-1-1-3', 'seis-201-1-1-4'],
+        iconId: 'chapter-seismic-tomography',
+      },
+      {
+        id: 'earthquake-source-physics',
+        title: 'Earthquake Source Physics',
+        description: 'Seismic moment and rupture dynamics, fault friction and rate-state constitutive laws, paleoseismology and long-term fault records, and slow earthquakes and episodic tremor and slip.',
+        lessonIds: ['seis-201-1-2-1', 'seis-201-1-2-2', 'seis-201-1-2-3', 'seis-201-1-2-4'],
+        iconId: 'chapter-earthquake-source-physics',
+      },
+      {
+        id: 'geodesy-crustal-deformation',
+        title: 'Geodesy and Crustal Deformation',
+        description: 'GPS geodesy and plate motion, InSAR surface deformation mapping, subduction zone coupling and tsunami generation, and seismic and geodetic monitoring of volcanoes.',
+        lessonIds: ['seis-201-1-3-1', 'seis-201-1-3-2', 'seis-201-1-3-3', 'seis-201-1-3-4'],
+        iconId: 'chapter-geodesy-crustal-deformation',
+      },
+      {
+        id: 'advanced-seismology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Advanced Seismology.',
+        lessonIds: ['seis-201-capstone'],
+        iconId: 'chapter-assessment',
+      },
+    ],
+  },
+  {
+    id: 'advanced-hydrology',
+    title: 'Advanced Hydrology',
+    subtitle: 'Catchment water balance, ecohydrology, water quality, and global water resources — the quantitative science of how water shapes landscapes and sustains life.',
+    track: 'geo',
+    level: 'Intermediate',
+    color: BRAND.accent,
+    icon: Waves,
+    iconId: 'path-advanced-hydrology',
+    prerequisites: ['hydrology'],
+    chapters: [
+      {
+        id: 'catchment-hydrology',
+        title: 'Catchment Hydrology and Process Hydrology',
+        description: 'Runoff generation mechanisms, unit hydrograph theory, streamflow routing and open channel hydraulics, and the Budyko framework for long-term water balance.',
+        lessonIds: ['hyd-201-1-1-1', 'hyd-201-1-1-2', 'hyd-201-1-1-3', 'hyd-201-1-1-4'],
+        iconId: 'chapter-catchment-hydrology',
+      },
+      {
+        id: 'ecohydrology-water-quality',
+        title: 'Ecohydrology and Water Quality',
+        description: 'Transpiration and plant-water relations, nutrient cycling and eutrophication, sediment transport and geomorphodynamics, and contaminant fate and transport in groundwater.',
+        lessonIds: ['hyd-201-1-2-1', 'hyd-201-1-2-2', 'hyd-201-1-2-3', 'hyd-201-1-2-4'],
+        iconId: 'chapter-ecohydrology-water-quality',
+      },
+      {
+        id: 'global-hydrology-water-resources',
+        title: 'Global Hydrology and Water Resources',
+        description: 'Observed streamflow trends and attribution, hydrological extremes and flood frequency, cryosphere hydrology and glacial retreat, and integrated water resources management.',
+        lessonIds: ['hyd-201-1-3-1', 'hyd-201-1-3-2', 'hyd-201-1-3-3', 'hyd-201-1-3-4'],
+        iconId: 'chapter-global-hydrology-water-resources',
+      },
+      {
+        id: 'advanced-hydrology-assessment',
+        title: 'Path Assessment',
+        description: 'Test your knowledge across all three chapters of Advanced Hydrology.',
+        lessonIds: ['hyd-201-capstone'],
         iconId: 'chapter-assessment',
       },
     ],
@@ -1400,6 +1595,9 @@ export const OCEA_201_MODULES = LEARNING_PATHS.find(p => p.id === 'marine-chemis
 export const CLIM_201_MODULES = LEARNING_PATHS.find(p => p.id === 'carbon-cycle-climate-feedbacks')!.chapters
 export const VOLC_201_MODULES = LEARNING_PATHS.find(p => p.id === 'magma-systems-igneous-petrology')!.chapters
 export const ATMO_201_MODULES = LEARNING_PATHS.find(p => p.id === 'climate-dynamics-variability')!.chapters
+export const ASTR_201_MODULES = LEARNING_PATHS.find(p => p.id === 'planetary-geology')!.chapters
+export const SEIS_201_MODULES = LEARNING_PATHS.find(p => p.id === 'advanced-seismology')!.chapters
+export const HYD_201_MODULES  = LEARNING_PATHS.find(p => p.id === 'advanced-hydrology')!.chapters
 
 export const INSTITUTIONS: Institution[] = [
   { name: 'U.S. Geological Survey',                abbr: 'USGS',       type: 'Federal Agency · Public Domain',   url: 'usgs.gov',                  contributes: 'Rocks, minerals, volcanoes, earthquakes, tectonics, water resources', color: BRAND.jade },
