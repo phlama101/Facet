@@ -10,6 +10,7 @@ import QuizBlock from './blocks/QuizBlock'
 import SectionTheory from './SectionTheory'
 import SectionCaseStudy from './SectionCaseStudy'
 import SectionDataLab from './SectionDataLab'
+import CalloutBlock from './blocks/CalloutBlock'
 
 interface Props {
   section: Section
@@ -46,6 +47,8 @@ export default function SectionRenderer({ section, sectionIndex, lessonId, onQui
       return <SectionCaseStudy section={section} />
     case 'data-lab':
       return <SectionDataLab section={section} />
+    case 'callout':
+      return <CalloutBlock section={section} />
     default:
       return null
   }

@@ -59,6 +59,12 @@ The ridge system was first identified as a continuous global structure by Marie 
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Ocean salt could bury every continent',
+      body: "If all the salt in the world's oceans were spread evenly over Earth's land surface, it would form a layer more than 150 metres thick — about the height of a 50-storey building.",
+    },
+    {
       type: 'concept',
       title: 'Ridge structure, spreading rates, and vent chemistry',
       body: `**Anatomy of a mid-ocean ridge.** Despite its enormous length, the mid-ocean ridge follows a consistent structural pattern. A useful way to picture it: the mid-ocean ridge is like a seam running down a baseball — but instead of thread holding panels together, it is a crack where new panels of crust are continuously being stitched into existence by magma. At the ridge crest, magma from the upper mantle pools in a **magma chamber** a few kilometres below the seafloor and periodically erupts, creating pillow basalts — rounded lobes of lava formed when molten rock erupts into cold seawater and quenches instantly into characteristic pillow shapes. The eruptions build up the ridge flanks and add new material to the oceanic crust. The central **rift valley** runs along the crest of slow-spreading ridges, formed by extensional faulting as the crust is pulled apart. At fast-spreading ridges, where the magma supply is more continuous and the crust more buoyant, the rift is subdued or absent, replaced by a gently inflated ridge crest called an **axial high**.
@@ -95,6 +101,36 @@ The ridge system was first identified as a continuous global structure by Marie 
           examples: `Riftia pachyptila: growth rate up to 85 cm/yr, world\'s fastest animal growth · Yeti crab: "farms" bacterial mats on its hairy claws · 700+ species unique to hydrothermal vents globally`,
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Under_the_sea.jpg/800px-Under_the_sea.jpg',
+        alt: 'Underwater ocean scene showing different water layers and marine environment',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'surface-layer',
+            x: 50,
+            y: 15,
+            label: 'Sunlit Surface Layer',
+            description: 'The epipelagic zone (0–200 m) where sunlight penetrates and photosynthesis occurs. Contains nearly all marine primary productivity and is the source of the organic matter that sustains deep-ocean food webs.',
+          },
+          {
+            id: 'thermocline',
+            x: 50,
+            y: 45,
+            label: 'Thermocline Transition',
+            description: 'A layer of rapid temperature decrease with depth, separating warm surface water from cold deep water. Acts as a barrier to vertical mixing and nutrient exchange between the surface and deep ocean.',
+          },
+          {
+            id: 'deep-water',
+            x: 50,
+            y: 75,
+            label: 'Deep Water',
+            description: 'Cold (2–4°C), dark water below the thermocline. Contains the bulk of dissolved salts and nutrients but receives little organic input from above. Circulated globally by thermohaline (density-driven) circulation.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

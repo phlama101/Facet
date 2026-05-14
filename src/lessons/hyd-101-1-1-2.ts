@@ -52,6 +52,12 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'The Amazon River discharges about 20% of all freshwater entering the world\'s oceans',
+      body: 'The Amazon River discharges about 20% of all freshwater entering the world\'s oceans — roughly 209,000 cubic metres per second. The Amazon\'s plume of freshwater extends 200 km into the Atlantic Ocean and is detectable by satellite as a band of lower salinity.',
+    },
+    {
       type: 'concept',
       title: 'Three Precipitation Mechanisms',
       body: `Most precipitation results from air cooling below the dewpoint during ascent. The three lifting mechanisms produce distinct spatial and temporal patterns of rainfall — orographic produces persistent windward enhancement; convective produces intense but localised events; frontal produces widespread but moderate rainfall.`,
@@ -92,6 +98,50 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
           examples: 'Congo basin (humid): AET/P ≈ 0.65. Sahel: AET/P ≈ 0.95 (nearly all rain evapotranspires). Arctic tundra: AET/P ≈ 0.4.',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/River_Amazon_Brazil.jpg/1200px-River_Amazon_Brazil.jpg',
+        alt: 'Aerial view of the Amazon River showing its main channel, floodplain, oxbow lakes, meanders, and riparian forest',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'main-channel',
+            x: 50,
+            y: 45,
+            label: 'Main Channel',
+            description: 'The Amazon main stem carries ~209,000 m³/s of water — about 20% of all freshwater discharged to the world\'s oceans. Its depth exceeds 90 m in some stretches.',
+          },
+          {
+            id: 'floodplain',
+            x: 25,
+            y: 60,
+            label: 'Floodplain (Várzea)',
+            description: 'Seasonally inundated floodplain (várzea) can extend 50–100 km from the main channel during peak flood. This zone is among the most biodiverse ecosystems on Earth and a critical nursery for fish.',
+          },
+          {
+            id: 'oxbow-lake',
+            x: 70,
+            y: 65,
+            label: 'Oxbow Lake',
+            description: 'Oxbow lakes form when meander loops are cut off as the river straightens. They retain floodplain connectivity and serve as refugia for aquatic species during dry season.',
+          },
+          {
+            id: 'meander-bend',
+            x: 40,
+            y: 55,
+            label: 'Meander Bend',
+            description: 'Lateral erosion on the outer (concave) bank and deposition on the inner (convex) bank drives meander migration across the floodplain at rates of 5–30 m/yr in large tropical rivers.',
+          },
+          {
+            id: 'riparian-forest',
+            x: 30,
+            y: 35,
+            label: 'Riparian Forest',
+            description: 'Gallery forests lining the river banks stabilise banks with root systems, regulate water temperature, supply woody debris and leaf litter, and support exceptionally high vertebrate biodiversity.',
+          },
+        ],
+      },
     },
     {
       type: 'visualization',

@@ -8,6 +8,7 @@ import SandboxSimulator from './SandboxSimulator'
 import LayeredVisual from './LayeredVisual'
 import FlowSimulator from './FlowSimulator'
 import ScientificDiagram from './ScientificDiagram'
+import AnnotatedImage from './AnnotatedImage'
 
 interface Props {
   interaction: InteractionConfig
@@ -29,6 +30,8 @@ export default function InteractionRenderer({ interaction }: Props) {
       return <FlowSimulator config={interaction} />
     case 'scientific-diagram':
       return <ScientificDiagram config={interaction} />
+    case 'annotated-image':
+      return <AnnotatedImage config={interaction} />
     default:
       return null
   }

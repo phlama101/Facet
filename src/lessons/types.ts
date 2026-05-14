@@ -101,6 +101,23 @@ export interface ScientificDiagramConfig {
   credit?: string
 }
 
+export interface AnnotatedImageAnnotation {
+  id: string
+  x: number          // percentage from left (0–100)
+  y: number          // percentage from top (0–100)
+  label: string
+  description: string
+}
+
+export interface AnnotatedImageConfig {
+  type: 'annotated-image'
+  src: string
+  alt: string
+  aspectRatio?: string   // CSS aspect-ratio value, default '16/9'
+  credit?: string
+  annotations: AnnotatedImageAnnotation[]
+}
+
 export type InteractionConfig =
   | SliderConfig
   | NodeExplorerConfig
@@ -109,6 +126,7 @@ export type InteractionConfig =
   | LayeredVisualConfig
   | FlowSimulatorConfig
   | ScientificDiagramConfig
+  | AnnotatedImageConfig
 
 // ──────────────────────────────────────────────
 // Shared primitives
@@ -265,6 +283,13 @@ export interface ChallengeSection {
   xpReward?: number
 }
 
+export interface CalloutSection {
+  type: 'callout'
+  variant: 'fact' | 'warning' | 'insight' | 'data'
+  headline: string
+  body: string
+}
+
 export type Section =
   | IntroSection
   | ConceptSection
@@ -275,6 +300,7 @@ export type Section =
   | DataLabSection
   | LabSection
   | ChallengeSection
+  | CalloutSection
 
 // ──────────────────────────────────────────────
 // Top-level Lesson

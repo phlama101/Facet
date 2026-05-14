@@ -55,6 +55,12 @@ This lesson establishes those five criteria precisely, explores the edge cases t
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Over 5,500 mineral species are known — yet just 8 elements make up 98.5% of Earth\'s crust by mass',
+      body: "Oxygen (46%), silicon (28%), aluminium (8%), iron (5%), calcium (4%), sodium (2.4%), potassium (2.3%), and magnesium (2.1%) — these eight elements account for nearly all the mass of Earth's crust. Every other element on the periodic table collectively makes up only about 1.5% of the crust. This extreme chemical simplicity is why only a few dozen minerals build virtually all rocks: the element inventory strongly limits what combinations are possible.",
+    },
+    {
       type: 'concept',
       title: 'The five criteria — and the edge cases that test them',
       body: `Why does mineralogy need such a precise definition? Because geology is full of solid natural materials that look mineral-like but form by very different processes, behave differently, and require different analytical approaches. A definition that is too loose would lump coal in with quartz. A definition that is too strict might accidentally exclude ice. The five-criteria definition has been refined over two centuries of mineralogical work to draw the line in exactly the right place.
@@ -122,6 +128,50 @@ Each of these will be explored in full detail in Lesson 1.2.3. For now, knowing 
           examples: 'Quartz (ordered lattice) ✓ · Obsidian (amorphous) ✗ · Opal ✗ · Ice ✓',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Mohs_hardness_comparison.jpg/800px-Mohs_hardness_comparison.jpg',
+        alt: 'Comparison of minerals on the Mohs hardness scale with everyday reference objects',
+        aspectRatio: '4/3',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: '1',
+            x: 12,
+            y: 50,
+            label: 'Talc (H=1)',
+            description: 'The softest mineral on the Mohs scale — it can be scratched by a fingernail. Talc feels soapy or greasy to the touch because its sheet-silicate structure allows layers to slide over each other easily.',
+          },
+          {
+            id: '2',
+            x: 35,
+            y: 50,
+            label: 'Calcite (H=3)',
+            description: 'Calcite can be scratched by a copper coin (~3.5) but not by a fingernail (~2.5), placing it solidly at Mohs 3. It is the dominant mineral in limestone and marble.',
+          },
+          {
+            id: '3',
+            x: 58,
+            y: 50,
+            label: 'Orthoclase (H=6)',
+            description: 'Orthoclase feldspar scratches glass (~5.5) but is scratched by a steel file (~6.5). It is the pink or white mineral that gives granite much of its colour and makes up a large fraction of continental crust.',
+          },
+          {
+            id: '4',
+            x: 80,
+            y: 50,
+            label: 'Quartz (H=7)',
+            description: 'Hard enough to scratch glass and most steel tools. Quartz\'s exceptional hardness, combined with its chemical resistance to weathering, explains why most sand grains on Earth are quartz — nearly everything else dissolves or abrades away first.',
+          },
+          {
+            id: '5',
+            x: 95,
+            y: 50,
+            label: 'Diamond (H=10)',
+            description: 'The hardest natural material known, roughly 4× harder than corundum (H=9) in absolute terms despite being only one step higher on Mohs\'s ordinal scale. Diamond\'s extreme hardness comes from its three-dimensional network of extremely strong carbon-carbon covalent bonds.',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

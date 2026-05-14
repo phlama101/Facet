@@ -42,6 +42,12 @@ A common misconception is that the Earth's interior is a vast ocean of magma fro
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'Kīlauea: one of Earth\'s most persistently active volcanoes',
+      body: "Kilauea in Hawai'i has been erupting almost continuously since 1983, making it one of the world's most active volcanoes. During major eruptions, lava flows reach temperatures of 1,100–1,200°C — hot enough to vaporize zinc and boil lead.",
+    },
+    {
       type: 'concept',
       title: 'The three melting mechanisms and their tectonic settings',
       body: `**Why doesn't the mantle just melt everywhere?** Think of the mantle like water in a pressure cooker: the water is far above its normal boiling point (100°C), but the elevated pressure keeps it liquid. Release the pressure and it flashes to steam. Mantle rock works the same way — it is above its low-pressure melting point nearly everywhere, but the weight of overlying rock keeps it solid. Only where pressure drops (rising plumes or diverging plates) or where water lowers the melting point (subducting slabs) does it cross from solid into melt.\n\nThe mantle is hot — temperatures at 100 km depth reach ~1,200–1,300°C. The reason the mantle is mostly solid despite these temperatures is **pressure**. As pressure increases with depth, the melting temperature of rock increases significantly — the solidus moves to higher temperatures under higher pressure. Earth's mantle temperature profile (the geotherm) parallels but stays below the solidus throughout most of the mantle. It is only in specific locations where the temperature exceeds the solidus — locally, transiently, and through one of the three melting mechanisms — that magma forms.
@@ -76,6 +82,50 @@ A common misconception is that the Earth's interior is a vast ocean of magma fro
           examples: `Ring of Fire: 452 volcanoes, 75% of world\'s active volcanoes, subduction arcs from Alaska to Chile · East African Rift: Ol Doinyo Lengai (the only active carbonatite volcano), Erta Ale lava lake, Nyiragongo — nascent ocean forming · Deccan Traps (~66 Ma): 500,000 km³ flood basalt, erupted within 1 Myr of Chicxulub impact, possible co-cause of end-Cretaceous extinction`,
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kilaueacomposite.jpg/1200px-Kilaueacomposite.jpg',
+        alt: 'Kīlauea volcanic eruption showing lava fountains, channelized lava flows, and volcanic gases',
+        aspectRatio: '16/9',
+        credit: 'USGS / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'lava-fountain',
+            x: 50,
+            y: 30,
+            label: 'Lava fountain',
+            description: 'High-velocity jets of molten basalt hurled skyward by rapidly expanding volcanic gases escaping from the low-viscosity melt. Fountains can reach 300–500 m in height during vigorous episodes.',
+          },
+          {
+            id: 'lava-channel',
+            x: 30,
+            y: 65,
+            label: 'Lava channel',
+            description: 'A fast-moving river of molten basalt confined between solidified levees of cooled lava. Channel flows can travel at 15–50 km/h and transport lava tens of kilometres from the vent.',
+          },
+          {
+            id: 'aa-lava-field',
+            x: 70,
+            y: 75,
+            label: "A'ā lava field",
+            description: "Rough, clinkery basaltic lava that forms when a flow cools and loses volatiles, causing the surface to fragment into sharp, irregular chunks. Contrasts with the smooth ropy texture of pāhoehoe lava.",
+          },
+          {
+            id: 'volcanic-gases',
+            x: 40,
+            y: 15,
+            label: 'Volcanic gas plume',
+            description: 'A mixture of water vapour (H₂O), sulfur dioxide (SO₂), carbon dioxide (CO₂), and hydrogen sulfide rising from the erupting vent. SO₂ reacts with atmospheric moisture to form sulfuric acid aerosols (vog — volcanic smog).',
+          },
+          {
+            id: 'glowing-vent',
+            x: 50,
+            y: 45,
+            label: 'Glowing vent',
+            description: 'The eruptive fissure or vent where magma exits the conduit system. The incandescent orange-red glow indicates temperatures of 1,100–1,200°C, consistent with low-silica, low-viscosity basaltic magma.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

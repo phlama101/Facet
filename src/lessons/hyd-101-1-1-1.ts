@@ -52,6 +52,12 @@ Human activities have significantly altered the water cycle. Dams store ~10,000 
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The global water cycle moves about 505,000 km³ of water per year',
+      body: 'The global water cycle moves about 505,000 km³ of water per year — equivalent to evaporating and reprecipitating the entire volume of the Baltic Sea every 7 days. Of all Earth\'s water, only 2.5% is fresh, and two-thirds of that is locked in glaciers and ice caps.',
+    },
+    {
       type: 'concept',
       title: `Earth\'s Water Reservoirs`,
       body: `The global water budget is dominated by the ocean. Each terrestrial reservoir has a characteristic size, residence time, and role in the cycle. Residence time determines how quickly a reservoir responds to climate change — fast reservoirs (soil moisture, atmosphere) respond in weeks; slow reservoirs (deep groundwater, ice sheets) respond over centuries to millennia.`,
@@ -92,6 +98,50 @@ Human activities have significantly altered the water cycle. Dams store ~10,000 
           examples: 'Amazon River alone carries ~17% of all river discharge to ocean. Lake Baikal holds 22% of global unfrozen surface freshwater.',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Water_cycle.png/1200px-Water_cycle.png',
+        alt: 'Diagram of the global water cycle showing evaporation, cloud formation, precipitation, runoff, and groundwater processes',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'evaporation',
+            x: 20,
+            y: 65,
+            label: 'Ocean Evaporation',
+            description: 'The ocean surface is the primary source of evaporation, supplying ~86,000 km³ of water vapour to the atmosphere each year — driven by solar energy.',
+          },
+          {
+            id: 'cloud-formation',
+            x: 40,
+            y: 25,
+            label: 'Cloud Formation',
+            description: 'Water vapour rises, cools, and condenses around aerosol particles to form clouds. The atmosphere holds ~12,900 km³ of water vapour at any one time, with a residence time of just 8–9 days.',
+          },
+          {
+            id: 'precipitation',
+            x: 55,
+            y: 40,
+            label: 'Precipitation',
+            description: 'Rain and snow fall when cloud droplets coalesce. Global land precipitation averages ~111,000 km³/yr; ~78,000 km³/yr falls back over the ocean.',
+          },
+          {
+            id: 'surface-runoff',
+            x: 65,
+            y: 70,
+            label: 'Surface Runoff',
+            description: 'Excess precipitation flows over the land surface into streams and rivers, carrying ~38,000 km³/yr of water back to the ocean as river discharge.',
+          },
+          {
+            id: 'groundwater',
+            x: 75,
+            y: 75,
+            label: 'Groundwater Infiltration',
+            description: 'Water percolates through soil and rock to recharge groundwater aquifers, which store ~10.5 million km³ of freshwater and sustain river baseflow between storms.',
+          },
+        ],
+      },
     },
     {
       type: 'visualization',

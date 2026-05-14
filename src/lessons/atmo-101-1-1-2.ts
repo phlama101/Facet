@@ -42,6 +42,12 @@ Understanding atmospheric composition is the foundation of understanding climate
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'A bathtub of CO₂ in an Olympic swimming pool',
+      body: "Carbon dioxide makes up only 0.042% of the atmosphere by volume — a concentration so small that if the atmosphere were an Olympic swimming pool, CO₂ would fill just a single bathtub. Yet this trace gas drives most of Earth's greenhouse warming.",
+    },
+    {
       type: 'concept',
       title: 'Major gases, trace gases, and atmospheric chemistry',
       body: `**Nitrogen and oxygen: the bulk of the atmosphere.** Dinitrogen (N₂) dominates the atmosphere because it is stable, relatively inert, and continuously recycled without being strongly absorbed at the surface or space. It has no significant greenhouse effect. Oxygen's presence at 21% is biologically remarkable — it is far above the chemical equilibrium level for a planet without life (which would be essentially zero O₂). Atmospheric O₂ is maintained by the balance between photosynthesis (which produces O₂) and respiration and decay (which consumes it). Geologically, the burning of fossil fuels is measurably decreasing O₂ concentration, though the change is tiny compared to total oxygen abundance.
@@ -76,6 +82,36 @@ Understanding atmospheric composition is the foundation of understanding climate
           examples: 'Antarctic ozone hole peak: 28 million km² in 2006 · Smog alert: ground-level O₃ exceeds 70 ppb triggers health warnings in US cities · Dobson unit (DU): unit measuring total column ozone; healthy ~300 DU, Antarctic spring minimum <100 DU during hole',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Sunlight_in_the_forest.jpg/800px-Sunlight_in_the_forest.jpg',
+        alt: 'Sunbeams filtering through a forest canopy illustrating light scattering and atmospheric interaction',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'light-scattering',
+            x: 50,
+            y: 30,
+            label: 'Sunbeams and Light Scattering',
+            description: 'Visible sunbeams (crepuscular rays) are created when light is scattered by dust, aerosols, and water vapour in the atmosphere. Rayleigh scattering of short blue wavelengths is why the sky appears blue and sunsets appear orange-red.',
+          },
+          {
+            id: 'co2-absorption',
+            x: 50,
+            y: 65,
+            label: 'Forest Canopy CO₂ Absorption',
+            description: 'Forest vegetation absorbs CO₂ through photosynthesis, incorporating atmospheric carbon into plant tissue. The northern hemisphere\'s forests collectively draw down ~6 ppm of atmospheric CO₂ each summer, producing the seasonal oscillation visible in the Keeling Curve.',
+          },
+          {
+            id: 'atmospheric-haze',
+            x: 80,
+            y: 20,
+            label: 'Atmospheric Haze',
+            description: 'The bright glow near the horizon results from scattering of sunlight by fine particles and gas molecules in the lower atmosphere. Aerosols from natural (pollen, sea salt, dust) and human (combustion) sources contribute to this visible haze layer.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

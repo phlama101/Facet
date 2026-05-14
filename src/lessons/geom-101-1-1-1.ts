@@ -54,6 +54,12 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'Frost wedging is most effective between 0°C and −5°C — not at very cold temperatures',
+      body: 'Frost wedging is most effective between 0°C and −5°C — not at very cold temperatures. In this range, water in larger pores remains liquid while freezing in smaller cracks, creating hydraulic pressure up to 207 MPa. That\'s 5 times more pressure than at the bottom of the deepest ocean trench.',
+    },
+    {
       type: 'concept',
       title: 'Weathering Processes and Products',
       body: `Physical and chemical weathering operate in concert. Physical processes increase rock surface area, accelerating chemical attack; chemical alteration weakens mineral bonds, facilitating further mechanical disintegration. The dominant process varies with climate: cold, arid, and high-relief settings favour physical weathering; warm, humid, low-relief settings favour deep chemical weathering. The mineral products — clay minerals, iron oxides, and residual quartz — record the intensity and duration of weathering and form the parent material for soils.`,

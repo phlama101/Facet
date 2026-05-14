@@ -28,6 +28,50 @@ The two body wave types differ in how they deform the rock they pass through. P-
 P-wave velocity is given by v_P = √((K + 4μ/3)/ρ) where K is the bulk modulus (resistance to compression), μ is the shear modulus (resistance to shearing), and ρ is density. S-wave velocity is v_S = √(μ/ρ). The ratio v_P/v_S = √((K/μ + 4/3)) is always greater than √(4/3) ≈ 1.16, which is why P-waves always arrive before S-waves. In typical crustal rock, v_P/v_S ≈ 1.73. The time difference between P and S arrivals at a seismograph station — the S-P time — directly indicates the distance to the earthquake: distance ≈ S-P interval (in seconds) × ~8 km.
 
 Surface waves arise from the interaction of body waves with Earth\'s free surface. Love waves are shear-type surface waves: they shake the ground horizontally, transverse to the propagation direction, with no vertical motion. They are generally the fastest surface waves. Rayleigh waves combine vertical and horizontal (along-propagation) motion in a retrograde elliptical path — like a wave rolling backward — and are slightly slower than Love waves but typically carry the most energy of any wave type. Surface wave amplitudes decay less rapidly with distance than body waves (1/r rather than 1/r²), so they dominate the seismogram at large distances. The period of surface waves relevant to building damage is 1–10 seconds, matching the natural resonance period of multi-storey buildings, which is why large distant earthquakes can topple skyscrapers in sediment-filled basins far from the epicentre (as happened in Mexico City in 1985, 350 km from the M8.0 Michoacán earthquake).`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Seismogram_of_Tohoku_earthquake_2011.png/1200px-Seismogram_of_Tohoku_earthquake_2011.png',
+        alt: 'Seismogram recording of the 2011 Tōhoku earthquake showing P-wave arrival, S-wave arrival, and surface wave train',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'p-wave-arrival',
+            x: 20,
+            y: 40,
+            label: 'P-wave arrival',
+            description: 'The first faint but abrupt onset on the seismogram marks the arrival of the primary (compressional) P-wave. P-waves travel at 5–8 km/s in continental crust and are the fastest seismic waves, always arriving first at any distant station.',
+          },
+          {
+            id: 's-wave-arrival',
+            x: 40,
+            y: 30,
+            label: 'S-wave arrival',
+            description: 'The S-wave (shear wave) arrives seconds to minutes after the P-wave, with noticeably larger amplitude. The S-P time interval directly encodes the distance to the earthquake: distance (km) ≈ S-P (seconds) × ~8 km.',
+          },
+          {
+            id: 'surface-wave-train',
+            x: 60,
+            y: 25,
+            label: 'Surface wave train',
+            description: 'Love and Rayleigh waves arrive last but with the highest amplitudes and longest durations. These long-period (1–30 s) waves decay as 1/r rather than 1/r², making them the dominant signal at large distances and the primary cause of building damage in major earthquakes.',
+          },
+          {
+            id: 'noise-floor',
+            x: 10,
+            y: 55,
+            label: 'Noise floor',
+            description: 'Background seismic noise before the earthquake arrives, produced by ocean microseisms, wind, human activity, and Earth\'s free oscillations. Modern broadband seismometers can detect ground motions of ~1 nanometre against this noise background.',
+          },
+          {
+            id: 'amplitude-scale',
+            x: 5,
+            y: 35,
+            label: 'Amplitude scale',
+            description: 'The vertical axis records ground velocity in nm/s or µm/s. The enormous amplitude difference between the P-wave onset and the surface-wave train — often a factor of 10–100 — reflects the different geometric spreading rates and source-coupling efficiencies of body waves versus surface waves.',
+          },
+        ],
+      },
       keyTerms: [
         {
           term: 'P-wave',
@@ -50,6 +94,12 @@ Surface waves arise from the interaction of body waves with Earth\'s free surfac
           def: `The time interval between the arrival of the S-wave and the arrival of the P-wave at a seismograph station. Because P-waves travel faster than S-waves, the S-P time grows proportionally with the distance from the earthquake to the station: distance (km) ≈ S-P time (seconds) × ~8 km/s. By measuring the S-P time at three or more stations and drawing circles of the corresponding distances, seismologists triangulate the earthquake\'s epicentre and locate the hypocenter.`,
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The 2011 Tōhoku earthquake shook the entire planet',
+      body: 'The 2011 Tōhoku earthquake (magnitude 9.1) generated seismic waves that traveled through Earth\'s entire interior and were recorded at seismograph stations on every continent. The waves circled the globe multiple times, detectable for days after the event.',
     },
     {
       type: 'concept',

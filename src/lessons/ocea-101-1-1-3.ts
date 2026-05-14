@@ -59,6 +59,12 @@ The deepest ocean — conventionally defined as water below 6,000 metres, called
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: "Earth's slowest conveyor belt",
+      body: "The thermohaline circulation — Earth's 'global ocean conveyor belt' — moves a volume of water equivalent to 100 Amazon Rivers and takes roughly 1,000 years to complete one full circuit of the planet.",
+    },
+    {
       type: 'concept',
       title: 'Trench structure, subduction dynamics, and hadal life',
       body: `**Anatomy of an ocean trench.** An ocean trench is a long, narrow, V-shaped depression formed at a convergent plate boundary. A helpful analogy: think of the oceanic plate as a cold, stiff slab sliding off a table at the subduction zone — as it peels downward and descends, it drags the edge of the table (the seafloor) down with it, creating the trench; the table on the other side (the overriding plate) bears the weight and bulges upward into a volcanic arc. The trench itself is the surface expression of the line along which one plate bends and descends into the mantle. It is typically 2,000–4,000 km long, 50–100 km wide, and 2,000–4,000 m deeper than the surrounding abyssal plain — which is itself already 3,000–5,000 m below sea level, making total trench depths of 8,000–11,000 m at the deepest points. The trench floor is covered by a thin layer of fine-grained sediment — turbidites and fine pelagic particles that settle from the water above and drain off the adjacent slopes.
@@ -97,6 +103,50 @@ The trench is asymmetric: the **oceanic side** (where the subducting plate bends
           examples: 'Hirondellea gigas: amphipod found at >10,000 m, deepest-living crustacean · Pseudoliparis belyaevi (hadal snailfish): deepest fish recorded, found at 8,336 m in the Mariana · Giant xenophyophores: single-celled organisms reaching 20 cm wide, abundant in hadal sediments',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Thermohaline_Circulation_2.png/1200px-Thermohaline_Circulation_2.png',
+        alt: 'Global thermohaline circulation diagram showing deep water formation and surface return flows',
+        aspectRatio: '16/9',
+        credit: 'NASA / Wikimedia Commons',
+        annotations: [
+          {
+            id: 'nadw-formation',
+            x: 40,
+            y: 25,
+            label: 'North Atlantic Deep Water',
+            description: 'Cold, dense surface water in the North Atlantic sinks here to form North Atlantic Deep Water (NADW), one of the two main drivers of global thermohaline circulation. The Gulf Stream feeds warm water into this sinking region.',
+          },
+          {
+            id: 'antarctic-bottom-water',
+            x: 50,
+            y: 85,
+            label: 'Antarctic Bottom Water',
+            description: 'The densest water in the ocean forms around Antarctica as sea ice freezes and ejects salt. This Antarctic Bottom Water (AABW) spreads northward along the ocean floor and is the coldest, densest layer in all ocean basins.',
+          },
+          {
+            id: 'surface-warm-current',
+            x: 30,
+            y: 30,
+            label: 'Warm Surface Current',
+            description: 'Warm, low-density surface waters flow poleward carrying heat from the tropics. These surface currents (shown in red/orange) complete the upper limb of the circulation and moderate climate in high-latitude regions.',
+          },
+          {
+            id: 'deep-cold-return',
+            x: 60,
+            y: 60,
+            label: 'Deep Cold Return Flow',
+            description: 'Cold, dense deep water slowly flows back toward the equator along the ocean floor. This deep return flow (shown in blue) can take hundreds to thousands of years to complete its journey before upwelling back to the surface.',
+          },
+          {
+            id: 'upwelling-zone',
+            x: 85,
+            y: 45,
+            label: 'Upwelling Zone',
+            description: 'Regions where deep, nutrient-rich water rises to the surface, fuelling some of the world\'s most productive fisheries. Upwelling completes the vertical loop of thermohaline circulation and returns nutrients to sunlit surface waters.',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

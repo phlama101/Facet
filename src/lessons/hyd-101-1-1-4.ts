@@ -52,6 +52,12 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'warning',
+      headline: 'Floods are the world\'s deadliest natural hazard',
+      body: 'Floods are the world\'s deadliest natural hazard, causing more deaths and economic damage globally than any other geophysical event. A 100-year flood — one with a 1% chance of occurring in any given year — has a 26% chance of occurring at least once in a 30-year mortgage period.',
+    },
+    {
       type: 'concept',
       title: 'Components of the Snow Hydrological Cycle',
       body: `Snowpack accumulates, ripens, and melts through distinct phases controlled by the energy balance. Each phase has distinct hydrological signatures. Climate change is compressing snowpack duration, shifting melt timing earlier, and increasing rain-on-snow frequency — with major consequences for water supply and flood risk.`,

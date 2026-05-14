@@ -59,6 +59,12 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'Deeper than Everest is tall',
+      body: "The deepest known point on Earth is Challenger Deep in the Mariana Trench at 10,935 metres — deep enough to submerge Mount Everest with over 2 km of water to spare.",
+    },
+    {
       type: 'concept',
       title: 'Ocean floor provinces',
       body: `**From shore to abyss: five major zones.** The ocean floor is conventionally divided into distinct bathymetric (depth) provinces, each with characteristic depth, geology, and biological communities. Moving from the coastline into the deep ocean, these are the continental shelf, continental slope, continental rise, abyssal plain, and mid-ocean ridge system (with trenches where plates converge). Think of it like stepping off a curb onto a gently sloping driveway (the continental shelf), then suddenly reaching the edge of a cliff (the shelf break), descending a steep hillside (the continental slope), crossing a vast flat parking lot (the abyssal plain), and then arriving at a mountain range taller than anything on land (the mid-ocean ridge) — all in total darkness.
@@ -97,6 +103,50 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           examples: 'Mid-Atlantic Ridge: 2.5 cm/yr spreading, Iceland sits above it · East Pacific Rise: 15 cm/yr, broadest ridge on Earth · Mariana Trench: 11,034 m depth, Challenger Deep',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Ocean_bathymetry.jpg/1200px-Ocean_bathymetry.jpg',
+        alt: 'Global ocean bathymetry map showing the major topographic features of the ocean floor',
+        aspectRatio: '16/9',
+        credit: 'NOAA / National Geophysical Data Center',
+        annotations: [
+          {
+            id: 'mid-ocean-ridge',
+            x: 45,
+            y: 50,
+            label: 'Mid-Ocean Ridge',
+            description: 'The continuous underwater mountain chain where tectonic plates diverge and new oceanic crust is created by seafloor spreading. The global ridge system stretches 65,000 km.',
+          },
+          {
+            id: 'deep-trench',
+            x: 80,
+            y: 60,
+            label: 'Deep Ocean Trench',
+            description: 'A convergent plate boundary where oceanic lithosphere subducts into the mantle. The western Pacific hosts the deepest trenches, including the Mariana Trench at 11,034 m.',
+          },
+          {
+            id: 'abyssal-plain',
+            x: 60,
+            y: 70,
+            label: 'Abyssal Plain',
+            description: 'Vast, nearly flat ocean floor at 3,000–6,000 m depth. Covers ~40% of Earth\'s total surface. Appears blue-purple in this bathymetric map. The flattest terrain on Earth.',
+          },
+          {
+            id: 'continental-shelf',
+            x: 15,
+            y: 40,
+            label: 'Continental Shelf',
+            description: 'The shallow, gently sloping submerged extension of the continent (0–200 m depth). Geologically part of the continent, not true ocean floor. Shown in pale colours near coastlines.',
+          },
+          {
+            id: 'seamount',
+            x: 55,
+            y: 45,
+            label: 'Seamount',
+            description: 'An underwater volcano that did not reach the ocean surface. Over 100,000 seamounts exist globally, mostly in the Pacific. They rise hundreds to thousands of metres above the abyssal plain.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

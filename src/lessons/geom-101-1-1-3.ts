@@ -52,6 +52,12 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The Grand Canyon is 446 km long, up to 29 km wide, and over 1,800 m deep',
+      body: 'The Grand Canyon is 446 km long, up to 29 km wide, and over 1,800 m deep. The Colorado River carved it by removing an estimated 10 km³ of rock over 5-6 million years. The exposed rock layers span 1.8 billion years of Earth\'s history — nearly 40% of the planet\'s age.',
+    },
+    {
       type: 'concept',
       title: 'Mechanics and Types of Mass Wasting',
       body: `The Varnes classification links material type and movement kinematics to produce a practical taxonomy of landslides and related phenomena. Each type has a characteristic velocity range, failure geometry, and set of preconditions. Stability analysis using the Mohr-Coulomb framework links material properties to slope angle and pore pressure, providing a quantitative basis for hazard assessment and engineering design.`,

@@ -52,6 +52,12 @@ Urbanisation profoundly alters the infiltration-runoff relationship. Impermeable
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'Groundwater accounts for 30% of all freshwater on Earth',
+      body: 'Groundwater accounts for 30% of all freshwater on Earth and is the primary water source for over 2 billion people. The Ogallala Aquifer beneath the US Great Plains took 10,000 years to fill with glacial meltwater — but at current extraction rates, it could be depleted in as few as 25 years.',
+    },
+    {
       type: 'concept',
       title: 'Runoff Generation Mechanisms',
       body: 'Hortonian and Dunne mechanisms operate in different climates and land types. Understanding which dominates in a given watershed is essential for flood prediction, water resource management, and designing effective green infrastructure.',

@@ -57,6 +57,12 @@ This lesson introduces the four layers of Earth's interior, the seismic evidence
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: "The Kola Borehole drilled for 24 years and reached only 0.19% of the way to Earth's center",
+      body: 'After 24 years of drilling, Soviet scientists reached 12.2 km — the deepest hole ever drilled by humans. Earth\'s radius is 6,371 km. That means humanity\'s deepest penetration into the planet barely scratches 1/500th of the distance to the center. At that depth, temperatures exceeded 180 °C — far hotter than predicted — and the rock behaved more like a plastic than a rigid solid, ultimately halting further progress.',
+    },
+    {
       type: 'concept',
       title: 'Four layers — and how we know',
       body: `Earth is divided into four major layers, nested like the rings of an onion from surface to center: the **crust**, the **mantle**, the **outer core**, and the **inner core**. Each differs in composition, temperature, pressure, and physical state. Think of it like a hard-boiled egg: a paper-thin shell (crust), a thick white (mantle), and a dense yolk (core) — except the yolk has a liquid ring around a solid center, and the "shell" is up to ten times thicker beneath a mountain range than beneath the ocean floor.
@@ -192,6 +198,43 @@ In the next lesson we will zoom into the crust and discover why a thick continen
 • **Chemical and mechanical layering answer different questions**: The crust/mantle/core scheme describes *what* each layer is made of; the lithosphere/asthenosphere scheme describes *how* each layer behaves. Both are correct and both are useful — choosing between them depends on the question being asked.
 
 • **Density fingerprints confirm the core's composition**: Earth's average density (~5.5 g/cm³) is nearly twice that of surface rocks (~2.7 g/cm³), meaning something very dense must lie at the center. Iron-nickel meteorites — fragments from shattered early planetary bodies — match the expected composition exactly, providing a chemical confirmation that is entirely independent of seismology.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Slice_earth.jpg',
+        alt: "Cross-section diagram of Earth's interior showing the crust, mantle, outer core, and inner core",
+        aspectRatio: '4/3',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: '1',
+            x: 50,
+            y: 50,
+            label: 'Inner Core',
+            description: 'The solid iron-nickel sphere at Earth\'s very center, roughly 1,220 km in radius. Despite temperatures of ~5,000–6,000 °C, enormous pressure keeps it solid.',
+          },
+          {
+            id: '2',
+            x: 50,
+            y: 35,
+            label: 'Outer Core',
+            description: 'A ~2,200 km thick shell of liquid iron-nickel alloy. Its molten state is proven by the S-wave shadow zone — shear waves cannot pass through this layer.',
+          },
+          {
+            id: '3',
+            x: 50,
+            y: 20,
+            label: 'Mantle',
+            description: 'The largest layer by volume (~84% of Earth), composed of solid silicate rock that flows plastically over millions of years, driving plate tectonics.',
+          },
+          {
+            id: '4',
+            x: 50,
+            y: 8,
+            label: 'Crust',
+            description: 'Earth\'s thin outermost layer, ranging from ~7 km beneath oceans to ~70 km beneath mountain ranges. All surface geology and life exists here.',
+          },
+        ],
+      },
     },
     {
       type: 'quiz',

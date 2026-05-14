@@ -28,6 +28,50 @@ The most important velocity boundaries in Earth are the Mohorovičić discontinu
 The shadow zones are perhaps the most dramatic demonstration of seismic wave bending. P-waves traveling toward Earth\'s opposite side reach a region called the P-wave shadow zone between 105° and 140° of angular distance from the earthquake — no direct P-waves arrive there because the core-mantle boundary refracts the waves sharply downward (the P-wave velocity drops from ~13.7 km/s in the base of the lower mantle to ~8.1 km/s in the outer core — a large velocity decrease that bends waves toward the core\'s centre rather than through the shadow zone). S-waves cannot penetrate the liquid outer core at all, creating an even larger S-wave shadow zone beyond 105° from the earthquake. Within the P-wave shadow zone at 105°-140°, very weak P-wave arrivals called PKP phases can still be detected — these are waves that entered and exited the outer core but took more complex curved paths. Richard Dixon Oldham first recognised these shadow zones in 1906, proving Earth had a distinct core.
 
 The inner core adds another layer of seismic complexity. P-waves that travel all the way through the inner core (PKIKP phases) arrive within the shadow zone at distances beyond 150°. The inner core\'s P-wave velocity (~11 km/s, higher than the outer core\'s ~10 km/s) and the detection of weak S-waves (PKJKP phases) transmitted through the inner core confirm it is solid. Danish seismologist Inge Lehmann discovered the inner core in 1936 from careful analysis of PKIKP arrivals. Furthermore, the inner core appears to be seismically anisotropic — P-waves traveling parallel to Earth\'s rotation axis are ~3-4% faster than those traveling through the equatorial plane — probably because iron crystals in the inner core are aligned by the magnetic field or by slow differential rotation (~0.3-0.5°/yr faster than the mantle).`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Fault_in_rock.jpg/1200px-Fault_in_rock.jpg',
+        alt: 'Exposed fault plane in rock showing offset layers, fault scarp, and slickensides indicative of past earthquake rupture',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'fault-plane-surface',
+            x: 45,
+            y: 50,
+            label: 'Fault plane surface',
+            description: 'The exposed fault plane is the discrete surface along which one rock mass slid past another during earthquake rupture. The orientation of this plane — its strike (compass direction) and dip (angle from horizontal) — defines the geometry of the fault and controls the style of faulting: normal, reverse, or strike-slip.',
+          },
+          {
+            id: 'offset-rock-layers-left',
+            x: 25,
+            y: 45,
+            label: 'Offset rock layers (hanging wall side)',
+            description: 'Rock layers on the hanging wall (upper side of the fault) have been displaced relative to the footwall. The magnitude of this displacement — the slip — is a primary measure of earthquake size and is used to estimate the seismic moment and moment magnitude Mw.',
+          },
+          {
+            id: 'offset-rock-layers-right',
+            x: 65,
+            y: 55,
+            label: 'Offset rock layers (footwall side)',
+            description: 'Matching rock layers on the footwall (lower side) can be correlated across the fault plane to quantify total displacement. In large earthquakes, cumulative offsets of many metres are measurable; the San Andreas Fault has accumulated ~315 km of total displacement over 25 million years.',
+          },
+          {
+            id: 'fault-scarp',
+            x: 50,
+            y: 30,
+            label: 'Fault scarp',
+            description: 'A fault scarp is the topographic step created at the surface where fault displacement brings one block higher than the other. Fresh fault scarps from recent earthquakes can be metres high; older scarps are progressively eroded by weathering and mass wasting.',
+          },
+          {
+            id: 'slickensides',
+            x: 55,
+            y: 58,
+            label: 'Striations / slickensides',
+            description: 'Linear grooves and polished surfaces (slickensides) scratched into the fault plane record the direction of slip during past earthquakes. The orientation of these striations allows geologists to determine the sense of motion — whether the fault is strike-slip, dip-slip, or oblique — and to reconstruct the stress field.',
+          },
+        ],
+      },
       keyTerms: [
         {
           term: 'Snell\'s Law (seismic)',
@@ -50,6 +94,12 @@ The inner core adds another layer of seismic complexity. P-waves that travel all
           def: `A property of a material or region in which the velocity of seismic waves varies depending on the direction of propagation or polarisation. In Earth\'s inner core, P-waves traveling parallel to the rotation axis are ~3-4% faster than those traveling through the equatorial plane, probably due to preferential alignment of hexagonal close-packed iron (hcp ε-iron) crystals. The crust and upper mantle also exhibit anisotropy from aligned olivine crystals or fluid-filled fractures, which seismologists use to infer past strain history and present-day mantle flow directions.`,
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: 'The San Andreas Fault is moving Los Angeles toward San Francisco',
+      body: 'The San Andreas Fault in California has accumulated 315 km of total displacement over the past 25 million years — moving at roughly 5 cm per year. At this rate, Los Angeles will be adjacent to San Francisco in about 6 million years.',
     },
     {
       type: 'concept',

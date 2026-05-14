@@ -42,6 +42,12 @@ Understanding the layers of the atmosphere is essential to understanding weather
       },
     },
     {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'Thinner than apple skin',
+      body: "The troposphere contains about 75% of all atmospheric mass and virtually all weather — yet it extends only 12 km upward, a layer proportionally thinner than the skin of an apple relative to its fruit.",
+    },
+    {
       type: 'concept',
       title: 'The four main layers and why temperature reverses',
       body: `**Why temperature changes with altitude — and reverses.** In everyday experience, it gets colder as you go up a mountain. This cooling is a fundamental property of the troposphere: air expands as pressure decreases with altitude, and expansion cools air (the dry adiabatic lapse rate). But temperature does not always decrease with altitude in the atmosphere. The driving factor is **where energy is absorbed**. Think of it like a room heated from above rather than below — if the ceiling is warmer than the floor, the air layers won't overturn; the same principle makes the stratosphere stable. If a layer absorbs radiation from above (from the sun or from space), the top of that layer is warmer than the bottom, creating a temperature inversion. This is why the stratosphere is warm at the top (ozone absorbs UV from above) and the thermosphere is hot at the top (oxygen and nitrogen molecules absorb X-rays from above). Understanding these reversals is the key to understanding the layers.
@@ -76,6 +82,57 @@ Understanding the layers of the atmosphere is essential to understanding weather
           examples: 'Shooting stars (meteors): mesosphere, ~80 km — rock the size of a pea glows white-hot · ISS orbit: 400 km in lower thermosphere, 16 sunrises per day · Noctilucent clouds: rare ice-crystal clouds at 82 km visible at twilight near poles, only spot in atmosphere cold enough for ice at that altitude · Aurora Borealis: green glow at 100–150 km (oxygen), red above 200 km · AM radio skip: ionosphere reflects 1–30 MHz signals to receivers thousands of km away, enabling transoceanic broadcasts before satellites',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Atmosphere_layers.jpg/600px-Atmosphere_layers.jpg',
+        alt: 'Diagram of Earth\'s atmospheric layers showing altitude and temperature profile',
+        aspectRatio: '16/9',
+        credit: 'Wikimedia Commons',
+        annotations: [
+          {
+            id: 'troposphere-base',
+            x: 50,
+            y: 85,
+            label: 'Troposphere (0–12 km)',
+            description: 'The lowest layer containing 75–80% of all atmospheric mass and virtually all weather. Temperature decreases with altitude at ~6.5°C per km. This is where we live and where all clouds and precipitation form.',
+          },
+          {
+            id: 'tropopause',
+            x: 50,
+            y: 72,
+            label: 'Tropopause',
+            description: 'The boundary between the troposphere and stratosphere, typically at ~12 km. Temperature reaches a minimum of about −60°C here, acting as a lid that prevents convective weather from penetrating higher.',
+          },
+          {
+            id: 'stratosphere',
+            x: 50,
+            y: 55,
+            label: 'Stratosphere (12–50 km)',
+            description: 'Temperature rises with altitude because ozone absorbs UV radiation. This temperature inversion makes the stratosphere extremely stable — no weather, no turbulence. Long-haul aircraft cruise near its base.',
+          },
+          {
+            id: 'ozone-layer',
+            x: 50,
+            y: 50,
+            label: 'Ozone Layer (15–35 km)',
+            description: 'A band of elevated ozone (O₃) concentration within the stratosphere that absorbs 97–99% of the sun\'s harmful UV-B and UV-C radiation. Without it, complex life on land would be impossible.',
+          },
+          {
+            id: 'mesosphere',
+            x: 50,
+            y: 30,
+            label: 'Mesosphere (50–85 km)',
+            description: 'Temperature decreases again, reaching the coldest point in the atmosphere (~−90°C) at the mesopause. Meteors burn up in this layer. Too high for aircraft, too low for satellites.',
+          },
+          {
+            id: 'thermosphere',
+            x: 50,
+            y: 15,
+            label: 'Thermosphere (85–700 km)',
+            description: 'Temperature rises dramatically as individual molecules absorb X-rays and extreme UV radiation. Despite temperatures exceeding 1,000°C, the gas is so sparse it would feel extremely cold. The ISS orbits here at ~400 km.',
+          },
+        ],
+      },
     },
     {
       type: 'concept',

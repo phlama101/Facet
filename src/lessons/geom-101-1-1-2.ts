@@ -52,6 +52,12 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
       ],
     },
     {
+      type: 'callout' as const,
+      variant: 'warning',
+      headline: 'The 1970 Nevado Huascarán landslide was the deadliest in recorded history',
+      body: 'The 1970 Nevado Huascarán landslide in Peru was triggered by a magnitude 7.9 earthquake. The debris avalanche traveled 180 km at speeds up to 280 km/h, buried two towns, and killed approximately 20,000 people — making it the deadliest landslide in recorded history.',
+    },
+    {
       type: 'concept',
       title: 'Regolith, Soil Horizons, and Pedogenic Processes',
       body: `From the base of the weathering profile to the soil surface, a vertical sequence of layers records the interplay of climate, organisms, relief, parent material, and time. Each concept below unpacks a key dimension of that record.`,
