@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import { PostHogProvider } from '@/components/providers/PostHogProvider'
 
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PostHogProvider>
           {children}
         </PostHogProvider>
+        <Analytics />
       </body>
     </html>
   )
