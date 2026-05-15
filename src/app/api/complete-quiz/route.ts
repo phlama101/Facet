@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import * as Sentry from '@sentry/nextjs'
 
 export async function POST(req: NextRequest) {
   try {
@@ -102,6 +103,7 @@ export async function POST(req: NextRequest) {
       newXp: finalXp, newLevel: finalLevel, newStreak,
     })
   } catch (err) {
+    Sentry.captureException(err)
     console.error('[complete-quiz]', err)
     return NextResponse.json({ error: 'Internal error' }, { status: 500 })
   }

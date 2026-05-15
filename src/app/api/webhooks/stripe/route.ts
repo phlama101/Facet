@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getStripe } from '@/lib/stripe'
 import { createAdminClient } from '@/lib/supabase/admin'
+import * as Sentry from '@sentry/nextjs'
 import Stripe from 'stripe'
 
 // Statuses where the subscriber has live, paid access.
@@ -21,6 +22,7 @@ async function syncTier(
     .select('id')
 
   if (error) {
+    Sentry.captureException(new Error(`[stripe-webhook] ${eventType}: DB update failed`), { extra: { customerId, tier, error } })
     console.error(`[stripe-webhook] ${eventType}: DB update failed`, { customerId, tier, error })
     return false
   }
@@ -33,6 +35,7 @@ async function syncTier(
     try {
       customer = await getStripe().customers.retrieve(customerId)
     } catch (err) {
+      Sentry.captureException(err, { extra: { context: `${eventType}: customer retrieve failed`, customerId } })
       console.error(`[stripe-webhook] ${eventType}: customer retrieve failed`, { customerId, err })
       return false
     }
@@ -44,6 +47,7 @@ async function syncTier(
 
     const userId = (customer as Stripe.Customer).metadata?.supabase_user_id
     if (!userId) {
+      Sentry.captureMessage(`[stripe-webhook] ${eventType}: no profile for customer and no metadata fallback`, { extra: { customerId }, level: 'error' })
       console.error(`[stripe-webhook] ${eventType}: no profile for customer and no metadata fallback`, { customerId })
       return false
     }
@@ -54,6 +58,7 @@ async function syncTier(
       .eq('id', userId)
 
     if (fallbackError) {
+      Sentry.captureException(new Error(`[stripe-webhook] ${eventType}: metadata fallback failed`), { extra: { userId, tier, error: fallbackError } })
       console.error(`[stripe-webhook] ${eventType}: metadata fallback failed`, { userId, tier, error: fallbackError })
       return false
     }

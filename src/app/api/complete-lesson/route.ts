@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import * as Sentry from '@sentry/nextjs'
 
 import { LESSONS } from '@/lessons/index'
 import { getDbLesson } from '@/lib/lesson-store'
@@ -157,6 +158,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true, newXp: finalXp, newLevel: finalLevel, newStreak, bonusXp })
   } catch (err) {
+    Sentry.captureException(err)
     console.error('[complete-lesson]', err)
     return NextResponse.json({ error: 'Internal error' }, { status: 500 })
   }

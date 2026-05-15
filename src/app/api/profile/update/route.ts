@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import * as Sentry from '@sentry/nextjs'
 
 const DISPLAY_NAME_MAX = 50
 const BIO_MAX = 300
@@ -37,6 +38,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true })
   } catch (err) {
+    Sentry.captureException(err)
     console.error('[profile-update]', err)
     return NextResponse.json({ error: 'Internal error' }, { status: 500 })
   }
