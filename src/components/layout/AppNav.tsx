@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import {
   Zap, Flame, LogOut, UserPlus,
@@ -43,6 +44,7 @@ interface AppNavProps {
 export default function AppNav({ profile }: AppNavProps) {
   const pathname = usePathname()
   const router = useRouter()
+  const [signOutHovered, setSignOutHovered] = useState(false)
 
   const isGuest = !profile
   const primaryTabs = isGuest ? GUEST_PRIMARY_TABS : AUTH_PRIMARY_TABS
@@ -109,9 +111,9 @@ export default function AppNav({ profile }: AppNavProps) {
               <button
                 onClick={handleSignOut}
                 className="p-2 rounded-sm transition-colors"
-                style={{ color: BRAND.textDim }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = BRAND.surfaceHi }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent' }}
+                style={{ color: BRAND.textDim, backgroundColor: signOutHovered ? BRAND.surfaceHi : 'transparent' }}
+                onMouseEnter={() => setSignOutHovered(true)}
+                onMouseLeave={() => setSignOutHovered(false)}
                 title="Sign out"
               >
                 <LogOut size={14} />

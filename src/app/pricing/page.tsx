@@ -104,7 +104,7 @@ export default function PricingPage() {
         router.push(`/register?next=/pricing`)
         return
       }
-      if (json.url) window.location.href = json.url
+      if (json.url?.startsWith('https://')) window.location.href = json.url
     } finally {
       setLoading(null)
     }

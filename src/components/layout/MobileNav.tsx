@@ -36,7 +36,7 @@ export default function MobileNav() {
           <Link
             key={tab.href}
             href={tab.href}
-            className="flex-1 flex flex-col items-center justify-center gap-1 py-2.5 transition-colors"
+            className="relative flex-1 flex flex-col items-center justify-center gap-1 py-2.5 transition-colors"
             style={{ color: active ? BRAND.accent : BRAND.textSubtle }}
             aria-current={active ? 'page' : undefined}
           >

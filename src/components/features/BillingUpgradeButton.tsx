@@ -27,7 +27,7 @@ export default function BillingUpgradeButton({ priceId, planKey, label = 'Upgrad
       })
       const json = await res.json() as { url?: string; error?: string }
       if (json.error === 'Unauthorized') { router.push('/login?next=/billing'); return }
-      if (json.url) window.location.href = json.url
+      if (json.url?.startsWith('https://')) window.location.href = json.url
     } finally {
       setLoading(false)
     }

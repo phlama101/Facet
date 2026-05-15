@@ -56,7 +56,7 @@ export default function EnrollButton({ courseId, enrolled, isPremium, slug, user
         body: JSON.stringify({ priceId }),
       })
       const json = await res.json() as { url?: string; error?: string }
-      if (json.url) window.location.href = json.url
+      if (json.url?.startsWith('https://')) window.location.href = json.url
       else router.push('/pricing')
     } finally {
       setLoading(false)

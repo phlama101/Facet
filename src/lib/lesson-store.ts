@@ -8,6 +8,7 @@
 // LucideIcon component themselves (see DbLessonClient.tsx).
 
 import { createClient } from '@supabase/supabase-js'
+import * as Sentry from '@sentry/nextjs'
 import type { TrackId, LessonLevel, Source } from '@/lessons/types'
 
 // ─── Serialisable DB types ────────────────────────────────────────────────────
@@ -166,9 +167,14 @@ export async function getDbLesson(id: string): Promise<DbLesson | null> {
       .eq('status', 'published')
       .single()
 
-    if (error || !data) return null
+    if (error) {
+      Sentry.captureException(new Error(`getDbLesson(${id}): ${error.message}`))
+      return null
+    }
+    if (!data) return null
     return rowToDbLesson(data as CmsLessonRow)
-  } catch {
+  } catch (err) {
+    Sentry.captureException(err)
     return null
   }
 }
@@ -182,9 +188,14 @@ export async function getAllDbLessons(): Promise<DbLesson[]> {
       .select('*')
       .order('updated_at', { ascending: false })
 
-    if (error || !data) return []
+    if (error) {
+      Sentry.captureException(new Error(`getAllDbLessons: ${error.message}`))
+      return []
+    }
+    if (!data) return []
     return (data as CmsLessonRow[]).map(rowToDbLesson)
-  } catch {
+  } catch (err) {
+    Sentry.captureException(err)
     return []
   }
 }
