@@ -165,11 +165,13 @@ export async function getDbLesson(id: string): Promise<DbLesson | null> {
       .select('*')
       .eq('id', id)
       .eq('status', 'published')
-      .limit(1)
       .single()
 
     if (error) {
-      Sentry.captureException(new Error(`getDbLesson(${id}): ${error.message}`))
+      // PGRST116 = no rows matched — expected for static-only lessons
+      if (error.code !== 'PGRST116') {
+        Sentry.captureException(new Error(`getDbLesson(${id}): ${error.message}`))
+      }
       return null
     }
     if (!data) return null
