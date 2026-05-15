@@ -22,6 +22,11 @@ export default function LessonCompleteButton({ lessonId, completed, xpReward }: 
       body: JSON.stringify({ lessonId }),
     })
 
+    if (res.status === 401) {
+      router.push(`/login?next=${encodeURIComponent(window.location.pathname)}`)
+      return
+    }
+
     if (res.ok) {
       setBurst(true)
       setTimeout(() => { setBurst(false); router.refresh() }, 1600)

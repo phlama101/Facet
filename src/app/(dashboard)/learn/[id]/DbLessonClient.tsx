@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
@@ -25,6 +26,7 @@ function findNextLesson(currentId: string): { id: string; title: string } | null
 
 interface Props {
   dbLesson: DbLesson
+  isGuest?: boolean
 }
 
 // Hydrate icon name strings in concept card sections back to LucideIcon components.
@@ -55,9 +57,9 @@ function hydrateLesson(db: DbLesson): Lesson {
   }
 }
 
-export default function DbLessonClient({ dbLesson }: Props) {
+export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
   const router = useRouter()
-  const [saveError, setSaveError] = useState(false)
+  const [saveError, setSaveError] = useState<'auth' | 'network' | null>(null)
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
 
@@ -65,7 +67,8 @@ export default function DbLessonClient({ dbLesson }: Props) {
   const nextLesson = findNextLesson(dbLesson.id)
 
   async function saveProgress(xpEarned: number): Promise<boolean> {
-    setSaveError(false)
+    if (isGuest) return true
+    setSaveError(null)
     setSaving(true)
     setPendingXp(xpEarned)
     try {
@@ -74,10 +77,11 @@ export default function DbLessonClient({ dbLesson }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ lessonId: dbLesson.id }),
       })
+      if (res.status === 401) { setSaveError('auth'); setSaving(false); return false }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       return true
     } catch {
-      setSaveError(true)
+      setSaveError('network')
       setSaving(false)
       return false
     }
@@ -110,17 +114,32 @@ export default function DbLessonClient({ dbLesson }: Props) {
           aria-live="assertive"
         >
           <AlertTriangle size={14} color={BRAND.ruby} className="shrink-0" />
-          <span className="text-sm">Couldn&apos;t save progress — check your connection.</span>
-          <button
-            onClick={retry}
-            disabled={saving}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80 disabled:opacity-50"
-            style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
-            aria-label="Retry saving progress"
-          >
-            <RefreshCw size={10} className={saving ? 'animate-spin' : ''} />
-            {saving ? 'Saving…' : 'Retry'}
-          </button>
+          {saveError === 'auth' ? (
+            <>
+              <span className="text-sm">Sign in to save your progress.</span>
+              <Link
+                href={`/login?next=/learn/${dbLesson.id}`}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80"
+                style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+              >
+                Sign in
+              </Link>
+            </>
+          ) : (
+            <>
+              <span className="text-sm">Couldn&apos;t save progress — check your connection.</span>
+              <button
+                onClick={retry}
+                disabled={saving}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80 disabled:opacity-50"
+                style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+                aria-label="Retry saving progress"
+              >
+                <RefreshCw size={10} className={saving ? 'animate-spin' : ''} />
+                {saving ? 'Saving…' : 'Retry'}
+              </button>
+            </>
+          )}
         </div>
       )}
 

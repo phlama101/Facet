@@ -58,7 +58,7 @@ export default async function LessonPage({ params }: Props) {
   }
 
   if (dbLesson) {
-    return <DbLessonClient dbLesson={dbLesson} />
+    return <DbLessonClient dbLesson={dbLesson} isGuest={!user} />
   }
 
   return <LessonClient id={id} isGuest={!user} />

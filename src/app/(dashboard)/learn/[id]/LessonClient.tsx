@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { notFound, useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
 import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
@@ -28,7 +29,7 @@ function findNextLesson(currentId: string): { id: string; title: string } | null
 
 export default function LessonClient({ id, isGuest = false }: Props) {
   const router = useRouter()
-  const [saveError, setSaveError] = useState(false)
+  const [saveError, setSaveError] = useState<'auth' | 'network' | null>(null)
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
   const [pendingQuizScore, setPendingQuizScore] = useState<{ correct: number; total: number } | undefined>(undefined)
@@ -42,7 +43,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
     // Guests have no session — skip the API call and let navigation proceed.
     if (isGuest) return true
 
-    setSaveError(false)
+    setSaveError(null)
     setSaving(true)
     setPendingXp(xpEarned)
     setPendingQuizScore(quizScore)
@@ -57,10 +58,11 @@ export default function LessonClient({ id, isGuest = false }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
+      if (res.status === 401) { setSaveError('auth'); setSaving(false); return false }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       return true
     } catch {
-      setSaveError(true)
+      setSaveError('network')
       setSaving(false)
       return false
     }
@@ -103,17 +105,32 @@ export default function LessonClient({ id, isGuest = false }: Props) {
           aria-live="assertive"
         >
           <AlertTriangle size={14} color={BRAND.ruby} className="shrink-0" />
-          <span className="text-sm">Couldn&apos;t save progress — check your connection.</span>
-          <button
-            onClick={retry}
-            disabled={saving}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80 disabled:opacity-50"
-            style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
-            aria-label="Retry saving progress"
-          >
-            <RefreshCw size={10} className={saving ? 'animate-spin' : ''} />
-            {saving ? 'Saving…' : 'Retry'}
-          </button>
+          {saveError === 'auth' ? (
+            <>
+              <span className="text-sm">Sign in to save your progress.</span>
+              <Link
+                href={`/login?next=/learn/${lesson.id}`}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80"
+                style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+              >
+                Sign in
+              </Link>
+            </>
+          ) : (
+            <>
+              <span className="text-sm">Couldn&apos;t save progress — check your connection.</span>
+              <button
+                onClick={retry}
+                disabled={saving}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-[10px] tracking-[0.1em] uppercase font-semibold transition-opacity hover:opacity-80 disabled:opacity-50"
+                style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
+                aria-label="Retry saving progress"
+              >
+                <RefreshCw size={10} className={saving ? 'animate-spin' : ''} />
+                {saving ? 'Saving…' : 'Retry'}
+              </button>
+            </>
+          )}
         </div>
       )}
 
