@@ -4,15 +4,18 @@ import { createClient } from '@/lib/supabase/server'
 type RawCard = { interval_days: number; ease_factor: number; review_count: number }
 
 function nextSR(intervalDays: number, easeFactor: number, correct: boolean) {
+  // Guard against corrupt DB values that could produce negative intervals
+  const interval = Math.max(1, intervalDays)
+  const ease     = Math.max(1.3, Math.min(3.0, easeFactor))
   if (correct) {
     return {
-      interval_days: Math.min(Math.round(intervalDays * easeFactor), 180),
-      ease_factor:   Math.min(easeFactor + 0.1, 3.0),
+      interval_days: Math.min(Math.round(interval * ease), 180),
+      ease_factor:   Math.min(ease + 0.1, 3.0),
     }
   }
   return {
     interval_days: 1,
-    ease_factor:   Math.max(1.3, easeFactor - 0.2),
+    ease_factor:   Math.max(1.3, ease - 0.2),
   }
 }
 

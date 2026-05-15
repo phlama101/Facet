@@ -36,18 +36,19 @@ function timeAgo(isoString: string | null): string {
   return new Date(isoString).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
+// Returns the UTC date string for N days before now, aligned with how
+// completed_at timestamps are stored and how daily missions are reset (UTC midnight).
+function utcDayKeyOffset(daysAgo: number): string {
+  return new Date(Date.now() - daysAgo * 86_400_000).toISOString().slice(0, 10)
+}
+
 function getDayLabel(daysAgo: number): string {
-  const d = new Date()
-  d.setDate(d.getDate() - daysAgo)
-  return d.toLocaleDateString('en-US', { weekday: 'short' }).slice(0, 2)
+  return new Date(Date.now() - daysAgo * 86_400_000)
+    .toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' })
+    .slice(0, 2)
 }
 
 function utcDayKey(isoString: string): string { return isoString.slice(0, 10) }
-function localDayKey(daysAgo: number): string {
-  const d = new Date()
-  d.setDate(d.getDate() - daysAgo)
-  return d.toISOString().slice(0, 10)
-}
 
 
 export default async function DashboardPage({ searchParams }: Props) {
@@ -136,7 +137,7 @@ export default async function DashboardPage({ searchParams }: Props) {
   }
   const weekActivity = Array.from({ length: 7 }, (_, i) => {
     const daysAgo = 6 - i
-    return { label: getDayLabel(daysAgo), count: activityByDay.get(localDayKey(daysAgo)) ?? 0, isToday: daysAgo === 0 }
+    return { label: getDayLabel(daysAgo), count: activityByDay.get(utcDayKeyOffset(daysAgo)) ?? 0, isToday: daysAgo === 0 }
   })
   const totalWeekLessons = weekActivity.reduce((sum, d) => sum + d.count, 0)
   const maxDayCount = Math.max(...weekActivity.map(d => d.count), 1)

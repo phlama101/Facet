@@ -235,7 +235,7 @@ export default function QuizClient({ questions, quizTitle, xpReward, passingScor
             </motion.button>
           )}
           <motion.a
-            href="/courses"
+            href="/learn"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="group flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-[#0d1117] rounded-xl font-bold text-sm transition-colors shadow-[0_8px_24px_-8px_rgba(6,182,212,0.6)]"

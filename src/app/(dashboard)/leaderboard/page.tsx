@@ -27,13 +27,16 @@ export default async function LeaderboardPage({ searchParams }: Props) {
   const board: LeaderboardEntry[] = (dbLeaderboard ?? []) as LeaderboardEntry[]
   const totalPages = Math.ceil((count ?? 0) / PER_PAGE)
 
-  const { data: profile } = user
-    ? await supabase.from('profiles').select('xp, level').eq('id', user.id).single()
+  // Query the user's own leaderboard row directly so their global rank is shown
+  // on every page, not just the page where they happen to appear in the table.
+  const { data: userRankRow } = user
+    ? await (supabase.from('leaderboard' as never) as any)
+        .select('rank')
+        .eq('id', user.id)
+        .single()
     : { data: null }
 
-  // Find current user's rank on this page; if not visible, their rank is unknown
-  const userRankOnPage = user ? board.findIndex(e => e.id === user.id) + 1 : 0
-  const userGlobalRank = userRankOnPage > 0 ? offset + userRankOnPage : null
+  const userGlobalRank: number | null = (userRankRow as { rank?: number } | null)?.rank ?? null
 
   const isFirstPage = page === 1
   const top3 = isFirstPage ? board.slice(0, Math.min(3, board.length)) : []

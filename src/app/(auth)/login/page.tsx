@@ -27,7 +27,9 @@ function LoginForm() {
     const { error: err } = await supabase.auth.signInWithPassword({ email, password })
     if (err) { setError(err.message); setLoading(false); return }
     const next = searchParams.get('next')
-    router.push(next && next.startsWith('/') ? next : '/dashboard')
+    // Reject protocol-relative URLs (//evil.com) and anything with a scheme
+    const safe = next && next.startsWith('/') && !next.startsWith('//') && !next.includes(':') ? next : '/dashboard'
+    router.push(safe)
     router.refresh()
   }
 

@@ -190,11 +190,11 @@ export default function LandingPage() {
         </div>
         <div className="mt-4">
           <Link
-            href="/sources"
+            href="/learn"
             className="text-xs tracking-wider uppercase flex items-center gap-1 transition-opacity hover:opacity-70"
             style={{ color: BRAND.accent }}
           >
-            View all institutions <ArrowRight size={12} />
+            Browse all learning paths <ArrowRight size={12} />
           </Link>
         </div>
       </section>

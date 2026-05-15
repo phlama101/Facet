@@ -10,12 +10,15 @@ export async function DELETE() {
 
     const admin = createAdminClient()
 
-    // Delete progress data first (profile row deleted via cascade when auth user is removed)
-    await admin.from('user_lesson_progress').delete().eq('user_id', user.id)
-
-    // Delete the Supabase Auth user — cascades to profiles via DB trigger
+    // Delete the auth user first — if this fails, nothing has been touched and the
+    // user can still log in normally. The DB trigger cascades to the profiles row.
     const { error } = await admin.auth.admin.deleteUser(user.id)
     if (error) throw new Error(error.message)
+
+    // Clean up progress data that doesn't cascade from the auth user deletion.
+    // At this point the user is already removed so a failure here only leaves
+    // orphaned rows, not a broken account.
+    await admin.from('user_lesson_progress').delete().eq('user_id', user.id)
 
     return NextResponse.json({ ok: true })
   } catch (err) {

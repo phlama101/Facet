@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Zap, X } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
@@ -16,23 +16,26 @@ interface Props {
 export default function AchievementNotifier({ unlockedIds }: Props) {
   const [queue, setQueue] = useState<Achievement[]>([])
   const [visible, setVisible] = useState<Achievement | null>(null)
+  // Track IDs already queued this session to prevent re-toasting when the
+  // parent re-renders with the same unlockedIds prop.
+  const queuedRef = useRef<Set<string>>(new Set())
 
   useEffect(() => {
     try {
       const seen: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]')
-      const newIds = unlockedIds.filter(id => !seen.includes(id))
+      const newIds = unlockedIds.filter(id => !seen.includes(id) && !queuedRef.current.has(id))
       if (!newIds.length) return
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(unlockedIds))
+      newIds.forEach(id => queuedRef.current.add(id))
 
       const newAchs = newIds
         .map(id => ACHIEVEMENTS.find(a => a.id === id))
         .filter((a): a is Achievement => Boolean(a))
 
-      setQueue(newAchs)
+      setQueue(q => [...q, ...newAchs])
     } catch { /* localStorage blocked */ }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [unlockedIds])
 
   useEffect(() => {
     if (visible || !queue.length) return

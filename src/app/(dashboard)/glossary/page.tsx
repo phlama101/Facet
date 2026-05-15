@@ -50,7 +50,10 @@ function extractEntries(): GlossaryEntry[] {
   return entries.sort((a, b) => a.term.localeCompare(b.term))
 }
 
+// Computed once when the module is first loaded (shared across all requests
+// in the same Node.js process), not rebuilt on every incoming request.
+const GLOSSARY_ENTRIES = extractEntries()
+
 export default function GlossaryPage() {
-  const entries = extractEntries()
-  return <GlossaryClient entries={entries} />
+  return <GlossaryClient entries={GLOSSARY_ENTRIES} />
 }

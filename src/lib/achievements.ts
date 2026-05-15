@@ -3,6 +3,21 @@ import { BRAND } from '@/lib/brand'
 
 export const LESSON_ID_SET = new Set(LESSON_LIST.map(l => l.id))
 
+// Pre-built at module load: maps path ID → filtered lesson IDs, avoiding
+// repeated flatMap/filter traversals inside every computeUnlockedIds() call.
+const PATH_LESSONS = new Map(
+  LEARNING_PATHS.map(p => [
+    p.id,
+    p.chapters.flatMap(c => c.lessonIds).filter(id => LESSON_ID_SET.has(id)),
+  ])
+)
+
+// All lesson IDs that belong to at least one learning path — used by the
+// "complete every path" achievement without recomputing on every check.
+const ALL_PATH_LESSON_IDS = LEARNING_PATHS.flatMap(p =>
+  p.chapters.flatMap(ch => ch.lessonIds).filter(id => LESSON_ID_SET.has(id))
+)
+
 export interface AchCtx {
   count: number
   total: number
@@ -27,9 +42,7 @@ export interface Achievement {
 }
 
 function availableInPath(pathId: string): string[] {
-  const path = LEARNING_PATHS.find(p => p.id === pathId)
-  if (!path) return []
-  return path.chapters.flatMap(c => c.lessonIds).filter(id => LESSON_ID_SET.has(id))
+  return PATH_LESSONS.get(pathId) ?? []
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
@@ -144,10 +157,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'path-all-complete', name: 'Grand Naturalist', desc: 'Complete every learning path',
     category: 'path', rarity: 'legendary', color: BRAND.amethyst, xpBonus: 5000,
-    check: c => {
-      const allIds = LEARNING_PATHS.flatMap(p => p.chapters.flatMap(ch => ch.lessonIds).filter(id => LESSON_ID_SET.has(id)))
-      return allIds.length > 0 && allIds.every(id => c.ids.includes(id))
-    },
+    check: c => ALL_PATH_LESSON_IDS.length > 0 && ALL_PATH_LESSON_IDS.every(id => c.ids.includes(id)),
   },
 ]
 
@@ -168,5 +178,13 @@ export const ACHIEVEMENT_GROUPS: { key: AchCategory; label: string }[] = [
 ]
 
 export function computeUnlockedIds(ctx: AchCtx): string[] {
-  return ACHIEVEMENTS.filter(a => a.check(ctx)).map(a => a.id)
+  // Proxy the ids array so `.includes()` calls in achievement checks are O(1).
+  const idSet = new Set(ctx.ids)
+  const ids = new Proxy(ctx.ids, {
+    get(target, prop) {
+      if (prop === 'includes') return (id: string) => idSet.has(id)
+      return Reflect.get(target, prop)
+    },
+  }) as string[]
+  return ACHIEVEMENTS.filter(a => a.check({ ...ctx, ids })).map(a => a.id)
 }

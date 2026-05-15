@@ -45,14 +45,18 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
     p.chapters.some(ch => ch.lessonIds.includes(lesson.id))
   )
 
-  // Up to 2 lessons from the same path (skip those already adjacent via nextLesson)
+  // Up to 2 lessons from the same path (skip the immediate next lesson shown via nextLesson).
+  // Prefer lessons that come after the current one in path order; fall back to earlier
+  // lessons if near the end of the path.
   const recommended: { id: string; title: string; color: string }[] = (() => {
     if (!currentPath) return []
     const allIds = currentPath.chapters.flatMap(ch => ch.lessonIds)
     const skipId = nextLesson?.id
-    return allIds
-      .filter(id => id !== lesson.id && id !== skipId)
-      .slice(-3) // take lessons further along the path
+    const curIdx = allIds.indexOf(lesson.id)
+    const ahead  = allIds.slice(curIdx + 1).filter(id => id !== skipId)
+    const behind = allIds.slice(0, curIdx).filter(id => id !== skipId)
+    return [...ahead, ...behind]
+      .slice(0, 3)
       .map(id => {
         const l = LESSONS[id]
         return l ? { id, title: l.title, color: TRACK_MAP[l.track]?.color ?? BRAND.accent } : null
