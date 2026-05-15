@@ -165,6 +165,7 @@ export async function getDbLesson(id: string): Promise<DbLesson | null> {
       .select('*')
       .eq('id', id)
       .eq('status', 'published')
+      .limit(1)
       .single()
 
     if (error) {
