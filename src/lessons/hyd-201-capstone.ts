@@ -42,6 +42,86 @@ Each question has exactly one correct answer. Distractors are designed to probe 
       keyTerms: [],
     },
     {
+      type: 'concept',
+      cards: [
+        {
+          title: 'Runoff Generation: Horton vs. Dunne and the Variable Source Area',
+          body: `Two fundamentally different mechanisms produce surface runoff. **Hortonian (infiltration-excess) overland flow** occurs when rainfall intensity exceeds the soil's infiltration capacity — water cannot enter fast enough and flows over the surface. It dominates in arid regions, compacted soils, and urban catchments. **Dunne (saturation-excess) overland flow** occurs when the soil profile is fully saturated, so even gentle rain immediately runs off. It dominates in humid, well-vegetated catchments where subsurface lateral flow accumulates near valley floors.
+
+The **variable source area (VSA)** concept refines this picture: only a dynamic fraction of a catchment generates direct runoff at any moment. Saturated contributing areas start small (riparian zones, concave hollows) and expand upslope as a storm progresses, then contract during recession. The **topographic wetness index** TWI = ln(a / tan β) maps where saturation is most likely. Antecedent soil moisture is the key control — a wet catchment has a larger initial source area.`,
+        },
+        {
+          title: 'Hydrograph Modelling: Unit Hydrograph, Nash Cascade, and Channel Routing',
+          body: `**Unit hydrograph (UH) theory** (Sherman, 1932) treats the catchment as a linear, time-invariant system: the total runoff hydrograph from any storm is the **linear convolution** of the effective rainfall hyetograph with the unit response (1 mm of effective rain in a unit time period). Multi-period storms are handled by summing lagged, scaled UH responses.
+
+The **Nash cascade** (1957) models the instantaneous unit hydrograph (IUH) as flow through n identical linear reservoirs in series, each with time constant K, producing a gamma-distribution-shaped response u(t) = t^(n−1) e^(−t/K) / [K^n Γ(n)]. Just two parameters capture catchment shape and timing.
+
+**Muskingum channel routing** uses storage S = K[xI + (1−x)Q]. K is the flood wave travel time; x (0 to 0.5) controls inflow–outflow weighting — x = 0 is pure attenuation (linear reservoir), x = 0.5 is pure translation (kinematic wave). The full **Saint-Venant momentum equation** degrades progressively to the diffusion wave (dropping inertia) and kinematic wave (also dropping the pressure gradient) for simpler, less data-hungry routing.`,
+        },
+        {
+          title: 'Long-Term Water Balance: The Budyko Framework',
+          body: `The **Budyko framework** describes how precipitation P is partitioned into actual evapotranspiration ET and runoff Q over multi-year periods. The **dryness index** ψ = PET/P plots on the x-axis; ET/P plots on the y-axis. Two physical limits bound every catchment: (1) the **water limit** — ET ≤ P (ET/P ≤ 1); (2) the **energy limit** — ET ≤ PET (ET/P ≤ ψ).
+
+**Water-limited** catchments (ψ > 1, arid climates) plot near ET/P → 1: nearly all rain evaporates. **Energy-limited** catchments (ψ < 1, humid climates) plot near ET/P → ψ: ET is constrained by available energy and surplus water becomes runoff.
+
+The **Choudhury-Yang (Fu) equation** ET/P = 1 + ψ − (1 + ψ^ω)^(1/ω) parameterises the curve with a dimensionless parameter ω that captures catchment attributes — deep-rooted vegetation, high soil water-holding capacity, seasonally aligned rainfall and energy all increase ω and push ET higher. Shifts in ω under land-use change can be diagnosed as non-climatic drivers of streamflow change.`,
+        },
+        {
+          title: 'Ecohydrology and Water Quality: Transpiration, Nutrients, and Contaminants',
+          body: `The **Penman-Monteith equation** is the physics-based standard for evapotranspiration. Two resistances govern the process: **aerodynamic resistance r_a** (turbulent transfer through the boundary layer, set by wind and canopy roughness) and **canopy resistance r_c** (stomatal regulation of vapour escape from leaves — stomata close under drought and CO₂ enrichment, raising r_c and reducing ET). **Eagleson's ecohydrological optimality hypothesis** proposes that natural vegetation self-organises to maximise water use, with rooting depth evolving to exploit the full annual soil wetting front.
+
+In freshwater, **phosphorus (P) is the primary limiting nutrient**: unlike nitrogen, there is no atmospheric P reservoir. Excess P loading drives **eutrophication** → algal blooms → organic matter sedimentation → bacterial decomposition → **hypoxia** (<2 mg/L O₂) → dead zones. The **Redfield ratio** C:N:P = 106:16:1 (by atoms) defines marine phytoplankton stoichiometry and oceanic nutrient balance.
+
+**PFAS** are persistent, highly mobile anionic surfactants that travel freely with groundwater. Unlike **DNAPLs** (e.g., TCE, PCE) — which are denser than water, sink to aquifer bases, and trap in pore throats by capillary forces — PFAS form no separate liquid phase. Both resist **pump-and-treat** because matrix diffusion into low-conductivity zones sustains dissolved plumes for decades.`,
+        },
+        {
+          title: 'Global Hydrology: GRACE, Attribution Science, and the Cryosphere',
+          body: `**GRACE/GRACE-FO satellites** detect terrestrial water storage (TWS) anomalies by measuring gravity changes between two co-orbiting spacecraft. Key documented trends include large TWS declines in the Arabian Peninsula, Indus basin, and California's Central Valley — driven by agricultural groundwater over-extraction — and accelerating ice sheet mass loss in Greenland and West Antarctica.
+
+**Event attribution science** (Pall et al. 2011; Stott et al. 2016) uses large climate model ensembles comparing the actual world against a counterfactual world without anthropogenic forcing. These studies have found detectable human influence on the probability of specific floods, heat waves, and droughts — showing that the question "did climate change cause this event?" has been replaced by "how much did it shift the odds?"
+
+**Permafrost** stores ~1,500 Pg of organic carbon — roughly twice the current atmospheric pool — in Arctic frozen ground. Active-layer deepening and thermokarst formation expose this carbon to microbial decomposition, releasing CO₂ (aerobic) and CH₄ (anaerobic waterlogged conditions) as a positive climate feedback, while simultaneously reorganising Arctic drainage networks and river discharge timing.`,
+        },
+        {
+          title: 'Flood Risk, Drought Dynamics, and Water Governance',
+          body: `**Log-Pearson Type III (LP3) flood frequency analysis** (USGS Bulletin 17C) fits a gamma distribution to log-transformed annual peak flows. The "100-year flood" means an **annual exceedance probability (AEP) of 1 %** — not that it occurs exactly once per century. The probability of experiencing at least one in 100 years is ~63 %. The critical assumption is **stationarity** — that past distributions represent future risk — which urbanisation, reservoir regulation, and climate change increasingly violate.
+
+**Flash droughts** develop over days to weeks, driven by anomalously high evapotranspiration demand (heat, low humidity, wind, clear skies) rather than precipitation deficits alone — contrasting with slow-onset droughts that develop over months from rainfall shortfalls.
+
+**Integrated Water Resources Management (IWRM)**, articulated through the 1992 Dublin Principles, rests on: (1) freshwater is finite and vulnerable; (2) governance requires participatory multi-stakeholder approaches; (3) women play a central role in water management. **Virtual water** (J.A. Allan, 1990s) quantifies the water embedded in traded commodities — ~15,000 L/kg beef, ~1,300 L/kg wheat — revealing how water-scarce nations effectively import water through food trade (~2,000–3,000 km³/yr globally).`,
+        },
+      ],
+    },
+    {
+      type: 'visualization',
+      title: 'Catchment Water Balance: Precipitation to Runoff',
+      simulator: 'flow-simulator',
+      nodes: [
+        { id: 'precip', label: 'Precipitation Input', description: 'Rain and snowfall enter the catchment; the ratio of rainfall intensity to infiltration capacity determines whether Hortonian or saturation-excess overland flow is generated' },
+        { id: 'interception', label: 'Canopy Interception & Evaporation', description: 'Vegetation canopy intercepts 10–40 % of rainfall; intercepted water evaporates directly — a fast atmospheric return that bypasses the soil entirely' },
+        { id: 'infiltration', label: 'Infiltration (Green-Ampt)', description: 'Water enters soil; the infiltration rate declines over time as the wetting front deepens and the hydraulic gradient flattens; rainfall exceeding infiltration capacity generates Hortonian overland flow' },
+        { id: 'soil', label: 'Soil Moisture Store', description: 'The unsaturated zone buffers rainfall and supplies water to roots; once soil moisture exceeds field capacity, gravitational drainage recharges groundwater' },
+        { id: 'transpiration', label: 'Transpiration (Penman-Monteith)', description: 'Plants extract soil water through roots and release vapour through stomata; rate governed by aerodynamic resistance r_a (wind/roughness) and canopy resistance r_c (stomatal aperture)' },
+        { id: 'groundwater', label: 'Groundwater Recharge & Baseflow', description: 'Percolation below the root zone recharges the saturated zone; slow lateral subsurface flow sustains stream baseflow between storms' },
+        { id: 'overland', label: 'Overland Flow (Variable Source Area)', description: 'Fast surface pathway: Hortonian flow from infiltration-excess areas + Dunne saturation-excess flow from the dynamic variable source area expanding near valley floors and hollows' },
+        { id: 'streamflow', label: 'Streamflow Hydrograph', description: 'Integrated catchment response: unit hydrograph theory deconvolves this signal; peak flows routed downstream via Muskingum (K, x) or Saint-Venant equations; flood frequency described by LP3 distribution' },
+        { id: 'budyko', label: 'Long-Term Budyko Balance', description: 'Multi-year average: ET/P = f(ψ = PET/P, ω); energy-limited humid catchments have high runoff ratios; water-limited arid catchments lose nearly all P to ET; ω shifts with vegetation and soil change' },
+      ],
+      edges: [
+        { from: 'precip', to: 'interception' },
+        { from: 'precip', to: 'infiltration' },
+        { from: 'precip', to: 'overland' },
+        { from: 'infiltration', to: 'soil' },
+        { from: 'soil', to: 'transpiration' },
+        { from: 'soil', to: 'groundwater' },
+        { from: 'groundwater', to: 'streamflow' },
+        { from: 'overland', to: 'streamflow' },
+        { from: 'streamflow', to: 'budyko' },
+        { from: 'transpiration', to: 'budyko' },
+        { from: 'interception', to: 'budyko' },
+      ],
+    },
+    {
       type: 'quiz',
       questions: [
         // ── Q1: Horton overland flow vs Dunne saturation excess ───────────────

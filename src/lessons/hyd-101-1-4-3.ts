@@ -1,184 +1,154 @@
-import { TrendingDown, AlertTriangle, Factory, Shield, Activity } from 'lucide-react'
+import { Droplets, Zap, Globe, AlertTriangle, Activity } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import type { Lesson } from './types'
 
-const groundwaterDepletionContamination: Lesson = {
+const irrigationAndFoodWater: Lesson = {
   id: 'hyd-101-1-4-3',
-  title: 'Groundwater Depletion and Contamination',
+  title: 'Agriculture, Irrigation, and the Water–Food–Energy Nexus',
   track: 'geo',
   trackName: 'Hydrology',
   level: 'Beginner',
   duration: '14 min',
   xpReward: 150,
-  description: `Beneath our feet, the world\'s largest reserve of liquid freshwater is being depleted and poisoned faster than it can recover. From the shrinking Ogallala Aquifer under the American Great Plains to arsenic in Bangladesh\'s drinking wells and PFAS "forever chemicals" spreading silently through suburban aquifers, this lesson explores the hidden crisis threatening the water supply of billions.`,
+  description: `Agriculture is the world's largest water consumer, accounting for roughly 70% of all freshwater withdrawals globally. From the expansion of canal irrigation that built ancient civilisations to modern drip systems and satellite-guided precision farming, the technologies and governance structures humans use to deliver water to crops have shaped landscapes, geopolitics, and food security for millennia — and now drive one of the planet's most urgent water crises.`,
   sources: [
-    { org: 'USGS',  title: 'USGS — Groundwater Depletion in the United States',                          url: 'https://pubs.usgs.gov/sir/2013/5079/' },
-    { org: 'NASA',  title: 'NASA GRACE-FO — Groundwater Monitoring',                                     url: 'https://grace.jpl.nasa.gov/applications/groundwater/' },
-    { org: 'WHO',   title: 'WHO — Arsenic in Drinking Water',                                            url: 'https://www.who.int/news-room/fact-sheets/detail/arsenic' },
-    { org: 'EPA',   title: 'US EPA — PFAS Explained',                                                    url: 'https://www.epa.gov/pfas/pfas-explained' },
-    { org: 'NGWA',  title: 'National Groundwater Association — Managed Aquifer Recharge',                url: 'https://www.ngwa.org/what-is-groundwater/About-groundwater/managed-aquifer-recharge' },
+    { org: 'FAO',   title: 'AQUASTAT — FAO Global Information System on Water and Agriculture',      url: 'https://www.fao.org/aquastat/en/' },
+    { org: 'IWMI',  title: 'International Water Management Institute — Water and Food',               url: 'https://www.iwmi.cgiar.org/' },
+    { org: 'USGS',  title: 'USGS — Irrigation and Water Use',                                        url: 'https://www.usgs.gov/mission-areas/water-resources/science/irrigation' },
+    { org: 'WRI',   title: 'World Resources Institute — Creating a Sustainable Food Future',         url: 'https://www.wri.org/research/creating-sustainable-food-future' },
   ],
   sections: [
     {
       type: 'intro',
-      title: 'Mining ancient water: depletion, subsidence, and contamination in a hidden world',
-      body: `Groundwater is the world's largest store of liquid freshwater — roughly 10.6 million km³, compared to about 93,000 km³ in all rivers and lakes combined. It supplies ~50% of global drinking water and ~40% of irrigation water. Yet in many of the most productive agricultural regions on Earth, groundwater is being extracted far faster than it is replenished, and in others it is being silently contaminated by agricultural chemicals, industrial compounds, and geogenic (naturally occurring) elements.
+      title: 'The Aral Sea and the true cost of irrigation',
+      body: `In 1960, the Aral Sea was the fourth-largest lake on Earth — a 68,000 km² inland sea supporting a thriving fishing industry in the Soviet republics of Kazakhstan and Uzbekistan. By 2007, it had lost more than 90% of its volume. The cause was not drought: it was irrigation. Soviet engineers had diverted the two rivers feeding the Aral — the Amu Darya and the Syr Darya — into an 45,000 km canal network to irrigate cotton fields across Central Asia. The rivers stopped flowing to the sea. The exposed lakebed became a salt flat, generating toxic salt and pesticide dust storms that poison 5 million people annually. The fishing industry collapsed. What remains is one of the worst environmental disasters in history, born from the world's most efficient agricultural water user and its most destructive overreach.
 
-The **Ogallala (High Plains) Aquifer** underlies approximately 450,000 km² of the central United States and supports irrigation for one of the world's most productive agricultural regions. Water table declines in heavily pumped areas of **Kansas and Texas exceed 1 m per year** in some areas, and cumulative declines since pre-development conditions reach **30–60 m** across large areas. Because Ogallala recharge rates average only about 1–25 mm/year — the aquifer was primarily recharged during wetter Pleistocene climate conditions — the water being pumped is effectively a non-renewable fossil resource. NASA's GRACE satellite data confirm that the Ogallala lost approximately 303 km³ of water between 2002 and 2016, enough water to fill Lake Erie 2.5 times. At current rates, economists estimate that >30% of the southern Ogallala will be economically unviable for irrigation within 25–30 years.
+The Aral Sea disaster illustrates the core tension in agricultural water management: irrigation transformed arid and semi-arid regions into the world's most productive agricultural zones, but at a hydrological cost that is rarely fully priced. Agriculture accounts for approximately **70% of global freshwater withdrawals** — about 2,700 km³/year — compared to 20% for industry and 10% for municipal use. Irrigated agriculture, which occupies only about **20% of global cropland**, produces roughly **40% of global food supply** because yields on irrigated land are 2–3× higher than rainfed equivalents. Without irrigation, feeding the current global population of 8 billion people would be impossible.
 
-**Land subsidence** — the sinking of the ground surface caused by compaction of aquifer sediments when groundwater is removed — is a direct physical consequence of over-pumping. Clay and silt layers that store water compress irreversibly (inelastic compaction) when drained. **Jakarta, Indonesia** has experienced some of the most dramatic subsidence in the world: the fastest-sinking districts have subsided **4 m** since the 1970s, and portions of North Jakarta are now 1–4 m below sea level. This creates a catastrophic feedback: a sinking city in a sea-level-rise context, where flood protection becomes increasingly difficult. The Indonesian government announced plans to move the capital to Borneo partly as a response to Jakarta's unsustainable subsidence trajectory. California's **Central Valley** has subsided up to **9 m** in places since the early 20th century due to groundwater extraction, with subsidence rates of 28 cm/year measured near Corcoran during the 2012–2016 drought, damaging canals, roads, and bridges.
+Irrigation systems divert water from rivers, pump groundwater, or capture rainfall, and deliver it to crops through four main methods: **flood (surface) irrigation**, where water flows across the field surface by gravity — the oldest and most widespread method (~65% of global irrigated area), requiring no energy but losing 30–50% of applied water to runoff and evaporation; **furrow irrigation**, where water flows along small channels between crop rows — more efficient than flood but still only 50–70% application efficiency; **sprinkler systems**, which distribute water through pressurised pipes and rotating heads, achieving 70–85% efficiency but requiring significant energy; and **drip (micro) irrigation**, which delivers water directly to the root zone through emitters, achieving 85–95% efficiency with 30–50% lower water use than flood irrigation. Despite drip irrigation's proven efficiency gains — Israeli agriculture pioneered it after 1950 to make the Negev Desert bloom — it accounts for only about 6% of global irrigated area because upfront costs can exceed $1,000/ha for installation.
 
-Groundwater contamination takes multiple forms. **Arsenic** released from aquifer sediments by geochemical processes (principally the reductive dissolution of iron oxyhydroxides under reducing conditions) has poisoned the wells of approximately **50 million people in Bangladesh** — one of the largest mass poisonings in history — as well as millions more in West Bengal (India), Vietnam, Cambodia, and parts of China and Argentina. The arsenic was not introduced by human activity but mobilised from natural sediment minerals by changes in groundwater redox conditions, often exacerbated by intensive pumping. **PFAS** (per- and polyfluoroalkyl substances) — a family of ~9,000 synthetic compounds used in firefighting foam (AFFF), non-stick coatings, and industrial processes — are now detected in groundwater across the United States, Europe, and Australia. Their extraordinary chemical stability (the carbon-fluorine bond is among the strongest in organic chemistry) means they persist in groundwater for decades to centuries, accumulate in organisms, and are associated with thyroid disease, immune suppression, and several cancers. The US EPA set enforceable maximum contaminant levels (MCLs) for six PFAS compounds in drinking water in 2024.`,
+A second major consequence of intensive irrigation is **soil salinization**: when irrigation water evaporates from soil, it leaves behind dissolved salts. In poorly drained soils, salts accumulate over decades until they become toxic to crops. Approximately **20% of all irrigated land worldwide** — about 60 million hectares — has been degraded by secondary salinization, with an additional ~3 million hectares lost to agricultural production each year. Ancient Mesopotamia, the "cradle of civilisation" between the Tigris and Euphrates rivers, experienced catastrophic agricultural decline around 2000 BCE due to irrigation-induced salinization — a cautionary tale embedded in the world's oldest agricultural landscapes.
+
+The concept of **virtual water** (coined by British geographer John Allan in 1993) reframes international food trade as water trade. Producing one kilogram of beef requires approximately 15,000 litres of water (mostly for feed crops); one kg of wheat ~1,300 litres; one kg of rice ~2,500 litres. When water-scarce nations import food rather than growing it domestically, they effectively import the water that would have been needed to produce that food. Global agricultural trade transfers approximately **2,300 km³/yr** of virtual water — more than the annual flow of the Mississippi River. For water-stressed nations like Egypt, Jordan, and Saudi Arabia, food imports serve as a hidden water management strategy: it is more hydrologically rational to import wheat than to pump the Nile dry or exhaust fossil aquifers to grow it domestically.
+
+The **water–food–energy nexus** captures the three-way interdependence that makes agricultural water management so complex. Food production requires water; water delivery through pumping and treatment requires energy; and energy production (hydropower, thermoelectric cooling, biofuel crops) requires water. Increasing crop yields with fertiliser and machinery requires energy; that energy often comes from hydropower that shares the same river system with irrigation diversions. Biofuel expansion — growing corn, sugarcane, or oil palm for fuel — converts food-calorie water use into energy-calorie water use, competing directly with food production. In the western United States, energy used for agricultural pumping accounts for approximately **30% of California's electricity consumption**, making irrigation a major driver of energy demand and associated greenhouse gas emissions.`,
       keyTerms: [
         {
-          term: 'Ogallala Aquifer',
-          def: 'The High Plains Aquifer underlying 450,000 km² of the central US Great Plains. Water table declining >1 m/yr in parts of Kansas and Texas; average recharge <25 mm/yr. Effectively a non-renewable fossil water resource.',
+          term: 'Irrigation efficiency',
+          def: 'The fraction of applied irrigation water actually used by crops. Flood irrigation: 40–65%; furrow: 50–70%; sprinkler: 70–85%; drip: 85–95%. Inefficiency results in waterlogging, salinization, groundwater recharge, and downstream flow reduction.',
         },
         {
-          term: 'Land Subsidence',
-          def: `Irreversible compaction and sinking of the ground surface caused by removal of groundwater from clay-rich aquifer sediments. Jakarta has subsided 4 m; California\'s Central Valley up to 9 m.`,
+          term: 'Soil salinization',
+          def: 'Accumulation of salts in the root zone as irrigation water evaporates, leaving dissolved minerals behind. Affects ~20% of global irrigated land (~60 Mha). Reduces crop yields and eventually renders land uncultivable. Ancient Mesopotamia lost its agricultural productivity to salinization c. 2000 BCE.',
         },
         {
-          term: 'Geogenic Contamination',
-          def: 'Groundwater contamination from naturally occurring substances (not human pollution) released from aquifer materials. Bangladesh arsenic crisis: ~50 million people exposed to arsenic from sediment minerals mobilised under reducing conditions.',
+          term: 'Virtual water',
+          def: 'The water embedded in the production of food and goods. Beef: ~15,000 L/kg; wheat: ~1,300 L/kg; rice: ~2,500 L/kg. Global food trade transfers ~2,300 km³/yr of virtual water — allowing water-scarce nations to "import" water through food imports rather than depleting domestic resources.',
         },
         {
-          term: 'PFAS',
-          def: 'Per- and polyfluoroalkyl substances — ~9,000 synthetic "forever chemicals" with extraordinarily persistent C-F bonds. Contaminate groundwater from firefighting foams and industrial uses; linked to cancer and immune effects. EPA set MCLs for 6 PFAS in 2024.',
+          term: 'Water–food–energy nexus',
+          def: 'The interdependence between water, food, and energy systems: food production requires water; water delivery requires energy; energy production requires water. Managing one resource without considering the others leads to trade-offs and unintended consequences.',
         },
         {
-          term: 'Managed Aquifer Recharge (MAR)',
-          def: 'Deliberate recharge of aquifers with treated recycled water, stormwater, or diverted surface water to replenish depleted storage and create hydraulic barriers against saltwater intrusion. Orange County CA: 130 million gallons/day.',
-        },
-        {
-          term: 'Inelastic Compaction',
-          def: 'Permanent, irreversible compression of clay-rich aquifer sediments when pore water is removed; the dominant mechanism of land subsidence. Unlike elastic (reversible) compression in sands and gravels, inelastic clay compaction does not recover when water levels rise.',
+          term: 'Evapotranspiration (ET)',
+          def: 'The sum of water evaporated from soil surfaces and transpired through plant leaves. Represents the "productive" use of water in agriculture. In irrigated agriculture, ET consumes 50–90% of applied water; the remainder may percolate to groundwater or run off.',
         },
       ],
     },
     {
       type: 'concept',
-      title: 'Groundwater Depletion: Scale and Consequences',
-      body: `Groundwater depletion is driven by extraction rates that far exceed natural recharge in agricultural regions worldwide. The consequences cascade from declining well yields and rising pumping costs through to land subsidence, ecosystem degradation, and ultimately the exhaustion of irrigation capacity that supports food production for hundreds of millions of people.`,
+      title: 'Irrigation systems, efficiency, and consequences',
+      body: `The choice of irrigation system determines not just how much water is used, but where it goes, how it affects soils, and what energy it consumes. Globally, the transition from flood to drip irrigation could theoretically reduce agricultural water consumption by 30–50% while maintaining yields — but cost, infrastructure, and institutional barriers have slowed adoption.`,
       cards: [
         {
-          name: 'Ogallala Depletion',
-          icon: TrendingDown,
-          color: BRAND.coral,
-          desc: 'Water table declining >1 m/yr in parts of Kansas and Texas. Cumulative depletion: 30–60 m in heavily pumped areas. Recharge: 1–25 mm/yr. GRACE detected 303 km³ lost 2002–2016.',
-          examples: 'Kansas: southern High Plains wells average ~9 m decline per decade. Texas Panhandle: some areas have lost >80% of original saturated thickness. Irrigated land has already been abandoned in the most depleted zones.',
+          name: 'Flood and Furrow Irrigation',
+          icon: Droplets,
+          color: BRAND.accent,
+          desc: 'Oldest methods: gravity-fed water covers fields or flows in furrows. Application efficiency 40–70%. Requires no pumping energy if terrain allows. Water losses through deep percolation, field runoff, and evaporation. Dominant in South and East Asia, Africa, Middle East.',
+          examples: 'India: 85% of irrigated area uses surface methods. Pakistan Indus canal system: ~14.5 Mha irrigated, world\'s largest contiguous irrigation system; also one of the most waterlogged and salinized. Egypt: Nile delta flood irrigation for 5,000 years; now converted largely to drip after Aswan High Dam ended annual flooding.',
         },
         {
-          name: 'Land Subsidence',
-          icon: TrendingDown,
-          color: BRAND.gold,
-          desc: 'Clay compaction from groundwater removal is permanent and irreversible. Inelastic deformation reduces both land surface elevation and remaining aquifer storage capacity simultaneously.',
-          examples: 'Central Valley, CA: total subsidence up to 9 m; rates 28 cm/yr near Corcoran 2012–16, damaging the Delta-Mendota Canal. Jakarta: 4 m subsidence in 50 years; North Jakarta now 1–4 m below sea level.',
-        },
-        {
-          name: 'Saltwater Intrusion',
-          icon: AlertTriangle,
-          color: BRAND.ruby,
-          desc: 'Coastal over-pumping lowers freshwater heads below sea level, drawing saline water into aquifers. Ghyben-Herzberg: 1 m head decline → ~40 m saltwater interface rise. Contamination is difficult to reverse.',
-          examples: 'Miami-Dade County: saltwater intrusion front advanced ~16 km inland since 1900. Maldives: freshwater lens threatened on low atolls by both over-pumping and sea level rise.',
-        },
-        {
-          name: 'Ecosystem Impacts',
+          name: 'Drip Irrigation: Efficiency Revolution',
           icon: Activity,
-          color: BRAND.amethyst,
-          desc: 'Falling water tables cut off groundwater from surface ecosystems. Springs cease; gaining streams turn losing; riparian trees die; wetlands dry. Baseflow to rivers during droughts diminishes.',
-          examples: 'Platte River, Nebraska: groundwater decline reduced baseflow 50–70% since 1950s, shrinking critical sandhill crane habitat. Ciénaga de Santa Clara wetland (Mexico) largely lost after Colorado River flow cut off by dams and diversions.',
+          color: BRAND.jade,
+          desc: 'Delivers water directly to root zone via emitters. Efficiency 85–95% — 30–50% less water than flood for same yield. Reduces salinization, waterlogging, and evaporation losses. Upfront cost: $500–3,000/ha. Only ~6% of global irrigated area despite proven benefits.',
+          examples: 'Israel: pioneered drip irrigation post-1950; now 75% of irrigated area uses drip/sprinkler; 75% of wastewater recycled for agriculture. California almonds: drip reduced water use 25–35% vs flood. India\'s Pradhan Mantri Krishi Sinchayee Yojana: target to convert 4.8 Mha to micro-irrigation. Morocco: subsidised drip adoption reduced agricultural water use 20% in 2015–2020.',
         },
-      ],
-    },
-    {
-      type: 'concept',
-      title: 'Contamination and Remediation',
-      body: `Groundwater contamination is insidious: aquifers are invisible, contamination often has no taste or smell, and slow groundwater flow means plumes can persist for decades even after the source is removed. Addressing contamination requires both source control and often expensive, long-term active remediation.`,
-      cards: [
         {
-          name: 'Arsenic (Geogenic)',
+          name: 'Soil Salinization',
           icon: AlertTriangle,
           color: BRAND.coral,
-          desc: 'Naturally occurring arsenic mobilised from iron oxyhydroxide minerals under reducing conditions. Bangladesh: ~50M people exposed via shallow tube wells; WHO limit 10 µg/L routinely exceeded 10–100×.',
-          examples: 'Bangladesh: 20M tube wells installed 1970s–1990s to avoid contaminated surface water; 1M+ wells subsequently found arsenic-contaminated above 50 µg/L. Chronic exposure causes skin lesions, cancers of bladder, lung, skin.',
+          desc: '~60 Mha irrigated land salinized globally (20% of total); 3 Mha lost/yr. Salinization occurs when irrigation water evaporates, concentrating dissolved salts. Impedes osmotic water uptake by roots. Remediation: leaching with large volumes of freshwater; tile drainage; salt-tolerant crop varieties.',
+          examples: 'Mesopotamia: grain yields fell 65% between 2400–1700 BCE from salinization; cities abandoned. Colorado River Basin: irrigation return flows raise salinity from ~50 mg/L in headwaters to ~850 mg/L at Mexican border, costing US agriculture ~$330M/yr in crop damage. Pakistan: 6 Mha (25% of irrigated area) significantly salinized, reducing yields 25–40%.',
         },
         {
-          name: 'PFAS Contamination',
-          icon: Factory,
-          color: BRAND.amethyst,
-          desc: 'C-F bond resists all natural degradation. PFAS spread from airports (AFFF foam), military bases, and industrial sites. Detected in >45% of US tap water samples. Bioaccumulate in organisms and food chains.',
-          examples: 'Camp Lejeune, NC: contaminated drinking water 1953–1987 linked to elevated cancer rates in 750,000 residents and personnel. Michigan PFAS contamination from Wolverine Worldwide tannery affected >200 km² of groundwater.',
-        },
-        {
-          name: 'Agricultural Chemicals',
-          icon: Factory,
+          name: 'Virtual Water and Food Trade',
+          icon: Globe,
           color: BRAND.gold,
-          desc: 'Nitrate from fertiliser leaching is the most widespread groundwater contaminant globally. Pesticides and herbicides (atrazine, glyphosate metabolites) affect shallow unconfined aquifers under agricultural land.',
-          examples: 'US: ~10% of community wells and ~20% of private wells exceed EPA nitrate MCL (10 mg/L). Iowa and Nebraska: majority of shallow wells have detectable nitrate from corn/soybean agriculture above background levels.',
+          desc: 'Importing food = importing the water to grow it. Water-scarce nations reduce domestic water demand by importing water-intensive crops. Global virtual water trade: ~2,300 km³/yr. Major exporters: USA, Canada, Brazil, Argentina (water-abundant). Major importers: Middle East, North Africa, Japan, South Korea (water-scarce).',
+          examples: 'Saudi Arabia: domestic wheat production using fossil groundwater abandoned 2016 after 3 decades of depletion; now imports 100% of wheat (~3.5 Mt/yr = ~4.5 km³ virtual water). Egypt: 60% self-sufficient in food; virtual water imports equivalent to 1.5× annual Nile River flow. Netherlands: largest EU agricultural exporter, yet one of Europe\'s smallest nations — highly efficient water use plus imports of water-intensive products.',
         },
         {
-          name: 'Managed Aquifer Recharge',
-          icon: Shield,
-          color: BRAND.jade,
-          desc: 'Deliberately recharging aquifers with treated water replenishes depleted storage and can flush contaminants, create saltwater barriers, and bank wet-season water for dry-season use.',
-          examples: 'Orange County Water District, CA: 130 M gallons/day of purified recycled water injected into aquifer, supplying ~35% of county drinking water. Tucson, AZ: banks Colorado River water in winter via recharge basins for summer pumping.',
+          name: 'Water–Food–Energy Nexus',
+          icon: Zap,
+          color: BRAND.amethyst,
+          desc: 'Food needs water; water pumping needs energy; energy generation needs water. Corn ethanol (biofuel) requires 1,000–4,000 L water/L fuel. California agriculture: 30% of state electricity consumed by water/irrigation sector. Hydropower dams alter river hydrology, affecting downstream irrigation diversions.',
+          examples: 'Colorado River: 7 major dams store 4.5× annual runoff for power and irrigation — but chronic over-allocation means the river rarely reaches the Gulf of California. Zambia–Zimbabwe: Kariba Dam on Zambezi provides 50% of both nations\' electricity AND enables irrigation; 2019 drought dropped reservoir to 9% capacity, triggering blackouts and food shortages simultaneously. EU biofuel mandate 2003–2015: land reallocation to energy crops reduced food production and raised grain prices.',
         },
       ],
     },
     {
       type: 'visualization',
-      title: 'Groundwater Under Threat: From Pump to Consequence',
-      body: 'How groundwater extraction and land use create cascading threats — from aquifer depletion through contamination pathways to ecosystem and human health impacts.',
+      title: 'From Source to Crop: The Agricultural Water Pathway',
+      body: 'How water is diverted, delivered, and consumed across the agricultural cycle — and where losses, salinization, and governance challenges arise.',
       interaction: {
         type: 'flow-simulator' as const,
-        description: 'showing how over-extraction and surface contamination sources create cascading groundwater threats including depletion, subsidence, contamination, and ecosystem damage, and how managed recharge and remediation can interrupt these pathways',
+        description: 'showing how freshwater is extracted from rivers and aquifers, delivered to crops through different irrigation systems, consumed by evapotranspiration, and how return flows, salinization, and virtual water trade interact with the agricultural water cycle',
         nodes: [
           {
-            id: 'over-extraction',
-            label: 'Over-Extraction',
-            description: 'Pumping rate exceeds natural recharge. Ogallala: pumping ~21 km³/yr vs. recharge ~1–3 km³/yr. Unsustainable drawdown accumulates year after year.',
-            color: BRAND.coral,
-          },
-          {
-            id: 'contamination-sources',
-            label: 'Contamination Sources',
-            description: 'Agriculture (nitrate, pesticides), industry (PFAS, solvents, heavy metals), geogenic (arsenic, fluoride). Sources on or near aquifer recharge zones pose highest risk.',
-            color: BRAND.ruby,
-          },
-          {
-            id: 'water-table-decline',
-            label: 'Water Table Decline',
-            description: 'Head drops progressively. Pumping depths increase; energy costs rise 3–5× per well as water level halves. Shallow wells go dry. Springs and baseflow to rivers diminish.',
-            color: BRAND.gold,
-          },
-          {
-            id: 'land-subsidence',
-            label: 'Land Subsidence',
-            description: 'Clay layers compact irreversibly when drained. Jakarta: 4 m in 50 years. Central Valley: up to 9 m total. Infrastructure damage: canals, roads, building foundations.',
-            color: BRAND.amethyst,
-          },
-          {
-            id: 'contamination-plume',
-            label: 'Contaminant Plumes',
-            description: 'Pollutants enter aquifer and migrate slowly with groundwater flow (cm to m per day). PFAS plumes can extend km from source. Arsenic released from sediments as redox conditions shift.',
+            id: 'source',
+            label: 'Water Sources',
+            description: 'Agricultural water is drawn from three main sources: (1) river diversions (surface water) — ~60% of global irrigation withdrawals; (2) groundwater pumping — ~40%, often from non-renewable fossil aquifers like the Ogallala or Arabian aquifer; (3) harvested rainfall (rainfed farming, not requiring infrastructure). Over-extraction of groundwater for irrigation is the primary driver of global aquifer depletion, particularly in India, China, the US Great Plains, and North Africa.',
             color: BRAND.accent,
           },
           {
-            id: 'solutions',
-            label: 'Solutions',
-            description: 'Managed aquifer recharge, irrigation efficiency (drip/precision ag), water pricing reform, extraction caps, source removal and pump-and-treat remediation, alternative water-source development.',
+            id: 'delivery',
+            label: 'Irrigation Delivery Systems',
+            description: 'Water is conveyed from source to field via canals, pipes, and pumps. Conveyance losses (evaporation and seepage from unlined canals) can reach 30–50% before water even arrives at the field. Lining canals with concrete reduces seepage but increases cost. Field-level application efficiency varies: flood 40–65%, furrow 50–70%, sprinkler 70–85%, drip 85–95%. Overall system efficiency (source to crop root) is typically 35–55% for surface irrigation systems — meaning less than half the water diverted from the source reaches the crop.',
+            color: BRAND.gold,
+          },
+          {
+            id: 'crop-uptake',
+            label: 'Crop Evapotranspiration',
+            description: 'Crops absorb water through roots and transpire it through leaf stomata — the productive use of irrigation water. Reference evapotranspiration (ET₀) quantifies the "atmospheric demand" for water (typically 3–8 mm/day in irrigated regions). Actual crop ET depends on crop type (maize: ~500 mm/season; cotton: ~700 mm/season; rice: ~900–1,200 mm/season), growth stage, and canopy cover. Excess water beyond ET needs is "wasted" — either evaporated, percolated to groundwater, or returned as drainage.',
             color: BRAND.jade,
+          },
+          {
+            id: 'salinization',
+            label: 'Salt Accumulation',
+            description: 'As irrigation water evaporates from soil, dissolved salts are left behind. Natural rainfall in humid climates leaches salts downward, but in arid regions — where irrigation is most needed — evaporation rates are high and leaching rainfall is absent. Without adequate drainage, salts accumulate in the root zone year after year. ~3 million hectares of irrigated land are abandoned annually due to salinization. The fix — excess irrigation to flush salts — requires even more water and creates waterlogging if drainage is inadequate.',
+            color: BRAND.coral,
+          },
+          {
+            id: 'return-flow',
+            label: 'Return Flows and Downstream Effects',
+            description: 'Water not consumed by crops (deep percolation, field runoff, drainage) eventually returns to rivers or recharges groundwater — "return flows." These are often degraded in quality: higher salinity, elevated nitrate from fertilisers, pesticide residues, and elevated temperature (from ponding). Colorado River salinization costs downstream users ~$330M/yr; Pakistan\'s Indus return flows have created vast waterlogged wastelands. In some basins, return flows support downstream users who depend on them, creating complex water rights conflicts when upstream efficiency improvements reduce return flows.',
+            color: BRAND.amethyst,
+          },
+          {
+            id: 'governance',
+            label: 'Water Allocation and Governance',
+            description: 'Who has the right to divert water for irrigation — and how much — is determined by water law, ranging from riparian rights (landowners adjacent to rivers can use water) to prior appropriation ("first in time, first in right") to state-managed allocation. In many developing nations, informal water rights prevail, with large farmers capturing disproportionate shares. Groundwater is often unregulated, with individual farmers drilling competing wells. Collective action to manage irrigation at basin scale — setting pumping limits, maintaining shared canals, resolving disputes — is among the hardest governance challenges in water management.',
+            color: BRAND.ruby,
           },
         ],
         edges: [
-          { from: 'over-extraction',       to: 'water-table-decline',  label: 'Depletes saturated zone' },
-          { from: 'over-extraction',       to: 'contamination-plume',  label: 'Pumping accelerates plume migration' },
-          { from: 'contamination-sources', to: 'contamination-plume',  label: 'Leach to groundwater' },
-          { from: 'water-table-decline',   to: 'land-subsidence',      label: 'Clay compaction' },
-          { from: 'contamination-plume',   to: 'water-table-decline',  label: 'Contaminates supply, forces deeper pumping' },
-          { from: 'solutions',             to: 'water-table-decline',  label: 'MAR raises water table' },
-          { from: 'solutions',             to: 'contamination-plume',  label: 'Pump-and-treat removes plume' },
+          { from: 'source',     to: 'delivery',    label: 'Diversion and conveyance (30–50% loss)' },
+          { from: 'delivery',   to: 'crop-uptake',  label: 'Field application (40–95% efficiency)' },
+          { from: 'crop-uptake', to: 'salinization', label: 'Evaporation concentrates salts in root zone' },
+          { from: 'delivery',   to: 'return-flow',  label: 'Deep percolation and field drainage' },
+          { from: 'return-flow', to: 'source',      label: 'Degraded water returns to river/aquifer' },
+          { from: 'governance', to: 'source',       label: 'Allocation rules determine extraction limits' },
         ],
       },
     },
@@ -186,63 +156,63 @@ Groundwater contamination takes multiple forms. **Arsenic** released from aquife
       type: 'quiz',
       questions: [
         {
-          q: 'The Ogallala Aquifer in Kansas and Texas is declining at rates exceeding 1 m per year in some areas. Why is this rate considered unsustainable even if pumping were reduced to half current levels?',
+          q: 'Drip irrigation achieves 85–95% application efficiency compared to 40–65% for flood irrigation, yet drip accounts for only about 6% of global irrigated area. What best explains this gap between proven efficiency and adoption?',
           a: [
-            'Because the Ogallala is a confined artesian aquifer; any extraction permanently destroys the artesian pressure, so even reduced pumping causes irreversible damage',
-            'Because natural recharge to the Ogallala is only 1–25 mm/year — thousands of times less than extraction rates — so even halved extraction would still deplete the aquifer, just more slowly',
-            'Because the Ogallala is underlain by impermeable granite; pumped water flows out of the basin permanently and cannot be naturally restored even if all pumping stopped',
-            'Because Oklahoma and Nebraska have legally blocked recharge water from flowing into Kansas and Texas, making depletion a political rather than hydrological problem',
+            'Drip irrigation systems require specialised salinity-resistant soils not found in most agricultural regions; flood irrigation is more widely applicable across soil types',
+            'Drip systems are technically incompatible with most staple crops (wheat, rice, maize) because their root architectures require full soil saturation; they are only suitable for orchard and vineyard crops',
+            'Upfront capital costs for drip irrigation ($500–3,000/ha) are prohibitive for smallholder farmers who dominate irrigated agriculture in developing countries; combined with operational complexity, lack of technical support, and subsidy structures favouring water quantity over efficiency, adoption barriers have slowed diffusion despite proven water savings',
+            'Drip irrigation only reduces evaporation losses, which are minor compared to transpiration; since the total evapotranspiration demand of crops is fixed by climate, drip irrigation saves little water compared to flood methods',
           ],
-          correct: 1,
-          explain: 'A is wrong: the Ogallala is primarily an unconfined aquifer, not an artesian system; reduced pumping would slow but not stop depletion because recharge is so minimal. B is correct: the Ogallala Aquifer receives only about 1–25 mm/year of recharge, primarily because the overlying soils and low annual precipitation in the Great Plains allow very little infiltration to reach the water table. Current extraction rates of ~21 km³/year are approximately 10–50 times greater than estimated total recharge. Even halving pumping would still extract 5–25 times the recharge rate, continuing depletion. The Ogallala was primarily recharged during cooler, wetter Pleistocene conditions; it is effectively a non-renewable fossil resource on human timescales. C misidentifies the geology; D confuses political water rights disputes with the physical hydrology.',
+          correct: 2,
+          explain: `A is wrong: drip systems can be adapted to a wide range of soils; the application is through point-source emitters at or below the soil surface, independent of the underlying soil chemistry. B is incorrect: drip and subsurface drip irrigation have been successfully applied to wheat (Israel, California), rice (requiring modification), maize (US Corn Belt), cotton, and virtually all major crops, not just orchards. D misunderstands the water balance: drip reduces both non-productive evaporation from wet soil between plants and deep percolation below the root zone (which is lost for crop use). Total crop evapotranspiration demand is indeed set by climate and crop type, but flood irrigation delivers far more water than ET requires, with the excess lost to evaporation and percolation. C correctly identifies the primary barriers: the smallholder farmer — who manages >75% of irrigated area in South Asia, sub-Saharan Africa, and South Asia — typically cannot afford the installation cost without subsidies or credit access. Many governments subsidise water price (keeping irrigation water cheap, reducing the incentive to save it) rather than technology (subsidising efficiency equipment). Technical maintenance challenges and lack of spare parts in rural areas also limit adoption. Israel's success with drip arose from a unique combination of extreme water scarcity (creating a strong economic incentive), a government-led technology development programme, and cooperative agricultural institutions — conditions absent in most developing world contexts.`,
         },
         {
-          q: 'How does groundwater extraction cause land subsidence, and why is the subsidence in clay-rich aquifer systems permanent?',
+          q: 'The Aral Sea shrank by over 90% in volume between 1960 and 2010, primarily as a result of irrigation diversions from the Amu Darya and Syr Darya rivers. What aspect of this disaster best illustrates the concept of "externalities" in water management?',
           a: [
-            'Extraction removes physical support from underground caverns; the cave roofs collapse, creating sinkholes. Refilling caverns with water restores ground elevation',
-            'Removing pore water from clay and silt layers increases effective stress on grains; clay rearranges plastically under this stress (inelastic compaction), permanently reducing volume — unlike sand and gravel which rebound elastically when water returns',
-            'Pumping cold groundwater causes thermal contraction of rocks, shrinking them uniformly; this subsidence is reversible when warmer surface water infiltrates to replace cold groundwater',
-            'Subsidence occurs because wells introduce surface air into aquifers, oxidising organic matter in sediments and releasing CO₂ that escapes upward, leaving voids that collapse',
+            'The Aral Sea disaster illustrates that Soviet central planning was inherently inefficient at water allocation; market-based water pricing would have prevented over-diversion by assigning monetary value to water based on supply and demand',
+            'The Aral Sea fishery collapse illustrates that freshwater fisheries are more economically valuable than irrigated cotton, so planners made an economically irrational trade-off that any proper cost-benefit analysis would have rejected',
+            'The diversion of the Amu Darya and Syr Darya imposed massive costs — fishery collapse, salt and pesticide dust storms, collapsed regional economy, human health impacts — on communities living near the sea who had no voice in the irrigation decisions; these uncompensated costs borne by third parties (externalities) were not included in the economic calculus of the irrigation expansion, making diversion appear profitable while destroying enormous social and ecological value',
+            'The Aral Sea disaster demonstrates that rivers should never be diverted for irrigation because the ecological value of maintaining river flow always exceeds the economic value of irrigated agriculture',
           ],
-          correct: 1,
-          explain: `A describes karst sinkhole collapse, which is a different mechanism; groundwater extraction-driven subsidence in alluvial aquifers does not involve cave-roof collapse. B is correct: in a saturated sediment, the weight of overlying material is supported partly by the solid grain skeleton and partly by pore water pressure. When pumping reduces pore pressure, effective stress on grains increases. Coarse sediments (sand and gravel) deform elastically — they compress slightly under stress and rebound when stress is released. Fine-grained clays and silts have a plastic response: platelet rearrangement under increased stress is permanent and does not reverse when water returns. Clay layers may constitute only 10–20% of aquifer thickness but contribute 80–90% of total subsidence. Jakarta\'s 4 m and California\'s Central Valley\'s 9 m subsidences both resulted from this inelastic clay compaction. C and D are physically incorrect mechanisms.`,
+          correct: 2,
+          explain: `A presents an ideological argument not directly supported by the Aral Sea case; water markets exist in some regions and also produce over-extraction (e.g., California groundwater) when third-party effects are not regulated. B makes a comparative value claim that is contestable (cotton irrigation supported millions of agricultural jobs, albeit at enormous environmental cost) and is not the core lesson of the disaster. D overgeneralises to a rule that is not universally true and would ban all river irrigation. C correctly identifies the central failure: in Soviet planning (and in most national water governance systems globally), the costs of diversion fall on parties — downstream communities, the lake ecosystem, fishing communities — who are not the decision-makers and who received no compensation for the costs imposed on them. The irrigators and cotton planners did not bear the cost of the Aral Sea's destruction; instead, those costs fell on the 35 million people in the Aral Sea basin who experienced salt storms, increased infant mortality, collapsed fisheries, and extreme poverty. This is the classic externality problem in natural resource management: when decision-makers can impose costs on others without compensation, they systematically under-price the resource and over-extract. The Aral Sea disaster is among the largest externality failures in environmental history.`,
         },
         {
-          q: 'The Bangladesh arsenic crisis affected approximately 50 million people. What is the source of this arsenic and what triggered its release?',
+          q: 'Pakistan imports large quantities of wheat despite having the world\'s largest contiguous irrigation system (the Indus Canal system). Saudi Arabia abandoned domestic wheat production entirely in 2016. What concept best explains why importing food can be a rational water management strategy for water-scarce nations?',
           a: [
-            'Industrial pollution from chemical factories dumping arsenic-containing waste into the Ganges River, which percolated into shallow aquifers',
-            'Naturally occurring arsenic in aquifer sediments was mobilised into groundwater by geochemical processes — specifically the reductive dissolution of arsenic-bearing iron oxyhydroxide minerals under the reducing conditions created by organic matter decomposition',
-            'Arsenic was introduced into wells by agricultural pesticides used on rice paddies during the Green Revolution; runoff from fields contaminated shallow aquifer recharge zones',
-            'Arsenic precipitated from volcanic ash deposited in Bangladesh during historical eruptions; erosion and redeposition in river deltas concentrated the ash in aquifer sediments',
+            'Comparative advantage in economics: Pakistan and Saudi Arabia are better at manufacturing than agriculture, so they should specialise in manufacturing and trade for food; water scarcity is incidental to this economic specialisation',
+            'Virtual water trade: by importing water-intensive crops like wheat, water-scarce nations effectively import the water that would have been needed to grow those crops domestically, conserving their scarce freshwater for higher-value or more critical uses — or avoiding the depletion of non-renewable aquifers',
+            'Water recycling: both countries can treat and recycle irrigation return flows, so importing food reduces the volume of water that needs to be recycled; domestic grain production would generate more wastewater than the countries can manage',
+            'Food security: importing food is always preferable to domestic production in arid regions because drought can destroy domestic harvests but import contracts guarantee year-round supply regardless of local rainfall',
           ],
           correct: 1,
-          explain: 'A is wrong: the Bangladesh arsenic crisis is not industrial pollution; it is geogenic (naturally occurring). The arsenic was present in the delta sediments long before industrialisation. B is correct: the Ganges–Brahmaputra–Meghna delta sediments contain iron oxyhydroxide minerals that adsorb arsenic. Under aerobic conditions, these minerals are stable and arsenic stays bound. However, when organic matter (abundant in young delta sediments) decomposes and consumes oxygen, the groundwater becomes reducing (anaerobic). Under these conditions, iron oxyhydroxides dissolve reductively, releasing adsorbed arsenic into solution. The crisis was inadvertently triggered by the 1970s–90s WHO-promoted installation of 20+ million shallow tube wells to provide "clean" water (replacing fecally contaminated surface water), which actually tapped the arsenic-bearing reducing zone. C (agricultural pesticides) and D (volcanic ash) are incorrect mechanisms.',
+          explain: `A partially applies (comparative advantage exists) but misses the specifically hydrological dimension that explains the food-water link. C is incorrect — water recycling is a separate strategy unrelated to whether food is grown domestically or imported. D presents food security as a universal rule when in fact many water-scarce nations (e.g., Egypt) strongly resist food import dependence for national security reasons, even at hydrological cost. B correctly identifies the virtual water framework: producing one tonne of wheat requires approximately 1,300 cubic metres of water; one tonne of beef requires approximately 15,000 m³. When Saudi Arabia was producing 3 million tonnes of wheat per year domestically (before the 2016 withdrawal), it was effectively "exporting" ~3.9 km³ of fossil groundwater per year — water from aquifers that recharge in geological, not human, timescales. The geopolitical and food security logic favoured domestic production, but the hydrological reality was that the nation was permanently depleting a non-renewable resource. By importing wheat — equivalent to importing the water needed to grow it — nations redirect that water demand to water-abundant countries (major wheat exporters like Canada, Australia, USA, and France, which have rainfed surpluses or sustainable irrigation). This does not mean food imports are always optimal, but virtual water accounting reveals a hidden dimension of food trade: it is simultaneously water trade.`,
         },
         {
-          q: 'What makes PFAS compounds particularly problematic as groundwater contaminants compared to most other organic pollutants?',
+          q: 'Soil salinization affects approximately 20% of irrigated land globally and destroys ~3 million hectares of agricultural productivity annually. What physical process causes salinization, and why is it particularly severe in arid regions?',
           a: [
-            'PFAS are heavier than water and sink to the deepest part of aquifers where they are inaccessible to remediation wells, making pump-and-treat ineffective',
-            'PFAS contain carbon-fluorine bonds (among the strongest in organic chemistry) that resist biological, chemical, and photolytic degradation; they persist in groundwater for decades to centuries with no natural attenuation',
-            'PFAS form dense non-aqueous phase liquids (DNAPLs) that penetrate deep into aquifers as separate-phase pools that cannot be extracted by conventional pumping',
-            'PFAS are naturally produced by soil bacteria and cannot be eliminated by source control because in-situ production continues indefinitely after the anthropogenic source is removed',
+            'Salinization is caused by salt-rich irrigation water; only rivers with naturally high salt content produce salinization, so it is a problem confined to regions with inherently salty rivers like the Colorado or Indus; rivers with low salinity (e.g., the Amazon) cannot cause salinization even with poor drainage',
+            'Salinization occurs when soil waterlogging raises the water table to the root zone; the high water table kills crop roots by oxygen deprivation (not salt), and the term "salinization" is a misnomer for what is really a drainage problem; salt accumulation is a consequence, not a cause, of root damage',
+            'When irrigation water evaporates from the soil surface and is transpired by crops, water molecules depart but dissolved mineral salts remain behind, progressively concentrating in the root zone; in arid regions, high evaporation rates and low natural rainfall mean there is insufficient precipitation to leach salts downward through the soil profile, so salts accumulate year after year until concentrations reach phytotoxic levels',
+            'Salinization is caused by capillary rise of saline groundwater into the root zone; it is entirely a groundwater problem and is unrelated to irrigation water quality or application method; drip irrigation prevents salinization because it does not raise the water table',
+          ],
+          correct: 2,
+          explain: `A is partly wrong: while river salinity does contribute (the Colorado delivers ~850 mg/L of dissolved salts at its lower reaches, adding ~0.8 tonnes of salt per 1,000 m³ of irrigation water), even low-salinity rivers cause salinization in poorly drained arid soils because the mechanism is evaporative concentration, not the initial salinity of the water alone. Even "clean" water contains small quantities of dissolved minerals; over many decades of irrigation, these accumulate. B incorrectly identifies waterlogging as the cause — waterlogging and salinization are related problems (poor drainage leads to both) but are distinct; salinization can occur in well-drained soils if evaporation concentrates salts near the surface. D captures one pathway (capillary rise of shallow saline water tables) but misses the primary surface evaporation mechanism and incorrectly claims drip irrigation prevents salinization — drip can reduce waterlogging but still delivers salts that concentrate unless drainage is maintained. C correctly describes the dominant mechanism: water is the carrier of dissolved salts; when the water molecule leaves the soil through evaporation (solar energy drives water from soil surface to atmosphere) or transpiration (roots take up water but leave salt ions behind), salts remain and accumulate. In humid climates, natural rainfall events leach accumulated salts below the root zone and eventually to rivers or groundwater. In arid regions — where irrigation is most needed because rainfall is insufficient — annual precipitation rarely exceeds ~200–400 mm, far less than annual evapotranspiration of ~1,000–2,000 mm, so natural leaching is insufficient. The historical decline of Mesopotamian civilisation (third millennium BCE) from salinization demonstrates this process operating across millennia.`,
+        },
+        {
+          q: 'The water–food–energy nexus describes the interdependencies between water, food production, and energy systems. Which scenario best illustrates a nexus trade-off where a decision made in one sector creates unintended consequences in another?',
+          a: [
+            'Installing solar panels on farmland in Arizona to generate electricity, which then powers drip irrigation pumps, reduces both water use and greenhouse gas emissions — a classic win-win with no nexus trade-offs',
+            'The European Union\'s 2003 Renewable Energy Directive mandating 5.75% biofuel in transport fuel by 2010 increased demand for energy crops (rapeseed, maize, palm oil), converting food-producing land and diverting crops from food markets, contributing to the 2007–2008 global food price spike; simultaneously, palm oil expansion in Indonesia drove deforestation that disrupted regional hydrology and released large carbon stores',
+            'Constructing a hydropower dam on a river provides renewable electricity but has no effect on downstream irrigation because dams store water that was already in the river, simply releasing it in a more controlled manner; the total volume of water available for irrigation is unchanged',
+            'Improving irrigation efficiency through drip systems reduces agricultural water withdrawals but has no effect on energy use or food production; the three systems (water, food, energy) are independent at the farm scale',
           ],
           correct: 1,
-          explain: 'A is wrong: PFAS are not heavier than water (they are aqueous-phase contaminants, not DNAPLs); they are typically soluble and mobile in groundwater, not sunken pools. B is correct: PFAS persistence arises from the extraordinary strength of the carbon-fluorine (C-F) bond — with a bond dissociation energy of ~485 kJ/mol, it is among the strongest bonds in organic chemistry. No known natural organism can break the C-F bond efficiently under typical environmental conditions; there is essentially no natural biodegradation. PFAS also resist hydrolysis, photolysis, and oxidative degradation. This means once PFAS contaminate an aquifer, concentrations decline only through dilution and dispersion, not degradation — persistence can extend centuries. Remediation requires energy-intensive treatments like activated carbon filtration, high-temperature incineration, or advanced oxidation processes (electrochemical, sonochemical). C describes a different class of contaminants (chlorinated solvents); D is incorrect — PFAS are purely synthetic.',
-        },
-        {
-          q: 'Managed aquifer recharge (MAR) is used by Orange County, California to produce ~130 million gallons per day. What are the primary benefits of this approach compared to simply storing the same water in surface reservoirs?',
-          a: [
-            'Underground storage avoids evaporation losses, improves water quality through soil-aquifer filtration, provides drought-proof reserves that cannot evaporate, and in coastal areas creates a hydraulic barrier against saltwater intrusion',
-            'Underground storage produces electricity as water infiltrates downward through the aquifer; this hydroelectric bonus makes MAR economically superior to surface reservoirs',
-            'Surface reservoirs require more concrete than aquifer injection wells, making MAR significantly cheaper to construct; operational savings alone justify the switch to underground storage',
-            'MAR is only beneficial in limestone karst aquifers; in alluvial aquifers like Orange County\'s, the main purpose is contamination dilution rather than water supply augmentation',
-          ],
-          correct: 0,
-          explain: `A is correct: managed aquifer recharge offers multiple advantages over surface storage. (1) Evaporation: surface reservoirs in California lose 0.5–2 m/yr to evaporation; underground storage loses essentially none. (2) Water quality improvement: as water percolates through unsaturated soils (soil-aquifer treatment), pathogens, organic compounds, and some nutrients are removed through filtration, adsorption, and biodegradation — this is part of Orange County\'s purification train. (3) Drought resilience: aquifer storage can hold water for years without loss; reservoirs evaporate and cannot hold rain years\' water for decade-scale droughts. (4) Saltwater barrier: maintaining positive freshwater head in coastal aquifers through injection prevents saltwater intrusion. Orange County\'s Water Factory 21 / GWRS system purifies secondary-treated wastewater to near-distilled quality using reverse osmosis and advanced oxidation for aquifer injection. B is physically impossible (gravity-fed infiltration generates no electricity). C is oversimplified; costs depend on site conditions. D is wrong: alluvial aquifers are ideal for MAR.`,
+          explain: `A describes a genuinely beneficial synergy, not a trade-off; the nexus concept encompasses both synergies and conflicts. C is incorrect: dams change the timing and amount of downstream river flow, which profoundly affects irrigation. Dams trap sediment (reducing downstream soil fertility that rainfed farmers depend on), alter seasonal flow patterns (potentially disrupting traditional flood-recession agriculture), increase evaporation from the reservoir surface (consuming water that would otherwise flow downstream), and change water temperature. Large dams often reduce total downstream water availability relative to natural conditions — the Colorado River, for example, essentially dries up before reaching the Gulf of California because reservoir evaporation and irrigation losses consume the full flow. D is incorrect: irrigation efficiency improvements affect energy use (less pumping needed), and by freeing up water for additional irrigated area, can affect food production; the systems interact at multiple scales. B correctly illustrates a nexus trade-off: biofuel mandates created energy policy that reverberated through food (higher grain prices, food insecurity for the poor) and water systems (palm oil expansion in water-stressed tropical regions; thirstier energy-crop varieties replacing food crops). The 2007–2008 global food crisis had multiple causes, but the sudden expansion of biofuel demand — roughly tripling US corn ethanol output between 2005–2010 — diverted ~15–20% of US corn from food/feed markets, contributing to a 125% rise in maize prices over 2007–2008 that triggered food riots in over 30 countries. This illustrates how energy policy decisions propagate through the water and food systems in ways that are often not analysed at the time of the decision.`,
         },
       ],
     },
   ],
 }
 
-export default groundwaterDepletionContamination
+export default irrigationAndFoodWater
