@@ -12,9 +12,10 @@ interface Props {
   section: QuizSection
   sectionKey: string
   onComplete?: (correct: number, total: number) => void
+  onFail?: () => void
 }
 
-export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
+export default function QuizBlock({ section, sectionKey, onComplete, onFail }: Props) {
   const [qIdx, setQIdx] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [answered, setAnswered] = useState<{ chosen: number; correct: boolean }[]>([])
@@ -33,6 +34,8 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
       const correct = prev.filter(a => a.correct).length
       if (correct / questions.length >= QUIZ_PASSING_SCORE) {
         onComplete?.(correct, questions.length)
+      } else {
+        onFail?.()
       }
       return prev
     })
@@ -128,10 +131,10 @@ export default function QuizBlock({ section, sectionKey, onComplete }: Props) {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={handleRetry}
-            className="flex items-center gap-2 mx-auto px-6 py-2.5 rounded-sm text-xs font-semibold tracking-[0.12em] uppercase"
-            style={{ backgroundColor: BRAND.surfaceHi, border: `1px solid ${BRAND.border}`, color: BRAND.text }}
+            className="flex items-center gap-2 mx-auto px-7 py-3 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase"
+            style={{ backgroundColor: BRAND.ruby, color: '#fff' }}
           >
-            <RotateCcw size={12} /> Try Again
+            <RotateCcw size={13} /> Try Again
           </motion.button>
         </motion.div>
       )

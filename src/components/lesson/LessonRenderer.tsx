@@ -24,6 +24,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   const [sectionIdx, setSectionIdx] = useState(0)
   const [dir, setDir] = useState(1)
   const [quizDone, setQuizDone] = useState(false)
+  const [quizFailed, setQuizFailed] = useState(false)
   const [quizResult, setQuizResult] = useState<{ correct: number; total: number } | null>(null)
   const [exitConfirm, setExitConfirm] = useState(false)
   const [shared, setShared] = useState(false)
@@ -87,6 +88,11 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
   function handleQuizComplete(correct: number, total: number) {
     setQuizResult({ correct, total })
     setQuizDone(true)
+    setQuizFailed(false)
+  }
+
+  function handleQuizFail() {
+    setQuizFailed(true)
   }
 
   function handleFinish() {
@@ -144,7 +150,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
             </div>
           ) : (
             <button
-              onClick={isQuizSection ? () => setExitConfirm(true) : onClose}
+              onClick={isQuizSection && !quizFailed && !quizDone ? () => setExitConfirm(true) : onClose}
               className="flex items-center gap-2 text-xs tracking-wider uppercase transition-opacity hover:opacity-70"
               style={{ color: BRAND.textDim }}
             >
@@ -217,6 +223,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                   sectionIndex={sectionIdx}
                   lessonId={lesson.id}
                   onQuizComplete={handleQuizComplete}
+                  onQuizFail={handleQuizFail}
                 />
               </motion.div>
             )}

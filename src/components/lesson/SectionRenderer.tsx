@@ -17,9 +17,10 @@ interface Props {
   sectionIndex: number
   lessonId: string
   onQuizComplete?: (correct: number, total: number) => void
+  onQuizFail?: () => void
 }
 
-export default function SectionRenderer({ section, sectionIndex, lessonId, onQuizComplete }: Props) {
+export default function SectionRenderer({ section, sectionIndex, lessonId, onQuizComplete, onQuizFail }: Props) {
   const sectionKey = `${lessonId}-s${sectionIndex}`
 
   switch (section.type) {
@@ -39,6 +40,7 @@ export default function SectionRenderer({ section, sectionIndex, lessonId, onQui
           section={section}
           sectionKey={sectionKey}
           onComplete={onQuizComplete}
+          onFail={onQuizFail}
         />
       )
     case 'theory':
