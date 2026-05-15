@@ -6,6 +6,7 @@ import { LESSONS } from '@/lessons/index'
 import { getDbLesson } from '@/lib/lesson-store'
 import { canAccessLesson } from '@/lib/access'
 import { QUIZ_PASSING_SCORE } from '@/lib/quiz'
+import type { QuizSection } from '@/lessons/types'
 
 const DAILY_MISSIONS = [
   { target: 1, bonusXp: 25 },
@@ -94,6 +95,27 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ ok: true, alreadyCompleted: true })
       }
       throw new Error(insertError.message)
+    }
+
+    // Seed spaced-repetition review cards for quiz questions in this lesson.
+    // Best-effort: a failure here must not block the completion response.
+    if (staticLesson) {
+      const quizQuestions = staticLesson.sections
+        .filter((s): s is QuizSection => s.type === 'quiz')
+        .flatMap(s => s.questions)
+      if (quizQuestions.length > 0) {
+        const tomorrow = new Date(nowISO)
+        tomorrow.setUTCDate(tomorrow.getUTCDate() + 1)
+        const reviewCards = quizQuestions.map((_, idx) => ({
+          user_id:       user.id,
+          lesson_id:     lessonId,
+          question_index: idx,
+          due_at:        tomorrow.toISOString(),
+        }))
+        await admin
+          .from('user_review_cards' as never)
+          .upsert(reviewCards as never, { onConflict: 'user_id,lesson_id,question_index', ignoreDuplicates: true })
+      }
     }
 
     // Count today's completions AFTER inserting so the count is stable and includes

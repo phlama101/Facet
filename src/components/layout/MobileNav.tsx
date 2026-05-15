@@ -2,15 +2,15 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, BookOpen, GitBranch, Trophy, Map } from 'lucide-react'
+import { LayoutDashboard, BookOpen, GitBranch, Trophy, Brain } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 
 const TABS = [
-  { href: '/dashboard',   label: 'Home',       icon: LayoutDashboard },
-  { href: '/learn',       label: 'Learn',      icon: BookOpen },
-  { href: '/skill-tree',  label: 'Skills',     icon: GitBranch },
-  { href: '/leaderboard', label: 'Ranks',      icon: Trophy },
-  { href: '/atlas',       label: 'Atlas',      icon: Map },
+  { href: '/dashboard',   label: 'Home',    icon: LayoutDashboard },
+  { href: '/learn',       label: 'Learn',   icon: BookOpen },
+  { href: '/skill-tree',  label: 'Skills',  icon: GitBranch },
+  { href: '/leaderboard', label: 'Ranks',   icon: Trophy },
+  { href: '/review',      label: 'Review',  icon: Brain },
 ]
 
 export default function MobileNav() {

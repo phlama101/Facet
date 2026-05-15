@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import {
   Zap, Flame, LogOut, UserPlus,
-  LayoutDashboard, BookOpen, GitBranch, Trophy, Map, User, Settings,
+  LayoutDashboard, BookOpen, GitBranch, Trophy, Map, User, Settings, Brain, BookMarked,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
@@ -20,15 +20,18 @@ const AUTH_PRIMARY_TABS: TabDef[] = [
   { href: '/skill-tree',  label: 'Skill Tree',  icon: GitBranch },
   { href: '/leaderboard', label: 'Leaderboard', icon: Trophy },
   { href: '/atlas',       label: 'Atlas',       icon: Map },
+  { href: '/review',      label: 'Review',      icon: Brain },
 ]
 
 const GUEST_PRIMARY_TABS: TabDef[] = [
-  { href: '/learn',       label: 'Learn',       icon: BookOpen },
-  { href: '/skill-tree',  label: 'Skill Tree',  icon: GitBranch },
-  { href: '/leaderboard', label: 'Leaderboard', icon: Trophy },
+  { href: '/learn',      label: 'Learn',      icon: BookOpen },
+  { href: '/skill-tree', label: 'Skill Tree', icon: GitBranch },
+  { href: '/leaderboard',label: 'Leaderboard',icon: Trophy },
+  { href: '/glossary',   label: 'Glossary',   icon: BookMarked },
 ]
 
 const SECONDARY_TABS: TabDef[] = [
+  { href: '/glossary', label: 'Glossary', icon: BookMarked },
   { href: '/profile',  label: 'Profile',  icon: User },
   { href: '/settings', label: 'Settings', icon: Settings },
 ]

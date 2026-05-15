@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   Zap, Flame, BookOpen, TrendingUp, Play, ChevronRight,
-  Check, ArrowRight, Trophy, Calendar, Clock,
+  Check, ArrowRight, Trophy, Calendar, Clock, Brain,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { BRAND } from '@/lib/brand'
@@ -73,12 +73,21 @@ export default async function DashboardPage({ searchParams }: Props) {
     created_at: new Date().toISOString(),
   }
 
-  const { data: progressRows } = await supabase
-    .from('user_lesson_progress' as never)
-    .select('lesson_id, completed_at')
-    .eq('user_id', user.id)
-    .eq('completed', true)
-    .order('completed_at', { ascending: false })
+  const [progressResult, reviewResult] = await Promise.all([
+    supabase
+      .from('user_lesson_progress' as never)
+      .select('lesson_id, completed_at')
+      .eq('user_id', user.id)
+      .eq('completed', true)
+      .order('completed_at', { ascending: false }),
+    supabase
+      .from('user_review_cards' as never)
+      .select('*', { count: 'exact', head: true })
+      .eq('user_id', user.id)
+      .lte('due_at', new Date().toISOString()),
+  ])
+  const { data: progressRows } = progressResult
+  const dueReviewCount = (reviewResult as { count: number | null }).count ?? 0
   const allProgress: ProgressRow[] = (progressRows ?? []) as ProgressRow[]
   const completedSet = new Set(allProgress.map(r => r.lesson_id))
 
@@ -366,6 +375,31 @@ export default async function DashboardPage({ searchParams }: Props) {
           })}
         </div>
       </div>
+
+      {/* Review cards due */}
+      {dueReviewCount > 0 && (
+        <Link
+          href="/review"
+          className="flex items-center gap-4 px-5 py-4 rounded-sm transition-opacity hover:opacity-80"
+          style={{ backgroundColor: `${BRAND.amethyst}12`, border: `1px solid ${BRAND.amethyst}35` }}
+        >
+          <div
+            className="w-9 h-9 rounded-sm flex items-center justify-center shrink-0"
+            style={{ backgroundColor: `${BRAND.amethyst}20`, border: `1px solid ${BRAND.amethyst}40` }}
+          >
+            <Brain size={16} color={BRAND.amethyst} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-medium" style={{ color: BRAND.text }}>
+              {dueReviewCount} card{dueReviewCount !== 1 ? 's' : ''} due for review
+            </div>
+            <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
+              Reinforce what you&apos;ve learned with spaced repetition
+            </div>
+          </div>
+          <ChevronRight size={14} color={BRAND.amethyst} className="shrink-0" />
+        </Link>
+      )}
 
       {/* Recent Activity */}
       {recentActivity.length > 0 && (
