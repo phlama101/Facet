@@ -151,11 +151,17 @@ export async function POST(req: NextRequest) {
     }) as { data: { new_xp: number; new_level: number; new_streak: number }[] | null; error: unknown }
 
     if (awardError || !awardRows?.length) {
-      const detail = awardError instanceof Error
-        ? awardError.message
-        : typeof awardError === 'object' && awardError !== null
-          ? JSON.stringify(awardError)
-          : String(awardError ?? 'no rows returned')
+      // Roll back the progress insert so the user can retry and eventually receive XP.
+      // Without this, the lesson stays marked complete but XP is never awarded — every
+      // subsequent attempt hits the unique constraint and returns alreadyCompleted early.
+      await admin
+        .from('user_lesson_progress')
+        .delete()
+        .eq('user_id', user.id)
+        .eq('lesson_id', lessonId)
+
+      const pgErr = awardError as { code?: string; message?: string } | null
+      const detail = pgErr?.message ?? String(awardError ?? 'no rows returned')
       throw new Error(`award_xp failed: ${detail}`)
     }
 
