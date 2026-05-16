@@ -82,7 +82,7 @@ Beyond temperature, sediment cores preserve records of **ocean circulation** (th
           name: 'δ¹⁸O and Climate Records',
           icon: Waves,
           color: BRAND.accent,
-          desc: 'Oxygen isotope ratio in foraminiferal shells records both temperature and ice volume. High δ¹⁸O = glacial (ice sequesters light ¹⁶O, ocean enriched in ¹⁸O). Low δ¹⁸O = interglacial (ice melts, ¹⁶O returns to ocean). The LR04 benthic stack (a composite δ¹⁸O record compiled from 57 globally distributed deep-sea cores) resolves 50+ glacial cycles over 5.3 million years. Orbital cycles (Milankovitch variations — periodic changes in Earth's orbital shape ~100 kyr, axial tilt ~41 kyr, and wobble ~23 kyr) drive the glacial–interglacial rhythm recorded in the isotope signal.',
+          desc: 'Oxygen isotope ratio in foraminiferal shells records both temperature and ice volume. High δ¹⁸O = glacial (ice sequesters light ¹⁶O, ocean enriched in ¹⁸O). Low δ¹⁸O = interglacial (ice melts, ¹⁶O returns to ocean). The LR04 benthic stack (a composite δ¹⁸O record compiled from 57 globally distributed deep-sea cores) resolves 50+ glacial cycles over 5.3 million years. Orbital cycles (Milankovitch variations — periodic changes in Earth\'s orbital shape ~100 kyr, axial tilt ~41 kyr, and wobble ~23 kyr) drive the glacial–interglacial rhythm recorded in the isotope signal.',
           examples: 'Last Glacial Maximum (21,000 yr ago): δ¹⁸O ~1.8‰ heavier than today · Pliocene (3 Ma): ocean ~2–3°C (36–37°F) warmer, sea level ~25 m (82 ft) higher · K-Pg boundary layer: iridium anomaly at 66 Ma in cores worldwide',
         },
         {

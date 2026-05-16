@@ -171,7 +171,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
           {
             id: 'transport',
             label: 'Mass Movement Transport',
-            description: 'Material travels downslope, potentially entraining additional sediment and water. Debris flows travel at 1–30 m/s in channels; rock avalanches can exceed 100 m/s on steep terrain.', Runout distance scales with volume and slope gradient.',
+            description: 'Material travels downslope, potentially entraining additional sediment and water. Debris flows travel at 1–30 m/s in channels; rock avalanches can exceed 100 m/s on steep terrain. Runout distance scales with volume and slope gradient.',
             color: BRAND.amethyst,
           },
           {
