@@ -67,7 +67,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
       }
 
       processingRef.current = false
-    }, 2600)
+    }, 4000)
   }
 
   function handleRetry() {

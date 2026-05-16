@@ -96,8 +96,7 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
   async function handleComplete(xpEarned: number) {
     if (await saveProgress(xpEarned)) {
       await new Promise(r => setTimeout(r, 800))
-      router.refresh()
-      router.push('/dashboard')
+      window.location.href = '/dashboard'
     }
   }
 

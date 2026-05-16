@@ -91,8 +91,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
         router.push('/learn')
       } else {
         await new Promise(r => setTimeout(r, 800))
-        router.refresh()
-        router.push('/dashboard')
+        window.location.href = '/dashboard'
       }
     }
   }
