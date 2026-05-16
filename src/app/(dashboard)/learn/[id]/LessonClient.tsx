@@ -8,6 +8,7 @@ import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import LessonRenderer from '@/components/lesson/LessonRenderer'
 import LessonErrorBoundary from '@/components/lesson/LessonErrorBoundary'
 import { BRAND } from '@/lib/brand'
+import { useLiveProfileStore } from '@/lib/liveProfileStore'
 
 interface Props {
   id: string
@@ -35,6 +36,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
   const [pendingQuizScore, setPendingQuizScore] = useState<{ correct: number; total: number } | undefined>(undefined)
   const [xpConfirm, setXpConfirm] = useState<{ base: number; bonus: number } | null>(null)
   const savePromiseRef = useRef<Promise<boolean> | null>(null)
+  const updateLiveProfile = useLiveProfileStore(s => s.update)
 
   const lesson = LESSONS[id]
   if (!lesson) notFound()
@@ -62,9 +64,12 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       })
       if (res.status === 401) { setSaveError('auth'); setSaving(false); return false }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      const data = await res.json() as { ok: boolean; alreadyCompleted?: boolean; bonusXp?: number }
+      const data = await res.json() as { ok: boolean; alreadyCompleted?: boolean; bonusXp?: number; newXp?: number; newLevel?: number; newStreak?: number }
       if (!data.alreadyCompleted) {
         setXpConfirm({ base: xpEarned, bonus: data.bonusXp ?? 0 })
+        if (data.newXp !== undefined && data.newLevel !== undefined && data.newStreak !== undefined) {
+          updateLiveProfile(data.newXp, data.newLevel, data.newStreak)
+        }
       }
       setSaving(false)
       return true

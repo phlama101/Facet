@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw, Zap } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
+import { useLiveProfileStore } from '@/lib/liveProfileStore'
 import { resolveIcon } from '@/lib/icon-map'
 import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import type { DbLesson, DbSection, DbConceptSection } from '@/lib/lesson-store'
@@ -63,6 +64,7 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
   const [xpConfirm, setXpConfirm] = useState<{ base: number; bonus: number } | null>(null)
+  const updateLiveProfile = useLiveProfileStore(s => s.update)
 
   const lesson = hydrateLesson(dbLesson)
   const nextLesson = findNextLesson(dbLesson.id)
@@ -80,9 +82,12 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
       })
       if (res.status === 401) { setSaveError('auth'); setSaving(false); return false }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      const data = await res.json() as { ok: boolean; alreadyCompleted?: boolean; bonusXp?: number }
+      const data = await res.json() as { ok: boolean; alreadyCompleted?: boolean; bonusXp?: number; newXp?: number; newLevel?: number; newStreak?: number }
       if (!data.alreadyCompleted) {
         setXpConfirm({ base: xpEarned, bonus: data.bonusXp ?? 0 })
+        if (data.newXp !== undefined && data.newLevel !== undefined && data.newStreak !== undefined) {
+          updateLiveProfile(data.newXp, data.newLevel, data.newStreak)
+        }
       }
       setSaving(false)
       return true

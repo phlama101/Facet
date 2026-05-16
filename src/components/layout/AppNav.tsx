@@ -11,6 +11,7 @@ import type { LucideIcon } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import FacetLogo from '@/components/brand/FacetLogo'
 import { createClient } from '@/lib/supabase/client'
+import { useLiveProfileStore } from '@/lib/liveProfileStore'
 import type { Profile } from '@/types'
 
 type TabDef = { href: string; label: string; icon: LucideIcon }
@@ -45,6 +46,13 @@ export default function AppNav({ profile }: AppNavProps) {
   const pathname = usePathname()
   const router = useRouter()
   const [signOutHovered, setSignOutHovered] = useState(false)
+  const liveXp = useLiveProfileStore(s => s.xp)
+  const liveLevel = useLiveProfileStore(s => s.level)
+  const liveStreak = useLiveProfileStore(s => s.streak)
+
+  const displayXp = liveXp ?? profile?.xp ?? 0
+  const displayLevel = liveLevel ?? profile?.level ?? 1
+  const displayStreak = liveStreak ?? profile?.streak ?? 0
 
   const isGuest = !profile
   const primaryTabs = isGuest ? GUEST_PRIMARY_TABS : AUTH_PRIMARY_TABS
@@ -84,7 +92,7 @@ export default function AppNav({ profile }: AppNavProps) {
                 style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
               >
                 <Flame size={13} color={BRAND.coral} fill={BRAND.coral} />
-                <span className="font-mono text-xs font-semibold">{profile.streak}</span>
+                <span className="font-mono text-xs font-semibold">{displayStreak}</span>
               </div>
 
               {/* XP */}
@@ -93,7 +101,7 @@ export default function AppNav({ profile }: AppNavProps) {
                 style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.border}` }}
               >
                 <Zap size={13} color={BRAND.gold} fill={BRAND.gold} />
-                <span className="font-mono text-xs font-semibold">{profile.xp.toLocaleString()}</span>
+                <span className="font-mono text-xs font-semibold">{displayXp.toLocaleString()}</span>
               </div>
 
               {/* Level badge */}
@@ -105,7 +113,7 @@ export default function AppNav({ profile }: AppNavProps) {
                 }}
               >
                 <span className="text-[9px] tracking-[0.1em] uppercase font-mono" style={{ color: BRAND.accent }}>Lv</span>
-                <span className="font-mono text-sm font-bold leading-none" style={{ color: BRAND.text }}>{profile.level}</span>
+                <span className="font-mono text-sm font-bold leading-none" style={{ color: BRAND.text }}>{displayLevel}</span>
               </div>
 
               <button
