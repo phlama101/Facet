@@ -61,8 +61,8 @@ The ridge system was first identified as a continuous global structure by Marie 
     {
       type: 'callout' as const,
       variant: 'fact',
-      headline: 'Ocean salt could bury every continent',
-      body: "If all the salt in the world's oceans were spread evenly over Earth's land surface, it would form a layer more than 150 metres thick — about the height of a 50-storey building.",
+      headline: 'The ocean cycles through the seafloor every 10 million years',
+      body: "Seawater percolating through cracks in the oceanic crust at mid-ocean ridges is not a trickle — it is a global conveyor. The entire volume of Earth's oceans passes through this hydrothermal system roughly every 8–10 million years, profoundly reshaping ocean chemistry along the way.",
     },
     {
       type: 'concept',

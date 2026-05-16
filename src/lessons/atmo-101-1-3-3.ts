@@ -65,7 +65,7 @@ Understanding stability is what distinguishes a meteorologist's analysis of the 
           icon: Globe,
           color: BRAND.jade,
           desc: 'Skew-T: temperature (skewed, T increases to upper right), dew point, pressure (log scale). LCL: where T and Td converge (cloud base). LFC: where lifted parcel exceeds environmental T (free convection begins). EL: where parcel runs out of buoyancy (storm top). CAPE = area between parcel path and ELR above LFC (energy for updraft). CIN = area below LFC (energy needed to initiate convection). Severe wx: CAPE >2500, CIN 50–200 J/kg (loaded-gun sounding).',
-          examples: 'Loaded-gun sounding: high CAPE + moderate CIN → suppressed until boundary breaks cap → explosive organised storms. May 3, 1999 Oklahoma tornado outbreak: >6,000 J/kg CAPE, F5 tornadoes · Soundings twice daily globally from ~900 stations + radiosonde balloons → backbone of numerical weather prediction',
+          examples: 'A sounding with high CAPE and a strong CIN cap is the most dangerous convective setup: the cap suppresses scattered weak storms and concentrates energy that releases explosively once broken, producing fewer but far more intense cells. May 3, 1999 Oklahoma tornado outbreak: >6,000 J/kg CAPE, F5 tornadoes · Soundings twice daily globally from ~900 stations + radiosonde balloons → backbone of numerical weather prediction',
         },
       ],
     },

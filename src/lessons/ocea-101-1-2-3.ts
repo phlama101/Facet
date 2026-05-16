@@ -83,7 +83,7 @@ Understanding ocean circulation matters for reasons far beyond academic curiosit
           name: 'ENSO',
           icon: Globe,
           color: BRAND.gold,
-          desc: 'La Niña: strong trades, warm pool W Pacific, vigorous Humboldt upwelling, cool eastern Pacific, dry California, wet Australia. El Niño: weakened trades, warm water moves east, suppressed upwelling, floods Peru/Ecuador, droughts in Australia, Indonesia, India. Cycle: every 2–7 years. Teleconnections: affects rainfall globally. 1997–98 El Niño: +0.8°C global temperature anomaly, >$35 billion economic damage.',
+          desc: 'La Niña: strong trade winds, warm pool W Pacific, vigorous Humboldt upwelling, cool eastern Pacific, dry California, wet Australia. El Niño: weakened trade winds, warm water moves east, suppressed upwelling, floods Peru/Ecuador, droughts in Australia, Indonesia, India. Cycle: every 2–7 years. Teleconnections: affects rainfall globally. 1997–98 El Niño: +0.8°C global temperature anomaly, >$35 billion economic damage.',
           examples: '1997–98 El Niño: strongest of 20th century, Peru anchovy catch collapsed · 2010–11 La Niña: Queensland floods, East Africa drought · 2015–16 El Niño: global coral bleaching event',
         },
       ],
