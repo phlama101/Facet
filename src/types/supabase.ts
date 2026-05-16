@@ -457,7 +457,7 @@ export type Database = {
     }
     Functions: {
       award_xp: {
-        Args: { p_user_id: string; p_xp: number }
+        Args: { p_user_id: string; p_xp: number; p_now?: string }
         Returns: { new_xp: number; new_level: number; new_streak: number }[]
       }
     }
