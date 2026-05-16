@@ -38,6 +38,10 @@ Tectonic geomorphology interprets landscape relief and river network geometry as
           def: 'A former floodplain surface abandoned above the active channel when the river incised; flights of terraces record successive episodes of incision.',
         },
         {
+          term: 'Strath terrace',
+          def: 'A river terrace carved into bedrock with only a thin gravel veneer, formed when lateral erosion was dominant at a former river grade. The abandoned bedrock surface is left as a bench above the active channel when the river later incises downward.',
+        },
+        {
           term: 'Knickpoint',
           def: `An abrupt break in a river\'s longitudinal profile that migrates headward as a wave of incision; triggered by base-level fall, uplift, or resistant lithology.`,
         },

@@ -54,8 +54,8 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
     {
       type: 'callout' as const,
       variant: 'warning',
-      headline: 'The 1970 Nevado Huascarán landslide was the deadliest in recorded history',
-      body: 'The 1970 Nevado Huascarán landslide in Peru was triggered by a magnitude 7.9 earthquake. The debris avalanche traveled 180 km at speeds up to 280 km/h, buried two towns, and killed approximately 20,000 people — making it the deadliest landslide in recorded history.',
+      headline: 'The 1970 Nevado Huascarán landslide established that debris avalanches can travel at hurricane speeds — and forced engineers to completely rethink runout prediction',
+      body: 'Before Huascarán, runout models assumed that friction would limit how far a large debris mass could travel. The 1970 event demolished that assumption: the avalanche entrained air beneath the debris mass, dramatically reducing basal friction through a process now called air entrainment lubrication, and reached speeds exceeding 280 km/h — comparable to a Category 5 hurricane. This single event demonstrated that long-runout landslides belong in a separate hazard category from ordinary slides, and it prompted the development of dedicated runout models now used in hazard zonation worldwide.',
     },
     {
       type: 'concept',
