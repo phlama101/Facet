@@ -124,14 +124,14 @@ Understanding atmospheric composition is the foundation of understanding climate
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'greenhouse-mechanism',
-      caption: 'Greenhouse mechanism: shortwave solar passes through GHG-transparent atmosphere; surface emits longwave IR; GHGs absorb and re-emit ~50% back toward the surface (back-radiation ~333 W m⁻²).',
-      credit: 'Trenberth, Fasullo & Kiehl (2009) · IPCC AR6',
-    },
-    {
       type: 'concept',
       title: 'Key takeaways',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'greenhouse-mechanism',
+        caption: 'Greenhouse mechanism: shortwave solar passes through GHG-transparent atmosphere; surface emits longwave IR; GHGs absorb and re-emit ~50% back toward the surface (back-radiation ~333 W m⁻²).',
+        credit: 'Trenberth, Fasullo & Kiehl (2009) · IPCC AR6',
+      },
       body: `• **The distinction between *forcings* (what starts warming) and *feedbacks* (what amplifies it) is foundational to climate science**: CO₂ is a forcing — it drives temperature change regardless of what temperature is doing. Water vapour, ice-albedo, and cloud changes are feedbacks — they respond to temperature and determine how severe the final warming becomes. Without understanding this distinction, it is impossible to reason clearly about why small changes in trace gases can produce large changes in climate.
 
 • **The same ozone molecule is both shield and pollutant depending on altitude**: Stratospheric ozone (15–35 km (9–22 mi)) blocks UV-B that would otherwise shred DNA; tropospheric ozone formed from car exhaust and sunlight directly damages lung tissue and crop yields — a vivid reminder that molecular context determines whether a substance is beneficial or harmful.

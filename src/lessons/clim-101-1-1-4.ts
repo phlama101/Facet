@@ -120,10 +120,15 @@ Understanding attribution science is important not just for academic understandi
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'co2-temperature-record',
-      caption: 'CO₂ and Antarctic temperature anomaly from ice cores (Vostok/EPICA) over 420,000 years. Current CO₂ (~422 ppm) exceeds the natural range by ~50%; the two variables co-vary through all glacial-interglacial cycles.',
-      credit: 'Petit et al. (1999) · Siegenthaler et al. (2005) · NOAA GML',
+      type: 'concept',
+      title: 'The CO₂–temperature relationship over glacial cycles',
+      body: 'Ice core records show CO₂ and Antarctic temperature rising and falling in lockstep across 420,000 years of glacial cycles, providing the longest direct observational evidence that greenhouse gas concentration and global temperature are tightly coupled.',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'co2-temperature-record',
+        caption: 'CO₂ and Antarctic temperature anomaly from ice cores (Vostok/EPICA) over 420,000 years. Current CO₂ (~422 ppm) exceeds the natural range by ~50%; the two variables co-vary through all glacial-interglacial cycles.',
+        credit: 'Petit et al. (1999) · Siegenthaler et al. (2005) · NOAA GML',
+      },
     },
     {
       type: 'quiz',

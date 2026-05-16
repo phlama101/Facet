@@ -122,10 +122,15 @@ The concept of **radiative forcing** quantifies how much any given change — in
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'atmospheric-circulation-cells',
-      caption: 'Three-cell atmospheric circulation model per hemisphere: Hadley (equator–30°), Ferrel (30°–60°), and Polar (60°–90°). Surface wind belts and ITCZ position are shown at the boundaries.',
-      credit: 'Hadley (1735) · Ferrel (1856) · NOAA',
+      type: 'concept',
+      title: 'The three-cell circulation model',
+      body: 'Each hemisphere organises its atmospheric circulation into three convective cells — Hadley, Ferrel, and Polar — whose boundaries set the location of the major surface wind belts and precipitation zones.',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'atmospheric-circulation-cells',
+        caption: 'Three-cell atmospheric circulation model per hemisphere: Hadley (equator–30°), Ferrel (30°–60°), and Polar (60°–90°). Surface wind belts and ITCZ position are shown at the boundaries.',
+        credit: 'Hadley (1735) · Ferrel (1856) · NOAA',
+      },
     },
     {
       type: 'quiz',

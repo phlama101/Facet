@@ -128,14 +128,14 @@ The dynamical explanation for the LHB is the **Nice model** (named after the Cô
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'planet-comparison',
-      caption: 'All 8 planets compared by size (to scale relative to each other), distance from Sun, number of moons, average temperature, and atmospheric composition. Jupiter is ~11× Earth\'s radius.',
-      credit: 'NASA planetary fact sheets · IAU 2006',
-    },
-    {
       type: 'concept',
       title: 'Key takeaways',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'planet-comparison',
+        caption: 'All 8 planets compared by size (to scale relative to each other), distance from Sun, number of moons, average temperature, and atmospheric composition. Jupiter is ~11× Earth\'s radius.',
+        credit: 'NASA planetary fact sheets · IAU 2006',
+      },
       body: `• **Planetary differentiation happened within tens of millions of years of formation**: Accretional heat plus ²⁶Al decay melted early planetary interiors, allowing dense iron-nickel to sink to the centre while lighter silicates rose. The Hf-W chronometer — exploiting the 9-Myr half-life of ¹⁸²Hf — shows Earth's core was largely formed within ~30 million years of t₀, a geologically negligible fraction of Earth's age.\n\n• **The Moon formed from a giant impact ~50–100 Myr after Solar System formation**: A Mars-sized body called Theia struck proto-Earth, vaporising and ejecting enough material to form a disc that accreted into the Moon. The near-identical oxygen, titanium, and chromium isotope ratios of Earth and Moon, combined with the Moon's tiny iron core and volatile depletion, are the converging evidence for this scenario.\n\n• **The Late Heavy Bombardment (~4.1–3.8 Ga) was likely triggered by Jupiter-Saturn orbital resonance crossing**: Apollo impact-melt samples cluster at 3.8–4.1 Ga, suggesting a distinct bombardment spike hundreds of millions of years after normal accretion should have ended. The Nice model explains this as a consequence of giant planet orbital rearrangement scattering outer Solar System bodies inward — with direct implications for when habitable conditions first arose on Earth.`,
     },
     {

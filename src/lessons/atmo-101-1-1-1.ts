@@ -122,14 +122,14 @@ Understanding the layers of the atmosphere is essential to understanding weather
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'atmosphere-temp-profile',
-      caption: "Temperature does not decrease uniformly with altitude — it reverses twice, at the stratopause and mesopause. These reversals mark where the dominant energy source changes: ozone absorbs UV in the stratosphere; individual molecules absorb X-rays in the thermosphere.",
-      credit: 'ICAO Standard Atmosphere / NOAA',
-    },
-    {
       type: 'concept',
       title: 'Key takeaways',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'atmosphere-temp-profile',
+        caption: "Temperature does not decrease uniformly with altitude — it reverses twice, at the stratopause and mesopause. These reversals mark where the dominant energy source changes: ozone absorbs UV in the stratosphere; individual molecules absorb X-rays in the thermosphere.",
+        credit: 'ICAO Standard Atmosphere / NOAA',
+      },
       body: `• **The tropopause acts as a convective lid**: Storm tops flatten into anvil shapes exactly at this boundary because the stratosphere above it is warmer — rising air loses its buoyancy the moment it crosses into the stratosphere, which is why thunderstorms cannot punch through it.
 
 • **Temperature reversals define the layers**: The stratosphere is warm at the top (ozone absorbs UV from above) and the thermosphere is extremely hot at the top (molecules absorb X-rays), while the mesosphere — sandwiched in between — is the coldest point in the entire atmosphere at around −90°C (−130°F) near 85 km (53 mi) altitude.

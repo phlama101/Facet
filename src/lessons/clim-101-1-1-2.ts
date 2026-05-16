@@ -120,10 +120,15 @@ The **ocean** transports approximately 40% of the total equator-to-pole heat flu
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'ice-albedo-feedback',
-      caption: 'Ice-albedo positive feedback loop: warming → ice/snow melt → lower surface albedo → more solar absorption → more warming. Arctic has warmed ~3–4× faster than the global mean since 1979.',
-      credit: 'IPCC AR6 · NSIDC',
+      type: 'concept',
+      title: 'The ice-albedo feedback loop',
+      body: 'Warming melts sea ice and snow, exposing darker ocean and land surfaces that absorb more solar radiation — driving further warming in a self-reinforcing cycle.',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'ice-albedo-feedback',
+        caption: 'Ice-albedo positive feedback loop: warming → ice/snow melt → lower surface albedo → more solar absorption → more warming. Arctic has warmed ~3–4× faster than the global mean since 1979.',
+        credit: 'IPCC AR6 · NSIDC',
+      },
     },
     {
       type: 'quiz',

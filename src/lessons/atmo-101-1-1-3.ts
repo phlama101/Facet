@@ -122,10 +122,15 @@ The energy budget also involves the atmosphere itself as an active participant. 
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'coriolis-deflection',
-      caption: "Coriolis effect: moving air is deflected right in the Northern Hemisphere and left in the Southern Hemisphere due to Earth's rotation. Results in counterclockwise NH cyclones and clockwise SH cyclones.",
-      credit: 'Coriolis (1835) · NOAA',
+      type: 'concept',
+      title: 'Coriolis deflection and wind spirals',
+      body: "Earth's rotation deflects moving air to the right in the Northern Hemisphere and to the left in the Southern Hemisphere, curving straight winds into the spiralling patterns that define cyclones and anticyclones.",
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'coriolis-deflection',
+        caption: "Coriolis effect: moving air is deflected right in the Northern Hemisphere and left in the Southern Hemisphere due to Earth's rotation. Results in counterclockwise NH cyclones and clockwise SH cyclones.",
+        credit: 'Coriolis (1835) · NOAA',
+      },
     },
     {
       type: 'quiz',

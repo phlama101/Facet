@@ -120,15 +120,15 @@ Energy from the Sun drives the climate system. The solar constant (the flux of s
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'earth-energy-budget',
-      caption: "Earth's global mean energy budget. Of 340 W/m² incoming solar radiation, 30% is reflected (planetary albedo), 23% is absorbed by the atmosphere, and 48% by the surface. The greenhouse effect (back-radiation of 333 W/m²) raises the surface temperature ~33°C (~91°F) above what it would be without an atmosphere.",
-      credit: 'Trenberth, Fasullo & Kiehl (2009) / NASA CERES EBAF',
-    },
-    {
       type: 'concept',
       title: 'Key takeaways',
       body: `• **The five coupled components**: The climate system is not just the atmosphere — the ocean, cryosphere, biosphere, and lithosphere each shape climate on timescales from days to millions of years, exchanging energy and matter through feedbacks that can amplify or dampen any initial perturbation.\n\n• **Earth's current energy imbalance**: The planet is absorbing ~0.87 W m⁻² more energy than it emits — the direct physical signature of human-caused warming. The ocean takes up ~93 % of this excess heat, making ocean heat content the most reliable indicator of the imbalance.\n\n• **Feedbacks determine climate sensitivity**: Small orbital or greenhouse-gas changes get amplified — or dampened — by feedbacks such as water vapour (strongest positive) and ice-albedo; together they set the equilibrium climate sensitivity at ~3 °C (~5.4°F) per CO₂ doubling, meaning the system's response is far larger than the raw forcing alone.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'earth-energy-budget',
+        caption: "Earth's global mean energy budget. Of 340 W/m² incoming solar radiation, 30% is reflected (planetary albedo), 23% is absorbed by the atmosphere, and 48% by the surface. The greenhouse effect (back-radiation of 333 W/m²) raises the surface temperature ~33°C (~91°F) above what it would be without an atmosphere.",
+        credit: 'Trenberth, Fasullo & Kiehl (2009) / NASA CERES EBAF',
+      },
     },
     {
       type: 'quiz',

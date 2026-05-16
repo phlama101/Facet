@@ -122,15 +122,15 @@ Once ~100-km planetesimals exist in sufficient numbers, gravitational interactio
       },
     },
     {
-      type: 'scientific-diagram' as const,
-      id: 'solar-system-formation',
-      caption: 'Five-stage solar system formation sequence: molecular cloud → gravitational collapse → protostar + disc → planetesimals → mature solar system. Timescale spans ~5 Gyr before to 4.5 Gyr ago.',
-      credit: 'Schmidt (1944) · Safronov (1969) · ALMA protoplanetary disc observations',
-    },
-    {
       type: 'concept',
       title: 'Key takeaways',
       body: `• **The solar nebula collapsed ~4.568 billion years ago, triggered by a supernova**: That nearby explosion both injected short-lived radioactive ²⁶Al into the cloud and provided the shockwave that pushed the cloud past the Jeans mass threshold, starting collapse. The ²⁶Mg left behind in chondritic meteorites is the chemical fingerprint proving this happened.\n\n• **The metre-sized barrier is solved by the streaming instability**: Dust grains grow easily to centimetre-pebble sizes, but at roughly 0.1–1 metre, aerodynamic drag drains them into the Sun before they can grow further. The streaming instability — a hydrodynamic clumping process — bypasses this entirely by collapsing dense particle filaments directly into ~100-km planetesimals, explaining why that size dominates the asteroid belt today.\n\n• **The snow line at ~2.7 AU is the dividing line between rocky and giant planets**: Inside it, only rock and metal condense as solids, limiting planetary mass. Beyond it, water ice roughly doubles the available solid material, allowing cores to rapidly reach the ~10 Earth-mass threshold needed to gravitationally capture a hydrogen-helium envelope — the origin of Jupiter and Saturn's enormous size.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'solar-system-formation',
+        caption: 'Five-stage solar system formation sequence: molecular cloud → gravitational collapse → protostar + disc → planetesimals → mature solar system. Timescale spans ~5 Gyr before to 4.5 Gyr ago.',
+        credit: 'Schmidt (1944) · Safronov (1969) · ALMA protoplanetary disc observations',
+      },
     },
     {
       type: 'quiz',
