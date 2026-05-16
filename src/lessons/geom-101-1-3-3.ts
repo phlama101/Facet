@@ -68,14 +68,14 @@ Speleothems (cave mineral deposits) grow wherever CaCO₃-saturated drip water e
           icon: Globe,
           color: BRAND.jade,
           desc: 'Karren (small-scale etched forms), dolines/sinkholes (most common karst feature), tower karst (tropical humid karst with isolated residual hills), cockpit karst.',
-          examples: 'Guilin limestone towers, China: residual hills rising 100–200 m from alluvial plains shaped by intense subtropical dissolution; Halong Bay, Vietnam: drowned tower karst; Florida sinkhole collapse events destroying roads and homes over the Floridan Aquifer; Yucatán cenotes used by Maya as sacred water sources.',
+          examples: 'Guilin limestone towers, China: residual hills rising 100–200 m (328–656 ft) from alluvial plains shaped by intense subtropical dissolution; Halong Bay, Vietnam: drowned tower karst; Florida sinkhole collapse events destroying roads and homes over the Floridan Aquifer; Yucatán cenotes used by Maya as sacred water sources.',
         },
         {
           name: 'Cave Development: Phreatic and Vadose Stages',
           icon: Activity,
           color: BRAND.coral,
           desc: 'Phreatic: water-table-controlled, circular passages dissolve in all directions, large trunk passages; vadose: above water table, streams cut canyons into phreatic passages; cave levels record former water table positions and landscape incision.',
-          examples: 'Mammoth Cave (Kentucky): 687 km mapped, multiple levels recording successive Ohio River incision stages; Lechuguilla Cave (New Mexico): formed by H₂SO₄ rising from below (sulfuric acid speleogenesis) rather than descending meteoric water; Waitomo Glowworm Cave (New Zealand): active vadose stream passage with bioluminescent larvae.',
+          examples: 'Mammoth Cave (Kentucky): 687 km (427 mi) mapped, multiple levels recording successive Ohio River incision stages; Lechuguilla Cave (New Mexico): formed by H₂SO₄ rising from below (sulfuric acid speleogenesis) rather than descending meteoric water; Waitomo Glowworm Cave (New Zealand): active vadose stream passage with bioluminescent larvae.',
         },
         {
           name: 'Speleothems as Climate Archives',

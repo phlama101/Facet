@@ -76,6 +76,20 @@ Plutonic rocks are not just academic curiosities — they compose the deep basem
           examples: 'Mt. St. Helens pre-1980: cryptodome (a bulge of viscous lava that domes upward beneath the surface without erupting) deformed north flank → collapse → eruption · Krafla, Iceland 1975–84: 9-yr rifting episode, magma injected laterally in dykes 80 km (50 mi) from caldera · Long Valley Caldera: active magmatic intrusion (uplift, CO₂ emissions) despite last eruption 760,000 yr ago',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: '/visuals/vol.svg',
+        alt: 'Cross-section of a volcano showing internal structure',
+        aspectRatio: '16/9',
+        credit: 'Facet Education',
+        annotations: [
+          { id: 'eruption-column', x: 50, y: 14, label: 'Eruption column', description: 'A rising plume of ash, gas, and pyroclastic material ejected during explosive eruptions; can reach 40 km (25 mi) into the stratosphere.' },
+          { id: 'crater', x: 50, y: 24, label: 'Crater', description: 'The bowl-shaped depression at the summit of a volcano, formed by explosive eruptions or collapse; the vent opening through which eruptions occur.' },
+          { id: 'central-conduit', x: 53, y: 45, label: 'Central conduit', description: 'The primary pipe-like channel through which magma ascends from the magma chamber to the surface vent; may be filled with solidified lava between eruptions.' },
+          { id: 'magma-chamber', x: 50, y: 82, label: 'Magma chamber', description: 'A reservoir of partially molten rock (typically crystal mush with 5–50% melt) in the crust, 2–10 km (1.2–6.2 mi) below the surface; the source of volcanic eruptions.' },
+          { id: 'lava-flow', x: 15, y: 70, label: 'Lava flow', description: 'A stream of molten rock flowing down the volcano\'s flanks; basaltic flows can travel at 10–30 km/h (6–19 mph) and extend tens of kilometres from the vent.' },
+        ],
+      },
     },
     {
       type: 'quiz',

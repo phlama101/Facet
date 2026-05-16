@@ -47,6 +47,47 @@ This lesson explains how solid rock can flow, where the heat driving that flow c
           def: "The spontaneous breakdown of unstable atomic nuclei — in Earth's case, primarily uranium-238, uranium-235, thorium-232, and potassium-40 — which releases heat as a by-product. This ongoing process inside the mantle and crust is one of the two major sources of Earth's internal heat.",
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'insight',
+      headline: "Mantle rock flows at roughly 2–5 cm (0.8–2.0 in) per year — about the speed your fingernails grow",
+      body: 'The asthenosphere moves at 2–5 centimetres per year, which is virtually imperceptible on a human timescale. Yet over 50 million years — a geologically modest interval — this motion carries rock over 1,000 km (621 mi). The Atlantic Ocean has been widening at about 2.5 cm (1.0 in) per year since it began opening ~180 million years ago, meaning it has grown from nothing to its current 3,000 km (1864 mi) width entirely through this "fingernail-speed" convection. Time is the variable that turns imperceptible motion into continental-scale rearrangement.',
+    },
+    {
+      type: 'concept',
+      title: 'How rock flows — and what it sets in motion',
+      body: `The most common misconception about the mantle is that it must be liquid in order to flow. It is not. The mantle is solid rock. But solid does not mean immovable, and understanding the distinction is central to understanding how Earth works.
+
+**Solid-state creep — flow without melting.** At room temperature and atmospheric pressure, rock behaves like a rigid solid. Drop it and it shatters. But in the deep mantle, temperatures exceed 1,000–3,000°C (1832–5432°F) and pressures reach millions of times atmospheric pressure. Under those conditions, the crystal lattices inside rock minerals slowly deform — atoms shuffle from one position to another within the solid structure, allowing the rock to change shape over time without ever melting. Geologists call this **solid-state creep**. The rock remains solid throughout; it simply deforms the way glass in a very old window pane deforms over centuries — almost imperceptibly slowly, but continuously.
+
+Think of it this way: on a timescale of seconds, mantle rock is as rigid as steel. On a timescale of a million years, it flows like a very, very thick syrup. The asthenosphere — the upper portion of the mantle that lies directly beneath the lithosphere — is where this flow happens most easily, because it is hot enough and close enough to its melting point that solid-state creep operates more readily there than in the deeper mantle.
+
+**Two sources of heat.** For convection to continue, the deep mantle must stay hotter than the near-surface mantle. Two processes maintain this temperature gradient.
+
+The first is **residual heat** from Earth's formation. When countless rocky and metallic bodies collided to assemble Earth roughly 4.54 billion years ago, those collisions converted enormous amounts of kinetic energy into heat. The early Earth was partly or largely molten. Since then it has been cooling — but it is so large, and rock conducts heat so poorly, that the original heat is still escaping billions of years later. The deep interior remains far hotter than the surface, and that gradient drives flow.
+
+The second is **radioactive decay**. Scattered throughout the mantle and crust are atoms of uranium-238, uranium-235, thorium-232, and potassium-40. As these unstable nuclei decay, they release heat continuously. This is not a one-time event: it is an ongoing process that has been adding heat to Earth's interior for its entire history, though the rate declines gradually as the radioactive atoms are used up. The combination of residual formation heat and ongoing radioactive decay is what keeps the mantle hot enough to convect today.
+
+**The convection cycle, step by step.** Picture a parcel of rock deep in the lower mantle, heated from below by the outer core and from within by radioactive decay. It warms, expands slightly, and becomes just a little less dense than the surrounding rock. Buoyancy pushes it upward — slowly, perhaps a few centimetres per year on average. As it rises, pressure decreases and it continues to expand. Eventually it approaches the base of the lithosphere, where it spreads outward horizontally, transferring heat to the surface above. Having lost much of its heat, the rock contracts, becomes denser, and begins to sink back down. As it descends, it compresses and warms again from the surrounding rock, eventually returning to the deep mantle to be reheated. The loop is complete: this is a **convection cell**.
+
+These cells are not neat, small circles. They are broad, irregular structures thousands of kilometres across. Multiple cells exist at once throughout the mantle, interacting in complex ways. The overall pattern is less like a simple row of conveyor belts and more like the turbulent interior of a slowly simmering pot — but the underlying physics is the same.
+
+**What convection does at Earth's surface.** This is where the payoff arrives. Mantle convection does not stay hidden in the deep interior — its effects are written all over the surface of the planet.
+
+Where hot mantle rises toward the surface, it pushes up on the lithosphere from below. The plates above are pulled apart by the upwelling flow. As they separate, the pressure on the rising mantle drops, and a small fraction of it partially melts to form magma. That magma rises into the gap and solidifies as new **oceanic crust** — basalt, the same rock that makes up the ocean floor. This is why mid-ocean ridges exist: they are the surface expression of rising mantle convection, and they are the sites where new ocean floor is continuously manufactured.
+
+Where cold, dense mantle sinks, it drags the overlying plate downward with it. Dense oceanic crust follows the sinking mantle back into the interior — a process called **subduction**. This is the mechanism that destroys old oceanic crust. It explains directly why no ocean floor is older than about 200 million years: the oldest oceanic crust has already been pulled back into the mantle and recycled. Continental crust, being far less dense, resists sinking and accumulates at the surface, which is why continental rocks can be billions of years old.
+
+The full story of divergent boundaries, convergent boundaries, and transform faults belongs to Module 1.4. For now, the key point is this: **mantle convection is the engine; plate motion is the output**.
+
+**How we know — two lines of evidence.** Because the mantle is inaccessible to direct observation, the evidence for convection is indirect. Two methods are particularly convincing.
+
+**Heat-flow measurements** use sensitive instruments on the seafloor and in continental drill holes to measure how much heat is leaking out per unit area. The pattern matches convection exactly: mid-ocean ridges — where hot mantle is actively rising — have heat-flow values several times higher than old, cold ocean floor or stable continental cratons. The spatial map of heat flow across the globe is essentially a map of where the mantle is rising and where it is sinking.
+
+**Seismic tomography** is perhaps the most dramatic. By collecting data from thousands of earthquakes and hundreds of seismic stations worldwide, geophysicists can measure how fast seismic waves travel through every part of the mantle — and then use those speed variations to construct three-dimensional images of the mantle's interior, much as a medical CT scanner constructs images of the human body from X-ray measurements. Hot rock transmits seismic waves more slowly; cold rock transmits them faster. Tomographic images clearly show large blobs of slow (hot) material rising beneath mid-ocean ridges and fast (cold) slabs of material plunging downward at subduction zones — exactly what convection predicts.
+
+In the next lesson, we turn to the innermost part of Earth: the core. The core is not only the ultimate heat source for mantle convection — it is also the source of something entirely different and extraordinarily important: Earth's magnetic field.`,
       interaction: {
         type: 'annotated-image' as const,
         src: '/visuals/geo-interior.svg',
@@ -91,47 +132,6 @@ This lesson explains how solid rock can flow, where the heat driving that flow c
           },
         ],
       },
-    },
-    {
-      type: 'callout' as const,
-      variant: 'insight',
-      headline: "Mantle rock flows at roughly 2–5 cm (0.8–2.0 in) per year — about the speed your fingernails grow",
-      body: 'The asthenosphere moves at 2–5 centimetres per year, which is virtually imperceptible on a human timescale. Yet over 50 million years — a geologically modest interval — this motion carries rock over 1,000 km (621 mi). The Atlantic Ocean has been widening at about 2.5 cm (1.0 in) per year since it began opening ~180 million years ago, meaning it has grown from nothing to its current 3,000 km (1864 mi) width entirely through this "fingernail-speed" convection. Time is the variable that turns imperceptible motion into continental-scale rearrangement.',
-    },
-    {
-      type: 'concept',
-      title: 'How rock flows — and what it sets in motion',
-      body: `The most common misconception about the mantle is that it must be liquid in order to flow. It is not. The mantle is solid rock. But solid does not mean immovable, and understanding the distinction is central to understanding how Earth works.
-
-**Solid-state creep — flow without melting.** At room temperature and atmospheric pressure, rock behaves like a rigid solid. Drop it and it shatters. But in the deep mantle, temperatures exceed 1,000–3,000°C (1832–5432°F) and pressures reach millions of times atmospheric pressure. Under those conditions, the crystal lattices inside rock minerals slowly deform — atoms shuffle from one position to another within the solid structure, allowing the rock to change shape over time without ever melting. Geologists call this **solid-state creep**. The rock remains solid throughout; it simply deforms the way glass in a very old window pane deforms over centuries — almost imperceptibly slowly, but continuously.
-
-Think of it this way: on a timescale of seconds, mantle rock is as rigid as steel. On a timescale of a million years, it flows like a very, very thick syrup. The asthenosphere — the upper portion of the mantle that lies directly beneath the lithosphere — is where this flow happens most easily, because it is hot enough and close enough to its melting point that solid-state creep operates more readily there than in the deeper mantle.
-
-**Two sources of heat.** For convection to continue, the deep mantle must stay hotter than the near-surface mantle. Two processes maintain this temperature gradient.
-
-The first is **residual heat** from Earth's formation. When countless rocky and metallic bodies collided to assemble Earth roughly 4.54 billion years ago, those collisions converted enormous amounts of kinetic energy into heat. The early Earth was partly or largely molten. Since then it has been cooling — but it is so large, and rock conducts heat so poorly, that the original heat is still escaping billions of years later. The deep interior remains far hotter than the surface, and that gradient drives flow.
-
-The second is **radioactive decay**. Scattered throughout the mantle and crust are atoms of uranium-238, uranium-235, thorium-232, and potassium-40. As these unstable nuclei decay, they release heat continuously. This is not a one-time event: it is an ongoing process that has been adding heat to Earth's interior for its entire history, though the rate declines gradually as the radioactive atoms are used up. The combination of residual formation heat and ongoing radioactive decay is what keeps the mantle hot enough to convect today.
-
-**The convection cycle, step by step.** Picture a parcel of rock deep in the lower mantle, heated from below by the outer core and from within by radioactive decay. It warms, expands slightly, and becomes just a little less dense than the surrounding rock. Buoyancy pushes it upward — slowly, perhaps a few centimetres per year on average. As it rises, pressure decreases and it continues to expand. Eventually it approaches the base of the lithosphere, where it spreads outward horizontally, transferring heat to the surface above. Having lost much of its heat, the rock contracts, becomes denser, and begins to sink back down. As it descends, it compresses and warms again from the surrounding rock, eventually returning to the deep mantle to be reheated. The loop is complete: this is a **convection cell**.
-
-These cells are not neat, small circles. They are broad, irregular structures thousands of kilometres across. Multiple cells exist at once throughout the mantle, interacting in complex ways. The overall pattern is less like a simple row of conveyor belts and more like the turbulent interior of a slowly simmering pot — but the underlying physics is the same.
-
-**What convection does at Earth's surface.** This is where the payoff arrives. Mantle convection does not stay hidden in the deep interior — its effects are written all over the surface of the planet.
-
-Where hot mantle rises toward the surface, it pushes up on the lithosphere from below. The plates above are pulled apart by the upwelling flow. As they separate, the pressure on the rising mantle drops, and a small fraction of it partially melts to form magma. That magma rises into the gap and solidifies as new **oceanic crust** — basalt, the same rock that makes up the ocean floor. This is why mid-ocean ridges exist: they are the surface expression of rising mantle convection, and they are the sites where new ocean floor is continuously manufactured.
-
-Where cold, dense mantle sinks, it drags the overlying plate downward with it. Dense oceanic crust follows the sinking mantle back into the interior — a process called **subduction**. This is the mechanism that destroys old oceanic crust. It explains directly why no ocean floor is older than about 200 million years: the oldest oceanic crust has already been pulled back into the mantle and recycled. Continental crust, being far less dense, resists sinking and accumulates at the surface, which is why continental rocks can be billions of years old.
-
-The full story of divergent boundaries, convergent boundaries, and transform faults belongs to Module 1.4. For now, the key point is this: **mantle convection is the engine; plate motion is the output**.
-
-**How we know — two lines of evidence.** Because the mantle is inaccessible to direct observation, the evidence for convection is indirect. Two methods are particularly convincing.
-
-**Heat-flow measurements** use sensitive instruments on the seafloor and in continental drill holes to measure how much heat is leaking out per unit area. The pattern matches convection exactly: mid-ocean ridges — where hot mantle is actively rising — have heat-flow values several times higher than old, cold ocean floor or stable continental cratons. The spatial map of heat flow across the globe is essentially a map of where the mantle is rising and where it is sinking.
-
-**Seismic tomography** is perhaps the most dramatic. By collecting data from thousands of earthquakes and hundreds of seismic stations worldwide, geophysicists can measure how fast seismic waves travel through every part of the mantle — and then use those speed variations to construct three-dimensional images of the mantle's interior, much as a medical CT scanner constructs images of the human body from X-ray measurements. Hot rock transmits seismic waves more slowly; cold rock transmits them faster. Tomographic images clearly show large blobs of slow (hot) material rising beneath mid-ocean ridges and fast (cold) slabs of material plunging downward at subduction zones — exactly what convection predicts.
-
-In the next lesson, we turn to the innermost part of Earth: the core. The core is not only the ultimate heat source for mantle convection — it is also the source of something entirely different and extraordinarily important: Earth's magnetic field.`,
       cards: [
         {
           name: 'Heat Sources',
