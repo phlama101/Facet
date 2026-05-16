@@ -29,9 +29,9 @@ Estuaries — semi-enclosed coastal bodies where fresh and salt water mix — ar
 
 Beyond deltas and estuaries, coastal geomorphology encompasses a rich array of landforms. Sea cliffs and wave-cut platforms develop where wave energy attacks resistant rock coasts. Pocket beaches form in embayments between headlands. Barrier islands — elongate sandy islands paralleling the coast — form on gently sloping shelves where wave action builds and maintains sand barriers (Outer Banks, NC; Padre Island, TX). Spits extend from headlands into open water along the direction of longshore drift; tombolos connect islands to the mainland through sediment deposition.
 
-Longshore drift (littoral transport) is the engine of beach systems. Waves approaching the shore at an angle drive a net transport of sand along the coast. The littoral sediment budget balances inputs (river supply, cliff erosion, onshore transport) against outputs (offshore loss, inlet bypassing, human removal). Where the budget is negative, beaches erode; where positive, they accrete. Coastal erosion rates of 0.5–5 m/yr are common on soft coasts globally, with some areas exceeding 10 m/yr during storms.
+Longshore drift (littoral transport) is the engine of beach systems. Waves approaching the shore at an angle drive a net transport of sand along the coast. The littoral sediment budget balances inputs (river supply, cliff erosion, onshore transport) against outputs (offshore loss, inlet bypassing, human removal). Where the budget is negative, beaches erode; where positive, they accrete. Coastal erosion rates of 0.5–5 m/yr (2–16 ft/yr) are common on soft coasts globally, with some areas exceeding 10 m/yr (33 ft/yr) during storms.
 
-Human impacts have profoundly disrupted coastal sediment systems. Dam construction reduces river sediment supply to deltas, triggering subsidence and shoreline retreat — the Aswan Dam (1970) cut Nile sediment delivery by ~98%, and the Nile delta shoreline has retreated up to 3 km since. The Mississippi delta is losing approximately 50 km² of land per year due to compaction, subsidence, reduced sediment supply from upstream levees and dams, and sea level rise. Groundwater and hydrocarbon extraction accelerate delta subsidence. The Mekong delta in Vietnam is subsiding 1–2 cm/yr — faster than sea level rise — threatening millions of people. Hard coastal engineering (seawalls, groins, jetties) provides local protection but often displaces erosion downdrift, exporting the problem to unprotected shores.`,
+Human impacts have profoundly disrupted coastal sediment systems. Dam construction reduces river sediment supply to deltas, triggering subsidence and shoreline retreat — the Aswan Dam (1970) cut Nile sediment delivery by ~98%, and the Nile delta shoreline has retreated up to 3 km (1.9 mi) since. The Mississippi delta is losing approximately 50 km² (19 sq mi) of land per year due to compaction, subsidence, reduced sediment supply from upstream levees and dams, and sea level rise. Groundwater and hydrocarbon extraction accelerate delta subsidence. The Mekong delta in Vietnam is subsiding 1–2 cm/yr (0.4–0.8 in/yr) — faster than sea level rise — threatening millions of people. Hard coastal engineering (seawalls, groins, jetties) provides local protection but often displaces erosion downdrift, exporting the problem to unprotected shores.`,
       keyTerms: [
         {
           term: 'River-Dominated Delta',
@@ -65,7 +65,7 @@ Human impacts have profoundly disrupted coastal sediment systems. Dam constructi
           icon: Waves,
           color: BRAND.accent,
           desc: `Galloway\'s ternary diagram places every delta in a triangle of three competing forces. River-dominated deltas prograde rapidly; wave-dominated deltas are smoothed into arcuate shorelines; tide-dominated deltas develop funnel mouths with parallel sand bars. Most deltas occupy intermediate positions, shifting over time as climate and sea level change.`,
-          examples: `Mississippi bird-foot (river-dominated): distributary lobes extend ~300 km into the Gulf. Nile arcuate (wave-dominated): ~250 km smooth shoreline. Ganges-Brahmaputra tidal funnel: world\'s largest delta, shaped by 4–6 m tidal range.`,
+          examples: `Mississippi bird-foot (river-dominated): distributary lobes extend ~300 km (186 mi) into the Gulf. Nile arcuate (wave-dominated): ~250 km (155 mi) smooth shoreline. Ganges-Brahmaputra tidal funnel: world\'s largest delta, shaped by 4–6 m tidal range.`,
         },
         {
           name: 'Estuaries: Where Salt Meets Fresh Water',
@@ -79,14 +79,14 @@ Human impacts have profoundly disrupted coastal sediment systems. Dam constructi
           icon: Layers,
           color: BRAND.coral,
           desc: 'Barrier islands form on low-gradient shelves when wave action builds and maintains sand barriers above sea level. They are not static — they migrate landward via overwash and inlet processes in response to sea level rise. Longshore drift transports sediment along the shoreface; groins and jetties interrupt this transport, protecting updrift beaches while starving downdrift ones.',
-          examples: 'Outer Banks, NC: 300 km barrier island chain, retreating 1–2 m/yr on average; Cape Hatteras Lighthouse moved 870 m in 1999. Padre Island, TX: longest US barrier island (210 km). Post-hurricane Katrina: Chandeleur Islands lost 85% of area.',
+          examples: 'Outer Banks, NC: 300 km (186 mi) barrier island chain, retreating 1–2 m/yr (3–7 ft/yr) on average; Cape Hatteras Lighthouse moved 870 m (2,854 ft) in 1999. Padre Island, TX: longest US barrier island (210 km / 130 mi). Post-hurricane Katrina: Chandeleur Islands lost 85% of area.',
         },
         {
           name: 'Coastal Erosion, Human Impacts, and Sediment Budgets',
           icon: Activity,
           color: BRAND.gold,
-          desc: 'Coastal erosion rates of 0.5–5 m/yr are common on soft coasts. Delta subsidence accelerates when dams cut sediment supply and groundwater extraction compacts sediments. Sea level rise shifts the balance of every coastal budget toward erosion. Hard engineering (seawalls, groins) provides local protection but disrupts natural sediment transport, often exporting erosion downdrift.',
-          examples: 'Mississippi delta: ~50 km²/yr land loss; subsidence 5–25 mm/yr from compaction and fluid extraction. Nile delta: shoreline retreating up to 3 km since Aswan Dam (1970) cut sediment by ~98%. Mekong delta: subsiding 1–2 cm/yr, faster than sea level rise, threatening 17 million people.',
+          desc: 'Coastal erosion rates of 0.5–5 m/yr (2–16 ft/yr) are common on soft coasts. Delta subsidence accelerates when dams cut sediment supply and groundwater extraction compacts sediments. Sea level rise shifts the balance of every coastal budget toward erosion. Hard engineering (seawalls, groins) provides local protection but disrupts natural sediment transport, often exporting erosion downdrift.',
+          examples: 'Mississippi delta: ~50 km² (19 sq mi)/yr land loss; subsidence 5–25 mm/yr from compaction and fluid extraction. Nile delta: shoreline retreating up to 3 km (1.9 mi) since Aswan Dam (1970) cut sediment by ~98%. Mekong delta: subsiding 1–2 cm/yr (0.4–0.8 in/yr), faster than sea level rise, threatening 17 million people.',
         },
       ],
     },
@@ -125,7 +125,7 @@ Human impacts have profoundly disrupted coastal sediment systems. Dam constructi
           {
             id: 'beach-barrier',
             label: 'Beach / Barrier Island',
-            description: 'Sandy shoreline environments in dynamic equilibrium between wave energy, sediment supply, and sea level. Barrier islands migrate landward at 0.5–2 m/yr on average. Beach profiles adjust seasonally between summer accretion (swell) and winter erosion (storm).',
+            description: 'Sandy shoreline environments in dynamic equilibrium between wave energy, sediment supply, and sea level. Barrier islands migrate landward at 0.5–2 m/yr (2–7 ft/yr) on average. Beach profiles adjust seasonally between summer accretion (swell) and winter erosion (storm).',
             color: BRAND.gold,
           },
           {

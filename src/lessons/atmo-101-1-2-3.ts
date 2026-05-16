@@ -66,7 +66,7 @@ The study of severe convective weather is both scientifically fascinating and pr
           name: 'Lightning and Thunder Physics',
           icon: Sun,
           color: BRAND.gold,
-          desc: 'Charge separation: graupel (−) falls; ice crystals (+) rise; updraft separates them. CG (cloud-to-ground) lightning: ~30% of all lightning; stepped leader from cloud, return stroke from ground upward at ~10⁸ m/s; heats channel to 30,000 K. Thunder: explosive expansion of heated air; travels ~1 km per 3 seconds (speed of sound); audible to ~25 km (16 mi). Ball lightning: rare, poorly understood. Lightning rods: Franklin (1752) established grounding principle.',
+          desc: 'Charge separation: graupel (−) falls; ice crystals (+) rise; updraft separates them. CG (cloud-to-ground) lightning: ~30% of all lightning; stepped leader from cloud, return stroke from ground upward at ~10⁸ m/s; heats channel to 30,000 K. Thunder: explosive expansion of heated air; travels ~1 km (0.6 mi) per 3 seconds (speed of sound); audible to ~25 km (16 mi). Ball lightning: rare, poorly understood. Lightning rods: Franklin (1752) established grounding principle.',
           examples: 'Global lightning rate: ~100 CG strikes/second · Keraunopathy (injury caused by a lightning strike): includes cardiac arrest, neurological effects — lightning kills ~2,000/yr globally · Lake Maracaibo, Venezuela: highest lightning flash rate on Earth (~250 flashes/km²/yr) from persistent nocturnal convection',
         },
       ],
