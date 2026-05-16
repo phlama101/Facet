@@ -167,7 +167,7 @@ const globalCarbonCycle: Lesson = {
         {
           q: 'What does the Keeling Curve record and what trend does it show?',
           a: [
-            'The Keeling Curve records global mean surface temperature anomalies measured at Mauna Loa since 1958; it shows a steady warming trend of approximately 0.18°C per decade superimposed on interannual variability from ENSO',
+            'The Keeling Curve records global mean surface temperature anomalies measured at Mauna Loa since 1958; it shows a steady warming trend of approximately 0.18°C (0.3°F) per decade superimposed on interannual variability from ENSO',
             'The Keeling Curve records atmospheric CO₂ concentration at Mauna Loa Observatory, Hawaii, since March 1958; it shows a continuous upward trend from 316 ppm to over 424 ppm (2023) superimposed on a 6–8 ppm seasonal oscillation caused by Northern Hemisphere photosynthesis',
             'The Keeling Curve records the isotopic ratio ¹³C/¹²C in atmospheric CO₂, providing direct evidence of the Suess effect; the trend shows a steady decrease in δ¹³C proving that fossil fuels are responsible for rising CO₂',
             'The Keeling Curve records ocean surface pCO₂ at a single Pacific location since 1958; it shows atmospheric CO₂ tracking ocean values closely, confirming that the ocean is the primary driver of atmospheric CO₂ variability on interannual timescales',

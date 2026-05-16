@@ -25,7 +25,7 @@ const massWasting: Lesson = {
 
 Slope stability is quantified by the Factor of Safety (FS), defined as the ratio of resisting forces to driving forces: FS = τ_resisting / τ_driving. A slope with FS > 1 is stable; FS = 1 is at the verge of failure; FS < 1 means failure is occurring. Engineering practice typically requires FS ≥ 1.3–1.5 to accommodate uncertainty in soil parameters. The governing failure criterion is the Mohr-Coulomb equation: τ = c + σ\'tanφ, where c is cohesion, φ is the internal friction angle, and σ\' is effective normal stress. Effective normal stress equals total stress minus pore water pressure u: σ\' = σ − u.
 
-Heavy rainfall is the most common trigger. Infiltrating water raises pore pressure u, reducing σ\' and therefore shear strength, while the driving stress (weight of the slope material) remains unchanged — FS decreases. The 2014 Oso debris avalanche in Washington State killed 43 people when a hillslope underlain by saturated glacial outwash and till liquefied after weeks of above-normal rainfall; FS dropped below 1 rapidly once pore pressures reached critical levels. Earthquakes are a second major trigger: the 2008 Mw 7.9 Wenchuan earthquake in Sichuan, China generated approximately 15,000 landslides, burying towns and blocking rivers to form hazardous landslide dams. Seismic shaking generates excess pore pressure in saturated soils and can fracture intact rock masses. Slope undercutting by rivers, coastal erosion, road construction, and deforestation are widespread anthropogenic triggers. Volcanic activity combines seismic shaking, hydrothermal alteration of rock strength, and crater-lake drainage to produce some of the largest mass movements on record — the 1970 Nevado Huascarán rockslide-debris flow in Peru killed approximately 22,000 people and travelled more than 160 km.
+Heavy rainfall is the most common trigger. Infiltrating water raises pore pressure u, reducing σ\' and therefore shear strength, while the driving stress (weight of the slope material) remains unchanged — FS decreases. The 2014 Oso debris avalanche in Washington State killed 43 people when a hillslope underlain by saturated glacial outwash and till liquefied after weeks of above-normal rainfall; FS dropped below 1 rapidly once pore pressures reached critical levels. Earthquakes are a second major trigger: the 2008 Mw 7.9 Wenchuan earthquake in Sichuan, China generated approximately 15,000 landslides, burying towns and blocking rivers to form hazardous landslide dams. Seismic shaking generates excess pore pressure in saturated soils and can fracture intact rock masses. Slope undercutting by rivers, coastal erosion, road construction, and deforestation are widespread anthropogenic triggers. Volcanic activity combines seismic shaking, hydrothermal alteration of rock strength, and crater-lake drainage to produce some of the largest mass movements on record — the 1970 Nevado Huascarán rockslide-debris flow in Peru killed approximately 22,000 people and travelled more than 160 km (99 mi).
 
 Debris flows are a particularly lethal sub-type: water-saturated granular material moves as a viscous slurry at 1–30 m/s, confined to channels before spreading across alluvial fans. Lahars — volcanic debris flows incorporating ash and pyroclastic material — can travel more than 100 km from the source volcano. The 1985 Nevado del Ruiz lahar buried the town of Armero, killing ~23,000. Alluvial fans in mountain valleys are archives of past debris-flow events and define the primary hazard footprint for future flows. Hazard zonation maps combine topographic analysis, geological mapping, rainfall frequency statistics, and runout modelling to delineate risk zones. Modern early warning systems couple rain-gauge networks, soil-moisture sensors, and seismometers with automated alerts, demonstrating that mass-wasting fatalities are substantially reducible with adequate monitoring infrastructure.`,
       keyTerms: [
@@ -54,8 +54,8 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
     {
       type: 'callout' as const,
       variant: 'data',
-      headline: 'The Grand Canyon is 446 km long, up to 29 km wide, and over 1,800 m deep',
-      body: 'The Grand Canyon is 446 km long, up to 29 km wide, and over 1,800 m deep. The Colorado River carved it by removing an estimated 10 km³ of rock over 5-6 million years. The exposed rock layers span 1.8 billion years of Earth\'s history — nearly 40% of the planet\'s age.',
+      headline: 'The Grand Canyon is 446 km (277 mi) long, up to 29 km (18 mi) wide, and over 1,800 m (5,906 ft) deep',
+      body: 'The Grand Canyon is 446 km (277 mi) long, up to 29 km (18 mi) wide, and over 1,800 m (5,906 ft) deep. The Colorado River carved it by removing an estimated 10 km³ (2.4 cu mi) of rock over 5-6 million years. The exposed rock layers span 1.8 billion years of Earth\'s history — nearly 40% of the planet\'s age.',
     },
     {
       type: 'concept',
@@ -81,13 +81,13 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
           icon: Globe,
           color: BRAND.coral,
           desc: 'Rainfall infiltration raises pore pressure (most common trigger). Seismic shaking generates excess pore pressure in saturated soils and fractures rock masses. Road cuts, deforestation, and irrigation remove buttressing, add weight, and intercept runoff — reducing FS. Volcanic unrest combines all three mechanisms.',
-          examples: '2008 Mw 7.9 Wenchuan earthquake triggered ~15,000 landslides across 50,000 km², blocking rivers and killing thousands. Deforestation-linked shallow debris flows are recurrent in the Philippines, Central America, and Brazil — root cohesion loss reduces FS by 0.1–0.5 on steep tropical slopes.',
+          examples: '2008 Mw 7.9 Wenchuan earthquake triggered ~15,000 landslides across 50,000 km² (19,305 sq mi), blocking rivers and killing thousands. Deforestation-linked shallow debris flows are recurrent in the Philippines, Central America, and Brazil — root cohesion loss reduces FS by 0.1–0.5 on steep tropical slopes.',
         },
         {
           name: 'Debris Flows and Lahar Hazards',
           icon: ArrowRight,
           color: BRAND.gold,
-          desc: 'Water-saturated debris moves as a viscous slurry at 1–30 m/s; pressure surges and boulders in the flow front cause structural destruction. Lahars (volcanic debris flows) incorporate ash and hydrothermally altered material and can travel 100+ km. Alluvial fans mark past deposition zones and define future hazard footprints.',
+          desc: 'Water-saturated debris moves as a viscous slurry at 1–30 m/s; pressure surges and boulders in the flow front cause structural destruction. Lahars (volcanic debris flows) incorporate ash and hydrothermally altered material and can travel 100+ km (62+ mi). Alluvial fans mark past deposition zones and define future hazard footprints.',
           examples: `1985 Nevado del Ruiz lahar buried Armero, Colombia, killing ~23,000 — the deadliest volcanic disaster of the 20th century. Hong Kong\'s 1976 rainstorm triggered hundreds of debris flows killing 18 people, directly driving the establishment of the Geotechnical Engineering Office (GEO) and systematic slope safety programmes.`,
         },
       ],
@@ -117,7 +117,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
             x: 67,
             y: 56,
             label: 'Frost Wedging',
-            description: 'A mechanical weathering process where water entering rock cracks freezes and expands by ~9%, exerting pressures up to 200 MPa. Repeated freeze-thaw cycles progressively widen cracks and shatter rock into angular fragments. Frost wedging is most active in periglacial environments where temperature repeatedly cycles around 0°C, and is responsible for the jagged appearance of alpine rock faces and talus slopes.',
+            description: 'A mechanical weathering process where water entering rock cracks freezes and expands by ~9%, exerting pressures up to 200 MPa. Repeated freeze-thaw cycles progressively widen cracks and shatter rock into angular fragments. Frost wedging is most active in periglacial environments where temperature repeatedly cycles around 0°C (32°F), and is responsible for the jagged appearance of alpine rock faces and talus slopes.',
           },
           {
             id: 'colluvium',
@@ -171,7 +171,7 @@ Debris flows are a particularly lethal sub-type: water-saturated granular materi
           {
             id: 'transport',
             label: 'Mass Movement Transport',
-            description: 'Material travels downslope, potentially entraining additional sediment and water. Debris flows travel at 1–30 m/s in channels; rock avalanches can exceed 100 m/s on steep terrain. Runout distance scales with volume and slope gradient.',
+            description: 'Material travels downslope, potentially entraining additional sediment and water. Debris flows travel at 1–30 m/s in channels; rock avalanches can exceed 100 m/s on steep terrain.', Runout distance scales with volume and slope gradient.',
             color: BRAND.amethyst,
           },
           {

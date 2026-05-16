@@ -45,7 +45,7 @@ These findings forced a fundamental reconceptualisation. Runoff generation is no
         },
         {
           term: 'Macropores and preferential flow',
-          def: 'Macropores are large continuous pores (>0.5 mm diameter) created by earthworms, decaying roots, shrinkage cracks, and soil fauna. They bypass the soil matrix and allow rapid preferential flow of water and solutes deep into the soil profile, sometimes reaching the water table in minutes rather than days. Preferential flow invalidates simple piston-flow assumptions and complicates contaminant transport modelling.',
+          def: 'Macropores are large continuous pores (>0.5 mm (0.02 in) diameter) created by earthworms, decaying roots, shrinkage cracks, and soil fauna. They bypass the soil matrix and allow rapid preferential flow of water and solutes deep into the soil profile, sometimes reaching the water table in minutes rather than days. Preferential flow invalidates simple piston-flow assumptions and complicates contaminant transport modelling.',
         },
         {
           term: 'Variable contributing area (VCA)',
@@ -84,7 +84,7 @@ The **two-water world hypothesis** adds a chemical dimension to this mechanistic
           name: 'Subsurface Stormflow via Macropores',
           icon: Activity,
           color: BRAND.gold,
-          desc: 'Lateral flow through soil, accelerated dramatically by macropores. Earthworm channels: 1–3 mm diameter, 1–2 m depth, up to 400/m². Root pipes: former root pathways creating continuous vertical-to-lateral conduits. Soil cracks: 0.1–10 mm wide, forming at pF 4+ moisture deficits. Macropore flow velocity: 10–1,000 mm/hr vs 0.01–10 mm/hr matrix. Explains rapid stormflow from forested catchments without surface runoff.',
+          desc: 'Lateral flow through soil, accelerated dramatically by macropores. Earthworm channels: 1–3 mm (0.12 in) diameter, 1–2 m (7 ft) depth, up to 400/m². Root pipes: former root pathways creating continuous vertical-to-lateral conduits. Soil cracks: 0.1–10 mm (0.39 in) wide, forming at pF 4+ moisture deficits. Macropore flow velocity: 10–1,000 mm/hr vs 0.01–10 mm/hr matrix. Explains rapid stormflow from forested catchments without surface runoff.',
           examples: 'Hubbard Brook, NH: >85% of stormflow is subsurface; no overland flow observed · H.J. Andrews, OR: macropore pipes deliver stormflow within 30 min of rain onset · Welsh catchments: dye tracer experiments show bypass flow reaching water table in <1 hr · New Zealand volcanic soils: allophane matrix slow but macropores deliver 60% of hillslope discharge',
         },
         {
@@ -112,14 +112,14 @@ The **partial area concept** (Betson 1964, Cappus 1960) predates TOPMODEL but de
           icon: Layers,
           color: BRAND.accent,
           desc: 'TWI λ = ln(a/tan β). Local water table depth: z_i = z̄ + m(λ̄ − λ_i). Saturated area fraction expands predictably with catchment wetness. Requires only a DEM + rainfall-runoff data. Assumes: lateral transmissivity decays exponentially with depth; hydraulic gradients equal topographic slope. Computationally efficient; widely used in continental-scale hydrological modelling.',
-          examples: 'Global TWI mapping from SRTM 90m DEM: identifies flood-prone valley floors · Rhine catchment TOPMODEL calibration: m ≈ 0.032 m, explains 85% of streamflow variance · East African rift valleys: high-λ wetlands critical for regional water balance · Appalachian headwaters: TWI explains spatial pattern of soil organic carbon accumulation',
+          examples: 'Global TWI mapping from SRTM 90m (295 ft) DEM: identifies flood-prone valley floors · Rhine catchment TOPMODEL calibration: m ≈ 0.032 m (0 ft), explains 85% of streamflow variance · East African rift valleys: high-λ wetlands critical for regional water balance · Appalachian headwaters: TWI explains spatial pattern of soil organic carbon accumulation',
         },
         {
           name: 'Expanding/Contracting Channel Network',
           icon: Activity,
           color: BRAND.coral,
           desc: 'Active channel network length varies by 2–5× between baseflow and flood conditions. Ephemeral first-order channels activate in TWI hollows as the saturated wedge reaches the surface. Channel head location controlled by critical contributing area threshold. Stream network expansion acts as a hydraulic short-circuit — each new channel element captures hillslope storage that previously drained slowly. Mapped by drone thermal IR (groundwater exfiltration is cooler than surface runoff).',
-          examples: 'Maimai catchment, NZ: channel network length doubles from 200m to 400m during 50mm storms · Welsh uplands: active stream length correlates r=0.91 with antecedent precipitation index · Vermont headwaters: ephemeral channels contribute >40% of annual sediment load when activated · California coast range: channel head advance rate 2–15 m/hr during frontal storms',
+          examples: 'Maimai catchment, NZ: channel network length doubles from 200m (656 ft) to 400m (1312 ft) during 50mm (1.97 in) storms · Welsh uplands: active stream length correlates r=0.91 with antecedent precipitation index · Vermont headwaters: ephemeral channels contribute >40% of annual sediment load when activated · California coast range: channel head advance rate 2–15 m/hr during frontal storms',
         },
       ],
     },
@@ -152,7 +152,7 @@ The **partial area concept** (Betson 1964, Cappus 1960) predates TOPMODEL but de
           {
             id: 'macropore',
             label: 'Macropore / Preferential Flow',
-            description: 'A fraction of infiltrated water bypasses the soil matrix through macropores — earthworm channels (400/m², 1–3 mm diameter), decayed root pipes (1–50 mm), shrinkage cracks, and interaggregate voids. Flow velocities are 10–1,000× higher than matrix flow, delivering water to the water table in minutes to hours. Preferential flow is triggered when infiltration rate exceeds soil matrix unsaturated hydraulic conductivity. Explains rapid stormflow without Hortonian overland flow.',
+            description: 'A fraction of infiltrated water bypasses the soil matrix through macropores — earthworm channels (400/m², 1–3 mm (0.12 in) diameter), decayed root pipes (1–50 mm (1.97 in)), shrinkage cracks, and interaggregate voids. Flow velocities are 10–1,000× higher than matrix flow, delivering water to the water table in minutes to hours. Preferential flow is triggered when infiltration rate exceeds soil matrix unsaturated hydraulic conductivity. Explains rapid stormflow without Hortonian overland flow.',
             color: BRAND.gold,
           },
           {

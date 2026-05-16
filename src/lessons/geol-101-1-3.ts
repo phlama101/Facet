@@ -59,35 +59,35 @@ This lesson explains how solid rock can flow, where the heat driving that flow c
             x: 73,
             y: 33,
             label: 'Crust',
-            description: 'The outermost solid shell of Earth, ranging from ~5 km thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
+            description: 'The outermost solid shell of Earth, ranging from ~5 km (3.1 mi) thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km (43 mi) beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
           },
           {
             id: 'mantle',
             x: 17,
             y: 44,
             label: 'Mantle',
-            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C at the top to ~4,000°C at the base, and composition transitions from peridotite in the upper mantle to denser mineral phases in the lower mantle.',
+            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km (1802 mi) depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C (1112°F) at the top to ~4,000°C (7232°F) at the base, and composition transitions from peridotite in the upper mantle to denser mineral phases in the lower mantle.',
           },
           {
             id: 'lower-mantle',
             x: 50,
             y: 56,
             label: 'Lower Mantle',
-            description: 'The deeper portion of the mantle (660–2,900 km), where extreme pressure converts rock into high-density mineral phases — chiefly bridgmanite (the most abundant mineral in Earth\'s interior, formed from olivine under extreme pressure) and ferropericlase (an iron-magnesium oxide making up ~20% of this layer). Seismic waves travel faster here, revealing increasing rock rigidity despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
+            description: 'The deeper portion of the mantle (660–2,900 km (410–1802 mi)), where extreme pressure converts rock into high-density mineral phases — chiefly bridgmanite (the most abundant mineral in Earth\'s interior, formed from olivine under extreme pressure) and ferropericlase (an iron-magnesium oxide making up ~20% of this layer). Seismic waves travel faster here, revealing increasing rock rigidity despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
           },
           {
             id: 'outer-core',
             x: 50,
             y: 78,
             label: 'Outer Core',
-            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
+            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km (3169 mi) depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
           },
           {
             id: 'inner-core',
             x: 50,
             y: 89,
             label: 'Inner Core',
-            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km in radius. Despite temperatures of ~5,000–6,000°C, extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
+            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
           },
         ],
       },
@@ -95,15 +95,15 @@ This lesson explains how solid rock can flow, where the heat driving that flow c
     {
       type: 'callout' as const,
       variant: 'insight',
-      headline: "Mantle rock flows at roughly 2–5 cm per year — about the speed your fingernails grow",
-      body: 'The asthenosphere moves at 2–5 centimetres per year, which is virtually imperceptible on a human timescale. Yet over 50 million years — a geologically modest interval — this motion carries rock over 1,000 km. The Atlantic Ocean has been widening at about 2.5 cm per year since it began opening ~180 million years ago, meaning it has grown from nothing to its current 3,000 km width entirely through this "fingernail-speed" convection. Time is the variable that turns imperceptible motion into continental-scale rearrangement.',
+      headline: "Mantle rock flows at roughly 2–5 cm (0.8–2.0 in) per year — about the speed your fingernails grow",
+      body: 'The asthenosphere moves at 2–5 centimetres per year, which is virtually imperceptible on a human timescale. Yet over 50 million years — a geologically modest interval — this motion carries rock over 1,000 km (621 mi). The Atlantic Ocean has been widening at about 2.5 cm (1.0 in) per year since it began opening ~180 million years ago, meaning it has grown from nothing to its current 3,000 km (1864 mi) width entirely through this "fingernail-speed" convection. Time is the variable that turns imperceptible motion into continental-scale rearrangement.',
     },
     {
       type: 'concept',
       title: 'How rock flows — and what it sets in motion',
       body: `The most common misconception about the mantle is that it must be liquid in order to flow. It is not. The mantle is solid rock. But solid does not mean immovable, and understanding the distinction is central to understanding how Earth works.
 
-**Solid-state creep — flow without melting.** At room temperature and atmospheric pressure, rock behaves like a rigid solid. Drop it and it shatters. But in the deep mantle, temperatures exceed 1,000–3,000 °C and pressures reach millions of times atmospheric pressure. Under those conditions, the crystal lattices inside rock minerals slowly deform — atoms shuffle from one position to another within the solid structure, allowing the rock to change shape over time without ever melting. Geologists call this **solid-state creep**. The rock remains solid throughout; it simply deforms the way glass in a very old window pane deforms over centuries — almost imperceptibly slowly, but continuously.
+**Solid-state creep — flow without melting.** At room temperature and atmospheric pressure, rock behaves like a rigid solid. Drop it and it shatters. But in the deep mantle, temperatures exceed 1,000–3,000°C (1832–5432°F) and pressures reach millions of times atmospheric pressure. Under those conditions, the crystal lattices inside rock minerals slowly deform — atoms shuffle from one position to another within the solid structure, allowing the rock to change shape over time without ever melting. Geologists call this **solid-state creep**. The rock remains solid throughout; it simply deforms the way glass in a very old window pane deforms over centuries — almost imperceptibly slowly, but continuously.
 
 Think of it this way: on a timescale of seconds, mantle rock is as rigid as steel. On a timescale of a million years, it flows like a very, very thick syrup. The asthenosphere — the upper portion of the mantle that lies directly beneath the lithosphere — is where this flow happens most easily, because it is hot enough and close enough to its melting point that solid-state creep operates more readily there than in the deeper mantle.
 
@@ -179,7 +179,7 @@ In the next lesson, we turn to the innermost part of Earth: the core. The core i
             'The mantle flows only near the surface in the asthenosphere; the rest of the mantle is completely rigid and does not move',
           ],
           correct: 2,
-          explain: "The mantle is definitively solid — S-waves (shear waves, which cannot travel through liquid) pass through it freely, so it cannot be liquid (A is wrong). While small melt fractions can exist locally in the asthenosphere, the mantle does not flow because of distributed pockets of magma — the bulk of the mantle is melt-free solid rock that deforms without melting (B is wrong). The correct answer is C: at temperatures above roughly 1,000 °C and under pressures millions of times greater than the atmosphere, crystal lattices in rock minerals deform atom by atom over millions of years, allowing solid rock to flow the way extremely viscous syrup flows — this is solid-state creep. While the asthenosphere does flow more easily than the deeper mantle (D is partly right), the deeper mantle also convects — it is not rigid and immobile; the entire mantle participates in the convection cycle, just at different rates.",
+          explain: "The mantle is definitively solid — S-waves (shear waves, which cannot travel through liquid) pass through it freely, so it cannot be liquid (A is wrong). While small melt fractions can exist locally in the asthenosphere, the mantle does not flow because of distributed pockets of magma — the bulk of the mantle is melt-free solid rock that deforms without melting (B is wrong). The correct answer is C: at temperatures above roughly 1,000°C (1832°F) and under pressures millions of times greater than the atmosphere, crystal lattices in rock minerals deform atom by atom over millions of years, allowing solid rock to flow the way extremely viscous syrup flows — this is solid-state creep. While the asthenosphere does flow more easily than the deeper mantle (D is partly right), the deeper mantle also convects — it is not rigid and immobile; the entire mantle participates in the convection cycle, just at different rates.",
         },
         {
           q: "At a location where a hot mantle plume rises toward Earth's surface, what is the most likely surface result?",

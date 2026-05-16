@@ -80,7 +80,7 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
           icon: Layers,
           color: BRAND.coral,
           desc: '1922 Colorado River Compact allocated water based on an anomalously wet decade. Reduced snowpack + higher ET + overallocation = structural crisis. Lake Mead and Powell fell to ~25% capacity by 2022.',
-          examples: 'Overallocation: the Compact apportioned ~18.5 km³/yr; modern gauged flows average ~15 km³/yr. Warming adds ~0.5°C of effective ET-driven loss per degree of regional temperature increase, beyond precipitation changes alone.',
+          examples: 'Overallocation: the Compact apportioned ~18.5 km³ (4.4 cu mi)/yr; modern gauged flows average ~15 km³ (3.6 cu mi)/yr. Warming adds ~0.5°C (33°F) of effective ET-driven loss per degree of regional temperature increase, beyond precipitation changes alone.',
         },
         {
           name: 'Amazon: Fire-Deforestation-Drought Feedback',
@@ -94,7 +94,7 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
           icon: Activity,
           color: BRAND.amethyst,
           desc: 'Milly et al. (2008): "Stationarity Is Dead." Flood frequency analysis based on historical records underestimates future risk in drying regions and underestimates flood frequency in wetting regions. Infrastructure designed for historical return periods is now miscalibrated.',
-          examples: 'IPCC AR6: 1-in-50-year floods become ~1-in-10-year events at 2°C in many temperate river basins. Dam spillways designed for 1% annual exceedance probability (100-year flood) based on pre-1980 records may face that flow every 20–30 years by mid-century.',
+          examples: 'IPCC AR6: 1-in-50-year floods become ~1-in-10-year events at 2°C (36°F) in many temperate river basins. Dam spillways designed for 1% annual exceedance probability (100-year flood) based on pre-1980 records may face that flow every 20–30 years by mid-century.',
         },
       ],
     },
@@ -128,8 +128,8 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
           name: 'ISIMIP: Cross-Sector Coordination',
           icon: Zap,
           color: BRAND.coral,
-          desc: 'ISIMIP provides bias-corrected GCM outputs at standardised warming levels (1.5°C, 2°C, 3°C, 4°C) to hydrological, agricultural, health, and ecosystem models, enabling internally consistent global impact assessments.',
-          examples: 'ISIMIP2b: found that limiting warming to 1.5°C vs 2°C avoids significant river flood exposure for ~11 million people globally. Used to underpin IPCC AR6 Impacts chapter assessments and Paris Agreement target comparisons.',
+          desc: 'ISIMIP provides bias-corrected GCM outputs at standardised warming levels (1.5°C (35°F), 2°C (36°F), 3°C (37°F), 4°C (39°F)) to hydrological, agricultural, health, and ecosystem models, enabling internally consistent global impact assessments.',
+          examples: 'ISIMIP2b: found that limiting warming to 1.5°C (35°F) vs 2°C (36°F) avoids significant river flood exposure for ~11 million people globally. Used to underpin IPCC AR6 Impacts chapter assessments and Paris Agreement target comparisons.',
         },
       ],
     },
@@ -144,7 +144,7 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
           {
             id: 'warming-driver',
             label: 'Anthropogenic Warming',
-            description: 'Rising GHG concentrations increase global mean temperature. Each degree Celsius raises saturation vapour pressure ~7% (Clausius-Clapeyron) and increases atmospheric evaporative demand. CMIP6 ensemble projects 2–5°C warming by 2100 depending on emission pathway.',
+            description: 'Rising GHG concentrations increase global mean temperature. Each degree Celsius raises saturation vapour pressure ~7% (Clausius-Clapeyron) and increases atmospheric evaporative demand. CMIP6 ensemble projects 2–5°C (41°F) warming by 2100 depending on emission pathway.',
             color: BRAND.accent,
           },
           {
@@ -174,7 +174,7 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
           {
             id: 'non-stationarity',
             label: 'Non-Stationarity: Infrastructure Risk',
-            description: 'Historical flood frequencies underestimate future risk. Design return periods calibrated to pre-warming records are now miscalibrated. Milly et al. (2008): "Stationarity Is Dead." ISIMIP projections show 1-in-50-year floods becoming 1-in-10-year events in many river basins by 2°C of warming.',
+            description: 'Historical flood frequencies underestimate future risk. Design return periods calibrated to pre-warming records are now miscalibrated. Milly et al. (2008): "Stationarity Is Dead." ISIMIP projections show 1-in-50-year floods becoming 1-in-10-year events in many river basins by 2°C (36°F) of warming.',
             color: BRAND.amethyst,
           },
         ],
@@ -206,13 +206,13 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
         {
           q: 'The 1922 Colorado River Compact apportioned water among seven US states based on early 20th-century flow records. Why does this make the Colorado River system structurally vulnerable to climate change beyond the direct hydrological impacts?',
           a: [
-            'The 1922 Compact allocated water based on an anomalously wet decade, apportioning more water among states (~18.5 km³/yr) than the river carries in average years (~15 km³/yr); warming-driven reductions are therefore superimposed on a pre-existing structural deficit in which the river was already overallocated before any climate change signal',
+            'The 1922 Compact allocated water based on an anomalously wet decade, apportioning more water among states (~18.5 km³ (4.4 cu mi)/yr) than the river carries in average years (~15 km³ (3.6 cu mi)/yr); warming-driven reductions are therefore superimposed on a pre-existing structural deficit in which the river was already overallocated before any climate change signal',
             'The 1922 Compact did not include water for Mexico, so all reductions in flow fall entirely on US states, which amplifies the domestic policy impact of any streamflow decrease but does not change the physical hydrology of the basin',
             'The 1922 Compact prioritised agricultural water rights over municipal uses; as warming reduces flow, cities face disproportionate cuts because their rights are junior to agricultural rights established in 1922, creating a political rather than hydrological vulnerability',
             'The 1922 Compact was based on a Compact assumption of stationarity in precipitation patterns; its vulnerability is entirely legal rather than physical, because states can renegotiate allocations through interstate compact amendments when flows decline',
           ],
           correct: 0,
-          explain: 'The 1922 Colorado River Compact was negotiated during 1905–1922, which tree-ring and dendrohydrological records show was the wettest multi-decade period in at least 1,200 years of reconstructed Colorado River flow. The Compact allocated approximately 18.5 km³/yr between the upper and lower basins, plus a treaty commitment to Mexico. But the long-term average annual flow of the Colorado is approximately 15 km³/yr — meaning the river was structurally overallocated from the very beginning, before any climate change signal was detectable. Warming-driven reductions of 10–20% (from increased ET and reduced snowpack) are therefore not simply subtracting from an adequate baseline; they are compounding an existing 20–30% structural deficit. By 2022, this combination had driven storage in the two main reservoirs (Mead and Powell) to approximately 25% of capacity, threatening both water supply and hydropower generation. This case is a canonical example of how institutional frameworks built on stationarity assumptions become structurally misaligned with a non-stationary climate.',
+          explain: 'The 1922 Colorado River Compact was negotiated during 1905–1922, which tree-ring and dendrohydrological records show was the wettest multi-decade period in at least 1,200 years of reconstructed Colorado River flow. The Compact allocated approximately 18.5 km³ (4.4 cu mi)/yr between the upper and lower basins, plus a treaty commitment to Mexico. But the long-term average annual flow of the Colorado is approximately 15 km³ (3.6 cu mi)/yr — meaning the river was structurally overallocated from the very beginning, before any climate change signal was detectable. Warming-driven reductions of 10–20% (from increased ET and reduced snowpack) are therefore not simply subtracting from an adequate baseline; they are compounding an existing 20–30% structural deficit. By 2022, this combination had driven storage in the two main reservoirs (Mead and Powell) to approximately 25% of capacity, threatening both water supply and hydropower generation. This case is a canonical example of how institutional frameworks built on stationarity assumptions become structurally misaligned with a non-stationary climate.',
         },
         {
           q: 'Milly et al. (2008) declared "Stationarity Is Dead" for water management. What specific consequences does non-stationarity have for the design of flood-control infrastructure?',
@@ -234,7 +234,7 @@ Attribution science using CMIP6 model ensembles projects 10–30% runoff decreas
             'The primary source of uncertainty is natural internal variability; multi-decadal ocean circulation modes (AMO, PDO) dominate basin-scale runoff variability over the 21st century, overwhelming the forced climate change signal; ISIMIP addresses this by running 50-member large ensembles to average out internal variability',
           ],
           correct: 2,
-          explain: 'In the cascade from global forcing to local hydrological impacts, multiple layers of modelling uncertainty compound. Studies systematically partitioning uncertainty in basin-scale runoff projections consistently find that GCM uncertainty (arising from differences in model-simulated climate sensitivity, cloud feedbacks, and atmospheric circulation) accounts for the largest share of total projection spread — typically 50–70% of the variance in runoff projections at the basin scale. Regional climate model (RCM) choice adds perhaps 15–25%, and the choice of hydrological model contributes a further 10–20%. Emission scenario uncertainty becomes progressively more important after mid-century but is not the dominant source in the near term. ISIMIP addresses this by providing standardised, bias-corrected GCM climate forcing from multiple GCMs at specific warming levels (1.5°C, 2°C, 3°C, 4°C above pre-industrial) to multiple sectoral models (hydrology, agriculture, fisheries, health). This design allows researchers to separate GCM uncertainty from model uncertainty and scenario uncertainty, and to produce internally consistent impact assessments across sectors. The standardisation also enables direct comparison of impacts at Paris Agreement warming targets.',
+          explain: 'In the cascade from global forcing to local hydrological impacts, multiple layers of modelling uncertainty compound. Studies systematically partitioning uncertainty in basin-scale runoff projections consistently find that GCM uncertainty (arising from differences in model-simulated climate sensitivity, cloud feedbacks, and atmospheric circulation) accounts for the largest share of total projection spread — typically 50–70% of the variance in runoff projections at the basin scale. Regional climate model (RCM) choice adds perhaps 15–25%, and the choice of hydrological model contributes a further 10–20%. Emission scenario uncertainty becomes progressively more important after mid-century but is not the dominant source in the near term. ISIMIP addresses this by providing standardised, bias-corrected GCM climate forcing from multiple GCMs at specific warming levels (1.5°C (35°F), 2°C (36°F), 3°C (37°F), 4°C (39°F) above pre-industrial) to multiple sectoral models (hydrology, agriculture, fisheries, health). This design allows researchers to separate GCM uncertainty from model uncertainty and scenario uncertainty, and to produce internally consistent impact assessments across sectors. The standardisation also enables direct comparison of impacts at Paris Agreement warming targets.',
         },
       ],
     },

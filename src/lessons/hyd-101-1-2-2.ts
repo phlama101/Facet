@@ -39,7 +39,7 @@ Flood frequency analysis relates flood magnitude to recurrence interval (return 
         },
         {
           term: 'Unit Hydrograph',
-          def: 'Hydrograph produced by 1 unit (e.g., 1 mm) of effective rainfall over a watershed; used to estimate design floods.',
+          def: 'Hydrograph produced by 1 unit (e.g., 1 mm (0.04 in)) of effective rainfall over a watershed; used to estimate design floods.',
         },
         {
           term: 'Annual Exceedance Probability (AEP)',
@@ -197,13 +197,13 @@ Flood frequency analysis relates flood magnitude to recurrence interval (return 
         {
           q: 'How does the unit hydrograph concept help engineers design storm drainage systems?',
           a: [
-            'It provides a universal hydrograph shape valid for all watersheds above 100 km²',
+            'It provides a universal hydrograph shape valid for all watersheds above 100 km² (39 sq mi)',
             'It defines the basin\'s characteristic response to 1 unit of effective rainfall; scaling and superposition allow estimation of the runoff hydrograph from any design storm',
             'It measures actual discharge per unit watershed area; enables direct comparison between gauged and ungauged basins',
             'It separates baseflow from storm runoff automatically; baseflow is defined as the unit hydrograph baseline',
           ],
           correct: 1,
-          explain: `The unit hydrograph (UH) concept (Sherman, 1932) is based on linear systems theory: if the UH is the response to 1 mm of effective rainfall uniformly distributed in time, then the response to any other effective rainfall can be estimated by scaling and time-shifting the UH. For a complex multi-hour storm with varying intensity, the total runoff hydrograph is the sum of UH contributions from each time period, each scaled by that period\'s effective rainfall. This superposition principle allows engineers to compute the design flood hydrograph for any synthetic design storm (e.g., the 24-hour PMP or 100-year 24-hour rainfall) from measurements made during historical storms. Engineers use UH-derived peak flows to design culverts, bridges, detention basins, and spillways.`,
+          explain: `The unit hydrograph (UH) concept (Sherman, 1932) is based on linear systems theory: if the UH is the response to 1 mm (0.04 in) of effective rainfall uniformly distributed in time, then the response to any other effective rainfall can be estimated by scaling and time-shifting the UH. For a complex multi-hour storm with varying intensity, the total runoff hydrograph is the sum of UH contributions from each time period, each scaled by that period\'s effective rainfall. This superposition principle allows engineers to compute the design flood hydrograph for any synthetic design storm (e.g., the 24-hour PMP or 100-year 24-hour rainfall) from measurements made during historical storms. Engineers use UH-derived peak flows to design culverts, bridges, detention basins, and spillways.`,
         },
       ],
     },

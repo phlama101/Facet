@@ -27,7 +27,7 @@ The **North Atlantic Oscillation (NAO)** has been observed since the early 19th 
 
 The **Arctic Oscillation (AO)**, formalised by Thompson and Wallace (1998), is the broader hemispheric counterpart of the NAO. Defined as the leading **empirical orthogonal function (EOF)** of Northern Hemisphere extratropical sea-level pressure, the AO describes a seesaw in atmospheric mass between the Arctic and the surrounding midlatitudes across all longitudes simultaneously — an **annular mode**. The NAO is effectively the North Atlantic regional expression of the AO; the two indices are highly correlated (r ≈ 0.7–0.9 depending on season and dataset), though the AO captures the Pacific sector as well. In its positive phase (AO+), atmospheric pressure is anomalously low over the Arctic and high over the midlatitudes, confining cold polar air to the Arctic with a strong, tight polar vortex. In its negative phase (AO−), pressure patterns reverse — the polar vortex weakens, cold Arctic air can penetrate deep into the midlatitudes in what the popular media calls a "polar vortex" event.
 
-The AO has a critical vertical dimension. The **stratospheric polar vortex** — a powerful cyclonic circulation centred over the winter pole at stratospheric altitudes (~10–30 km) — is closely linked to the tropospheric AO. Baldwin and Dunkerton (2001) demonstrated that anomalously strong or weak stratospheric polar vortex events propagate downward to influence tropospheric circulation over the following 60 days, constituting some of the most valuable long-range predictability in extratropical forecasting. A **sudden stratospheric warming (SSW)** event — in which the stratospheric polar vortex is disrupted and temperatures can rise by 30–50°C within days — typically precedes negative AO and NAO conditions in the troposphere by 1–8 weeks, offering a rare window of predictability for wintertime cold air outbreaks in Europe and North America.
+The AO has a critical vertical dimension. The **stratospheric polar vortex** — a powerful cyclonic circulation centred over the winter pole at stratospheric altitudes (~10–30 km (6–19 mi)) — is closely linked to the tropospheric AO. Baldwin and Dunkerton (2001) demonstrated that anomalously strong or weak stratospheric polar vortex events propagate downward to influence tropospheric circulation over the following 60 days, constituting some of the most valuable long-range predictability in extratropical forecasting. A **sudden stratospheric warming (SSW)** event — in which the stratospheric polar vortex is disrupted and temperatures can rise by 30–50°C (86–122°F) within days — typically precedes negative AO and NAO conditions in the troposphere by 1–8 weeks, offering a rare window of predictability for wintertime cold air outbreaks in Europe and North America.
 
 The **Southern Hemisphere counterpart** of the AO is the **Antarctic Oscillation (AAO)**, more formally termed the **Southern Annular Mode (SAM)**. Like the AO, the SAM describes a hemispheric pressure seesaw between the Antarctic polar cap and the surrounding midlatitudes. Both the AO (also called the **Northern Annular Mode, NAM**) and SAM share the same dynamical origin — eddy-mean flow interactions involving baroclinic eddies and the mean zonal flow — and together represent the dominant modes of extratropical variability in both hemispheres. The SAM in its positive phase drives the westerly wind belt poleward, influencing Southern Ocean circulation, Antarctic sea ice extent, and precipitation patterns from Patagonia to South Africa to New Zealand. The close relationship between the AO/NAM, SAM, the stratospheric polar vortex, and regional climate teleconnections makes these annular modes among the most studied phenomena in modern dynamical meteorology.`,
       keyTerms: [
@@ -45,7 +45,7 @@ The **Southern Hemisphere counterpart** of the AO is the **Antarctic Oscillation
         },
         {
           term: 'sudden stratospheric warming (SSW)',
-          def: 'A dramatic disruption of the stratospheric polar vortex in which stratospheric temperatures over the polar cap rise by 30–50°C within days — reversing the normal temperature gradient (pole colder than midlatitudes) and often reversing the zonal wind from westerly to easterly. SSW events occur roughly every 1–2 winters on average. Following a major SSW, negative AO/NAO conditions typically develop in the troposphere over the subsequent 1–8 weeks, increasing the probability of cold air outbreaks in Europe and North America.',
+          def: 'A dramatic disruption of the stratospheric polar vortex in which stratospheric temperatures over the polar cap rise by 30–50°C (86–122°F) within days — reversing the normal temperature gradient (pole colder than midlatitudes) and often reversing the zonal wind from westerly to easterly. SSW events occur roughly every 1–2 winters on average. Following a major SSW, negative AO/NAO conditions typically develop in the troposphere over the subsequent 1–8 weeks, increasing the probability of cold air outbreaks in Europe and North America.',
         },
         {
           term: 'Southern Annular Mode (SAM)',
@@ -78,14 +78,14 @@ The **Southern Hemisphere counterpart** of the AO is the **Antarctic Oscillation
           icon: Snowflake,
           color: BRAND.amethyst,
           desc: 'Weak Azores High and shallow Icelandic Low. Sluggish, meridional jet stream. Cold harsh winters for NW Europe and eastern North America; wet Mediterranean; cold Greenland. Atmospheric blocking dominant. Polar air outbreaks frequent.',
-          examples: 'Winter 2009–10: strongly negative NAO — coldest UK winter in 30 years, severe snowstorms in eastern US · Winter 2010–11: negative NAO, widespread blocking across Europe, Moscow heat wave (summer 2010) driven by same blocking pattern · February 2021: major SSW → AO− → Texas cold wave (temperature plunge of >30°C)',
+          examples: 'Winter 2009–10: strongly negative NAO — coldest UK winter in 30 years, severe snowstorms in eastern US · Winter 2010–11: negative NAO, widespread blocking across Europe, Moscow heat wave (summer 2010) driven by same blocking pattern · February 2021: major SSW → AO− → Texas cold wave (temperature plunge of >30°C (86°F))',
         },
         {
           name: 'AO & the Polar Vortex',
           icon: Globe,
           color: BRAND.jade,
           desc: 'AO is the hemispheric annular mode (Thompson & Wallace 1998). AO+ = strong polar vortex, cold air confined to Arctic. AO− = weak polar vortex, cold air outbreaks to midlatitudes. Stratospheric SSW events precede tropospheric AO− by 1–8 weeks (Baldwin & Dunkerton 2001).',
-          examples: 'January 2019 SSW: polar vortex split, AO plunged to −4σ, polar vortex lobe reached midwest US (wind chills −45°C in Chicago) · January 2021 SSW: AO− persisted through February, Texas freeze killed >250 people · Strong AO+ winters (e.g. 2011–12): eastern US record warmth, near-zero snow cover',
+          examples: 'January 2019 SSW: polar vortex split, AO plunged to −4σ, polar vortex lobe reached midwest US (wind chills −45°C (−49°F) in Chicago) · January 2021 SSW: AO− persisted through February, Texas freeze killed >250 people · Strong AO+ winters (e.g. 2011–12): eastern US record warmth, near-zero snow cover',
         },
         {
           name: 'SAM / AAO — Southern Counterpart',
@@ -107,7 +107,7 @@ The **Southern Hemisphere counterpart** of the AO is the **Antarctic Oscillation
           {
             id: 'polar-vortex',
             label: 'Stratospheric Polar Vortex',
-            description: 'The stratospheric polar vortex is a strong cyclonic circulation at 10–50 hPa altitude, driven by radiative cooling of the polar stratosphere in winter. When undisturbed, it forms a tight, cold core over the pole with westerly winds exceeding 80 m/s at its edge. Planetary Rossby waves propagating from the troposphere can disrupt the vortex, sometimes causing sudden stratospheric warming (SSW) events in which polar stratospheric temperatures rise 30–50°C within days and the vortex weakens, splits, or displaces off the pole. A strong (undisturbed) polar vortex favours positive AO; a disrupted vortex precedes negative AO with a 1–8 week lag (Baldwin & Dunkerton 2001).',
+            description: 'The stratospheric polar vortex is a strong cyclonic circulation at 10–50 hPa altitude, driven by radiative cooling of the polar stratosphere in winter. When undisturbed, it forms a tight, cold core over the pole with westerly winds exceeding 80 m/s at its edge. Planetary Rossby waves propagating from the troposphere can disrupt the vortex, sometimes causing sudden stratospheric warming (SSW) events in which polar stratospheric temperatures rise 30–50°C (86–122°F) within days and the vortex weakens, splits, or displaces off the pole. A strong (undisturbed) polar vortex favours positive AO; a disrupted vortex precedes negative AO with a 1–8 week lag (Baldwin & Dunkerton 2001).',
             color: BRAND.amethyst,
           },
           {
@@ -131,7 +131,7 @@ The **Southern Hemisphere counterpart** of the AO is the **Antarctic Oscillation
           {
             id: 'european-climate',
             label: 'European Winter Climate',
-            description: 'NAO+ winters: anomalously warm and wet NW Europe (UK, Ireland, Norway, Iceland); anomalously dry Mediterranean; mild temperatures across Scandinavia and the North Sea region. NAO− winters: cold spells in NW Europe and eastern North America; wet, stormy Mediterranean; cold Greenland. The temperature anomaly amplitude is 1–4°C for a one-standard-deviation NAO event, sufficient to shift the probability of frost, snow, and extreme cold significantly. Decadal NAO variability dominates low-frequency temperature trends in Europe independent of the anthropogenic warming signal.',
+            description: 'NAO+ winters: anomalously warm and wet NW Europe (UK, Ireland, Norway, Iceland); anomalously dry Mediterranean; mild temperatures across Scandinavia and the North Sea region. NAO− winters: cold spells in NW Europe and eastern North America; wet, stormy Mediterranean; cold Greenland. The temperature anomaly amplitude is 1–4°C (34–39°F) for a one-standard-deviation NAO event, sufficient to shift the probability of frost, snow, and extreme cold significantly. Decadal NAO variability dominates low-frequency temperature trends in Europe independent of the anthropogenic warming signal.',
             color: BRAND.gold,
           },
           {

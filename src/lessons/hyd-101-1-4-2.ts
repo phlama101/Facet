@@ -22,13 +22,13 @@ const damsReservoirs: Lesson = {
     {
       type: 'intro',
       title: 'Engineering rivers: power, water security, and the cost of control',
-      body: `Humans have built more than **58,000 large dams** (dams over 15 m height) worldwide, plus hundreds of thousands of smaller structures, transforming rivers from dynamic, flood-pulsed systems into regulated chains of reservoirs. The primary purposes are hydroelectric power generation, irrigation water storage, municipal supply, and flood control. **Hydropower provides approximately 16% of global electricity** and about 71% of all renewable electricity generation — making it the world's dominant renewable energy source. In Brazil, Norway, and several other nations, hydropower supplies more than 80% of national electricity.
+      body: `Humans have built more than **58,000 large dams** (dams over 15 m (49 ft) height) worldwide, plus hundreds of thousands of smaller structures, transforming rivers from dynamic, flood-pulsed systems into regulated chains of reservoirs. The primary purposes are hydroelectric power generation, irrigation water storage, municipal supply, and flood control. **Hydropower provides approximately 16% of global electricity** and about 71% of all renewable electricity generation — making it the world's dominant renewable energy source. In Brazil, Norway, and several other nations, hydropower supplies more than 80% of national electricity.
 
-The **Three Gorges Dam** on China's Yangtze River is the world's largest power station by installed capacity. Completed in 2006, it produces **22,500 MW** of electricity — enough to power roughly 80 million homes — from its 32 turbine generators. The reservoir extends **410 km** upstream into Chongqing municipality, inundating 13 cities, 140 towns, and 1,350 villages. An estimated **1.3 million people** were displaced over 15 years of construction and filling, making it the largest forced relocation in dam history. Three Gorges exemplifies both the extraordinary scale of what large dams can achieve and the profound social costs they impose.
+The **Three Gorges Dam** on China's Yangtze River is the world's largest power station by installed capacity. Completed in 2006, it produces **22,500 MW** of electricity — enough to power roughly 80 million homes — from its 32 turbine generators. The reservoir extends **410 km (255 mi)** upstream into Chongqing municipality, inundating 13 cities, 140 towns, and 1,350 villages. An estimated **1.3 million people** were displaced over 15 years of construction and filling, making it the largest forced relocation in dam history. Three Gorges exemplifies both the extraordinary scale of what large dams can achieve and the profound social costs they impose.
 
-**Sediment trapping** is one of the most consequential and underappreciated impacts of dams. Rivers carry sediment loads — sand, silt, and clay — that build deltas, replenish beaches, and maintain channel geometry. A dam impounds not just water but the sediment that would otherwise pass downstream. Globally, dams trap an estimated **25–30% of the global river sediment load** that formerly reached the sea, with some estimates placing the total at 3–4 billion tonnes annually. The **Colorado River** now delivers almost no sediment to the Gulf of California; its delta, once 8,000 km² of wetlands and habitat for the vaquita porpoise, has largely dried and eroded. The **Nile Delta** is retreating at rates of 20–50 m per year in some areas because the Aswan High Dam (completed 1970) blocks the annual flood that formerly deposited 100 million tonnes of silt on the delta and in coastal waters.
+**Sediment trapping** is one of the most consequential and underappreciated impacts of dams. Rivers carry sediment loads — sand, silt, and clay — that build deltas, replenish beaches, and maintain channel geometry. A dam impounds not just water but the sediment that would otherwise pass downstream. Globally, dams trap an estimated **25–30% of the global river sediment load** that formerly reached the sea, with some estimates placing the total at 3–4 billion tonnes annually. The **Colorado River** now delivers almost no sediment to the Gulf of California; its delta, once 8,000 km² (3,089 sq mi) of wetlands and habitat for the vaquita porpoise, has largely dried and eroded. The **Nile Delta** is retreating at rates of 20–50 m (164 ft) per year in some areas because the Aswan High Dam (completed 1970) blocks the annual flood that formerly deposited 100 million tonnes of silt on the delta and in coastal waters.
 
-**Flow regulation** by dams alters the **natural flow regime** — the characteristic pattern of high flows, low flows, seasonal flood pulses, and interannual variability that river ecosystems evolved with. Large storage dams flatten hydrographs: they hold back floods and release water in steady baseflows optimised for power generation or irrigation, rather than the seasonal pulses fish, floodplain vegetation, and riparian birds depend upon. Thermal regimes also change: water released from the deep, cold hypolimnion of a reservoir is colder in summer and warmer in winter than natural river water, stressing cold-water fish species downstream. **Dam removal** is now a significant management tool: the **Elwha River** restoration on Washington State's Olympic Peninsula involved removing two dams (Elwha Dam, 1911; Glines Canyon Dam, 1927), completed 2012–2014. Within three years, Chinook salmon returned 100 km upstream — the largest dam removal and river restoration project in US history.`,
+**Flow regulation** by dams alters the **natural flow regime** — the characteristic pattern of high flows, low flows, seasonal flood pulses, and interannual variability that river ecosystems evolved with. Large storage dams flatten hydrographs: they hold back floods and release water in steady baseflows optimised for power generation or irrigation, rather than the seasonal pulses fish, floodplain vegetation, and riparian birds depend upon. Thermal regimes also change: water released from the deep, cold hypolimnion of a reservoir is colder in summer and warmer in winter than natural river water, stressing cold-water fish species downstream. **Dam removal** is now a significant management tool: the **Elwha River** restoration on Washington State's Olympic Peninsula involved removing two dams (Elwha Dam, 1911; Glines Canyon Dam, 1927), completed 2012–2014. Within three years, Chinook salmon returned 100 km (62 mi) upstream — the largest dam removal and river restoration project in US history.`,
       keyTerms: [
         {
           term: 'Storage Dam',
@@ -52,7 +52,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
         },
         {
           term: 'Dam Removal',
-          def: 'Deliberate dismantling of a dam to restore natural river flow and sediment transport. The Elwha River removals (2012–14) are the largest dam removal project in US history, restoring salmon access to 100 km of river.',
+          def: 'Deliberate dismantling of a dam to restore natural river flow and sediment transport. The Elwha River removals (2012–14) are the largest dam removal project in US history, restoring salmon access to 100 km (62 mi) of river.',
         },
       ],
     },
@@ -66,7 +66,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
           icon: Waves,
           color: BRAND.accent,
           desc: 'Storage dams hold months to years of river flow; run-of-river dams hold hours to days. Storage dams produce firm power and enable year-round irrigation but cause greater hydrological alteration.',
-          examples: 'Hoover Dam (Nevada): storage ratio ~2 years of Colorado River flow. Bonneville Dam (Columbia River): run-of-river; power fluctuates weekly with flow. Three Gorges: 39 km³ active storage.',
+          examples: 'Hoover Dam (Nevada): storage ratio ~2 years of Colorado River flow. Bonneville Dam (Columbia River): run-of-river; power fluctuates weekly with flow. Three Gorges: 39 km³ (9.4 cu mi) active storage.',
         },
         {
           name: 'Hydropower Generation',
@@ -87,7 +87,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
           icon: Globe,
           color: BRAND.coral,
           desc: 'Storage reservoirs capture wet-season flow for release during dry growing seasons. Essential in monsoon and snowmelt-dependent systems where peak flow and peak demand are out of phase.',
-          examples: `Aswan High Dam stores ~132 km³, enabling year-round irrigation of Egypt\'s Nile Valley. Without it, Egyptian agriculture would be limited to the 3-month flood season as before 1970.`,
+          examples: `Aswan High Dam stores ~132 km³ (32 cu mi), enabling year-round irrigation of Egypt\'s Nile Valley. Without it, Egyptian agriculture would be limited to the 3-month flood season as before 1970.`,
         },
       ],
     },
@@ -101,14 +101,14 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
           icon: TrendingDown,
           color: BRAND.ruby,
           desc: 'River deltas are built by sediment deposition at the coast. Upstream dams trap sediment, starving deltas of replenishment. Combined with sea level rise, delta retreat accelerates.',
-          examples: 'Nile Delta: losing 20–50 m coastline/yr since Aswan Dam. Colorado Delta: reduced from 8,000 km² wetlands to near-zero since dams and diversions. Mekong Delta at risk from >800 upstream dams.',
+          examples: 'Nile Delta: losing 20–50 m (164 ft) coastline/yr since Aswan Dam. Colorado Delta: reduced from 8,000 km² (3,089 sq mi) wetlands to near-zero since dams and diversions. Mekong Delta at risk from >800 upstream dams.',
         },
         {
           name: 'Thermal Pollution',
           icon: Waves,
           color: BRAND.amethyst,
           desc: 'Reservoir stratification stores cold water at depth (hypolimnion). Penstock releases cold, oxygen-poor water in summer; warm water in winter. Disrupts thermal cues for fish migration and spawning.',
-          examples: 'Colorado River below Glen Canyon Dam: water temperature 8°C year-round (vs natural 0–25°C seasonal range). Native humpback chub and razorback sucker have declined severely; rainbow trout (non-native) now dominate.',
+          examples: 'Colorado River below Glen Canyon Dam: water temperature 8°C (46°F) year-round (vs natural 0–25°C (77°F) seasonal range). Native humpback chub and razorback sucker have declined severely; rainbow trout (non-native) now dominate.',
         },
         {
           name: 'Dam Removal',
@@ -187,7 +187,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
         {
           q: 'The Three Gorges Dam produces 22,500 MW of electricity. What combination of physical factors determines this output?',
           a: [
-            'The length of the reservoir (410 km) and the number of displaced people (1.3M); longer reservoirs store more water per person displaced',
+            'The length of the reservoir (410 km (255 mi)) and the number of displaced people (1.3M); longer reservoirs store more water per person displaced',
             'The hydraulic head (water height above turbines) and the discharge through turbines; power = ρ × g × Q × H × efficiency',
             'The dam\'s age and the hardness of the concrete used; newer concrete dams are more efficient than older masonry ones',
             'The width of the Yangtze River and the annual precipitation in the catchment; wider rivers at wetter locations always produce more power',
@@ -204,7 +204,7 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
             'Thermal stratification in reservoirs traps nutrients along with sediment, causing algal blooms that consume delta sediments through biodegradation',
           ],
           correct: 1,
-          explain: 'A is wrong: reservoir weight compressing downstream sediments is not a significant mechanism of delta subsidence; groundwater extraction and natural compaction are the main subsidence causes in deltas. B is correct: river deltas are dynamic equilibrium landforms — they persist only because sediment deposition by the river equals or exceeds removal by waves, tides, and sea level rise. Dams intercept 25–30% of global river sediment loads. With the sediment supply cut off, deltaic sediments eroded by waves are not replaced, and the delta retreats. The Nile Delta has lost significant agricultural land and its coastline retreats 20–50 m/year since Aswan Dam cut sediment supply to near zero. The Colorado Delta has shrunk from 8,000 km² to near-nothing. C describes channel incision below dams (a real but separate impact); D is wrong.',
+          explain: 'A is wrong: reservoir weight compressing downstream sediments is not a significant mechanism of delta subsidence; groundwater extraction and natural compaction are the main subsidence causes in deltas. B is correct: river deltas are dynamic equilibrium landforms — they persist only because sediment deposition by the river equals or exceeds removal by waves, tides, and sea level rise. Dams intercept 25–30% of global river sediment loads. With the sediment supply cut off, deltaic sediments eroded by waves are not replaced, and the delta retreats. The Nile Delta has lost significant agricultural land and its coastline retreats 20–50 m/year since Aswan Dam cut sediment supply to near zero. The Colorado Delta has shrunk from 8,000 km² (3,089 sq mi) to near-nothing. C describes channel incision below dams (a real but separate impact); D is wrong.',
         },
         {
           q: 'What is the "natural flow regime" and why is maintaining aspects of it important for river ecosystems?',
@@ -232,12 +232,12 @@ The **Three Gorges Dam** on China's Yangtze River is the world's largest power s
           q: 'The Elwha River dam removal project (2012–2014) in Washington State produced which ecological outcomes, and what made it significant?',
           a: [
             'The removals produced no significant salmon recovery because the former reservoir sediments were too contaminated with mercury to support spawning; the project is considered a cautionary example',
-            'Chinook salmon returned upstream within 3 years of removal, reopening 100 km of previously blocked river habitat; it was the largest dam removal and river restoration project in US history at the time',
-            'The removal lowered water temperatures by 5°C, enabling rainbow trout to colonise the upper river for the first time; native salmon did not recover because sea conditions had changed',
+            'Chinook salmon returned upstream within 3 years of removal, reopening 100 km (62 mi) of previously blocked river habitat; it was the largest dam removal and river restoration project in US history at the time',
+            'The removal lowered water temperatures by 5°C (41°F), enabling rainbow trout to colonise the upper river for the first time; native salmon did not recover because sea conditions had changed',
             'The project successfully restored salmon runs to their pre-dam levels of 400,000 fish per year within 5 years, proving that dam removal always fully restores river ecosystems rapidly',
           ],
           correct: 1,
-          explain: 'A is wrong: sediment contamination was not the primary challenge; the Elwha project did involve managing the release of reservoir sediments but was not considered a failure. B is correct: removal of Elwha Dam (33 m, built 1911) and Glines Canyon Dam (64 m, built 1927) was completed by 2014. Within three years, Chinook salmon were observed spawning in reaches blocked for over a century, and all five Pacific salmon species began recolonising upstream habitat. The project reopened approximately 100 km of river and demonstrated that dam removal can produce rapid, measurable ecological recovery. It remains the largest dam removal project in US history and has inspired over 100 dam removals per year across the US. C is wrong because native salmon, not rainbow trout, were the restoration focus. D overstates recovery speed; full return to pre-dam abundances takes decades and depends on ocean conditions.',
+          explain: 'A is wrong: sediment contamination was not the primary challenge; the Elwha project did involve managing the release of reservoir sediments but was not considered a failure. B is correct: removal of Elwha Dam (33 m (108 ft), built 1911) and Glines Canyon Dam (64 m (210 ft), built 1927) was completed by 2014. Within three years, Chinook salmon were observed spawning in reaches blocked for over a century, and all five Pacific salmon species began recolonising upstream habitat. The project reopened approximately 100 km (62 mi) of river and demonstrated that dam removal can produce rapid, measurable ecological recovery. It remains the largest dam removal project in US history and has inspired over 100 dam removals per year across the US. C is wrong because native salmon, not rainbow trout, were the restoration focus. D overstates recovery speed; full return to pre-dam abundances takes decades and depends on ocean conditions.',
         },
       ],
     },

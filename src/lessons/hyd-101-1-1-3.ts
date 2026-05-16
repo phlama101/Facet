@@ -25,7 +25,7 @@ const infiltrationRunoff: Lesson = {
 
 Robert Horton (1933) described the most intuitive runoff mechanism: when rainfall intensity exceeds the soil\'s infiltration capacity, excess water ponds and flows overland — Hortonian overland flow. Infiltration capacity declines over a storm as pores fill with water: the Green-Ampt model predicts this decline as f = Ks × (1 + ψΔθ/F), where Ks is saturated hydraulic conductivity, ψ is the wetting front suction, Δθ is the moisture deficit, and F is cumulative infiltration. Hortonian runoff dominates in arid regions, on compacted urban soils, and during intense convective storms. Thomas Dunne (1970s) identified a second mechanism: when the soil becomes fully saturated (from the top down or via a rising water table), even very low-intensity rain generates saturation-excess overland flow.
 
-The variable source area (VSA) concept, developed from Dunne\'s work in humid forested catchments, recognises that only a small, dynamic fraction of the watershed generates runoff at any time. Saturated areas (near streams, in hollows, on shallow soils) expand during storms and shrink in dry periods. A 10 mm storm might generate runoff from only 5% of the watershed; a 50 mm storm might activate 30% of the watershed. This concept underpins the TOPMODEL hydrological model, which uses topographic wetness index (TWI = ln(a/tan β), where a is upslope area and β is local slope) to predict where soil is likely to saturate first.
+The variable source area (VSA) concept, developed from Dunne\'s work in humid forested catchments, recognises that only a small, dynamic fraction of the watershed generates runoff at any time. Saturated areas (near streams, in hollows, on shallow soils) expand during storms and shrink in dry periods. A 10 mm (0.39 in) storm might generate runoff from only 5% of the watershed; a 50 mm (1.97 in) storm might activate 30% of the watershed. This concept underpins the TOPMODEL hydrological model, which uses topographic wetness index (TWI = ln(a/tan β), where a is upslope area and β is local slope) to predict where soil is likely to saturate first.
 
 Urbanisation profoundly alters the infiltration-runoff relationship. Impermeable surfaces (roads, roofs, car parks) eliminate infiltration, creating near-100% runoff from impervious areas. Studies show that watersheds with > 10% impervious cover show measurable stream degradation; above 25–30% impervious cover, stream ecosystems are severely impaired. Urban stormwater travels to streams 3–10× faster than in natural catchments, creating flashier hydrographs and more frequent bank-erosion events. Green infrastructure (permeable pavements, bioswales, rain gardens, green roofs) aims to restore pre-development infiltration and slow stormwater delivery.`,
       keyTerms: [
@@ -88,14 +88,14 @@ Urbanisation profoundly alters the infiltration-runoff relationship. Impermeable
           icon: ArrowRight,
           color: BRAND.amethyst,
           desc: 'Preferential flow through earthworm channels, root holes, cracks. Bypasses matrix; can dominate subsurface stormflow.',
-          examples: 'Forest soils: macropores (>0.5 mm diameter) can transmit 10-100× more water than soil matrix saturated conductivity.',
+          examples: 'Forest soils: macropores (>0.5 mm (0.02 in) diameter) can transmit 10-100× more water than soil matrix saturated conductivity.',
         },
         {
           name: 'Urban Impervious',
           icon: Activity,
           color: BRAND.ruby,
           desc: 'Impermeable surfaces eliminate infiltration. > 10% impervious: measurable stream degradation. > 25%: severe ecosystem impact.',
-          examples: 'Houston: 30-40% impervious cover contributed to catastrophic flooding during Hurricane Harvey (2017, ~1,300 mm in 5 days).',
+          examples: 'Houston: 30-40% impervious cover contributed to catastrophic flooding during Hurricane Harvey (2017, ~1,300 mm (51.18 in) in 5 days).',
         },
       ],
       interaction: {
@@ -110,7 +110,7 @@ Urbanisation profoundly alters the infiltration-runoff relationship. Impermeable
             x: 8,
             y: 55,
             label: 'Evaporation',
-            description: 'Solar energy drives water from ocean surfaces into the atmosphere as water vapour — the primary input to the water cycle. Globally, ~505,000 km³ evaporate per year from the oceans, equivalent to a global ocean layer ~1.4 m thick. Sea surface temperature directly controls the evaporation rate, making the ocean\'s energy budget central to understanding precipitation patterns and hurricane intensification.',
+            description: 'Solar energy drives water from ocean surfaces into the atmosphere as water vapour — the primary input to the water cycle. Globally, ~505,000 km³ (121,150 cu mi) evaporate per year from the oceans, equivalent to a global ocean layer ~1.4 m (5 ft) thick. Sea surface temperature directly controls the evaporation rate, making the ocean\'s energy budget central to understanding precipitation patterns and hurricane intensification.',
           },
           {
             id: 'cloud-formation',
@@ -124,7 +124,7 @@ Urbanisation profoundly alters the infiltration-runoff relationship. Impermeable
             x: 37,
             y: 37,
             label: 'Precipitation',
-            description: 'Water returns to Earth\'s surface as rain, snow, sleet, or hail when cloud droplets combine into drops large enough to fall. Global average precipitation is ~990 mm/year but distributed very unevenly: tropical rainforests receive >2,000 mm/year while deserts receive <250 mm. The monsoon systems of South and East Asia deliver 70–80% of the year\'s rain in just 3–4 months.',
+            description: 'Water returns to Earth\'s surface as rain, snow, sleet, or hail when cloud droplets combine into drops large enough to fall. Global average precipitation is ~990 mm/year but distributed very unevenly: tropical rainforests receive >2,000 mm/year while deserts receive <250 mm (9.84 in). The monsoon systems of South and East Asia deliver 70–80% of the year\'s rain in just 3–4 months.',
           },
           {
             id: 'surface-runoff',

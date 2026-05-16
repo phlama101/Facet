@@ -75,14 +75,14 @@ Flood risk management integrates structural and non-structural measures. Structu
           icon: Layers,
           color: BRAND.gold,
           desc: 'Contain floods but create false security → floodplain development. Levee failure (overtop or breach) more catastrophic than no levee.',
-          examples: '2005 Katrina: New Orleans levee failures killed ~1,800. 2019 Missouri River: 9,000 km² flooded when levees overtopped or failed.',
+          examples: '2005 Katrina: New Orleans levee failures killed ~1,800. 2019 Missouri River: 9,000 km² (3,475 sq mi) flooded when levees overtopped or failed.',
         },
         {
           name: 'Compound Floods',
           icon: Zap,
           color: BRAND.ruby,
           desc: 'River + coastal storm surge + heavy rain simultaneously. Non-linear interaction exceeds individual component hazards.',
-          examples: '2017 Harvey: record rainfall (1,350 mm in 5 days) + urban drainage failure + bayou overbank flooding = $125 billion damages.',
+          examples: '2017 Harvey: record rainfall (1,350 mm (53.15 in) in 5 days) + urban drainage failure + bayou overbank flooding = $125 billion damages.',
         },
         {
           name: 'Nature-Based Solutions',
@@ -181,7 +181,7 @@ Flood risk management integrates structural and non-structural measures. Structu
             'Compound floods are caused by dam failures that cascade from one reservoir to the next downstream',
           ],
           correct: 1,
-          explain: 'Compound flooding occurs when multiple flood drivers co-occur in ways that amplify total impact. For example: heavy rainfall raises river levels (fluvial flooding) at the same time a storm surge blocks drainage at the river mouth (coastal flooding) — the combination produces deeper, longer-lasting inundation than either alone. Hurricane Harvey (2017) exemplified this: record rainfall (1,350 mm in 5 days) inundated Houston from above, while storm surge in Galveston Bay backed up into Galveston Bay tributaries from below, while the pre-existing urban drainage system was already overwhelmed. Compound events are increasing in frequency as sea level rise extends the coastal influence farther inland and climate change intensifies extreme precipitation.',
+          explain: 'Compound flooding occurs when multiple flood drivers co-occur in ways that amplify total impact. For example: heavy rainfall raises river levels (fluvial flooding) at the same time a storm surge blocks drainage at the river mouth (coastal flooding) — the combination produces deeper, longer-lasting inundation than either alone. Hurricane Harvey (2017) exemplified this: record rainfall (1,350 mm (53.15 in) in 5 days) inundated Houston from above, while storm surge in Galveston Bay backed up into Galveston Bay tributaries from below, while the pre-existing urban drainage system was already overwhelmed. Compound events are increasing in frequency as sea level rise extends the coastal influence farther inland and climate change intensifies extreme precipitation.',
         },
         {
           q: `FEMA\'s Flood Insurance Rate Maps (FIRMs) define the Special Flood Hazard Area (SFHA). What is a key limitation of these maps?`,

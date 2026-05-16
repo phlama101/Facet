@@ -23,7 +23,7 @@ const springsGeothermal: Lesson = {
       title: 'Where the water table meets the surface: springs, hot springs, geysers, and the invisible river beneath rivers',
       body: `A spring is any location where groundwater discharges naturally to the surface. Springs form when the water table intersects the land surface — at hillside seeps and valley-floor wetlands — or when confined aquifer pressure forces water upward through faults, fractures, or permeable beds to the surface. Springs are among the most ecologically important freshwater habitats: their constant temperature (equal to mean annual air temperature), stable discharge, and high water quality support unique assemblages of endemic species. The world\'s largest spring systems include the springs of the Ozarks (Big Spring, Missouri: ~12 m³/s mean discharge), the Wakulla Springs system in Florida, and the springs of the Dinaric karst.
 
-Geothermal springs and geysers occur where groundwater circulates deeply enough to be heated by Earth\'s geothermal gradient (~25–30°C/km in non-volcanic areas) or by direct magmatic heat near volcanic systems. Yellowstone National Park contains over 10,000 geothermal features — the world\'s densest concentration — heated by magma sitting 5–10 km below the surface. Hot springs range from warm (< 50°C) to boiling (100°C at sea level). Geysers require a very specific plumbing system: a constricted tube or cavity that allows water to superheat under pressure above the surface boiling point; when pressure from below forces water into the constriction, the superheated water flashes to steam and explodes upward. Old Faithful erupts every ~44–125 minutes, propelling 14,000–32,000 litres of boiling water 30–55 m into the air.
+Geothermal springs and geysers occur where groundwater circulates deeply enough to be heated by Earth\'s geothermal gradient (~25–30°C/km in non-volcanic areas) or by direct magmatic heat near volcanic systems. Yellowstone National Park contains over 10,000 geothermal features — the world\'s densest concentration — heated by magma sitting 5–10 km (6.2 mi) below the surface. Hot springs range from warm (< 50°C (122°F)) to boiling (100°C (212°F) at sea level). Geysers require a very specific plumbing system: a constricted tube or cavity that allows water to superheat under pressure above the surface boiling point; when pressure from below forces water into the constriction, the superheated water flashes to steam and explodes upward. Old Faithful erupts every ~44–125 minutes, propelling 14,000–32,000 litres of boiling water 30–55 m (180 ft) into the air.
 
 Baseflow — the portion of streamflow sustained by groundwater discharge between storm events — is critical to river ecosystems and downstream water users. In humid climates, baseflow may constitute 50–80% of mean annual streamflow. Groundwater\'s constant temperature buffers stream temperatures, providing cool summer refugia for cold-water fish in streams where air temperature would otherwise warm surface runoff to lethal levels. Streamflow permanence — whether a stream flows year-round or dries up seasonally or during drought — is determined primarily by the depth to the water table relative to the channel bed. In regions undergoing groundwater depletion, previously perennial streams are becoming ephemeral.
 
@@ -75,14 +75,14 @@ Submarine groundwater discharge (SGD) is the flow of terrestrial freshwater (and
           icon: Globe,
           color: BRAND.coral,
           desc: 'Conduit-fed discharge from karst aquifer. Highly variable flow (1000× range). Turbid after rain. Major water supply for millions.',
-          examples: 'Fontaine de Vaucluse, France: largest spring in Europe, 630 m³/s peak. Blue Springs, Missouri: constant 12-14°C, 12 m³/s mean flow.',
+          examples: 'Fontaine de Vaucluse, France: largest spring in Europe, 630 m³/s peak. Blue Springs, Missouri: constant 12-14°C (57°F), 12 m³/s mean flow.',
         },
         {
           name: 'Geysers',
           icon: Zap,
           color: BRAND.ruby,
           desc: 'Superheated water in constricted tube flashes to steam when pressure drops. Very rare: requires specific plumbing geometry near magmatic heat.',
-          examples: 'Yellowstone: 500 geysers (60% of world total). Old Faithful: ~44-125 min interval, ~20 m³ per eruption, 30-55 m height.',
+          examples: 'Yellowstone: 500 geysers (60% of world total). Old Faithful: ~44-125 min interval, ~20 m³ per eruption, 30-55 m (180 ft) height.',
         },
         {
           name: 'Submarine SGD',
@@ -104,7 +104,7 @@ Submarine groundwater discharge (SGD) is the flow of terrestrial freshwater (and
           {
             id: 'magma-source',
             label: 'Yellowstone Magma Chamber',
-            description: 'Partial melt sits 5-10 km below surface. Provides heat flux of 40-50 mW/m² above (vs. 60 mW/m² global average). Source of heat for all geothermal features.',
+            description: 'Partial melt sits 5-10 km (6.2 mi) below surface. Provides heat flux of 40-50 mW/m² above (vs. 60 mW/m² global average). Source of heat for all geothermal features.',
             color: BRAND.ruby,
           },
           {
@@ -116,19 +116,19 @@ Submarine groundwater discharge (SGD) is the flow of terrestrial freshwater (and
           {
             id: 'hot-spring',
             label: 'Hot Springs',
-            description: 'Heated water reaches surface through wide, unrestricted vents. No pressure build-up; continuous discharge. Grand Prismatic Spring: 87°C, 2,100 m² surface area.',
+            description: 'Heated water reaches surface through wide, unrestricted vents. No pressure build-up; continuous discharge. Grand Prismatic Spring: 87°C (189°F), 2,100 m² surface area.',
             color: BRAND.coral,
           },
           {
             id: 'geyser-plumbing',
             label: 'Geyser Plumbing',
-            description: 'Constricted tube with chamber. Water fills and superheats under pressure. When temperature reaches flash point (~121°C at depth), steam bubble formation starts eruption.',
+            description: 'Constricted tube with chamber. Water fills and superheats under pressure. When temperature reaches flash point (~121°C (250°F) at depth), steam bubble formation starts eruption.',
             color: BRAND.ruby,
           },
           {
             id: 'eruption',
             label: 'Geyser Eruption',
-            description: 'Flash boiling propagates upward, ejecting water and steam. Old Faithful: 32,000-44,000 litres, 30-55 m high. Interval reflects time to refill and reheat.',
+            description: 'Flash boiling propagates upward, ejecting water and steam. Old Faithful: 32,000-44,000 litres, 30-55 m (180 ft) high. Interval reflects time to refill and reheat.',
             color: BRAND.amethyst,
           },
           {
@@ -159,25 +159,25 @@ Submarine groundwater discharge (SGD) is the flow of terrestrial freshwater (and
             'Geysers form only in silica-rich rhyolite terrain because silica deposits seal the geyser tube; they are rare because most volcanic areas have basaltic geology',
           ],
           correct: 1,
-          explain: 'Geysers require an unusual combination of conditions: (1) a heat source — typically proximity to magma (5–15 km depth), not just a normal geothermal gradient; (2) abundant groundwater recharge to continuously refill the system; (3) a very specific plumbing geometry — a constricted tube or chamber system that allows water to superheat above the surface boiling point without boiling; (4) sufficient rock strength (silica-mineralised rhyolite in most cases) to maintain the tube integrity under repeated eruptions. When all these conditions align, the constricted tube allows pressure to build until the superheat overcomes inertial confinement, triggering a flash-boiling eruption. The geometry must be just right — most hydrothermal systems lack the constriction and erupt as continuous hot springs. Globally, only ~1,000 active geysers exist, with ~500 in Yellowstone alone.',
+          explain: 'Geysers require an unusual combination of conditions: (1) a heat source — typically proximity to magma (5–15 km (9.3 mi) depth), not just a normal geothermal gradient; (2) abundant groundwater recharge to continuously refill the system; (3) a very specific plumbing geometry — a constricted tube or chamber system that allows water to superheat above the surface boiling point without boiling; (4) sufficient rock strength (silica-mineralised rhyolite in most cases) to maintain the tube integrity under repeated eruptions. When all these conditions align, the constricted tube allows pressure to build until the superheat overcomes inertial confinement, triggering a flash-boiling eruption. The geometry must be just right — most hydrothermal systems lack the constriction and erupt as continuous hot springs. Globally, only ~1,000 active geysers exist, with ~500 in Yellowstone alone.',
         },
         {
           q: 'Why does constant-temperature groundwater discharge in springs and rivers provide an ecological benefit to aquatic organisms?',
           a: [
             'Groundwater is warmer than stream water in summer, providing a thermal refuge for warm-water species during cold winter periods',
-            'Groundwater temperature equals mean annual air temperature (~10-15°C in temperate regions), creating stable, cool summer conditions that serve as thermal refugia for cold-water fish species like trout and salmon',
+            'Groundwater temperature equals mean annual air temperature (~10-15°C (59°F) in temperate regions), creating stable, cool summer conditions that serve as thermal refugia for cold-water fish species like trout and salmon',
             'Groundwater contains dissolved minerals that neutralise stream acidity, increasing pH to levels optimal for invertebrate communities',
             'Groundwater discharges in summer when river levels are lowest, increasing depth and reducing stranding risk for large fish',
           ],
           correct: 1,
-          explain: 'Groundwater temperature approximately equals the mean annual air temperature at any given location — about 10–15°C in temperate regions. This means that groundwater discharge is cool in summer (when air temperatures may be 25–35°C) and relatively warm in winter (when surface water can approach 0°C). Stream reaches fed by substantial groundwater discharge maintain stable temperatures year-round. In summer, groundwater discharge zones create thermal refugia — cool patches where cold-water species (trout, salmon, crayfish, sensitive invertebrates) can survive when surface water temperatures in the main channel exceed thermal tolerance limits. As climate warming heats stream temperatures and groundwater depletion reduces baseflow contributions, these refugia are shrinking — a major threat to cold-water fisheries.',
+          explain: 'Groundwater temperature approximately equals the mean annual air temperature at any given location — about 10–15°C (59°F) in temperate regions. This means that groundwater discharge is cool in summer (when air temperatures may be 25–35°C (95°F)) and relatively warm in winter (when surface water can approach 0°C (32°F)). Stream reaches fed by substantial groundwater discharge maintain stable temperatures year-round. In summer, groundwater discharge zones create thermal refugia — cool patches where cold-water species (trout, salmon, crayfish, sensitive invertebrates) can survive when surface water temperatures in the main channel exceed thermal tolerance limits. As climate warming heats stream temperatures and groundwater depletion reduces baseflow contributions, these refugia are shrinking — a major threat to cold-water fisheries.',
         },
         {
           q: 'What is streamflow permanence and what hydrogeological factor primarily controls it?',
           a: [
             'Streamflow permanence is determined primarily by annual precipitation; streams in regions receiving more than 500 mm/yr are perennial',
             'Streamflow permanence — whether a stream flows year-round, seasonally, or only during storms — is primarily controlled by the relationship between the water table depth and the channel bed elevation',
-            'Streamflow permanence is controlled by watershed area; only streams draining more than 10 km² maintain perennial flow',
+            'Streamflow permanence is controlled by watershed area; only streams draining more than 10 km² (3.9 sq mi) maintain perennial flow',
             'Streamflow permanence depends entirely on upstream dam regulation; regulated rivers are perennial while unregulated rivers are ephemeral',
           ],
           correct: 1,

@@ -23,11 +23,11 @@ const groundMotionAmplification: Lesson = {
       title: 'Why did Mexico City shake harder than areas far closer to the 1985 epicentre?',
       body: `Ground motion is not uniform across a region struck by an earthquake. The same event produces dramatically different shaking at different locations, even at equal distances from the epicentre. Three factors control this variability: source characteristics (magnitude, depth, rupture directivity), wave propagation path effects (attenuation and focusing as waves travel through heterogeneous crust), and site effects — the local response of surficial geological materials.
 
-Site amplification occurs when seismic waves travel from hard rock into soft sediment. Because soft sediment has lower seismic velocity and density, conservation of energy (specifically, equal energy flux) requires wave amplitude to increase as waves slow down. The ratio of soft-sediment shaking to bedrock shaking can reach 10–30× for soft bay muds and lake sediments. The 1985 Mexico City earthquake (Mw 8.1, epicentre ~350 km away) killed over 10,000 people primarily because Mexico City sits on ancient lake-bed sediments 50–100 m thick with a resonant frequency of ~0.5 Hz — closely matching the dominant period of the arriving surface waves.
+Site amplification occurs when seismic waves travel from hard rock into soft sediment. Because soft sediment has lower seismic velocity and density, conservation of energy (specifically, equal energy flux) requires wave amplitude to increase as waves slow down. The ratio of soft-sediment shaking to bedrock shaking can reach 10–30× for soft bay muds and lake sediments. The 1985 Mexico City earthquake (Mw 8.1, epicentre ~350 km (217 mi) away) killed over 10,000 people primarily because Mexico City sits on ancient lake-bed sediments 50–100 m (328 ft) thick with a resonant frequency of ~0.5 Hz — closely matching the dominant period of the arriving surface waves.
 
 Resonance amplification occurs when the dominant period of incoming ground motion matches the natural period of the sediment column or structure. The natural period of a sediment layer is T = 4H/Vs, where H is layer thickness and Vs is shear-wave velocity. For a 50-m soft-clay layer with Vs = 100 m/s, T = 2 s — resonant with long-period surface waves from large distant earthquakes. Similarly, buildings have natural periods of about T ≈ N/10 seconds (N = number of storeys). A 10-storey building (T = 1 s) near Mexico City\'s ancient lake resonated catastrophically in 1985.
 
-USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-motion accelerographs with ground-motion prediction equations (GMPEs) and VS30 (time-averaged shear-wave velocity to 30 m depth) maps to estimate shaking across a region minutes after an earthquake. VS30 < 180 m/s indicates very soft sediment; VS30 > 760 m/s indicates rock. National seismic hazard maps incorporate VS30 to classify site classes (A through E in the NEHRP scheme), which building codes use to prescribe appropriate structural design.`,
+USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-motion accelerographs with ground-motion prediction equations (GMPEs) and VS30 (time-averaged shear-wave velocity to 30 m (98 ft) depth) maps to estimate shaking across a region minutes after an earthquake. VS30 < 180 m/s indicates very soft sediment; VS30 > 760 m/s indicates rock. National seismic hazard maps incorporate VS30 to classify site classes (A through E in the NEHRP scheme), which building codes use to prescribe appropriate structural design.`,
       keyTerms: [
         {
           term: 'Site Amplification',
@@ -39,7 +39,7 @@ USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-m
         },
         {
           term: 'VS30',
-          def: 'Time-averaged shear-wave velocity to 30 m depth; proxy for site stiffness used in building codes.',
+          def: 'Time-averaged shear-wave velocity to 30 m (98 ft) depth; proxy for site stiffness used in building codes.',
         },
         {
           term: 'GMPE',
@@ -159,10 +159,10 @@ USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-m
             'P-waves convert entirely to surface waves when entering soft sediment',
           ],
           correct: 1,
-          explain: 'Seismic wave energy flux (power per unit area) must be conserved as a wave crosses a boundary between two materials. Energy flux = ρV × (amplitude)². When a wave enters softer sediment where density ρ and velocity V are both lower, the product ρV decreases, so amplitude must increase to maintain constant energy flux. This impedance contrast effect can amplify shaking by factors of 5–30× at soft-sediment sites compared to nearby bedrock, and is the primary reason Mexico City experienced catastrophic damage in 1985 despite being 350 km from the earthquake epicentre.',
+          explain: 'Seismic wave energy flux (power per unit area) must be conserved as a wave crosses a boundary between two materials. Energy flux = ρV × (amplitude)². When a wave enters softer sediment where density ρ and velocity V are both lower, the product ρV decreases, so amplitude must increase to maintain constant energy flux. This impedance contrast effect can amplify shaking by factors of 5–30× at soft-sediment sites compared to nearby bedrock, and is the primary reason Mexico City experienced catastrophic damage in 1985 despite being 350 km (217 mi) from the earthquake epicentre.',
         },
         {
-          q: 'What is the natural resonant period of a 30 m thick sediment layer with Vs = 150 m/s?',
+          q: 'What is the natural resonant period of a 30 m (98 ft) thick sediment layer with Vs = 150 m/s?',
           a: [
             '0.2 seconds',
             '0.5 seconds',
@@ -170,21 +170,21 @@ USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-m
             '2 seconds',
           ],
           correct: 2,
-          explain: 'The natural period of a sediment layer is T = 4H/Vs. With H = 30 m and Vs = 150 m/s: T = 4 × 30 / 150 = 120/150 = 0.8 s. This means the sediment resonates most strongly with ground motions having periods near 0.8 seconds — which corresponds to frequencies around 1.25 Hz. Buildings with natural periods near 0.8 s (roughly 8-storey structures) would experience resonance amplification at this site.',
+          explain: 'The natural period of a sediment layer is T = 4H/Vs. With H = 30 m (98 ft) and Vs = 150 m/s: T = 4 × 30 / 150 = 120/150 = 0.8 s. This means the sediment resonates most strongly with ground motions having periods near 0.8 seconds — which corresponds to frequencies around 1.25 Hz. Buildings with natural periods near 0.8 s (roughly 8-storey structures) would experience resonance amplification at this site.',
         },
         {
           q: 'What does VS30 measure and why is it important for seismic hazard?',
           a: [
-            'Vertical S-wave velocity at 30 km depth, used to locate earthquake hypocenters',
-            'Time-averaged shear-wave velocity in the top 30 m; proxy for site stiffness used in building codes',
+            'Vertical S-wave velocity at 30 km (19 mi) depth, used to locate earthquake hypocenters',
+            'Time-averaged shear-wave velocity in the top 30 m (98 ft); proxy for site stiffness used in building codes',
             'Maximum S-wave velocity recorded within 30 seconds of earthquake onset',
             'Surface wave velocity at periods of 30 seconds for regional structure studies',
           ],
           correct: 1,
-          explain: 'VS30 is the harmonic average shear-wave velocity from the surface down to 30 m depth. It serves as a standardised proxy for site stiffness because it can be measured efficiently and correlates well with site amplification. NEHRP site classes use VS30 thresholds: Class A (rock) has VS30 > 1,500 m/s and minimal amplification; Class E (soft soil) has VS30 < 180 m/s and can amplify ground motion 3–5× relative to bedrock. Modern building codes prescribe different design forces for each site class.',
+          explain: 'VS30 is the harmonic average shear-wave velocity from the surface down to 30 m (98 ft) depth. It serves as a standardised proxy for site stiffness because it can be measured efficiently and correlates well with site amplification. NEHRP site classes use VS30 thresholds: Class A (rock) has VS30 > 1,500 m/s and minimal amplification; Class E (soft soil) has VS30 < 180 m/s and can amplify ground motion 3–5× relative to bedrock. Modern building codes prescribe different design forces for each site class.',
         },
         {
-          q: 'The 1985 Mexico City earthquake killed over 10,000 people despite the epicentre being ~350 km away. What was the primary cause?',
+          q: 'The 1985 Mexico City earthquake killed over 10,000 people despite the epicentre being ~350 km (217 mi) away. What was the primary cause?',
           a: [
             'The earthquake was unusually shallow, raising its effective magnitude near the surface',
             'Lake-bed sediments beneath the city resonated at ~0.5–2 Hz, amplifying long-period surface waves from the distant source',
@@ -192,7 +192,7 @@ USGS ShakeMap combines instrumental records from seismometers, GPS, and strong-m
             'The earthquake triggered a cascade of volcanic eruptions beneath the city',
           ],
           correct: 1,
-          explain: 'Mexico City sits on the dried bed of ancient Lake Texcoco — soft clay sediments 50–100 m thick with shear-wave velocities as low as 60 m/s. The natural period of this sediment column is about 2 seconds (f ≈ 0.5 Hz). The Mw 8.1 earthquake, though 350 km away, generated strong surface waves at exactly these long periods. The lake-bed sediment amplified shaking 5–50× relative to nearby rock sites, and 8–15 storey buildings whose natural periods matched the sediment period experienced catastrophic resonance. The disaster directly motivated improvements to site characterisation in building codes worldwide.',
+          explain: 'Mexico City sits on the dried bed of ancient Lake Texcoco — soft clay sediments 50–100 m (328 ft) thick with shear-wave velocities as low as 60 m/s. The natural period of this sediment column is about 2 seconds (f ≈ 0.5 Hz). The Mw 8.1 earthquake, though 350 km (217 mi) away, generated strong surface waves at exactly these long periods. The lake-bed sediment amplified shaking 5–50× relative to nearby rock sites, and 8–15 storey buildings whose natural periods matched the sediment period experienced catastrophic resonance. The disaster directly motivated improvements to site characterisation in building codes worldwide.',
         },
         {
           q: 'USGS ShakeMap provides shaking estimates within minutes after an earthquake. What data does it combine?',

@@ -50,14 +50,14 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Wave velocity decreases because the mantle is hotter than the crust',
           ],
           correct: 1,
-          explain: 'The Moho (Mohorovičić discontinuity) marks the crust-mantle boundary, typically at 30–50 km depth beneath continents and 5–10 km beneath ocean floors. Mantle rocks (peridotite) have higher seismic velocities than crustal rocks (granite/basalt): P-wave velocities jump from ~6–7 km/s in the lower crust to ~8 km/s in the upper mantle. Andrija Mohorovičić discovered this boundary in 1909 by observing that seismograms at distances > 200 km showed two P-wave arrivals: the direct crustal wave and a faster refracted wave that had travelled as a head wave through the faster mantle.',
+          explain: 'The Moho (Mohorovičić discontinuity) marks the crust-mantle boundary, typically at 30–50 km (31 mi) depth beneath continents and 5–10 km (6.2 mi) beneath ocean floors. Mantle rocks (peridotite) have higher seismic velocities than crustal rocks (granite/basalt): P-wave velocities jump from ~6–7 km/s in the lower crust to ~8 km/s in the upper mantle. Andrija Mohorovičić discovered this boundary in 1909 by observing that seismograms at distances > 200 km (124 mi) showed two P-wave arrivals: the direct crustal wave and a faster refracted wave that had travelled as a head wave through the faster mantle.',
         },
         {
           q: 'The P-wave shadow zone exists between 105° and 140° from an earthquake epicentre. What causes it?',
           a: [
             'The outer core refracts P-waves away from this angular zone due to the velocity decrease at the core-mantle boundary',
             'S-wave conversion at the inner core boundary blocks P-waves from reaching this zone',
-            'The mantle transition zone at 660 km completely absorbs P-wave energy in this angular range',
+            'The mantle transition zone at 660 km (410 mi) completely absorbs P-wave energy in this angular range',
             'Surface wave interference constructively cancels P-wave energy between 105° and 140°',
           ],
           correct: 0,
@@ -77,13 +77,13 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
         {
           q: `Inge Lehmann\'s 1936 discovery was based on seismic waves arriving in the P-wave shadow zone. What did she conclude?`,
           a: [
-            'The mantle is divided into upper and lower sections by a velocity discontinuity at 660 km',
+            'The mantle is divided into upper and lower sections by a velocity discontinuity at 660 km (410 mi)',
             'Earth has a solid inner core that refracts P-waves into the shadow zone as PKIKP phases',
             'The outer core is partially solid, creating a mushy zone that scatters P-waves',
             'Deep-focus earthquakes occur in the transition zone between the upper and lower mantle',
           ],
           correct: 1,
-          explain: `By carefully analysing seismograms from large earthquakes, Inge Lehmann noticed that small P-wave arrivals appeared within the shadow zone (105°–140°) where no P-waves were expected if Earth had only a uniform liquid outer core. She proposed in her 1936 paper "P\'" that these arrivals were P-waves that had been refracted by a solid inner core — the PKIKP phase (P-wave that travels through the outer core, reflects off the inner core boundary, travels through the inner core, and emerges on the far side). This correctly identified the inner core as a distinct solid body ~1,220 km in radius, confirmed by later studies of normal modes and inner core anisotropy.`,
+          explain: `By carefully analysing seismograms from large earthquakes, Inge Lehmann noticed that small P-wave arrivals appeared within the shadow zone (105°–140°) where no P-waves were expected if Earth had only a uniform liquid outer core. She proposed in her 1936 paper "P\'" that these arrivals were P-waves that had been refracted by a solid inner core — the PKIKP phase (P-wave that travels through the outer core, reflects off the inner core boundary, travels through the inner core, and emerges on the far side). This correctly identified the inner core as a distinct solid body ~1,220 km (758 mi) in radius, confirmed by later studies of normal modes and inner core anisotropy.`,
         },
         // ── Chapter 2: Earthquake Mechanics ──────────────────────────────────
         {
@@ -117,7 +117,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Duration of ground shaking in seconds',
           ],
           correct: 1,
-          explain: 'In the seismic moment equation M₀ = μ × A × D: μ is the shear modulus of the rock (rigidity, ~30 GPa in the crust), A is the area of the fault surface that ruptured, and D is the average displacement — how far the two sides of the fault moved past each other during the earthquake. For a M 7.0 earthquake, typical values are μ = 30 GPa, A ≈ 20 km × 10 km = 200 km², D ≈ 0.6 m, giving M₀ ≈ 3.6 × 10¹⁸ N·m, consistent with Mw 6.9. Larger earthquakes have both larger rupture areas and greater average slip.',
+          explain: 'In the seismic moment equation M₀ = μ × A × D: μ is the shear modulus of the rock (rigidity, ~30 GPa in the crust), A is the area of the fault surface that ruptured, and D is the average displacement — how far the two sides of the fault moved past each other during the earthquake. For a M 7.0 earthquake, typical values are μ = 30 GPa, A ≈ 20 km (12 mi) × 10 km (6.2 mi) = 200 km² (77 sq mi), D ≈ 0.6 m (2 ft), giving M₀ ≈ 3.6 × 10¹⁸ N·m, consistent with Mw 6.9. Larger earthquakes have both larger rupture areas and greater average slip.',
         },
         {
           q: 'What does a four-quadrant alternating dark-light beach ball focal mechanism indicate?',
@@ -151,10 +151,10 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'The site has VS30 below the liquefaction threshold and will definitely liquefy in a M 6+ earthquake',
           ],
           correct: 1,
-          explain: 'VS30 is the time-averaged shear-wave velocity to 30 m depth, used as a proxy for site stiffness. NEHRP site class boundaries: Class A (rock): VS30 > 1,500 m/s; Class B: 760–1,500 m/s; Class C: 360–760 m/s; Class D: 180–360 m/s; Class E (soft soil): VS30 < 180 m/s. A VS30 of 150 m/s falls in Class E — very soft soil such as soft bay muds, lacustrine clays, or loose fills. Class E sites can amplify ground motion 3–5× relative to Class A bedrock, and are prone to soil nonlinearity (additional amplification reduction at very high strain) and liquefaction if saturated.',
+          explain: 'VS30 is the time-averaged shear-wave velocity to 30 m (98 ft) depth, used as a proxy for site stiffness. NEHRP site class boundaries: Class A (rock): VS30 > 1,500 m/s; Class B: 760–1,500 m/s; Class C: 360–760 m/s; Class D: 180–360 m/s; Class E (soft soil): VS30 < 180 m/s. A VS30 of 150 m/s falls in Class E — very soft soil such as soft bay muds, lacustrine clays, or loose fills. Class E sites can amplify ground motion 3–5× relative to Class A bedrock, and are prone to soil nonlinearity (additional amplification reduction at very high strain) and liquefaction if saturated.',
         },
         {
-          q: 'The 1985 Mexico City earthquake caused catastrophic damage despite the epicentre being ~350 km away. What was the primary mechanism?',
+          q: 'The 1985 Mexico City earthquake caused catastrophic damage despite the epicentre being ~350 km (217 mi) away. What was the primary mechanism?',
           a: [
             'The earthquake was unusually shallow, increasing effective magnitude near the surface',
             'Ancient lake-bed sediments (Vs ~60 m/s) resonated at ~0.5 Hz, amplifying long-period surface waves 5-50× and matching building natural periods',
@@ -162,7 +162,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'The earthquake triggered massive liquefaction of the lake-bed sediment, causing widespread subsidence',
           ],
           correct: 1,
-          explain: `Mexico City\'s catastrophe is the canonical example of site resonance amplification. The city sits on soft clay from drained Lake Texcoco with shear-wave velocities as low as 60 m/s and thicknesses of 50–100 m. Natural period T = 4H/Vs ≈ 4 × 75 / 60 ≈ 5 s (0.2 Hz) to T = 2 s (0.5 Hz) for different areas. The Mw 8.1 Michoacán earthquake 350 km away generated strong surface waves at these exact periods. Mexico City\'s lake sediments amplified shaking 5–50× over nearby rock sites. Buildings of 8–15 storeys (natural period ~0.8–1.5 s) in the resonant frequency band experienced catastrophic collapse. Over 10,000 people died. The disaster became a landmark study in site effects and urban seismic risk.`,
+          explain: `Mexico City\'s catastrophe is the canonical example of site resonance amplification. The city sits on soft clay from drained Lake Texcoco with shear-wave velocities as low as 60 m/s and thicknesses of 50–100 m (328 ft). Natural period T = 4H/Vs ≈ 4 × 75 / 60 ≈ 5 s (0.2 Hz) to T = 2 s (0.5 Hz) for different areas. The Mw 8.1 Michoacán earthquake 350 km (217 mi) away generated strong surface waves at these exact periods. Mexico City\'s lake sediments amplified shaking 5–50× over nearby rock sites. Buildings of 8–15 storeys (natural period ~0.8–1.5 s) in the resonant frequency band experienced catastrophic collapse. Over 10,000 people died. The disaster became a landmark study in site effects and urban seismic risk.`,
         },
         {
           q: 'Which soil condition makes a site most susceptible to liquefaction?',
@@ -187,7 +187,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
           explain: 'Sea drawback (the sudden, dramatic retreat of the ocean exposing normally submerged seafloor) indicates that the trough of the first tsunami wave has arrived. The wave crest will follow within minutes. Historically, curious observers have approached the exposed seafloor, assuming the sea has merely gone out, only to be struck by the arriving wave crest. The correct response is immediate evacuation to high ground — as high and as far inland as possible. Do not wait for official warnings, which may not have been issued yet for near-source tsunamis. Speed and distance are paramount: move immediately, move fast, and move high.',
         },
         {
-          q: 'Tsunami speed in the deep ocean follows v = √(g×d). If depth halves from 4,000 m to 2,000 m, what happens to wave speed?',
+          q: 'Tsunami speed in the deep ocean follows v = √(g×d). If depth halves from 4,000 m (13124 ft) to 2,000 m (6562 ft), what happens to wave speed?',
           a: [
             'Speed stays the same because tsunami wavelength adjusts',
             'Speed decreases by a factor of √2 (~1.41×), slowing from ~200 m/s to ~140 m/s',
@@ -195,7 +195,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Speed decreases by exactly 50% from 200 m/s to 100 m/s',
           ],
           correct: 1,
-          explain: `Tsunami phase speed follows v = √(g×d). If depth d decreases from 4,000 m to 2,000 m, the speed changes by √(2,000/4,000) = √(0.5) = 1/√2 ≈ 0.707. So speed decreases by factor √2: from √(9.8×4000) ≈ 198 m/s to √(9.8×2000) ≈ 140 m/s. This deceleration causes energy concentration and amplitude increase (shoaling). Note: the factor is exactly √2 ≈ 1.414, not 2 (speed doesn\'t halve when depth halves). This square-root relationship means tsunamis slow down relatively gradually in moderate depth changes but decelerate rapidly in shallow coastal waters.`,
+          explain: `Tsunami phase speed follows v = √(g×d). If depth d decreases from 4,000 m (13124 ft) to 2,000 m (6562 ft), the speed changes by √(2,000/4,000) = √(0.5) = 1/√2 ≈ 0.707. So speed decreases by factor √2: from √(9.8×4000) ≈ 198 m/s to √(9.8×2000) ≈ 140 m/s. This deceleration causes energy concentration and amplitude increase (shoaling). Note: the factor is exactly √2 ≈ 1.414, not 2 (speed doesn\'t halve when depth halves). This square-root relationship means tsunamis slow down relatively gradually in moderate depth changes but decelerate rapidly in shallow coastal waters.`,
         },
         {
           q: 'What is the "blind zone" in earthquake early warning systems?',
@@ -206,7 +206,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'High-rise buildings where EEW signals are blocked by steel frames',
           ],
           correct: 1,
-          explain: 'The blind zone (or warning zone) is the area surrounding the earthquake epicentre where EEW provides no useful warning because the time for P-wave detection, magnitude estimation, and alert transmission exceeds the S-wave travel time to that location. With a processing time of ~5 seconds and a P-wave velocity of ~6 km/s, the blind zone radius is approximately 25–35 km. Communities within this zone experience strong shaking with zero warning time. For large earthquakes (which have extended rupture zones), the effective blind zone is larger. EEW is most beneficial for distant targets: a city 150 km from an M 7.5 epicentre might receive 20–40 seconds of warning — enough for many automated and human responses.',
+          explain: 'The blind zone (or warning zone) is the area surrounding the earthquake epicentre where EEW provides no useful warning because the time for P-wave detection, magnitude estimation, and alert transmission exceeds the S-wave travel time to that location. With a processing time of ~5 seconds and a P-wave velocity of ~6 km/s, the blind zone radius is approximately 25–35 km (22 mi). Communities within this zone experience strong shaking with zero warning time. For large earthquakes (which have extended rupture zones), the effective blind zone is larger. EEW is most beneficial for distant targets: a city 150 km (93 mi) from an M 7.5 epicentre might receive 20–40 seconds of warning — enough for many automated and human responses.',
         },
         {
           q: 'Probabilistic Seismic Hazard Analysis (PSHA) produces hazard curves expressing "probability of exceedance in 50 years." Why is this framing used rather than return periods?',
@@ -228,7 +228,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'The Fukushima nuclear accident occurred simultaneously, preventing emergency response',
           ],
           correct: 1,
-          explain: `The Tōhoku tsunami\'s ~18,500 deaths resulted from several compounding factors: (1) near-source communities within the 20–30 km blind zone had only 15–20 minutes from initial shaking to first wave arrival — insufficient for full evacuation; (2) the initial JMA magnitude estimate (M 7.9) predicted 3–6 m waves; actual runup reached 15–40 m, overtopping seawalls designed for smaller historical tsunamis; (3) the Sendai Plain extends 10 km inland — unprecedented inundation distances cut off evacuation routes; (4) some community members trusted seawalls and did not evacuate, a behaviour called "tsunami complacency" from the period of no large Sanriku tsunamis since 1960. The disaster has since driven major improvements in EEW magnitude estimation, seawall design philosophy (resilience vs. protection), and evacuation culture.`,
+          explain: `The Tōhoku tsunami\'s ~18,500 deaths resulted from several compounding factors: (1) near-source communities within the 20–30 km (19 mi) blind zone had only 15–20 minutes from initial shaking to first wave arrival — insufficient for full evacuation; (2) the initial JMA magnitude estimate (M 7.9) predicted 3–6 m (20 ft) waves; actual runup reached 15–40 m (131 ft), overtopping seawalls designed for smaller historical tsunamis; (3) the Sendai Plain extends 10 km (6.2 mi) inland — unprecedented inundation distances cut off evacuation routes; (4) some community members trusted seawalls and did not evacuate, a behaviour called "tsunami complacency" from the period of no large Sanriku tsunamis since 1960. The disaster has since driven major improvements in EEW magnitude estimation, seawall design philosophy (resilience vs. protection), and evacuation culture.`,
         },
         {
           q: 'What geological evidence do paleoseismologists look for in trenches to identify past earthquake events?',
@@ -250,7 +250,7 @@ You\'ll be asked to interpret seismic data, evaluate hazard scenarios, reason ab
             'Ground motion decreases linearly with distance, so doubling distance always halves damage',
           ],
           correct: 1,
-          explain: 'Earthquake damage is a complex chain from source to structure. Magnitude characterises energy at the source, but what matters for damage is ground motion intensity (peak ground acceleration, velocity, spectral acceleration) at each specific location. Ground motion depends on: (1) source magnitude — larger magnitudes produce stronger motion; (2) distance — attenuation reduces motion with distance; (3) focal depth — shallow earthquakes produce stronger surface shaking; (4) rupture directivity — forward-directivity amplifies motion in the rupture propagation direction; (5) path effects — attenuation varies by geological province; (6) site effects — soft sediment amplifies; (7) building characteristics — resonance amplifies structural response. A M 7.0 at 10 km on soft sediment can far exceed a M 8.0 at 500 km on bedrock in terms of both ground motion and damage.',
+          explain: 'Earthquake damage is a complex chain from source to structure. Magnitude characterises energy at the source, but what matters for damage is ground motion intensity (peak ground acceleration, velocity, spectral acceleration) at each specific location. Ground motion depends on: (1) source magnitude — larger magnitudes produce stronger motion; (2) distance — attenuation reduces motion with distance; (3) focal depth — shallow earthquakes produce stronger surface shaking; (4) rupture directivity — forward-directivity amplifies motion in the rupture propagation direction; (5) path effects — attenuation varies by geological province; (6) site effects — soft sediment amplifies; (7) building characteristics — resonance amplifies structural response. A M 7.0 at 10 km (6.2 mi) on soft sediment can far exceed a M 8.0 at 500 km (311 mi) on bedrock in terms of both ground motion and damage.',
         },
       ],
     },

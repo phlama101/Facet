@@ -22,15 +22,15 @@ const globalFreshwaterScarcity: Lesson = {
     {
       type: 'intro',
       title: 'A planet of water, a crisis of freshwater',
-      body: `Water covers 71% of Earth's surface, yet the vast majority is saline ocean water. Of all Earth's water, only **2.5% is fresh**, and nearly 70% of that is locked in glaciers and ice caps. Groundwater holds most of the remainder. Surface water — rivers, lakes, and swamps — constitutes just **0.3% of all water on Earth**, the thin accessible fraction that civilisations have relied upon for agriculture and drinking. Global freshwater withdrawals have more than tripled since 1950, reaching ~4,600 km³/year, and demand continues to rise with population and per-capita consumption. Agriculture accounts for ~70% of all freshwater withdrawals globally; industry takes ~20% and municipalities ~10%.
+      body: `Water covers 71% of Earth's surface, yet the vast majority is saline ocean water. Of all Earth's water, only **2.5% is fresh**, and nearly 70% of that is locked in glaciers and ice caps. Groundwater holds most of the remainder. Surface water — rivers, lakes, and swamps — constitutes just **0.3% of all water on Earth**, the thin accessible fraction that civilisations have relied upon for agriculture and drinking. Global freshwater withdrawals have more than tripled since 1950, reaching ~4,600 km³ (1,104 cu mi)/year, and demand continues to rise with population and per-capita consumption. Agriculture accounts for ~70% of all freshwater withdrawals globally; industry takes ~20% and municipalities ~10%.
 
 **Water stress** occurs when annual freshwater withdrawals exceed 40% of available renewable supply. The World Resources Institute's **Aqueduct** platform maps water risk at sub-watershed scale globally. As of 2023, approximately 4 billion people — more than half of humanity — experience severe water scarcity for at least one month per year. Twenty-five countries, home to one quarter of the world's population, face extremely high water stress every year, drawing down more than 80% of their renewable supply annually. The Middle East, North Africa, South Asia, and the southwestern United States are among the most stressed regions.
 
-The concept of **virtual water** (also called embedded or hidden water) helps explain why water stress is a global problem even for water-rich nations. Virtual water is the water consumed in producing a traded good: 1 kg of wheat requires ~1,800 litres; 1 kg of beef ~15,000 litres. When a water-scarce country imports food rather than growing it locally, it effectively imports the water that would have been needed for domestic production. Global food trade transfers ~2,300 km³ of virtual water annually — more than the annual flow of the Amazon River. Nations such as Jordan and Egypt survive their severe water deficits partly through massive food imports, exporting their water stress to exporting nations' aquifers.
+The concept of **virtual water** (also called embedded or hidden water) helps explain why water stress is a global problem even for water-rich nations. Virtual water is the water consumed in producing a traded good: 1 kg (2 lb) of wheat requires ~1,800 litres; 1 kg (2 lb) of beef ~15,000 litres. When a water-scarce country imports food rather than growing it locally, it effectively imports the water that would have been needed for domestic production. Global food trade transfers ~2,300 km³ (552 cu mi) of virtual water annually — more than the annual flow of the Amazon River. Nations such as Jordan and Egypt survive their severe water deficits partly through massive food imports, exporting their water stress to exporting nations' aquifers.
 
-The **Aral Sea collapse** is history's starkest example of freshwater mismanagement at scale. Once the world's fourth-largest lake at 68,000 km², Soviet irrigation diversions of the Amu Darya and Syr Darya rivers beginning in the 1960s shrank the Aral Sea to less than 10% of its original volume by 2007. The exposed seabed became a salt and pesticide desert; fishing communities were destroyed; regional climate became more extreme. **Cape Town's Day Zero** crisis of 2018 illustrated how rapidly a modern city can approach the point of tap shutoff: after three consecutive drought years, reservoir levels in the Western Cape fell below 14% total capacity and daily per-capita limits were cut to 50 litres. Day Zero — the date taps would be turned off — was averted only by emergency demand reduction, cloud-seeding, and above-average rains in 2018. Climate projections suggest such droughts will become more frequent in Mediterranean-climate regions.
+The **Aral Sea collapse** is history's starkest example of freshwater mismanagement at scale. Once the world's fourth-largest lake at 68,000 km² (26,255 sq mi), Soviet irrigation diversions of the Amu Darya and Syr Darya rivers beginning in the 1960s shrank the Aral Sea to less than 10% of its original volume by 2007. The exposed seabed became a salt and pesticide desert; fishing communities were destroyed; regional climate became more extreme. **Cape Town's Day Zero** crisis of 2018 illustrated how rapidly a modern city can approach the point of tap shutoff: after three consecutive drought years, reservoir levels in the Western Cape fell below 14% total capacity and daily per-capita limits were cut to 50 litres. Day Zero — the date taps would be turned off — was averted only by emergency demand reduction, cloud-seeding, and above-average rains in 2018. Climate projections suggest such droughts will become more frequent in Mediterranean-climate regions.
 
-NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes in Earth's gravitational field caused by shifting masses of water. By tracking monthly gravity anomalies, GRACE revealed that major aquifer systems — the Ogallala, Central Valley, Arabian, Ganges–Brahmaputra, and Northern China aquifers — are losing groundwater at rates far exceeding recharge. Between 2002 and 2016, GRACE detected a loss of ~280 km³/year of groundwater globally, equivalent to more than four times the annual flow of the Colorado River. Climate change is amplifying freshwater scarcity by intensifying the water cycle: evaporation increases in warmer temperatures, **wet regions become wetter and dry regions drier**, and precipitation is increasingly delivered in concentrated extreme events rather than gentle sustained rains that can infiltrate.`,
+NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes in Earth's gravitational field caused by shifting masses of water. By tracking monthly gravity anomalies, GRACE revealed that major aquifer systems — the Ogallala, Central Valley, Arabian, Ganges–Brahmaputra, and Northern China aquifers — are losing groundwater at rates far exceeding recharge. Between 2002 and 2016, GRACE detected a loss of ~280 km³ (67 cu mi)/year of groundwater globally, equivalent to more than four times the annual flow of the Colorado River. Climate change is amplifying freshwater scarcity by intensifying the water cycle: evaporation increases in warmer temperatures, **wet regions become wetter and dry regions drier**, and precipitation is increasingly delivered in concentrated extreme events rather than gentle sustained rains that can infiltrate.`,
       keyTerms: [
         {
           term: 'Water Stress',
@@ -38,7 +38,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
         },
         {
           term: 'Virtual Water',
-          def: 'The volume of freshwater consumed in producing a traded good or service. 1 kg of beef requires ~15,000 litres. Global food trade transfers ~2,300 km³ of virtual water annually.',
+          def: 'The volume of freshwater consumed in producing a traded good or service. 1 kg (2 lb) of beef requires ~15,000 litres. Global food trade transfers ~2,300 km³ (552 cu mi) of virtual water annually.',
         },
         {
           term: 'WRI Aqueduct',
@@ -46,7 +46,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
         },
         {
           term: 'GRACE Satellites',
-          def: `NASA twin satellites (2002–present) that detect groundwater depletion by measuring minute changes in Earth\'s gravity field caused by shifting water mass. Revealed global groundwater loss of ~280 km³/year.`,
+          def: `NASA twin satellites (2002–present) that detect groundwater depletion by measuring minute changes in Earth\'s gravity field caused by shifting water mass. Revealed global groundwater loss of ~280 km³ (67 cu mi)/year.`,
         },
         {
           term: 'Day Zero',
@@ -68,7 +68,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           icon: Droplets,
           color: BRAND.accent,
           desc: 'Agriculture consumes ~70% of all global freshwater withdrawals, mostly for irrigation. Irrigated land covers only 20% of cultivated area but produces 40% of global food supply.',
-          examples: `India withdraws ~761 km³/year for agriculture — more than any other nation. Pakistan\'s Indus basin irrigation network is the world\'s largest contiguous system, covering ~14 million ha.`,
+          examples: `India withdraws ~761 km³ (183 cu mi)/year for agriculture — more than any other nation. Pakistan\'s Indus basin irrigation network is the world\'s largest contiguous system, covering ~14 million ha.`,
         },
         {
           name: 'Population & Urbanisation',
@@ -81,7 +81,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           name: 'Groundwater Depletion',
           icon: TrendingDown,
           color: BRAND.coral,
-          desc: 'Overpumping fossil aquifers mines water accumulated over millennia. GRACE satellites detected loss of ~280 km³/year of groundwater globally 2002–2016, largely irreplaceable on human timescales.',
+          desc: 'Overpumping fossil aquifers mines water accumulated over millennia. GRACE satellites detected loss of ~280 km³ (67 cu mi)/year of groundwater globally 2002–2016, largely irreplaceable on human timescales.',
           examples: `Saudi Arabia depleted the majority of its non-renewable fossil aquifer reserves irrigating wheat in the 1980s–2000s. Libya\'s Great Man-Made River pumps Saharan fossil water formed 10,000–38,000 years ago.`,
         },
         {
@@ -132,7 +132,7 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           {
             id: 'physical-supply',
             label: 'Physical Water Supply',
-            description: 'Renewable supply set by precipitation minus evapotranspiration. Globally ~40,000 km³/yr, but distributed unevenly. ~60% occurs as flood pulses too rapid to capture.',
+            description: 'Renewable supply set by precipitation minus evapotranspiration. Globally ~40,000 km³ (9,596 cu mi)/yr, but distributed unevenly. ~60% occurs as flood pulses too rapid to capture.',
             color: BRAND.accent,
           },
           {
@@ -195,23 +195,23 @@ NASA's **GRACE and GRACE-FO satellites** (2002–present) measure tiny changes i
           q: 'What is "virtual water" and why is it relevant to global water scarcity?',
           a: [
             'Virtual water is the water stored in digital models of river basins, used by hydrologists to predict future scarcity without monitoring real rivers',
-            'Virtual water is the water embedded in traded goods — such as the ~15,000 litres to produce 1 kg of beef — meaning food imports effectively transfer water consumption between countries',
+            'Virtual water is the water embedded in traded goods — such as the ~15,000 litres to produce 1 kg (2 lb) of beef — meaning food imports effectively transfer water consumption between countries',
             'Virtual water refers to desalinated seawater that is treated to potable quality but not yet consumed, held in reserve in urban distribution systems',
             'Virtual water is water vapour in the atmosphere that has not yet precipitated; it represents potential future freshwater supply tracked by GRACE satellites',
           ],
           correct: 1,
-          explain: 'A is wrong; virtual water has nothing to do with computer models. B is correct: the concept of virtual water (introduced by John Allan in the 1990s) refers to the volume of freshwater consumed in producing goods and services. When water-scarce countries import water-intensive products like grain or meat, they avoid using their own scarce domestic water — effectively importing the water that production would have required. This matters globally because ~2,300 km³ of virtual water is traded annually via food, helping water-stressed nations survive deficits they could not otherwise bridge. C and D are incorrect; these describe physical, not virtual, water resources.',
+          explain: 'A is wrong; virtual water has nothing to do with computer models. B is correct: the concept of virtual water (introduced by John Allan in the 1990s) refers to the volume of freshwater consumed in producing goods and services. When water-scarce countries import water-intensive products like grain or meat, they avoid using their own scarce domestic water — effectively importing the water that production would have required. This matters globally because ~2,300 km³ (552 cu mi) of virtual water is traded annually via food, helping water-stressed nations survive deficits they could not otherwise bridge. C and D are incorrect; these describe physical, not virtual, water resources.',
         },
         {
           q: `How did NASA\'s GRACE satellites detect groundwater depletion, and what did they find globally?`,
           a: [
             'GRACE used radar to image aquifer surfaces directly, finding that most major aquifers had declined by 50% since 2002',
-            'GRACE measured tiny changes in Earth\'s gravitational field caused by shifting masses of water; between 2002 and 2016 it detected global groundwater loss of ~280 km³/year',
+            'GRACE measured tiny changes in Earth\'s gravitational field caused by shifting masses of water; between 2002 and 2016 it detected global groundwater loss of ~280 km³ (67 cu mi)/year',
             'GRACE tracked chlorophyll signals from irrigated crops, allowing scientists to infer groundwater use by measuring agricultural greenness from space',
             'GRACE used multispectral imaging to map the colour of rivers and lakes, inferring that freshwater bodies had shrunk by 15% since 2000',
           ],
           correct: 1,
-          explain: `A is wrong: GRACE cannot image aquifer surfaces directly; radar cannot see through rock to measure water table depth at basin scale. B is correct: the GRACE twin satellites, launched in 2002, measured microscopic month-to-month changes in Earth\'s gravitational field. Because water mass is measurable through gravity, redistributions of groundwater cause detectable gravity anomalies. By comparing monthly gravity maps, scientists found that major aquifer systems — including the Ogallala, Central Valley, Arabian Peninsula, Ganges–Brahmaputra, and North China Plain aquifers — are losing groundwater far faster than they are being recharged, totalling roughly 280 km³/year globally. C and D describe unrelated remote sensing methods (NDVI for vegetation, optical for surface water) and are wrong.`,
+          explain: `A is wrong: GRACE cannot image aquifer surfaces directly; radar cannot see through rock to measure water table depth at basin scale. B is correct: the GRACE twin satellites, launched in 2002, measured microscopic month-to-month changes in Earth\'s gravitational field. Because water mass is measurable through gravity, redistributions of groundwater cause detectable gravity anomalies. By comparing monthly gravity maps, scientists found that major aquifer systems — including the Ogallala, Central Valley, Arabian Peninsula, Ganges–Brahmaputra, and North China Plain aquifers — are losing groundwater far faster than they are being recharged, totalling roughly 280 km³ (67 cu mi)/year globally. C and D describe unrelated remote sensing methods (NDVI for vegetation, optical for surface water) and are wrong.`,
         },
         {
           q: `Cape Town\'s 2018 "Day Zero" crisis illustrated which key vulnerability of urban water systems?`,

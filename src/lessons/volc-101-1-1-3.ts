@@ -46,7 +46,7 @@ Plutonic rocks are not just academic curiosities — they compose the deep basem
             x: 50,
             y: 14,
             label: 'Eruption Column',
-            description: 'A plume of ash, gas, and rock fragments (tephra) propelled upward by expanding volcanic gases during explosive eruptions. Eruption columns from major events like the 1991 Pinatubo eruption can reach 35+ km into the stratosphere, injecting sulfur dioxide that forms reflective aerosols and causes temporary global cooling of ~0.5°C (33°F) for 1–2 years. Collapsing columns produce deadly pyroclastic flows.',
+            description: 'A plume of ash, gas, and rock fragments (tephra) propelled upward by expanding volcanic gases during explosive eruptions. Eruption columns from major events like the 1991 Pinatubo eruption can reach 35+ km (22+ mi) into the stratosphere, injecting sulfur dioxide that forms reflective aerosols and causes temporary global cooling of ~0.5°C (1°F) for 1–2 years. Collapsing columns produce deadly pyroclastic flows.',
           },
           {
             id: 'crater',

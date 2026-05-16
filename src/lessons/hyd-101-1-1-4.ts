@@ -23,11 +23,11 @@ const snowHydrology: Lesson = {
       title: `Snowpack as nature\'s reservoir: storing winter precipitation for summer rivers`,
       body: `In cold climates and mountains worldwide, winter snowpack functions as a natural reservoir, storing precipitation as snow from November through April and releasing it gradually as meltwater during spring and summer. Mountains have been called "water towers of the world": the Hindu Kush-Himalaya, the Andes, the Western US Rockies, the Alps, and the Tianshan collectively supply freshwater to over 1.9 billion people downstream. In the Colorado River basin, snowmelt provides ~85% of annual flow; in the Sacramento-San Joaquin watershed of California, mountain snowpack provides over 30% of the state\'s water supply.
 
-Snow water equivalent (SWE) is the depth of liquid water that would result from melting a snowpack. SWE integrates the full winter accumulation history and is the critical metric for water supply forecasting. In the Western United States, April 1 SWE historically explained ~70% of annual streamflow variability in snow-dominated basins. Snowmelt is driven by the energy balance of the snowpack: net radiation dominates during clear spring days (accounting for 60–80% of melt energy), while turbulent fluxes (sensible and latent heat from warm, moist air) dominate during rain-on-snow events. The simple degree-day (temperature index) method — melt rate = degree-day factor × (T − 0°C) — captures 70–80% of melt variability with just air temperature data.
+Snow water equivalent (SWE) is the depth of liquid water that would result from melting a snowpack. SWE integrates the full winter accumulation history and is the critical metric for water supply forecasting. In the Western United States, April 1 SWE historically explained ~70% of annual streamflow variability in snow-dominated basins. Snowmelt is driven by the energy balance of the snowpack: net radiation dominates during clear spring days (accounting for 60–80% of melt energy), while turbulent fluxes (sensible and latent heat from warm, moist air) dominate during rain-on-snow events. The simple degree-day (temperature index) method — melt rate = degree-day factor × (T − 0°C (32°F)) — captures 70–80% of melt variability with just air temperature data.
 
-Rain-on-snow (ROS) events occur when warm rain falls on existing snowpack, triggering rapid melt that combines with rain for extreme runoff. Historic ROS floods include the 1964 Christmas Flood in the Pacific Northwest (river flows 5-10× normal January levels) and the January 1997 Northern California floods (50+ mm of rain on a 600 mm SWE snowpack, causing $1.6 billion in damages). Under climate warming, the snowmelt season is shifting earlier and ROS events are becoming more frequent at higher elevations as the rain-snow transition zone moves upward.
+Rain-on-snow (ROS) events occur when warm rain falls on existing snowpack, triggering rapid melt that combines with rain for extreme runoff. Historic ROS floods include the 1964 Christmas Flood in the Pacific Northwest (river flows 5-10× normal January levels) and the January 1997 Northern California floods (50+ mm of rain on a 600 mm (23.62 in) SWE snowpack, causing $1.6 billion in damages). Under climate warming, the snowmelt season is shifting earlier and ROS events are becoming more frequent at higher elevations as the rain-snow transition zone moves upward.
 
-Permafrost — ground that remains below 0°C for two or more consecutive years — underlies about 25% of the Northern Hemisphere land area and stores vast amounts of water and carbon. Thermokarst landscapes form as permafrost thaws: ground ice melts, creating ponds, lakes, and irregular terrain. In the Arctic, permafrost thaw is altering drainage patterns, converting lakes to bogs, increasing dissolved organic carbon export to rivers, and releasing stored methane and CO₂. In mountain regions, the loss of glaciers and permafrost is reducing dry-season baseflow — the late-summer low-flow period when many communities and ecosystems depend on stored meltwater.`,
+Permafrost — ground that remains below 0°C (32°F) for two or more consecutive years — underlies about 25% of the Northern Hemisphere land area and stores vast amounts of water and carbon. Thermokarst landscapes form as permafrost thaws: ground ice melts, creating ponds, lakes, and irregular terrain. In the Arctic, permafrost thaw is altering drainage patterns, converting lakes to bogs, increasing dissolved organic carbon export to rivers, and releasing stored methane and CO₂. In mountain regions, the loss of glaciers and permafrost is reducing dry-season baseflow — the late-summer low-flow period when many communities and ecosystems depend on stored meltwater.`,
       keyTerms: [
         {
           term: 'Snow Water Equivalent (SWE)',
@@ -35,7 +35,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
         },
         {
           term: 'Degree-Day Factor',
-          def: 'Daily melt rate per degree above 0°C; empirical parameter for temperature-index snowmelt models.',
+          def: 'Daily melt rate per degree above 0°C (32°F); empirical parameter for temperature-index snowmelt models.',
         },
         {
           term: 'Rain-on-Snow (ROS)',
@@ -43,7 +43,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
         },
         {
           term: 'Permafrost',
-          def: 'Ground remaining below 0°C for ≥2 consecutive years; underlies ~25% of Northern Hemisphere land area.',
+          def: 'Ground remaining below 0°C (32°F) for ≥2 consecutive years; underlies ~25% of Northern Hemisphere land area.',
         },
         {
           term: 'Water Tower',
@@ -67,14 +67,14 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
           icon: Layers,
           color: BRAND.amethyst,
           desc: 'New snow adds to the snowpack. Density: 50-100 kg/m³ for fresh snow, 300-500 kg/m³ for settled pack. SWE = depth × density/ρw.',
-          examples: 'Sierra Nevada: April 1 SWE up to 1,500 mm in exceptional years; current trend: -25% since 1950 due to warming.',
+          examples: 'Sierra Nevada: April 1 SWE up to 1,500 mm (59.06 in) in exceptional years; current trend: -25% since 1950 due to warming.',
         },
         {
           name: 'Ripening',
           icon: Zap,
           color: BRAND.gold,
-          desc: 'Snowpack warms to 0°C throughout. Liquid water retained in pore spaces. No melt output until pack is "ripe" (liquid water content ~3-5%).',
-          examples: 'A 500 mm SWE snowpack must absorb ~2.1 MJ/m² of energy just to warm to 0°C before any melt runoff occurs.',
+          desc: 'Snowpack warms to 0°C (32°F) throughout. Liquid water retained in pore spaces. No melt output until pack is "ripe" (liquid water content ~3-5%).',
+          examples: 'A 500 mm (19.69 in) SWE snowpack must absorb ~2.1 MJ/m² of energy just to warm to 0°C (32°F) before any melt runoff occurs.',
         },
         {
           name: 'Melt & Runoff',
@@ -88,7 +88,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
           icon: Globe,
           color: BRAND.ruby,
           desc: 'Warm rain accelerates melt by adding energy (condensation releases 2,500 kJ/kg) and liquid water simultaneously. Highest runoff rates.',
-          examples: '1997 California ROS floods: 50 mm rain on 600 mm SWE snowpack → $1.6 B damage. Projected to become more frequent as rain-snow line rises.',
+          examples: '1997 California ROS floods: 50 mm (1.97 in) rain on 600 mm (23.62 in) SWE snowpack → $1.6 B damage. Projected to become more frequent as rain-snow line rises.',
         },
         {
           name: 'Permafrost Thaw',
@@ -110,7 +110,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
             x: 8,
             y: 55,
             label: 'Evaporation',
-            description: 'Solar energy drives water from ocean surfaces into the atmosphere as water vapour — the primary input to the water cycle. Globally, ~505,000 km³ evaporate per year from the oceans, equivalent to a global ocean layer ~1.4 m thick. Sea surface temperature directly controls the evaporation rate, making the ocean\'s energy budget central to understanding precipitation patterns and hurricane intensification.',
+            description: 'Solar energy drives water from ocean surfaces into the atmosphere as water vapour — the primary input to the water cycle. Globally, ~505,000 km³ (121,150 cu mi) evaporate per year from the oceans, equivalent to a global ocean layer ~1.4 m (5 ft) thick. Sea surface temperature directly controls the evaporation rate, making the ocean\'s energy budget central to understanding precipitation patterns and hurricane intensification.',
           },
           {
             id: 'cloud-formation',
@@ -124,7 +124,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
             x: 37,
             y: 37,
             label: 'Precipitation',
-            description: 'Water returns to Earth\'s surface as rain, snow, sleet, or hail when cloud droplets combine into drops large enough to fall. Global average precipitation is ~990 mm/year but distributed very unevenly: tropical rainforests receive >2,000 mm/year while deserts receive <250 mm. The monsoon systems of South and East Asia deliver 70–80% of the year\'s rain in just 3–4 months.',
+            description: 'Water returns to Earth\'s surface as rain, snow, sleet, or hail when cloud droplets combine into drops large enough to fall. Global average precipitation is ~990 mm/year but distributed very unevenly: tropical rainforests receive >2,000 mm/year while deserts receive <250 mm (9.84 in). The monsoon systems of South and East Asia deliver 70–80% of the year\'s rain in just 3–4 months.',
           },
           {
             id: 'surface-runoff',
@@ -154,7 +154,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
           {
             id: 'winter-snowfall',
             label: 'Winter Snowfall',
-            description: 'Cold-season precipitation accumulates as snowpack. Mountain ranges receive 500-3,000 mm SWE. Acts as frozen reservoir through winter.',
+            description: 'Cold-season precipitation accumulates as snowpack. Mountain ranges receive 500-3,000 mm (118.11 in) SWE. Acts as frozen reservoir through winter.',
             color: BRAND.amethyst,
           },
           {
@@ -172,7 +172,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
           {
             id: 'snowmelt',
             label: 'Spring Snowmelt',
-            description: 'Pack warms to 0°C (ripening), then melts at 335 kJ/kg. Temperature-index models: melt = DDF × (T - 0°C). Peak melt: April-June at mid-elevations.',
+            description: 'Pack warms to 0°C (ripening), then melts at 335 kJ/kg. Temperature-index models: melt = DDF × (T - 0°C (32°F)). Peak melt: April-June at mid-elevations.',
             color: BRAND.coral,
           },
           {
@@ -209,7 +209,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
             'SWE measures the area covered by snow; used because coverage determines total basin-wide melt volume',
           ],
           correct: 1,
-          explain: 'Snow depth tells you how tall the snowpack is, but snow density varies enormously: fresh dendritic snowflakes have density ~50–100 kg/m³ (98% air by volume), while spring corn snow reaches 400–500 kg/m³. A 2 m deep snowpack of light powder contains far less water than a 2 m deep pack of dense spring snow. SWE = snow depth × (snow density / water density), giving the water depth equivalent. For a 1 m deep snowpack with density 300 kg/m³: SWE = 1.0 × (300/1000) = 0.3 m = 300 mm. SNOTEL (SNOpack TELemetry) sensors in the US West automatically measure both depth and SWE (via snow pillow lysimeters) to support seasonal streamflow forecasting.',
+          explain: 'Snow depth tells you how tall the snowpack is, but snow density varies enormously: fresh dendritic snowflakes have density ~50–100 kg/m³ (98% air by volume), while spring corn snow reaches 400–500 kg/m³. A 2 m (7 ft) deep snowpack of light powder contains far less water than a 2 m (7 ft) deep pack of dense spring snow. SWE = snow depth × (snow density / water density), giving the water depth equivalent. For a 1 m (3 ft) deep snowpack with density 300 kg/m³: SWE = 1.0 × (300/1000) = 0.3 m (1 ft) = 300 mm (11.81 in). SNOTEL (SNOpack TELemetry) sensors in the US West automatically measure both depth and SWE (via snow pillow lysimeters) to support seasonal streamflow forecasting.',
         },
         {
           q: 'Why are "mountains" described as "water towers of the world"?',
@@ -231,7 +231,7 @@ Permafrost — ground that remains below 0°C for two or more consecutive years 
             'Snow absorbs rainfall into its crystal matrix, then releases both simultaneously when the pack collapses',
           ],
           correct: 1,
-          explain: 'ROS events produce extreme runoff through two simultaneous processes: (1) the rainfall itself adds liquid water directly — 50 mm of rain is 50 mm of runoff potential; (2) when warm, moist air meets the cold snowpack, water vapour condenses on the snow surface, releasing ~2,500 kJ/kg of latent heat. This condensation energy is far more effective at melting snow than the same mass of rainfall would be through sensible heat exchange. Together, the direct rainfall plus accelerated snowmelt can generate 100–200 mm of runoff in 24–48 hours. This is why ROS events in mountainous terrain produce some of the highest-magnitude floods on record.',
+          explain: 'ROS events produce extreme runoff through two simultaneous processes: (1) the rainfall itself adds liquid water directly — 50 mm (1.97 in) of rain is 50 mm (1.97 in) of runoff potential; (2) when warm, moist air meets the cold snowpack, water vapour condenses on the snow surface, releasing ~2,500 kJ/kg of latent heat. This condensation energy is far more effective at melting snow than the same mass of rainfall would be through sensible heat exchange. Together, the direct rainfall plus accelerated snowmelt can generate 100–200 mm (7.87 in) of runoff in 24–48 hours. This is why ROS events in mountainous terrain produce some of the highest-magnitude floods on record.',
         },
         {
           q: 'How does warming climate affect mountain snowpack and downstream water availability?',

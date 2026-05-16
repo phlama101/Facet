@@ -88,7 +88,7 @@ Drought types form a progression: meteorological drought (precipitation deficit)
           name: 'Compound Flooding: Harvey 2017',
           icon: Zap,
           color: BRAND.gold,
-          desc: 'Hurricane Harvey: extreme rainfall (1,320 mm in 4 days over Houston) coincided with Gulf storm surge blocking bayou drainage. Neither event alone explains observed inundation depth. Copula models are used to estimate joint exceedance probabilities of two dependent hazards.',
+          desc: 'Hurricane Harvey: extreme rainfall (1,320 mm (51.97 in) in 4 days over Houston) coincided with Gulf storm surge blocking bayou drainage. Neither event alone explains observed inundation depth. Copula models are used to estimate joint exceedance probabilities of two dependent hazards.',
           examples: 'Harvey: 25-trillion-gallon total rainfall. Copula analysis showed the joint probability of the rainfall amount AND storm surge magnitude was approximately 1 in 1,000 years. Univariate analysis of each component gave misleadingly lower risk estimates.',
         },
         {
@@ -131,7 +131,7 @@ Drought types form a progression: meteorological drought (precipitation deficit)
           icon: Globe,
           color: BRAND.gold,
           desc: 'June 2021: unprecedented heat dome killed ~1,400 people in Pacific Northwest (Canada/USA) and drove streamflow to record lows. World Weather Attribution: this event was made ~150× more likely by anthropogenic climate change.',
-          examples: `Lytton, British Columbia: 49.6°C — Canada\'s all-time temperature record — followed by a wildfire the next day that destroyed 90% of the town. WWA analysis showed the event was "virtually impossible" without climate change; under 2°C warming it becomes a ~1-in-5-year event.`,
+          examples: `Lytton, British Columbia: 49.6°C (121°F) — Canada\'s all-time temperature record — followed by a wildfire the next day that destroyed 90% of the town. WWA analysis showed the event was "virtually impossible" without climate change; under 2°C (36°F) warming it becomes a ~1-in-5-year event.`,
         },
         {
           name: 'Satellite Drought Monitoring',
@@ -183,7 +183,7 @@ Drought types form a progression: meteorological drought (precipitation deficit)
           {
             id: 'attribution-risk',
             label: 'Attribution & Changing Return Periods',
-            description: 'World Weather Attribution framework: compare event probability in actual climate vs. counterfactual pre-industrial climate using large GCM ensembles. 2021 Pacific NW heat dome: 150× more likely with anthropogenic forcing. IPCC AR6: 1-in-50-year precipitation extremes become 1-in-10-year events at 2°C global warming.',
+            description: 'World Weather Attribution framework: compare event probability in actual climate vs. counterfactual pre-industrial climate using large GCM ensembles. 2021 Pacific NW heat dome: 150× more likely with anthropogenic forcing. IPCC AR6: 1-in-50-year precipitation extremes become 1-in-10-year events at 2°C (36°F) global warming.',
             color: BRAND.amethyst,
           },
         ],
@@ -249,11 +249,11 @@ Drought types form a progression: meteorological drought (precipitation deficit)
           a: [
             'The 150× ratio means that 150 such events occurred globally in the same year due to climate change; WWA counted observed heat extremes worldwide and compared the total to a baseline of 1 event in pre-industrial climate conditions',
             'The 150× ratio is the ratio of the event\'s return period in the actual (anthropogenically forced) climate to its return period in a counterfactual pre-industrial climate; if the event has a return period of 1,000 years in the pre-industrial climate and 7 years in the current climate, the ratio is ~143×, meaning the event is ~143× more likely today than in the pre-industrial era',
-            'The 150× ratio means that climate change increased the peak temperature of the event by 150%; a 30°C pre-industrial extreme was amplified to a 75°C extreme under anthropogenic forcing, and the ratio reflects the temperature multiplication factor',
+            'The 150× ratio means that climate change increased the peak temperature of the event by 150%; a 30°C (86°F) pre-industrial extreme was amplified to a 75°C (167°F) extreme under anthropogenic forcing, and the ratio reflects the temperature multiplication factor',
             'The 150× ratio is calculated by dividing the total economic damages from the 2021 event by the expected damages from an average (1-in-1-year) heat event, standardised to 2021 dollars; it is an economic loss ratio rather than a probability ratio',
           ],
           correct: 1,
-          explain: 'World Weather Attribution (WWA) calculates attribution ratios using the "probability ratio" (PR) framework, also expressible as a return period ratio. The method runs large ensembles of climate model simulations under two scenarios: (1) the actual observed climate, including anthropogenic greenhouse gas forcing; and (2) a counterfactual climate representing conditions as they would have been without human emissions (typically representing pre-industrial or early-industrial climate). For the 2021 Pacific Northwest event, the analysis estimated the return period in the current climate at approximately 1,000 years (an extremely rare event even with current forcing) and in the counterfactual pre-industrial climate at approximately 150,000 years (essentially impossible). The probability ratio PR = (1/1,000) ÷ (1/150,000) ≈ 150 — meaning the event is approximately 150× more probable in the actual climate than in the pre-industrial counterfactual. WWA also noted that the observed temperature was approximately 2°C higher than the models simulated even with anthropogenic forcing, suggesting either natural variability contributed a rare excursion or the models underestimate the tail behaviour. The 150× figure is a central estimate with substantial uncertainty; the 95% confidence interval spanned from "clearly more likely" to "essentially impossible without climate change," which led WWA to conclude the event was "virtually impossible" in a pre-industrial world.',
+          explain: 'World Weather Attribution (WWA) calculates attribution ratios using the "probability ratio" (PR) framework, also expressible as a return period ratio. The method runs large ensembles of climate model simulations under two scenarios: (1) the actual observed climate, including anthropogenic greenhouse gas forcing; and (2) a counterfactual climate representing conditions as they would have been without human emissions (typically representing pre-industrial or early-industrial climate). For the 2021 Pacific Northwest event, the analysis estimated the return period in the current climate at approximately 1,000 years (an extremely rare event even with current forcing) and in the counterfactual pre-industrial climate at approximately 150,000 years (essentially impossible). The probability ratio PR = (1/1,000) ÷ (1/150,000) ≈ 150 — meaning the event is approximately 150× more probable in the actual climate than in the pre-industrial counterfactual. WWA also noted that the observed temperature was approximately 2°C (36°F) higher than the models simulated even with anthropogenic forcing, suggesting either natural variability contributed a rare excursion or the models underestimate the tail behaviour. The 150× figure is a central estimate with substantial uncertainty; the 95% confidence interval spanned from "clearly more likely" to "essentially impossible without climate change," which led WWA to conclude the event was "virtually impossible" in a pre-industrial world.',
         },
       ],
     },

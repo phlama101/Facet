@@ -21,9 +21,9 @@ const precipitationET: Lesson = {
     {
       type: 'intro',
       title: 'From orographic uplift to the Penman-Monteith equation: where water enters and leaves the land surface',
-      body: `Precipitation begins when water vapour in rising air cools to the dewpoint and condenses onto tiny aerosol particles — condensation nuclei — to form cloud droplets that grow until they fall. Three main mechanisms lift air to the dewpoint: convective lifting (instability-driven; typical of tropical thunderstorms and afternoon showers), orographic lifting (forced ascent over mountain barriers; produces 5,000+ mm/yr in windward ranges like the Western Ghats and Hawaiian Ko\'olau), and frontal/cyclonic lifting (lifting along weather fronts and within extratropical cyclones). Global mean precipitation is about 990 mm/yr over land, but with extreme variability: the Atacama Desert receives < 0.1 mm/yr while Cherrapunji, India received 26,470 mm in a single year (1861).
+      body: `Precipitation begins when water vapour in rising air cools to the dewpoint and condenses onto tiny aerosol particles — condensation nuclei — to form cloud droplets that grow until they fall. Three main mechanisms lift air to the dewpoint: convective lifting (instability-driven; typical of tropical thunderstorms and afternoon showers), orographic lifting (forced ascent over mountain barriers; produces 5,000+ mm/yr in windward ranges like the Western Ghats and Hawaiian Ko\'olau), and frontal/cyclonic lifting (lifting along weather fronts and within extratropical cyclones). Global mean precipitation is about 990 mm/yr over land, but with extreme variability: the Atacama Desert receives < 0.1 mm/yr while Cherrapunji, India received 26,470 mm (1042.12 in) in a single year (1861).
 
-Evapotranspiration (ET) is the combined flux of water vapour from land surfaces — including direct evaporation from soil, open water, and wet canopies, plus transpiration through plant stomata. ET accounts for ~73,000 km³/yr globally — about 65% of all land precipitation returns directly to the atmosphere this way. In humid climates ET is energy-limited; in arid climates it is water-limited. The Penman-Monteith equation (1948, adopted as FAO standard in 1998) is the accepted method for calculating reference ET from meteorological variables — net radiation, air temperature, wind speed, and vapour pressure deficit — and forms the basis for irrigation scheduling worldwide.
+Evapotranspiration (ET) is the combined flux of water vapour from land surfaces — including direct evaporation from soil, open water, and wet canopies, plus transpiration through plant stomata. ET accounts for ~73,000 km³ (17,513 cu mi)/yr globally — about 65% of all land precipitation returns directly to the atmosphere this way. In humid climates ET is energy-limited; in arid climates it is water-limited. The Penman-Monteith equation (1948, adopted as FAO standard in 1998) is the accepted method for calculating reference ET from meteorological variables — net radiation, air temperature, wind speed, and vapour pressure deficit — and forms the basis for irrigation scheduling worldwide.
 
 The water balance equation links these fluxes: precipitation (P) equals evapotranspiration (ET) plus runoff (Q) plus the change in storage (ΔS), or P = ET + Q + ΔS. Over long time periods, storage change averages to near zero and the equation simplifies to: precipitation is partitioned between what evapotranspires and what runs off. Globally, about 65% of land precipitation evapotranspires and ~35% becomes river discharge. The Budyko framework describes this partitioning as a function of the aridity index (PET/P): in humid catchments the ratio of actual ET to precipitation approaches 1.0; in hyper-arid ones it falls toward 0.
 
@@ -55,7 +55,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
       type: 'callout' as const,
       variant: 'fact',
       headline: 'The Amazon River discharges about 20% of all freshwater entering the world\'s oceans',
-      body: 'The Amazon River discharges about 20% of all freshwater entering the world\'s oceans — roughly 209,000 cubic metres per second. The Amazon\'s plume of freshwater extends 200 km into the Atlantic Ocean and is detectable by satellite as a band of lower salinity.',
+      body: 'The Amazon River discharges about 20% of all freshwater entering the world\'s oceans — roughly 209,000 cubic metres per second. The Amazon\'s plume of freshwater extends 200 km (124 mi) into the Atlantic Ocean and is detectable by satellite as a band of lower salinity.',
     },
     {
       type: 'concept',
@@ -74,14 +74,14 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
           icon: Layers,
           color: BRAND.jade,
           desc: 'Moist air forced over mountains. Windward wet, leeward dry (rain shadow). Can produce extreme annual totals.',
-          examples: 'Cherrapunji, India: 11,430 mm annual avg (record year: 26,470 mm). Death Valley rain shadow: ~60 mm/yr.',
+          examples: 'Cherrapunji, India: 11,430 mm (450.00 in) annual avg (record year: 26,470 mm (1042.12 in)). Death Valley rain shadow: ~60 mm/yr.',
         },
         {
           name: 'Frontal/Cyclonic',
           icon: ArrowRight,
           color: BRAND.gold,
           desc: 'Lifting along weather fronts and within mid-latitude cyclones. Widespread, moderate intensity precipitation.',
-          examples: 'UK and NW Europe: 600-1,500 mm/yr from frontal systems. Pacific Northwest: 1,000-3,000 mm in Cascades.',
+          examples: 'UK and NW Europe: 600-1,500 mm/yr from frontal systems. Pacific Northwest: 1,000-3,000 mm (118.11 in) in Cascades.',
         },
         {
           name: 'Penman-Monteith',
@@ -110,7 +110,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
             x: 8,
             y: 55,
             label: 'Evaporation',
-            description: 'Solar energy drives water from ocean surfaces into the atmosphere as water vapour — the primary input to the water cycle. Globally, ~505,000 km³ evaporate per year from the oceans, equivalent to a global ocean layer ~1.4 m thick. Sea surface temperature directly controls the evaporation rate, making the ocean\'s energy budget central to understanding precipitation patterns and hurricane intensification.',
+            description: 'Solar energy drives water from ocean surfaces into the atmosphere as water vapour — the primary input to the water cycle. Globally, ~505,000 km³ (121,150 cu mi) evaporate per year from the oceans, equivalent to a global ocean layer ~1.4 m (5 ft) thick. Sea surface temperature directly controls the evaporation rate, making the ocean\'s energy budget central to understanding precipitation patterns and hurricane intensification.',
           },
           {
             id: 'cloud-formation',
@@ -124,7 +124,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
             x: 37,
             y: 37,
             label: 'Precipitation',
-            description: 'Water returns to Earth\'s surface as rain, snow, sleet, or hail when cloud droplets combine into drops large enough to fall. Global average precipitation is ~990 mm/year but distributed very unevenly: tropical rainforests receive >2,000 mm/year while deserts receive <250 mm. The monsoon systems of South and East Asia deliver 70–80% of the year\'s rain in just 3–4 months.',
+            description: 'Water returns to Earth\'s surface as rain, snow, sleet, or hail when cloud droplets combine into drops large enough to fall. Global average precipitation is ~990 mm/year but distributed very unevenly: tropical rainforests receive >2,000 mm/year while deserts receive <250 mm (9.84 in). The monsoon systems of South and East Asia deliver 70–80% of the year\'s rain in just 3–4 months.',
           },
           {
             id: 'surface-runoff',
@@ -184,7 +184,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
           {
             id: 'runoff',
             label: 'Runoff & Streamflow',
-            description: 'Remainder after ET and soil storage. ~35% of global land precipitation (~38,000 km³/yr) leaves as river discharge to the ocean.',
+            description: 'Remainder after ET and soil storage. ~35% of global land precipitation (~38,000 km³ (9,116 cu mi)/yr) leaves as river discharge to the ocean.',
             color: BRAND.amethyst,
           },
         ],
@@ -221,7 +221,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
             'Runoff volume from a watershed during a single storm event using the rational method',
           ],
           correct: 1,
-          explain: 'The Penman-Monteith (PM) equation combines the energy balance (net radiation drives latent heat flux) with an aerodynamic resistance term (vapour pressure deficit and wind speed drive atmospheric vapour demand) to compute reference evapotranspiration ET₀. The FAO-56 version (Allen et al., 1998) standardises ET₀ for a hypothetical 0.12 m tall grass reference surface. To get actual crop ET, multiply ET₀ by a crop coefficient Kc that accounts for crop type (deep-rooted vs shallow), phenological stage, and local practices. This method underpins agricultural water management on every irrigated continent.',
+          explain: 'The Penman-Monteith (PM) equation combines the energy balance (net radiation drives latent heat flux) with an aerodynamic resistance term (vapour pressure deficit and wind speed drive atmospheric vapour demand) to compute reference evapotranspiration ET₀. The FAO-56 version (Allen et al., 1998) standardises ET₀ for a hypothetical 0.12 m (0 ft) tall grass reference surface. To get actual crop ET, multiply ET₀ by a crop coefficient Kc that accounts for crop type (deep-rooted vs shallow), phenological stage, and local practices. This method underpins agricultural water management on every irrigated continent.',
         },
         {
           q: 'In the Budyko framework, what happens to actual evapotranspiration (AET) when aridity index (PET/P) is very high (> 3)?',
@@ -232,7 +232,7 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
             'AET equals PET because the aridity index is no longer relevant above a threshold of 2',
           ],
           correct: 1,
-          explain: 'In the Budyko curve, when aridity index PET/P >> 1, the system is water-limited: almost all available precipitation is consumed by evapotranspiration and very little remains as runoff. AET/P approaches 1.0 (100% of rain evapotranspires). This is the condition in semi-arid to arid regions like the Sahel, where annual rainfall is 300–500 mm but PET exceeds 2,000 mm — every drop of rain either evapotranspires or soaks into the dry soil. Conversely, when PET/P << 1 (very humid climates), the system is energy-limited: even though water is abundant, there is only enough solar energy to evaporate a fraction of it, and the rest becomes runoff.',
+          explain: 'In the Budyko curve, when aridity index PET/P >> 1, the system is water-limited: almost all available precipitation is consumed by evapotranspiration and very little remains as runoff. AET/P approaches 1.0 (100% of rain evapotranspires). This is the condition in semi-arid to arid regions like the Sahel, where annual rainfall is 300–500 mm (19.69 in) but PET exceeds 2,000 mm (78.74 in) — every drop of rain either evapotranspires or soaks into the dry soil. Conversely, when PET/P << 1 (very humid climates), the system is energy-limited: even though water is abundant, there is only enough solar energy to evaporate a fraction of it, and the rest becomes runoff.',
         },
         {
           q: 'What advantage does the GPM (Global Precipitation Measurement) satellite mission provide over rain gauges?',
@@ -248,10 +248,10 @@ Remote sensing has transformed precipitation and ET measurement. NASA\'s Global 
         {
           q: 'In a humid climate watershed receiving 1,200 mm/yr of precipitation, approximately how much becomes annual streamflow?',
           a: [
-            'Nearly all 1,200 mm — humid climates have near-zero evapotranspiration',
-            'About 35-40% (~420-480 mm) — the rest evapotranspires back to the atmosphere',
-            'About 5% (~60 mm) — most moisture is stored in the soil permanently',
-            'Exactly 50% (600 mm) in all humid climates regardless of vegetation type',
+            'Nearly all 1,200 mm (47.24 in) — humid climates have near-zero evapotranspiration',
+            'About 35-40% (~420-480 mm (18.90 in)) — the rest evapotranspires back to the atmosphere',
+            'About 5% (~60 mm (2.36 in)) — most moisture is stored in the soil permanently',
+            'Exactly 50% (600 mm (23.62 in)) in all humid climates regardless of vegetation type',
           ],
           correct: 1,
           explain: 'The Budyko framework and global water balance both indicate that globally about 65% of land precipitation returns to the atmosphere as evapotranspiration, leaving ~35% as runoff and groundwater discharge. For a humid temperate watershed receiving 1,200 mm/yr, a typical ET of 600–700 mm/yr (driven by available solar energy, roughly 1,200–1,500 MJ/m²/yr in temperate latitudes) would leave 500–600 mm/yr as streamflow and groundwater recharge. Actual ratios vary by vegetation type (forests ET more than grasslands), soil depth, and aspect. Tropical humid forests can ET 70–80% of precipitation; boreal forests and tundra ET only 40–50%.',

@@ -34,11 +34,11 @@ The resolution came from an unlikely direction: the bottom of the ocean. During 
         },
         {
           term: 'Lithosphere',
-          def: "The rigid outer layer of Earth comprising the crust and the uppermost mantle. Broken into tectonic plates. Thickness varies: ~7 km for young oceanic lithosphere at mid-ocean ridges, up to ~200 km for old, cold continental cratons.",
+          def: "The rigid outer layer of Earth comprising the crust and the uppermost mantle. Broken into tectonic plates. Thickness varies: ~7 km (4.3 mi) for young oceanic lithosphere at mid-ocean ridges, up to ~200 km (124 mi) for old, cold continental cratons.",
         },
         {
           term: 'Asthenosphere',
-          def: "The mechanically weak, partially molten layer of the upper mantle directly below the lithosphere, extending to roughly 660 km depth. It flows slowly under sustained stress (over thousands to millions of years), allowing the rigid lithospheric plates above it to move.",
+          def: "The mechanically weak, partially molten layer of the upper mantle directly below the lithosphere, extending to roughly 660 km (410 mi) depth. It flows slowly under sustained stress (over thousands to millions of years), allowing the rigid lithospheric plates above it to move.",
         },
         {
           term: 'Continental drift',
@@ -67,7 +67,7 @@ The resolution came from an unlikely direction: the bottom of the ocean. During 
 
 **Age of the ocean floor.** A further confirmation: the age of ocean floor rocks increases symmetrically away from ridge crests. The youngest rocks — essentially still being formed — occur at ridge axes. The oldest ocean floor anywhere on Earth is approximately 200 million years old, found in the far western Pacific near subduction zones. Compare this to continental rocks, which can be up to 4 billion years old. The ocean floor is geologically young because it is continuously created at ridges and destroyed at subduction zones. This constant recycling is why the ocean floor preserves no record of ancient Earth history — that record is in the continents.
 
-**The plate tectonic synthesis.** By the early 1970s, the scientific community had assembled seafloor spreading, paleomagnetism, seismicity, and Wegener's original evidence into a unified theory: plate tectonics. Earth's lithosphere is divided into approximately 15 major plates (and several smaller ones). Some plates carry only oceanic crust (the Pacific Plate is almost entirely oceanic). Others carry both (the North American Plate carries the North American continent plus the western half of the Atlantic Ocean floor). Plates move at rates of 1–15 cm per year — roughly the rate at which fingernails grow. Over millions of years, this motion opens and closes ocean basins, builds mountain ranges, and drives the volcanic and seismic activity that concentrates at plate boundaries.
+**The plate tectonic synthesis.** By the early 1970s, the scientific community had assembled seafloor spreading, paleomagnetism, seismicity, and Wegener's original evidence into a unified theory: plate tectonics. Earth's lithosphere is divided into approximately 15 major plates (and several smaller ones). Some plates carry only oceanic crust (the Pacific Plate is almost entirely oceanic). Others carry both (the North American Plate carries the North American continent plus the western half of the Atlantic Ocean floor). Plates move at rates of 1–15 cm (0.4–5.9 in) per year — roughly the rate at which fingernails grow. Over millions of years, this motion opens and closes ocean basins, builds mountain ranges, and drives the volcanic and seismic activity that concentrates at plate boundaries.
 
 **Lithosphere, asthenosphere, and what drives the plates.** The distinction between the lithosphere and asthenosphere is not compositional but mechanical. Both are made of mantle rock (peridotite). What differs is temperature and therefore strength. The lithosphere is cold enough to behave rigidly on geological timescales — it fractures rather than flows. The asthenosphere is hot enough (near but below the melting point) to flow plastically under sustained stress, like extremely stiff putty over millions of years. The plates move across the top of the flowing asthenosphere. The driving forces are primarily **ridge push** (the elevated mid-ocean ridge creates a gravitational slope down which the plate slides) and **slab pull** (old, cold, dense oceanic lithosphere at subduction zones sinks into the mantle under its own weight, pulling the rest of the plate behind it). Mantle convection — the slow circulation of hot mantle material (introduced in Lesson 1.1.3) — contributes to the overall motion but is now understood to be more a consequence of plate motion than its primary cause.
 
@@ -85,13 +85,13 @@ The resolution came from an unlikely direction: the bottom of the ocean. During 
           icon: Waves,
           color: BRAND.accent,
           desc: "Hess (1960): magma rises at mid-ocean ridges, solidifies as basalt, spreads symmetrically outward. Confirmed by paleomagnetism: iron minerals in solidifying basalt record Earth's magnetic field direction; field reversals preserved as symmetric magnetic anomaly stripes on both sides of every ridge (Vine & Matthews, 1963). Ocean floor age confirms spreading: youngest rocks at ridge crests, oldest (~200 Ma) near continents. Ocean floor is recycled at subduction zones — hence no ocean floor older than ~200 Ma anywhere on Earth.",
-          examples: 'Mid-Atlantic Ridge: spreading 2.5 cm/yr · East Pacific Rise: spreading 15 cm/yr · Magnetic stripes: mirror image either side of ridge',
+          examples: 'Mid-Atlantic Ridge: spreading 2.5 cm/yr (1.0 in/yr) · East Pacific Rise: spreading 15 cm/yr (5.9 in/yr) · Magnetic stripes: mirror image either side of ridge',
         },
         {
           name: 'Plate Structure',
           icon: Mountain,
           color: BRAND.coral,
-          desc: "~15 major lithospheric plates move at 1–15 cm/yr. Lithosphere (~100 km thick) is rigid; asthenosphere below flows slowly. Two crust types: oceanic (mafic basalt/gabbro, dense ~3.0 g/cm³, thin ~7 km, max ~200 Ma old) vs continental (felsic granite, less dense ~2.7 g/cm³, thick 30–70 km, up to 4 Ga old). Density contrast controls convergent boundary behaviour: denser oceanic crust subducts beneath less dense continental crust. Driving forces: slab pull (sinking dense slab) and ridge push (gravitational slide off elevated ridge).",
+          desc: "~15 major lithospheric plates move at 1–15 cm/yr (0.4–5.9 in/yr). Lithosphere (~100 km (62 mi) thick) is rigid; asthenosphere below flows slowly. Two crust types: oceanic (mafic basalt/gabbro, dense ~3.0 g/cm³, thin ~7 km (4.3 mi), max ~200 Ma old) vs continental (felsic granite, less dense ~2.7 g/cm³, thick 30–70 km (19–43 mi), up to 4 Ga old). Density contrast controls convergent boundary behaviour: denser oceanic crust subducts beneath less dense continental crust. Driving forces: slab pull (sinking dense slab) and ridge push (gravitational slide off elevated ridge).",
           examples: 'Pacific Plate: mostly oceanic · North American Plate: continent + ocean floor · Oldest crust: NW Pacific ~200 Ma · Oldest continent: >4 Ga',
         },
       ],
@@ -124,7 +124,7 @@ The resolution came from an unlikely direction: the bottom of the ocean. During 
         {
           q: "At convergent plate boundaries where oceanic and continental crust meet, the oceanic plate always subducts beneath the continental plate. What property of oceanic crust explains this, and why does it matter for Earth's surface geology?",
           a: [
-            "Oceanic crust is thinner than continental crust (~7 km vs 30–70 km), so it is mechanically weaker and bends downward under the compressive force of the converging plates",
+            "Oceanic crust is thinner than continental crust (~7 km (4.3 mi) vs 30–70 km (19–43 mi)), so it is mechanically weaker and bends downward under the compressive force of the converging plates",
             "Oceanic crust is always older than the continental crust it meets, and older rock is denser due to thermal contraction; age, not composition, determines which plate subducts",
             "Oceanic crust is composed of mafic rock (basalt and gabbro) and is denser (~3.0 g/cm³) than felsic continental crust (~2.7 g/cm³); the denser oceanic plate sinks into the mantle at convergent boundaries, producing ocean trenches, volcanic arcs, and the recycling of oceanic crust back into the mantle",
             "Ocean water adds weight to the oceanic plate — the hydrostatic pressure of the overlying ocean forces the crust to subduct at continental margins, while continental crust, being above sea level, experiences no such downward force",

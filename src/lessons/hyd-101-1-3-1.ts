@@ -27,7 +27,7 @@ Porosity (φ) is the fraction of total rock volume occupied by void space. Total
 
 Aquifer classification by confinement is fundamental to understanding groundwater behaviour. An unconfined (water table) aquifer is directly recharged from the surface; its upper boundary is the water table, which rises and falls in response to recharge and pumping. A confined aquifer is bounded above and below by aquitards (low-permeability layers) and is under pressure greater than atmospheric — an artesian well drilled into a confined aquifer causes water to rise above the top of the aquifer; a flowing artesian well occurs where the pressure head exceeds the ground surface elevation. A semi-confined (leaky) aquifer is bounded by a semi-pervious layer that allows slow vertical leakage.
 
-Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by dissolution along fractures and bedding planes — behave fundamentally differently from porous-media aquifers. Karst conduits (caves, solution channels) transmit water at high velocities (~1–100 m/hr vs. ~0.1–10 m/day for porous media), with turbulent flow and rapid, unpredictable responses to recharge events. The Floridan Aquifer System (Florida and adjacent states), the Edwards Aquifer (Texas), and the Dinaric karst (Balkans) are major karst systems. Contaminants introduced into karst systems can travel 10–100 km in days, making karst springs highly vulnerable to pollution.`,
+Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by dissolution along fractures and bedding planes — behave fundamentally differently from porous-media aquifers. Karst conduits (caves, solution channels) transmit water at high velocities (~1–100 m/hr vs. ~0.1–10 m/day for porous media), with turbulent flow and rapid, unpredictable responses to recharge events. The Floridan Aquifer System (Florida and adjacent states), the Edwards Aquifer (Texas), and the Dinaric karst (Balkans) are major karst systems. Contaminants introduced into karst systems can travel 10–100 km (62 mi) in days, making karst springs highly vulnerable to pollution.`,
       keyTerms: [
         {
           term: 'Porosity (φ)',
@@ -61,7 +61,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
           icon: Layers,
           color: BRAND.accent,
           desc: 'Water table is upper boundary; rises/falls with recharge/pumping. Sy = 0.1-0.30 for sand/gravel. Large storage volume.',
-          examples: 'High Plains (Ogallala) Aquifer: unconfined, up to 300 m saturated thickness. Supplies 30% of US groundwater used for irrigation.',
+          examples: 'High Plains (Ogallala) Aquifer: unconfined, up to 300 m (984 ft) saturated thickness. Supplies 30% of US groundwater used for irrigation.',
         },
         {
           name: 'Confined Aquifer',
@@ -169,7 +169,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
             'A confined aquifer is artesian when its recharge zone is at a higher elevation than the pumping well, creating hydraulic pressure; flowing artesian wells occur when this pressure head exceeds the ground surface elevation at the well',
             'A confined aquifer is artesian when it is completely sealed with no connection to the surface; flowing artesian wells require pressurised gas pockets above the water',
             'An artesian condition develops only in tropical climates where heavy rainfall creates enough hydrostatic pressure to push water upward through the confining layer',
-            'Artesian conditions require the aquifer to be at least 1,000 m below the surface; shallower confined aquifers cannot develop artesian pressure',
+            'Artesian conditions require the aquifer to be at least 1,000 m (3281 ft) below the surface; shallower confined aquifers cannot develop artesian pressure',
           ],
           correct: 0,
           explain: `Confined aquifers are bounded above and below by low-permeability layers (aquitards). Recharge occurs where the aquifer outcrops at the surface, often in a topographically elevated area. The hydraulic head (energy level) in the confined aquifer is set by the elevation of the recharge zone — this creates the potentiometric surface, an imaginary surface representing where water would stand in tightly cased wells. When the potentiometric surface is above the top of the aquifer, the water is under positive pressure (artesian condition). When the potentiometric surface rises above the land surface at a well location, water flows freely from the well without pumping — a flowing artesian well. The Great Artesian Basin of Australia, one of the world\'s largest and deepest artesian basins, has sustained pastoral activities in arid Australia since the 1880s through naturally flowing wells.`,
@@ -183,7 +183,7 @@ Karst aquifers — developed in soluble rocks (limestone, dolomite, gypsum) by d
             'Karst aquifers are shallower than porous-media aquifers, so surface contamination reaches them more quickly',
           ],
           correct: 1,
-          explain: 'In a conventional porous-media aquifer (sand, gravel), groundwater moves slowly through tiny pores (centimetres to metres per day) and the large surface area of grains provides extensive contact for natural attenuation processes: sorption of contaminants onto mineral surfaces, biodegradation by microbial communities, and dilution over long flow paths. In karst aquifers, solution conduits (essentially underground rivers) carry water at velocities of 1–100 m/hr, bypassing the filtering and attenuation of the rock matrix entirely. Contaminants introduced at a sinkhole or losing stream can appear at a spring 10–100 km away within hours to days. This is why dye-tracing studies in karst routinely demonstrate rapid, direct connections between input points and springs, and why spring water in karst regions often shows rapid turbidity increases after storm events.',
+          explain: 'In a conventional porous-media aquifer (sand, gravel), groundwater moves slowly through tiny pores (centimetres to metres per day) and the large surface area of grains provides extensive contact for natural attenuation processes: sorption of contaminants onto mineral surfaces, biodegradation by microbial communities, and dilution over long flow paths. In karst aquifers, solution conduits (essentially underground rivers) carry water at velocities of 1–100 m/hr, bypassing the filtering and attenuation of the rock matrix entirely. Contaminants introduced at a sinkhole or losing stream can appear at a spring 10–100 km (62 mi) away within hours to days. This is why dye-tracing studies in karst routinely demonstrate rapid, direct connections between input points and springs, and why spring water in karst regions often shows rapid turbidity increases after storm events.',
         },
         {
           q: 'What is hydraulic conductivity (K) and how many orders of magnitude does it vary across natural geological materials?',

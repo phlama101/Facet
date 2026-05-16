@@ -67,8 +67,8 @@ Permafrost — ground that remains frozen for at least two consecutive years —
           name: 'SNOTEL and SWE Measurement',
           icon: Layers,
           color: BRAND.accent,
-          desc: 'The USDA SNOTEL network (800+ stations) measures SWE via snow pillows and precipitation gauges. Airborne gamma surveys measure SWE from the attenuation of natural terrestrial gamma radiation by overlying snow. MODIS provides daily snow-covered area at 500 m resolution globally.',
-          examples: 'SNOTEL sites are located at 1,500–3,500 m elevation across 13 western states. Data feed directly into seasonal streamflow forecasts used by the Colorado River Basin water managers and western state water agencies for annual allocation decisions.',
+          desc: 'The USDA SNOTEL network (800+ stations) measures SWE via snow pillows and precipitation gauges. Airborne gamma surveys measure SWE from the attenuation of natural terrestrial gamma radiation by overlying snow. MODIS provides daily snow-covered area at 500 m (1640 ft) resolution globally.',
+          examples: 'SNOTEL sites are located at 1,500–3,500 m (11484 ft) elevation across 13 western states. Data feed directly into seasonal streamflow forecasts used by the Colorado River Basin water managers and western state water agencies for annual allocation decisions.',
         },
         {
           name: 'April 1 SWE Declines',
@@ -81,15 +81,15 @@ Permafrost — ground that remains frozen for at least two consecutive years —
           name: 'Rain-Snow Elevation Transition',
           icon: Globe,
           color: BRAND.coral,
-          desc: 'The elevation at which precipitation falls as rain rather than snow rises ~150 m per °C of warming. Lower-elevation snowpack disappears first. The rain-snow line rising into the mountains increases the proportion of the watershed generating liquid runoff in winter, reducing snowpack storage.',
-          examples: 'Cascade Range: the rain-snow line has risen ~100 m since 1950, affecting approximately 15% of the snowpack-generating area. Projections at 2°C warming: a further ~300 m rise, which could eliminate snowpack below ~1,500 m elevation across much of the Pacific Northwest.',
+          desc: 'The elevation at which precipitation falls as rain rather than snow rises ~150 m (492 ft) per °C of warming. Lower-elevation snowpack disappears first. The rain-snow line rising into the mountains increases the proportion of the watershed generating liquid runoff in winter, reducing snowpack storage.',
+          examples: 'Cascade Range: the rain-snow line has risen ~100 m (328 ft) since 1950, affecting approximately 15% of the snowpack-generating area. Projections at 2°C (36°F) warming: a further ~300 m (984 ft) rise, which could eliminate snowpack below ~1,500 m (4922 ft) elevation across much of the Pacific Northwest.',
         },
         {
           name: 'Rain-on-Snow Floods',
           icon: Zap,
           color: BRAND.gold,
           desc: 'Rain on snowpack can generate runoff 2–5× greater than rain alone because snowmelt adds to rain-generated runoff. Most damaging when snowpack is deep and rain is prolonged. 1996 PNW floods and 2017 Oroville Dam crisis were partly driven by ROS.',
-          examples: 'February 1996 Willamette River (Oregon): 1-in-50-year flood driven by warm rain on ~1 m snowpack. Peak discharge at Salem: 15,000 m³/s vs. median February flow of ~1,000 m³/s. As warming elevates the rain-snow line, more catchment area is exposed to ROS events.',
+          examples: 'February 1996 Willamette River (Oregon): 1-in-50-year flood driven by warm rain on ~1 m (3 ft) snowpack. Peak discharge at Salem: 15,000 m³/s vs. median February flow of ~1,000 m³/s. As warming elevates the rain-snow line, more catchment area is exposed to ROS events.',
         },
         {
           name: 'Streamflow Timing Shifts',
@@ -117,7 +117,7 @@ Permafrost — ground that remains frozen for at least two consecutive years —
           icon: Globe,
           color: BRAND.jade,
           desc: `Hindu Kush-Himalaya (Third Pole): glacier meltwater contributes ~10–15% of dry-season flow in Indus and Ganges basins on average, rising to >25% in dry years. ICIMOD\'s HKH Assessment: glaciers losing mass at accelerating rates; entire region warming 0.2°C/decade above global mean.`,
-          examples: `Upper Indus: some tributaries above 4,000 m elevation derive >50% of summer discharge from glacier melt. Pakistan\'s Karakoram: anomalous glacier balance (locally stable to advancing), partially buffering the melt signal from Hindu Kush and Himalayas, though the Karakoram anomaly may be diminishing under further warming.`,
+          examples: `Upper Indus: some tributaries above 4,000 m (13124 ft) elevation derive >50% of summer discharge from glacier melt. Pakistan\'s Karakoram: anomalous glacier balance (locally stable to advancing), partially buffering the melt signal from Hindu Kush and Himalayas, though the Karakoram anomaly may be diminishing under further warming.`,
         },
         {
           name: 'Permafrost Hydrology',
@@ -138,7 +138,7 @@ Permafrost — ground that remains frozen for at least two consecutive years —
           icon: ArrowRight,
           color: BRAND.amethyst,
           desc: 'Nepal and Pakistan have installed lake-level sensors, satellite lake area monitoring, and automated downstream sirens. Automated weather stations measure temperature and precipitation to predict melt contributions. Community early-warning drills train downstream populations on evacuation routes.',
-          examples: 'Imja Lake, Nepal: lake area grew from 0.1 km² (1960s) to >1.5 km² (2015). UNDP-supported early-warning system installed 2016: lake outlet lowered by 3.4 m to reduce outburst risk. Pakistan GLOF-II programme: covers 16 districts with automated alerts and community preparedness.',
+          examples: 'Imja Lake, Nepal: lake area grew from 0.1 km² (1960s) to >1.5 km² (2015). UNDP-supported early-warning system installed 2016: lake outlet lowered by 3.4 m (11 ft) to reduce outburst risk. Pakistan GLOF-II programme: covers 16 districts with automated alerts and community preparedness.',
         },
       ],
     },
@@ -153,7 +153,7 @@ Permafrost — ground that remains frozen for at least two consecutive years —
           {
             id: 'winter-precipitation',
             label: 'Winter Precipitation & Snow Accumulation',
-            description: 'Snow falls above the rain-snow elevation line (~1,500–3,500 m depending on latitude) and accumulates through winter. Snow water equivalent (SWE) peaks in late winter to early spring. SNOTEL monitors accumulation continuously. Warming raises the rain-snow line, reducing the area that contributes to snowpack storage.',
+            description: 'Snow falls above the rain-snow elevation line (~1,500–3,500 m (11484 ft) depending on latitude) and accumulates through winter. Snow water equivalent (SWE) peaks in late winter to early spring. SNOTEL monitors accumulation continuously. Warming raises the rain-snow line, reducing the area that contributes to snowpack storage.',
             color: BRAND.accent,
           },
           {
@@ -165,7 +165,7 @@ Permafrost — ground that remains frozen for at least two consecutive years —
           {
             id: 'glacier-storage',
             label: 'Glacier Ice Storage',
-            description: 'Multi-year to multi-century storage reservoir. Net mass balance = accumulation minus ablation. Negative mass balance (warm phase) releases stored ice as meltwater. Peak water: maximum meltwater delivery occurs during the rapid retreat phase. HKH glaciers losing mass at rates of 0.3–0.8 m water equivalent/year.',
+            description: 'Multi-year to multi-century storage reservoir. Net mass balance = accumulation minus ablation. Negative mass balance (warm phase) releases stored ice as meltwater. Peak water: maximum meltwater delivery occurs during the rapid retreat phase. HKH glaciers losing mass at rates of 0.3–0.8 m (3 ft) water equivalent/year.',
             color: BRAND.gold,
           },
           {
@@ -226,10 +226,10 @@ Permafrost — ground that remains frozen for at least two consecutive years —
             'Rain on snow has lower infiltration rates than rain on bare soil because the snowpack is frozen and impermeable, causing all rainfall to immediately become overland flow; this reduces the time to peak discharge and increases peak magnitude relative to bare-catchment rain of the same intensity',
             'Rain falling on snowpack triggers a rapid energy release: the warm rain transfers latent heat to the snowpack, accelerating melt; runoff is the sum of rain plus snowmelt, with snowmelt adding 5–30 mm/day of additional water depending on snowpack depth; on a bare catchment, only rain reaches the channel; on a snow-covered catchment, both rain and melt-generated water reach the channel simultaneously',
             'Rain-on-snow events generate more extreme floods because snowpack acts as an impermeable layer that channels all rainfall laterally as interflow through the snowpack base, bypassing the soil matrix and reaching streams far faster than subsurface vertical infiltration would allow',
-            'Rain-on-snow events are more extreme because rainfall warms the snowpack above 0°C, causing phase change from ice to liquid that releases the latent heat of fusion directly into the soil, liquefying frozen ground and generating additional runoff from the formerly frozen soil water',
+            'Rain-on-snow events are more extreme because rainfall warms the snowpack above 0°C (32°F), causing phase change from ice to liquid that releases the latent heat of fusion directly into the soil, liquefying frozen ground and generating additional runoff from the formerly frozen soil water',
           ],
           correct: 1,
-          explain: 'In a rain-on-snow event, the total runoff generation from the watershed is the sum of two simultaneous sources: (1) direct rainfall, which contributes to runoff through normal infiltration-excess or saturation-excess mechanisms; and (2) snowmelt, driven by the energy input of the warm rain (sensible heat transfer from rain to snowpack) plus any concurrent turbulent heat fluxes from warm, humid air. Even a moderate rain event of 20 mm/day falling on a deep snowpack can generate an additional 10–30 mm/day of snowmelt, effectively doubling the water delivered to the soil and channel system. If the soil is already saturated from previous rainfall or shallow groundwater, the additional snowmelt water has no place to go except into stream channels. This mechanism explains why the 1996 Pacific Northwest floods were so catastrophic: winter storms delivered warm rain on top of existing 0.5–1 m snowpacks across vast areas of the Cascades and Coast Ranges, generating runoff rates that overwhelmed major rivers. The 2017 Oroville Dam crisis similarly involved extraordinary rainfall augmented by a period of active snowmelt from a below-normal snowpack that had received unusual late-season accumulation. As the rain-snow elevation transition rises with warming, previously snow-covered higher elevations become exposed to ROS events, expanding the catchment area contributing to potentially amplified winter flood events.',
+          explain: 'In a rain-on-snow event, the total runoff generation from the watershed is the sum of two simultaneous sources: (1) direct rainfall, which contributes to runoff through normal infiltration-excess or saturation-excess mechanisms; and (2) snowmelt, driven by the energy input of the warm rain (sensible heat transfer from rain to snowpack) plus any concurrent turbulent heat fluxes from warm, humid air. Even a moderate rain event of 20 mm/day falling on a deep snowpack can generate an additional 10–30 mm/day of snowmelt, effectively doubling the water delivered to the soil and channel system. If the soil is already saturated from previous rainfall or shallow groundwater, the additional snowmelt water has no place to go except into stream channels. This mechanism explains why the 1996 Pacific Northwest floods were so catastrophic: winter storms delivered warm rain on top of existing 0.5–1 m (3 ft) snowpacks across vast areas of the Cascades and Coast Ranges, generating runoff rates that overwhelmed major rivers. The 2017 Oroville Dam crisis similarly involved extraordinary rainfall augmented by a period of active snowmelt from a below-normal snowpack that had received unusual late-season accumulation. As the rain-snow elevation transition rises with warming, previously snow-covered higher elevations become exposed to ROS events, expanding the catchment area contributing to potentially amplified winter flood events.',
         },
         {
           q: 'Permafrost thaw has been observed to increase winter baseflow in Siberian and Alaskan rivers. What mechanism explains this counterintuitive effect of warming on cold-season streamflow?',
@@ -248,7 +248,7 @@ Permafrost — ground that remains frozen for at least two consecutive years —
             'GLOFs are triggered exclusively by earthquakes that fracture the moraine dam; early warning systems are critical because there is no meteorological precursor signal (unlike rainfall floods), meaning seismic monitoring must substitute for hydrological monitoring at glacial lakes',
             'GLOFs are triggered by gradual overtopping of the moraine dam as the lake fills during the melt season; early warning systems are particularly important because the melt season is predictable and warnings can be issued months in advance, giving communities time to permanently relocate',
             'GLOFs are triggered by several mechanisms — ice dam melt-through, moraine dam piping or overtopping, ice avalanches into the lake generating displacement waves, or subglacial drainage — and are critical to warn for because peak discharge can be orders of magnitude above normal in minutes with very short lead times (hours to days for downstream communities), versus the 24–72-hour warning lead times typical for large rainfall-generated floods',
-            'GLOFs are triggered only by sudden temperature increases above 30°C that cause catastrophic ice melt within hours; early warning systems focus on temperature forecasting, and GLOFs are predictable 5–7 days in advance using standard meteorological models without any in-situ lake monitoring',
+            'GLOFs are triggered only by sudden temperature increases above 30°C (86°F) that cause catastrophic ice melt within hours; early warning systems focus on temperature forecasting, and GLOFs are predictable 5–7 days in advance using standard meteorological models without any in-situ lake monitoring',
           ],
           correct: 2,
           explain: 'Glacial Lake Outburst Floods are triggered by a variety of mechanisms, each with different warning lead times: (1) Moraine dam overtopping: as the lake level rises during the melt season, water overtops the dam and erodes it, leading to progressive or catastrophic failure. Warning lead times: potentially hours to days if lake level is monitored. (2) Moraine dam piping: internal erosion through the dam structure; often sudden and with little external precursor signal. (3) Ice avalanche or rock/ice avalanche into the lake: generates an impact wave that overtops the dam. Warning lead time: minutes to hours. (4) Ice dam failure: thermal erosion and buoyancy effects can cause rapid ice dam failure. The resulting peak discharges from GLOFs are extraordinary — the 2013 Kedarnath GLOF reached an estimated 10,000–30,000 m³/s from a lake that released ~6 million m³ — and travel times from lake to downstream communities in steep Himalayan and Andean valleys can be as short as 1–2 hours. By comparison, large rainfall-driven floods typically provide 24–72 hours of warning time from numerical weather prediction models and upstream gauge observations. This extreme brevity of the GLOF threat window means that early warning systems must be automated (no time for human decision chains), community evacuation drills must be practiced regularly so responses are instinctive, and downstream populations must be within range of audible or electronic alert systems. Real-time lake level monitoring (staff gauges with satellite telemetry, time-lapse cameras, or radar level sensors) provides the earliest possible detection of lake overflow or rapid level change.',

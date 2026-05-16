@@ -159,7 +159,7 @@ Long-term earthquake resilience integrates hazard maps (Probabilistic Seismic Ha
             'It uses satellite imagery to detect fault creep accelerations that precede major ruptures',
           ],
           correct: 1,
-          explain: 'EEW exploits the difference between two speeds: the speed of light (~300,000 km/s) for electronic communications, and the speed of S-waves (3–5 km/s) that cause most structural damage. By detecting P-waves (which arrive first but cause less shaking) at nearby sensors and transmitting an alert electronically, the system can outrun the damaging wavefront. For a sensor 20 km from the epicentre and a city 100 km from the epicentre, the alert can arrive ~15 seconds before S-waves reach the city. This time decreases to zero for locations near the epicentre — the "blind zone" where EEW provides no useful warning.',
+          explain: 'EEW exploits the difference between two speeds: the speed of light (~300,000 km/s) for electronic communications, and the speed of S-waves (3–5 km/s) that cause most structural damage. By detecting P-waves (which arrive first but cause less shaking) at nearby sensors and transmitting an alert electronically, the system can outrun the damaging wavefront. For a sensor 20 km (12 mi) from the epicentre and a city 100 km (62 mi) from the epicentre, the alert can arrive ~15 seconds before S-waves reach the city. This time decreases to zero for locations near the epicentre — the "blind zone" where EEW provides no useful warning.',
         },
         {
           q: 'What is the primary limitation of earthquake early warning for communities close to the earthquake epicentre?',
@@ -170,7 +170,7 @@ Long-term earthquake resilience integrates hazard maps (Probabilistic Seismic Ha
             'Modern EEW systems only work in Japan and cannot be deployed elsewhere',
           ],
           correct: 1,
-          explain: 'The blind zone is the region so close to the earthquake source that by the time P-waves are detected and an alert is issued, the damaging S-waves have already arrived or have insufficient travel time for the alert to be useful. For a M 7 earthquake with a 5-second processing time, the blind zone radius is approximately 25–35 km. Communities within this zone receive no warning or only a few seconds. This is why the 2011 Tōhoku coastal communities nearest to the epicentre received essentially no EEW benefit — they were within the blind zone — while Tokyo (~370 km away) received ~80 seconds of warning.',
+          explain: 'The blind zone is the region so close to the earthquake source that by the time P-waves are detected and an alert is issued, the damaging S-waves have already arrived or have insufficient travel time for the alert to be useful. For a M 7 earthquake with a 5-second processing time, the blind zone radius is approximately 25–35 km (22 mi). Communities within this zone receive no warning or only a few seconds. This is why the 2011 Tōhoku coastal communities nearest to the epicentre received essentially no EEW benefit — they were within the blind zone — while Tokyo (~370 km (230 mi) away) received ~80 seconds of warning.',
         },
         {
           q: 'What does "10% probability of exceedance in 50 years" mean in a PSHA hazard map?',

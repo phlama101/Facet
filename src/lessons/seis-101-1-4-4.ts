@@ -72,7 +72,7 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
           name: 'Hydraulic Fracturing (Fracking)',
           icon: Zap,
           color: BRAND.jade,
-          desc: 'High-pressure, short-duration fracturing of reservoir rock. Induced events are typically M < 2.5, felt rarely, and confined to near-wellbore distances (~500 m). A much smaller seismicity risk than disposal, though public perception often conflates the two.',
+          desc: 'High-pressure, short-duration fracturing of reservoir rock. Induced events are typically M < 2.5, felt rarely, and confined to near-wellbore distances (~500 m (1640 ft)). A much smaller seismicity risk than disposal, though public perception often conflates the two.',
           examples: 'UK: Preston New Road (Lancashire) fracking operations induced M 2.9 in 2019, triggering regulatory halt under strict UK traffic light protocol (threshold: M 0.5). British Columbia: fracking-triggered events up to M 4.4 at Kiskatinaw area, but M > 3 remains rare.',
         },
         {
@@ -87,14 +87,14 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
           icon: TrendingUp,
           color: BRAND.amethyst,
           desc: 'Stimulating hot dry rock requires high-pressure fluid injection to create or extend fracture networks. EGS operations have triggered significant induced seismicity, most dramatically at Pohang, South Korea (2017), raising questions about the balance between renewable energy benefits and seismic risk.',
-          examples: 'Pohang, South Korea (November 15, 2017): Mw 5.5 induced by EGS stimulation at depth of 4–5 km. Injured 90+ people and caused ~$52 million in damage. An independent panel concluded the EGS project was the most likely trigger. Basel, Switzerland (2006): M 3.4 EGS event shut down project.',
+          examples: 'Pohang, South Korea (November 15, 2017): Mw 5.5 induced by EGS stimulation at depth of 4–5 km (3.1 mi). Injured 90+ people and caused ~$52 million in damage. An independent panel concluded the EGS project was the most likely trigger. Basel, Switzerland (2006): M 3.4 EGS event shut down project.',
         },
         {
           name: 'Mining and Underground Excavation',
           icon: AlertTriangle,
           color: BRAND.ruby,
           desc: 'Removal of material changes stress on surrounding rock. Collapse of mine voids (pillar failure) generates "rockbursts" — sudden seismic events that can reach M 5+ in deep gold and platinum mines. Surface mine blasting produces local seismic signals but rarely activates tectonic faults.',
-          examples: 'South African gold mines (Witwatersrand): routinely experience M 2–4 mine-induced seismicity at depths of 3–4 km. 2009 Crandall Canyon, Utah: M 3.9 event caused mine collapse killing 6 miners + 3 rescuers. Poland: Legnica-Glogów copper mining area has M 4+ induced events annually.',
+          examples: 'South African gold mines (Witwatersrand): routinely experience M 2–4 mine-induced seismicity at depths of 3–4 km (2.5 mi). 2009 Crandall Canyon, Utah: M 3.9 event caused mine collapse killing 6 miners + 3 rescuers. Poland: Legnica-Glogów copper mining area has M 4+ induced events annually.',
         },
       ],
     },
@@ -143,13 +143,13 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
           {
             id: 'disposal-well',
             label: 'Wastewater Disposal Well',
-            description: 'Brine is injected under pressure (typically 10–30 MPa wellhead pressure) into a deep porous formation — the Arbuckle Group in Oklahoma sits at 1.5–3 km depth, directly above Precambrian crystalline basement. Millions of barrels are injected per month at high-volume wells.',
+            description: 'Brine is injected under pressure (typically 10–30 MPa wellhead pressure) into a deep porous formation — the Arbuckle Group in Oklahoma sits at 1.5–3 km (1.9 mi) depth, directly above Precambrian crystalline basement. Millions of barrels are injected per month at high-volume wells.',
             color: BRAND.gold,
           },
           {
             id: 'pressure-diffusion',
             label: 'Pore Pressure Diffusion',
-            description: 'Elevated fluid pressure migrates outward through connected pore space at rates of ~100–500 m/month. Pressure fronts reach basement faults 2–5 km from the injection well within months to years. Critically stressed faults — close to Coulomb failure — respond to even 0.1 MPa of added pore pressure.',
+            description: 'Elevated fluid pressure migrates outward through connected pore space at rates of ~100–500 m/month. Pressure fronts reach basement faults 2–5 km (3.1 mi) from the injection well within months to years. Critically stressed faults — close to Coulomb failure — respond to even 0.1 MPa of added pore pressure.',
             color: BRAND.jade,
           },
           {
@@ -193,7 +193,7 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
             'Disposal wells target saline formations while fracking targets fresh-water aquifers, and seismicity is triggered by chemical reactions with saline brines',
           ],
           correct: 1,
-          explain: 'B is correct: the key differences are volume, duration, depth, and proximity to basement faults. Disposal wells inject millions of barrels of brine continuously into deep formations (e.g., the Arbuckle Group at 2–3 km in Oklahoma, directly above Precambrian basement), generating sustained pore pressure perturbations that diffuse outward over kilometres and months. Fracking injects fluid for hours to days at high pressure into the producing formation, primarily to open reservoir fractures; induced seismicity is confined to a ~500 m radius and rarely exceeds M 2.5. A is wrong: fluid chemistry is not the primary seismicity driver. C is partially true for some regions but Oklahoma disposal wells specifically target formations adjacent to basement. D is wrong: ion chemistry has minimal bearing on Coulomb failure triggering.',
+          explain: 'B is correct: the key differences are volume, duration, depth, and proximity to basement faults. Disposal wells inject millions of barrels of brine continuously into deep formations (e.g., the Arbuckle Group at 2–3 km (1.9 mi) in Oklahoma, directly above Precambrian basement), generating sustained pore pressure perturbations that diffuse outward over kilometres and months. Fracking injects fluid for hours to days at high pressure into the producing formation, primarily to open reservoir fractures; induced seismicity is confined to a ~500 m (1640 ft) radius and rarely exceeds M 2.5. A is wrong: fluid chemistry is not the primary seismicity driver. C is partially true for some regions but Oklahoma disposal wells specifically target formations adjacent to basement. D is wrong: ion chemistry has minimal bearing on Coulomb failure triggering.',
         },
         {
           q: 'Pore pressure diffusion allows injection wells to trigger earthquakes on faults kilometres away and months after injection begins. What property of the subsurface controls the distance and timescale of this pressure migration?',
@@ -226,7 +226,7 @@ The culmination of Oklahoma's induced seismicity crisis was the September 3, 201
             'Geothermal fluid is more chemically reactive than oil-field brine, dissolving fault gouge and reducing friction',
           ],
           correct: 1,
-          explain: `B is correct: EGS faces a fundamental tension between the technology\'s purpose and seismic risk. Creating a permeable heat-exchange zone requires fracturing low-permeability rock through sustained fluid injection at elevated pressures — but this is exactly the operation that builds pore pressure on nearby faults. Unlike a disposal well (where reducing injection rate is operationally simple), reducing EGS injection pressure also reduces fracture network development and heat extraction, compromising the energy production goal. At Pohang, the EGS project injected fluid at 4–5 km depth in a region with critically-stressed basement faults; an independent panel concluded EGS stimulation most likely advanced the fault to failure. A is wrong: EGS is subject to permitting and regulation in all jurisdictions that have deployed it. C is wrong: many high-volume disposal fields are near population centres (Oklahoma, Netherlands). D is wrong: chemistry plays a minor role in fault activation compared to pore pressure.`,
+          explain: `B is correct: EGS faces a fundamental tension between the technology\'s purpose and seismic risk. Creating a permeable heat-exchange zone requires fracturing low-permeability rock through sustained fluid injection at elevated pressures — but this is exactly the operation that builds pore pressure on nearby faults. Unlike a disposal well (where reducing injection rate is operationally simple), reducing EGS injection pressure also reduces fracture network development and heat extraction, compromising the energy production goal. At Pohang, the EGS project injected fluid at 4–5 km (3.1 mi) depth in a region with critically-stressed basement faults; an independent panel concluded EGS stimulation most likely advanced the fault to failure. A is wrong: EGS is subject to permitting and regulation in all jurisdictions that have deployed it. C is wrong: many high-volume disposal fields are near population centres (Oklahoma, Netherlands). D is wrong: chemistry plays a minor role in fault activation compared to pore pressure.`,
         },
         {
           q: `Following Oklahoma\'s M 5.8 Pawnee earthquake in 2016, state regulators reduced permitted injection volumes in the Arbuckle formation. Within three years, M 3+ earthquake rates dropped by ~75%. What does this response demonstrate about induced seismicity compared to natural seismicity, and what residual risks remain?`,

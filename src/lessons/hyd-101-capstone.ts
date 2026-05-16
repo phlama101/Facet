@@ -30,7 +30,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
       questions: [
         // ── Chapter 1: Water Cycle ────────────────────────────────────────────
         {
-          q: 'The water balance equation P = ET + Q + ΔS describes a watershed. Over a 10-year average period, ΔS ≈ 0. If annual precipitation is 800 mm and evapotranspiration is 520 mm, approximately what is mean annual streamflow?',
+          q: 'The water balance equation P = ET + Q + ΔS describes a watershed. Over a 10-year average period, ΔS ≈ 0. If annual precipitation is 800 mm (31.50 in) and evapotranspiration is 520 mm (20.47 in), approximately what is mean annual streamflow?',
           a: [
             '1,320 mm/yr',
             '280 mm/yr',
@@ -38,7 +38,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
             '520 mm/yr',
           ],
           correct: 1,
-          explain: 'With ΔS = 0 over the long-term average, P = ET + Q. Therefore Q = P - ET = 800 - 520 = 280 mm/yr. This is the mean annual streamflow expressed as a depth over the watershed area (runoff depth). To convert to volumetric discharge, multiply by watershed area. In a 10,000 km² watershed, 280 mm/yr = 280,000 m³/km² × 10,000 km² = 2.8 km³/yr. The water balance is the fundamental accounting framework in hydrology — every drop of precipitation is either evapotranspired, stored, or becomes streamflow. In most humid temperate watersheds, 60-70% of precipitation evapotranspires, leaving 30-40% as streamflow.',
+          explain: 'With ΔS = 0 over the long-term average, P = ET + Q. Therefore Q = P - ET = 800 - 520 = 280 mm/yr. This is the mean annual streamflow expressed as a depth over the watershed area (runoff depth). To convert to volumetric discharge, multiply by watershed area. In a 10,000 km² (3,861 sq mi) watershed, 280 mm/yr = 280,000 m³/km² × 10,000 km² (3,861 sq mi) = 2.8 km³ (0.67 cu mi)/yr. The water balance is the fundamental accounting framework in hydrology — every drop of precipitation is either evapotranspired, stored, or becomes streamflow. In most humid temperate watersheds, 60-70% of precipitation evapotranspires, leaving 30-40% as streamflow.',
         },
         {
           q: 'Which process returns the most water from land surfaces to the atmosphere globally?',
@@ -49,18 +49,18 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
             'Evapotranspiration (combined evaporation + transpiration), dominated by transpiration in vegetated regions',
           ],
           correct: 3,
-          explain: 'Globally, evapotranspiration returns ~73,000 km³/yr of land precipitation back to the atmosphere — about 65% of all precipitation over land. Within ET, transpiration through plant stomata dominates in vegetated landscapes: estimates suggest transpiration accounts for 60-80% of total ET globally. Transpiration occurs because plants open stomata to take up CO₂ for photosynthesis, simultaneously losing water vapour. Forests and grasslands transpire huge volumes — the Amazon basin alone transpires enough water to make a significant contribution to its own rainfall through recycling. Direct soil evaporation is important mainly in sparse vegetation (deserts, semi-arid) or after rain events on bare soil. Open water evaporation is locally important but small compared to vegetated land area globally.',
+          explain: 'Globally, evapotranspiration returns ~73,000 km³ (17,513 cu mi)/yr of land precipitation back to the atmosphere — about 65% of all precipitation over land. Within ET, transpiration through plant stomata dominates in vegetated landscapes: estimates suggest transpiration accounts for 60-80% of total ET globally. Transpiration occurs because plants open stomata to take up CO₂ for photosynthesis, simultaneously losing water vapour. Forests and grasslands transpire huge volumes — the Amazon basin alone transpires enough water to make a significant contribution to its own rainfall through recycling. Direct soil evaporation is important mainly in sparse vegetation (deserts, semi-arid) or after rain events on bare soil. Open water evaporation is locally important but small compared to vegetated land area globally.',
         },
         {
           q: 'The NASA GRACE satellite mission detects groundwater depletion by measuring:',
           a: [
             'Laser altimetry of reservoir water surface levels from orbit',
             'Tiny variations in Earth\'s gravitational field caused by changes in water mass distribution',
-            'Microwave reflectance of soil moisture in the top 5 cm of soil',
+            'Microwave reflectance of soil moisture in the top 5 cm (2.0 in) of soil',
             'Optical imagery of land surface colour changes when soil moisture increases',
           ],
           correct: 1,
-          explain: 'GRACE (2002-2017) and GRACE-FO (2018-present) carry accelerometers that precisely measure the separation between two satellites flying in tandem ~220 km apart. As the satellite pair passes over a region with more water mass (full aquifers, flooded land) than average, the front satellite is pulled slightly ahead by the greater gravitational attraction; as it passes over depleted regions, the separation changes differently. By inverting these distance changes (measured to nanometre precision by microwave ranging), GRACE reconstructs maps of total water storage change — including groundwater, soil moisture, ice, and surface water — at ~300 km spatial resolution and monthly timescales. GRACE has documented Ogallala Aquifer depletion, Ganges Basin depletion, and accelerating Greenland/Antarctic ice mass loss with unprecedented clarity.',
+          explain: 'GRACE (2002-2017) and GRACE-FO (2018-present) carry accelerometers that precisely measure the separation between two satellites flying in tandem ~220 km (137 mi) apart. As the satellite pair passes over a region with more water mass (full aquifers, flooded land) than average, the front satellite is pulled slightly ahead by the greater gravitational attraction; as it passes over depleted regions, the separation changes differently. By inverting these distance changes (measured to nanometre precision by microwave ranging), GRACE reconstructs maps of total water storage change — including groundwater, soil moisture, ice, and surface water — at ~300 km (186 mi) spatial resolution and monthly timescales. GRACE has documented Ogallala Aquifer depletion, Ganges Basin depletion, and accelerating Greenland/Antarctic ice mass loss with unprecedented clarity.',
         },
         {
           q: 'Hortonian overland flow (infiltration-excess runoff) is most likely to occur in which setting?',
@@ -82,7 +82,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
             'SWE can be measured from single point samples; depth requires transect surveys',
           ],
           correct: 1,
-          explain: 'A 1-metre-deep snowpack can contain anywhere from 50 mm of water (if fresh, low-density powder at 50 kg/m³) to 500 mm (if dense spring corn snow at 500 kg/m³). Using depth alone to forecast spring runoff would introduce a factor-of-10 uncertainty. SWE = snow depth × (snow density / water density), capturing this density variability. SNOTEL sensors in the US West automatically measure SWE (via snow pillows that weigh the snowpack) and depth at ~900 sites. April 1 SWE historically explained ~70% of annual streamflow variability in snow-dominated western US basins, making it the primary index for water supply forecasting. The decline in April 1 SWE trends (averaging -25% since 1950 in the Sierra Nevada) directly translates to reduced water supply forecasts.',
+          explain: 'A 1-metre-deep snowpack can contain anywhere from 50 mm (1.97 in) of water (if fresh, low-density powder at 50 kg/m³) to 500 mm (if dense spring corn snow at 500 kg/m³). Using depth alone to forecast spring runoff would introduce a factor-of-10 uncertainty. SWE = snow depth × (snow density / water density), capturing this density variability. SNOTEL sensors in the US West automatically measure SWE (via snow pillows that weigh the snowpack) and depth at ~900 sites. April 1 SWE historically explained ~70% of annual streamflow variability in snow-dominated western US basins, making it the primary index for water supply forecasting. The decline in April 1 SWE trends (averaging -25% since 1950 in the Sierra Nevada) directly translates to reduced water supply forecasts.',
         },
         // ── Chapter 2: Rivers and Floods ─────────────────────────────────────
         {
@@ -105,7 +105,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
             'No change, as the dam equalises both sediment supply and water discharge proportionally',
           ],
           correct: 1,
-          explain: `Lane\'s balance: Q_s × D₅₀ ∝ Q_w × S. A dam traps sediment in the reservoir (Q_s decreases dramatically) while releasing nearly the same water (Q_w roughly maintained). For balance to be restored, the right side must decrease — but water release cannot easily decrease, so slope S must decrease. The channel achieves lower slope by degrading (incising into its bed): the clear, under-saturated water picks up bed sediment to compensate for the missing supply. This "hungry water" effect has been documented below nearly every major dam: the Colorado River bed degraded 7.5 m over 65 km in the first 14 years below Hoover Dam. The Yangtze below Three Gorges Dam is experiencing similar channel incision, threatening downstream bridge foundations and floodplain agriculture.`,
+          explain: `Lane\'s balance: Q_s × D₅₀ ∝ Q_w × S. A dam traps sediment in the reservoir (Q_s decreases dramatically) while releasing nearly the same water (Q_w roughly maintained). For balance to be restored, the right side must decrease — but water release cannot easily decrease, so slope S must decrease. The channel achieves lower slope by degrading (incising into its bed): the clear, under-saturated water picks up bed sediment to compensate for the missing supply. This "hungry water" effect has been documented below nearly every major dam: the Colorado River bed degraded 7.5 m (25 ft) over 65 km (40 mi) in the first 14 years below Hoover Dam. The Yangtze below Three Gorges Dam is experiencing similar channel incision, threatening downstream bridge foundations and floodplain agriculture.`,
         },
         {
           q: `A building located within FEMA\'s 1% annual chance floodplain has approximately what probability of flooding during a 30-year mortgage?`,
@@ -127,7 +127,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
             'Clay particles are angular while sand is rounded; angular shapes resist rolling and saltation',
           ],
           correct: 1,
-          explain: 'The apparent paradox in the Hjulström diagram is that erosion velocity increases for grain sizes below ~0.1 mm. Fine sand (0.1-0.5 mm) erodes most easily (lowest critical velocity, ~15-25 cm/s). Both coarser grains (gravel, larger inertia) and finer grains (clay, silt — cohesion) require higher velocities. Clay minerals (kaolinite, smectite, illite) carry negative surface charges and bind to each other and to pore-water cations through electrostatic forces and van der Waals attractions. These cohesive forces effectively "glue" clay particles together, requiring substantial shear stress to disrupt the bed surface and entrain particles. Once eroded, however, clay particles settle so slowly (< 1 mm/s) that they remain in suspension at very low flow velocities and travel enormous distances before depositing.',
+          explain: 'The apparent paradox in the Hjulström diagram is that erosion velocity increases for grain sizes below ~0.1 mm (0.00 in). Fine sand (0.1-0.5 mm (0.02 in)) erodes most easily (lowest critical velocity, ~15-25 cm/s). Both coarser grains (gravel, larger inertia) and finer grains (clay, silt — cohesion) require higher velocities. Clay minerals (kaolinite, smectite, illite) carry negative surface charges and bind to each other and to pore-water cations through electrostatic forces and van der Waals attractions. These cohesive forces effectively "glue" clay particles together, requiring substantial shear stress to disrupt the bed surface and entrain particles. Once eroded, however, clay particles settle so slowly (< 1 mm/s) that they remain in suspension at very low flow velocities and travel enormous distances before depositing.',
         },
         {
           q: 'What is the most cost-effective long-term strategy for managing properties that flood repeatedly?',
@@ -155,7 +155,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
         {
           q: 'What defines the distinction between a confined and an unconfined aquifer?',
           a: [
-            'Confined aquifers are always deeper than 100 m; unconfined aquifers are shallower',
+            'Confined aquifers are always deeper than 100 m (328 ft); unconfined aquifers are shallower',
             'In a confined aquifer, water is bounded above by an aquitard and under pressure greater than atmospheric (artesian); in an unconfined aquifer, the water table is the upper boundary, free to fluctuate',
             'Confined aquifers are protected from contamination by their depth; unconfined aquifers are always contaminated near the surface',
             'Confined aquifers have higher hydraulic conductivity; unconfined aquifers are in fine-grained sediments',
@@ -167,12 +167,12 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
           q: 'How does the Ghyben-Herzberg principle explain why coastal aquifers are vulnerable to seawater intrusion?',
           a: [
             'Coastal aquifers are shallower, so saltwater rises more rapidly to reach well screens',
-            'The density ratio means that for every 1 m the freshwater head drops, the fresh-salt interface rises ~40 m, so even small pumping-induced head declines cause large interface movements',
+            'The density ratio means that for every 1 m (3 ft) the freshwater head drops, the fresh-salt interface rises ~40 m (131 ft), so even small pumping-induced head declines cause large interface movements',
             'Saltwater is heavier than freshwater and simply fills coastal aquifer pores from below regardless of head conditions',
             'Coastal aquifers have lower hydraulic conductivity than inland aquifers, allowing saltwater to pond instead of being flushed',
           ],
           correct: 1,
-          explain: 'The Ghyben-Herzberg relationship derives from hydrostatic pressure balance between freshwater and seawater columns. At the interface, pressure from the freshwater column above must equal pressure from the saltwater below. Because seawater (1,025 kg/m³) is only slightly denser than fresh (1,000 kg/m³), a 1 m freshwater head above sea level is balanced by a 40 m saltwater column below. Any reduction in the freshwater head — from pumping, drought, or sea level rise — allows the interface to rise proportionally: 1 m freshwater decline → 40 m interface rise. In an aquifer 50 m deep, a freshwater head of only 1.25 m above sea level prevents saltwater from reaching the surface. When coastal development draws down the water table by 2-3 m, the interface can rise 80-120 m, potentially contaminating the entire aquifer depth.',
+          explain: 'The Ghyben-Herzberg relationship derives from hydrostatic pressure balance between freshwater and seawater columns. At the interface, pressure from the freshwater column above must equal pressure from the saltwater below. Because seawater (1,025 kg/m³) is only slightly denser than fresh (1,000 kg/m³), a 1 m (3 ft) freshwater head above sea level is balanced by a 40 m (131 ft) saltwater column below. Any reduction in the freshwater head — from pumping, drought, or sea level rise — allows the interface to rise proportionally: 1 m (3 ft) freshwater decline → 40 m (131 ft) interface rise. In an aquifer 50 m (164 ft) deep, a freshwater head of only 1.25 m (4 ft) above sea level prevents saltwater from reaching the surface. When coastal development draws down the water table by 2-3 m (10 ft), the interface can rise 80-120 m (394 ft), potentially contaminating the entire aquifer depth.',
         },
         {
           q: 'What characteristic makes PFAS ("forever chemicals") particularly difficult to remediate in contaminated groundwater?',
@@ -227,7 +227,7 @@ You\'ll be asked to interpret water balance equations, apply Darcy\'s Law, reaso
             'Baseflow is significant only in humid climates; in arid regions, streams are supported entirely by surface runoff with no groundwater contribution',
           ],
           correct: 1,
-          explain: 'Baseflow is the lifeblood of perennial streams between storm events. Its ecological and water supply functions are numerous: (1) flow support — in many rivers, baseflow constitutes 50-80% of mean annual flow, sustaining the stream during dry months when snowmelt and storm runoff are absent; (2) temperature buffering — groundwater temperature ≈ mean annual air temperature, so groundwater-fed streams are cooler in summer than air-warmed surface runoff, providing thermal refugia for cold-water fish (trout, salmon) that cannot survive in streams warmer than ~20°C; (3) water quality — groundwater is generally cleaner and more chemically stable than surface runoff, diluting pollutants; (4) water supply — municipalities, industries, and irrigators that draw from rivers during summer are heavily dependent on groundwater-sustained baseflow. Declining baseflow from aquifer depletion is one of the most critical water resource challenges in regions like the Great Plains and Mediterranean climates.',
+          explain: 'Baseflow is the lifeblood of perennial streams between storm events. Its ecological and water supply functions are numerous: (1) flow support — in many rivers, baseflow constitutes 50-80% of mean annual flow, sustaining the stream during dry months when snowmelt and storm runoff are absent; (2) temperature buffering — groundwater temperature ≈ mean annual air temperature, so groundwater-fed streams are cooler in summer than air-warmed surface runoff, providing thermal refugia for cold-water fish (trout, salmon) that cannot survive in streams warmer than ~20°C (68°F); (3) water quality — groundwater is generally cleaner and more chemically stable than surface runoff, diluting pollutants; (4) water supply — municipalities, industries, and irrigators that draw from rivers during summer are heavily dependent on groundwater-sustained baseflow. Declining baseflow from aquifer depletion is one of the most critical water resource challenges in regions like the Great Plains and Mediterranean climates.',
         },
         {
           q: 'What does a high topographic wetness index (TWI = ln(a/tan β)) predict about a location in a watershed?',

@@ -21,11 +21,11 @@ const seismicMagnitude: Lesson = {
     {
       type: 'intro',
       title: `From Richter\'s wiggles to moment magnitude: how we put a number on an earthquake`,
-      body: `When Charles Richter devised his local magnitude scale in 1935, he simply compared the largest wave amplitude recorded on a Wood-Anderson seismometer at 100 km to a reference amplitude. The result was logarithmic: each whole number step represents a 10× increase in ground shaking amplitude and roughly 31.6× more released energy. Richter\'s scale worked beautifully for shallow Californian earthquakes but broke down for very large or distant events — it saturated, reporting nothing bigger than about M 8.
+      body: `When Charles Richter devised his local magnitude scale in 1935, he simply compared the largest wave amplitude recorded on a Wood-Anderson seismometer at 100 km (62 mi) to a reference amplitude. The result was logarithmic: each whole number step represents a 10× increase in ground shaking amplitude and roughly 31.6× more released energy. Richter\'s scale worked beautifully for shallow Californian earthquakes but broke down for very large or distant events — it saturated, reporting nothing bigger than about M 8.
 
 Modern seismology uses the moment magnitude scale (Mw), derived from the seismic moment M₀ = μ × A × D, where μ is the shear modulus of the rock (~30 GPa in the crust), A is the area of the fault rupture, and D is the average displacement across that area. From M₀ (measured in newton-metres), Mw = (2/3) log₁₀(M₀) − 6.07. Mw is consistent across all sizes and distances, and it is now the standard for scientific reporting and hazard assessment.
 
-Magnitude and intensity are different quantities. Magnitude is a single number describing the energy released at the source. Intensity measures shaking at a particular location and varies with distance, local geology, building type, and depth. The Modified Mercalli Intensity (MMI) scale runs from I (imperceptible) to XII (total destruction). A M 6.5 earthquake beneath a city can produce MMI VIII–IX damage, while the same magnitude at 100 km depth produces far less shaking.
+Magnitude and intensity are different quantities. Magnitude is a single number describing the energy released at the source. Intensity measures shaking at a particular location and varies with distance, local geology, building type, and depth. The Modified Mercalli Intensity (MMI) scale runs from I (imperceptible) to XII (total destruction). A M 6.5 earthquake beneath a city can produce MMI VIII–IX damage, while the same magnitude at 100 km (62 mi) depth produces far less shaking.
 
 The energy difference between magnitude steps is dramatic. A M 8.0 releases about 1,000× more energy than a M 6.0, and a M 9.0 releases about 1,000,000× more. The 2011 Tōhoku earthquake (Mw 9.0) released more energy than all earthquakes recorded worldwide in a typical year. Understanding magnitude scale non-linearity is critical for communicating seismic risk to the public and for prioritising engineering investments.`,
       keyTerms: [
@@ -60,7 +60,7 @@ The energy difference between magnitude steps is dramatic. A M 8.0 releases abou
           name: 'Richter (ML)',
           icon: Activity,
           color: BRAND.coral,
-          desc: 'Local magnitude from Wood-Anderson amplitude at 100 km. Saturates above ~M 7.',
+          desc: 'Local magnitude from Wood-Anderson amplitude at 100 km (62 mi). Saturates above ~M 7.',
           examples: 'Still used in California for local M < 6 events. Reference: 1994 Northridge M 6.7.',
         },
         {
@@ -89,7 +89,7 @@ The energy difference between magnitude steps is dramatic. A M 8.0 releases abou
           icon: Layers,
           color: BRAND.accent,
           desc: 'Deep earthquakes produce less surface damage than shallow ones of equal magnitude.',
-          examples: '2013 Okhotsk Mw 8.3 at 609 km depth caused minor damage; far less than a shallow M 7.',
+          examples: '2013 Okhotsk Mw 8.3 at 609 km (378 mi) depth caused minor damage; far less than a shallow M 7.',
         },
       ],
     },
@@ -173,15 +173,15 @@ The energy difference between magnitude steps is dramatic. A M 8.0 releases abou
           explain: 'Magnitude saturation occurs because the wave periods used by the Richter and surface-wave scales are shorter than the source duration of very large earthquakes. Once the earthquake is large enough that the fault rupture takes longer than the measured wave period, additional slip does not increase the measured amplitude. Moment magnitude (Mw) uses long-period (low-frequency) waves that carry accurate size information even for Mw 9+ events.',
         },
         {
-          q: 'A city 80 km from an M 6.5 earthquake experiences MMI VII shaking. What does this tell us?',
+          q: 'A city 80 km (50 mi) from an M 6.5 earthquake experiences MMI VII shaking. What does this tell us?',
           a: [
             'The earthquake had magnitude 7 at the epicentre',
             'Shaking intensity depends on distance, depth, and site conditions, not just magnitude',
-            'MMI VII means the earthquake depth was exactly 80 km',
+            'MMI VII means the earthquake depth was exactly 80 km (50 mi)',
             'The earthquake released 7 × 10¹⁸ N·m of seismic moment',
           ],
           correct: 1,
-          explain: 'Magnitude is a single source number; intensity is the local shaking experience and varies across the affected region. MMI VII at 80 km from an M 6.5 reflects site conditions, crustal attenuation, and possibly basin amplification at that specific location. Another city at the same distance might experience MMI VI or VIII depending on local geology.',
+          explain: 'Magnitude is a single source number; intensity is the local shaking experience and varies across the affected region. MMI VII at 80 km (50 mi) from an M 6.5 reflects site conditions, crustal attenuation, and possibly basin amplification at that specific location. Another city at the same distance might experience MMI VI or VIII depending on local geology.',
         },
         {
           q: 'How much more energy does an M 8.0 release compared to an M 6.0?',

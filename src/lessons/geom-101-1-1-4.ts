@@ -35,7 +35,7 @@ The concept of the steady-state hillslope is powerful: if the rate of material s
 
 Climate change and tectonics both perturb hillslopes from steady state. Increased precipitation intensifies overland flow and can trigger landsliding. Vegetation loss from drought or fire removes the bioturbation and root cohesion that stabilise soil. Tectonic uplift steepens channels and drives progressive hillslope steepening. The geomorphic response time — the time for a hillslope to adjust to a new boundary condition — can range from decades for shallow soils to hundreds of thousands of years for deep, slowly eroding landscapes.
 
-Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosion rates. Cosmic rays penetrating Earth\'s surface produce rare isotopes — principally ¹⁰Be and ²⁶Al — in quartz minerals at rates that decrease exponentially with depth. If erosion is steady, the concentration of ¹⁰Be in surface quartz is inversely proportional to the erosion rate: fast erosion = low concentration (grains spend little time near the surface); slow erosion = high concentration. Global compilations show hillslope erosion rates spanning 0.01 mm/yr on ancient stable cratons to 1–10 mm/yr in rapidly uplifting mountain belts, beautifully capturing the coupling between tectonics and surface processes.`,
+Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosion rates. Cosmic rays penetrating Earth\'s surface produce rare isotopes — principally ¹⁰Be and ²⁶Al — in quartz minerals at rates that decrease exponentially with depth. If erosion is steady, the concentration of ¹⁰Be in surface quartz is inversely proportional to the erosion rate: fast erosion = low concentration (grains spend little time near the surface); slow erosion = high concentration. Global compilations show hillslope erosion rates spanning 0.01 mm/yr on ancient stable cratons to 1–10 mm/yr (0.04–0.39 in/yr) in rapidly uplifting mountain belts, beautifully capturing the coupling between tectonics and surface processes.`,
       keyTerms: [
         {
           term: 'Soil Creep',
@@ -81,8 +81,8 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
           name: 'Soil Creep and Diffusive Transport',
           icon: Activity,
           color: BRAND.jade,
-          desc: 'Slow downslope movement driven by bioturbation (tree throw, burrowing animals, root growth), freeze-thaw expansion, and wetting-drying volume changes. Typical rates 0.5–5 cm/yr of surface displacement. Follows the diffusion equation qs = −K × dz/dx: flux increases with slope gradient. Geomorphic evidence includes tilted gravestones, bent trees (pistol-butted), and soil-mantled bedrock steps.',
-          examples: 'Soil creep rates measured by erosion pins and peg networks in UK hillslopes average 1–3 cm/yr. Bioturbation by burrowing mammals (badgers, moles, rabbits) contributes 50+ kg/m²/yr of soil disturbance in British grasslands.',
+          desc: 'Slow downslope movement driven by bioturbation (tree throw, burrowing animals, root growth), freeze-thaw expansion, and wetting-drying volume changes. Typical rates 0.5–5 cm/yr (0.2–2.0 in/yr) of surface displacement. Follows the diffusion equation qs = −K × dz/dx: flux increases with slope gradient. Geomorphic evidence includes tilted gravestones, bent trees (pistol-butted), and soil-mantled bedrock steps.',
+          examples: 'Soil creep rates measured by erosion pins and peg networks in UK hillslopes average 1–3 cm/yr (0.4–1.2 in/yr). Bioturbation by burrowing mammals (badgers, moles, rabbits) contributes 50+ kg/m²/yr of soil disturbance in British grasslands.',
         },
         {
           name: 'Base Level and Channel-Hillslope Coupling',

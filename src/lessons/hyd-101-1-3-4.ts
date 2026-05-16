@@ -21,25 +21,25 @@ const groundwaterSustainability: Lesson = {
     {
       type: 'intro',
       title: 'The invisible crisis: groundwater depletion, land subsidence, and the race to sustainable aquifer management',
-      body: `Groundwater depletion — extraction exceeding natural recharge rates — is one of the most significant but least visible environmental problems of the 21st century. Global groundwater extraction has tripled since 1950, reaching ~1,000 km³/year, driven primarily by agricultural irrigation (70% of use). The High Plains (Ogallala) Aquifer underlies 450,000 km² of the central US Great Plains and provides water for 30% of all US groundwater-based irrigation. Water levels in heavily pumped areas of Kansas, Texas, and Oklahoma have declined 30–60 m since 1950 — drops that took 10,000+ years of recharge to accumulate. At current depletion rates, portions of the Ogallala may be functionally depleted (unable to sustain economic pumping) within 25–50 years.
+      body: `Groundwater depletion — extraction exceeding natural recharge rates — is one of the most significant but least visible environmental problems of the 21st century. Global groundwater extraction has tripled since 1950, reaching ~1,000 km³ (240 cu mi)/year, driven primarily by agricultural irrigation (70% of use). The High Plains (Ogallala) Aquifer underlies 450,000 km² (173,745 sq mi) of the central US Great Plains and provides water for 30% of all US groundwater-based irrigation. Water levels in heavily pumped areas of Kansas, Texas, and Oklahoma have declined 30–60 m (197 ft) since 1950 — drops that took 10,000+ years of recharge to accumulate. At current depletion rates, portions of the Ogallala may be functionally depleted (unable to sustain economic pumping) within 25–50 years.
 
-Land subsidence — the sinking of the land surface due to compaction of aquifer sediments as pore water is removed — is a direct consequence of groundwater extraction from fine-grained aquifer systems. Clay and silt layers that contributed to aquifer storage compact irreversibly when drained: the compaction is plastic (permanent), unlike the elastic component of storage in coarser sediments. Mexico City has subsided 10 m since the early 20th century due to pumping from the underlying clayey lake bed sediments — some areas are still sinking at 30–40 cm/year. Jakarta, Indonesia subsides 15–25 cm/year in the fastest-declining districts, and portions of the city are now below sea level, increasing flood risk. Houston, Texas, and the Sacramento–San Joaquin Delta have also experienced significant subsidence from groundwater extraction.
+Land subsidence — the sinking of the land surface due to compaction of aquifer sediments as pore water is removed — is a direct consequence of groundwater extraction from fine-grained aquifer systems. Clay and silt layers that contributed to aquifer storage compact irreversibly when drained: the compaction is plastic (permanent), unlike the elastic component of storage in coarser sediments. Mexico City has subsided 10 m (33 ft) since the early 20th century due to pumping from the underlying clayey lake bed sediments — some areas are still sinking at 30–40 cm/year. Jakarta, Indonesia subsides 15–25 cm/year in the fastest-declining districts, and portions of the city are now below sea level, increasing flood risk. Houston, Texas, and the Sacramento–San Joaquin Delta have also experienced significant subsidence from groundwater extraction.
 
-Seawater intrusion is the displacement of fresh coastal groundwater by saline ocean water, occurring when pumping lowers the freshwater head below the equilibrium Ghyben-Herzberg interface. The Ghyben-Herzberg principle states that for every metre the freshwater table rises above sea level, the fresh-salt interface lies approximately 40 m below sea level (density ratio ~40:1 for fresh:salt water difference). When coastal pumping lowers the water table by even 0.5 m, the interface rises ~20 m. Saltwater intrusion has contaminated coastal aquifers in Miami-Dade County (Florida), Long Island (New York), Monterey County (California), Dhaka (Bangladesh), Jakarta, and the Maldives, limiting groundwater supplies for millions of people.
+Seawater intrusion is the displacement of fresh coastal groundwater by saline ocean water, occurring when pumping lowers the freshwater head below the equilibrium Ghyben-Herzberg interface. The Ghyben-Herzberg principle states that for every metre the freshwater table rises above sea level, the fresh-salt interface lies approximately 40 m (131 ft) below sea level (density ratio ~40:1 for fresh:salt water difference). When coastal pumping lowers the water table by even 0.5 m (2 ft), the interface rises ~20 m (66 ft). Saltwater intrusion has contaminated coastal aquifers in Miami-Dade County (Florida), Long Island (New York), Monterey County (California), Dhaka (Bangladesh), Jakarta, and the Maldives, limiting groundwater supplies for millions of people.
 
 Groundwater contamination arises from many sources: agricultural nitrate leaching from fertiliser application, pesticides, volatile organic compounds (VOCs) from industrial sites and underground storage tanks, pharmaceuticals and personal care products (PPCPs), per- and polyfluoroalkyl substances (PFAS — "forever chemicals" from firefighting foams and industrial processes), naturally occurring arsenic (from oxidation of arsenic-bearing minerals in Bangladesh, India, and elsewhere: affecting ~100 million people), and saltwater intrusion. Contamination is often irreversible on human timescales because slow groundwater flow means plumes persist for decades. Managed aquifer recharge (MAR) — deliberately recharging aquifers with treated recycled water, storm water, or surface water during wet periods — is an increasingly important strategy for both replenishing depleted aquifers and creating hydraulic barriers against seawater intrusion.`,
       keyTerms: [
         {
           term: 'Groundwater Depletion',
-          def: 'Extraction exceeding natural recharge; permanently lowers water tables. Global rate ~1,000 km³/yr, 70% for agriculture.',
+          def: 'Extraction exceeding natural recharge; permanently lowers water tables. Global rate ~1,000 km³ (240 cu mi)/yr, 70% for agriculture.',
         },
         {
           term: 'Land Subsidence',
-          def: 'Irreversible compaction of clay-rich aquifer sediments when groundwater is removed. Mexico City: 10 m since 1900.',
+          def: 'Irreversible compaction of clay-rich aquifer sediments when groundwater is removed. Mexico City: 10 m (33 ft) since 1900.',
         },
         {
           term: 'Seawater Intrusion',
-          def: 'Saltwater displacing fresh coastal groundwater when pumping lowers the freshwater head; Ghyben-Herzberg principle: 1 m freshwater table drop → 40 m interface rise.',
+          def: 'Saltwater displacing fresh coastal groundwater when pumping lowers the freshwater head; Ghyben-Herzberg principle: 1 m (3 ft) freshwater table drop → 40 m (131 ft) interface rise.',
         },
         {
           term: 'PFAS',
@@ -60,7 +60,7 @@ Groundwater contamination arises from many sources: agricultural nitrate leachin
           name: 'Ogallala Depletion',
           icon: Layers,
           color: BRAND.coral,
-          desc: 'High Plains Aquifer: 30-60 m water table decline in Kansas, TX, OK since 1950. Recharge rate ~1 mm/yr. Recovery would take millennia.',
+          desc: 'High Plains Aquifer: 30-60 m (197 ft) water table decline in Kansas, TX, OK since 1950. Recharge rate ~1 mm/yr. Recovery would take millennia.',
           examples: 'Texas Panhandle: some areas have lost >80% of original saturated thickness. Irrigated farmland abandonment accelerating as pumping costs rise.',
         },
         {
@@ -68,14 +68,14 @@ Groundwater contamination arises from many sources: agricultural nitrate leachin
           icon: Globe,
           color: BRAND.gold,
           desc: 'Clay compaction from groundwater removal. Permanent, irreversible. Increases flood risk in sinking coastal cities.',
-          examples: 'Jakarta: -25 cm/yr; 40% of city below sea level. Mexico City: -10 m total since 1900; historic buildings tilting visibly. Shanghai: -3 m.',
+          examples: 'Jakarta: -25 cm/yr; 40% of city below sea level. Mexico City: -10 m (33 ft) total since 1900; historic buildings tilting visibly. Shanghai: -3 m (10 ft).',
         },
         {
           name: 'Seawater Intrusion',
           icon: ArrowRight,
           color: BRAND.ruby,
-          desc: 'Ghyben-Herzberg: 1 m freshwater table drop → 40 m saltwater interface rise. Irreversible contamination of coastal aquifers.',
-          examples: 'Miami-Dade: saltwater intrusion front advanced >16 km inland since 1900. Maldives: limited freshwater lens threatened by intrusion and sea level rise.',
+          desc: 'Ghyben-Herzberg: 1 m (3 ft) freshwater table drop → 40 m (131 ft) saltwater interface rise. Irreversible contamination of coastal aquifers.',
+          examples: 'Miami-Dade: saltwater intrusion front advanced >16 km (9.9 mi) inland since 1900. Maldives: limited freshwater lens threatened by intrusion and sea level rise.',
         },
         {
           name: 'PFAS Contamination',
@@ -104,7 +104,7 @@ Groundwater contamination arises from many sources: agricultural nitrate leachin
           {
             id: 'excess-pumping',
             label: 'Excess Pumping',
-            description: 'Extraction rate exceeds recharge rate. Common in arid and semi-arid agricultural regions. Global rate ~1,000 km³/yr, growing 1-2%/yr.',
+            description: 'Extraction rate exceeds recharge rate. Common in arid and semi-arid agricultural regions. Global rate ~1,000 km³ (240 cu mi)/yr, growing 1-2%/yr.',
             color: BRAND.coral,
           },
           {
@@ -159,18 +159,18 @@ Groundwater contamination arises from many sources: agricultural nitrate leachin
             'Clay compaction in the Ogallala Aquifer is reversible when water returns; the aquifer would refill to original levels if pumping stopped',
           ],
           correct: 1,
-          explain: 'The Ogallala Aquifer was largely recharged during wetter, cooler Pleistocene conditions and currently receives only ~1 mm/year of natural recharge in most areas — essentially a "fossil" water resource. At current extraction rates (~21 km³/year), portions that have been depleted by 30–60 m would take thousands to tens of thousands of years to recover naturally. Additionally, clay-rich sediments in the fine-grained portions of the aquifer compact irreversibly when drained, permanently reducing storage capacity. This makes Ogallala depletion functionally permanent on policy-relevant timescales. The decisions made in the next 20–30 years about extraction rates will determine whether Great Plains agriculture can be sustained at anything like current scale through the 21st century.',
+          explain: 'The Ogallala Aquifer was largely recharged during wetter, cooler Pleistocene conditions and currently receives only ~1 mm/year of natural recharge in most areas — essentially a "fossil" water resource. At current extraction rates (~21 km³ (5.0 cu mi)/year), portions that have been depleted by 30–60 m (197 ft) would take thousands to tens of thousands of years to recover naturally. Additionally, clay-rich sediments in the fine-grained portions of the aquifer compact irreversibly when drained, permanently reducing storage capacity. This makes Ogallala depletion functionally permanent on policy-relevant timescales. The decisions made in the next 20–30 years about extraction rates will determine whether Great Plains agriculture can be sustained at anything like current scale through the 21st century.',
         },
         {
           q: 'What is the Ghyben-Herzberg principle and why does it make seawater intrusion so damaging?',
           a: [
             'The Ghyben-Herzberg principle states that tidal fluctuations in coastal aquifers amplify 40× in inland water tables, causing widespread flooding',
-            'For every metre the freshwater head drops below sea level, the fresh-saltwater interface rises approximately 40 m; even a small freshwater head decline causes a large saltwater interface rise, contaminating deep portions of coastal aquifers',
+            'For every metre the freshwater head drops below sea level, the fresh-saltwater interface rises approximately 40 m (131 ft); even a small freshwater head decline causes a large saltwater interface rise, contaminating deep portions of coastal aquifers',
             'The principle states that 40% of coastal groundwater is naturally saline; intrusion only contaminates the remaining 60% fresh fraction',
             'Saltwater intrudes at 40 metres per year when coastal pumping begins; once started, intrusion cannot be stopped even if pumping ceases',
           ],
           correct: 1,
-          explain: 'The Ghyben-Herzberg (1888/1901) relationship arises from the density difference between fresh (1,000 kg/m³) and salt (1,025 kg/m³) water: a column of freshwater must extend 40 m below sea level for every metre it stands above sea level to balance a column of seawater at the interface. Algebraically: z_f = ρ_s/(ρ_s - ρ_f) × h_f ≈ 40 × h_f. When coastal pumping lowers the freshwater head by 1 m, the interface rises ~40 m. A seemingly small water table decline of 2–3 m can raise the interface 80–120 m, potentially contaminating an entire aquifer. Once saltwater has invaded, restoring the freshwater lens requires sustained water table recovery above sea level for years to decades, which is expensive and difficult in densely developed coastal areas.',
+          explain: 'The Ghyben-Herzberg (1888/1901) relationship arises from the density difference between fresh (1,000 kg/m³) and salt (1,025 kg/m³) water: a column of freshwater must extend 40 m (131 ft) below sea level for every metre it stands above sea level to balance a column of seawater at the interface. Algebraically: z_f = ρ_s/(ρ_s - ρ_f) × h_f ≈ 40 × h_f. When coastal pumping lowers the freshwater head by 1 m (3 ft), the interface rises ~40 m (131 ft). A seemingly small water table decline of 2–3 m (10 ft) can raise the interface 80–120 m (394 ft), potentially contaminating an entire aquifer. Once saltwater has invaded, restoring the freshwater lens requires sustained water table recovery above sea level for years to decades, which is expensive and difficult in densely developed coastal areas.',
         },
         {
           q: 'Land subsidence from groundwater extraction occurs primarily in which types of geological materials and why is it often irreversible?',
@@ -181,7 +181,7 @@ Groundwater contamination arises from many sources: agricultural nitrate leachin
             'Subsidence is caused by dissolution of carbonate minerals in limestone aquifers; it is irreversible because dissolved minerals cannot be re-precipitated',
           ],
           correct: 1,
-          explain: `Coarse sands and gravels have elastic storage: they compress slightly under stress and expand when stress is released — this is reversible. Fine-grained clays and silts behave differently: they have high porosity (40–70%) but low hydraulic conductivity. When pore water pressure decreases due to pumping, the effective stress on clay grains increases. Clay platelet rearrangement under this stress is plastic (inelastic), not elastic — it does not recover when water levels are restored. This irreversible compaction is the dominant mechanism of ground subsidence. The problem is compounded because clay layers may constitute only 10–20% of aquifer thickness but contribute 80–90% of total compaction. Mexico City\'s 10 m subsidence since 1900 destroyed the original clay aquifer storage permanently, meaning the city now relies primarily on imported surface water.`,
+          explain: `Coarse sands and gravels have elastic storage: they compress slightly under stress and expand when stress is released — this is reversible. Fine-grained clays and silts behave differently: they have high porosity (40–70%) but low hydraulic conductivity. When pore water pressure decreases due to pumping, the effective stress on clay grains increases. Clay platelet rearrangement under this stress is plastic (inelastic), not elastic — it does not recover when water levels are restored. This irreversible compaction is the dominant mechanism of ground subsidence. The problem is compounded because clay layers may constitute only 10–20% of aquifer thickness but contribute 80–90% of total compaction. Mexico City\'s 10 m (33 ft) subsidence since 1900 destroyed the original clay aquifer storage permanently, meaning the city now relies primarily on imported surface water.`,
         },
         {
           q: 'PFAS ("forever chemicals") present a particular groundwater contamination challenge. What makes them so persistent?',

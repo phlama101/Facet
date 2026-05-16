@@ -24,9 +24,9 @@ const earthquakeEarlyWarningSystems: Lesson = {
       title: 'Racing the Wavefront: The Physics of Buying Time',
       body: `Earthquake Early Warning (EEW) exploits a fundamental asymmetry in nature: electronic signals travel at the speed of light (~300,000 km/s), while the **S-waves** that cause most structural damage travel at only 3–5 km/s. By detecting the first-arriving, less-destructive **P-waves** at seismometers near the earthquake source and transmitting an alert electronically before the S-wave front reaches distant communities, an EEW system can provide seconds to tens of seconds of warning. In those seconds, automated systems can stop bullet trains, open fire-station doors, pause surgical robots, and move elevator cars to the nearest floor — and individuals can drop, cover, and hold on.
 
-The **alert latency** — the time from earthquake origin to alert delivery at a user's device — is the sum of P-wave travel time to the nearest sensor (typically 1–3 s), processing time to estimate magnitude and location (2–5 s), and telecommunications latency (<0.1 s on modern networks). Total system latency for ShakeAlert, the USGS EEW system covering California, Oregon, and Washington, averages 4–8 seconds from origin time. For a site 80 km from the epicentre, S-waves need ~16 seconds to arrive, leaving a usable **lead time** of roughly 8–12 seconds. Lead time increases with distance and decreases toward zero at the epicentre, defining the unavoidable **epicentral blind zone** — the region so close to the fault that damaging shaking arrives before any alert can be issued.
+The **alert latency** — the time from earthquake origin to alert delivery at a user's device — is the sum of P-wave travel time to the nearest sensor (typically 1–3 s), processing time to estimate magnitude and location (2–5 s), and telecommunications latency (<0.1 s on modern networks). Total system latency for ShakeAlert, the USGS EEW system covering California, Oregon, and Washington, averages 4–8 seconds from origin time. For a site 80 km (50 mi) from the epicentre, S-waves need ~16 seconds to arrive, leaving a usable **lead time** of roughly 8–12 seconds. Lead time increases with distance and decreases toward zero at the epicentre, defining the unavoidable **epicentral blind zone** — the region so close to the fault that damaging shaking arrives before any alert can be issued.
 
-Japan's system, operated by the Japan Meteorological Agency (JMA) and built on research by NIED (National Research Institute for Earth Science and Disaster Resilience), is the world's most comprehensive EEW network. With ~4,000 seismometers — one of the densest national networks on Earth — it has delivered public alerts since 2007. During the 2011 Tōhoku Mw 9.1, alerts reached Tokyo (~370 km away) approximately 80 seconds before strong shaking, triggering automatic braking of Shinkansen bullet trains, which prevented derailments despite peak accelerations exceeding design limits along parts of the route. Coastal communities within 100 km of the rupture zone received 0–20 seconds of warning, insufficient for tsunami evacuation but enough for some automated protective actions.
+Japan's system, operated by the Japan Meteorological Agency (JMA) and built on research by NIED (National Research Institute for Earth Science and Disaster Resilience), is the world's most comprehensive EEW network. With ~4,000 seismometers — one of the densest national networks on Earth — it has delivered public alerts since 2007. During the 2011 Tōhoku Mw 9.1, alerts reached Tokyo (~370 km (230 mi) away) approximately 80 seconds before strong shaking, triggering automatic braking of Shinkansen bullet trains, which prevented derailments despite peak accelerations exceeding design limits along parts of the route. Coastal communities within 100 km (62 mi) of the rupture zone received 0–20 seconds of warning, insufficient for tsunami evacuation but enough for some automated protective actions.
 
 ShakeAlert serves approximately 52 million people on the US West Coast through 1,675 seismic stations. Public alerting is delivered via the Wireless Emergency Alert (WEA) system — the same channel used for Amber Alerts — and through the MyShake smartphone app. ShakeAlert began limited public rollout in California in 2019 and statewide in Oregon and Washington by 2021. The system's performance during the July 2019 Ridgecrest sequence (M 6.4 and M 7.1) demonstrated both its capabilities — Los Angeles received ~45 seconds of warning for the M 7.1 — and its limitations, including magnitude underestimation in the first seconds of a large rupture.`,
       keyTerms: [
@@ -44,7 +44,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
         },
         {
           term: 'Epicentral Blind Zone',
-          def: 'The region surrounding the earthquake source within which S-waves arrive before or simultaneously with EEW alerts, providing zero useful warning; its radius approximates alert latency multiplied by S-wave velocity (~20–40 km for modern systems).',
+          def: 'The region surrounding the earthquake source within which S-waves arrive before or simultaneously with EEW alerts, providing zero useful warning; its radius approximates alert latency multiplied by S-wave velocity (~20–40 km (25 mi) for modern systems).',
         },
         {
           term: 'ShakeAlert',
@@ -100,8 +100,8 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
           name: 'The Epicentral Blind Zone',
           icon: Radio,
           color: BRAND.coral,
-          desc: 'Communities closest to the fault — where shaking is typically most severe — receive little or no lead time. The blind zone radius (≈ alert latency × S-wave velocity) is ~20–40 km for modern systems with 5–8 s latency.',
-          examples: '2011 Tōhoku: coastal communities within 80 km of the subduction zone received 0–15 s of warning. 1994 Northridge M 6.7, epicentre beneath suburban LA: a system with 6 s latency would have given downtown LA only ~4 s warning.',
+          desc: 'Communities closest to the fault — where shaking is typically most severe — receive little or no lead time. The blind zone radius (≈ alert latency × S-wave velocity) is ~20–40 km (25 mi) for modern systems with 5–8 s latency.',
+          examples: '2011 Tōhoku: coastal communities within 80 km (50 mi) of the subduction zone received 0–15 s of warning. 1994 Northridge M 6.7, epicentre beneath suburban LA: a system with 6 s latency would have given downtown LA only ~4 s warning.',
         },
         {
           name: 'Magnitude Underestimation for Large Events',
@@ -142,7 +142,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
           {
             id: 'magnitude-location',
             label: 'Magnitude & Location Estimation',
-            description: 'EPIC and FinDer algorithms estimate hypocenter location (±5 km accuracy in first estimate) and magnitude from τ_c and P_d parameters within 3–4 seconds. FinDer begins resolving rupture length as more stations report.',
+            description: 'EPIC and FinDer algorithms estimate hypocenter location (±5 km (3.1 mi) accuracy in first estimate) and magnitude from τ_c and P_d parameters within 3–4 seconds. FinDer begins resolving rupture length as more stations report.',
             color: BRAND.jade,
           },
           {
@@ -160,7 +160,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
           {
             id: 'lead-time',
             label: 'Lead Time at User Location',
-            description: 'San Francisco (10 km from Hayward Fault): S-wave arrives ~3 s after origin. With 6–8 s system latency, lead time is negative — BLIND ZONE. Oakland Hills (8 km): similar. Berkeley (4 km from fault): S-wave arrives in ~1 s — no warning possible at any latency.',
+            description: 'San Francisco (10 km (6.2 mi) from Hayward Fault): S-wave arrives ~3 s after origin. With 6–8 s system latency, lead time is negative — BLIND ZONE. Oakland Hills (8 km (5.0 mi)): similar. Berkeley (4 km (2.5 mi) from fault): S-wave arrives in ~1 s — no warning possible at any latency.',
             color: BRAND.accent,
           },
         ],
@@ -177,15 +177,15 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
       type: 'quiz',
       questions: [
         {
-          q: 'A city is 60 km from an earthquake epicentre. ShakeAlert has a total system latency of 7 seconds. If S-waves travel at 3.5 km/s, what is the approximate lead time for residents of that city?',
+          q: 'A city is 60 km (37 mi) from an earthquake epicentre. ShakeAlert has a total system latency of 7 seconds. If S-waves travel at 3.5 km/s, what is the approximate lead time for residents of that city?',
           a: [
             'About 7 seconds — the system latency determines all lead time',
-            'About 10 seconds — S-waves take 17 seconds to travel 60 km, minus the 7-second system latency',
+            'About 10 seconds — S-waves take 17 seconds to travel 60 km (37 mi), minus the 7-second system latency',
             'About 17 seconds — lead time equals S-wave travel time regardless of latency',
             'Zero seconds — the city is within the epicentral blind zone',
           ],
           correct: 1,
-          explain: 'B is correct: S-wave travel time = 60 km ÷ 3.5 km/s ≈ 17 s. Lead time = S-wave travel time − system latency = 17 − 7 = 10 s. A is wrong: latency reduces lead time but does not define it. C is wrong: S-wave travel time is the maximum possible lead time, reduced by system latency. D is wrong: the blind zone radius at 7 s latency is approximately 7 s × 3.5 km/s = 24.5 km; a city at 60 km is well outside the blind zone.',
+          explain: 'B is correct: S-wave travel time = 60 km (37 mi) ÷ 3.5 km/s ≈ 17 s. Lead time = S-wave travel time − system latency = 17 − 7 = 10 s. A is wrong: latency reduces lead time but does not define it. C is wrong: S-wave travel time is the maximum possible lead time, reduced by system latency. D is wrong: the blind zone radius at 7 s latency is approximately 7 s × 3.5 km/s = 24.5 km (15 mi); a city at 60 km (37 mi) is well outside the blind zone.',
         },
         {
           q: `During the 2011 Tōhoku Mw 9.1 earthquake, Japan\'s EEW system initially estimated the magnitude as M 7.2, not M 9.1. What physical limitation caused this underestimation, and why does it matter for warning quality?`,
@@ -196,7 +196,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
             'Japanese sensors were saturated (clipped) by the violent shaking and could not record accurate amplitudes',
           ],
           correct: 1,
-          explain: `B is correct: large earthquake ruptures take time to develop. The M 9.1 Tōhoku rupture propagated over ~3 minutes and ~500 km of fault. In the first 3–4 s that EEW algorithms analyse, only the initial small patch has ruptured, producing signals consistent with M ~7. The underestimate matters because the WEA alert coverage area and automated responses (e.g., Shinkansen braking distance and speed reduction level) depend on the magnitude estimate. An M 7.2 estimate triggers a smaller-magnitude alert than the actual threat warrants. A is wrong: Japan\'s ~4,000-station network has excellent coverage. C is wrong: subduction geometry affects waveforms but not the first-principles timing argument. D has some truth (clipping of near-field sensors) but is not the primary reason for the global magnitude underestimate.`,
+          explain: `B is correct: large earthquake ruptures take time to develop. The M 9.1 Tōhoku rupture propagated over ~3 minutes and ~500 km (311 mi) of fault. In the first 3–4 s that EEW algorithms analyse, only the initial small patch has ruptured, producing signals consistent with M ~7. The underestimate matters because the WEA alert coverage area and automated responses (e.g., Shinkansen braking distance and speed reduction level) depend on the magnitude estimate. An M 7.2 estimate triggers a smaller-magnitude alert than the actual threat warrants. A is wrong: Japan\'s ~4,000-station network has excellent coverage. C is wrong: subduction geometry affects waveforms but not the first-principles timing argument. D has some truth (clipping of near-field sensors) but is not the primary reason for the global magnitude underestimate.`,
         },
         {
           q: 'What distinguishes the "epicentral blind zone" from a technical limitation that could eventually be engineered away?',
@@ -207,7 +207,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
             'The blind zone can be eliminated by placing sensors directly on known fault traces so P-waves arrive at zero delay',
           ],
           correct: 1,
-          explain: `B is correct: the blind zone represents a physical irreducibility. Even with instantaneous processing (zero latency), you cannot issue an alert until at least one sensor has detected a P-wave — and that takes time proportional to the sensor\'s distance from the hypocenter. In practice, the minimum detection latency is 1–3 seconds. Multiply by the S-wave velocity to get a minimum blind zone radius of ~4–10 km even in the best possible system. For sites within that radius, S-waves cannot be outrun by any alert system. A is wrong: faster computers reduce processing latency by 1–2 s at most, not to zero. C is wrong: location above or below ground doesn\'t change wave travel time. D is partially correct (sensors on faults reduce detection latency) but still cannot eliminate the finite travel time to even the nearest sensor.`,
+          explain: `B is correct: the blind zone represents a physical irreducibility. Even with instantaneous processing (zero latency), you cannot issue an alert until at least one sensor has detected a P-wave — and that takes time proportional to the sensor\'s distance from the hypocenter. In practice, the minimum detection latency is 1–3 seconds. Multiply by the S-wave velocity to get a minimum blind zone radius of ~4–10 km (6.2 mi) even in the best possible system. For sites within that radius, S-waves cannot be outrun by any alert system. A is wrong: faster computers reduce processing latency by 1–2 s at most, not to zero. C is wrong: location above or below ground doesn\'t change wave travel time. D is partially correct (sensors on faults reduce detection latency) but still cannot eliminate the finite travel time to even the nearest sensor.`,
         },
         {
           q: 'Why do EEW system designers set a minimum shaking threshold (e.g., MMI IV) before issuing a public WEA alert, rather than alerting for all detected earthquakes?',
@@ -229,7 +229,7 @@ ShakeAlert serves approximately 52 million people on the US West Coast through 1
             'Both cities use satellite-based detection that bypasses the epicentral blind zone constraint',
           ],
           correct: 1,
-          explain: 'B is correct: lead time = S-wave travel time − system latency. Tokyo is ~370 km from the Tōhoku subduction zone: S-wave travel time ≈ 105 s; with ~5 s system latency, lead time is ~100 s. Mexico City is ~350 km from the Guerrero subduction zone: similar calculation yields ~80–100 s warning. This large lead time enables meaningful responses including Shinkansen braking and building evacuation. A is wrong: the 2011 Tōhoku Mw 9.1 at 370 km still produced dangerous shaking (MMI V–VI) in Tokyo. C is wrong: EEW alerts users before S-waves, not because P-waves are the main hazard — it uses P-waves only for early detection. D is wrong: both cities use ground-based seismometer networks.',
+          explain: 'B is correct: lead time = S-wave travel time − system latency. Tokyo is ~370 km (230 mi) from the Tōhoku subduction zone: S-wave travel time ≈ 105 s; with ~5 s system latency, lead time is ~100 s. Mexico City is ~350 km (217 mi) from the Guerrero subduction zone: similar calculation yields ~80–100 s warning. This large lead time enables meaningful responses including Shinkansen braking and building evacuation. A is wrong: the 2011 Tōhoku Mw 9.1 at 370 km (230 mi) still produced dangerous shaking (MMI V–VI) in Tokyo. C is wrong: EEW alerts users before S-waves, not because P-waves are the main hazard — it uses P-waves only for early detection. D is wrong: both cities use ground-based seismometer networks.',
         },
       ],
     },

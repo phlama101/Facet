@@ -61,14 +61,14 @@ Seismic gaps — segments of a fault system that have not ruptured recently comp
           icon: Clock,
           color: BRAND.jade,
           desc: 'Fault locked. Tectonic loading accumulates strain. GPS shows velocity gradient across fault.',
-          examples: 'San Andreas: ~45 mm/yr relative plate motion. Locked sections show linear GPS velocity gradient over 50-100 km.',
+          examples: 'San Andreas: ~45 mm/yr relative plate motion. Locked sections show linear GPS velocity gradient over 50-100 km (62 mi).',
         },
         {
           name: 'Coseismic',
           icon: Zap,
           color: BRAND.coral,
-          desc: 'Rupture releases decades of accumulated strain in seconds. Displacements of 1–20 m in large events.',
-          examples: '2011 Tōhoku: up to 50 m coseismic slip on fault; 2–8 m of seafloor displacement generated the tsunami.',
+          desc: 'Rupture releases decades of accumulated strain in seconds. Displacements of 1–20 m (66 ft) in large events.',
+          examples: '2011 Tōhoku: up to 50 m (164 ft) coseismic slip on fault; 2–8 m (26 ft) of seafloor displacement generated the tsunami.',
         },
         {
           name: 'Postseismic',
@@ -110,7 +110,7 @@ Seismic gaps — segments of a fault system that have not ruptured recently comp
           {
             id: 'locked-zone',
             label: 'Locked Coupling Zone',
-            description: 'Fault is fully locked 0–25 km depth. GPS shows landward motion of coastal stations as elastic strain accumulates.',
+            description: 'Fault is fully locked 0–25 km (16 mi) depth. GPS shows landward motion of coastal stations as elastic strain accumulates.',
             color: BRAND.gold,
           },
           {
@@ -122,7 +122,7 @@ Seismic gaps — segments of a fault system that have not ruptured recently comp
           {
             id: 'rupture',
             label: 'Megathrust Rupture',
-            description: 'Every 200–500 years, M ~9 rupture. Fault slips 10–20 m. Coast drops 0.5–2 m. Tsunami generated.',
+            description: 'Every 200–500 years, M ~9 rupture. Fault slips 10–20 m (66 ft). Coast drops 0.5–2 m (7 ft). Tsunami generated.',
             color: BRAND.coral,
           },
           {

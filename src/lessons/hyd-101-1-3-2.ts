@@ -75,7 +75,7 @@ Regional groundwater systems include gaining streams (where groundwater discharg
           icon: Zap,
           color: BRAND.gold,
           desc: 'Pumping lowers head around well. Grows until inflows (recharge + leakage + stream capture) balance pumping rate.',
-          examples: 'Central Arizona Project aquifer: cones of depression from major well fields have merged to form a regional water table decline of 50-100 m since 1940.',
+          examples: 'Central Arizona Project aquifer: cones of depression from major well fields have merged to form a regional water table decline of 50-100 m (328 ft) since 1940.',
         },
         {
           name: 'Gaining vs Losing Streams',

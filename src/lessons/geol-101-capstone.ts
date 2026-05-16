@@ -32,7 +32,7 @@ Take your time. Every question has one unambiguously correct answer, but the dis
           a: [
             "S-waves attenuate more rapidly than P-waves in all Earth materials and simply fade out beyond ~100° from a seismic source",
             "The outer core is liquid; S-waves cannot propagate through fluids because fluids have no shear strength, so they are absorbed at the core-mantle boundary",
-            "S-waves are converted entirely to P-waves at the mantle transition zone at 660 km depth and arrive as P-waves rather than disappearing",
+            "S-waves are converted entirely to P-waves at the mantle transition zone at 660 km (410 mi) depth and arrive as P-waves rather than disappearing",
             "The earthquake was too shallow to generate S-waves that could penetrate to the core; only deep-focus earthquakes produce both wave types",
           ],
           correct: 1,
@@ -43,7 +43,7 @@ Take your time. Every question has one unambiguously correct answer, but the dis
           a: [
             "Oceanic crust is always older at convergent margins, and older rocks are always denser; density increases with age regardless of rock type",
             "Oceanic crust (basaltic, ~3.0 g/cm³) is denser than continental crust (granitic, ~2.7 g/cm³); when the two converge, the denser oceanic plate sinks into the mantle while the lighter continental crust remains buoyant",
-            "Continental crust is so thick (~35 km) that it floats high and physically cannot be pushed down; oceanic crust subducts only because it is thin enough to be bent by tectonic forces",
+            "Continental crust is so thick (~35 km (22 mi)) that it floats high and physically cannot be pushed down; oceanic crust subducts only because it is thin enough to be bent by tectonic forces",
             "Oceanic crust absorbs water from the ocean floor, which makes it heavier by the time it reaches a convergent margin",
           ],
           correct: 1,
@@ -74,13 +74,13 @@ Take your time. Every question has one unambiguously correct answer, but the dis
         {
           q: "What is the Mohorovičić discontinuity, and how was it discovered?",
           a: [
-            "The Moho is the boundary between the inner and outer core at ~2,900 km depth, discovered when S-waves disappear on distant seismograms",
-            "The Moho is the crust-mantle boundary; Mohorovičić discovered it in 1909 by noticing that P-waves from a Croatian earthquake arrived at distant stations faster than expected — refracted waves traveling through the denser, faster mantle overtook direct crustal waves beyond ~200 km",
-            "The Moho is the upper-lower mantle boundary at 660 km depth, where olivine transforms to perovskite under extreme pressure",
+            "The Moho is the boundary between the inner and outer core at ~2,900 km (1802 mi) depth, discovered when S-waves disappear on distant seismograms",
+            "The Moho is the crust-mantle boundary; Mohorovičić discovered it in 1909 by noticing that P-waves from a Croatian earthquake arrived at distant stations faster than expected — refracted waves traveling through the denser, faster mantle overtook direct crustal waves beyond ~200 km (124 mi)",
+            "The Moho is the upper-lower mantle boundary at 660 km (410 mi) depth, where olivine transforms to perovskite under extreme pressure",
             "The Moho is the base of the asthenosphere, identified from temperature measurements in deep boreholes where rock becomes too hot to behave rigidly",
           ],
           correct: 1,
-          explain: "Mohorovičić noticed an anomaly in 1909: two sets of P-wave arrivals appeared at stations beyond ~200 km from a Croatian earthquake — one traveling directly through the crust and one that had refracted through the faster, denser underlying mantle; beyond a critical distance the mantle-refracted wave arrived first, revealing the velocity discontinuity that bears his name. The S-wave disappearance (A) identifies the core-mantle boundary, not the Moho. The 660 km discontinuity (C) is the upper-lower mantle boundary. The asthenosphere (D) is defined by mechanical behaviour, not a seismic velocity discontinuity at depth.",
+          explain: "Mohorovičić noticed an anomaly in 1909: two sets of P-wave arrivals appeared at stations beyond ~200 km (124 mi) from a Croatian earthquake — one traveling directly through the crust and one that had refracted through the faster, denser underlying mantle; beyond a critical distance the mantle-refracted wave arrived first, revealing the velocity discontinuity that bears his name. The S-wave disappearance (A) identifies the core-mantle boundary, not the Moho. The 660 km (410 mi) discontinuity (C) is the upper-lower mantle boundary. The asthenosphere (D) is defined by mechanical behaviour, not a seismic velocity discontinuity at depth.",
         },
 
         // ── MODULE 1.2 — MINERALS ─────────────────────────────────────────────
@@ -118,7 +118,7 @@ Take your time. Every question has one unambiguously correct answer, but the dis
           explain: "Because Si (~28%) and O (~46%) are the two most abundant elements in the crust, minerals built from their combination — the silicate tetrahedra SiO₄, which polymerise into the full range of mineral structures — inevitably dominate. Feldspars (~41% of crust) and quartz (~12%) alone illustrate the point. Density (A) has it backwards — less dense felsic minerals float up, they don't sink. Weathering resistance (C) contributes but cannot explain the initial dominance. Other rocky planets (D) actually also have silicate-dominated crusts, not carbonate.",
         },
         {
-          q: "Two rock samples have identical mineral compositions (plagioclase, pyroxene, olivine). Sample A has 5 mm crystals; Sample B has no visible crystals. What does this reveal?",
+          q: "Two rock samples have identical mineral compositions (plagioclase, pyroxene, olivine). Sample A has 5 mm (0.20 in) crystals; Sample B has no visible crystals. What does this reveal?",
           a: [
             "Sample A cooled faster — larger crystals form when minerals have less time to organise; Sample B cooled slowly, producing a dense fine-grained texture",
             "Sample A cooled slowly deep underground (intrusive): atoms had time to migrate to growing crystal faces, producing coarse grains; Sample B cooled rapidly at the surface (extrusive): fast cooling froze the melt before large crystals could form; the same composition means the same original magma, with different cooling environments",
@@ -190,7 +190,7 @@ Take your time. Every question has one unambiguously correct answer, but the dis
           a: [
             "The schist was under directed (shear) stress while the marble was under only uniform pressure; both rocks have foliation, but marble's is microscopic",
             "Foliation develops when platy or elongate minerals — micas and amphiboles in schist — grow perpendicular to directed pressure, aligning their flat faces; marble is recrystallised calcite, which forms equidimensional blocky crystals with no preferred growth direction, so pressure cannot align them into a visible fabric",
-            "Marble did not reach high enough temperature for foliation; foliation requires >600 °C, which calcite cannot sustain without decomposing",
+            "Marble did not reach high enough temperature for foliation; foliation requires >600°C (1112°F), which calcite cannot sustain without decomposing",
             "Sedimentary rocks always develop foliation during metamorphism because original bedding is enhanced; limestone had no original layering, so marble has none",
           ],
           correct: 1,
@@ -240,18 +240,18 @@ Take your time. Every question has one unambiguously correct answer, but the dis
             "The Andes have volcanoes because the active Pacific spreading ridge is nearby; the Himalayas lack them because the Indian Ocean spreading centre is too far away",
           ],
           correct: 1,
-          explain: "Arc volcanism requires a subducting slab to deliver water to the mantle wedge — no slab, no arc. The Andes sit above the Nazca Plate, which subducts eastward beneath South America, generating the Chilean-Peruvian volcanic arc and deep offshore trench. In the Himalayas, India collided with Eurasia ~50 Ma ago; because both are continental, neither plate can subduct (continental crust is too buoyant), so collision thickens the crust to ~70 km, lifting the Tibetan Plateau, but no slab descends to trigger volcanism. Altitude (A) does not suppress volcanism. Age (C) is irrelevant — arc volcanism can begin as soon as subduction starts. Spreading-ridge proximity (D) is not the mechanism.",
+          explain: "Arc volcanism requires a subducting slab to deliver water to the mantle wedge — no slab, no arc. The Andes sit above the Nazca Plate, which subducts eastward beneath South America, generating the Chilean-Peruvian volcanic arc and deep offshore trench. In the Himalayas, India collided with Eurasia ~50 Ma ago; because both are continental, neither plate can subduct (continental crust is too buoyant), so collision thickens the crust to ~70 km (43 mi), lifting the Tibetan Plateau, but no slab descends to trigger volcanism. Altitude (A) does not suppress volcanism. Age (C) is irrelevant — arc volcanism can begin as soon as subduction starts. Spreading-ridge proximity (D) is not the mechanism.",
         },
         {
           q: "The Hawaiian Islands show a systematic northwest age increase: the Big Island (~0 Ma) sits at the southeast end; Kauai (~5 Ma) at the northwest. The Emperor Seamounts extend the chain further northwest, becoming progressively older. What does this pattern reveal?",
           a: [
             "The hotspot itself migrates slowly across the Pacific; the oldest seamounts record the hotspot's starting position",
-            "The Hawaiian hotspot is a fixed mantle plume; the Pacific Plate moves northwest over it at ~7–9 cm/yr; each part of the plate that passes over the plume builds a new volcano; the age progression records the plate's velocity and direction; the bend between the Hawaiian chain and the Emperor Seamounts records a Pacific Plate motion-direction change ~47 Ma ago",
+            "The Hawaiian hotspot is a fixed mantle plume; the Pacific Plate moves northwest over it at ~7–9 cm/yr (2.8–3.5 in/yr); each part of the plate that passes over the plume builds a new volcano; the age progression records the plate's velocity and direction; the bend between the Hawaiian chain and the Emperor Seamounts records a Pacific Plate motion-direction change ~47 Ma ago",
             "The chain records seafloor spreading from a ridge to the southeast; islands grow at the ridge and move northwest as new seafloor forms behind them",
             "Lava flows from the Big Island travel northwest along crustal fracture zones, building up the older islands; no mantle plume is required",
           ],
           correct: 1,
-          explain: "The hotspot model (Morgan, 1971) explains the age-distance relationship precisely: a fixed deep-mantle plume melts through the lithosphere as the plate moves over it; each successive volcano records the plate's position at the time of formation; dividing age difference by distance gives plate velocity (~7–9 cm/yr for the Pacific Plate). The Emperor-Hawaiian bend at ~47 Ma records a documented change in Pacific Plate motion direction. The hotspot itself is not entirely stationary (recent models show slow hotspot drift), but the plate motion dominates the signal. Seafloor spreading (C) would produce symmetric age patterns on both sides of a ridge, not a linear chain. Lava flow transport (D) cannot move material thousands of km and build seamounts.",
+          explain: "The hotspot model (Morgan, 1971) explains the age-distance relationship precisely: a fixed deep-mantle plume melts through the lithosphere as the plate moves over it; each successive volcano records the plate's position at the time of formation; dividing age difference by distance gives plate velocity (~7–9 cm/yr (2.8–3.5 in/yr) for the Pacific Plate). The Emperor-Hawaiian bend at ~47 Ma records a documented change in Pacific Plate motion direction. The hotspot itself is not entirely stationary (recent models show slow hotspot drift), but the plate motion dominates the signal. Seafloor spreading (C) would produce symmetric age patterns on both sides of a ridge, not a linear chain. Lava flow transport (D) cannot move material thousands of km and build seamounts.",
         },
 
         // ── MODULE 1.5 — READING THE LANDSCAPE ───────────────────────────────
@@ -278,7 +278,7 @@ Take your time. Every question has one unambiguously correct answer, but the dis
           explain: "Weathering is controlled by the interaction of climate and rock type: hot, wet climates maximise liquid water availability and reaction rates → chemical weathering of soluble rocks (limestone → karst) and hydrolysis of silicates; cold climates maximise freeze-thaw cycles → physical frost wedging; hot, dry climates produce minimal chemical weathering. Rock type sets what's possible: granite resists dissolution but fractures mechanically; limestone dissolves but resists mechanical breakdown. Neither factor alone is sufficient (D is wrong — limestone in cold dry deserts develops minimal karst; granite in warm wet tropics weathers chemically to thick red laterite soils).",
         },
         {
-          q: "A river cuts a deep gorge in its steep mountain headwaters and meanders broadly across a coastal plain 400 km downstream. A recent flood cut through a tight meander loop, leaving an isolated crescent-shaped pond. What is this pond, and what process formed it?",
+          q: "A river cuts a deep gorge in its steep mountain headwaters and meanders broadly across a coastal plain 400 km (249 mi) downstream. A recent flood cut through a tight meander loop, leaving an isolated crescent-shaped pond. What is this pond, and what process formed it?",
           a: [
             "A kettle lake — formed by the melting of a buried glacial ice block left on the floodplain",
             "An oxbow lake — formed when the river broke through the narrow neck of land separating two adjacent meander loops during a high-flow event; the loop was abandoned as the river took the shorter straight path, and the isolated crescent filled with stagnant water",
@@ -300,15 +300,15 @@ Take your time. Every question has one unambiguously correct answer, but the dis
           explain: "Base level is the elevation below which a river cannot erode. A dam raises the local base level upstream: the river approaching the reservoir loses its gradient, velocity drops to nearly zero, and sediment is deposited — a delta builds progressively toward the dam (Lake Mead has accumulated substantial sediment at the Colorado River inflow). Below the dam, only sediment-free water is released; this 'hungry water' is below its sediment capacity and scours the channel aggressively, incising the bed and removing fine sediment, leaving a coarser armoured lag. The Colorado River's downstream channel below Hoover Dam shows metres of incision since 1935. Options A and C misstate basic sediment dynamics. Option D inverts the upstream mechanism.",
         },
         {
-          q: "During the Last Glacial Maximum (~20,000 years ago), global sea level was ~120 m lower than today. What caused this drop, and what landforms — one glacial, one coastal — preserve a record of it?",
+          q: "During the Last Glacial Maximum (~20,000 years ago), global sea level was ~120 m (394 ft) lower than today. What caused this drop, and what landforms — one glacial, one coastal — preserve a record of it?",
           a: [
             "Sea level dropped because ocean basins expanded as seafloor spreading accelerated during the glacial period; mid-ocean ridges (glacial record) and wave-cut platforms (coastal record) preserve this history",
-            "Sea level dropped because water evaporated from the ocean accumulated as snow and built continental ice sheets — the Laurentide, Fennoscandian, and Antarctic ice sheets stored enough water to lower global sea level ~120 m (glacio-eustasy); as ice melted, meltwater returned to the ocean; glacial record: terminal moraines, cirques, or U-shaped valleys (marking former ice extent); coastal record: fjords (glacial troughs flooded by rising sea), drowned river valleys (estuaries), or barrier islands built on the newly flooded continental shelf",
+            "Sea level dropped because water evaporated from the ocean accumulated as snow and built continental ice sheets — the Laurentide, Fennoscandian, and Antarctic ice sheets stored enough water to lower global sea level ~120 m (394 ft) (glacio-eustasy); as ice melted, meltwater returned to the ocean; glacial record: terminal moraines, cirques, or U-shaped valleys (marking former ice extent); coastal record: fjords (glacial troughs flooded by rising sea), drowned river valleys (estuaries), or barrier islands built on the newly flooded continental shelf",
             "Sea level dropped because cold temperatures caused the ocean to thermally contract; warming since the LGM has raised sea level through thermal expansion alone; coral reefs (glacial) and sea cliffs (coastal) preserve this history",
             "Sea level dropped because continental ice sheets depressed the crust isostatically, lowering coastlines relative to the sea; rebound since glaciation raised sea level; raised beaches (coastal) and drumlins (glacial) record this",
           ],
           correct: 1,
-          explain: "The mechanism is glacio-eustasy: water evaporated from the ocean precipitates as snow at high latitudes; during glacial periods it accumulates in ice sheets rather than returning to the ocean via rivers, directly reducing ocean volume. The ~120 m LGM drop represents ~52 million km³ of ice above modern levels. Seafloor spreading (A) does affect sea level over millions of years but not on glacial-interglacial timescales of ~100,000 years. Thermal contraction (C) is real but contributes only ~3–5 m over the full temperature change — insufficient for 120 m. Isostasy (D) affects relative sea level (land up or down) but not global eustatic sea level — the ocean itself is unaffected by crustal movement.",
+          explain: "The mechanism is glacio-eustasy: water evaporated from the ocean precipitates as snow at high latitudes; during glacial periods it accumulates in ice sheets rather than returning to the ocean via rivers, directly reducing ocean volume. The ~120 m (394 ft) LGM drop represents ~52 million km³ (12.5 million cu mi) of ice above modern levels. Seafloor spreading (A) does affect sea level over millions of years but not on glacial-interglacial timescales of ~100,000 years. Thermal contraction (C) is real but contributes only ~3–5 m (10–16 ft) over the full temperature change — insufficient for 120 m (394 ft). Isostasy (D) affects relative sea level (land up or down) but not global eustatic sea level — the ocean itself is unaffected by crustal movement.",
         },
       ],
     },

@@ -33,7 +33,7 @@ Volcanic tremor is a continuous or quasi-continuous seismic signal at 1–10 Hz 
 
 Hybrid events combine high-frequency onset (like VT earthquakes) with a long-period coda (like LP earthquakes), suggesting initial brittle failure followed by fluid-crack resonance of the newly opened crack. They are particularly common at andesitic volcanoes where viscous, gas-rich magmas can both fracture rock and excite crack resonance.
 
-The 1991 eruption of Mount Pinatubo (Philippines, Mw 7.8 seismogenic environment) stands as one of the greatest successes in eruption forecasting. Beginning in early May 1991, Philippine Institute of Volcanology and Seismology (PHIVOLCS) and USGS scientists installed monitoring networks and tracked an escalating VT swarm. By late May, LP earthquakes began appearing; by June 3–12, LP rates reached hundreds per day, tremor became continuous, and SO₂ flux (measured by COSPEC) rose to 5,000–13,000 tonnes/day — indicating a large, open-conduit magmatic system. Combining seismic, geodetic, and geochemical data, the scientific teams advised successive evacuations of 40,000, then 58,000, then 200,000+ people before the climactic Plinian eruption of June 15, 1991 — one of the 20th century's largest. An estimated 5,000–6,000 lives were saved by the forecasting effort.
+The 1991 eruption of Mount Pinatubo (Philippines, Mw 7.8 seismogenic environment) stands as one of the greatest successes in eruption forecasting. Beginning in early May 1991, Philippine Institute of Volcanology and Seismology (PHIVOLCS) and USGS scientists installed monitoring networks and tracked an escalating VT swarm. By late May, LP earthquakes began appearing; by June 3–12, LP rates reached hundreds per day, tremor became continuous, and SO₂ flux (measured by COSPEC) rose to 5,000–13,000 tonnes (14326.0 tons)/day — indicating a large, open-conduit magmatic system. Combining seismic, geodetic, and geochemical data, the scientific teams advised successive evacuations of 40,000, then 58,000, then 200,000+ people before the climactic Plinian eruption of June 15, 1991 — one of the 20th century's largest. An estimated 5,000–6,000 lives were saved by the forecasting effort.
 
 In stark contrast, the 2019 eruption of Whakaari (White Island), New Zealand, killed 22 tourists with virtually no immediately detectable seismic precursor. Whakaari is a highly active hydrothermal system where the dominant hazard is steam-driven (phreatic) explosions — sudden flashing of superheated groundwater to steam — rather than magmatic eruptions. Phreatic explosions can occur without sustained magma ascent, without significant seismic swarms, and within seconds of any detectable change in hydrothermal system behaviour. They represent a fundamental limit to seismic eruption forecasting for hydrothermal-dominated systems.
 
@@ -76,8 +76,8 @@ The Bayesian Event Tree for Eruption Forecasting (BET_EF) model provides a proba
           name: 'Volcano-Tectonic (VT)',
           icon: Zap,
           color: BRAND.coral,
-          desc: 'High-frequency brittle fracture. Clear P and S phases. Focal depths 0–10 km. Swarms indicate magma intrusion or fault reactivation by fluid pressure. Seismically identical to tectonic earthquakes but spatially clustered near magmatic system.',
-          examples: 'Pinatubo May 1991: VT swarm of 100s/day began weeks before eruption, locating magma pathway. 2014–2018 Bárðarbunga (Iceland): 20,000 VTs defined dike intrusion pathway 40 km from caldera to Holuhraun fissure eruption.',
+          desc: 'High-frequency brittle fracture. Clear P and S phases. Focal depths 0–10 km (6.2 mi). Swarms indicate magma intrusion or fault reactivation by fluid pressure. Seismically identical to tectonic earthquakes but spatially clustered near magmatic system.',
+          examples: 'Pinatubo May 1991: VT swarm of 100s/day began weeks before eruption, locating magma pathway. 2014–2018 Bárðarbunga (Iceland): 20,000 VTs defined dike intrusion pathway 40 km (25 mi) from caldera to Holuhraun fissure eruption.',
         },
         {
           name: 'Long-Period (LP)',
@@ -120,7 +120,7 @@ The Bayesian Event Tree for Eruption Forecasting (BET_EF) model provides a proba
           {
             id: 'initial-vt',
             label: 'VT Swarm Onset (Early May 1991)',
-            description: 'A small steam explosion on April 2, 1991 triggered PHIVOLCS and USGS deployment of a monitoring network. Beginning in May, seismometers recorded a swarm of Volcano-Tectonic earthquakes locating at 5–10 km depth north of the summit — indicating magma intrusion and stress fracturing of rock along the conduit pathway. VT rates initially 10–30 per day.',
+            description: 'A small steam explosion on April 2, 1991 triggered PHIVOLCS and USGS deployment of a monitoring network. Beginning in May, seismometers recorded a swarm of Volcano-Tectonic earthquakes locating at 5–10 km (6.2 mi) depth north of the summit — indicating magma intrusion and stress fracturing of rock along the conduit pathway. VT rates initially 10–30 per day.',
             color: BRAND.jade,
           },
           {
@@ -132,7 +132,7 @@ The Bayesian Event Tree for Eruption Forecasting (BET_EF) model provides a proba
           {
             id: 'first-evacuation',
             label: 'First Evacuation (June 5–7)',
-            description: 'On June 5, PHIVOLCS raised the alert level to 3 ("eruption possible within two weeks") and recommended evacuation of the 10 km danger zone (~40,000 people). On June 7, a small Vulcanian explosion occurred. Alert level raised to 4 ("eruption possible within 24 hours") on June 9; 58,000 people within 20 km began evacuating. Clark Air Base (18,000 US personnel) began emergency relocation.',
+            description: 'On June 5, PHIVOLCS raised the alert level to 3 ("eruption possible within two weeks") and recommended evacuation of the 10 km (6.2 mi) danger zone (~40,000 people). On June 7, a small Vulcanian explosion occurred. Alert level raised to 4 ("eruption possible within 24 hours") on June 9; 58,000 people within 20 km (12 mi) began evacuating. Clark Air Base (18,000 US personnel) began emergency relocation.',
             color: BRAND.gold,
           },
           {
@@ -144,13 +144,13 @@ The Bayesian Event Tree for Eruption Forecasting (BET_EF) model provides a proba
           {
             id: 'full-evacuation',
             label: 'Full Evacuation (June 14)',
-            description: 'On June 14, PHIVOLCS raised the alert to Level 5 ("eruption in progress") after a series of sub-Plinian explosions. Civil authorities ordered evacuation of the 40 km danger zone — ultimately displacing over 200,000 people. The monitoring team noted that the precursory signal pattern (escalating VT → LP → tremor → SO₂ drop) matched the expected sequence for a large Plinian eruption. Typhoon Yunya made landfall simultaneously on June 15, complicating the crisis.',
+            description: 'On June 14, PHIVOLCS raised the alert to Level 5 ("eruption in progress") after a series of sub-Plinian explosions. Civil authorities ordered evacuation of the 40 km (25 mi) danger zone — ultimately displacing over 200,000 people. The monitoring team noted that the precursory signal pattern (escalating VT → LP → tremor → SO₂ drop) matched the expected sequence for a large Plinian eruption. Typhoon Yunya made landfall simultaneously on June 15, complicating the crisis.',
             color: BRAND.ruby,
           },
           {
             id: 'climactic-eruption',
             label: 'Climactic Plinian Eruption (June 15)',
-            description: 'The climactic eruption began at approximately 13:42 Philippine Standard Time on June 15. The eruption column reached 35 km into the stratosphere. Pyroclastic density currents swept all flanks within 20 km. ~5 km³ of magma was erupted in about 9 hours — the second-largest eruption of the 20th century. Combined with Typhoon Yunya, lahars (volcanic mudflows) buried towns. Death toll ~800 (primarily from lahar-collapsed roofs); evacuation success estimated to have saved 5,000–6,000 lives.',
+            description: 'The climactic eruption began at approximately 13:42 Philippine Standard Time on June 15. The eruption column reached 35 km (22 mi) into the stratosphere. Pyroclastic density currents swept all flanks within 20 km (12 mi). ~5 km³ (1.2 cu mi) of magma was erupted in about 9 hours — the second-largest eruption of the 20th century. Combined with Typhoon Yunya, lahars (volcanic mudflows) buried towns. Death toll ~800 (primarily from lahar-collapsed roofs); evacuation success estimated to have saved 5,000–6,000 lives.',
             color: BRAND.accent,
           },
         ],
@@ -178,7 +178,7 @@ The Bayesian Event Tree for Eruption Forecasting (BET_EF) model provides a proba
           explain: 'Long-Period earthquakes at volcanoes arise from the resonance of fluid-filled cracks within the magmatic or hydrothermal system. When a pressure perturbation — from a magma pulse, volcanic gas exsolution, or hydrothermal boiling — is applied to a fluid-filled crack, it excites standing acoustic or crack waves within that crack at its resonant frequency. The resonant frequency f ≈ Vfluid / (2L) for a crack of length L filled with fluid of acoustic velocity Vfluid. For magma-filled cracks, Vfluid is low (hundreds of m/s for bubbly magma), producing dominant frequencies of 1–5 Hz at crack lengths of tens to hundreds of metres. The mechanism differs fundamentally from VT earthquakes (point-force brittle shear failure) in two ways: (1) the source is a spatially distributed resonating crack rather than a compact shear zone, so the far-field radiation pattern lacks the impulsive P-S geometry of a double-couple source; (2) the energy is maintained by sustained resonance rather than released all at once, producing the characteristic extended monochromatic coda. Spectral analysis of LP earthquakes — fitting Lorentzian spectral peaks to extract the resonant frequency and quality factor Q — allows inversion for crack geometry and fluid physical properties, providing direct information about the state of the magmatic system.',
         },
         {
-          q: 'During the lead-up to the June 15, 1991 Pinatubo eruption, SO₂ flux measured by COSPEC increased to ~13,000 tonnes/day by early June but then dropped sharply to ~260 t/day on June 10–12. Why did this SO₂ decrease, counter-intuitively, signal an imminent large eruption rather than declining volcanic activity?',
+          q: 'During the lead-up to the June 15, 1991 Pinatubo eruption, SO₂ flux measured by COSPEC increased to ~13,000 tonnes (14326.0 tons)/day by early June but then dropped sharply to ~260 t/day on June 10–12. Why did this SO₂ decrease, counter-intuitively, signal an imminent large eruption rather than declining volcanic activity?',
           a: [
             'The SO₂ decrease indicated that the magmatic system had exhausted its gas supply and was therefore unable to drive a large eruption; the subsequent eruption occurred despite this indicator, proving that SO₂ flux is unreliable as an eruption forecasting parameter',
             'The SO₂ decrease occurred because Typhoon Yunya\'s rain washed the SO₂ out of the volcanic plume before it could be measured by the COSPEC instrument; the actual SO₂ flux remained high throughout the pre-eruptive period',

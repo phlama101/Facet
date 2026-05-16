@@ -49,7 +49,7 @@ The **calc-alkaline series** dominates most arc settings and is defined by a tre
         },
         {
           term: 'Flux melting',
-          def: 'Partial melting of the mantle wedge induced not by elevated temperature but by the addition of water (and other volatiles) from slab dehydration, which lowers the peridotite solidus by up to ~100–200°C (392°F). The descending slab releases fluids at specific depths as successive hydrous minerals break down; these fluids rise buoyantly into the hot mantle wedge, crossing the shifted solidus and generating melt without a temperature increase. Flux melting is the dominant mechanism for magma generation at subduction zones and explains why arc volcanoes are located ~100–130 km (81 mi) above the slab surface (the "volcanic front" geometry).',
+          def: 'Partial melting of the mantle wedge induced not by elevated temperature but by the addition of water (and other volatiles) from slab dehydration, which lowers the peridotite solidus by up to ~100–200°C (180–360°F). The descending slab releases fluids at specific depths as successive hydrous minerals break down; these fluids rise buoyantly into the hot mantle wedge, crossing the shifted solidus and generating melt without a temperature increase. Flux melting is the dominant mechanism for magma generation at subduction zones and explains why arc volcanoes are located ~100–130 km (81 mi) above the slab surface (the "volcanic front" geometry).',
         },
       ],
     },
@@ -123,7 +123,7 @@ The **calc-alkaline series** dominates most arc settings and is defined by a tre
           {
             id: 'wedge',
             label: 'Mantle Wedge Metasomatism',
-            description: 'Slab-derived fluids and melts rise buoyantly into the hot mantle wedge peridotite (T ≈ 1,000–1,300°C (2372°F) at ~80 km (50 mi) depth). They metasomatize the wedge: Ba, K, Sr, Pb, and Rb are absorbed into the peridotite mineral lattice or into secondary phlogopite and amphibole. This lowers the peridotite solidus by 100–200°C (392°F) via flux melting — the slab fluid enables partial melting without any temperature increase. The metasomatised wedge now carries the combined chemical signatures of the depleted MORB mantle plus the slab-derived overprint: high Ba/Nb, high Sr/Y, and depleted Nb–Ta.',
+            description: 'Slab-derived fluids and melts rise buoyantly into the hot mantle wedge peridotite (T ≈ 1,000–1,300°C (2372°F) at ~80 km (50 mi) depth). They metasomatize the wedge: Ba, K, Sr, Pb, and Rb are absorbed into the peridotite mineral lattice or into secondary phlogopite and amphibole. This lowers the peridotite solidus by 100–200°C (180–360°F) via flux melting — the slab fluid enables partial melting without any temperature increase. The metasomatised wedge now carries the combined chemical signatures of the depleted MORB mantle plus the slab-derived overprint: high Ba/Nb, high Sr/Y, and depleted Nb–Ta.',
             color: BRAND.amethyst,
           },
           {

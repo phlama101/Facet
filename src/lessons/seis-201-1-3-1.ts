@@ -21,7 +21,7 @@ const gpsGeodeticPlatemotion: Lesson = {
     {
       type: 'intro',
       title: 'Measuring the slow grind of tectonic plates to millimetre precision',
-      body: `Geodesy — the science of measuring Earth's shape, gravity field, and orientation — has been transformed by the Global Positioning System (GPS) and its successor constellations (GNSS: Galileo, GLONASS, BeiDou). Continuous GPS (CGPS) stations now achieve horizontal precision of 1–3 mm and vertical precision of 5–10 mm over multi-year time series, resolving the millimetre-per-year signals that characterise interseismic elastic strain accumulation on locked faults.
+      body: `Geodesy — the science of measuring Earth's shape, gravity field, and orientation — has been transformed by the Global Positioning System (GPS) and its successor constellations (GNSS: Galileo, GLONASS, BeiDou). Continuous GPS (CGPS) stations now achieve horizontal precision of 1–3 mm (0.12 in) and vertical precision of 5–10 mm (0.39 in) over multi-year time series, resolving the millimetre-per-year signals that characterise interseismic elastic strain accumulation on locked faults.
 
 All geodetic measurements require a reference frame. The International Terrestrial Reference Frame (ITRF) is the globally agreed coordinate system, realised through a global network of Very Long Baseline Interferometry (VLBI), Satellite Laser Ranging (SLR), and GPS stations whose positions are defined to sub-centimetre accuracy. Plate motion is described in the ITRF by geodetic plate velocities — the long-term secular movement of CGPS sites after removing seasonal signals (atmospheric and hydrological loading), postseismic transients, and instrumental offsets.
 
@@ -76,7 +76,7 @@ GNSS-Acoustics (GNSS-A) extends geodetic measurement to the seafloor by combinin
           icon: Zap,
           color: BRAND.jade,
           desc: 'During an earthquake, GPS sites jump instantaneously (on GPS timescales). Offset vectors constrain fault slip distribution. Displacements decay with distance from rupture.',
-          examples: '2011 Tōhoku Mw 9.0: Honshu GPS sites moved up to 5.3 m eastward and 1.2 m seaward — largest coseismic GPS offsets ever recorded. 2010 Maule Mw 8.8: Chilean sites shifted up to 3 m westward.',
+          examples: '2011 Tōhoku Mw 9.0: Honshu GPS sites moved up to 5.3 m (17 ft) eastward and 1.2 m (4 ft) seaward — largest coseismic GPS offsets ever recorded. 2010 Maule Mw 8.8: Chilean sites shifted up to 3 m (10 ft) westward.',
         },
         {
           name: 'Postseismic Afterslip',
@@ -97,7 +97,7 @@ GNSS-Acoustics (GNSS-A) extends geodetic measurement to the seafloor by combinin
           icon: Satellite,
           color: BRAND.accent,
           desc: 'Seafloor geodesy: ship/buoy GNSS + acoustic ranging to seafloor transponders. Directly measures subducting plate velocity and coupling at the trench — inaccessible to land GPS.',
-          examples: 'Japan Trench (JAMSTEC): pre-2011 surveys detected 8 cm/yr velocity deficit on subducting Pacific plate, confirming near-full coupling. Post-2011: seafloor displaced ~24 m eastward coseismically — visible in GNSS-A comparisons.',
+          examples: 'Japan Trench (JAMSTEC): pre-2011 surveys detected 8 cm/yr velocity deficit on subducting Pacific plate, confirming near-full coupling. Post-2011: seafloor displaced ~24 m (79 ft) eastward coseismically — visible in GNSS-A comparisons.',
         },
       ],
     },
@@ -168,7 +168,7 @@ GNSS-Acoustics (GNSS-A) extends geodetic measurement to the seafloor by combinin
             'φ = 1.33; the site moves faster than plate rate, indicating accelerating convergence and imminent rupture',
           ],
           correct: 2,
-          explain: `The coupling coefficient φ = velocity deficit / plate convergence rate = (40 − 30) / 40 = 10/40 = 0.25. Wait — let us re-read: the velocity deficit is 40 − 30 = 10 mm/yr and the plate rate is 40 mm/yr, so φ = 0.25. However, option C correctly states "φ = 0.75" in error — option C\'s arithmetic is wrong but its physical description matches the question\'s numbers. Let us recheck: φ = (deficit)/(plate rate) = 10/40 = 0.25. Option A gives φ = 0.25 but says "mostly creeping," which is the wrong interpretation — 0.25 still implies significant locking and strain accumulation. In practice, Cascadia coupling estimates range from ~0.3 to ~0.9 depending on location; even φ = 0.25 implies meaningful elastic strain accumulation. A velocity deficit of 10 mm/yr over the ~320 years since the 1700 CE rupture corresponds to ~3.2 m of accumulated shortening — consistent with an Mw 8.5+ event.`,
+          explain: `The coupling coefficient φ = velocity deficit / plate convergence rate = (40 − 30) / 40 = 10/40 = 0.25. Wait — let us re-read: the velocity deficit is 40 − 30 = 10 mm/yr and the plate rate is 40 mm/yr, so φ = 0.25. However, option C correctly states "φ = 0.75" in error — option C\'s arithmetic is wrong but its physical description matches the question\'s numbers. Let us recheck: φ = (deficit)/(plate rate) = 10/40 = 0.25. Option A gives φ = 0.25 but says "mostly creeping," which is the wrong interpretation — 0.25 still implies significant locking and strain accumulation. In practice, Cascadia coupling estimates range from ~0.3 to ~0.9 depending on location; even φ = 0.25 implies meaningful elastic strain accumulation. A velocity deficit of 10 mm/yr over the ~320 years since the 1700 CE rupture corresponds to ~3.2 m (10 ft) of accumulated shortening — consistent with an Mw 8.5+ event.`,
         },
         {
           q: 'What distinguishes the NNR-MORVEL56 geological plate motion model from geodetic plate motion models derived from GPS?',
@@ -196,12 +196,12 @@ GNSS-Acoustics (GNSS-A) extends geodetic measurement to the seafloor by combinin
           q: 'GNSS-Acoustics detected an ~8 cm/yr velocity deficit on the subducting Pacific plate off the Japan Trench before the 2011 Tōhoku earthquake. Why is this measurement technically challenging, and what does it directly prove that land-based GPS cannot?',
           a: [
             'GNSS-Acoustics is challenging because acoustic signals are attenuated by sea salt; it directly proves the subducting plate is denser than the overriding plate, explaining why it sinks',
-            'GNSS-Acoustics requires submerged transponders at 5–8 km depth where pressure is extreme; it directly measures the velocity of the subducting plate itself at the trench — proving the locking of the offshore interface where no land GPS exists',
+            'GNSS-Acoustics requires submerged transponders at 5–8 km (5.0 mi) depth where pressure is extreme; it directly measures the velocity of the subducting plate itself at the trench — proving the locking of the offshore interface where no land GPS exists',
             'GNSS-Acoustics is challenging because GPS signals do not penetrate seawater; the buoy-mounted GPS provides surface position while acoustic ranging to seafloor transponders gives the depth component, together resolving the 3D velocity of the seafloor to ~1 mm/yr',
             'GNSS-Acoustics is challenging because ocean currents deflect the ship from its nominal position; it directly measures water temperature profiles at depth, which are used as a proxy for plate motion speed',
           ],
           correct: 1,
-          explain: 'GNSS-Acoustics (GNSS-A) is technically demanding for multiple reasons: GPS signals cannot penetrate seawater, so a ship or surface buoy carries the GPS receiver while acoustic signals are used to range to transponder arrays anchored to the seafloor. The acoustic travel time, combined with careful sound-speed profiling of the water column, gives the horizontal position of the transponder array relative to the surface platform. Repeated surveys over years — with careful correction for ocean sound-speed variability — resolve the secular motion of the seafloor to ~1–2 cm precision. The critical scientific value is that GNSS-A directly measures the absolute velocity of the subducting plate on the seafloor near the trench — the seismically coupled zone that drives megathrust earthquakes. Land-based GPS networks are typically located 50–200 km from the trench, measuring only the elastic response of the overriding plate. Pre-2011 GNSS-A surveys of the Japan Trench by JAMSTEC confirmed near-full coupling of the Tōhoku segment, and post-2011 surveys measured a ~24 m eastward coseismic offset of the seafloor — far larger than surface GPS displacements on Honshu.',
+          explain: 'GNSS-Acoustics (GNSS-A) is technically demanding for multiple reasons: GPS signals cannot penetrate seawater, so a ship or surface buoy carries the GPS receiver while acoustic signals are used to range to transponder arrays anchored to the seafloor. The acoustic travel time, combined with careful sound-speed profiling of the water column, gives the horizontal position of the transponder array relative to the surface platform. Repeated surveys over years — with careful correction for ocean sound-speed variability — resolve the secular motion of the seafloor to ~1–2 cm (0.8 in) precision. The critical scientific value is that GNSS-A directly measures the absolute velocity of the subducting plate on the seafloor near the trench — the seismically coupled zone that drives megathrust earthquakes. Land-based GPS networks are typically located 50–200 km (124 mi) from the trench, measuring only the elastic response of the overriding plate. Pre-2011 GNSS-A surveys of the Japan Trench by JAMSTEC confirmed near-full coupling of the Tōhoku segment, and post-2011 surveys measured a ~24 m (79 ft) eastward coseismic offset of the seafloor — far larger than surface GPS displacements on Honshu.',
         },
         {
           q: 'Three postseismic deformation processes — afterslip, poroelastic rebound, and viscoelastic relaxation — operate on different timescales and spatial scales. How would a seismologist distinguish them in a GPS time series?',

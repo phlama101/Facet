@@ -83,7 +83,7 @@ For astrobiology, O₂ occupies a special position as a **biosignature gas**. Ab
             x: 44,
             y: 47,
             label: 'Alkaline Vent Chimney',
-            description: 'Towering structures of carbonate and brucite minerals precipitated where alkaline vent fluid contacts cold seawater. Lost City chimneys reach 60 m tall. Their porous interiors contain cell-sized micropores where organic chemistry can concentrate, and their iron-sulfide walls can catalyse reactions relevant to the origin of life. Fluid temperatures here are 40–90°C — cool enough for fragile RNA chemistry.',
+            description: 'Towering structures of carbonate and brucite minerals precipitated where alkaline vent fluid contacts cold seawater. Lost City chimneys reach 60 m (0 ft) tall. Their porous interiors contain cell-sized micropores where organic chemistry can concentrate, and their iron-sulfide walls can catalyse reactions relevant to the origin of life. Fluid temperatures here are 40–90°C (194°F) — cool enough for fragile RNA chemistry.',
           },
           {
             id: 'fluid-plume',

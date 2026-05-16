@@ -21,7 +21,7 @@ const regolithSoils: Lesson = {
     {
       type: 'intro',
       title: `The weathered mantle covering Earth\'s surface — from fresh saprolite to developed soil horizons — and the five factors that control pedogenesis`,
-      body: `Regolith is the collective term for all unconsolidated material at Earth\'s surface — a blanket that can include saprolite, soil, alluvium, colluvium, volcanic ash, and glacial till. Wherever bedrock weathers in place, the first product is saprolite: rock that has been chemically transformed yet retains the original fabric of the parent material, including foliation planes, vein networks, and crystal outlines visible in thin section. In deeply weathered tropical terrains, saprolite may extend 50–100 m below the surface before giving way to fresh rock. Above the saprolite, pedogenic processes reorganise material into a soil profile — a vertical sequence of horizons that serves as a fingerprint of environmental history.
+      body: `Regolith is the collective term for all unconsolidated material at Earth\'s surface — a blanket that can include saprolite, soil, alluvium, colluvium, volcanic ash, and glacial till. Wherever bedrock weathers in place, the first product is saprolite: rock that has been chemically transformed yet retains the original fabric of the parent material, including foliation planes, vein networks, and crystal outlines visible in thin section. In deeply weathered tropical terrains, saprolite may extend 50–100 m (164–328 ft) below the surface before giving way to fresh rock. Above the saprolite, pedogenic processes reorganise material into a soil profile — a vertical sequence of horizons that serves as a fingerprint of environmental history.
 
 The classic master horizons run from surface downward. The O horizon is organic litter and humus above the mineral soil, best developed under forest. The A horizon is humus-rich topsoil where organic matter and mineral grains are intimately mixed; it is the biologically most active layer. The E horizon, where developed, is the eluviation zone — clay, iron, and aluminium are selectively leached downward, leaving a pale, coarse-textured layer. Below lies the B horizon, the illuviation zone where translocated clays, iron oxides, organic complexes, or carbonates accumulate; its character depends on climate and vegetation. The C horizon is weakly altered parent material retaining much of the original rock structure, grading down to the R horizon of unweathered bedrock.
 
@@ -55,7 +55,7 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
       type: 'callout' as const,
       variant: 'warning',
       headline: 'The 1970 Nevado Huascarán landslide established that debris avalanches can travel at hurricane speeds — and forced engineers to completely rethink runout prediction',
-      body: 'Before Huascarán, runout models assumed that friction would limit how far a large debris mass could travel. The 1970 event demolished that assumption: the avalanche entrained air beneath the debris mass, dramatically reducing basal friction through a process now called air entrainment lubrication, and reached speeds exceeding 280 km/h — comparable to a Category 5 hurricane. This single event demonstrated that long-runout landslides belong in a separate hazard category from ordinary slides, and it prompted the development of dedicated runout models now used in hazard zonation worldwide.',
+      body: 'Before Huascarán, runout models assumed that friction would limit how far a large debris mass could travel. The 1970 event demolished that assumption: the avalanche entrained air beneath the debris mass, dramatically reducing basal friction through a process now called air entrainment lubrication, and reached speeds exceeding 280 km/h (174 mph) — comparable to a Category 5 hurricane. This single event demonstrated that long-runout landslides belong in a separate hazard category from ordinary slides, and it prompted the development of dedicated runout models now used in hazard zonation worldwide.',
     },
     {
       type: 'concept',
@@ -67,14 +67,14 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
           icon: Layers,
           color: BRAND.accent,
           desc: 'Regolith encompasses all unconsolidated surface material; saprolite is its basal layer — chemically altered but structurally intact rock that preserves relict textures of the parent material.',
-          examples: 'Tropical saprolite 50–100 m deep in Brazil; saprolite retaining the foliation planes of parent gneiss visible in hand specimen and thin section.',
+          examples: 'Tropical saprolite 50–100 m (164–328 ft) deep in Brazil; saprolite retaining the foliation planes of parent gneiss visible in hand specimen and thin section.',
         },
         {
           name: 'Soil Horizons and Profile Development',
           icon: Globe,
           color: BRAND.jade,
           desc: `The O/A/E/B/C/R horizon sequence records pedogenic history; each horizon\'s thickness, colour, and texture reflects the dominant processes acting at that depth.`,
-          examples: 'Classic New England spodosol with bleached white E horizon and rust-coloured Bhs; prairie mollisol with a thick, dark A horizon exceeding 1 m in Illinois.',
+          examples: 'Classic New England spodosol with bleached white E horizon and rust-coloured Bhs; prairie mollisol with a thick, dark A horizon exceeding 1 m (3 ft) in Illinois.',
         },
         {
           name: 'Jenny\'s Five Soil-Forming Factors',
@@ -117,7 +117,7 @@ Key pedogenic processes differentiate soil orders across the globe. Eluviation�
             x: 67,
             y: 56,
             label: 'Frost Wedging',
-            description: 'A mechanical weathering process where water entering rock cracks freezes and expands by ~9%, exerting pressures up to 200 MPa. Repeated freeze-thaw cycles progressively widen cracks and shatter rock into angular fragments. Frost wedging is most active in periglacial environments where temperature repeatedly cycles around 0°C, and is responsible for the jagged appearance of alpine rock faces and talus slopes.',
+            description: 'A mechanical weathering process where water entering rock cracks freezes and expands by ~9%, exerting pressures up to 200 MPa. Repeated freeze-thaw cycles progressively widen cracks and shatter rock into angular fragments. Frost wedging is most active in periglacial environments where temperature repeatedly cycles around 0°C (32°F), and is responsible for the jagged appearance of alpine rock faces and talus slopes.',
           },
           {
             id: 'colluvium',

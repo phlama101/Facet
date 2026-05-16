@@ -22,7 +22,7 @@ const atmosphereComposition: Lesson = {
     {
       type: 'intro',
       title: 'More than just air',
-      body: `The air filling your lungs right now is roughly 78% nitrogen — a gas so chemically inert it does almost nothing inside you — yet without those trace gases making up the remaining fraction of a percent, Earth's surface would be a frozen wasteland at −18°C. How did less than 1% of the atmosphere end up controlling everything?\n\nBreathe in. You have just inhaled a mixture of gases that has been shaped by 4.5 billion years of geological, chemical, and biological processes. Earth's atmosphere was not always what it is today — the earliest atmosphere, 4.4 billion years ago, was likely dominated by hydrogen and helium that quickly escaped to space. The second atmosphere, outgassed from volcanoes, was rich in water vapour, carbon dioxide, and nitrogen — with essentially no free oxygen. The transformation to our current oxygen-rich atmosphere began ~2.7 billion years ago when cyanobacteria evolved oxygenic photosynthesis and began releasing O₂ as a metabolic waste product. The **Great Oxidation Event** (~2.4 billion years ago) saw atmospheric oxygen rise from near zero to measurable concentrations, fundamentally changing Earth's chemistry and enabling the evolution of complex aerobic life.
+      body: `The air filling your lungs right now is roughly 78% nitrogen — a gas so chemically inert it does almost nothing inside you — yet without those trace gases making up the remaining fraction of a percent, Earth's surface would be a frozen wasteland at −18°C (0°F). How did less than 1% of the atmosphere end up controlling everything?\n\nBreathe in. You have just inhaled a mixture of gases that has been shaped by 4.5 billion years of geological, chemical, and biological processes. Earth's atmosphere was not always what it is today — the earliest atmosphere, 4.4 billion years ago, was likely dominated by hydrogen and helium that quickly escaped to space. The second atmosphere, outgassed from volcanoes, was rich in water vapour, carbon dioxide, and nitrogen — with essentially no free oxygen. The transformation to our current oxygen-rich atmosphere began ~2.7 billion years ago when cyanobacteria evolved oxygenic photosynthesis and began releasing O₂ as a metabolic waste product. The **Great Oxidation Event** (~2.4 billion years ago) saw atmospheric oxygen rise from near zero to measurable concentrations, fundamentally changing Earth's chemistry and enabling the evolution of complex aerobic life.
 
 Today, the atmosphere is approximately 78% nitrogen (N₂), 21% oxygen (O₂), and about 1% argon (Ar). Everything else — water vapour, carbon dioxide, methane, ozone, nitrous oxide, and dozens of other compounds — makes up less than 1% of the atmosphere by volume. Yet these **trace gases** are enormously important. Water vapour is the most powerful greenhouse gas and the carrier of the latent heat that drives storms. Carbon dioxide is the primary long-term thermostat of Earth's climate. Ozone in the stratosphere shields life from ultraviolet radiation while ozone at the surface is a harmful pollutant. Methane, though present at just 2 parts per million, is 80× more potent than CO₂ as a greenhouse gas over 20 years.
 
@@ -32,7 +32,7 @@ Understanding atmospheric composition is the foundation of understanding climate
         { term: 'Oxygen (O₂)',           def: 'Makes up 20.95% of the atmosphere. Required for aerobic respiration and combustion. Produced by oxygenic photosynthesis; consumed by respiration and decay. Its current level has been maintained in a rough balance for ~500 million years. Absent from the early Earth atmosphere; accumulated due to biological activity.' },
         { term: 'Water vapour (H₂O)',    def: 'Highly variable trace gas (0–4% of atmosphere by volume). The most powerful greenhouse gas in the atmosphere. Cycles through the atmosphere via evaporation, condensation, and precipitation — the global water cycle. Its short residence time (~9 days) makes it a rapid feedback amplifier, not a primary forcing agent.' },
         { term: 'Carbon dioxide (CO₂)',  def: 'Currently ~422 ppm (parts per million) in the atmosphere (2024), up from ~280 ppm pre-industrial. A greenhouse gas that absorbs infrared radiation. The primary long-term climate control on geological timescales. Exchanged between atmosphere, ocean, biosphere, and rock through the carbon cycle over timescales from seconds to millions of years.' },
-        { term: 'Ozone (O₃)',           def: 'Triatomic oxygen. In the stratosphere (15–35 km): shields surface life by absorbing UV-B and UV-C radiation. In the troposphere (near surface): a harmful pollutant formed from car exhaust and industrial emissions reacting in sunlight. Same molecule, very different role depending on altitude — "good up high, bad nearby."' },
+        { term: 'Ozone (O₃)',           def: 'Triatomic oxygen. In the stratosphere (15–35 km (9–22 mi)): shields surface life by absorbing UV-B and UV-C radiation. In the troposphere (near surface): a harmful pollutant formed from car exhaust and industrial emissions reacting in sunlight. Same molecule, very different role depending on altitude — "good up high, bad nearby."' },
       ],
       interaction: {
         type: 'scientific-diagram' as const,
@@ -80,7 +80,7 @@ Understanding atmospheric composition is the foundation of understanding climate
           name: 'Ozone: Good Up High, Bad Nearby',
           icon: Globe,
           color: BRAND.jade,
-          desc: 'Stratospheric (15–35 km): shield absorbing UV-B/UV-C, created by O₂ photodissociation + recombination, destroyed by Cl/Br radicals from CFCs/HCFCs. Tropospheric: secondary pollutant from NOₓ + VOC + sunlight → O₃; harms respiratory system, damages crops, reduces plant growth; O₃ also a greenhouse gas. Montreal Protocol 1987: CFCs phased out; ozone hole recovering, projected to close ~2060–2070.',
+          desc: 'Stratospheric (15–35 km (9–22 mi)): shield absorbing UV-B/UV-C, created by O₂ photodissociation + recombination, destroyed by Cl/Br radicals from CFCs/HCFCs. Tropospheric: secondary pollutant from NOₓ + VOC + sunlight → O₃; harms respiratory system, damages crops, reduces plant growth; O₃ also a greenhouse gas. Montreal Protocol 1987: CFCs phased out; ozone hole recovering, projected to close ~2060–2070.',
           examples: 'Antarctic ozone hole peak: 28 million km² in 2006 · Smog alert: ground-level O₃ exceeds 70 ppb triggers health warnings in US cities · Dobson unit (DU): unit measuring total column ozone; healthy ~300 DU, Antarctic spring minimum <100 DU during hole',
         },
       ],
@@ -96,35 +96,35 @@ Understanding atmospheric composition is the foundation of understanding climate
             x: 50,
             y: 80,
             label: 'Troposphere',
-            description: 'The lowest atmospheric layer (0–12 km) containing 75% of Earth\'s atmospheric mass and virtually all its water vapour. Temperature decreases with altitude at ~6.5°C/km. All weather phenomena — clouds, rain, storms, wind — occur exclusively in the troposphere. Commercial aircraft cruise near the tropopause at ~10–12 km to minimise air resistance and turbulence.',
+            description: 'The lowest atmospheric layer (0–12 km (0–7 mi)) containing 75% of Earth\'s atmospheric mass and virtually all its water vapour. Temperature decreases with altitude at ~6.5°C/km (11.7°F/1,000 ft). All weather phenomena — clouds, rain, storms, wind — occur exclusively in the troposphere. Commercial aircraft cruise near the tropopause at ~10–12 km (6–7 mi) to minimise air resistance and turbulence.',
           },
           {
             id: 'stratosphere',
             x: 50,
             y: 58,
             label: 'Stratosphere',
-            description: 'Extending from 12–50 km altitude, the stratosphere is characterised by temperature inversion: temperature rises with altitude because ozone absorbs UV radiation and warms the air. This stable temperature profile suppresses vertical mixing (convection), giving the stratosphere its name (stratified = layered) and allowing ozone to accumulate in a persistent layer.',
+            description: 'Extending from 12–50 km (7–31 mi) altitude, the stratosphere is characterised by temperature inversion: temperature rises with altitude because ozone absorbs UV radiation and warms the air. This stable temperature profile suppresses vertical mixing (convection), giving the stratosphere its name (stratified = layered) and allowing ozone to accumulate in a persistent layer.',
           },
           {
             id: 'ozone-layer',
             x: 74,
             y: 62,
             label: 'Ozone Layer',
-            description: 'Concentrated at 15–35 km in the lower stratosphere, the ozone (O₃) layer absorbs 97–99% of the Sun\'s harmful UV-B and UV-C radiation. Without it, surface UV levels would destroy DNA and prevent most terrestrial life. Ozone depletion by chlorofluorocarbons (CFCs) created the Antarctic \'ozone hole\' detected in the 1980s; the 1987 Montreal Protocol has since produced measurable recovery.',
+            description: 'Concentrated at 15–35 km (9–22 mi) in the lower stratosphere, the ozone (O₃) layer absorbs 97–99% of the Sun\'s harmful UV-B and UV-C radiation. Without it, surface UV levels would destroy DNA and prevent most terrestrial life. Ozone depletion by chlorofluorocarbons (CFCs) created the Antarctic \'ozone hole\' detected in the 1980s; the 1987 Montreal Protocol has since produced measurable recovery.',
           },
           {
             id: 'mesosphere',
             x: 50,
             y: 38,
             label: 'Mesosphere',
-            description: 'From 50–85 km altitude, the mesosphere is the coldest region of the atmosphere (temperatures as low as −90°C at the mesopause). Most meteors burn up here as friction with the increasingly dense air vaporises them. Noctilucent clouds — the highest clouds on Earth, composed of ice crystals — form near the mesopause and are visible after sunset from high latitudes.',
+            description: 'From 50–85 km (31–53 mi) altitude, the mesosphere is the coldest region of the atmosphere (temperatures as low as −90°C (−130°F) at the mesopause). Most meteors burn up here as friction with the increasingly dense air vaporises them. Noctilucent clouds — the highest clouds on Earth, composed of ice crystals — form near the mesopause and are visible after sunset from high latitudes.',
           },
           {
             id: 'thermosphere',
             x: 50,
             y: 18,
             label: 'Thermosphere',
-            description: 'Above 85 km, the extremely tenuous thermosphere absorbs high-energy X-ray and UV radiation, heating to 500–2,000°C (though air density is so low that objects feel cold). The International Space Station orbits in the thermosphere at ~400 km altitude. Auroras borealis and australis are produced here when energetic solar wind particles excite atmospheric gas molecules.',
+            description: 'Above 85 km (53 mi), the extremely tenuous thermosphere absorbs high-energy X-ray and UV radiation, heating to 500–2,000°C (932–3,632°F) (though air density is so low that objects feel cold). The International Space Station orbits in the thermosphere at ~400 km (249 mi) altitude. Auroras borealis and australis are produced here when energetic solar wind particles excite atmospheric gas molecules.',
           },
         ],
       },
@@ -134,7 +134,7 @@ Understanding atmospheric composition is the foundation of understanding climate
       title: 'Key takeaways',
       body: `• **The distinction between *forcings* (what starts warming) and *feedbacks* (what amplifies it) is foundational to climate science**: CO₂ is a forcing — it drives temperature change regardless of what temperature is doing. Water vapour, ice-albedo, and cloud changes are feedbacks — they respond to temperature and determine how severe the final warming becomes. Without understanding this distinction, it is impossible to reason clearly about why small changes in trace gases can produce large changes in climate.
 
-• **The same ozone molecule is both shield and pollutant depending on altitude**: Stratospheric ozone (15–35 km) blocks UV-B that would otherwise shred DNA; tropospheric ozone formed from car exhaust and sunlight directly damages lung tissue and crop yields — a vivid reminder that molecular context determines whether a substance is beneficial or harmful.
+• **The same ozone molecule is both shield and pollutant depending on altitude**: Stratospheric ozone (15–35 km (9–22 mi)) blocks UV-B that would otherwise shred DNA; tropospheric ozone formed from car exhaust and sunlight directly damages lung tissue and crop yields — a vivid reminder that molecular context determines whether a substance is beneficial or harmful.
 
 • **Methane packs 80× the short-term warming punch of CO₂ but disappears in ~9 years**: This makes it uniquely powerful for near-term climate policy — cutting methane emissions produces measurable temperature relief within a decade, whereas the CO₂ already emitted will persist for centuries regardless of what we do next.`,
     },

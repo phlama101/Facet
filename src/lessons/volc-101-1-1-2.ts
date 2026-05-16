@@ -46,7 +46,7 @@ The relationship between magma composition and eruption style has a simple rule 
             x: 50,
             y: 14,
             label: 'Eruption Column',
-            description: 'A plume of ash, gas, and rock fragments (tephra) propelled upward by expanding volcanic gases during explosive eruptions. Eruption columns from major events like the 1991 Pinatubo eruption can reach 35+ km into the stratosphere, injecting sulfur dioxide that forms reflective aerosols and causes temporary global cooling of ~0.5°C (33°F) for 1–2 years. Collapsing columns produce deadly pyroclastic flows.',
+            description: 'A plume of ash, gas, and rock fragments (tephra) propelled upward by expanding volcanic gases during explosive eruptions. Eruption columns from major events like the 1991 Pinatubo eruption can reach 35+ km (22+ mi) into the stratosphere, injecting sulfur dioxide that forms reflective aerosols and causes temporary global cooling of ~0.5°C (1°F) for 1–2 years. Collapsing columns produce deadly pyroclastic flows.',
           },
           {
             id: 'crater',
@@ -115,7 +115,7 @@ The relationship between magma composition and eruption style has a simple rule 
           icon: Mountain,
           color: BRAND.coral,
           desc: 'At depth: volatiles (H₂O, CO₂) dissolved under pressure. Rising magma: pressure drops → volatiles exsolve → bubbles form. Low viscosity (basalt): bubbles rise and escape easily → lava fountains, Strombolian bursts, fire fountains, not fragmentation. High viscosity (rhyolite): bubbles trapped → pressure builds → tensile strength exceeded → magmatic fragmentation → Plinian column, pyroclastic flows, ash fall. Volatile content: high H₂O → more exsolution → more explosive. VEI (Volcanic Explosivity Index) correlates with magma viscosity × volatile content.',
-          examples: 'Pinatubo 1991: 5 km³ (1.2 cu mi) dacite/rhyodacite erupted (VEI 6), 20 Mt SO₂ injected stratosphere, global cooling 0.5°C (33°F) for 2 years, 58,000 people evacuated safely · Kīlauea 2018 LERZ: 1.2 km³ (0.29 cu mi) basalt, low viscosity — gases escaped continuously as lava fountains rather than building explosive pressure · Toba 74 ka: ~2,800 km³ (672 cu mi) rhyolite (VEI 8), may have reduced global Homo sapiens population to 10,000–40,000 individuals',
+          examples: 'Pinatubo 1991: 5 km³ (1.2 cu mi) dacite/rhyodacite erupted (VEI 6), 20 Mt SO₂ injected stratosphere, global cooling 0.5°C (1°F) for 2 years, 58,000 people evacuated safely · Kīlauea 2018 LERZ: 1.2 km³ (0.29 cu mi) basalt, low viscosity — gases escaped continuously as lava fountains rather than building explosive pressure · Toba 74 ka: ~2,800 km³ (672 cu mi) rhyolite (VEI 8), may have reduced global Homo sapiens population to 10,000–40,000 individuals',
         },
       ],
     },

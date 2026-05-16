@@ -59,35 +59,35 @@ In Lesson 1.1.1, we established that the outer core is liquid iron-nickel — pr
             x: 73,
             y: 33,
             label: 'Crust',
-            description: 'The outermost solid shell of Earth, ranging from ~5 km thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
+            description: 'The outermost solid shell of Earth, ranging from ~5 km (3.1 mi) thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km (43 mi) beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
           },
           {
             id: 'mantle',
             x: 17,
             y: 44,
             label: 'Mantle',
-            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C at the top to ~4,000°C at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
+            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km (1802 mi) depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C (1112°F) at the top to ~4,000°C (7232°F) at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
           },
           {
             id: 'lower-mantle',
             x: 50,
             y: 56,
             label: 'Lower Mantle',
-            description: 'The deeper portion of the mantle (660–2,900 km), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
+            description: 'The deeper portion of the mantle (660–2,900 km (410–1802 mi)), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
           },
           {
             id: 'outer-core',
             x: 50,
             y: 78,
             label: 'Outer Core',
-            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
+            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km (3169 mi) depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
           },
           {
             id: 'inner-core',
             x: 50,
             y: 89,
             label: 'Inner Core',
-            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km in radius. Despite temperatures of ~5,000–6,000°C, extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
+            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
           },
         ],
       },
@@ -101,7 +101,7 @@ In Lesson 1.1.1, we established that the outer core is liquid iron-nickel — pr
     {
       type: 'concept',
       title: 'The dynamo, the shield, and the record in rock',
-      body: `**A brief return to the core.** Lesson 1.1.1 established that Earth's core has two parts: the **inner core**, a solid iron-nickel sphere roughly 1,200 km in radius, and the **outer core**, a ~2,200-km-thick shell of liquid iron-nickel alloy surrounding it. Both are searingly hot — temperatures in the outer core reach roughly 4,000–5,000 °C. The outer core is liquid because the temperature there is above iron's melting point at those pressures; the inner core is solid because the pressure is even higher and forces the iron to remain solid despite comparable temperatures. The liquid state of the outer core is precisely what enables the geodynamo.
+      body: `**A brief return to the core.** Lesson 1.1.1 established that Earth's core has two parts: the **inner core**, a solid iron-nickel sphere roughly 1,200 km (746 mi) in radius, and the **outer core**, a ~2,200-km-thick shell of liquid iron-nickel alloy surrounding it. Both are searingly hot — temperatures in the outer core reach roughly 4,000–5,000°C (7232–9032°F). The outer core is liquid because the temperature there is above iron's melting point at those pressures; the inner core is solid because the pressure is even higher and forces the iron to remain solid despite comparable temperatures. The liquid state of the outer core is precisely what enables the geodynamo.
 
 **The three ingredients of the geodynamo.** Generating a planetary magnetic field from a liquid metal core requires three things working together.
 
@@ -115,7 +115,7 @@ The third ingredient is **Earth's rotation**. Moving fluids on a rotating planet
 
 The result, as felt at Earth's surface, is a global magnetic field that resembles the field of a bar magnet oriented roughly along Earth's rotation axis — with a magnetic north pole near the geographic north pole and a magnetic south pole near the geographic south pole. The magnetic poles are not exactly at the geographic poles (currently about 11° offset), and they wander slowly over decades and centuries as the outer-core convection pattern shifts.
 
-**The magnetosphere — Earth's planetary shield.** Earth's magnetic field does not stop at the surface. It extends far into space, forming a protective bubble called the **magnetosphere**. When the solar wind hits the magnetosphere, the charged particles are deflected — they cannot easily cross magnetic field lines, so most stream around Earth and continue into deeper space. On the sunward side, the solar wind's pressure compresses the magnetosphere to about 10 Earth radii (~64,000 km). On the night side, the wind stretches it into a long magnetotail extending hundreds of Earth radii behind the planet.
+**The magnetosphere — Earth's planetary shield.** Earth's magnetic field does not stop at the surface. It extends far into space, forming a protective bubble called the **magnetosphere**. When the solar wind hits the magnetosphere, the charged particles are deflected — they cannot easily cross magnetic field lines, so most stream around Earth and continue into deeper space. On the sunward side, the solar wind's pressure compresses the magnetosphere to about 10 Earth radii (~64,000 km (39770 mi)). On the night side, the wind stretches it into a long magnetotail extending hundreds of Earth radii behind the planet.
 
 This deflection has kept Earth's atmosphere intact for billions of years. The solar wind is not a gentle breeze — at full intensity during a solar storm, it can carry enough energy to strip gases from an unprotected planetary atmosphere over geological time. Earth's magnetosphere has been catching these blows for at least 3.5 billion years.
 
