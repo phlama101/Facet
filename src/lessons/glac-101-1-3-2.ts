@@ -68,14 +68,14 @@ Together, these sediments and landforms allow geologists to reconstruct the geom
           icon: Globe,
           color: BRAND.jade,
           desc: 'moraines are ridges or mounds of till and other glacial debris marking positions of ice margins; terminal moraines mark the maximum extent; lateral moraines border valley glacier margins; medial moraines form where two glaciers merge; recessional moraines mark stillstand positions during retreat',
-          examples: 'The terminal moraine of the Laurentide Ice Sheet forms a ridge across Long Island, Cape Cod, and Nantucket — the southern limit of the last glaciation in the northeast USA. Lateral moraines of Alpine glaciers (e.g., Mer de Glace, France) stand 50–200 m above current ice surfaces, recording 19th century ice levels before retreat. Medial moraines from two merging Alaskan glaciers are visible as dark stripes of debris on the ice surface.',
+          examples: 'The terminal moraine of the Laurentide Ice Sheet forms a ridge across Long Island, Cape Cod, and Nantucket — the southern limit of the last glaciation in the northeast USA. Lateral moraines of Alpine glaciers (e.g., Mer de Glace, France) stand 50–200 m (164–656 ft) above current ice surfaces, recording 19th century ice levels before retreat. Medial moraines from two merging Alaskan glaciers are visible as dark stripes of debris on the ice surface.',
         },
         {
           name: 'Outwash Plains, Eskers, and Kames',
           icon: Activity,
           color: BRAND.coral,
           desc: 'meltwater streams beyond the ice margin deposit stratified glaciofluvial sediment in a broad outwash plain (sandur); eskers are sinuous ridges of sand and gravel deposited in subglacial or englacial meltwater tunnels; kames are mounds of stratified drift deposited in ice-contact environments',
-          examples: `Iceland\'s Skeiðarársandur is the world\'s largest active sandur (~1,000 km²), regularly flooded by jökulhlaups (glacial outburst floods) from Vatnajökull. The Brampton esker system in Ontario is 250 km long — one of North America\'s longest, formed in subglacial tunnels under the Laurentide Ice Sheet. Kettle lakes form when buried ice blocks melt: Minnesota\'s 10,000 lakes are predominantly kettle lakes from Laurentide deglaciation.`,
+          examples: `Iceland\'s Skeiðarársandur is the world\'s largest active sandur (~1,000 km² (386 sq mi)), regularly flooded by jökulhlaups (glacial outburst floods) from Vatnajökull. The Brampton esker system in Ontario is 250 km (155 mi) long — one of North America\'s longest, formed in subglacial tunnels under the Laurentide Ice Sheet. Kettle lakes form when buried ice blocks melt: Minnesota\'s 10,000 lakes are predominantly kettle lakes from Laurentide deglaciation.`,
         },
         {
           name: 'Varves and Glaciolacustrine Records',
@@ -175,7 +175,7 @@ Together, these sediments and landforms allow geologists to reconstruct the geom
             'In ice-marginal lakes where delta sedimentation builds sandy ridges',
           ],
           correct: 1,
-          explain: `Eskers form from sediment deposited in meltwater conduits (tunnels or channels) within or at the base of glaciers. Subglacial meltwater flows under hydrostatic pressure — the water pressure equals or approaches the ice overburden pressure, allowing it to flow upslope if necessary (Röthlisberger channels). These conduits transport large volumes of meltwater and sediment. When the glacier thins or melts, the conduit sediment is let down onto the substrate as a sinuous ridge (esker). The ridge\'s long-axis direction records the subglacial drainage direction, which is not always parallel to ice flow. The Brampton esker (Ontario, 250 km), Punkaharju esker (Finland, 25 km), and the esker systems of central Sweden are classic examples. Eskers are important sand and gravel resources and good aquifers.`,
+          explain: `Eskers form from sediment deposited in meltwater conduits (tunnels or channels) within or at the base of glaciers. Subglacial meltwater flows under hydrostatic pressure — the water pressure equals or approaches the ice overburden pressure, allowing it to flow upslope if necessary (Röthlisberger channels). These conduits transport large volumes of meltwater and sediment. When the glacier thins or melts, the conduit sediment is let down onto the substrate as a sinuous ridge (esker). The ridge\'s long-axis direction records the subglacial drainage direction, which is not always parallel to ice flow. The Brampton esker (Ontario, 250 km (155 mi)), Punkaharju esker (Finland, 25 km (16 mi)), and the esker systems of central Sweden are classic examples. Eskers are important sand and gravel resources and good aquifers.`,
         },
         {
           q: `Kettle lakes form a large proportion of the lakes in glaciated regions of North America (e.g., Minnesota\'s \'10,000 lakes\'). How do kettles form?`,

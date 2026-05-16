@@ -23,13 +23,13 @@ const iceShelvesInstability: Lesson = {
       title: 'When floating ice disappears: the physics of ice shelf collapse and what follows',
       body: `An ice shelf is the floating extension of a grounded ice sheet — a thick platform of glacier ice that has spread out over the ocean and reached near-ice-density equilibrium with seawater. Where this floating ice joins the bed beneath, the grounding line marks the exact transition from grounded to floating: the boundary where ice lifts off the bedrock and hydrostatic floatation takes over. The position of the grounding line is governed by Archimedes\' principle — ice becomes buoyant when ρ_ice × H_ice ≈ ρ_seawater × H_water, placing grounding lines where ice thickness is roughly ten-elevenths of the local water depth.
 
-Ice shelves are not passive features. They exert buttressing back-stress on the inland glaciers feeding them, slowing the rate at which ice discharges into the ocean. Remove the shelf and the tributary glaciers accelerate, increasing mass loss and sea level contribution. This principle was demonstrated definitively in 2002 when the Larsen B Ice Shelf on the Antarctic Peninsula disintegrated — 3,250 km² of ice vanished in approximately 35 days, and tributary glaciers immediately accelerated 2–8 times their previous velocities.
+Ice shelves are not passive features. They exert buttressing back-stress on the inland glaciers feeding them, slowing the rate at which ice discharges into the ocean. Remove the shelf and the tributary glaciers accelerate, increasing mass loss and sea level contribution. This principle was demonstrated definitively in 2002 when the Larsen B Ice Shelf on the Antarctic Peninsula disintegrated — 3,250 km² (1,255 sq mi) of ice vanished in approximately 35 days, and tributary glaciers immediately accelerated 2–8 times their previous velocities.
 
 Marine Ice Sheet Instability (MISI) is a physical feedback first described theoretically by Weertman (1974): on retrograde bed slopes (where the seafloor deepens inland from the coast), a retreating grounding line encounters progressively thicker ice. Because ice flux through the grounding line scales nonlinearly with ice thickness (Q ∝ H^m, m ≈ 3–5), thicker ice drives higher discharge, which causes further retreat — a self-reinforcing positive feedback that can continue without any additional climate forcing until the grounding line reaches the next prograde section. Deep retrograde basins beneath the West Antarctic Ice Sheet, particularly beneath Thwaites and Pine Island glaciers, have made MISI a central concern in sea level projections.
 
-A second, more controversial mechanism is Marine Ice Cliff Instability (MICI): once an ice shelf is removed, the grounding line is exposed directly to the ocean as a vertical ice cliff. For cliffs exceeding roughly 100 m in height, structural stresses are thought to exceed the yield strength of ice, producing rapid calving. DeConto and Pollard (2016) proposed that MICI combined with MISI could raise sea levels by 1–2 m from Antarctica alone by 2100 under high-emission scenarios — though subsequent work by Edwards et al. (2019) disputed the magnitude and the IPCC SROCC treats MICI as a low-likelihood, high-impact scenario.
+A second, more controversial mechanism is Marine Ice Cliff Instability (MICI): once an ice shelf is removed, the grounding line is exposed directly to the ocean as a vertical ice cliff. For cliffs exceeding roughly 100 m (328 ft) in height, structural stresses are thought to exceed the yield strength of ice, producing rapid calving. DeConto and Pollard (2016) proposed that MICI combined with MISI could raise sea levels by 1–2 m (3–7 ft) from Antarctica alone by 2100 under high-emission scenarios — though subsequent work by Edwards et al. (2019) disputed the magnitude and the IPCC SROCC treats MICI as a low-likelihood, high-impact scenario.
 
-The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retreated roughly 14 km/yr since the 1990s, and its grounding line moved onto a retrograde sill by 2019. The International Thwaites Glacier Collaboration (ITGC) is conducting intensive field investigations to determine whether MISI is already underway. Thwaites alone contains ~0.5 m of sea level equivalent; its potential to destabilise the broader WAIS basin threatens 3.3 m on millennial timescales. Together, Thwaites and Pine Island Glacier embody the concept of tipping points in the Earth system — thresholds beyond which change may become self-sustaining and irreversible regardless of subsequent emissions trajectories.`,
+The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retreated roughly 14 km/yr (8.7 mi/yr) since the 1990s, and its grounding line moved onto a retrograde sill by 2019. The International Thwaites Glacier Collaboration (ITGC) is conducting intensive field investigations to determine whether MISI is already underway. Thwaites alone contains ~0.5 m (1.6 ft) of sea level equivalent; its potential to destabilise the broader WAIS basin threatens 3.3 m (11 ft) on millennial timescales. Together, Thwaites and Pine Island Glacier embody the concept of tipping points in the Earth system — thresholds beyond which change may become self-sustaining and irreversible regardless of subsequent emissions trajectories.`,
       keyTerms: [
         {
           term: 'grounding line',
@@ -63,28 +63,28 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
           icon: Layers,
           color: BRAND.accent,
           desc: 'Ice shelves form where glacier ice extends over the ocean and floats; they are in hydrostatic equilibrium with ~10% above water and ~90% submerged; fed by upstream glaciers and surface snow accumulation; lost by calving and basal melt.',
-          examples: `Ross Ice Shelf (~500,000 km², ~200 m thick average) is the world\'s largest floating ice body — roughly the size of France. The Ronne-Filchner Ice Shelf (450,000 km²) in the Weddell Sea receives ice from both EAIS and WAIS outlet glaciers. Ice shelves are typically 100–1,000 m thick where they meet the grounding line, thinning to 100–300 m at the calving front.`,
+          examples: `Ross Ice Shelf (~500,000 km² (193,050 sq mi), ~200 m (656 ft) thick average) is the world\'s largest floating ice body — roughly the size of France. The Ronne-Filchner Ice Shelf (450,000 km² (173,745 sq mi)) in the Weddell Sea receives ice from both EAIS and WAIS outlet glaciers. Ice shelves are typically 100–1,000 m (328–3,281 ft) thick where they meet the grounding line, thinning to 100–300 m (328–984 ft) at the calving front.`,
         },
         {
           name: 'The Grounding Line: Where Ice Meets Ocean',
           icon: Globe,
           color: BRAND.jade,
           desc: 'The grounding line marks the transition from ice in contact with the bed (grounded) to floating ice shelf; its position is set by bed topography and sea level; grounding line migration signals ice sheet advance or retreat.',
-          examples: 'Grounding line retreat of 14 km/yr was measured at Thwaites Glacier 1996–2011 — among the fastest ever observed. The grounding line can be detected remotely by differential interferometric SAR (DInSAR) using ice flexure in the tidal zone. Seasonal tidal grounding line migration of ~1 km has been documented at some Antarctica glaciers.',
+          examples: 'Grounding line retreat of 14 km/yr (8.7 mi/yr) was measured at Thwaites Glacier 1996–2011 — among the fastest ever observed. The grounding line can be detected remotely by differential interferometric SAR (DInSAR) using ice flexure in the tidal zone. Seasonal tidal grounding line migration of ~1 km has been documented at some Antarctica glaciers.',
         },
         {
           name: 'Marine Ice Sheet Instability (MISI)',
           icon: Activity,
           color: BRAND.coral,
           desc: 'On retrograde beds (deepening inland), grounding line retreat is unstable — thicker ice flux at the new grounding line exceeds the flux it can sustain, driving further retreat without additional forcing; theoretical prediction by Weertman (1974) confirmed by observations.',
-          examples: `Thwaites\' East Thwaites Ice Shelf grounding line retreated onto a retrograde sill in 2019 — a potential MISI trigger. Schoof (2007) and Gudmundsson (2013) extended Weertman\'s model to include ice streams and buttressing effects. Models suggest Thwaites grounding line could retreat 100+ km into the deep WAIS basin within decades if MISI is underway.`,
+          examples: `Thwaites\' East Thwaites Ice Shelf grounding line retreated onto a retrograde sill in 2019 — a potential MISI trigger. Schoof (2007) and Gudmundsson (2013) extended Weertman\'s model to include ice streams and buttressing effects. Models suggest Thwaites grounding line could retreat 100+ km (62+ mi) into the deep WAIS basin within decades if MISI is underway.`,
         },
         {
           name: 'Marine Ice Cliff Instability (MICI) and Tipping Points',
           icon: Zap,
           color: BRAND.gold,
-          desc: 'If ice shelf loss exposes tall (~100 m) ice cliffs, structural failure may produce rapid calving (MICI); controversial but high-impact mechanism; combination with MISI could produce rapid WAIS collapse and multi-meter sea level rise.',
-          examples: 'DeConto & Pollard (2016) proposed MICI could produce 1–2 m of Antarctic sea level contribution by 2100 under high emissions. Edwards et al. (2019) challenged MICI magnitude estimates; current IPCC treatment assigns it to low-likelihood, high-impact scenario. Ice cliff failures analogous to MICI have been documented at Jakobshavn and other marine-terminating glaciers at smaller scale.',
+          desc: 'If ice shelf loss exposes tall (~100 m (328 ft)) ice cliffs, structural failure may produce rapid calving (MICI); controversial but high-impact mechanism; combination with MISI could produce rapid WAIS collapse and multi-meter sea level rise.',
+          examples: 'DeConto & Pollard (2016) proposed MICI could produce 1–2 m (3–7 ft) of Antarctic sea level contribution by 2100 under high emissions. Edwards et al. (2019) challenged MICI magnitude estimates; current IPCC treatment assigns it to low-likelihood, high-impact scenario. Ice cliff failures analogous to MICI have been documented at Jakobshavn and other marine-terminating glaciers at smaller scale.',
         },
       ],
     },
@@ -117,7 +117,7 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
           {
             id: 'basal-melt',
             label: 'Ocean Basal Melting (CDW)',
-            description: 'Warm Circumpolar Deep Water contacts ice shelf base. Melt rates 20–70 m/yr. Thins ice shelf.',
+            description: 'Warm Circumpolar Deep Water contacts ice shelf base. Melt rates 20–70 m/yr (66–230 ft/yr). Thins ice shelf.',
             color: BRAND.coral,
           },
           {
@@ -166,7 +166,7 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
             'Numerical models predict acceleration, providing theoretical support for the hypothesis',
           ],
           correct: 1,
-          explain: `The Larsen B collapse (3,250 km² in ~35 days in February–March 2002) provided the most direct natural experiment. Rignot et al. (2004) and Scambos et al. (2004) measured InSAR velocity fields before and after: the Crane Glacier accelerated from ~0.8 to ~3.1 km/yr (a factor of ~4); the Flask and Leppard glaciers similarly accelerated 2–3×. Critically, glaciers that still flowed into the surviving Larsen C portion showed no velocity change. This before-and-after comparison, with a natural control (Larsen C), is considered definitive observational proof of buttressing — ice shelves actively resist the flow of tributary glaciers, and their removal triggers immediate dynamic response. This result directly informs concerns about marine-terminating glaciers in West Antarctica.`,
+          explain: `The Larsen B collapse (3,250 km² (1,255 sq mi) in ~35 days in February–March 2002) provided the most direct natural experiment. Rignot et al. (2004) and Scambos et al. (2004) measured InSAR velocity fields before and after: the Crane Glacier accelerated from ~0.8 to ~3.1 km/yr (0.5 to 1.9 mi/yr) (a factor of ~4); the Flask and Leppard glaciers similarly accelerated 2–3×. Critically, glaciers that still flowed into the surviving Larsen C portion showed no velocity change. This before-and-after comparison, with a natural control (Larsen C), is considered definitive observational proof of buttressing — ice shelves actively resist the flow of tributary glaciers, and their removal triggers immediate dynamic response. This result directly informs concerns about marine-terminating glaciers in West Antarctica.`,
         },
         {
           q: 'Marine Ice Sheet Instability (MISI) was first theoretically described by Weertman (1974). What is the core physical mechanism?',
@@ -188,18 +188,18 @@ The Thwaites Glacier — sometimes called the \'Doomsday Glacier\' — has retre
             'Solar radiation absorption and geothermal heat; solar dominates',
           ],
           correct: 1,
-          explain: `Ice shelves lose mass by: (1) calving — the periodic detachment of icebergs at the calving front; (2) basal melting — ocean heat fluxed to the ice shelf bottom through cavity circulation; and (3) surface processes (melt, sublimation) — minor for most Antarctic shelves. In West Antarctica, basal melting by intrusion of warm Circumpolar Deep Water (CDW, +1.5°C above freezing point) is the dominant thinning mechanism. Basal melt rates under Pine Island Glacier\'s ice shelf reach ~100 m/yr; under Thwaites ~70 m/yr. This is 10–100× higher than calving flux and >1,000× higher than surface processes. Conversely, on the Antarctic Peninsula (Larsen shelves), surface melt and hydrofracture (meltwater penetrating crevasses and wedging them open) drove the Larsen A (1995) and B (2002) collapses, as warm summer air temperatures exceeded the −9°C annual mean threshold for ice shelf viability.`,
+          explain: `Ice shelves lose mass by: (1) calving — the periodic detachment of icebergs at the calving front; (2) basal melting — ocean heat fluxed to the ice shelf bottom through cavity circulation; and (3) surface processes (melt, sublimation) — minor for most Antarctic shelves. In West Antarctica, basal melting by intrusion of warm Circumpolar Deep Water (CDW, +1.5°C above freezing point) is the dominant thinning mechanism. Basal melt rates under Pine Island Glacier\'s ice shelf reach ~100 m/yr (328 ft/yr); under Thwaites ~70 m/yr (230 ft/yr). This is 10–100× higher than calving flux and >1,000× higher than surface processes. Conversely, on the Antarctic Peninsula (Larsen shelves), surface melt and hydrofracture (meltwater penetrating crevasses and wedging them open) drove the Larsen A (1995) and B (2002) collapses, as warm summer air temperatures exceeded the −9°C (16°F) annual mean threshold for ice shelf viability.`,
         },
         {
           q: `Why is Thwaites Glacier in West Antarctica sometimes called the \'Doomsday Glacier\'?`,
           a: [
             'It is the largest glacier in Antarctica and contains more ice than any other single glacier',
-            'Its potential collapse could trigger broader WAIS destabilisation: the glacier alone contains ~0.5 m of sea level equivalent, and its loss could raise sea level by ~3.3 m (the full WAIS contribution) through dynamic effects',
+            'Its potential collapse could trigger broader WAIS destabilisation: the glacier alone contains ~0.5 m (1.6 ft) of sea level equivalent, and its loss could raise sea level by ~3.3 m (11 ft) (the full WAIS contribution) through dynamic effects',
             'Thwaites is the only glacier currently showing evidence of Marine Ice Sheet Instability',
             'The glacier is located directly above a major Antarctic volcanic hotspot that could accelerate melting',
           ],
           correct: 1,
-          explain: `Thwaites Glacier drains ~8% of the Antarctic Ice Sheet through a ~120 km wide calving front. The direct sea level contribution of Thwaites ice above floatation is ~0.5 m. However, its instability concerns scientists for a deeper reason: Thwaites acts as a \'cork\' holding back the broader WAIS basin. Ice flow models show that the destabilisation of Thwaites could progressively unpin adjacent glaciers (Pope, Smith, Kohler, and ultimately the broader Amundsen Sea sector), releasing 3.3 m of WAIS sea level equivalent over centuries to millennia. Its grounding line has retreated ~14 km/yr since the 1990s; the International Thwaites Glacier Collaboration (ITGC) is conducting intensive field studies to determine whether MISI is already underway. The \'Doomsday\' moniker, while journalistically dramatic, captures the scientific concern that Thwaites may be approaching an irreversible tipping point.`,
+          explain: `Thwaites Glacier drains ~8% of the Antarctic Ice Sheet through a ~120 km (75 mi) wide calving front. The direct sea level contribution of Thwaites ice above floatation is ~0.5 m (1.6 ft). However, its instability concerns scientists for a deeper reason: Thwaites acts as a \'cork\' holding back the broader WAIS basin. Ice flow models show that the destabilisation of Thwaites could progressively unpin adjacent glaciers (Pope, Smith, Kohler, and ultimately the broader Amundsen Sea sector), releasing 3.3 m (11 ft) of WAIS sea level equivalent over centuries to millennia. Its grounding line has retreated ~14 km/yr (8.7 mi/yr) since the 1990s; the International Thwaites Glacier Collaboration (ITGC) is conducting intensive field studies to determine whether MISI is already underway. The \'Doomsday\' moniker, while journalistically dramatic, captures the scientific concern that Thwaites may be approaching an irreversible tipping point.`,
         },
       ],
     },

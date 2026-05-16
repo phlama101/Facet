@@ -46,7 +46,7 @@ const glac101Capstone: Lesson = {
             '680 kg/m³ — meltwater percolation is permanently blocked and refreezing begins',
           ],
           correct: 1,
-          explain: 'Pore close-off occurs at approximately 820–840 kg/m³ (commonly cited as ~830 kg/m³). At this density, the interconnected network of air passages between firn grains becomes isolated into discrete, sealed bubbles. This is the moment that ancient atmospheric air is permanently trapped inside the ice, forming the gas archive exploited by ice core palaeoclimatologists. Above this depth the air is still in contact with the atmosphere; below it the gas archive is closed. The depth of pore close-off ranges from ~60–70 m in Greenland to over 100 m at cold, low-accumulation Antarctic sites, introducing a gas age–ice age offset (Δage) that must be modelled when interpreting ice core records.',
+          explain: 'Pore close-off occurs at approximately 820–840 kg/m³ (commonly cited as ~830 kg/m³). At this density, the interconnected network of air passages between firn grains becomes isolated into discrete, sealed bubbles. This is the moment that ancient atmospheric air is permanently trapped inside the ice, forming the gas archive exploited by ice core palaeoclimatologists. Above this depth the air is still in contact with the atmosphere; below it the gas archive is closed. The depth of pore close-off ranges from ~60–70 m (197–230 ft) in Greenland to over 100 m (328 ft) at cold, low-accumulation Antarctic sites, introducing a gas age–ice age offset (Δage) that must be modelled when interpreting ice core records.',
         },
         {
           q: `Glen\'s flow law describes the creep of polycrystalline ice: έ = A τⁿ, where n ≈ 3. If basal shear stress doubles, by what factor does the strain rate increase?`,
@@ -57,7 +57,7 @@ const glac101Capstone: Lesson = {
             '6× because the flow exponent n = 3 adds a factor of 3 to the doubling',
           ],
           correct: 2,
-          explain: `Glen\'s flow law is nonlinear: strain rate έ is proportional to τⁿ, with n ≈ 3 for most natural ice deformation conditions. If stress doubles (τ → 2τ), the strain rate scales as (2τ)³ = 8τ³ — an eightfold increase. This strong nonlinearity has profound implications: small variations in driving stress cause disproportionately large changes in ice velocity, making fast-flowing outlet glaciers and ice streams highly sensitive to small perturbations in geometry or basal conditions. The value of A (the rate factor or softness parameter) is temperature-dependent, increasing by approximately three orders of magnitude between −50°C and 0°C, so warm ice at the base deforms far more readily than cold ice above.`,
+          explain: `Glen\'s flow law is nonlinear: strain rate έ is proportional to τⁿ, with n ≈ 3 for most natural ice deformation conditions. If stress doubles (τ → 2τ), the strain rate scales as (2τ)³ = 8τ³ — an eightfold increase. This strong nonlinearity has profound implications: small variations in driving stress cause disproportionately large changes in ice velocity, making fast-flowing outlet glaciers and ice streams highly sensitive to small perturbations in geometry or basal conditions. The value of A (the rate factor or softness parameter) is temperature-dependent, increasing by approximately three orders of magnitude between −50°C (−58°F) and 0°C (32°F), so warm ice at the base deforms far more readily than cold ice above.`,
         },
         {
           q: 'In a glacier where ice motion is dominated by internal deformation (creep) rather than basal sliding, where is horizontal velocity at its maximum?',
@@ -106,13 +106,13 @@ const glac101Capstone: Lesson = {
         {
           q: 'The Greenland Ice Sheet contains approximately 2.85 million km³ of ice. What is its sea level equivalent (SLE)?',
           a: [
-            '~3.2 m — equivalent to the volume divided by global ocean area',
-            '~7.4 m — representing the eustatic sea level rise if the entire ice sheet melted',
-            '~12 m — accounting for isostatic rebound of the bedrock after ice removal',
-            '~1.8 m — because much of Greenland\'s ice is grounded below sea level and displaces water',
+            '~3.2 m (10 ft) — equivalent to the volume divided by global ocean area',
+            '~7.4 m (24 ft) — representing the eustatic sea level rise if the entire ice sheet melted',
+            '~12 m (39 ft) — accounting for isostatic rebound of the bedrock after ice removal',
+            '~1.8 m (6 ft) — because much of Greenland\'s ice is grounded below sea level and displaces water',
           ],
           correct: 1,
-          explain: 'The Greenland Ice Sheet holds approximately 7.2–7.4 m of sea level equivalent, the most commonly cited figure being ~7.4 m (some sources give 7.2 m after accounting for the ice below sea level that already displaces ocean water). This is calculated by converting the ice volume to freshwater equivalent and dividing by the global ocean surface area (~361 million km²). Complete melting would require millennia under any realistic scenario, but even partial loss matters: IPCC projections suggest Greenland could contribute ~0.1–0.23 m to sea level rise by 2100 under high-emissions scenarios. The ~7.4 m figure is a physical upper bound that underscores the long-term stakes of ice sheet stability.',
+          explain: 'The Greenland Ice Sheet holds approximately 7.2–7.4 m (24 ft) of sea level equivalent, the most commonly cited figure being ~7.4 m (24 ft) (some sources give 7.2 m (24 ft) after accounting for the ice below sea level that already displaces ocean water). This is calculated by converting the ice volume to freshwater equivalent and dividing by the global ocean surface area (~361 million km²). Complete melting would require millennia under any realistic scenario, but even partial loss matters: IPCC projections suggest Greenland could contribute ~0.1–0.23 m (4–9 in) to sea level rise by 2100 under high-emissions scenarios. The ~7.4 m (24 ft) figure is a physical upper bound that underscores the long-term stakes of ice sheet stability.',
         },
         {
           q: 'What distinguishes Marine Ice Sheet Instability (MISI) from ordinary glacier retreat driven by surface melting?',
@@ -150,13 +150,13 @@ const glac101Capstone: Lesson = {
         {
           q: 'At approximately what temperature does seawater of typical open-ocean salinity (~34 psu) begin to freeze?',
           a: [
-            '0°C — the same as pure water, because salinity does not significantly affect the freezing point',
-            '−1.8°C — because dissolved salts depress the freezing point below that of pure water',
-            '−3.4°C — because each practical salinity unit lowers the freezing point by 0.1°C',
-            '−0.5°C — a slight depression caused by pressure at typical Arctic depths',
+            '0°C (32°F) — the same as pure water, because salinity does not significantly affect the freezing point',
+            '−1.8°C (29°F) — because dissolved salts depress the freezing point below that of pure water',
+            '−3.4°C (26°F) — because each practical salinity unit lowers the freezing point by 0.1°C',
+            '−0.5°C (31°F) — a slight depression caused by pressure at typical Arctic depths',
           ],
           correct: 1,
-          explain: 'The freezing point of seawater is depressed below 0°C by dissolved salts according to the relation Tf ≈ −0.0575 × S + 1.710523×10⁻³ × S^(3/2) − 2.154996×10⁻⁴ × S² (UNESCO formula). At standard open-ocean salinity of ~34–35 psu, this yields Tf ≈ −1.8°C. This freezing point depression has important consequences: sea ice forms at temperatures well below 0°C, the ocean can be supercooled under ice shelves where pressure further depresses the freezing point, and as sea ice forms it expels brine, producing dense, salty water that drives thermohaline circulation. In the Arctic, surface waters cool to −1.8°C before freeze-up, a temperature readily achieved in winter.',
+          explain: 'The freezing point of seawater is depressed below 0°C (32°F) by dissolved salts according to the relation Tf ≈ −0.0575 × S + 1.710523×10⁻³ × S^(3/2) − 2.154996×10⁻⁴ × S² (UNESCO formula). At standard open-ocean salinity of ~34–35 psu, this yields Tf ≈ −1.8°C (29°F). This freezing point depression has important consequences: sea ice forms at temperatures well below 0°C (32°F), the ocean can be supercooled under ice shelves where pressure further depresses the freezing point, and as sea ice forms it expels brine, producing dense, salty water that drives thermohaline circulation. In the Arctic, surface waters cool to −1.8°C (29°F) before freeze-up, a temperature readily achieved in winter.',
         },
         {
           q: 'Which portion of the Antarctic Ice Sheet is grounded predominantly below sea level and is considered most vulnerable to Marine Ice Sheet Instability?',
@@ -167,7 +167,7 @@ const glac101Capstone: Lesson = {
             'Filchner–Ronne Ice Shelf drainage basin — because it contains the largest ice shelf by area',
           ],
           correct: 2,
-          explain: 'The West Antarctic Ice Sheet (WAIS) is considered the most vulnerable component of the Antarctic cryosphere because the majority of its bed lies hundreds to over 2,000 metres below sea level, and large portions slope retrograde (deepening inland). This configuration makes it susceptible to Marine Ice Sheet Instability (MISI). The WAIS holds approximately 3.3 m of sea level equivalent. Pine Island Glacier and Thwaites Glacier — the two largest outlets of the WAIS — are already thinning rapidly under incursion of warm Circumpolar Deep Water beneath their ice shelves. Some modelling studies suggest parts of Thwaites may already be in an unstable retreat phase, though the timescale of potential collapse spans centuries.',
+          explain: 'The West Antarctic Ice Sheet (WAIS) is considered the most vulnerable component of the Antarctic cryosphere because the majority of its bed lies hundreds to over 2,000 metres (6,562 ft) below sea level, and large portions slope retrograde (deepening inland). This configuration makes it susceptible to Marine Ice Sheet Instability (MISI). The WAIS holds approximately 3.3 m (11 ft) of sea level equivalent. Pine Island Glacier and Thwaites Glacier — the two largest outlets of the WAIS — are already thinning rapidly under incursion of warm Circumpolar Deep Water beneath their ice shelves. Some modelling studies suggest parts of Thwaites may already be in an unstable retreat phase, though the timescale of potential collapse spans centuries.',
         },
         {
           q: 'Since satellite observations began in 1979, at approximately what rate has the September Arctic sea ice extent minimum been declining?',
@@ -192,15 +192,15 @@ const glac101Capstone: Lesson = {
           explain: 'Roche moutonnée asymmetry reflects two distinct erosional processes. On the stoss side, high ice-bed contact stress forces rock fragments embedded in basal ice to abrade and polish the bedrock, producing smooth striated surfaces — the principal tool of reconstruction of past ice-flow directions. On the lee side, ice pressure drops in the lee of the obstruction, and subglacial water refreezes into bedrock joints (regelation plucking or quarrying). Freeze-thaw cycling in the lee cavity exploits pre-existing fractures and joints, ripping out angular blocks and leaving an irregular, jagged surface. The result — smooth stoss, rough lee — allows geologists to unambiguously determine the direction of former ice flow from these features alone.',
         },
         {
-          q: 'Fjords such as Sognefjord in Norway reach depths exceeding 1,300 m, well below current sea level. What explains this glacial overdeepening below sea level?',
+          q: 'Fjords such as Sognefjord in Norway reach depths exceeding 1,300 m (4,265 ft), well below current sea level. What explains this glacial overdeepening below sea level?',
           a: [
             'Marine erosion by deep ocean currents scoured the fjord floor after deglaciation',
             'Tectonic rifting created the deep basins that were subsequently reshaped by glaciers',
             'Subglacial meltwater rivers under high pressure eroded deep channels below sea level',
-            'During the Last Glacial Maximum, global sea level was ~120 m lower and ice sheets extended to the continental shelf; glaciers remained grounded and actively eroded at the coast, deepening valleys far below modern sea level',
+            'During the Last Glacial Maximum, global sea level was ~120 m (394 ft) lower and ice sheets extended to the continental shelf; glaciers remained grounded and actively eroded at the coast, deepening valleys far below modern sea level',
           ],
           correct: 3,
-          explain: 'Fjord formation requires sustained glacial erosion at or near sea level. During the Last Glacial Maximum (~20,000 years ago), global sea level was approximately 120–130 m lower than today, and large ice sheets extended to the continental shelf edges. Ice sheets and outlet glaciers remained grounded — and therefore in contact with and eroding the bed — all the way to the coast. Glacial erosion rates are highest where ice velocity and basal stress are greatest, often in narrow, structurally weakened valleys. After deglaciation, sea level rose to flood the deeply eroded valleys, creating fjords. The combination of deep glacial erosion plus post-glacial sea level rise explains why fjords can extend to depths far below modern sea level.',
+          explain: 'Fjord formation requires sustained glacial erosion at or near sea level. During the Last Glacial Maximum (~20,000 years ago), global sea level was approximately 120–130 m (394–427 ft) lower than today, and large ice sheets extended to the continental shelf edges. Ice sheets and outlet glaciers remained grounded — and therefore in contact with and eroding the bed — all the way to the coast. Glacial erosion rates are highest where ice velocity and basal stress are greatest, often in narrow, structurally weakened valleys. After deglaciation, sea level rose to flood the deeply eroded valleys, creating fjords. The combination of deep glacial erosion plus post-glacial sea level rise explains why fjords can extend to depths far below modern sea level.',
         },
         {
           q: 'The EPICA Dome C ice core extends the Antarctic CO₂ record to 800,000 years. What was the highest pre-industrial atmospheric CO₂ concentration over this period, and how does it compare to today?',
@@ -214,7 +214,7 @@ const glac101Capstone: Lesson = {
           explain: 'The EPICA Dome C record (Lüthi et al., 2008) shows that over the past 800,000 years CO₂ oscillated between glacial minima of ~170–180 ppm and interglacial maxima of ~280–300 ppm (the highest being ~300 ppm during MIS 11, ~400,000 years ago). Current atmospheric CO₂ levels have exceeded 420 ppm as of 2023 — approximately 40–50% above the highest natural interglacial value in the entire 800,000-year record. The rate of increase (~2–3 ppm/year) is orders of magnitude faster than any natural transition in the ice core record. This unambiguously places modern CO₂ outside the envelope of natural variability and directly implicates anthropogenic emissions.',
         },
         {
-          q: 'What is glacial isostatic adjustment (GIA), and why is Fennoscandia still rising at rates up to 10 mm/year today?',
+          q: 'What is glacial isostatic adjustment (GIA), and why is Fennoscandia still rising at rates up to 10 mm/yr (0.39 in/yr) today?',
           a: [
             'GIA is tidal flexure of the lithosphere; Fennoscandia rises because North Atlantic tidal forcing is strongest at high latitudes',
             'GIA is the elastic compression of crust under ice load; Fennoscandia rebounds elastically as permafrost thaws and reduces pressure',
@@ -222,7 +222,7 @@ const glac101Capstone: Lesson = {
             'GIA is thermal expansion of the lithosphere; warming since the last ice age has caused Scandinavian crust to thermally expand upward',
           ],
           correct: 2,
-          explain: 'Glacial isostatic adjustment (GIA) is the response of the solid Earth to changes in ice surface loading. During glaciation, the weight of thick ice sheets depresses the lithosphere into the underlying mantle. After deglaciation, the mantle — a viscous fluid on geological timescales (viscosity ~10²⁰–10²¹ Pa·s in the upper mantle) — flows back under the unloaded lithosphere, causing uplift. The Fennoscandian Ice Sheet melted rapidly between ~18,000 and ~8,000 years ago, but the viscous mantle continues to flow in response. Current GPS uplift rates in the Gulf of Bothnia reach ~10 mm/year, with an estimated remaining uplift of ~100 m before equilibrium is reached. GIA modelling is essential for separating ice-sheet-driven sea level signals from local land-level changes.',
+          explain: 'Glacial isostatic adjustment (GIA) is the response of the solid Earth to changes in ice surface loading. During glaciation, the weight of thick ice sheets depresses the lithosphere into the underlying mantle. After deglaciation, the mantle — a viscous fluid on geological timescales (viscosity ~10²⁰–10²¹ Pa·s in the upper mantle) — flows back under the unloaded lithosphere, causing uplift. The Fennoscandian Ice Sheet melted rapidly between ~18,000 and ~8,000 years ago, but the viscous mantle continues to flow in response. Current GPS uplift rates in the Gulf of Bothnia reach ~10 mm/yr (0.39 in/yr), with an estimated remaining uplift of ~100 m (328 ft) before equilibrium is reached. GIA modelling is essential for separating ice-sheet-driven sea level signals from local land-level changes.',
         },
         {
           q: 'Varve sequences in glaciolacustrine sediments provide annually resolved records. What are the two distinct layers that form one annual varve couplet?',

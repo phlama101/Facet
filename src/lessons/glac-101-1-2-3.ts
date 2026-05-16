@@ -151,7 +151,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
         {
           q: 'At what temperature does seawater with typical ocean salinity (~34 psu) freeze, and why is this lower than the freshwater freezing point?',
           a: [
-            '0°C — salt has no effect on the freezing point of seawater',
+            '0°C (32°F) — salt has no effect on the freezing point of seawater',
             '−1.8°C (29°F) — dissolved salts (primarily NaCl) depress the freezing point by disrupting the water\'s crystal lattice formation',
             '−5°C (23°F) — the pressure at the ocean surface lowers the freezing point',
             '−10°C (14°F) — cold Arctic winds remove heat before ice can form at higher temperatures',
