@@ -21,29 +21,29 @@ const seaIceArctic: Lesson = {
     {
       type: 'intro',
       title: `The Arctic\'s floating thermostat: how sea ice shapes climate, ocean, and life`,
-      body: `Sea ice is frozen seawater, typically 2–3 m thick, and is fundamentally different from glacier ice, which forms from compressed snow and can reach kilometres in thickness. Sea ice forms directly from the ocean surface and carries dissolved salts (at reduced concentration) within its crystal structure, while glacier ice is nearly pure water. This distinction matters for both physical properties and the role each plays in Earth\'s climate system.
+      body: `Sea ice is frozen seawater, typically 2–3 m (7–10 ft) thick, and is fundamentally different from glacier ice, which forms from compressed snow and can reach kilometres in thickness. Sea ice forms directly from the ocean surface and carries dissolved salts (at reduced concentration) within its crystal structure, while glacier ice is nearly pure water. This distinction matters for both physical properties and the role each plays in Earth\'s climate system.
 
-Sea ice forms through a progression of stages as seawater cools. The first crystals to appear are frazil ice — tiny, disc-shaped platelets roughly 1 mm across that give the ocean surface a greasy sheen, known as grease ice. As cooling continues, crystals consolidate into thin, elastic sheets called nilas, or in wavy conditions into circular pancake ice discs with characteristic raised rims from collisions. Through winter, pancakes and nilas thicken and consolidate into first-year ice, which typically reaches 1.5–2 m by spring. Ice that survives at least one summer melt season becomes multi-year ice — thicker (3–4 m), less salty (brine has drained out), and mechanically stronger than first-year ice.
+Sea ice forms through a progression of stages as seawater cools. The first crystals to appear are frazil ice — tiny, disc-shaped platelets roughly 1 mm across that give the ocean surface a greasy sheen, known as grease ice. As cooling continues, crystals consolidate into thin, elastic sheets called nilas, or in wavy conditions into circular pancake ice discs with characteristic raised rims from collisions. Through winter, pancakes and nilas thicken and consolidate into first-year ice, which typically reaches 1.5–2 m (5–7 ft) by spring. Ice that survives at least one summer melt season becomes multi-year ice — thicker (3–4 m (10–13 ft)), less salty (brine has drained out), and mechanically stronger than first-year ice.
 
-The Arctic sea ice cover follows a strong seasonal cycle. Maximum extent is reached in late February to March, typically ~15 million km², when sea ice spans the Arctic Ocean and extends into the Bering Sea, Hudson Bay, the Sea of Okhotsk, and peripheral Arctic seas. The minimum occurs in September after summer melt, historically around 4–5 million km². This seasonal cycle is driven primarily by solar insolation: the Arctic receives essentially no sunlight in winter, allowing extensive ice formation, then receives intense summer sun (24-hour daylight) that drives rapid melt.
+The Arctic sea ice cover follows a strong seasonal cycle. Maximum extent is reached in late February to March, typically ~15 million km² (5,791,500 sq mi), when sea ice spans the Arctic Ocean and extends into the Bering Sea, Hudson Bay, the Sea of Okhotsk, and peripheral Arctic seas. The minimum occurs in September after summer melt, historically around 4–5 million km² (1,544,400–1,930,500 sq mi). This seasonal cycle is driven primarily by solar insolation: the Arctic receives essentially no sunlight in winter, allowing extensive ice formation, then receives intense summer sun (24-hour daylight) that drives rapid melt.
 
 As sea ice forms, it rejects most of its dissolved salt — a process called brine rejection. Dense, cold, salt-enriched water sinks from the sea surface toward the ocean floor, driving deep water formation. Around Antarctica, this process generates Antarctic Bottom Water, the densest and deepest water mass in the global ocean. In the North Atlantic, linked sea ice formation drives North Atlantic Deep Water production. Together these form the thermohaline circulation — the global ocean conveyor belt — redistributing heat and nutrients across ocean basins.
 
 The ice-albedo feedback is the most powerful amplifying mechanism in the Arctic climate system. Snow-covered sea ice reflects 80–85% of incoming solar radiation (albedo ~0.85), while open ocean absorbs ~94% (albedo ~0.06). As sea ice melts, dark ocean water is exposed, absorbing far more solar energy, warming the ocean, and melting yet more ice. This positive feedback is the primary reason the Arctic has warmed 3–4 times faster than the global average since 1979 — a phenomenon called Arctic amplification.
 
-The consequences of this feedback are measurable and accelerating. September Arctic sea ice extent has declined approximately 13% per decade since satellite records began in 1979, from around 7 million km² to ~4–4.5 million km² in recent years. Multi-year ice — the thick, resilient core of the Arctic ice pack — has declined from ~8 million km² in 1980 to ~3 million km² today. Climate models and current trajectory analyses project that the Arctic will experience its first ice-free summer (extent below 1 million km²) by approximately 2040–2050 under intermediate emissions scenarios — a transition unprecedented in at least the past 1,000 years.`,
+The consequences of this feedback are measurable and accelerating. September Arctic sea ice extent has declined approximately 13% per decade since satellite records began in 1979, from around 7 million km² (2,702,700 sq mi) to ~4–4.5 million km² (1,544,400–1,737,450 sq mi) in recent years. Multi-year ice — the thick, resilient core of the Arctic ice pack — has declined from ~8 million km² (3,088,800 sq mi) in 1980 to ~3 million km² (1,158,300 sq mi) today. Climate models and current trajectory analyses project that the Arctic will experience its first ice-free summer (extent below 1 million km²) by approximately 2040–2050 under intermediate emissions scenarios — a transition unprecedented in at least the past 1,000 years.`,
       keyTerms: [
         {
           term: 'sea ice',
-          def: 'Frozen seawater, typically 2–3 m thick, that forms directly from ocean surface cooling. Distinguished from glacier ice (compressed snow) by its salt content and ocean origin.',
+          def: 'Frozen seawater, typically 2–3 m (7–10 ft) thick, that forms directly from ocean surface cooling. Distinguished from glacier ice (compressed snow) by its salt content and ocean origin.',
         },
         {
           term: 'frazil ice',
-          def: 'The first stage of sea ice formation: tiny disc-shaped ice crystals ~1 mm across that form in supercooled seawater, giving the ocean surface a greasy appearance.',
+          def: 'The first stage of sea ice formation: tiny disc-shaped ice crystals ~1 mm (0.04 in) across that form in supercooled seawater, giving the ocean surface a greasy appearance.',
         },
         {
           term: 'multi-year ice',
-          def: 'Sea ice that has survived at least one summer melt season; thicker (3–4 m), less saline, and mechanically stronger than first-year ice. Declining rapidly in the Arctic.',
+          def: 'Sea ice that has survived at least one summer melt season; thicker (3–4 m (10–13 ft)), less saline, and mechanically stronger than first-year ice. Declining rapidly in the Arctic.',
         },
         {
           term: 'albedo feedback',
@@ -64,8 +64,8 @@ The consequences of this feedback are measurable and accelerating. September Arc
           name: 'Sea Ice Formation Stages',
           icon: Activity,
           color: BRAND.accent,
-          desc: 'Seawater freezes at −1.8°C (salinity ~34 psu); progressive stages from frazil to consolidated pack ice; multi-year ice (thicker, less saline, stronger) vs. first-year ice.',
-          examples: `Frazil ice: ~1 mm ice crystals form first, giving the ocean a greasy appearance (\'grease ice\'). Pancake ice: circular discs 30 cm–3 m diameter with raised rims from collisions — forms in wavy conditions. First-year ice reaches 1.5–2 m thickness by spring; multi-year ice can exceed 3–4 m after surviving summer melt.`,
+          desc: 'Seawater freezes at −1.8°C (29°F) (salinity ~34 psu); progressive stages from frazil to consolidated pack ice; multi-year ice (thicker, less saline, stronger) vs. first-year ice.',
+          examples: `Frazil ice: ~1 mm (0.04 in) ice crystals form first, giving the ocean a greasy appearance (\'grease ice\'). Pancake ice: circular discs 30 cm–3 m (1–10 ft) diameter with raised rims from collisions — forms in wavy conditions. First-year ice reaches 1.5–2 m (5–7 ft) thickness by spring; multi-year ice can exceed 3–4 m (10–13 ft) after surviving summer melt.`,
         },
         {
           name: 'Sea Ice and the Global Thermohaline Circulation',
@@ -79,7 +79,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
           icon: Layers,
           color: BRAND.coral,
           desc: 'Sea ice has high albedo (~0.85 for snow-covered ice) vs. open ocean (~0.06); ice loss exposes dark water that absorbs ~10× more solar energy; this melts more ice in a positive feedback loop — Arctic amplification.',
-          examples: 'Arctic has warmed 3–4× faster than the global average since 1979 — primarily from albedo feedback. September Arctic sea ice extent declined from ~7 million km² in 1979 to ~4.5 million km² in 2023 (−13%/decade). Melt ponds on sea ice (albedo ~0.2) further reduce summer surface albedo and accelerate thinning.',
+          examples: 'Arctic has warmed 3–4× faster than the global average since 1979 — primarily from albedo feedback. September Arctic sea ice extent declined from ~7 million km² (2,702,700 sq mi) in 1979 to ~4.5 million km² (1,737,450 sq mi) in 2023 (−13%/decade). Melt ponds on sea ice (albedo ~0.2) further reduce summer surface albedo and accelerate thinning.',
         },
         {
           name: 'Sea Ice Ecology and Indigenous Communities',
@@ -107,7 +107,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
           {
             id: 'frazil-grease',
             label: 'Frazil and Grease Ice',
-            description: 'Ocean cools to −1.8°C. Ice crystals form. Surface takes on oily appearance.',
+            description: 'Ocean cools to −1.8°C (29°F). Ice crystals form. Surface takes on oily appearance.',
             color: BRAND.accent,
           },
           {
@@ -119,7 +119,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
           {
             id: 'first-year-ice',
             label: 'First-Year Sea Ice',
-            description: 'Ice reaches 1.5–2 m by spring. Maximum extent ~15 million km² in March.',
+            description: 'Ice reaches 1.5–2 m (5–7 ft) by spring. Maximum extent ~15 million km² (5,791,500 sq mi) in March.',
             color: BRAND.gold,
           },
           {
@@ -131,7 +131,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
           {
             id: 'multi-year-ice',
             label: 'Multi-Year Ice (Surviving Summer)',
-            description: 'Thicker (3–4 m), less salty, stronger ice. Declining rapidly — now <30% of Arctic ice.',
+            description: 'Thicker (3–4 m (10–13 ft)), less salty, stronger ice. Declining rapidly — now <30% of Arctic ice.',
             color: BRAND.amethyst,
           },
         ],
@@ -152,12 +152,12 @@ The consequences of this feedback are measurable and accelerating. September Arc
           q: 'At what temperature does seawater with typical ocean salinity (~34 psu) freeze, and why is this lower than the freshwater freezing point?',
           a: [
             '0°C — salt has no effect on the freezing point of seawater',
-            '−1.8°C — dissolved salts (primarily NaCl) depress the freezing point by disrupting the water\'s crystal lattice formation',
-            '−5°C — the pressure at the ocean surface lowers the freezing point',
-            '−10°C — cold Arctic winds remove heat before ice can form at higher temperatures',
+            '−1.8°C (29°F) — dissolved salts (primarily NaCl) depress the freezing point by disrupting the water\'s crystal lattice formation',
+            '−5°C (23°F) — the pressure at the ocean surface lowers the freezing point',
+            '−10°C (14°F) — cold Arctic winds remove heat before ice can form at higher temperatures',
           ],
           correct: 1,
-          explain: `Freezing point depression is a colligative property — dissolved solutes reduce the chemical potential of liquid water, requiring a lower temperature to reach the solid-liquid equilibrium. For seawater at 34 psu (practical salinity units, approximately 34 g salt per kg seawater), the freezing point is −1.8°C. The dominant solutes are Na⁺ and Cl⁻. The relationship is approximately ΔTf ≈ −0.054 × S, where S is salinity in psu. When seawater freezes, ice crystals exclude most salt (ice crystal structure cannot accommodate salt ions), concentrating brine in channels within the ice and expelling it to surrounding water. This is why sea ice at 10 psu forms from seawater at 34 psu — freshwater and most salts separate during freezing.`,
+          explain: `Freezing point depression is a colligative property — dissolved solutes reduce the chemical potential of liquid water, requiring a lower temperature to reach the solid-liquid equilibrium. For seawater at 34 psu (practical salinity units, approximately 34 g salt per kg seawater), the freezing point is −1.8°C (29°F). The dominant solutes are Na⁺ and Cl⁻. The relationship is approximately ΔTf ≈ −0.054 × S, where S is salinity in psu. When seawater freezes, ice crystals exclude most salt (ice crystal structure cannot accommodate salt ions), concentrating brine in channels within the ice and expelling it to surrounding water. This is why sea ice at 10 psu forms from seawater at 34 psu — freshwater and most salts separate during freezing.`,
         },
         {
           q: 'What is the primary climate mechanism by which Arctic sea ice loss amplifies global warming?',
@@ -174,12 +174,12 @@ The consequences of this feedback are measurable and accelerating. September Arc
           q: 'Multi-year sea ice (ice that survives at least one summer melt season) has been declining rapidly in the Arctic. What physical properties distinguish it from first-year ice?',
           a: [
             'Multi-year ice is thinner and more fragile because it has been weakened by summer melt',
-            'Multi-year ice is thicker (3–4 m vs. 1.5–2 m), less salty, and mechanically stronger because repeated melt-freeze cycles drain brine and consolidate ice crystals',
+            'Multi-year ice is thicker (3–4 m (10–13 ft) vs. 1.5–2 m (5–7 ft)), less salty, and mechanically stronger because repeated melt-freeze cycles drain brine and consolidate ice crystals',
             'Multi-year ice has a higher albedo because its surface is darker from accumulated ocean sediment',
             'Multi-year ice and first-year ice have identical physical properties — only age differs',
           ],
           correct: 1,
-          explain: `When first-year sea ice forms, it traps brine in channels at about 10–15 psu (vs. 34 psu seawater). Over subsequent winters, additional ice growth occurs beneath the existing ice (congelation ice) and snow compacts on top. During summer, meltwater percolates through the ice, flushing out brine pockets ("brine drainage") and leaving lower-salinity ice. After multiple cycles, multi-year ice is: (1) thicker (3–5 m vs. 1.5–2 m for first-year ice); (2) less salty (~0–4 psu vs. 5–15 psu for first-year ice); (3) mechanically stronger; (4) smoother on top but rougher on the bottom from freeze-melt-refreeze processes. Multi-year ice area in the Arctic declined from ~8 million km² in 1980 to ~3 million km² in recent years — the Arctic is increasingly dominated by thin, fragile first-year ice.`,
+          explain: `When first-year sea ice forms, it traps brine in channels at about 10–15 psu (vs. 34 psu seawater). Over subsequent winters, additional ice growth occurs beneath the existing ice (congelation ice) and snow compacts on top. During summer, meltwater percolates through the ice, flushing out brine pockets ("brine drainage") and leaving lower-salinity ice. After multiple cycles, multi-year ice is: (1) thicker (3–5 m (10–16 ft) vs. 1.5–2 m (5–7 ft) for first-year ice); (2) less salty (~0–4 psu vs. 5–15 psu for first-year ice); (3) mechanically stronger; (4) smoother on top but rougher on the bottom from freeze-melt-refreeze processes. Multi-year ice area in the Arctic declined from ~8 million km² (3,088,800 sq mi) in 1980 to ~3 million km² (1,158,300 sq mi) in recent years — the Arctic is increasingly dominated by thin, fragile first-year ice.`,
         },
         {
           q: 'Brine rejection during sea ice formation contributes to global ocean circulation. What specific mechanism does this drive?',
@@ -190,7 +190,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
             'Expelled brine increases surface water density, driving mixing of the pycnocline layer',
           ],
           correct: 1,
-          explain: `As sea ice forms, rejected brine increases the density of surrounding seawater (lower temperature + higher salinity = maximum density). This dense water sinks, forming the thermohaline circulation\'s deep water masses. Around Antarctica, this process forms Antarctic Bottom Water (AABW) — the densest, deepest water mass in the ocean, with temperatures near −0.9°C and salinity ~34.7 psu — as sea ice forms over the continental shelves (especially Weddell and Ross Seas). AABW drives the deepest limb of the global conveyor belt, spreading cold, oxygenated water across the global ocean floor. In the North Atlantic, deep convection (linked to sea ice in the Labrador and Nordic Seas) forms North Atlantic Deep Water (NADW). Climate models suggest reduced sea ice formation from warming could weaken both AABW and NADW production, potentially disrupting the global ocean conveyor (AMOC).`,
+          explain: `As sea ice forms, rejected brine increases the density of surrounding seawater (lower temperature + higher salinity = maximum density). This dense water sinks, forming the thermohaline circulation\'s deep water masses. Around Antarctica, this process forms Antarctic Bottom Water (AABW) — the densest, deepest water mass in the ocean, with temperatures near −0.9°C (30°F) and salinity ~34.7 psu — as sea ice forms over the continental shelves (especially Weddell and Ross Seas). AABW drives the deepest limb of the global conveyor belt, spreading cold, oxygenated water across the global ocean floor. In the North Atlantic, deep convection (linked to sea ice in the Labrador and Nordic Seas) forms North Atlantic Deep Water (NADW). Climate models suggest reduced sea ice formation from warming could weaken both AABW and NADW production, potentially disrupting the global ocean conveyor (AMOC).`,
         },
         {
           q: 'Arctic sea ice extent in September (the annual minimum) has declined at approximately 13% per decade since 1979. If this trend continues linearly, when would September Arctic sea ice reach near-zero extent?',
@@ -201,7 +201,7 @@ The consequences of this feedback are measurable and accelerating. September Arc
             'Never — natural variability will cause ice extent to recover before it reaches zero',
           ],
           correct: 1,
-          explain: `Starting from ~7 million km² in 1979, declining at ~0.91 million km²/decade (13% of ~7 million km²), linear extrapolation reaches near-zero around 2050–2055. However, a linear fit is imperfect: the decline has been accelerating, particularly in recent decades. The record minimum was ~3.2 million km² in September 2012, and 2023 set a new record low. IPCC AR6 projects that "practically ice-free" Arctic summers (extent < 1 million km²) are likely to occur before 2050 under intermediate and high emissions scenarios (SSP2-4.5, SSP5-8.5), and possible but less certain under low emissions (SSP1-1.9). This threshold — commonly defined as <1 million km² rather than absolute zero — is considered ecologically and physically significant. Some models suggest it\'s already virtually certain under current trajectories.`,
+          explain: `Starting from ~7 million km² (2,702,700 sq mi) in 1979, declining at ~0.91 million km² (351,351 sq mi)/decade (13% of ~7 million km²), linear extrapolation reaches near-zero around 2050–2055. However, a linear fit is imperfect: the decline has been accelerating, particularly in recent decades. The record minimum was ~3.2 million km² (1,235,520 sq mi) in September 2012, and 2023 set a new record low. IPCC AR6 projects that "practically ice-free" Arctic summers (extent < 1 million km²) are likely to occur before 2050 under intermediate and high emissions scenarios (SSP2-4.5, SSP5-8.5), and possible but less certain under low emissions (SSP1-1.9). This threshold — commonly defined as <1 million km² rather than absolute zero — is considered ecologically and physically significant. Some models suggest it\'s already virtually certain under current trajectories.`,
         },
       ],
     },
