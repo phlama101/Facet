@@ -17,10 +17,11 @@ interface Props {
   nextLesson?: { id: string; title: string }
   onCompleteAndNext?: (xpEarned: number, quizScore?: { correct: number; total: number }) => void
   onCompleteAndGoTo?: (xpEarned: number, quizScore: { correct: number; total: number } | undefined, lessonId: string) => void
+  onQuizPass?: (xp: number, quizScore: { correct: number; total: number }) => void
   isGuest?: boolean
 }
 
-export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext, onCompleteAndGoTo, isGuest = false }: Props) {
+export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson, onCompleteAndNext, onCompleteAndGoTo, onQuizPass, isGuest = false }: Props) {
   const [sectionIdx, setSectionIdx] = useState(0)
   const [dir, setDir] = useState(1)
   const [quizDone, setQuizDone] = useState(false)
@@ -89,6 +90,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
     setQuizResult({ correct, total })
     setQuizDone(true)
     setQuizFailed(false)
+    onQuizPass?.(lesson.xpReward, { correct, total })
   }
 
   function handleQuizFail() {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import { notFound, useRouter } from 'next/navigation'
 import { AlertTriangle, RefreshCw, Zap } from 'lucide-react'
@@ -34,6 +34,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
   const [pendingXp, setPendingXp] = useState<number | null>(null)
   const [pendingQuizScore, setPendingQuizScore] = useState<{ correct: number; total: number } | undefined>(undefined)
   const [xpConfirm, setXpConfirm] = useState<{ base: number; bonus: number } | null>(null)
+  const savePromiseRef = useRef<Promise<boolean> | null>(null)
 
   const lesson = LESSONS[id]
   if (!lesson) notFound()
@@ -70,16 +71,25 @@ export default function LessonClient({ id, isGuest = false }: Props) {
     } catch {
       setSaveError('network')
       setSaving(false)
+      savePromiseRef.current = null
       return false
     }
   }
 
+  function handleQuizPass(xpEarned: number, quizScore: { correct: number; total: number }) {
+    if (isGuest || savePromiseRef.current) return
+    savePromiseRef.current = saveProgress(xpEarned, quizScore)
+  }
+
   async function handleComplete(xpEarned: number, quizScore?: { correct: number; total: number }) {
-    if (await saveProgress(xpEarned, quizScore)) {
+    const result = savePromiseRef.current
+      ? await savePromiseRef.current
+      : await saveProgress(xpEarned, quizScore)
+    savePromiseRef.current = null
+    if (result) {
       if (isGuest) {
         router.push('/learn')
       } else {
-        await new Promise(r => setTimeout(r, 1500))
         router.refresh()
         router.push('/dashboard')
       }
@@ -87,15 +97,21 @@ export default function LessonClient({ id, isGuest = false }: Props) {
   }
 
   async function handleCompleteAndNext(xpEarned: number, quizScore?: { correct: number; total: number }) {
-    if (await saveProgress(xpEarned, quizScore) && nextLesson) {
-      await new Promise(r => setTimeout(r, 1500))
+    const result = savePromiseRef.current
+      ? await savePromiseRef.current
+      : await saveProgress(xpEarned, quizScore)
+    savePromiseRef.current = null
+    if (result && nextLesson) {
       router.push(`/learn/${nextLesson.id}`)
     }
   }
 
   async function handleCompleteAndGoTo(xpEarned: number, quizScore: { correct: number; total: number } | undefined, lessonId: string) {
-    if (await saveProgress(xpEarned, quizScore)) {
-      await new Promise(r => setTimeout(r, 1500))
+    const result = savePromiseRef.current
+      ? await savePromiseRef.current
+      : await saveProgress(xpEarned, quizScore)
+    savePromiseRef.current = null
+    if (result) {
       router.push(`/learn/${lessonId}`)
     }
   }
@@ -170,6 +186,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
           nextLesson={nextLesson ?? undefined}
           onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
           onCompleteAndGoTo={handleCompleteAndGoTo}
+          onQuizPass={handleQuizPass}
           isGuest={isGuest}
         />
       </LessonErrorBoundary>

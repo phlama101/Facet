@@ -95,7 +95,6 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
 
   async function handleComplete(xpEarned: number) {
     if (await saveProgress(xpEarned)) {
-      await new Promise(r => setTimeout(r, 1500))
       router.refresh()
       router.push('/dashboard')
     }
@@ -103,7 +102,6 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
 
   async function handleCompleteAndNext(xpEarned: number) {
     if (await saveProgress(xpEarned) && nextLesson) {
-      await new Promise(r => setTimeout(r, 1500))
       router.push(`/learn/${nextLesson.id}`)
     }
   }
