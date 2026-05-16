@@ -90,6 +90,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       if (isGuest) {
         router.push('/learn')
       } else {
+        await new Promise(r => setTimeout(r, 800))
         router.refresh()
         router.push('/dashboard')
       }
@@ -102,6 +103,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       : await saveProgress(xpEarned, quizScore)
     savePromiseRef.current = null
     if (result && nextLesson) {
+      await new Promise(r => setTimeout(r, 800))
       router.push(`/learn/${nextLesson.id}`)
     }
   }
@@ -112,6 +114,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       : await saveProgress(xpEarned, quizScore)
     savePromiseRef.current = null
     if (result) {
+      await new Promise(r => setTimeout(r, 800))
       router.push(`/learn/${lessonId}`)
     }
   }
