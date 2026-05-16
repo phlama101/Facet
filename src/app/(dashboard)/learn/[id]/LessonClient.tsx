@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { notFound, useRouter } from 'next/navigation'
-import { AlertTriangle, RefreshCw } from 'lucide-react'
+import { AlertTriangle, RefreshCw, Zap } from 'lucide-react'
 import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
 import LessonRenderer from '@/components/lesson/LessonRenderer'
 import LessonErrorBoundary from '@/components/lesson/LessonErrorBoundary'
@@ -33,6 +33,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
   const [pendingQuizScore, setPendingQuizScore] = useState<{ correct: number; total: number } | undefined>(undefined)
+  const [xpConfirm, setXpConfirm] = useState<{ base: number; bonus: number } | null>(null)
 
   const lesson = LESSONS[id]
   if (!lesson) notFound()
@@ -60,6 +61,11 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       })
       if (res.status === 401) { setSaveError('auth'); setSaving(false); return false }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data = await res.json() as { ok: boolean; alreadyCompleted?: boolean; bonusXp?: number }
+      if (!data.alreadyCompleted) {
+        setXpConfirm({ base: xpEarned, bonus: data.bonusXp ?? 0 })
+      }
+      setSaving(false)
       return true
     } catch {
       setSaveError('network')
@@ -73,6 +79,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       if (isGuest) {
         router.push('/learn')
       } else {
+        await new Promise(r => setTimeout(r, 1500))
         router.refresh()
         router.push('/dashboard')
       }
@@ -81,12 +88,14 @@ export default function LessonClient({ id, isGuest = false }: Props) {
 
   async function handleCompleteAndNext(xpEarned: number, quizScore?: { correct: number; total: number }) {
     if (await saveProgress(xpEarned, quizScore) && nextLesson) {
+      await new Promise(r => setTimeout(r, 1500))
       router.push(`/learn/${nextLesson.id}`)
     }
   }
 
   async function handleCompleteAndGoTo(xpEarned: number, quizScore: { correct: number; total: number } | undefined, lessonId: string) {
     if (await saveProgress(xpEarned, quizScore)) {
+      await new Promise(r => setTimeout(r, 1500))
       router.push(`/learn/${lessonId}`)
     }
   }
@@ -97,6 +106,25 @@ export default function LessonClient({ id, isGuest = false }: Props) {
 
   return (
     <div className="relative">
+      {xpConfirm && (
+        <div
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-sm shadow-xl whitespace-nowrap"
+          style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.gold}50`, color: BRAND.text }}
+          role="status"
+          aria-live="polite"
+        >
+          <Zap size={14} color={BRAND.gold} fill={BRAND.gold} className="shrink-0" />
+          <span className="text-sm font-semibold" style={{ color: BRAND.gold }}>
+            +{xpConfirm.base + xpConfirm.bonus} XP saved
+          </span>
+          {xpConfirm.bonus > 0 && (
+            <span className="text-xs" style={{ color: BRAND.textDim }}>
+              · +{xpConfirm.bonus} daily bonus
+            </span>
+          )}
+        </div>
+      )}
+
       {saveError && (
         <div
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-sm shadow-xl whitespace-nowrap"
@@ -137,7 +165,7 @@ export default function LessonClient({ id, isGuest = false }: Props) {
       <LessonErrorBoundary>
         <LessonRenderer
           lesson={lesson}
-          onClose={() => isGuest ? router.push('/learn') : router.back()}
+          onClose={() => router.push(isGuest ? '/learn' : '/dashboard')}
           onComplete={handleComplete}
           nextLesson={nextLesson ?? undefined}
           onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}

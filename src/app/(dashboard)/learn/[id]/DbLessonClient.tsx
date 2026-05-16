@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { AlertTriangle, RefreshCw } from 'lucide-react'
+import { AlertTriangle, RefreshCw, Zap } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
 import { resolveIcon } from '@/lib/icon-map'
 import { LESSONS, LEARNING_PATHS } from '@/lessons/index'
@@ -62,6 +62,7 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
   const [saveError, setSaveError] = useState<'auth' | 'network' | null>(null)
   const [saving, setSaving] = useState(false)
   const [pendingXp, setPendingXp] = useState<number | null>(null)
+  const [xpConfirm, setXpConfirm] = useState<{ base: number; bonus: number } | null>(null)
 
   const lesson = hydrateLesson(dbLesson)
   const nextLesson = findNextLesson(dbLesson.id)
@@ -79,6 +80,11 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
       })
       if (res.status === 401) { setSaveError('auth'); setSaving(false); return false }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data = await res.json() as { ok: boolean; alreadyCompleted?: boolean; bonusXp?: number }
+      if (!data.alreadyCompleted) {
+        setXpConfirm({ base: xpEarned, bonus: data.bonusXp ?? 0 })
+      }
+      setSaving(false)
       return true
     } catch {
       setSaveError('network')
@@ -89,6 +95,7 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
 
   async function handleComplete(xpEarned: number) {
     if (await saveProgress(xpEarned)) {
+      await new Promise(r => setTimeout(r, 1500))
       router.refresh()
       router.push('/dashboard')
     }
@@ -96,6 +103,7 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
 
   async function handleCompleteAndNext(xpEarned: number) {
     if (await saveProgress(xpEarned) && nextLesson) {
+      await new Promise(r => setTimeout(r, 1500))
       router.push(`/learn/${nextLesson.id}`)
     }
   }
@@ -143,10 +151,29 @@ export default function DbLessonClient({ dbLesson, isGuest = false }: Props) {
         </div>
       )}
 
+      {xpConfirm && (
+        <div
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-sm shadow-xl whitespace-nowrap"
+          style={{ backgroundColor: BRAND.surface, border: `1px solid ${BRAND.gold}50`, color: BRAND.text }}
+          role="status"
+          aria-live="polite"
+        >
+          <Zap size={14} color={BRAND.gold} fill={BRAND.gold} className="shrink-0" />
+          <span className="text-sm font-semibold" style={{ color: BRAND.gold }}>
+            +{xpConfirm.base + xpConfirm.bonus} XP saved
+          </span>
+          {xpConfirm.bonus > 0 && (
+            <span className="text-xs" style={{ color: BRAND.textDim }}>
+              · +{xpConfirm.bonus} daily bonus
+            </span>
+          )}
+        </div>
+      )}
+
       <LessonViewer
         lesson={lesson}
         alreadyCompleted={false}
-        onClose={() => router.back()}
+        onClose={() => router.push(isGuest ? '/learn' : '/dashboard')}
         onComplete={handleComplete}
         nextLesson={nextLesson ?? undefined}
         onCompleteAndNext={nextLesson ? handleCompleteAndNext : undefined}
