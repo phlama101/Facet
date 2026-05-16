@@ -151,7 +151,12 @@ export async function POST(req: NextRequest) {
     }) as { data: { new_xp: number; new_level: number; new_streak: number }[] | null; error: unknown }
 
     if (awardError || !awardRows?.length) {
-      throw new Error('award_xp failed')
+      const detail = awardError instanceof Error
+        ? awardError.message
+        : typeof awardError === 'object' && awardError !== null
+          ? JSON.stringify(awardError)
+          : String(awardError ?? 'no rows returned')
+      throw new Error(`award_xp failed: ${detail}`)
     }
 
     const { new_xp: finalXp, new_level: finalLevel, new_streak: newStreak } = awardRows[0]
