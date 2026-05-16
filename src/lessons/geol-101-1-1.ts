@@ -49,12 +49,6 @@ This lesson introduces the four layers of Earth's interior, the seismic evidence
           def: "A wave of mechanical energy released by an earthquake that travels through Earth's interior. The two main types — P-waves and S-waves — behave differently in solid versus liquid material, which is what makes them so informative about the layers they pass through.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'earth-cross-section',
-        caption: "Earth's four-layer interior drawn to approximate scale. The crust ring is exaggerated ~8× for visibility — in reality it is thinner than the shell of an egg relative to the whole.",
-        credit: 'USGS / OpenStax Physical Geology',
-      },
     },
     {
       type: 'callout' as const,
@@ -199,48 +193,10 @@ In the next lesson we will zoom into the crust and discover why a thick continen
 
 • **Density fingerprints confirm the core's composition**: Earth's average density (~5.5 g/cm³) is nearly twice that of surface rocks (~2.7 g/cm³), meaning something very dense must lie at the center. Iron-nickel meteorites — fragments from shattered early planetary bodies — match the expected composition exactly, providing a chemical confirmation that is entirely independent of seismology.`,
       interaction: {
-        type: 'annotated-image' as const,
-        src: '/visuals/geo-interior.svg',
-        alt: 'Cross-section of Earth\'s interior showing the crust, mantle, outer core, and inner core with depth labels',
-        aspectRatio: '16/9',
-        credit: 'Facet Earth Sciences',
-        annotations: [
-          {
-            id: 'crust',
-            x: 73,
-            y: 33,
-            label: 'Crust',
-            description: 'The outermost solid shell of Earth, ranging from ~5 km (3.1 mi) thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km (43 mi) beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
-          },
-          {
-            id: 'mantle',
-            x: 17,
-            y: 44,
-            label: 'Mantle',
-            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km (1802 mi) depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C (1112°F) at the top to ~4,000°C (7232°F) at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
-          },
-          {
-            id: 'lower-mantle',
-            x: 50,
-            y: 56,
-            label: 'Lower Mantle',
-            description: 'The deeper portion of the mantle (660–2,900 km (410–1802 mi)), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
-          },
-          {
-            id: 'outer-core',
-            x: 50,
-            y: 78,
-            label: 'Outer Core',
-            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km (3169 mi) depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
-          },
-          {
-            id: 'inner-core',
-            x: 50,
-            y: 89,
-            label: 'Inner Core',
-            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
-          },
-        ],
+        type: 'scientific-diagram' as const,
+        id: 'earth-cross-section',
+        caption: "Earth's four-layer interior drawn to approximate scale. The crust ring is exaggerated ~8× for visibility — in reality it is thinner than the shell of an egg relative to the whole.",
+        credit: 'USGS / OpenStax Physical Geology',
       },
     },
     {

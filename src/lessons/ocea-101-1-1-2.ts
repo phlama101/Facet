@@ -51,12 +51,6 @@ The ridge system was first identified as a continuous global structure by Marie 
           def: 'A type of fault that offsets segments of a mid-ocean ridge laterally. Transform faults connect ridge segments and absorb the differential spreading rates between them. They are a third type of plate boundary (beside divergent and convergent) and are sites of shallow earthquakes. The Romanche Transform in the equatorial Atlantic is one of the largest.',
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'ocean-depth-zones',
-        caption: 'Ocean depth zones from the sunlit epipelagic to the hadal zone of ocean trenches. Depth axis is log-compressed for readability; light penetration fades below ~200 m (656 ft).',
-        credit: 'NOAA Ocean Exploration',
-      },
     },
     {
       type: 'callout' as const,
@@ -154,6 +148,12 @@ The ridge system was first identified as a continuous global structure by Marie 
 • **Hydrothermal vents are powered by seawater circulating through hot crust**: Cold seawater percolates down through cracks, heats to over 400°C (752°F) near the magma body, strips metals from the basalt, and erupts as mineral-laden black smokers. This circulation processes the entire volume of the world's oceans every 8–10 million years and significantly influences ocean chemistry.
 
 • **Vent ecosystems run on chemistry, not sunlight**: Chemosynthetic bacteria oxidise hydrogen sulphide from vent fluid using dissolved oxygen, producing organic carbon that supports tubeworms, clams, shrimp, and fish — entirely independent of photosynthesis. This was the first ecosystem discovered on Earth that does not ultimately depend on sunlight.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'ocean-depth-zones',
+        caption: 'Ocean depth zones from the sunlit epipelagic to the hadal zone of ocean trenches. Depth axis is log-compressed for readability; light penetration fades below ~200 m (656 ft).',
+        credit: 'NOAA Ocean Exploration',
+      },
     },
     {
       type: 'quiz',

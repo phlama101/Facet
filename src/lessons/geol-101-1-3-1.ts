@@ -49,12 +49,6 @@ Module 1.2 gave you the mineral vocabulary for reading rocks — the 30 or so ro
           def: "Rock formed when pre-existing rock (of any family) is subjected to elevated temperature and/or pressure — conditions intense enough to alter its mineral assemblage or texture — without fully melting it. The original rock is transformed in the solid state.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'rock-cycle',
-        caption: "The rock cycle connects all three rock families through geological processes. There is no single direction — any rock family can transform into any other, and the same material may cycle repeatedly over billions of years.",
-        credit: 'USGS / OpenStax Physical Geology',
-      },
     },
     {
       type: 'concept',
@@ -72,6 +66,12 @@ Module 1.2 gave you the mineral vocabulary for reading rocks — the 30 or so ro
 **Two energy sources drive the whole system.** The rock cycle runs on two entirely separate energy budgets. The **igneous and metamorphic side** is powered by **Earth's internal heat** — the residual heat from planetary formation (accretion and differentiation) and the ongoing heat produced by radioactive decay of uranium, thorium, and potassium in the mantle and crust. This heat drives mantle convection, which in turn drives plate tectonics, which creates the conditions for melting (at spreading centres and subduction zones) and deep burial (at convergent margins). The **sedimentary side** is powered by **solar energy** — the sun drives atmospheric circulation and the water cycle, which in turn drive the weathering, erosion, and deposition that produce sedimentary rocks. Without solar energy, the hydrological cycle would stop, rivers and wind would cease, and sedimentation would effectively halt. Without internal heat, mantle convection would stop, plate tectonics would cease, and the igneous and metamorphic sides of the cycle would wind down. Earth's rock cycle is uniquely vigorous among the inner planets precisely because it is still running on both energy sources simultaneously.
 
 **The rock cycle as a geologic clock.** Because each rock family forms under specific conditions of temperature, pressure, and surface environment, a rock's family membership — and the details of its texture, mineral assemblage, and structure — is a record of the conditions it has experienced. Reading that record is what geologists do in the field and in the lab. Modules 1.3 through 1.5 will develop the tools for reading each rock type. Module 1.4 will show how plate tectonics provides the tectonic engine that controls where in the cycle rocks currently reside.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'rock-cycle',
+        caption: "The rock cycle connects all three rock families through geological processes. There is no single direction — any rock family can transform into any other, and the same material may cycle repeatedly over billions of years.",
+        credit: 'USGS / OpenStax Physical Geology',
+      },
       cards: [
         {
           name: 'Igneous Rocks',

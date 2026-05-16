@@ -49,12 +49,6 @@ Module 1.5 applies the tools of Modules 1.1–1.4 to the visible landscape. This
           def: "A broad, flat landform built by repeated eruptions of very fluid basaltic lava from fissures rather than a central vent. Individual flows are thin but extensive; successive flows stack to great thickness over large areas. Examples: Columbia River Plateau (210,000 km² (81,081 sq mi)), Deccan Plateau (India), Iceland's interior highlands.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'volcanic-cone-types',
-        caption: 'Three volcanic morphologies compared: shield volcano (gentle, basaltic effusive), stratovolcano (steep, alternating lava and ash), and cinder cone (small, scoriaceous, monogenetic). Profiles are schematic, not to scale with each other.',
-        credit: 'USGS / Schmincke (2004)',
-      },
     },
     {
       type: 'concept',
@@ -72,6 +66,12 @@ Module 1.5 applies the tools of Modules 1.1–1.4 to the visible landscape. This
 **Lava plateaus — fissure flooding.** Rather than erupting from a central vent, some volcanic systems erupt from long fissures — linear cracks in the crust that can extend tens to hundreds of kilometres. When very fluid basalt erupts from such fissures in large volumes, it does not pile up into a cone but instead floods the surrounding landscape, filling valleys and low areas and building a broad, flat plateau of stacked lava flows. The **Columbia River Basalt Group** of the Pacific Northwest erupted between 17 and 6 million years ago from a system of fissures in what is now Oregon, Washington, and Idaho, covering 210,000 km² (81,081 sq mi) with basalt up to 3.5 km (2.2 mi) thick — the product of the Yellowstone plume head arriving beneath North America. Individual flows travelled up to 600 km (373 mi) from the vent system. Iceland's interior is an active modern example: fissure eruptions periodically flood sections of the interior with basalt, building the flat lava plains visible from any flight over the island.
 
 **Reading compound volcanic landscapes.** Real volcanic regions rarely contain just one landform type. The Cascade Range contains stratovolcanoes (Mt. Rainier, Mt. Hood, Mt. Shasta), lava fields, cinder cone clusters, and the caldera of Crater Lake — all reflecting different phases and locations of subduction-zone magmatism. The Snake River Plain is a lava plateau (basalt fissure eruptions) dotted with cinder cones, produced by the Yellowstone plume as the North American Plate moved over it. Iceland combines shield volcanoes (Skjaldbreiður), fissure systems (Laki, which erupted in 1783 and killed a quarter of Iceland's population through famine and fluorine poisoning), and the emergent mid-ocean ridge. Reading a volcanic landscape means identifying each feature type, inferring the magma composition that built it, and reconstructing the tectonic history that placed that magma source there.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'volcanic-cone-types',
+        caption: 'Three volcanic morphologies compared: shield volcano (gentle, basaltic effusive), stratovolcano (steep, alternating lava and ash), and cinder cone (small, scoriaceous, monogenetic). Profiles are schematic, not to scale with each other.',
+        credit: 'USGS / Schmincke (2004)',
+      },
       cards: [
         {
           name: 'Effusive Landforms',

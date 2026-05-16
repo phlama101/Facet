@@ -27,50 +27,6 @@ const comparativePlanetology: Lesson = {
 Inside the snow line, only refractory materials (silicates, metals) could condense as solid particles, limiting the total amount of solid building material available. Terrestrial planet embryos therefore grew to modest sizes — insufficient to gravitationally capture large quantities of hydrogen and helium from the nebular gas. Beyond the snow line, the addition of water ice (and later ammonia and methane ices at greater distances) dramatically increased the surface density of solid material, allowing planetary cores to grow rapidly to ~10–20 Earth masses. At this threshold — the runaway accretion threshold — the core became massive enough to gravitationally capture and retain the abundant H/He disc gas, growing to hundreds of Earth masses in perhaps a few million years via **core accretion**. This process had to complete before the protoplanetary disc dissipated (typically within 1–10 million years of stellar formation), placing a tight time constraint on giant planet formation.
 
 Comparative planetology — the systematic comparison of planetary bodies to understand their similarities and differences — has been transformed in recent decades by two parallel revolutions. First, spacecraft exploration has provided close-up data from every planet and dozens of moons in the Solar System. Second, the discovery of more than 5,700 exoplanets around other stars has revealed that many aspects of our Solar System that were once considered generic are in fact unusual: the absence of planets between Earth and Neptune in size (no super-Earths or mini-Neptunes in our Solar System), the relatively ordered orbital architecture, and Jupiter's current position are all features that set our system apart from the majority of known planetary systems. Understanding *why* our Solar System is the way it is — and what that means for habitability — is one of the central questions of 21st-century planetary science.`,
-      interaction: {
-        type: 'annotated-image' as const,
-        src: '/visuals/ast.svg',
-        alt: 'Schematic diagram of the solar system showing the Sun, inner planets, asteroid belt, Jupiter, Saturn, and Uranus',
-        aspectRatio: '16/9',
-        credit: 'Facet Earth Sciences',
-        annotations: [
-          {
-            id: 'sun',
-            x: 8,
-            y: 50,
-            label: 'The Sun',
-            description: 'The Sun contains 99.86% of the solar system\'s total mass and provides virtually all the energy that drives planetary climates, geology, and biology. Its core temperature reaches 15 million°C, where nuclear fusion converts hydrogen into helium at ~620 million tonnes per second, releasing the energy that has sustained life on Earth for 4.5 billion years.',
-          },
-          {
-            id: 'earth',
-            x: 44,
-            y: 50,
-            label: 'Earth',
-            description: 'The third planet from the Sun, at 1 AU (149.6 million km), orbiting in the habitable zone where liquid water can exist on the surface. Earth is the only known world with abundant liquid water, a breathable oxygen atmosphere, plate tectonics, and confirmed life. Its large Moon stabilises Earth\'s axial tilt, helping maintain relatively stable climate conditions over geological timescales.',
-          },
-          {
-            id: 'asteroid-belt',
-            x: 52,
-            y: 40,
-            label: 'Asteroid Belt',
-            description: 'A region of rocky and metallic debris between Mars and Jupiter, containing millions of asteroids ranging from dust particles to the 940-km dwarf planet Ceres. Jupiter\'s gravity prevented this material from accreting into a planet. Carbonaceous chondrite meteorites from the asteroid belt contain amino acids and water, providing clues to the early solar system\'s organic chemistry.',
-          },
-          {
-            id: 'jupiter',
-            x: 67,
-            y: 50,
-            label: 'Jupiter',
-            description: 'The largest planet (318 Earth masses), a gas giant of hydrogen and helium with no solid surface. Jupiter\'s powerful gravity acts as the solar system\'s gravitational shield, deflecting or capturing many comets and asteroids. Its moon Europa harbours a subsurface ocean beneath an ice shell and is considered a prime candidate for extraterrestrial life in our solar system.',
-          },
-          {
-            id: 'saturn',
-            x: 82,
-            y: 50,
-            label: 'Saturn & Rings',
-            description: 'The sixth planet, famous for its spectacular ring system of ice and rock particles. Saturn is the least dense planet (density 0.69 g/cm³ — less than water). Its moon Titan has a thick nitrogen atmosphere and hydrocarbon lakes, while Enceladus erupts water ice from subsurface oceans — making both moons targets in the search for habitable environments.',
-          },
-        ],
-      },
       keyTerms: [
         {
           term: 'Terrestrial planet',
@@ -135,6 +91,20 @@ The ice giants Uranus and Neptune (14–17 Earth masses) occupy a distinct categ
           examples: `Kepler-11 system: 6 planets inside Mercury\'s orbit — near-perfectly flat coplanar system with multiple super-Earths; shows how common compact architectures are · Fulton & Petigura (2018): CKS sample of 1,300 Kepler planets confirmed bimodal radius distribution with gap at 1.75 R⊕ · Grand Tack (Walsh et al. 2011 Nature): Jupiter migration to 1.5 AU sweeps inner Solar System; explains S-type vs C-type asteroid distribution across belt · TRAPPIST-1 system: 7 Earth-sized planets around M-dwarf; 3 in habitable zone; JWST now characterising atmospheres`,
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: '/visuals/ast.svg',
+        alt: 'Schematic diagram of the solar system showing the Sun, inner planets, asteroid belt, Jupiter, Saturn, and Uranus',
+        aspectRatio: '16/9',
+        credit: 'Facet Earth Sciences',
+        annotations: [
+          { id: 'sun', x: 8, y: 50, label: 'The Sun', description: 'The Sun contains 99.86% of the solar system\'s total mass and provides virtually all the energy that drives planetary climates, geology, and biology. Its core temperature reaches 15 million°C, where nuclear fusion converts hydrogen into helium at ~620 million tonnes per second, releasing the energy that has sustained life on Earth for 4.5 billion years.' },
+          { id: 'earth', x: 44, y: 50, label: 'Earth', description: 'The third planet from the Sun, at 1 AU (149.6 million km), orbiting in the habitable zone where liquid water can exist on the surface. Earth is the only known world with abundant liquid water, a breathable oxygen atmosphere, plate tectonics, and confirmed life. Its large Moon stabilises Earth\'s axial tilt, helping maintain relatively stable climate conditions over geological timescales.' },
+          { id: 'asteroid-belt', x: 52, y: 40, label: 'Asteroid Belt', description: 'A region of rocky and metallic debris between Mars and Jupiter, containing millions of asteroids ranging from dust particles to the 940-km dwarf planet Ceres. Jupiter\'s gravity prevented this material from accreting into a planet. Carbonaceous chondrite meteorites from the asteroid belt contain amino acids and water, providing clues to the early solar system\'s organic chemistry.' },
+          { id: 'jupiter', x: 67, y: 50, label: 'Jupiter', description: 'The largest planet (318 Earth masses), a gas giant of hydrogen and helium with no solid surface. Jupiter\'s powerful gravity acts as the solar system\'s gravitational shield, deflecting or capturing many comets and asteroids. Its moon Europa harbours a subsurface ocean beneath an ice shell and is considered a prime candidate for extraterrestrial life in our solar system.' },
+          { id: 'saturn', x: 82, y: 50, label: 'Saturn & Rings', description: 'The sixth planet, famous for its spectacular ring system of ice and rock particles. Saturn is the least dense planet (density 0.69 g/cm³ — less than water). Its moon Titan has a thick nitrogen atmosphere and hydrocarbon lakes, while Enceladus erupts water ice from subsurface oceans — making both moons targets in the search for habitable environments.' },
+        ],
+      },
     },
     {
       type: 'quiz',

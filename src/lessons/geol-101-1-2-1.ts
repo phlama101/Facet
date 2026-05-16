@@ -47,12 +47,6 @@ This lesson establishes those five criteria precisely, explores the edge cases t
           def: "A naturally occurring, inorganic solid that resembles a mineral but lacks a fully ordered crystalline structure — its atoms are arranged randomly rather than in a repeating lattice. Obsidian (volcanic glass) and opal are the most common examples. Mineraloids pass four of the five criteria but fail the crystalline test.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'mohs-hardness-scale',
-        caption: "Mohs scale of mineral hardness (1–10) with reference objects. The scale is ordinal — each step doesn't represent an equal increase in hardness.",
-        credit: 'Mohs (1812) · USGS',
-      },
     },
     {
       type: 'callout' as const,
@@ -171,6 +165,17 @@ Each of these will be explored in full detail in Lesson 1.2.3. For now, knowing 
             description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
           },
         ],
+      },
+    },
+    {
+      type: 'concept',
+      title: 'Measuring mineral hardness',
+      body: 'The Mohs scale ranks minerals from 1 (talc) to 10 (diamond) by resistance to scratching, providing a simple field test for identification.',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'mohs-hardness-scale',
+        caption: "Mohs scale of mineral hardness (1–10) with reference objects. The scale is ordinal — each step doesn't represent an equal increase in hardness.",
+        credit: 'Mohs (1812) · USGS',
       },
     },
     {

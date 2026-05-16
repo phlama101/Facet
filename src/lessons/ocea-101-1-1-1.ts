@@ -51,12 +51,6 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
           def: 'A long, narrow, steep-sided depression in the ocean floor formed where one tectonic plate subducts beneath another. The deepest places on Earth. The Mariana Trench in the western Pacific reaches 11,034 m (36,203 ft) below sea level at Challenger Deep.',
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'ocean-floor-topography',
-        caption: 'Ocean floor cross-section from continental shelf to mid-ocean ridge and trench. Vertical scale exaggerated to show bathymetric structure; actual slopes are gentler.',
-        credit: 'NOAA / Heezen & Tharp (1977)',
-      },
     },
     {
       type: 'callout' as const,
@@ -156,6 +150,12 @@ Today, multibeam sonar and satellite-derived gravity measurements have mapped th
 • **Abyssal plains are the flattest terrain on Earth — but only because of sediment burial**: The underlying basaltic crust is rough; millennia of slowly settling particles (clay, shell fragments, volcanic ash) fill every depression, producing gradients less than 1 in 10,000 over thousands of kilometres.
 
 • **All ocean floor younger than ~200 Ma — because it is continuously recycled**: Oceanic crust is denser than continental crust, so it inevitably subducts at convergent boundaries. The mid-ocean ridge system (65,000 km (40,391 mi) long) continuously creates new crust; trenches destroy old crust. No ocean floor survives longer than about 200 million years.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'ocean-floor-topography',
+        caption: 'Ocean floor cross-section from continental shelf to mid-ocean ridge and trench. Vertical scale exaggerated to show bathymetric structure; actual slopes are gentler.',
+        credit: 'NOAA / Heezen & Tharp (1977)',
+      },
     },
     {
       type: 'visualization',

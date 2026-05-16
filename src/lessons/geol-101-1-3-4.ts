@@ -53,12 +53,6 @@ This lesson introduces the two settings where metamorphism occurs, the key textu
           def: "Metamorphism driven by both elevated temperature and directed pressure across a large region, typically in the root zone of a mountain belt where rocks are deeply buried during continental collision. Produces foliated rocks (slate, schist, gneiss) over areas of thousands of square kilometres.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'metamorphic-grade',
-        caption: 'Pressure–temperature diagram showing metamorphic facies and the Barrovian index mineral sequence (chlorite → biotite → garnet → staurolite → kyanite → sillimanite) at ~3 kbar.',
-        credit: 'After Barrow (1912) · Winter (2001)',
-      },
     },
     {
       type: 'concept',
@@ -74,6 +68,12 @@ This lesson introduces the two settings where metamorphism occurs, the key textu
 **Non-foliated metamorphic rocks.** Not all metamorphic rocks develop foliation. When the protolith lacks flat or elongated minerals, there is nothing to align under pressure, and the resulting rock is **non-foliated** even under regional conditions. **Marble** forms from limestone or dolostone: the calcite or dolomite grains recrystallise into a mosaic of interlocking equidimensional crystals — smooth, sparkling, with no preferred orientation. The original fossil and bedding structures of the limestone are usually destroyed. Marble ranges from pure white (Carrara) to coloured by impurities (green from chlorite, pink from iron oxides). **Quartzite** forms from quartz-rich sandstone: the quartz grains fuse together under heat and pressure into an extremely hard, dense rock that breaks through the grains rather than around them (unlike the original sandstone, which breaks around grains). Quartzite is one of the hardest common rocks and forms prominent ridges in eroded mountain belts.
 
 **Index minerals — grade markers.** Geologists use **index minerals** — minerals that first appear at specific temperature-pressure conditions — to map metamorphic zones in the field. The classic sequence from low to high grade in metapelites (metamorphosed shales) is: **chlorite** → **biotite** → **garnet** → **staurolite** → **kyanite** → **sillimanite**. Each mineral marks a specific P-T threshold. Drawing lines through field localities where each index mineral first appears produces **isograds** — metamorphic contours that map the intensity of past metamorphism across a region, revealing the ancient thermal structure of mountain belts long since eroded to their roots.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'metamorphic-grade',
+        caption: 'Pressure–temperature diagram showing metamorphic facies and the Barrovian index mineral sequence (chlorite → biotite → garnet → staurolite → kyanite → sillimanite) at ~3 kbar.',
+        credit: 'After Barrow (1912) · Winter (2001)',
+      },
       cards: [
         {
           name: 'Foliated Rocks',

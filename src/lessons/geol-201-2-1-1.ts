@@ -53,12 +53,6 @@ This lesson traces the history of deep-time thinking from Hutton's discovery to 
           def: "A buried erosion surface representing a gap in the rock record — a period during which deposition ceased, erosion removed material, and then deposition resumed. The gap may represent thousands to hundreds of millions of years. Angular unconformities (as at Siccar Point) involve tilting of the lower sequence before erosion; disconformities involve erosion without tilting; nonconformities occur between sedimentary and crystalline igneous or metamorphic rocks.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'geologic-timescale',
-        caption: 'Geologic timescale using split-scale representation: Phanerozoic (541 Ma–present) expanded, pre-Phanerozoic (4 Ga) compressed. ICS 2023 eon and era boundaries with selected mass extinction and evolutionary events.',
-        credit: 'ICS International Chronostratigraphic Chart v2023/09',
-      },
     },
     {
       type: 'concept',
@@ -93,6 +87,12 @@ Hutton published Theory of the Earth in 1788, but it was dense and poorly receiv
           examples: "Cuvier: rhinoceros and elephant fossils in Siberia → sudden freezing event · Hutton: granite crosscutting strata → time for intrusion, cooling, exhumation · Alvarez (1980): iridium anomaly → impact catastrophe confirmed",
         },
       ],
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'geologic-timescale',
+        caption: 'Geologic timescale using split-scale representation: Phanerozoic (541 Ma–present) expanded, pre-Phanerozoic (4 Ga) compressed. ICS 2023 eon and era boundaries with selected mass extinction and evolutionary events.',
+        credit: 'ICS International Chronostratigraphic Chart v2023/09',
+      },
     },
     {
       type: 'concept',

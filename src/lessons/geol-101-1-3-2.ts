@@ -49,12 +49,6 @@ Cooling rate is the master variable of igneous petrology, and **texture** — th
           def: "The two ends of the igneous compositional spectrum. Felsic rocks (feldspar + silica) are silica-rich (>65% SiO₂), light-coloured, and less dense — granite is the type example. Mafic rocks (magnesium + ferric/iron) are silica-poor (~45–52% SiO₂), dark-coloured, and denser — basalt is the type example.",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'igneous-rock-textures',
-        caption: 'Coarse-grained intrusive (granite) vs fine-grained extrusive (basalt): crystal size is determined entirely by cooling rate. The same magma composition produces granite underground or rhyolite at the surface.',
-        credit: 'OpenStax Physical Geology',
-      },
     },
     {
       type: 'concept',
@@ -68,6 +62,12 @@ Cooling rate is the master variable of igneous petrology, and **texture** — th
 **Special textures.** Beyond the basic coarse/fine/glassy spectrum, several distinctive textures deserve recognition. A **porphyritic** rock contains large crystals — called phenocrysts — embedded in a finer-grained groundmass. This records two-stage cooling: the phenocrysts grew slowly at depth, then the partially crystallised magma erupted and the remaining melt cooled quickly, producing the fine groundmass. The phenocrysts are often the only visible crystals, making porphyritic rocks easy to recognise in the field. A **vesicular** texture shows small holes — vesicles — that record gas bubbles that were dissolved in the lava and exsolved as the lava approached the surface (just as CO₂ bubbles out of a carbonated drink when the pressure drops). **Pumice** is the extreme case: so many vesicles that the rock is mostly air, giving it a density low enough to float on water. **Obsidian** is volcanic glass — essentially a supercooled liquid that solidified faster than crystals could nucleate — producing the smoothest, sharpest natural cutting edge known, used by many cultures for tools and weapons.
 
 **Where igneous rocks form.** Igneous rocks are not randomly distributed across Earth's surface — they occur at predictable tectonic settings. Basalt erupts at **mid-ocean spreading centres**, where plates pull apart and decompression melting of the mantle produces large volumes of mafic magma. Basalt also erupts at **hotspots** — mantle plumes rising through the plate — creating chains of volcanic islands (Hawaii, Iceland). Granite and andesite dominate at **subduction-zone volcanic arcs**, where the descending oceanic plate releases water that lowers the melting point of the overlying mantle wedge, producing magmas that evolve toward more silica-rich compositions as they rise through the crust. These settings will be mapped in detail in Module 1.4; what matters here is that rock type and tectonic setting are linked: find basalt on the ocean floor or at a hotspot island; find granite in a continental batholith or mountain core.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'igneous-rock-textures',
+        caption: 'Coarse-grained intrusive (granite) vs fine-grained extrusive (basalt): crystal size is determined entirely by cooling rate. The same magma composition produces granite underground or rhyolite at the surface.',
+        credit: 'OpenStax Physical Geology',
+      },
       cards: [
         {
           name: 'Felsic Rocks',

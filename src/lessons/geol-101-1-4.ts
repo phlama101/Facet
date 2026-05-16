@@ -90,6 +90,50 @@ The result is a pattern of parallel bands of rock with alternating magnetic pola
 Magnetic striping is one of the most elegant examples in science of how a single observable pattern simultaneously proves two different things — magnetic reversals happening deep in the core, and new oceanic crust being continuously created at mid-ocean ridges. It ties the core, the mantle, and the crust into one coherent story.
 
 **Chapter 1 — complete.** This lesson closes the first chapter of Earth Foundations. We have moved systematically from the outermost layer to the innermost: the crust (Lessons 1 and 2), the mantle and its convection engine (Lesson 3), and now the core and its magnetic dynamo (Lesson 4). Every major layer has been introduced with its composition, physical state, and the evidence that reveals it — and each lesson has resolved the open questions left by the one before it. Chapter 2 zooms back to the surface to ask a different kind of question: what are Earth's rocks actually built from at the scale of individual minerals?`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: '/visuals/geo-interior.svg',
+        alt: 'Cross-section of Earth\'s interior showing the crust, mantle, outer core, and inner core with depth labels',
+        aspectRatio: '16/9',
+        credit: 'Facet Earth Sciences',
+        annotations: [
+          {
+            id: 'crust',
+            x: 73,
+            y: 33,
+            label: 'Crust',
+            description: 'The outermost solid shell of Earth, ranging from ~5 km (3.1 mi) thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km (43 mi) beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
+          },
+          {
+            id: 'mantle',
+            x: 17,
+            y: 44,
+            label: 'Mantle',
+            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km (1802 mi) depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C (1112°F) at the top to ~4,000°C (7232°F) at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
+          },
+          {
+            id: 'lower-mantle',
+            x: 50,
+            y: 56,
+            label: 'Lower Mantle',
+            description: 'The deeper portion of the mantle (660–2,900 km (410–1802 mi)), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
+          },
+          {
+            id: 'outer-core',
+            x: 50,
+            y: 78,
+            label: 'Outer Core',
+            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km (3169 mi) depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
+          },
+          {
+            id: 'inner-core',
+            x: 50,
+            y: 89,
+            label: 'Inner Core',
+            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'The Geodynamo',

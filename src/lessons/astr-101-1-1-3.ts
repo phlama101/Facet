@@ -27,50 +27,6 @@ const theSunStructureAndSolarWind: Lesson = {
 The Sun is also a dynamic, magnetically active star whose explosive events shape the space environment all the way out to the outer edges of the heliosphere — the vast bubble of solar influence ~120 astronomical units (AU) in diameter. The continuous outflow of charged particles known as the **solar wind** fills this bubble, deflects cometary tails, shapes planetary magnetospheres, and drives space weather effects on Earth. Coronal mass ejections — billion-tonne plasma clouds hurled at thousands of kilometres per second — can disrupt power grids, satellite communications, and navigation systems, illustrating that the Sun is not merely a passive heat source but an active participant in the near-Earth environment.
 
 Understanding solar structure and the solar wind is foundational for planetary science. The very compositions and present-day conditions of the planets were shaped during the Sun's formation and early activity: the early intense solar wind may have stripped away the primordial atmospheres of the inner planets; the Sun's gradual brightening over 4.6 billion years has influenced atmospheric evolution; and future solar evolution — including the Sun's eventual expansion into a red giant — will determine the ultimate fate of the Solar System's inner worlds.`,
-      interaction: {
-        type: 'annotated-image' as const,
-        src: '/visuals/ast.svg',
-        alt: 'Schematic diagram of the solar system showing the Sun, inner planets, asteroid belt, Jupiter, Saturn, and Uranus',
-        aspectRatio: '16/9',
-        credit: 'Facet Earth Sciences',
-        annotations: [
-          {
-            id: 'sun',
-            x: 8,
-            y: 50,
-            label: 'The Sun',
-            description: 'The Sun contains 99.86% of the solar system\'s total mass and provides virtually all the energy that drives planetary climates, geology, and biology. Its core temperature reaches 15 million°C, where nuclear fusion converts hydrogen into helium at ~620 million tonnes per second, releasing the energy that has sustained life on Earth for 4.5 billion years.',
-          },
-          {
-            id: 'earth',
-            x: 44,
-            y: 50,
-            label: 'Earth',
-            description: 'The third planet from the Sun, at 1 AU (149.6 million km), orbiting in the habitable zone where liquid water can exist on the surface. Earth is the only known world with abundant liquid water, a breathable oxygen atmosphere, plate tectonics, and confirmed life. Its large Moon stabilises Earth\'s axial tilt, helping maintain relatively stable climate conditions over geological timescales.',
-          },
-          {
-            id: 'asteroid-belt',
-            x: 52,
-            y: 40,
-            label: 'Asteroid Belt',
-            description: 'A region of rocky and metallic debris between Mars and Jupiter, containing millions of asteroids ranging from dust particles to the 940-km dwarf planet Ceres. Jupiter\'s gravity prevented this material from accreting into a planet. Carbonaceous chondrite meteorites from the asteroid belt contain amino acids and water, providing clues to the early solar system\'s organic chemistry.',
-          },
-          {
-            id: 'jupiter',
-            x: 67,
-            y: 50,
-            label: 'Jupiter',
-            description: 'The largest planet (318 Earth masses), a gas giant of hydrogen and helium with no solid surface. Jupiter\'s powerful gravity acts as the solar system\'s gravitational shield, deflecting or capturing many comets and asteroids. Its moon Europa harbours a subsurface ocean beneath an ice shell and is considered a prime candidate for extraterrestrial life in our solar system.',
-          },
-          {
-            id: 'saturn',
-            x: 82,
-            y: 50,
-            label: 'Saturn & Rings',
-            description: 'The sixth planet, famous for its spectacular ring system of ice and rock particles. Saturn is the least dense planet (density 0.69 g/cm³ — less than water). Its moon Titan has a thick nitrogen atmosphere and hydrocarbon lakes, while Enceladus erupts water ice from subsurface oceans — making both moons targets in the search for habitable environments.',
-          },
-        ],
-      },
       keyTerms: [
         {
           term: 'Proton-proton chain',
@@ -135,6 +91,20 @@ At the base of the convective zone sits the **tachocline**, a thin shear layer w
           examples: 'Carrington Event (Sept 1859): strongest recorded geomagnetic storm; auroras visible at Cuba; telegraph operators received shocks; some operated with batteries disconnected (GICs powered lines) · Quebec blackout (March 1989): Hydro-Québec grid collapsed in 90 seconds; 6 million people without power up to 9 hours; $2 billion in damages · Halloween storms (Oct 2003): X17 and X28 flares; 11 of 47 operational satellites damaged; aircraft rerouted from polar routes · Voyager 1 heliosphere measurements: detected foamy magnetic bubble structure in heliosheath before crossing heliopause',
         },
       ],
+      interaction: {
+        type: 'annotated-image' as const,
+        src: '/visuals/ast.svg',
+        alt: 'Schematic diagram of the solar system showing the Sun, inner planets, asteroid belt, Jupiter, Saturn, and Uranus',
+        aspectRatio: '16/9',
+        credit: 'Facet Earth Sciences',
+        annotations: [
+          { id: 'sun', x: 8, y: 50, label: 'The Sun', description: 'The Sun contains 99.86% of the solar system\'s total mass and provides virtually all the energy that drives planetary climates, geology, and biology. Its core temperature reaches 15 million°C, where nuclear fusion converts hydrogen into helium at ~620 million tonnes per second, releasing the energy that has sustained life on Earth for 4.5 billion years.' },
+          { id: 'earth', x: 44, y: 50, label: 'Earth', description: 'The third planet from the Sun, at 1 AU (149.6 million km), orbiting in the habitable zone where liquid water can exist on the surface. Earth is the only known world with abundant liquid water, a breathable oxygen atmosphere, plate tectonics, and confirmed life. Its large Moon stabilises Earth\'s axial tilt, helping maintain relatively stable climate conditions over geological timescales.' },
+          { id: 'asteroid-belt', x: 52, y: 40, label: 'Asteroid Belt', description: 'A region of rocky and metallic debris between Mars and Jupiter, containing millions of asteroids ranging from dust particles to the 940-km dwarf planet Ceres. Jupiter\'s gravity prevented this material from accreting into a planet. Carbonaceous chondrite meteorites from the asteroid belt contain amino acids and water, providing clues to the early solar system\'s organic chemistry.' },
+          { id: 'jupiter', x: 67, y: 50, label: 'Jupiter', description: 'The largest planet (318 Earth masses), a gas giant of hydrogen and helium with no solid surface. Jupiter\'s powerful gravity acts as the solar system\'s gravitational shield, deflecting or capturing many comets and asteroids. Its moon Europa harbours a subsurface ocean beneath an ice shell and is considered a prime candidate for extraterrestrial life in our solar system.' },
+          { id: 'saturn', x: 82, y: 50, label: 'Saturn & Rings', description: 'The sixth planet, famous for its spectacular ring system of ice and rock particles. Saturn is the least dense planet (density 0.69 g/cm³ — less than water). Its moon Titan has a thick nitrogen atmosphere and hydrocarbon lakes, while Enceladus erupts water ice from subsurface oceans — making both moons targets in the search for habitable environments.' },
+        ],
+      },
     },
     {
       type: 'quiz',

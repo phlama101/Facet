@@ -34,12 +34,6 @@ A common misconception is that the Earth's interior is a vast ocean of magma fro
         { term: 'Partial melting',         def: 'The melting of some minerals in a rock while others remain solid. Since different minerals have different melting temperatures, a rock heated toward its solidus will melt progressively, with low-melting-point minerals melting first. The proportion of melt produced (melt fraction) determines the composition of the resulting magma. Partial melting of the mantle typically produces basaltic melt from a peridotite source rock.' },
         { term: 'Solidus',                 def: 'The temperature (at a given pressure) below which a rock is entirely solid. Above the solidus, some melt exists (partial melting); above the liquidus, the rock is entirely molten. The solidus of peridotite (the primary mantle rock) at ~100 km (62 mi) depth is approximately 1,300°C (2372°F), but is lowered to ~1,000°C (1832°F) by the addition of water, explaining flux melting at subduction zones.' },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'magma-viscosity',
-        caption: 'Magma viscosity spectrum from basalt (~10² Pa·s) to rhyolite (~10¹¹ Pa·s). Higher SiO₂ content → more polymerised silicate chains → higher viscosity → trapped gas → explosive eruption style.',
-        credit: 'Dingwell (1995) · Schmincke (2004)',
-      },
     },
     {
       type: 'callout' as const,
@@ -131,6 +125,12 @@ A common misconception is that the Earth's interior is a vast ocean of magma fro
       type: 'concept',
       title: 'Key takeaways',
       body: `• **Three distinct melting mechanisms**: Decompression melting (mid-ocean ridges and hotspots), flux melting (subduction zones where slab water lowers the solidus by 200–300°C (360–540°F)), and heat-driven crustal melting (continental hotspots like Yellowstone) each operate in different tectonic settings and produce chemically different magmas.\n\n• **The mantle is mostly solid — melting is local and triggered**: Earth's interior is not a global magma ocean. Rock melts only where one of the three mechanisms pushes it past the solidus locally; the rest of the mantle remains solid despite temperatures above 1,200°C (2192°F), because pressure keeps it that way.\n\n• **Partial melting and magma composition are linked**: Mantle peridotite yields basaltic melt (45–52% SiO₂) at typical melt fractions of 5–25%. The high silica content of arc and continental magmas arises from crustal contamination or the melting of different source rocks — not from the mantle producing silicic melt directly.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'magma-viscosity',
+        caption: 'Magma viscosity spectrum from basalt (~10² Pa·s) to rhyolite (~10¹¹ Pa·s). Higher SiO₂ content → more polymerised silicate chains → higher viscosity → trapped gas → explosive eruption style.',
+        credit: 'Dingwell (1995) · Schmincke (2004)',
+      },
     },
     {
       type: 'quiz',

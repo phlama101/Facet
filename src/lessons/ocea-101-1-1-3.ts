@@ -51,12 +51,6 @@ The deepest ocean — conventionally defined as water below 6,000 metres (19,686
           def: 'A chain of volcanoes formed on the overriding plate above a subduction zone, roughly parallel to the trench. Oceanic arcs form where oceanic crust overrides oceanic crust (e.g. the Aleutian Islands, the Mariana Islands). Continental arcs form where oceanic crust subducts beneath a continent (e.g. the Andes, the Cascades of the US Pacific Northwest).',
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'thermohaline-circulation',
-        caption: 'Global thermohaline circulation (ocean conveyor belt): warm surface flow (coral) carries heat poleward; cold, dense deep water forms in the North Atlantic (NADW) and Antarctica and returns equatorward. ~1,000-year overturning timescale.',
-        credit: 'Broecker (1991) · RAPID array · AMOC',
-      },
     },
     {
       type: 'callout' as const,
@@ -152,6 +146,17 @@ Beyond the catastrophic earthquakes and tsunamis, the extreme physical environme
             description: 'An underwater volcano rising more than 1,000 m (3,281 ft) from the seafloor but not reaching the ocean surface. Seamounts are typically extinct hot-spot volcanoes carried away from their magma source by plate movement. They serve as biodiversity hotspots, concentrating marine life that feeds on currents deflected upward by the seamount\'s flanks. There are estimated to be over 100,000 seamounts worldwide.',
           },
         ],
+      },
+    },
+    {
+      type: 'concept',
+      title: 'The global ocean conveyor belt',
+      body: 'The thermohaline circulation connects all ocean basins in a continuous flow driven by differences in water temperature and salinity.',
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'thermohaline-circulation',
+        caption: 'Global thermohaline circulation (ocean conveyor belt): warm surface flow (coral) carries heat poleward; cold, dense deep water forms in the North Atlantic (NADW) and Antarctica and returns equatorward. ~1,000-year overturning timescale.',
+        credit: 'Broecker (1991) · RAPID array · AMOC',
       },
     },
     {

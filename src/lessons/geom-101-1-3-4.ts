@@ -27,9 +27,9 @@ Permafrost is ground (soil or rock) that remains at or below 0°C (32°F) for tw
 
 Permafrost is an immense carbon store: approximately 1,500 Gt of organic carbon — roughly twice the amount currently in the atmosphere as CO₂ — is locked in frozen soils. This material consists of ancient plant material, animal remains, and Pleistocene-era vegetation preserved by cold temperatures that have inhibited microbial decomposition for thousands to hundreds of thousands of years.
 
-Key periglacial landforms include ice-wedge polygons, which form by thermal contraction cracking of frozen ground in winter. When temperatures drop below −10°C to −20°C, the ground contracts and cracks open; meltwater infiltrates and refreezes each spring, adding a thin ice vein. Repeated over centuries, these cycles build ice wedges 1–3 m wide and 3–5 m deep, creating a polygonal patterned ground network visible from satellite. Low-centred polygons have raised rims and a depressed, wet centre; high-centred polygons occur where ice wedge melt has lowered the rims and raised the central block.
+Key periglacial landforms include ice-wedge polygons, which form by thermal contraction cracking of frozen ground in winter. When temperatures drop below −10°C (14°F) to −20°C (−4°F), the ground contracts and cracks open; meltwater infiltrates and refreezes each spring, adding a thin ice vein. Repeated over centuries, these cycles build ice wedges 1–3 m (3–10 ft) wide and 3–5 m (10–16 ft) deep, creating a polygonal patterned ground network visible from satellite. Low-centred polygons have raised rims and a depressed, wet centre; high-centred polygons occur where ice wedge melt has lowered the rims and raised the central block.
 
-Pingos are ice-cored mounds 3–70 m high with two distinct origins. Hydraulic (open-system) pingos form where artesian groundwater under pressure forces upward through thin permafrost and freezes near the surface. Hydrostatic (closed-system) pingos form under drained lake beds where the talik (unfrozen zone beneath the lake) refreezes from above and sides, trapping and pressurising porewater that freezes and uplifts the overlying surface. Palsas are smaller peat-covered permafrost mounds. Solifluction is the slow downslope flow of water-saturated active-layer soil at rates of 1–25 cm/yr; the impermeable permafrost table below prevents drainage and waterlogging reduces shear strength, allowing flow even on 2–3° gradients, producing solifluction lobes and sheets. Stone sorting into circles, stripes, and nets results from differential frost heave.
+Pingos are ice-cored mounds 3–70 m (10–230 ft) high with two distinct origins. Hydraulic (open-system) pingos form where artesian groundwater under pressure forces upward through thin permafrost and freezes near the surface. Hydrostatic (closed-system) pingos form under drained lake beds where the talik (unfrozen zone beneath the lake) refreezes from above and sides, trapping and pressurising porewater that freezes and uplifts the overlying surface. Palsas are smaller peat-covered permafrost mounds. Solifluction is the slow downslope flow of water-saturated active-layer soil at rates of 1–25 cm/yr (0.4–9.8 in/yr); the impermeable permafrost table below prevents drainage and waterlogging reduces shear strength, allowing flow even on 2–3° gradients, producing solifluction lobes and sheets. Stone sorting into circles, stripes, and nets results from differential frost heave.
 
 Thermokarst describes the irregular, hummocky terrain produced by subsidence as ice-rich permafrost thaws and the volume formerly occupied by ground ice collapses. Thermokarst lakes form in these depressions and are a significant source of CH₄ from anaerobic decomposition. Under current warming, permafrost temperatures have risen approximately 0.3°C per decade globally, the active layer is deepening, thermokarst is expanding, and Arctic communities face accelerating infrastructure damage as the ground beneath roads, buildings, and pipelines destabilises.`,
       keyTerms: [
@@ -39,7 +39,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
         },
         {
           term: 'Active Layer',
-          def: 'Seasonally thawing surface layer above permafrost, typically 0.3–2 m thick. Supports plant growth; its deepening drives thermokarst and solifluction.',
+          def: 'Seasonally thawing surface layer above permafrost, typically 0.3–2 m (1–7 ft) thick. Supports plant growth; its deepening drives thermokarst and solifluction.',
         },
         {
           term: 'Ice-Wedge Polygon',
@@ -51,7 +51,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
         },
         {
           term: 'Solifluction',
-          def: 'Slow downslope flow of water-saturated active-layer soil (1–25 cm/yr) over impermeable frozen permafrost; produces lobes and terraces on gentle slopes.',
+          def: 'Slow downslope flow of water-saturated active-layer soil (1–25 cm/yr (0.4–9.8 in/yr)) over impermeable frozen permafrost; produces lobes and terraces on gentle slopes.',
         },
       ],
     },
@@ -64,22 +64,22 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
           name: 'Permafrost: Structure and Distribution',
           icon: Layers,
           color: BRAND.accent,
-          desc: 'Continuous permafrost (>90% frozen, <−5°C) grades into discontinuous (50–90%) and sporadic (<10%) zones southward. Thermal regime controlled by mean annual air temperature and insulating snow cover. Talik: unfrozen zone within or beneath permafrost (e.g., under lakes). Permafrost thickness ranges from 0.3 m at southern margins to 1,500 m in Siberia.',
-          examples: 'Siberian permafrost reaches up to 1,600 m thick in the Verkhoyansk region — the deepest on Earth. McMurdo Dry Valleys (Antarctica) permafrost surface dates back millions of years, preserving ancient organic material. The Trans-Alaska Pipeline was engineered on thermosyphon pilings above permafrost to prevent heat transfer from the warm oil destabilising the frozen ground.',
+          desc: 'Continuous permafrost (>90% frozen, <−5°C (23°F)) grades into discontinuous (50–90%) and sporadic (<10%) zones southward. Thermal regime controlled by mean annual air temperature and insulating snow cover. Talik: unfrozen zone within or beneath permafrost (e.g., under lakes). Permafrost thickness ranges from 0.3 m (1 ft) at southern margins to 1,500 m (4,921 ft) in Siberia.',
+          examples: 'Siberian permafrost reaches up to 1,600 m (5,249 ft) thick in the Verkhoyansk region — the deepest on Earth. McMurdo Dry Valleys (Antarctica) permafrost surface dates back millions of years, preserving ancient organic material. The Trans-Alaska Pipeline was engineered on thermosyphon pilings above permafrost to prevent heat transfer from the warm oil destabilising the frozen ground.',
         },
         {
           name: 'Patterned Ground and Ice-Wedge Polygons',
           icon: Activity,
           color: BRAND.jade,
-          desc: 'Winter thermal contraction cracks open when ground temperatures fall below −10°C to −20°C. Spring snowmelt infiltrates the crack; refreezing adds ~1 mm of ice per year. After hundreds to thousands of annual cycles, ice wedges 1–3 m wide and 3–5 m deep form a polygonal network. Low-centred polygons have wet centres; high-centred polygons develop as wedge melt lowers rims. Polygon diameter ~10–30 m reflects ground temperature and crack spacing.',
+          desc: 'Winter thermal contraction cracks open when ground temperatures fall below −10°C (14°F) to −20°C (−4°F). Spring snowmelt infiltrates the crack; refreezing adds ~1 mm of ice per year. After hundreds to thousands of annual cycles, ice wedges 1–3 m (3–10 ft) wide and 3–5 m (10–16 ft) deep form a polygonal network. Low-centred polygons have wet centres; high-centred polygons develop as wedge melt lowers rims. Polygon diameter ~10–30 m (33–98 ft) reflects ground temperature and crack spacing.',
           examples: 'Siberian and Alaskan tundra polygonal networks cover thousands of km² and are clearly visible from satellite imagery. Devonian ice-wedge casts preserved in UK sedimentary rocks provide evidence of past periglacial climates in formerly temperate regions. Individual polygon size of 10–30 m is related to the magnitude of ground temperature fluctuations and contraction crack spacing during formation.',
         },
         {
           name: 'Pingos and Solifluction Landforms',
           icon: Globe,
           color: BRAND.coral,
-          desc: 'Hydraulic (open-system) pingos: artesian groundwater forced upward through thin permafrost freezes near the surface, arching a mound — common in valley floors. Hydrostatic (closed-system) pingos: refreezing talik beneath a drained lake traps pressurised porewater that uplifts the surface — common on drained lake floors in groups. Solifluction lobes: saturated active layer flows at 1–25 cm/yr on slopes as low as 2–3°. Stone circles and stripes form by differential frost heave.',
-          examples: `Ibyuk Pingo in the Mackenzie Delta, Canada stands 49 m tall and is one of the world\'s largest — a classic closed-system (hydrostatic) pingo. Solifluction terraces are widespread on Scottish mountain slopes, recording Pleistocene periglacial conditions. Stone circles and stone stripes in Svalbard are actively forming today, with frost heave rates measurable by repeat survey.`,
+          desc: 'Hydraulic (open-system) pingos: artesian groundwater forced upward through thin permafrost freezes near the surface, arching a mound — common in valley floors. Hydrostatic (closed-system) pingos: refreezing talik beneath a drained lake traps pressurised porewater that uplifts the surface — common on drained lake floors in groups. Solifluction lobes: saturated active layer flows at 1–25 cm/yr (0.4–9.8 in/yr) on slopes as low as 2–3°. Stone circles and stripes form by differential frost heave.',
+          examples: `Ibyuk Pingo in the Mackenzie Delta, Canada stands 49 m (161 ft) tall and is one of the world\'s largest — a classic closed-system (hydrostatic) pingo. Solifluction terraces are widespread on Scottish mountain slopes, recording Pleistocene periglacial conditions. Stone circles and stone stripes in Svalbard are actively forming today, with frost heave rates measurable by repeat survey.`,
         },
         {
           name: 'Permafrost Carbon Feedback and Climate Change',
@@ -113,19 +113,19 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
           {
             id: 'contraction-cracking',
             label: 'Contraction Cracking',
-            description: 'Winter temperature plunge below −10°C to −20°C causes thermal contraction of frozen ground. Ground cracks open along lines of weakness, creating a polygonal fracture network. Crack width ~5–10 mm; depth up to several metres.',
+            description: 'Winter temperature plunge below −10°C (14°F) to −20°C (−4°F) causes thermal contraction of frozen ground. Ground cracks open along lines of weakness, creating a polygonal fracture network. Crack width ~5–10 mm; depth up to several metres.',
             color: BRAND.coral,
           },
           {
             id: 'ice-wedge-growth',
             label: 'Ice Wedge Growth',
-            description: 'Spring meltwater infiltrates the crack and refreezes, adding ~1 mm of ice annually. Over hundreds to thousands of years, repeated cycles build ice wedges 1–3 m wide and 3–5 m deep. Cracks preferentially reopen along existing ice planes.',
+            description: 'Spring meltwater infiltrates the crack and refreezes, adding ~1 mm of ice annually. Over hundreds to thousands of years, repeated cycles build ice wedges 1–3 m (3–10 ft) wide and 3–5 m (10–16 ft) deep. Cracks preferentially reopen along existing ice planes.',
             color: BRAND.gold,
           },
           {
             id: 'polygon-network',
             label: 'Polygon Network',
-            description: 'Intersecting ice wedges produce a polygonal patterned ground network of 10–30 m diameter. Low-centred polygons: raised rims, wet centre; high-centred: lowered rims from ice melt. Covers vast areas of Arctic tundra; visible from satellite.',
+            description: 'Intersecting ice wedges produce a polygonal patterned ground network of 10–30 m (33–98 ft) diameter. Low-centred polygons: raised rims, wet centre; high-centred: lowered rims from ice melt. Covers vast areas of Arctic tundra; visible from satellite.',
             color: BRAND.amethyst,
           },
           {
@@ -163,11 +163,11 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
           a: [
             'Summer thermokarst melting of the polygon centres forces ice upward into the polygon rims, thickening the wedges laterally over time by hydraulic pressure from meltwater',
             'Frost heave during spring freeze-back pushes ice crystals horizontally toward polygon boundaries, concentrating ice in wedge-shaped zones aligned with thermal contraction crack orientations',
-            'Thermal contraction cracking in winter: when air temperatures plunge below −10°C to −20°C, frozen ground contracts and cracks open (thermal contraction fracture); meltwater infiltrates the crack in spring and refreezes, adding a thin ice vein (~1 mm/yr); over hundreds to thousands of years, repeated cycles build ice wedges 1–3 m wide and 3–5 m deep; the polygon network develops as cracks preferentially reopen along existing weak planes; ancient ice-wedge casts in sedimentary rocks record past periglacial climates',
+            'Thermal contraction cracking in winter: when air temperatures plunge below −10°C to −20°C, frozen ground contracts and cracks open (thermal contraction fracture); meltwater infiltrates the crack in spring and refreezes, adding a thin ice vein (~1 mm/yr); over hundreds to thousands of years, repeated cycles build ice wedges 1–3 m (3–10 ft) wide and 3–5 m (10–16 ft) deep; the polygon network develops as cracks preferentially reopen along existing weak planes; ancient ice-wedge casts in sedimentary rocks record past periglacial climates',
             'Artesian groundwater under hydraulic pressure is injected into pre-existing fractures in frozen ground during spring snowmelt, freezing to form ice wedges that grow vertically from below as porewater pressure increases',
           ],
           correct: 2,
-          explain: 'Ice wedge growth is driven by an annual two-stage mechanism. In winter, when ground temperatures drop sharply (often below −20°C in continental Arctic climates), the frozen ground contracts at a rate of about 0.5 mm per metre per degree of cooling. Thermal stress exceeds the tensile strength of frozen ground and it cracks, typically in the same locations as previous cracks — the inherited network of weak planes. In spring, snowmelt water infiltrates the open crack (a few millimetres wide) and refreezes, forming a thin ice vein. Each annual cycle adds approximately 1 mm of ice. After 500 years this produces a wedge ~0.5 m wide; after several thousand years, wedges 1–3 m wide and 3–5 m deep are typical. The polygonal network pattern reflects the geometry of thermal stress relief — cracks intersect at roughly 90° (orthogonal network) or 120° (hexagonal network) depending on crack propagation mechanics. Ice-wedge casts (sand or sediment-filled relict wedge forms) in UK and European sedimentary sequences are important indicators of Pleistocene periglacial conditions.',
+          explain: 'Ice wedge growth is driven by an annual two-stage mechanism. In winter, when ground temperatures drop sharply (often below −20°C in continental Arctic climates), the frozen ground contracts at a rate of about 0.5 mm per metre per degree of cooling. Thermal stress exceeds the tensile strength of frozen ground and it cracks, typically in the same locations as previous cracks — the inherited network of weak planes. In spring, snowmelt water infiltrates the open crack (a few millimetres wide) and refreezes, forming a thin ice vein. Each annual cycle adds approximately 1 mm of ice. After 500 years this produces a wedge ~0.5 m (2 ft) wide; after several thousand years, wedges 1–3 m (3–10 ft) wide and 3–5 m (10–16 ft) deep are typical. The polygonal network pattern reflects the geometry of thermal stress relief — cracks intersect at roughly 90° (orthogonal network) or 120° (hexagonal network) depending on crack propagation mechanics. Ice-wedge casts (sand or sediment-filled relict wedge forms) in UK and European sedimentary sequences are important indicators of Pleistocene periglacial conditions.',
         },
         {
           q: 'Two types of pingos exist: open-system (hydraulic) and closed-system (hydrostatic). What is the difference in their formation mechanism?',
@@ -186,7 +186,7 @@ Thermokarst describes the irregular, hummocky terrain produced by subsidence as 
             'Frost creep during freeze-back displaces soil particles toward the slope during upward ice crystal growth, producing a net downslope movement that accumulates over many freeze-thaw cycles without requiring liquid water saturation',
             'Ice segregation at the permafrost table pushes the active layer upslope during freezing, but gravity pulls the thawed layer down in summer; the net effect is downslope movement driven by the asymmetry between the steeper angle of freeze-back and the shallower angle of thaw',
             'Thawing from the top down releases a thin liquid water film at the soil surface that acts as a lubricating layer, allowing the entire active layer to slide as a coherent slab over the dry, unfrozen soil below',
-            'The permafrost table below acts as an impermeable base: as the active layer thaws from the top down in summer, meltwater cannot drain downward (blocked by frozen permafrost below) or upward (surface frost is gone); the saturated soil layer loses most of its shear strength through high pore water pressure; even slight slope angles produce driving stress that exceeds the greatly reduced frictional resistance; rates of 1–25 cm/yr are typical; solifluction deposits (head deposits) fill valleys in formerly periglacial regions like the UK',
+            'The permafrost table below acts as an impermeable base: as the active layer thaws from the top down in summer, meltwater cannot drain downward (blocked by frozen permafrost below) or upward (surface frost is gone); the saturated soil layer loses most of its shear strength through high pore water pressure; even slight slope angles produce driving stress that exceeds the greatly reduced frictional resistance; rates of 1–25 cm/yr (0.4–9.8 in/yr) are typical; solifluction deposits (head deposits) fill valleys in formerly periglacial regions like the UK',
           ],
           correct: 3,
           explain: 'Solifluction occurs because two conditions coincide during active-layer thaw. First, the permafrost table acts as an aquiclude — an impermeable base that prevents downward drainage of meltwater from the thawing soil above. Second, thawing progresses downward from the surface, creating a progressively deepening zone of saturated soil trapped between the melting surface and the frozen base. In saturated soil, pore water pressure approaches the total normal stress, reducing effective stress and therefore frictional resistance (Mohr-Coulomb failure criterion: shear strength = cohesion + effective normal stress × tan(friction angle)). When effective stress approaches zero, even a 2–3° slope provides sufficient gravitational shear stress to cause slow viscous flow. Rates of 1–25 cm/yr are typical, varying with slope angle, fine sediment content (clays retain more water), and freeze-thaw intensity. Solifluction is distinct from frost creep (a related but drier process). In the UK, thick valley-floor deposits of "head" or "coombe rock" are relict solifluction deposits from Pleistocene periglacial conditions, often filling valleys to depths of several metres.',

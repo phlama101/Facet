@@ -49,12 +49,6 @@ In the Himalayas, India is still crashing into Asia at 5 cm (2.0 in) per year, t
           def: "A convergent boundary where one plate (always oceanic, or the denser of two oceanic plates) descends into the mantle beneath the other. Marked by an oceanic trench (the deepest places on Earth), a volcanic arc on the overriding plate, and a zone of earthquakes that deepen with distance from the trench (the Wadati-Benioff zone).",
         },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'subduction-zone',
-        caption: 'Subduction zone cross-section: oceanic plate descends under continental plate at ~30–45°, releasing H₂O into the mantle wedge (flux melting), generating arc volcanism. Accretionary wedge scrapes off incoming sediment.',
-        credit: 'USGS / Tarbuck & Lutgens',
-      },
     },
     {
       type: 'concept',
@@ -66,6 +60,12 @@ In the Himalayas, India is still crashing into Asia at 5 cm (2.0 in) per year, t
 **Transform boundaries — sliding past.** At transform boundaries, plates slide horizontally past each other along **strike-slip faults** — faults where motion is lateral rather than up-down. No crust is created (no spreading) and none is destroyed (no subduction). The only geological product is earthquakes — sudden releases of stress accumulated as the rough, irregular fault surfaces lock and then catastrophically slip. The **San Andreas Fault** is the world's most studied transform boundary: the Pacific Plate moves north-northwest past the North American Plate at ~5 cm/year. The 1906 earthquake ruptured 477 km (296 mi) of the fault in under a minute; fault segments near Los Angeles are overdue for a major rupture. The **Alpine Fault** in New Zealand runs the length of South Island, separating the Australian and Pacific plates. The **Dead Sea Transform** connects the Red Sea spreading centre to the East Anatolian Fault in Turkey. Transform faults also connect segments of mid-ocean ridges on the ocean floor — in this setting they are called **fracture zones**, and motion only occurs between offset ridge segments; the portions beyond the ridge ends are fossil faults recording the spreading history.
 
 **Putting it together — boundary type controls rock type.** The connection back to Module 1.3 is direct. Divergent boundaries generate **basalt** (extrusive mafic igneous rock) and **gabbro** (its intrusive equivalent) — the rocks of all ocean floors. Subduction-zone volcanism, fed by water-fluxed melting of the mantle wedge, generates **andesite** and **rhyolite** (extrusive) and **granite** and **diorite** (intrusive) — the rocks that build and thicken continental crust. The metamorphic rocks of continental collision zones (**schist**, **gneiss**, **marble**) record the burial and heating of sedimentary and igneous rocks in mountain roots. Transform boundaries produce no primary igneous rock but often expose mantle and lower-crustal rocks as faults cut deep into the lithosphere. Every rock family, and many specific rock types, can be traced to a specific plate tectonic setting.`,
+      interaction: {
+        type: 'scientific-diagram' as const,
+        id: 'subduction-zone',
+        caption: 'Subduction zone cross-section: oceanic plate descends under continental plate at ~30–45°, releasing H₂O into the mantle wedge (flux melting), generating arc volcanism. Accretionary wedge scrapes off incoming sediment.',
+        credit: 'USGS / Tarbuck & Lutgens',
+      },
       cards: [
         {
           name: 'Divergent Boundaries',
