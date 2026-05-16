@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import Link from 'next/link'
 import * as Sentry from '@sentry/nextjs'
 import { AlertTriangle, RefreshCw } from 'lucide-react'
 import { BRAND } from '@/lib/brand'
@@ -75,7 +74,7 @@ export default function GlobalError({
               >
                 <RefreshCw size={12} /> Try again
               </button>
-              <Link
+              <a
                 href="/"
                 style={{
                   padding: '10px 20px',
@@ -90,7 +89,7 @@ export default function GlobalError({
                 }}
               >
                 Go home
-              </Link>
+              </a>
             </div>
           </div>
         </div>

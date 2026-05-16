@@ -34,6 +34,46 @@ The relationship between magma composition and eruption style has a simple rule 
         { term: 'Fractional crystallisation', def: 'The process by which minerals crystallise from a cooling magma and are removed (settle out or are carried away), leaving a residual melt of different composition. Mafic minerals (olivine, pyroxene) crystallise first at higher temperatures from basaltic magma, removing Mg, Fe, and Ca; the remaining melt becomes progressively enriched in SiO₂, K, and Na. Fractional crystallisation can drive a basaltic parent magma toward andesitic, dacitic, or rhyolitic compositions over time.' },
         { term: 'Tephra',                 def: 'All fragmental material ejected by a volcanic eruption: volcanic bombs (>64 mm (2.52 in), still molten during flight), lapilli (2–64 mm (2.52 in)), volcanic ash (<2 mm (0.08 in) diameter). Ash is formed when viscous magma is fragmented by the explosive expansion of exsolving volatiles. Fine ash can remain airborne for days to weeks, travelling thousands of kilometres and affecting aviation, human health, and climate (by reflecting solar radiation).' },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'data',
+      headline: 'The 1980 Mount St. Helens eruption: staggering scale',
+      body: 'The 1980 Mount St. Helens eruption released energy equivalent to 1,600 Hiroshima bombs in seconds, triggered the largest recorded landslide in history (2.8 km³ (0.67 cu mi) of rock), and spread ash across 11 US states.',
+    },
+    {
+      type: 'concept',
+      title: 'Magma types, viscosity controls, and the volatile explosion mechanism',
+      body: `**The magma classification spectrum.** Think of magma viscosity like the difference between water and cold honey — both are fluids, but honey barely flows while water races. Now extend that analogy by a factor of a trillion: the viscosity difference between basaltic lava (~10–100 Pa·s) and rhyolitic lava (up to 10¹⁴ Pa·s) is larger than the difference between water and steel at room temperature. That is why basalt flows across kilometres of landscape while rhyolite barely budges from the vent before exploding under its own trapped gas pressure.\n\nMagmas are classified primarily by their silica content, with corresponding names for both the magma and the rock it produces when cooled. **Basaltic magma** (45–52% SiO₂): the most abundant magma on Earth, produced at mid-ocean ridges and oceanic hotspots. Low viscosity (10–1,000 Pa·s), temperatures 1,000–1,300°C (2372°F), fluid enough to flow at speeds of 1–100 km/h (62 mph) on steep slopes. Forms basalt rock when cooled. Eruptions are generally effusive (lava flows), though basaltic volcanoes can produce lava fountains and **Strombolian eruptions** (rhythmic bursts) when gas-rich. **Andesitic magma** (52–63% SiO₂): characteristic of subduction zone volcanoes. Intermediate viscosity, temperatures 800–1,000°C (1832°F). Eruptions range from effusive to moderately explosive. Forms andesite rock. **Dacitic magma** (63–68% SiO₂): more silicic, higher viscosity, typically produced by fractional crystallisation of andesite or partial melting of continental crust. Explosive eruptions common. Forms dacite rock. **Rhyolitic magma** (68–75%+ SiO₂): the most viscous common magma, temperatures as low as 700°C (but may be much higher). Eruptions are typically extremely explosive, producing pyroclastic flows and huge quantities of ash. Forms rhyolite rock.
+
+**The molecular basis of viscosity.** Silica tetrahedra (SiO₄)⁴⁻ are the fundamental building blocks of the silicate melt. In a high-silica (rhyolitic) melt, these tetrahedra extensively polymerise into long chains and networks, creating a complex three-dimensional structure that makes the melt viscous — any flow requires breaking and re-forming Si-O bonds. In a low-silica (basaltic) melt, the tetrahedra are less polymerised, monomeric and dimeric species dominate, and the melt flows easily. Temperature also affects viscosity: cooling a basaltic lava from 1,200°C (2192°F) to 900°C (1652°F) can increase its viscosity by several orders of magnitude. Water dramatically reduces viscosity by breaking Si-O bonds (depolymerising the melt), which is why water content (dissolved under pressure) is an important control on eruption character.
+
+**The explosive mechanism: volatile exsolution.** Volatiles (primarily H₂O, CO₂, SO₂) are dissolved in magma at depth under high pressure — like CO₂ dissolved in a sealed bottle of carbonated water. As magma rises toward the surface and pressure decreases, volatiles exsolve (come out of solution), nucleating and growing bubbles in the melt. In low-viscosity basaltic magma, these bubbles can rise and escape through the melt relatively easily — they coalesce, form gas slugs, and reach the surface without fragmenting the magma, producing lava fountains or Strombolian bursts. In high-viscosity rhyolitic magma, bubbles cannot rise through the stiff melt. Instead, they grow in place, and the exsolving volatile pressure eventually exceeds the tensile strength of the magma, shattering it into tiny glassy fragments. This is **magmatic fragmentation** — the process that converts viscous rhyolitic magma into the tephra and ash of a Plinian eruption. The violence of the explosion is proportional to the rate of pressure drop (eruption rate) and the dissolved volatile content.
+
+**Crystal content and the magmatic mush model.** Modern volcanology no longer envisions subsurface magma chambers as large pools of liquid rock. Instead, geophysical evidence suggests that magma storage zones are mostly **crystal mushes** — mostly solid (crystallised) rock with only small pockets of mobile melt (typically <30% by volume). This has important implications: an eruption is not simply the draining of a magma tank, but rather requires processes (such as the injection of new magma from below, or heating of the mush by fresh intrusions) that mobilise and erupt the small fraction of available melt. Understanding the dynamics of magmatic mushes is one of the most active frontiers of modern volcanology and volcanic hazard assessment.`,
+      cards: [
+        {
+          name: 'Magma Composition Spectrum',
+          icon: Flame,
+          color: BRAND.ruby,
+          desc: 'Basalt (45–52% SiO₂): fluid, 1,000–1,300°C (2372°F), viscosity 10–1,000 Pa·s, dark. Flows fast; effusive. Andesite (52–63%): intermediate, 800–1,000°C (1832°F), moderate viscosity, grey. Mixed eruption styles. Dacite (63–68%): viscous, explosive, pale grey, dome-forming. Rhyolite (68–75%+): most viscous, 700–900°C (hot), viscosity 10⁸–10¹⁴ Pa·s, light-colored. Catastrophically explosive. Ultrabasic (kimberlite, komatiite): <45%, very fluid, rare, mostly ancient; some carry diamonds from mantle.',
+          examples: `Basalt: Kīlauea 2018 LERZ (1.2 km³ (0.29 cu mi) lava, 700 homes destroyed, 0 explosive deaths), Piton de la Fournaise (Réunion, erupts annually), all mid-ocean ridges · Andesite: Merapi 2010 (VEI 4, 353 dead), Popocatépetl (Mexico, near Mexico City, 9 million people at risk) · Dacite: Mt. St. Helens 1980 (VEI 5, 57 dead, 600 km² (232 sq mi) devastated) · Rhyolite: Yellowstone (640 ka caldera, 1,000 km³ (240 cu mi)), Taupo 26.5 ka (New Zealand\'s largest eruption, 530 km³ (127 cu mi))`,
+        },
+        {
+          name: 'Viscosity Controls',
+          icon: Globe,
+          color: BRAND.jade,
+          desc: 'SiO₂ content: dominant control; higher SiO₂ → more polymerisation → higher viscosity (10⁴× difference from basalt to rhyolite). Temperature: hotter = less viscous (cooling basalt 1200→900°C (1652°F): viscosity up 1,000×). Dissolved water: H₂O breaks Si-O bonds → lower viscosity; subduction zone magmas higher H₂O → can erupt more explosively when water exsolves. Crystal content: crystals suspended in melt increase effective viscosity. CO₂: less effect on viscosity but critical for deep exsolution.',
+          examples: `Kazumura Cave, Hawai\'i: world\'s longest lava tube at 65 km (40 mi) — possible only because basalt viscosity is low enough to flow that far before solidifying · Obsidian Cliff, Yellowstone: rhyolite quenched so rapidly that crystals never formed; obsidian tools were traded by Indigenous peoples across 1,500 km (932 mi) · Pumice from Pinatubo 1991: so vesicular it floated on the South China Sea for weeks after the eruption`,
+        },
+        {
+          name: 'Volatile Exsolution and Explosivity',
+          icon: Mountain,
+          color: BRAND.coral,
+          desc: 'At depth: volatiles (H₂O, CO₂) dissolved under pressure. Rising magma: pressure drops → volatiles exsolve → bubbles form. Low viscosity (basalt): bubbles rise and escape easily → lava fountains, Strombolian bursts, fire fountains, not fragmentation. High viscosity (rhyolite): bubbles trapped → pressure builds → tensile strength exceeded → magmatic fragmentation → Plinian column, pyroclastic flows, ash fall. Volatile content: high H₂O → more exsolution → more explosive. VEI (Volcanic Explosivity Index) correlates with magma viscosity × volatile content.',
+          examples: 'Pinatubo 1991: 5 km³ (1.2 cu mi) dacite/rhyodacite erupted (VEI 6), 20 Mt SO₂ injected stratosphere, global cooling 0.5°C (1°F) for 2 years, 58,000 people evacuated safely · Kīlauea 2018 LERZ: 1.2 km³ (0.29 cu mi) basalt, low viscosity — gases escaped continuously as lava fountains rather than building explosive pressure · Toba 74 ka: ~2,800 km³ (672 cu mi) rhyolite (VEI 8), may have reduced global Homo sapiens population to 10,000–40,000 individuals',
+        },
+      ],
       interaction: {
         type: 'annotated-image' as const,
         src: '/visuals/vol.svg',
@@ -78,46 +118,6 @@ The relationship between magma composition and eruption style has a simple rule 
           },
         ],
       },
-    },
-    {
-      type: 'callout' as const,
-      variant: 'data',
-      headline: 'The 1980 Mount St. Helens eruption: staggering scale',
-      body: 'The 1980 Mount St. Helens eruption released energy equivalent to 1,600 Hiroshima bombs in seconds, triggered the largest recorded landslide in history (2.8 km³ (0.67 cu mi) of rock), and spread ash across 11 US states.',
-    },
-    {
-      type: 'concept',
-      title: 'Magma types, viscosity controls, and the volatile explosion mechanism',
-      body: `**The magma classification spectrum.** Think of magma viscosity like the difference between water and cold honey — both are fluids, but honey barely flows while water races. Now extend that analogy by a factor of a trillion: the viscosity difference between basaltic lava (~10–100 Pa·s) and rhyolitic lava (up to 10¹⁴ Pa·s) is larger than the difference between water and steel at room temperature. That is why basalt flows across kilometres of landscape while rhyolite barely budges from the vent before exploding under its own trapped gas pressure.\n\nMagmas are classified primarily by their silica content, with corresponding names for both the magma and the rock it produces when cooled. **Basaltic magma** (45–52% SiO₂): the most abundant magma on Earth, produced at mid-ocean ridges and oceanic hotspots. Low viscosity (10–1,000 Pa·s), temperatures 1,000–1,300°C (2372°F), fluid enough to flow at speeds of 1–100 km/h (62 mph) on steep slopes. Forms basalt rock when cooled. Eruptions are generally effusive (lava flows), though basaltic volcanoes can produce lava fountains and **Strombolian eruptions** (rhythmic bursts) when gas-rich. **Andesitic magma** (52–63% SiO₂): characteristic of subduction zone volcanoes. Intermediate viscosity, temperatures 800–1,000°C (1832°F). Eruptions range from effusive to moderately explosive. Forms andesite rock. **Dacitic magma** (63–68% SiO₂): more silicic, higher viscosity, typically produced by fractional crystallisation of andesite or partial melting of continental crust. Explosive eruptions common. Forms dacite rock. **Rhyolitic magma** (68–75%+ SiO₂): the most viscous common magma, temperatures as low as 700°C (but may be much higher). Eruptions are typically extremely explosive, producing pyroclastic flows and huge quantities of ash. Forms rhyolite rock.
-
-**The molecular basis of viscosity.** Silica tetrahedra (SiO₄)⁴⁻ are the fundamental building blocks of the silicate melt. In a high-silica (rhyolitic) melt, these tetrahedra extensively polymerise into long chains and networks, creating a complex three-dimensional structure that makes the melt viscous — any flow requires breaking and re-forming Si-O bonds. In a low-silica (basaltic) melt, the tetrahedra are less polymerised, monomeric and dimeric species dominate, and the melt flows easily. Temperature also affects viscosity: cooling a basaltic lava from 1,200°C (2192°F) to 900°C (1652°F) can increase its viscosity by several orders of magnitude. Water dramatically reduces viscosity by breaking Si-O bonds (depolymerising the melt), which is why water content (dissolved under pressure) is an important control on eruption character.
-
-**The explosive mechanism: volatile exsolution.** Volatiles (primarily H₂O, CO₂, SO₂) are dissolved in magma at depth under high pressure — like CO₂ dissolved in a sealed bottle of carbonated water. As magma rises toward the surface and pressure decreases, volatiles exsolve (come out of solution), nucleating and growing bubbles in the melt. In low-viscosity basaltic magma, these bubbles can rise and escape through the melt relatively easily — they coalesce, form gas slugs, and reach the surface without fragmenting the magma, producing lava fountains or Strombolian bursts. In high-viscosity rhyolitic magma, bubbles cannot rise through the stiff melt. Instead, they grow in place, and the exsolving volatile pressure eventually exceeds the tensile strength of the magma, shattering it into tiny glassy fragments. This is **magmatic fragmentation** — the process that converts viscous rhyolitic magma into the tephra and ash of a Plinian eruption. The violence of the explosion is proportional to the rate of pressure drop (eruption rate) and the dissolved volatile content.
-
-**Crystal content and the magmatic mush model.** Modern volcanology no longer envisions subsurface magma chambers as large pools of liquid rock. Instead, geophysical evidence suggests that magma storage zones are mostly **crystal mushes** — mostly solid (crystallised) rock with only small pockets of mobile melt (typically <30% by volume). This has important implications: an eruption is not simply the draining of a magma tank, but rather requires processes (such as the injection of new magma from below, or heating of the mush by fresh intrusions) that mobilise and erupt the small fraction of available melt. Understanding the dynamics of magmatic mushes is one of the most active frontiers of modern volcanology and volcanic hazard assessment.`,
-      cards: [
-        {
-          name: 'Magma Composition Spectrum',
-          icon: Flame,
-          color: BRAND.ruby,
-          desc: 'Basalt (45–52% SiO₂): fluid, 1,000–1,300°C (2372°F), viscosity 10–1,000 Pa·s, dark. Flows fast; effusive. Andesite (52–63%): intermediate, 800–1,000°C (1832°F), moderate viscosity, grey. Mixed eruption styles. Dacite (63–68%): viscous, explosive, pale grey, dome-forming. Rhyolite (68–75%+): most viscous, 700–900°C (hot), viscosity 10⁸–10¹⁴ Pa·s, light-colored. Catastrophically explosive. Ultrabasic (kimberlite, komatiite): <45%, very fluid, rare, mostly ancient; some carry diamonds from mantle.',
-          examples: `Basalt: Kīlauea 2018 LERZ (1.2 km³ (0.29 cu mi) lava, 700 homes destroyed, 0 explosive deaths), Piton de la Fournaise (Réunion, erupts annually), all mid-ocean ridges · Andesite: Merapi 2010 (VEI 4, 353 dead), Popocatépetl (Mexico, near Mexico City, 9 million people at risk) · Dacite: Mt. St. Helens 1980 (VEI 5, 57 dead, 600 km² (232 sq mi) devastated) · Rhyolite: Yellowstone (640 ka caldera, 1,000 km³ (240 cu mi)), Taupo 26.5 ka (New Zealand\'s largest eruption, 530 km³ (127 cu mi))`,
-        },
-        {
-          name: 'Viscosity Controls',
-          icon: Globe,
-          color: BRAND.jade,
-          desc: 'SiO₂ content: dominant control; higher SiO₂ → more polymerisation → higher viscosity (10⁴× difference from basalt to rhyolite). Temperature: hotter = less viscous (cooling basalt 1200→900°C (1652°F): viscosity up 1,000×). Dissolved water: H₂O breaks Si-O bonds → lower viscosity; subduction zone magmas higher H₂O → can erupt more explosively when water exsolves. Crystal content: crystals suspended in melt increase effective viscosity. CO₂: less effect on viscosity but critical for deep exsolution.',
-          examples: `Kazumura Cave, Hawai\'i: world\'s longest lava tube at 65 km (40 mi) — possible only because basalt viscosity is low enough to flow that far before solidifying · Obsidian Cliff, Yellowstone: rhyolite quenched so rapidly that crystals never formed; obsidian tools were traded by Indigenous peoples across 1,500 km (932 mi) · Pumice from Pinatubo 1991: so vesicular it floated on the South China Sea for weeks after the eruption`,
-        },
-        {
-          name: 'Volatile Exsolution and Explosivity',
-          icon: Mountain,
-          color: BRAND.coral,
-          desc: 'At depth: volatiles (H₂O, CO₂) dissolved under pressure. Rising magma: pressure drops → volatiles exsolve → bubbles form. Low viscosity (basalt): bubbles rise and escape easily → lava fountains, Strombolian bursts, fire fountains, not fragmentation. High viscosity (rhyolite): bubbles trapped → pressure builds → tensile strength exceeded → magmatic fragmentation → Plinian column, pyroclastic flows, ash fall. Volatile content: high H₂O → more exsolution → more explosive. VEI (Volcanic Explosivity Index) correlates with magma viscosity × volatile content.',
-          examples: 'Pinatubo 1991: 5 km³ (1.2 cu mi) dacite/rhyodacite erupted (VEI 6), 20 Mt SO₂ injected stratosphere, global cooling 0.5°C (1°F) for 2 years, 58,000 people evacuated safely · Kīlauea 2018 LERZ: 1.2 km³ (0.29 cu mi) basalt, low viscosity — gases escaped continuously as lava fountains rather than building explosive pressure · Toba 74 ka: ~2,800 km³ (672 cu mi) rhyolite (VEI 8), may have reduced global Homo sapiens population to 10,000–40,000 individuals',
-        },
-      ],
     },
     {
       type: 'quiz',

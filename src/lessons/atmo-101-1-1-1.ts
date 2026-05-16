@@ -34,12 +34,6 @@ Understanding the layers of the atmosphere is essential to understanding weather
         { term: 'Thermosphere',  def: 'The layer from the mesopause (~85 km (53 mi)) to ~700 km (435 mi). Temperature increases dramatically (to >1,000°C (1832°F)) because individual gas molecules absorb X-ray and high-energy UV radiation; but the gas is so thin that heat transfer to other materials is minimal. Contains the ionosphere and the International Space Station.' },
         { term: 'Tropopause',    def: 'The boundary between the troposphere and stratosphere, typically at ~12 km (7 mi) altitude (higher in tropics, lower at poles). Marks a temperature minimum (~−60°C (−76°F)). Acts as a lid on convective weather: thunderstorm anvils spread horizontally when they reach the tropopause because the stratosphere above is warmer (more stable).' },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'atmosphere-temp-profile',
-        caption: "Temperature does not decrease uniformly with altitude — it reverses twice, at the stratopause and mesopause. These reversals mark where the dominant energy source changes: ozone absorbs UV in the stratosphere; individual molecules absorb X-rays in the thermosphere.",
-        credit: 'ICAO Standard Atmosphere / NOAA',
-      },
     },
     {
       type: 'callout' as const,
@@ -126,6 +120,12 @@ Understanding the layers of the atmosphere is essential to understanding weather
           },
         ],
       },
+    },
+    {
+      type: 'scientific-diagram' as const,
+      id: 'atmosphere-temp-profile',
+      caption: "Temperature does not decrease uniformly with altitude — it reverses twice, at the stratopause and mesopause. These reversals mark where the dominant energy source changes: ozone absorbs UV in the stratosphere; individual molecules absorb X-rays in the thermosphere.",
+      credit: 'ICAO Standard Atmosphere / NOAA',
     },
     {
       type: 'concept',

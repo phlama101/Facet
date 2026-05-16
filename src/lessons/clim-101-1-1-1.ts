@@ -34,12 +34,6 @@ Energy from the Sun drives the climate system. The solar constant (the flux of s
         { term: 'Climate sensitivity', def: 'The equilibrium global mean surface temperature increase expected from a doubling of atmospheric CO₂ concentration (abbreviated ECS — Equilibrium Climate Sensitivity). The IPCC Sixth Assessment Report (2021) assessed ECS as "likely" (66% probability) to be in the range 2.5–4.0°C (4.5–7.2°F) and "very likely" (90%) in the range 2.0–5.0°C (3.6–9°F), with a best estimate of 3°C (5.4°F). Climate sensitivity integrates all climate feedbacks and is the key parameter linking greenhouse gas emissions to future warming.' },
         { term: 'Internal climate variability', def: 'Natural, unforced fluctuations in the climate system arising from the chaotic dynamics of the coupled atmosphere-ocean system, including: ENSO (El Niño-Southern Oscillation) — 3–7 year Pacific oscillation dominating interannual global temperature variability; PDO (Pacific Decadal Oscillation) — 20–30 year mode; AMO (Atlantic Multidecadal Oscillation) — 60–80 year mode. Internal variability can temporarily mask or amplify forced climate trends on timescales of years to decades, complicating the attribution of observed climate change to specific causes.' },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'earth-energy-budget',
-        caption: "Earth's global mean energy budget. Of 340 W/m² incoming solar radiation, 30% is reflected (planetary albedo), 23% is absorbed by the atmosphere, and 48% by the surface. The greenhouse effect (back-radiation of 333 W/m²) raises the surface temperature ~33°C (~91°F) above what it would be without an atmosphere.",
-        credit: 'Trenberth, Fasullo & Kiehl (2009) / NASA CERES EBAF',
-      },
     },
     {
       type: 'callout' as const,
@@ -124,6 +118,12 @@ Energy from the Sun drives the climate system. The solar constant (the flux of s
           },
         ],
       },
+    },
+    {
+      type: 'scientific-diagram' as const,
+      id: 'earth-energy-budget',
+      caption: "Earth's global mean energy budget. Of 340 W/m² incoming solar radiation, 30% is reflected (planetary albedo), 23% is absorbed by the atmosphere, and 48% by the surface. The greenhouse effect (back-radiation of 333 W/m²) raises the surface temperature ~33°C (~91°F) above what it would be without an atmosphere.",
+      credit: 'Trenberth, Fasullo & Kiehl (2009) / NASA CERES EBAF',
     },
     {
       type: 'concept',

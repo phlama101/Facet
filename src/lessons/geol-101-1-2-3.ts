@@ -47,50 +47,6 @@ This lesson is organised into two parts. First, the silicates — the dominant g
           def: "Silicate minerals rich in silicon and aluminium: quartz, feldspars, and most micas. They are light-coloured (white, grey, pink, or colourless), less dense than mafic minerals, and dominant in continental crust. The term 'felsic' was introduced in Lesson 1.1.2 to describe continental crust.",
         },
       ],
-      interaction: {
-        type: 'annotated-image' as const,
-        src: '/visuals/geo-interior.svg',
-        alt: 'Cross-section of Earth\'s interior showing the crust, mantle, outer core, and inner core with depth labels',
-        aspectRatio: '16/9',
-        credit: 'Facet Earth Sciences',
-        annotations: [
-          {
-            id: 'crust',
-            x: 73,
-            y: 33,
-            label: 'Crust',
-            description: 'The outermost solid shell of Earth, ranging from ~5 km (3.1 mi) thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km (43 mi) beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
-          },
-          {
-            id: 'mantle',
-            x: 17,
-            y: 44,
-            label: 'Mantle',
-            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km (1802 mi) depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C (1112°F) at the top to ~4,000°C (7232°F) at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
-          },
-          {
-            id: 'lower-mantle',
-            x: 50,
-            y: 56,
-            label: 'Lower Mantle',
-            description: 'The deeper portion of the mantle (660–2,900 km (410–1802 mi)), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
-          },
-          {
-            id: 'outer-core',
-            x: 50,
-            y: 78,
-            label: 'Outer Core',
-            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km (3169 mi) depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
-          },
-          {
-            id: 'inner-core',
-            x: 50,
-            y: 89,
-            label: 'Inner Core',
-            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
-          },
-        ],
-      },
     },
     {
       type: 'callout' as const,
@@ -140,6 +96,50 @@ These three assemblages will reappear constantly in Module 1.3 (rocks) and Modul
 **Evaporites** are minerals that precipitate when water evaporates. **Halite (NaCl)** — table salt — has three perfect cleavage planes at right angles, always cleaving into perfect cubes. Hardness ~2.5, colourless to white, salty taste (the one case where tasting a mineral is standard field practice). Halite forms thick beds in ancient dried-up seas and salt lakes. **Gypsum (CaSO₄·2H₂O)** has hardness ~2 — soft enough to be scratched by a fingernail, making it one of the most easily identified minerals in the field. White or colourless, vitreous to silky luster (the silky variety, satin spar, has a fibrous texture). Gypsum forms in evaporite sequences alongside halite and is the mineral from which plaster of Paris is made.
 
 In the next lesson we look at the internal geometry that underlies all of these minerals — the seven crystal systems that classify the different ways atoms can arrange themselves into regular three-dimensional lattices.`,
+      interaction: {
+        type: 'annotated-image' as const,
+        src: '/visuals/geo-interior.svg',
+        alt: 'Cross-section of Earth\'s interior showing the crust, mantle, outer core, and inner core with depth labels',
+        aspectRatio: '16/9',
+        credit: 'Facet Earth Sciences',
+        annotations: [
+          {
+            id: 'crust',
+            x: 73,
+            y: 33,
+            label: 'Crust',
+            description: 'The outermost solid shell of Earth, ranging from ~5 km (3.1 mi) thick beneath oceans (oceanic crust, basaltic, ~3.0 g/cm³) to ~70 km (43 mi) beneath mountain ranges (continental crust, granitic, ~2.7 g/cm³). All known life and human civilisation exists within or on this thin outer layer. The crust is separated from the mantle by the Mohorovičić discontinuity (Moho), where seismic wave speeds jump abruptly.',
+          },
+          {
+            id: 'mantle',
+            x: 17,
+            y: 44,
+            label: 'Mantle',
+            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km (1802 mi) depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C (1112°F) at the top to ~4,000°C (7232°F) at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
+          },
+          {
+            id: 'lower-mantle',
+            x: 50,
+            y: 56,
+            label: 'Lower Mantle',
+            description: 'The deeper portion of the mantle (660–2,900 km (410–1802 mi)), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
+          },
+          {
+            id: 'outer-core',
+            x: 50,
+            y: 78,
+            label: 'Outer Core',
+            description: 'A layer of liquid iron-nickel alloy extending from 2,900 to 5,100 km (3169 mi) depth. Its liquid state is confirmed by the inability of S-waves (shear waves) to pass through it. Convective flow of the conducting liquid outer core generates Earth\'s magnetic field via the geodynamo — our planet\'s protective shield against harmful solar wind particles that would otherwise strip away the atmosphere.',
+          },
+          {
+            id: 'inner-core',
+            x: 50,
+            y: 89,
+            label: 'Inner Core',
+            description: 'A solid sphere of iron-nickel alloy at Earth\'s centre, approximately 1,220 km (758 mi) in radius. Despite temperatures of ~5,000–6,000°C (9032–10832°F), extreme pressure (360 GPa) keeps it solid. The inner core rotates slightly faster than the rest of Earth and shows seismic anisotropy — its crystal structure is preferentially aligned along Earth\'s rotation axis, detectable by subtle differences in seismic wave travel times.',
+          },
+        ],
+      },
       cards: [
         {
           name: 'Silicates — The Dominant Group',

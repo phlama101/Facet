@@ -34,12 +34,6 @@ Understanding attribution science is important not just for academic understandi
         { term: 'Clausius-Clapeyron relationship', def: 'The thermodynamic relationship stating that the water-holding capacity of the atmosphere increases by approximately 7% per degree Celsius of warming. As temperatures increase, the atmosphere can hold more moisture (following the Clausius-Clapeyron equation: dP/dT = L·P/(R·T²), where P is saturation vapour pressure, T is temperature, L is latent heat, R is gas constant). This means that when precipitation occurs, more water falls — making heavy precipitation events more intense. Observed precipitation extremes have increased by ~7% per degree of warming, consistent with the Clausius-Clapeyron relationship, confirming the theoretical prediction.' },
         { term: 'Wet-bulb temperature', def: 'The temperature measured by a thermometer wrapped in a wet cloth, representing the lowest temperature achievable by evaporative cooling. At high wet-bulb temperatures (> ~35°C (~95°F)), the human body cannot cool itself through sweating even at 100% humidity — core body temperature rises irreversibly, leading to heat stroke and death within hours even for fit young adults at rest in the shade. A 35°C (95°F) wet-bulb temperature corresponds to roughly 46°C (115°F) at 50% humidity or 32°C (90°F) at 100% humidity. Several regions of South Asia and the Persian Gulf have already briefly exceeded the 35°C (95°F) wet-bulb threshold in recent heat events, conditions likely to become more frequent under continued warming.' },
       ],
-      interaction: {
-        type: 'scientific-diagram' as const,
-        id: 'co2-temperature-record',
-        caption: 'CO₂ and Antarctic temperature anomaly from ice cores (Vostok/EPICA) over 420,000 years. Current CO₂ (~422 ppm) exceeds the natural range by ~50%; the two variables co-vary through all glacial-interglacial cycles.',
-        credit: 'Petit et al. (1999) · Siegenthaler et al. (2005) · NOAA GML',
-      },
     },
     {
       type: 'callout' as const,
@@ -124,6 +118,12 @@ Understanding attribution science is important not just for academic understandi
           },
         ],
       },
+    },
+    {
+      type: 'scientific-diagram' as const,
+      id: 'co2-temperature-record',
+      caption: 'CO₂ and Antarctic temperature anomaly from ice cores (Vostok/EPICA) over 420,000 years. Current CO₂ (~422 ppm) exceeds the natural range by ~50%; the two variables co-vary through all glacial-interglacial cycles.',
+      credit: 'Petit et al. (1999) · Siegenthaler et al. (2005) · NOAA GML',
     },
     {
       type: 'quiz',

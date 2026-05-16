@@ -49,6 +49,46 @@ By the end of this lesson you will understand the key differences between the tw
           def: "A light-colored, coarse-grained rock that is representative of continental crust. It is rich in silicon and aluminum, making it less dense than basalt. You can often see its characteristic speckled texture in kitchen countertops.",
         },
       ],
+    },
+    {
+      type: 'callout' as const,
+      variant: 'fact',
+      headline: 'No oceanic crust on Earth is older than ~200 million years — yet Earth itself is 4.54 billion years old',
+      body: 'Continental rocks can be over 4 billion years old, but the entire ocean floor is geologically young. The oldest oceanic crust known — small patches in the eastern Mediterranean and western Pacific — dates to only about 180–200 million years ago. This means that in the time since those oldest ocean-floor rocks formed, the entire global ocean floor has been recycled roughly 22 times. The relentless creation and destruction of oceanic crust is one of the most dramatic planetary-scale processes on Earth.',
+    },
+    {
+      type: 'concept',
+      title: 'Composition, isostasy, and the age of the ocean floor',
+      body: `The most important difference between the two types of crust is **chemistry** — what they are made of. Every other difference (thickness, elevation, age) flows from that. Just as a wooden board floats higher in water than a steel plate of the same size — because wood is less dense — continental crust floats higher on the mantle than oceanic crust because granite is less dense than basalt.
+
+**Oceanic crust: dense and thin.** The ocean floor is built almost entirely from **basalt** — a dark, heavy volcanic rock. Basalt is loaded with iron and magnesium, which makes it dense. Geologists describe this as **mafic** (a word blending "magnesium" and the Latin word for iron, ferrum). The average density of oceanic crust is about 3.0 g/cm³. It is also remarkably thin — only about 7 km (4.3 mi) on average. If you drove from the ocean surface to the bottom of the oceanic crust, you would travel roughly the same distance as driving across a large city.
+
+**Continental crust: less dense and thick.** The continents are built from a fundamentally different type of rock. The most representative rock is **granite** — the speckled, light-colored stone you see in building facades and kitchen countertops. Granite is rich in silicon and aluminum, which makes it less dense than basalt. Geologists call this type of rock **felsic** (from "feldspar" and "silica," its main mineral components). The average density of continental crust is about 2.7 g/cm³ — noticeably lighter than oceanic crust. And it is far thicker: typically 35–40 km (22–25 mi) in quiet, stable regions, and up to 70 km (43 mi) beneath young mountain ranges like the Himalayas, which have a deep crustal "root" pushed down by the collision of two continents.
+
+**Why does any of this matter?** The density difference is the key to understanding one of Earth's most visible features: why continents are high and ocean basins are low.
+
+**Isostasy — why continents float high.** Both types of crust rest on the denser mantle below (density ~3.3 g/cm³). Think of the crust as floating on the mantle the way objects float on water — except here, the "water" is hot, slowly flowing mantle rock, and the floating happens over millions of years rather than instantly.
+
+Now think about icebergs. A large iceberg sits higher above the water's surface than a small one — but it also extends deeper below the surface. Both are in balance: the weight of the iceberg equals the weight of the water it displaces. This balance is called **isostasy**, and it applies to the crust in exactly the same way.
+
+Continental crust is less dense than oceanic crust. Because it is less dense, it floats higher on the mantle — both above and below the surface. This is why the continents stand several kilometres above sea level. The base of the continental crust also pushes deeper into the mantle as a root. Where mountains are especially heavy (like the Himalayas), the root extends particularly deep — the crust there is nearly twice as thick as in flat, stable regions.
+
+Oceanic crust is denser. It floats lower. So the ocean basins sit roughly **3 to 5 km (3.1 mi) below sea level** — not because the ocean is deep, but because the rock forming the ocean floor is heavy enough to sit that far down. The water fills in from above.
+
+**What isostasy does not explain.** Isostasy tells us *that* continental crust floats higher — it does not explain *why* there are two types of crust in the first place, or why oceanic crust forms at spreading centres and gets recycled at subduction zones. Those explanations belong to Module 1.4 on plate tectonics. For now, the key takeaway is: **composition drives density, and density determines elevation**.
+
+**The striking age difference.** Here is a remarkable fact: no oceanic crust anywhere on Earth is older than about **200 million years**. That is young by geological standards — Earth is 4.54 billion years old. The oldest oceanic crust currently on the seafloor is in a small part of the eastern Mediterranean and the western Pacific, and even those patches are only ~180–200 million years old.
+
+Continental rocks tell a very different story. Stable ancient cores of continents — called **cratons** — preserve rocks that are billions of years old. The oldest intact rock formations are found in Canada, Greenland, and Australia, with ages exceeding 4 billion years. The oldest mineral grain ever dated — a tiny zircon crystal from the Jack Hills of Western Australia — is approximately 4.4 billion years old.
+
+Why is the ocean floor so young? Something must be continuously creating fresh oceanic crust somewhere and destroying old oceanic crust somewhere else. That "something" is an active planetary-scale process — the same process responsible for earthquakes, volcanoes, and mountain ranges. We will explore it fully in Module 1.4. For now, keep in mind that the youthfulness of the ocean floor is not a coincidence: it is a clue that the ocean floor is always in motion.
+
+**How do we know all this?** Three main lines of evidence:
+- **Seismic refraction surveys** — geologists set off controlled explosions (or use earthquake waves) and measure how fast the waves travel through the crust. The speed reveals the rock type and the thickness. Oceanic crust and continental crust produce distinctly different seismic signatures.
+- **Ocean-floor drilling** — since the 1960s, a series of international programs (DSDP, ODP, IODP) has drilled cores from the ocean floor all over the world. In every case, the dominant rock is basalt — confirming what seismic data predicted.
+- **Direct rock sampling** — onshore outcrops, river samples, and deep mine exposures allow geologists to sample continental crust directly, confirming its granitic, felsic character.
+
+All three methods point to the same picture, giving geologists very high confidence in the two-crust model.`,
       interaction: {
         type: 'annotated-image' as const,
         src: '/visuals/geo-tectonics.svg',
@@ -93,46 +133,6 @@ By the end of this lesson you will understand the key differences between the tw
           },
         ],
       },
-    },
-    {
-      type: 'callout' as const,
-      variant: 'fact',
-      headline: 'No oceanic crust on Earth is older than ~200 million years — yet Earth itself is 4.54 billion years old',
-      body: 'Continental rocks can be over 4 billion years old, but the entire ocean floor is geologically young. The oldest oceanic crust known — small patches in the eastern Mediterranean and western Pacific — dates to only about 180–200 million years ago. This means that in the time since those oldest ocean-floor rocks formed, the entire global ocean floor has been recycled roughly 22 times. The relentless creation and destruction of oceanic crust is one of the most dramatic planetary-scale processes on Earth.',
-    },
-    {
-      type: 'concept',
-      title: 'Composition, isostasy, and the age of the ocean floor',
-      body: `The most important difference between the two types of crust is **chemistry** — what they are made of. Every other difference (thickness, elevation, age) flows from that. Just as a wooden board floats higher in water than a steel plate of the same size — because wood is less dense — continental crust floats higher on the mantle than oceanic crust because granite is less dense than basalt.
-
-**Oceanic crust: dense and thin.** The ocean floor is built almost entirely from **basalt** — a dark, heavy volcanic rock. Basalt is loaded with iron and magnesium, which makes it dense. Geologists describe this as **mafic** (a word blending "magnesium" and the Latin word for iron, ferrum). The average density of oceanic crust is about 3.0 g/cm³. It is also remarkably thin — only about 7 km (4.3 mi) on average. If you drove from the ocean surface to the bottom of the oceanic crust, you would travel roughly the same distance as driving across a large city.
-
-**Continental crust: less dense and thick.** The continents are built from a fundamentally different type of rock. The most representative rock is **granite** — the speckled, light-colored stone you see in building facades and kitchen countertops. Granite is rich in silicon and aluminum, which makes it less dense than basalt. Geologists call this type of rock **felsic** (from "feldspar" and "silica," its main mineral components). The average density of continental crust is about 2.7 g/cm³ — noticeably lighter than oceanic crust. And it is far thicker: typically 35–40 km (22–25 mi) in quiet, stable regions, and up to 70 km (43 mi) beneath young mountain ranges like the Himalayas, which have a deep crustal "root" pushed down by the collision of two continents.
-
-**Why does any of this matter?** The density difference is the key to understanding one of Earth's most visible features: why continents are high and ocean basins are low.
-
-**Isostasy — why continents float high.** Both types of crust rest on the denser mantle below (density ~3.3 g/cm³). Think of the crust as floating on the mantle the way objects float on water — except here, the "water" is hot, slowly flowing mantle rock, and the floating happens over millions of years rather than instantly.
-
-Now think about icebergs. A large iceberg sits higher above the water's surface than a small one — but it also extends deeper below the surface. Both are in balance: the weight of the iceberg equals the weight of the water it displaces. This balance is called **isostasy**, and it applies to the crust in exactly the same way.
-
-Continental crust is less dense than oceanic crust. Because it is less dense, it floats higher on the mantle — both above and below the surface. This is why the continents stand several kilometres above sea level. The base of the continental crust also pushes deeper into the mantle as a root. Where mountains are especially heavy (like the Himalayas), the root extends particularly deep — the crust there is nearly twice as thick as in flat, stable regions.
-
-Oceanic crust is denser. It floats lower. So the ocean basins sit roughly **3 to 5 km (3.1 mi) below sea level** — not because the ocean is deep, but because the rock forming the ocean floor is heavy enough to sit that far down. The water fills in from above.
-
-**What isostasy does not explain.** Isostasy tells us *that* continental crust floats higher — it does not explain *why* there are two types of crust in the first place, or why oceanic crust forms at spreading centres and gets recycled at subduction zones. Those explanations belong to Module 1.4 on plate tectonics. For now, the key takeaway is: **composition drives density, and density determines elevation**.
-
-**The striking age difference.** Here is a remarkable fact: no oceanic crust anywhere on Earth is older than about **200 million years**. That is young by geological standards — Earth is 4.54 billion years old. The oldest oceanic crust currently on the seafloor is in a small part of the eastern Mediterranean and the western Pacific, and even those patches are only ~180–200 million years old.
-
-Continental rocks tell a very different story. Stable ancient cores of continents — called **cratons** — preserve rocks that are billions of years old. The oldest intact rock formations are found in Canada, Greenland, and Australia, with ages exceeding 4 billion years. The oldest mineral grain ever dated — a tiny zircon crystal from the Jack Hills of Western Australia — is approximately 4.4 billion years old.
-
-Why is the ocean floor so young? Something must be continuously creating fresh oceanic crust somewhere and destroying old oceanic crust somewhere else. That "something" is an active planetary-scale process — the same process responsible for earthquakes, volcanoes, and mountain ranges. We will explore it fully in Module 1.4. For now, keep in mind that the youthfulness of the ocean floor is not a coincidence: it is a clue that the ocean floor is always in motion.
-
-**How do we know all this?** Three main lines of evidence:
-- **Seismic refraction surveys** — geologists set off controlled explosions (or use earthquake waves) and measure how fast the waves travel through the crust. The speed reveals the rock type and the thickness. Oceanic crust and continental crust produce distinctly different seismic signatures.
-- **Ocean-floor drilling** — since the 1960s, a series of international programs (DSDP, ODP, IODP) has drilled cores from the ocean floor all over the world. In every case, the dominant rock is basalt — confirming what seismic data predicted.
-- **Direct rock sampling** — onshore outcrops, river samples, and deep mine exposures allow geologists to sample continental crust directly, confirming its granitic, felsic character.
-
-All three methods point to the same picture, giving geologists very high confidence in the two-crust model.`,
       cards: [
         {
           name: 'Continental Crust',
