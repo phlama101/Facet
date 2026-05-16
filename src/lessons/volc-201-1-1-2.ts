@@ -21,13 +21,13 @@ const bowensReactionSeries: Lesson = {
     {
       type: 'intro',
       title: 'Why does one mantle source produce so many different rocks?',
-      body: `Stand at the rim of Kīlauea\'s summit caldera and you are watching basaltic magma — ~50% SiO₂, erupted at 1,150°C — pour from a mantle source that has changed little in composition for millions of years. Drive 200 km to the Cascades or look across the Pacific to the Andes and you find volcanoes erupting andesite, dacite, and rhyolite: silica contents of 55–75%, eruption temperatures of 700–900°C, and explosive styles capable of VEI 6–8 eruptions. The mantle beneath them is still broadly peridotitic. So where does the silicic diversity come from?
+      body: `Stand at the rim of Kīlauea\'s summit caldera and you are watching basaltic magma — ~50% SiO₂, erupted at 1,150°C (2102°F) — pour from a mantle source that has changed little in composition for millions of years. Drive 200 km (124 mi) to the Cascades or look across the Pacific to the Andes and you find volcanoes erupting andesite, dacite, and rhyolite: silica contents of 55–75%, eruption temperatures of 700–900°C (1652°F), and explosive styles capable of VEI 6–8 eruptions. The mantle beneath them is still broadly peridotitic. So where does the silicic diversity come from?
 
-The answer was worked out systematically by Norman Levi Bowen between 1912 and 1928, through meticulous high-pressure crystallization experiments at the Geophysical Laboratory in Washington, D.C. Bowen demonstrated that as a basaltic magma cools from ~1,300°C downward, minerals crystallize in a predictable sequence — not all at once, but one after another — and that if those crystals are removed from the melt (by gravitational settling, filter pressing, or flotation), the residual liquid evolves progressively toward more silica-rich, lower-temperature compositions. This is **fractional crystallization**, and Bowen\'s crystallization sequence — now universally called **Bowen\'s Reaction Series** — is the master template of igneous petrology.
+The answer was worked out systematically by Norman Levi Bowen between 1912 and 1928, through meticulous high-pressure crystallization experiments at the Geophysical Laboratory in Washington, D.C. Bowen demonstrated that as a basaltic magma cools from ~1,300°C (2372°F) downward, minerals crystallize in a predictable sequence — not all at once, but one after another — and that if those crystals are removed from the melt (by gravitational settling, filter pressing, or flotation), the residual liquid evolves progressively toward more silica-rich, lower-temperature compositions. This is **fractional crystallization**, and Bowen\'s crystallization sequence — now universally called **Bowen\'s Reaction Series** — is the master template of igneous petrology.
 
-The series has two branches that merge at lower temperatures. The **discontinuous series** (also called the ferromagnesian branch) describes how mafic minerals change character with falling temperature: olivine (Mg₂SiO₄) crystallizes first at ~1,300°C; at ~1,200°C it reacts with the melt to form pyroxene (augite); at ~1,050°C pyroxene is replaced by hornblende (an amphibole); and at ~800°C biotite (a mica) crystallizes. The word "discontinuous" reflects the fact that each step is a distinct chemical transformation, not a gradual compositional shift — olivine and pyroxene have fundamentally different crystal structures. Each reaction consumes the earlier mineral and produces a new one that is richer in silicon and aluminium and poorer in magnesium and iron.
+The series has two branches that merge at lower temperatures. The **discontinuous series** (also called the ferromagnesian branch) describes how mafic minerals change character with falling temperature: olivine (Mg₂SiO₄) crystallizes first at ~1,300°C (2372°F); at ~1,200°C (2192°F) it reacts with the melt to form pyroxene (augite); at ~1,050°C (1922°F) pyroxene is replaced by hornblende (an amphibole); and at ~800°C (1472°F) biotite (a mica) crystallizes. The word "discontinuous" reflects the fact that each step is a distinct chemical transformation, not a gradual compositional shift — olivine and pyroxene have fundamentally different crystal structures. Each reaction consumes the earlier mineral and produces a new one that is richer in silicon and aluminium and poorer in magnesium and iron.
 
-The **continuous series** describes plagioclase feldspar, which forms a complete solid-solution series from calcium-rich anorthite (CaAl₂Si₂O₈, ~1,550°C) at the high-temperature end to sodium-rich albite (NaAlSi₃O₈, ~1,100°C) at the low-temperature end. The feldspar composition changes continuously as the magma cools, with each crystal\'s rim becoming progressively more sodium-rich as the core remains calcium-rich (zoning). The word "continuous" reflects this unbroken compositional gradation. Both branches converge at the bottom of the series where quartz, potassium feldspar, and muscovite crystallize in granitic and rhyolitic magmas.
+The **continuous series** describes plagioclase feldspar, which forms a complete solid-solution series from calcium-rich anorthite (CaAl₂Si₂O₈, ~1,550°C (2822°F)) at the high-temperature end to sodium-rich albite (NaAlSi₃O₈, ~1,100°C (2012°F)) at the low-temperature end. The feldspar composition changes continuously as the magma cools, with each crystal\'s rim becoming progressively more sodium-rich as the core remains calcium-rich (zoning). The word "continuous" reflects this unbroken compositional gradation. Both branches converge at the bottom of the series where quartz, potassium feldspar, and muscovite crystallize in granitic and rhyolitic magmas.
 
 If crystals remain in chemical equilibrium with the melt throughout cooling (equilibrium crystallization), the bulk composition of the system does not change significantly — early olivine reacts completely with the melt to produce pyroxene, and so on. But in nature, crystals frequently sink or are physically separated from the melt before they can react. This **fractional crystallization** (or crystal fractionation) progressively removes the early-crystallizing, Mg- and Fe-rich, SiO₂-poor minerals, leaving a melt that becomes progressively richer in SiO₂, K₂O, Na₂O, and incompatible trace elements. Starting from a basaltic melt (~50% SiO₂), 60–80% fractional crystallization can produce a residual melt of dacitic or rhyolitic composition (~65–75% SiO₂). The separated crystals accumulate at the floor or walls of the magma chamber as **cumulate rocks** — dunites, pyroxenites, gabbros — whose bulk compositions are complementary to the differentiated melt.
 
@@ -65,21 +65,21 @@ Hawaii\'s Kīlauea tholeiitic basalt series illustrates the principle at a natur
           icon: Thermometer,
           color: BRAND.ruby,
           desc: 'Early-crystallizing olivine and pyroxene sink as cumulates, removing Mg and Fe and enriching the residual melt in SiO₂, K, Na, and incompatible elements. SiO₂ rises from ~50% (basalt) to ~70%+ (rhyolite) as fractionation advances.',
-          examples: `Kīlauea tholeiite series: MgO drops from 9 wt% to 4 wt% as olivine fractionates, FeO enrichment defines the tholeiitic trend on a TAS diagram · Bowen\'s discontinuous series: olivine (1,300°C) → pyroxene (1,200°C) → hornblende (1,050°C) → biotite (800°C)`,
+          examples: `Kīlauea tholeiite series: MgO drops from 9 wt% to 4 wt% as olivine fractionates, FeO enrichment defines the tholeiitic trend on a TAS diagram · Bowen\'s discontinuous series: olivine (1,300°C (2372°F)) → pyroxene (1,200°C (2192°F)) → hornblende (1,050°C (1922°F)) → biotite (800°C (1472°F))`,
         },
         {
           name: 'Cumulates & the Daly Gap',
           icon: Layers,
           color: BRAND.gold,
           desc: 'Crystals settling to the chamber floor or adhering to walls form cumulate rocks (dunite, pyroxenite, gabbro). Rapid reaction-series transitions drive compositions through the 52–60% SiO₂ range quickly, producing the Daly gap — global scarcity of intermediate lavas.',
-          examples: 'Bushveld Complex, South Africa: 8 km of layered cumulates — dunite → pyroxenite → norite → anorthosite — crystallized from a giant mafic magma body · Daly gap: worldwide TAS plots show abundant basalt (<52%) and rhyolite (>68%) but relatively rare andesite-dacite in oceanic settings',
+          examples: 'Bushveld Complex, South Africa: 8 km (5.0 mi) of layered cumulates — dunite → pyroxenite → norite → anorthosite — crystallized from a giant mafic magma body · Daly gap: worldwide TAS plots show abundant basalt (<52%) and rhyolite (>68%) but relatively rare andesite-dacite in oceanic settings',
         },
         {
           name: 'AFC Contamination',
           icon: Flame,
           color: BRAND.coral,
           desc: 'Ascending mafic magma melts and incorporates silicic country rock (assimilation), simultaneously crystallizing cumulates (fractional crystallization). AFC raises SiO₂, shifts ⁸⁷Sr/⁸⁶Sr toward crustal values, and can trigger volatile exsolution and explosive eruptions.',
-          examples: 'Cascade arc andesites: basaltic parents assimilate Precambrian continental crust during ascent → elevated ⁸⁷Sr/⁸⁶Sr (>0.706) fingerprints contamination · Yellowstone rhyolites: mantle basalt AFC with ~40 km of silicic crust produces 73%+ SiO₂ melts feeding caldera-forming supereruptions',
+          examples: 'Cascade arc andesites: basaltic parents assimilate Precambrian continental crust during ascent → elevated ⁸⁷Sr/⁸⁶Sr (>0.706) fingerprints contamination · Yellowstone rhyolites: mantle basalt AFC with ~40 km (25 mi) of silicic crust produces 73%+ SiO₂ melts feeding caldera-forming supereruptions',
         },
         {
           name: 'Magma Mixing & Hybridism',
@@ -101,31 +101,31 @@ Hawaii\'s Kīlauea tholeiitic basalt series illustrates the principle at a natur
           {
             id: 'basalt-melt',
             label: 'Basaltic Melt',
-            description: 'Initial magma ~1,250–1,300°C. Composition ~50% SiO₂, rich in MgO and FeO. Mantle-derived tholeiite or alkali basalt.',
+            description: 'Initial magma ~1,250–1,300°C (2372°F). Composition ~50% SiO₂, rich in MgO and FeO. Mantle-derived tholeiite or alkali basalt.',
             color: BRAND.ruby,
           },
           {
             id: 'olivine-pyroxene',
             label: 'Olivine + Ca-Plagioclase',
-            description: 'First minerals to crystallize: forsteritic olivine (Fo₈₀–₉₀) and anorthitic plagioclase (An₈₀–₉₀) at ~1,200–1,300°C. Cumulates sink → gabbro / dunite.',
+            description: 'First minerals to crystallize: forsteritic olivine (Fo₈₀–₉₀) and anorthitic plagioclase (An₈₀–₉₀) at ~1,200–1,300°C (2372°F). Cumulates sink → gabbro / dunite.',
             color: BRAND.accentHot,
           },
           {
             id: 'pyroxene-plagioclase',
             label: 'Pyroxene + Intermediate Plagioclase',
-            description: 'At ~1,100–1,200°C olivine reacts to augite; plagioclase shifts to An₅₀–₇₀. Residual melt enriched in SiO₂ to ~52–56%. Andesitic composition range.',
+            description: 'At ~1,100–1,200°C (2192°F) olivine reacts to augite; plagioclase shifts to An₅₀–₇₀. Residual melt enriched in SiO₂ to ~52–56%. Andesitic composition range.',
             color: BRAND.gold,
           },
           {
             id: 'hornblende-biotite',
             label: 'Hornblende + Biotite',
-            description: 'At ~800–1,050°C amphibole and mica crystallize; Na-plagioclase (An₂₀–₄₀) dominates. Residual melt reaches 60–68% SiO₂. Dacitic composition.',
+            description: 'At ~800–1,050°C (1922°F) amphibole and mica crystallize; Na-plagioclase (An₂₀–₄₀) dominates. Residual melt reaches 60–68% SiO₂. Dacitic composition.',
             color: BRAND.jade,
           },
           {
             id: 'kfsp-qtz',
             label: 'K-Feldspar + Quartz + Muscovite',
-            description: 'Below ~800°C: alkali feldspar, quartz, and muscovite crystallize from a rhyolitic residual melt (~70–75% SiO₂). Incompatible elements (Rb, Cs, U, Th) highly concentrated.',
+            description: 'Below ~800°C (1472°F): alkali feldspar, quartz, and muscovite crystallize from a rhyolitic residual melt (~70–75% SiO₂). Incompatible elements (Rb, Cs, U, Th) highly concentrated.',
             color: BRAND.amethyst,
           },
           {
@@ -136,10 +136,10 @@ Hawaii\'s Kīlauea tholeiitic basalt series illustrates the principle at a natur
           },
         ],
         edges: [
-          { from: 'basalt-melt',         to: 'olivine-pyroxene',      label: 'Cooling to ~1,200°C; olivine + anorthite crystallize first' },
-          { from: 'olivine-pyroxene',     to: 'pyroxene-plagioclase',  label: 'Discontinuous reaction: olivine → pyroxene ~1,100°C' },
+          { from: 'basalt-melt',         to: 'olivine-pyroxene',      label: 'Cooling to ~1,200°C (2192°F); olivine + anorthite crystallize first' },
+          { from: 'olivine-pyroxene',     to: 'pyroxene-plagioclase',  label: 'Discontinuous reaction: olivine → pyroxene ~1,100°C (2012°F)' },
           { from: 'pyroxene-plagioclase', to: 'hornblende-biotite',    label: 'Pyroxene → hornblende; plagioclase zoning continues' },
-          { from: 'hornblende-biotite',   to: 'kfsp-qtz',              label: 'Final crystallization <800°C; melt → rhyolite composition' },
+          { from: 'hornblende-biotite',   to: 'kfsp-qtz',              label: 'Final crystallization <800°C (1472°F); melt → rhyolite composition' },
           { from: 'kfsp-qtz',            to: 'igneous-spectrum',       label: 'Full differentiation series; cumulates + evolved melts' },
           { from: 'olivine-pyroxene',     to: 'igneous-spectrum',      label: 'Crystal settling → cumulate rocks (dunite, gabbro)' },
         ],
