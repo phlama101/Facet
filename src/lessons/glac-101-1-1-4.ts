@@ -94,7 +94,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
             x: 57,
             y: 54,
             label: 'Crevasses',
-            description: 'Deep, open fractures in glacial ice formed where the glacier flows over a bedrock irregularity and stretches under tension. Crevasses can be 30–40 m deep (below which confining ice pressure closes them) and are most common at icefalls and zones of extending flow. They represent a major hazard for glacial travel and mountaineering, and their patterns reveal the flow dynamics of the glacier.',
+            description: 'Deep, open fractures in glacial ice formed where the glacier flows over a bedrock irregularity and stretches under tension. Crevasses can be 30–40 m (98–131 ft) deep (below which confining ice pressure closes them) and are most common at icefalls and zones of extending flow. They represent a major hazard for glacial travel and mountaineering, and their patterns reveal the flow dynamics of the glacier.',
           },
           {
             id: 'proglacial-lake',
@@ -111,7 +111,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           icon: Globe,
           color: BRAND.accent,
           desc: 'Glaciers classified by their relationship to underlying topography; unconstrained (ice caps, ice sheets) vs. topographically constrained (cirque, valley, piedmont).',
-          examples: `Cirque glaciers occupy armchair-shaped hollows eroded into mountain sides; common in high peaks worldwide. Valley glaciers flow down pre-existing valleys; can be 10s–100s km long (e.g., Hubbard Glacier, Alaska: 122 km (76 mi)). Ice caps are dome-shaped, unconstrained by topography; Vatnajökull, Iceland (8,100 km²) is Europe\'s largest.`,
+          examples: `Cirque glaciers occupy armchair-shaped hollows eroded into mountain sides; common in high peaks worldwide. Valley glaciers flow down pre-existing valleys; can be 10s–100s km long (e.g., Hubbard Glacier, Alaska: 122 km (76 mi)). Ice caps are dome-shaped, unconstrained by topography; Vatnajökull, Iceland (8,100 km² (3,127 sq mi)) is Europe\'s largest.`,
         },
         {
           name: 'Thermal Classification: Cold, Warm, and Polythermal',
@@ -132,7 +132,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           icon: ArrowRight,
           color: BRAND.gold,
           desc: 'Glaciers exist on every continent except Australia; concentration in polar and subpolar regions and high mountains; the Randolph Glacier Inventory (RGI 7.0) provides standardised outlines for all glaciers excluding ice sheets.',
-          examples: 'High Mountain Asia (Hindu Kush–Himalaya–Karakoram–Tibetan Plateau) holds the largest concentration of ice outside the poles: ~100,000 km². Alaska and adjacent Yukon (~86,000 km²) contribute more to sea level rise than any other non-polar region. Tropical glaciers (Andes, Kilimanjaro, Papua) are critically threatened — many will disappear within decades at current warming rates.',
+          examples: 'High Mountain Asia (Hindu Kush–Himalaya–Karakoram–Tibetan Plateau) holds the largest concentration of ice outside the poles: ~100,000 km² (38,610 sq mi). Alaska and adjacent Yukon (~86,000 km² (33,205 sq mi)) contribute more to sea level rise than any other non-polar region. Tropical glaciers (Andes, Kilimanjaro, Papua) are critically threatened — many will disappear within decades at current warming rates.',
         },
       ],
     },
@@ -203,7 +203,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
             '~2.2 million glaciers — excludes glaciers smaller than 1 km² in area',
           ],
           correct: 1,
-          explain: `The Randolph Glacier Inventory (RGI), maintained by GLIMS (Global Land Ice Measurements from Space), contains approximately 220,000 glaciers covering ~705,000 km² of Earth\'s surface. The Greenland and Antarctic Ice Sheets are explicitly excluded from the RGI because they are tracked by dedicated ice sheet programs (e.g., IMBIE — Ice Sheet Mass Balance Inter-comparison Exercise). Including their peripheral glaciers (glaciers attached to but dynamically distinct from the main ice sheets) is a recent addition. The RGI provides standardised outlines, areas, and metadata essential for global glacier mass change assessments. The latest major release (RGI 7.0, 2023) improved coverage of previously under-mapped regions including High Mountain Asia, Arctic Russia, and the Antarctic periphery.`,
+          explain: `The Randolph Glacier Inventory (RGI), maintained by GLIMS (Global Land Ice Measurements from Space), contains approximately 220,000 glaciers covering ~705,000 km² (272,200 sq mi) of Earth\'s surface. The Greenland and Antarctic Ice Sheets are explicitly excluded from the RGI because they are tracked by dedicated ice sheet programs (e.g., IMBIE — Ice Sheet Mass Balance Inter-comparison Exercise). Including their peripheral glaciers (glaciers attached to but dynamically distinct from the main ice sheets) is a recent addition. The RGI provides standardised outlines, areas, and metadata essential for global glacier mass change assessments. The latest major release (RGI 7.0, 2023) improved coverage of previously under-mapped regions including High Mountain Asia, Arctic Russia, and the Antarctic periphery.`,
         },
         {
           q: 'A polythermal glacier has cold ice near the surface and margins but warm (temperate) ice at its base. What is the key implication of this thermal structure for glacier dynamics?',
@@ -225,7 +225,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
             'Cirque glaciers = valley glaciers < ice caps < Antarctic Ice Sheet < Greenland Ice Sheet',
           ],
           correct: 0,
-          explain: `This ranking follows logically from glacier scale. Cirque glaciers occupy small hollows and are typically <1 km³ each (total ~2,000 km³ globally). Valley glaciers are larger (individual glaciers up to a few hundred km³; globally ~100,000 km³). Ice caps are continent-free domes; e.g., all Arctic island caps total ~170,000 km³. The Greenland Ice Sheet contains ~2.85 million km³ (~7.4 m sea level equivalent). The Antarctic Ice Sheet (26.5 million km³, ~58 m sea level equivalent) dwarfs everything else. Note that while there are 220,000 individual mountain glaciers, their combined volume (~170,000 km³) is less than 1% of the Antarctic Ice Sheet — yet they contribute disproportionately to near-term sea level rise because they respond to climate change on decadal time scales, not millennia.`,
+          explain: `This ranking follows logically from glacier scale. Cirque glaciers occupy small hollows and are typically <1 km³ each (total ~2,000 km³ globally). Valley glaciers are larger (individual glaciers up to a few hundred km³; globally ~100,000 km³). Ice caps are continent-free domes; e.g., all Arctic island caps total ~170,000 km³. The Greenland Ice Sheet contains ~2.85 million km³ (~7.4 m (24 ft) sea level equivalent). The Antarctic Ice Sheet (26.5 million km³, ~58 m (190 ft) sea level equivalent) dwarfs everything else. Note that while there are 220,000 individual mountain glaciers, their combined volume (~170,000 km³) is less than 1% of the Antarctic Ice Sheet — yet they contribute disproportionately to near-term sea level rise because they respond to climate change on decadal time scales, not millennia.`,
         },
         {
           q: 'Ice shelves are floating extensions of ice sheets grounded on the ocean floor. What is their most important dynamic role?',
@@ -236,7 +236,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
             'They act as reservoirs that store meltwater and release it gradually to regulate sea level',
           ],
           correct: 1,
-          explain: `Ice shelves exert back-stress (buttressing) on the grounded ice flowing into them from the interior. Where an ice shelf is pinned by submarine ridges (ice rises and rumples), it transmits this resistance upstream, slowing the ice streams that feed it. When ice shelves collapse or thin, the buttressing force is lost and upstream ice accelerates. The dramatic collapse of the Larsen B Ice Shelf in 2002 (3,250 km² disintegrated in ~35 days) was followed by 2–8× acceleration of the tributary glaciers — a real-world experiment demonstrating buttressing. This is why the stability of ice shelves like the Ross (500,000 km²) and Filchner-Ronne (440,000 km²) is critical for West Antarctic Ice Sheet stability and long-term sea level projections.`,
+          explain: `Ice shelves exert back-stress (buttressing) on the grounded ice flowing into them from the interior. Where an ice shelf is pinned by submarine ridges (ice rises and rumples), it transmits this resistance upstream, slowing the ice streams that feed it. When ice shelves collapse or thin, the buttressing force is lost and upstream ice accelerates. The dramatic collapse of the Larsen B Ice Shelf in 2002 (3,250 km² (1,255 sq mi) disintegrated in ~35 days) was followed by 2–8× acceleration of the tributary glaciers — a real-world experiment demonstrating buttressing. This is why the stability of ice shelves like the Ross (500,000 km² (193,050 sq mi)) and Filchner-Ronne (440,000 km² (169,884 sq mi)) is critical for West Antarctic Ice Sheet stability and long-term sea level projections.`,
         },
         {
           q: `The term \'temperate glacier\' refers to which glaciological property?`,
