@@ -76,7 +76,7 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
           icon: Globe,
           color: BRAND.jade,
           desc: 'Hydrolysis converts unstable primary silicate minerals (feldspars, micas) to stable secondary clay minerals; rate doubles per 10°C. Carbonation dissolves carbonate rocks via H₂CO₃, creating karst. Both reactions require water and are strongest in warm, humid climates.',
-          examples: 'Feldspar → kaolinite in granite saprolite; limestone karst towers in Guilin, China and Yucatán cenotes; bauxite (gibbsite-rich) formation in tropical West Africa and Jamaica.',
+          examples: 'Feldspar → kaolinite in granite saprolite (deeply weathered rock retaining parent rock structure but chemically altered throughout); limestone karst towers in Guilin, China and Yucatán cenotes; bauxite (gibbsite-rich) formation in tropical West Africa and Jamaica.',
         },
         {
           name: 'Weathering Products: From Primary to Secondary Minerals',
@@ -90,7 +90,7 @@ Weathering products depend on the intensity of leaching. Moderate hydrolysis pro
           icon: ArrowRight,
           color: BRAND.gold,
           desc: 'Temperature and moisture are master variables. Chemical weathering rates approximately double per 10°C (Arrhenius kinetics). Humid tropical regions develop 10–100× deeper weathering profiles than polar or arid regions. The ratio of weathering rate to erosion rate determines whether landscapes are weathering-limited or transport-limited.',
-          examples: 'Deep saprolite (chemically weathered bedrock) in the Piedmont of the southeastern USA reaches 30 m+; transport-limited landscapes in humid tropics have thick regolith; weathering-limited Arctic and alpine landscapes expose near-fresh bedrock.',
+          examples: 'Deep saprolite (deeply weathered rock that retains the parent rock\'s original structure but has been chemically altered throughout; common in tropical landscapes) in the Piedmont of the southeastern USA reaches 30 m+; transport-limited landscapes in humid tropics have thick regolith; weathering-limited Arctic and alpine landscapes expose near-fresh bedrock.',
         },
       ],
       interaction: {
