@@ -195,96 +195,88 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
         />
       </div>
 
-      <motion.h3
-        key={qIdx}
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="text-base font-semibold leading-snug"
-        style={{ color: BRAND.text }}
-      >
-        {current.q}
-      </motion.h3>
+      {/* Question text — slides out left, new one slides in from right */}
+      <AnimatePresence mode="wait">
+        <motion.h3
+          key={`q-${qIdx}`}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -30 }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base font-semibold leading-snug"
+          style={{ color: BRAND.text }}
+        >
+          {current.q}
+        </motion.h3>
+      </AnimatePresence>
 
-      <motion.div
-        key={qIdx}
-        className="space-y-2"
-        initial="hidden"
-        animate="show"
-        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
-      >
-        {current.a.map((answer, i) => {
-          const isSelected = selected === i
-          const isCorrect = i === current.correct
-          const isWrongPick = selected !== null && isSelected && !isCorrect
-
-          let borderColor: string = BRAND.border
-          let bgColor: string = BRAND.surfaceHi
-          let textColor: string = BRAND.textDim
-
-          if (selected !== null) {
-            if (isCorrect) { borderColor = BRAND.jade; bgColor = `${BRAND.jade}15`; textColor = BRAND.jade }
-            else if (isSelected) { borderColor = BRAND.ruby; bgColor = `${BRAND.ruby}15`; textColor = BRAND.ruby }
-            else { textColor = BRAND.textSubtle; bgColor = `${BRAND.surfaceHi}80` }
-          }
-
-          return (
-            <motion.button
-              key={i}
-              variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1] } } }}
-              onClick={() => choose(i)}
-              disabled={selected !== null}
-              animate={isWrongPick ? { x: [0, -6, 6, -4, 4, 0] } : { x: 0 }}
-              transition={isWrongPick ? { duration: 0.4 } : { type: 'spring', stiffness: 380, damping: 26 }}
-              whileHover={selected === null ? { x: 3 } : undefined}
-              whileTap={selected === null ? { scale: 0.99 } : undefined}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm transition-colors disabled:cursor-default"
-              style={{ border: `1px solid ${borderColor}`, backgroundColor: bgColor, color: textColor }}
-            >
-              <span
-                className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono border"
-                style={{ borderColor, color: textColor }}
-              >
-                <AnimatePresence mode="wait" initial={false}>
-                  {selected !== null && isCorrect ? (
-                    <motion.span key="ok" initial={{ scale: 0, rotate: -90 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 400, damping: 18 }}>
-                      <CheckCircle2 size={14} />
-                    </motion.span>
-                  ) : selected !== null && isSelected ? (
-                    <motion.span key="x" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 400, damping: 18 }}>
-                      <XCircle size={14} />
-                    </motion.span>
-                  ) : (
-                    <motion.span key={`letter-${i}`} initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
-                      {String.fromCharCode(65 + i)}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </span>
-              {answer}
-            </motion.button>
-          )
-        })}
-      </motion.div>
-
-      <AnimatePresence>
-        {selected !== null && (
+      {/* Answer buttons OR explanation — never both at the same time */}
+      <AnimatePresence mode="wait">
+        {selected === null ? (
           <motion.div
-            initial={{ opacity: 0, height: 0, y: -6 }}
-            animate={{ opacity: 1, height: 'auto', y: 0 }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-lg p-4 text-sm leading-relaxed overflow-hidden"
-            style={{
-              backgroundColor: selected === current.correct ? `${BRAND.jade}10` : `${BRAND.ruby}10`,
-              border: `1px solid ${selected === current.correct ? `${BRAND.jade}33` : `${BRAND.ruby}33`}`,
-              color: BRAND.textDim,
-            }}
+            key={`answers-${qIdx}`}
+            className="space-y-2"
+            initial="hidden"
+            animate="show"
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
           >
-            <span className="font-semibold mr-1" style={{ color: selected === current.correct ? BRAND.jade : BRAND.ruby }}>
-              {selected === current.correct ? 'Correct.' : 'Not quite.'}
-            </span>
-            {current.explain}
+            {current.a.map((answer, i) => (
+              <motion.button
+                key={i}
+                variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1] } } }}
+                onClick={() => choose(i)}
+                whileHover={{ x: 3 }}
+                whileTap={{ scale: 0.99 }}
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left text-sm"
+                style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi, color: BRAND.textDim }}
+              >
+                <span
+                  className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono border"
+                  style={{ borderColor: BRAND.border, color: BRAND.textDim }}
+                >
+                  {String.fromCharCode(65 + i)}
+                </span>
+                {answer}
+              </motion.button>
+            ))}
+          </motion.div>
+        ) : (
+          <motion.div
+            key={`explain-${qIdx}`}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-4"
+          >
+            {/* Result badge */}
+            <div
+              className="flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold"
+              style={{
+                backgroundColor: selected === current.correct ? `${BRAND.jade}15` : `${BRAND.ruby}15`,
+                border: `1px solid ${selected === current.correct ? `${BRAND.jade}40` : `${BRAND.ruby}40`}`,
+                color: selected === current.correct ? BRAND.jade : BRAND.ruby,
+              }}
+            >
+              {selected === current.correct
+                ? <CheckCircle2 size={16} />
+                : <XCircle size={16} />
+              }
+              {selected === current.correct ? 'Correct!' : 'Not quite.'}
+            </div>
+
+            {/* Explanation */}
+            <div
+              className="px-4 py-3 rounded-lg text-sm leading-relaxed"
+              style={{
+                backgroundColor: BRAND.surfaceHi,
+                border: `1px solid ${BRAND.border}`,
+                color: BRAND.textDim,
+              }}
+            >
+              {current.explain}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
