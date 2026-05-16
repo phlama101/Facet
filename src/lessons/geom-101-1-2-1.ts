@@ -84,7 +84,7 @@ Width-depth ratio W/D is a key discriminator: meandering channels typically have
           icon: ArrowRight,
           color: BRAND.gold,
           desc: `Leopold & Maddock\'s at-a-station relationships (w ∝ Q^0.5, d ∝ Q^0.4, v ∝ Q^0.1) show how a single cross-section responds to rising discharge. Downstream hydraulic geometry describes systematic widening and deepening from headwaters to mouth. Channels are not static — they adjust form within years to decades after perturbations such as dam construction.`,
-          examples: 'Channel width roughly doubles for each order-of-magnitude increase in discharge along a river system. Below Hoover Dam on the Colorado River, the channel narrowed and incised by ~2 m within 15 years of dam closure as sediment-starved flows cut the bed.',
+          examples: 'Channel width roughly doubles for each order-of-magnitude increase in discharge along a river system. Below Hoover Dam on the Colorado River, the channel narrowed and incised by ~2 m (7 ft) within 15 years of dam closure as sediment-starved flows cut the bed.',
         },
       ],
     },
