@@ -66,14 +66,14 @@ This lesson explains how solid rock can flow, where the heat driving that flow c
             x: 17,
             y: 44,
             label: 'Mantle',
-            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C at the top to ~4,000°C at the base, and composition transitions from peridotite (upper mantle) to bridgmanite-dominated rock (lower mantle).',
+            description: 'Earth\'s largest layer by volume (84%), extending from the base of the crust to 2,900 km depth. The mantle is solid rock but flows plastically over geological timescales, driving tectonic plate movement via convection currents. Temperature ranges from ~600°C at the top to ~4,000°C at the base, and composition transitions from peridotite in the upper mantle to denser mineral phases in the lower mantle.',
           },
           {
             id: 'lower-mantle',
             x: 50,
             y: 56,
             label: 'Lower Mantle',
-            description: 'The deeper portion of the mantle (660–2,900 km), where extreme pressure compresses rock into high-density mineral phases such as bridgmanite and ferropericlase. Seismic waves travel faster here, revealing increasing rock rigidity under confining pressure despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
+            description: 'The deeper portion of the mantle (660–2,900 km), where extreme pressure converts rock into high-density mineral phases — chiefly bridgmanite (the most abundant mineral in Earth\'s interior, formed from olivine under extreme pressure) and ferropericlase (an iron-magnesium oxide making up ~20% of this layer). Seismic waves travel faster here, revealing increasing rock rigidity despite rising temperatures. The lower mantle is relatively stable and difficult for tectonic convection currents to penetrate.',
           },
           {
             id: 'outer-core',
