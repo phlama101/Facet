@@ -105,7 +105,7 @@ In the next lesson we will zoom into the crust and discover why a thick continen
           icon: Globe,
           color: BRAND.amethyst,
           desc: "A solid iron-nickel sphere at Earth's very center, about 1,200 km in radius. Despite temperatures that may reach 5,000–6,000 °C — comparable to the surface of the Sun — the inner core remains solid because the immense pressure suppresses melting. Its solid state was inferred from detailed analysis of how P-waves pass through the exact center of the planet.",
-          examples: 'PKIKP seismic wave refraction detects solid state · ~5,100–6,371 km depth · Solid iron-nickel · ~1,200 km radius · Differential rotation ~0.3°/yr',
+          examples: 'PKIKP waves (seismic waves that travel through the outer core, inner core, and back — their travel time establishes the inner core\'s radius and reveals its solidity) · ~5,100–6,371 km depth · Solid iron-nickel · ~1,200 km radius · Differential rotation ~0.3°/yr',
         },
       ],
       interaction: {
