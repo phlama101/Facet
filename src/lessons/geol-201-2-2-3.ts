@@ -111,7 +111,7 @@ Beyond petroleum, sequence stratigraphy provides a global correlation framework.
           icon: Layers,
           color: BRAND.jade,
           desc: "Wheeler diagram: time on vertical axis, space on horizontal; filled = rock deposited; white = hiatus (no deposition or erosion); makes missing time visible as gaps; MFS = continuous horizontal line across basin. Outcrop identification: SB = incised valley, lag conglomerate, erosional truncation; TS = ravinement, pebbly lag, abrupt deepening; MFS = finest facies, most marine fossils, organic shale. Wireline log signature: SB = abrupt coarsening or erosional surface; TS = sharp base of cleaning; MFS = maximum gamma-ray (shale) peak — most widely used pick in subsurface correlation. Seismic: SB = truncation below + onlap above; MFS = continuous high-amplitude reflector.",
-          examples: "Book Cliffs, Utah: world's best outcrop example of sequence stratigraphy; Cretaceous sequences traced for 200+ km along cliff face; each sequence = SB → LST fluvial → TS → TST estuarine → MFS shale → HST shoreface → SB · Gulf of Mexico subsurface: LST fans (Wilcox, Frio, Miocene) = major gas and oil reservoirs sealed by TST shale",
+          examples: "Book Cliffs, Utah: world's best outcrop example of sequence stratigraphy; Cretaceous sequences traced for 200+ km (124+ mi) along cliff face; each sequence = SB → LST fluvial → TS → TST estuarine → MFS shale → HST shoreface → SB · Gulf of Mexico subsurface: LST fans (Wilcox, Frio, Miocene) = major gas and oil reservoirs sealed by TST shale",
         },
       ],
     },

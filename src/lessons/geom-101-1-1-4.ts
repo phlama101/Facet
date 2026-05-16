@@ -95,8 +95,8 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
           name: 'Erosion Rates and Cosmogenic Nuclide Dating',
           icon: ArrowRight,
           color: BRAND.gold,
-          desc: 'Cosmic rays produce ¹⁰Be and ²⁶Al in surface quartz at rates that decrease exponentially with depth (~1 m attenuation length). At steady state, surface nuclide concentration is inversely proportional to erosion rate. Sampling river sand integrates erosion over entire catchments. Global data reveal erosion rates spanning three orders of magnitude — from 0.01 mm/yr on cratons to 1–10 mm/yr in active orogens.',
-          examples: 'Erosion rates of 0.01 mm/yr on the Pilbara craton (Western Australia) vs. 1–10 mm/yr in the Southern Alps of New Zealand and the Himalaya. Sierra Nevada (California) ¹⁰Be studies yield erosion rates of 0.05–0.15 mm/yr, consistent with slow tectonic uplift and resistant granitic lithology.',
+          desc: 'Cosmic rays produce ¹⁰Be and ²⁶Al in surface quartz at rates that decrease exponentially with depth (~1 m (3 ft) attenuation length). At steady state, surface nuclide concentration is inversely proportional to erosion rate. Sampling river sand integrates erosion over entire catchments. Global data reveal erosion rates spanning three orders of magnitude — from 0.01 mm/yr on cratons to 1–10 mm/yr (0.04–0.39 in/yr) in active orogens.',
+          examples: 'Erosion rates of 0.01 mm/yr on the Pilbara craton (Western Australia) vs. 1–10 mm/yr (0.04–0.39 in/yr) in the Southern Alps of New Zealand and the Himalaya. Sierra Nevada (California) ¹⁰Be studies yield erosion rates of 0.05–0.15 mm/yr, consistent with slow tectonic uplift and resistant granitic lithology.',
         },
       ],
       interaction: {
@@ -125,7 +125,7 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
             x: 67,
             y: 56,
             label: 'Frost Wedging',
-            description: 'A mechanical weathering process where water entering rock cracks freezes and expands by ~9%, exerting pressures up to 200 MPa. Repeated freeze-thaw cycles progressively widen cracks and shatter rock into angular fragments. Frost wedging is most active in periglacial environments where temperature repeatedly cycles around 0°C, and is responsible for the jagged appearance of alpine rock faces and talus slopes.',
+            description: 'A mechanical weathering process where water entering rock cracks freezes and expands by ~9%, exerting pressures up to 200 MPa. Repeated freeze-thaw cycles progressively widen cracks and shatter rock into angular fragments. Frost wedging is most active in periglacial environments where temperature repeatedly cycles around 0°C (32°F), and is responsible for the jagged appearance of alpine rock faces and talus slopes.',
           },
           {
             id: 'colluvium',
@@ -173,7 +173,7 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
           {
             id: 'soil-creep',
             label: 'Soil Creep (Upper Slope)',
-            description: 'Diffusive transport dominates the convex upper slope. Bioturbation, freeze-thaw, and wetting-drying drive slow downslope flux proportional to gradient. Produces smooth, rounded hilltops. Rates typically 0.5–5 cm/yr.',
+            description: 'Diffusive transport dominates the convex upper slope. Bioturbation, freeze-thaw, and wetting-drying drive slow downslope flux proportional to gradient. Produces smooth, rounded hilltops. Rates typically 0.5–5 cm/yr (0.2–2.0 in/yr).',
             color: BRAND.jade,
           },
           {
@@ -254,7 +254,7 @@ Cosmogenic nuclide dating has revolutionised the measurement of hillslope erosio
             'Higher temperatures in arid climates cause thermal expansion of rock surfaces, producing angular fractures and sharp ridges; cool, humid climates prevent thermal cracking',
           ],
           correct: 1,
-          explain: `The smooth, rounded form of humid forested hillslopes is a direct product of high diffusive creep rates driven by intense bioturbation. Tree throw (uprooting by wind) alone can move 10–20 tonnes of soil per hectare per year, mixing and displacing soil downslope. Burrowing animals, root growth and decay, and wetting-drying cycles collectively produce high K values in the creep law qs = −K × dz/dx, causing rapid diffusive smoothing of any topographic irregularities. In arid environments, sparse vegetation drastically reduces bioturbation and creep rates; the dominant process becomes episodic overland flow and rilling, which is a threshold-dominated, non-diffusive process that tends to incise rather than smooth the hillslope. The result is the angular, rocky terrain characteristic of deserts, where individual bedrock outcrops persist because there is insufficient creep to bury and smooth them.`,
+          explain: `The smooth, rounded form of humid forested hillslopes is a direct product of high diffusive creep rates driven by intense bioturbation. Tree throw (uprooting by wind) alone can move 10–20 tonnes (11.0–22.0 tons) of soil per hectare per year, mixing and displacing soil downslope. Burrowing animals, root growth and decay, and wetting-drying cycles collectively produce high K values in the creep law qs = −K × dz/dx, causing rapid diffusive smoothing of any topographic irregularities. In arid environments, sparse vegetation drastically reduces bioturbation and creep rates; the dominant process becomes episodic overland flow and rilling, which is a threshold-dominated, non-diffusive process that tends to incise rather than smooth the hillslope. The result is the angular, rocky terrain characteristic of deserts, where individual bedrock outcrops persist because there is insufficient creep to bury and smooth them.`,
         },
       ],
     },

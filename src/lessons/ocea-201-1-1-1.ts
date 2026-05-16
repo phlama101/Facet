@@ -70,7 +70,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
 
 **Alkalinity controls buffering but is not changed by CO₂.** This is the most counterintuitive but essential fact in carbonate chemistry: adding CO₂ to seawater changes DIC but not alkalinity. This is because CO₂ is a neutral gas; its dissolution adds carbon but not charge. What changes is the partitioning among the DIC species. The buffering operates because as H⁺ is produced, carbonate (CO₃²⁻) captures it to form bicarbonate (CO₃²⁻ + H⁺ → HCO₃⁻), resisting the pH drop. But this consumption of CO₃²⁻ also lowers the saturation state Ω, creating a direct link between ocean acidification and CaCO₃ dissolution.
 
-**Saturation horizons shift with depth and time.** The aragonite saturation horizon sits at roughly 100–200 m in some tropical and subtropical regions, and at much shallower or surface-water levels in parts of the Southern Ocean and subarctic Pacific. As atmospheric CO₂ rises, this horizon shoals — threatening pteropods, corals, and other aragonite-secreting organisms in waters that were formerly supersaturated. MBARI time-series data from Monterey Bay have documented seasonal excursions of aragonite undersaturation reaching surface waters, particularly in upwelling zones where cold CO₂-rich deep water reaches the surface.
+**Saturation horizons shift with depth and time.** The aragonite saturation horizon sits at roughly 100–200 m (328–656 ft) in some tropical and subtropical regions, and at much shallower or surface-water levels in parts of the Southern Ocean and subarctic Pacific. As atmospheric CO₂ rises, this horizon shoals — threatening pteropods, corals, and other aragonite-secreting organisms in waters that were formerly supersaturated. MBARI time-series data from Monterey Bay have documented seasonal excursions of aragonite undersaturation reaching surface waters, particularly in upwelling zones where cold CO₂-rich deep water reaches the surface.
 
 **The Revelle factor increases as CO₂ rises.** In pre-industrial surface seawater (pH ~8.2), the Revelle factor was approximately 8–9. In present-day surface water it is approximately 10–11. In a high-CO₂ future it will be 12–14. This progressive increase means each additional unit of atmospheric CO₂ is taken up less efficiently by the ocean — a positive feedback that accelerates atmospheric CO₂ accumulation as natural carbon sinks become less effective.`,
       cards: [
@@ -79,7 +79,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
           icon: Waves,
           color: BRAND.accent,
           desc: 'CO₂ dissolves and distributes across three DIC species (CO₂*, HCO₃⁻, CO₃²⁻) governed by temperature-, salinity-, and pressure-dependent equilibrium constants K₁ and K₂. At surface-ocean pH ~8.1, ~90% of DIC is bicarbonate. The biological and solubility pumps exploit this equilibrium to export carbon to the deep ocean.',
-          examples: 'DIC ~2,000 μmol kg⁻¹ in surface ocean · Bicarbonate dominant at pH 8.1 · Deep Pacific DIC ~2,300 μmol kg⁻¹ · K₁ = 10⁻⁶, K₂ = 10⁻⁹·³ at 25°C, salinity 35',
+          examples: 'DIC ~2,000 μmol kg⁻¹ in surface ocean · Bicarbonate dominant at pH 8.1 · Deep Pacific DIC ~2,300 μmol kg⁻¹ · K₁ = 10⁻⁶, K₂ = 10⁻⁹·³ at 25°C (77°F), salinity 35',
         },
         {
           name: 'Alkalinity and Buffering Capacity',
@@ -93,7 +93,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
           icon: Activity,
           color: BRAND.coral,
           desc: 'Ω = [Ca²⁺][CO₃²⁻]/Ksp determines whether CaCO₃ precipitates or dissolves. Aragonite (corals, pteropods, molluscs) is ~50% more soluble than calcite; its saturation horizon is shallower. Rising CO₂ lowers [CO₃²⁻], reducing Ω and shoaling saturation horizons, exposing surface-dwelling calcifiers to undersaturation.',
-          examples: 'Tropical surface-ocean Ω-aragonite ~3–4; corals build reefs · Southern Ocean Ω-aragonite approaching 1 seasonally · Aragonite saturation horizon ~200 m in tropics, near-surface in polar seas · Pteropod shells visibly dissolving in Southern Ocean samples',
+          examples: 'Tropical surface-ocean Ω-aragonite ~3–4; corals build reefs · Southern Ocean Ω-aragonite approaching 1 seasonally · Aragonite saturation horizon ~200 m (656 ft) in tropics, near-surface in polar seas · Pteropod shells visibly dissolving in Southern Ocean samples',
         },
         {
           name: 'CO₂ Exchange at the Air-Sea Interface',
@@ -145,7 +145,7 @@ Ocean carbonate chemistry thus links the atmosphere, the biological productivity
           {
             id: 'caco3',
             label: 'CaCO₃ precipitation/dissolution',
-            description: 'When Ω = [Ca²⁺][CO₃²⁻]/Ksp > 1, calcium carbonate precipitates as calcite (foraminifera, coccoliths) or aragonite (corals, pteropods). When Ω < 1, shells dissolve. Rising CO₂ lowers [CO₃²⁻], shoaling the saturation horizon. Below the calcite compensation depth (CCD, ~4,500 m in the Atlantic), all CaCO₃ dissolves before reaching the seafloor.',
+            description: 'When Ω = [Ca²⁺][CO₃²⁻]/Ksp > 1, calcium carbonate precipitates as calcite (foraminifera, coccoliths) or aragonite (corals, pteropods). When Ω < 1, shells dissolve. Rising CO₂ lowers [CO₃²⁻], shoaling the saturation horizon. Below the calcite compensation depth (CCD, ~4,500 m (14,764 ft) in the Atlantic), all CaCO₃ dissolves before reaching the seafloor.',
             color: BRAND.ruby,
           },
         ],

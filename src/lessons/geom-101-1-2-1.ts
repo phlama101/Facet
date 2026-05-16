@@ -25,7 +25,7 @@ const channelMorphology: Lesson = {
 
 Sediment entrainment is governed by the Shields criterion. The dimensionless Shields stress τ* = τ/(γs − γ)D compares the bed shear stress τ to the buoyant weight of a grain of diameter D, where γs and γ are the specific weights of sediment and water. When τ* exceeds the critical Shields number (~0.045 for well-sorted sand), grains begin to move as bedload. Coarser gravel requires greater shear stress to entrain, but fine cohesive clays resist entrainment at surprisingly high velocities due to electrochemical bonding — a relationship captured by the Hjulström diagram, which shows that medium sand (0.1–0.5 mm) is the easiest material to erode, while both coarser gravels and finer silts/clays require higher velocities.
 
-As flow velocity increases over a sand bed, bedforms evolve through a predictable sequence. At low velocities the bed is flat (lower-regime plane bed). With increasing velocity, ripples appear in fine sand (D < 0.7 mm); ripples are small (height < 0.04 m, length < 0.6 m) and migrate downstream. At higher velocity, dunes form — larger (height 0.1–1 m, length 1–100 m), also migrating downstream. Dunes dramatically increase hydraulic roughness. With further velocity increase, the upper-regime plane bed develops as dunes wash out; finally antidunes form, migrating upstream in phase with surface waves. This transition from lower to upper regime is marked by a Froude number of 1.
+As flow velocity increases over a sand bed, bedforms evolve through a predictable sequence. At low velocities the bed is flat (lower-regime plane bed). With increasing velocity, ripples appear in fine sand (D < 0.7 mm); ripples are small (height < 0.04 m, length < 0.6 m (2 ft)) and migrate downstream. At higher velocity, dunes form — larger (height 0.1–1 m (up to 3 ft), length 1–100 m (3–328 ft)), also migrating downstream. Dunes dramatically increase hydraulic roughness. With further velocity increase, the upper-regime plane bed develops as dunes wash out; finally antidunes form, migrating upstream in phase with surface waves. This transition from lower to upper regime is marked by a Froude number of 1.
 
 Channel planform — the pattern seen from above — reflects the balance between stream power, sediment supply, and bank strength. Straight channels (sinuosity < 1.05) are rare in nature. Meandering channels (sinuosity > 1.5) have a single sinuous thread, cohesive fine-grained banks, moderate-to-low gradient, and relatively steady discharge. Braided channels have multiple unstable threads separated by bars, non-cohesive coarse sediment, steep gradients, high and variable discharge, and abundant sediment supply. Anastomosed channels are a rarer pattern with multiple stable, low-energy channels separated by vegetated islands.
 
@@ -63,14 +63,14 @@ Width-depth ratio W/D is a key discriminator: meandering channels typically have
           icon: Activity,
           color: BRAND.accent,
           desc: 'Stream power Ω = ρgQS controls how much erosion and transport a river can accomplish. The Shields parameter τ* compares bed shear stress to the buoyant weight of a grain; the critical Shields number ~0.045 for sand marks the threshold of motion. Gravel requires higher shear stress; cohesive clays resist entrainment despite low mass.',
-          examples: 'Calculating discharge threshold for gravel movement: a 50 mm gravel grain on a 0.001 slope requires roughly Q > 20 m³/s in a 10 m-wide channel before the Shields criterion is met.',
+          examples: 'Calculating discharge threshold for gravel movement: a 50 mm (2.0 in) gravel grain on a 0.001 slope requires roughly Q > 20 m³/s in a 10 m (33 ft)-wide channel before the Shields criterion is met.',
         },
         {
           name: 'Bedforms and the Velocity-Depth Regime',
           icon: Globe,
           color: BRAND.jade,
           desc: `Ripples form in fine sand (D < 0.7 mm) at low velocity; dunes form at higher velocity and dominate most sandy rivers; upper-regime plane bed and antidunes develop at Froude numbers approaching and exceeding 1. Bedforms control hydraulic roughness — dunes can double Manning\'s n compared to a plane bed.`,
-          examples: 'Sand dunes 0.5–2 m high migrate through the Missouri River at flood stage; antidunes are visible as standing waves in steep mountain rapids on the Salmon River, Idaho.',
+          examples: 'Sand dunes 0.5–2 m (2–7 ft) high migrate through the Missouri River at flood stage; antidunes are visible as standing waves in steep mountain rapids on the Salmon River, Idaho.',
         },
         {
           name: 'Channel Patterns: Meandering vs. Braided',

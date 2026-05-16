@@ -10,7 +10,7 @@ const midOceanRidges: Lesson = {
   level: 'Beginner',
   duration: '13 min',
   xpReward: 150,
-  description: "At the bottom of every ocean, a 65,000-kilometre volcanic mountain chain continuously forges new seafloor — and hosts ecosystems that survive without a single ray of sunlight.",
+  description: "At the bottom of every ocean, a 65,000-kilometre (40,391 mi) volcanic mountain chain continuously forges new seafloor — and hosts ecosystems that survive without a single ray of sunlight.",
   sources: [
     { org: 'NOAA',     title: 'Hydrothermal Vents',                                       url: 'https://oceanservice.noaa.gov/facts/vents.html' },
     { org: 'NOAA',     title: 'Ocean Exploration — Mid-Ocean Ridges',                     url: 'https://oceanexplorer.noaa.gov/facts/mid-ocean-ridge.html' },
@@ -22,11 +22,11 @@ const midOceanRidges: Lesson = {
     {
       type: 'intro',
       title: "The planet's longest mountain range",
-      body: `Every year, mid-ocean ridges produce roughly 3 cubic kilometres of new volcanic rock — more than all of Earth's land volcanoes combined. This hidden mountain system, stretching 65,000 kilometres beneath every ocean, is the most volcanically active feature on the planet and the engine that drives plate tectonics.
+      body: `Every year, mid-ocean ridges produce roughly 3 cubic kilometres (0.72 cu mi) of new volcanic rock — more than all of Earth's land volcanoes combined. This hidden mountain system, stretching 65,000 kilometres (40,391 mi) beneath every ocean, is the most volcanically active feature on the planet and the engine that drives plate tectonics.
 
-In 1977, marine geologists aboard the research submersible *Alvin* descended to the Galapagos Rift, a section of the mid-ocean ridge system in the eastern Pacific. They were testing a hypothesis: if seafloor spreading is driven by hot magma rising from the mantle, the seafloor at the ridge crest should be warm, and seawater percolating through cracks in the basalt should absorb that heat and emerge somewhere. What they found exceeded all expectations. At a depth of 2,500 metres, where the temperature of normal bottom water is just 2°C, they encountered shimmering columns of superheated water pouring from cracks in the seafloor at temperatures above 350°C. Around these **hydrothermal vents**, improbably, lived dense colonies of tubeworms, giant clams, shrimp, crabs, and fish — entirely independent of sunlight for energy. Instead, bacteria oxidised hydrogen sulphide emerging from the vents, producing the chemical energy that fuelled the entire food web. The discovery of hydrothermal vent ecosystems overturned the assumption that all life on Earth depends ultimately on photosynthesis, and opened new hypotheses about where life might exist elsewhere in the solar system.
+In 1977, marine geologists aboard the research submersible *Alvin* descended to the Galapagos Rift, a section of the mid-ocean ridge system in the eastern Pacific. They were testing a hypothesis: if seafloor spreading is driven by hot magma rising from the mantle, the seafloor at the ridge crest should be warm, and seawater percolating through cracks in the basalt should absorb that heat and emerge somewhere. What they found exceeded all expectations. At a depth of 2,500 metres (8,202 ft), where the temperature of normal bottom water is just 2°C (36°F), they encountered shimmering columns of superheated water pouring from cracks in the seafloor at temperatures above 350°C (662°F). Around these **hydrothermal vents**, improbably, lived dense colonies of tubeworms, giant clams, shrimp, crabs, and fish — entirely independent of sunlight for energy. Instead, bacteria oxidised hydrogen sulphide emerging from the vents, producing the chemical energy that fuelled the entire food web. The discovery of hydrothermal vent ecosystems overturned the assumption that all life on Earth depends ultimately on photosynthesis, and opened new hypotheses about where life might exist elsewhere in the solar system.
 
-The hydrothermal vents are a consequence of a larger geological system: the **mid-ocean ridge**. Running through every ocean basin on Earth, the mid-ocean ridge system is a continuous volcanic mountain chain approximately 65,000 kilometres long — roughly the circumference of Earth, and ten times the length of the Andes. It is the most volcanically active feature on the planet's surface. Every year, mid-ocean ridges produce approximately 3 km³ of new basaltic oceanic crust — vastly more volcanic material than all of the world's subaerial volcanoes combined. This continuous creation of new seafloor is the engine of plate tectonics: new crust forms, pushes older crust away from the ridge axis, and ultimately drives the movement of the tectonic plates.
+The hydrothermal vents are a consequence of a larger geological system: the **mid-ocean ridge**. Running through every ocean basin on Earth, the mid-ocean ridge system is a continuous volcanic mountain chain approximately 65,000 kilometres (40,391 mi) long — roughly the circumference of Earth, and ten times the length of the Andes. It is the most volcanically active feature on the planet's surface. Every year, mid-ocean ridges produce approximately 3 km³ (0.72 cu mi) of new basaltic oceanic crust — vastly more volcanic material than all of the world's subaerial volcanoes combined. This continuous creation of new seafloor is the engine of plate tectonics: new crust forms, pushes older crust away from the ridge axis, and ultimately drives the movement of the tectonic plates.
 
 The ridge system was first identified as a continuous global structure by Marie Tharp and Bruce Heezen in the 1950s, using thousands of sonar profiles collected by ships of Columbia University's Lamont-Doherty Geological Observatory. Tharp's meticulous hand-drafting of the seafloor bathymetry, frustrated at several points by the refusal of colleagues to take her data seriously, ultimately produced the first maps to show the global mid-ocean ridge system in its full extent — a scientific contribution that helped launch the plate tectonics revolution.`,
       keyTerms: [
@@ -36,11 +36,11 @@ The ridge system was first identified as a continuous global structure by Marie 
         },
         {
           term: 'Rift valley',
-          def: 'The central graben (down-dropped block between two faults) that runs along the crest of a mid-ocean ridge, where new oceanic crust is being pulled apart. Most prominent at slow-spreading ridges like the Mid-Atlantic Ridge, where it can be 30–50 km wide and 1–2 km deep. At fast-spreading ridges it is shallower and less pronounced.',
+          def: 'The central graben (down-dropped block between two faults) that runs along the crest of a mid-ocean ridge, where new oceanic crust is being pulled apart. Most prominent at slow-spreading ridges like the Mid-Atlantic Ridge, where it can be 30–50 km (19–31 mi) wide and 1–2 km (0.6–1.2 mi) deep. At fast-spreading ridges it is shallower and less pronounced.',
         },
         {
           term: 'Black smoker',
-          def: 'A type of hydrothermal vent that emits superheated, mineral-rich water at temperatures up to 400°C. The dark colour results from precipitation of fine-grained metal sulphide minerals (iron, copper, zinc, lead) as the hot vent fluid mixes with cold seawater. Build chimney structures up to 60 m tall over decades.',
+          def: 'A type of hydrothermal vent that emits superheated, mineral-rich water at temperatures up to 400°C (752°F). The dark colour results from precipitation of fine-grained metal sulphide minerals (iron, copper, zinc, lead) as the hot vent fluid mixes with cold seawater. Build chimney structures up to 60 m (197 ft) tall over decades.',
         },
         {
           term: 'Chemosynthesis',
@@ -54,7 +54,7 @@ The ridge system was first identified as a continuous global structure by Marie 
       interaction: {
         type: 'scientific-diagram' as const,
         id: 'ocean-depth-zones',
-        caption: 'Ocean depth zones from the sunlit epipelagic to the hadal zone of ocean trenches. Depth axis is log-compressed for readability; light penetration fades below ~200 m.',
+        caption: 'Ocean depth zones from the sunlit epipelagic to the hadal zone of ocean trenches. Depth axis is log-compressed for readability; light penetration fades below ~200 m (656 ft).',
         credit: 'NOAA Ocean Exploration',
       },
     },
@@ -73,7 +73,7 @@ The ridge system was first identified as a continuous global structure by Marie 
 
 **Transform faults and fracture zones.** Mid-ocean ridges are not straight. They are offset by hundreds of transform faults — fractures perpendicular to the ridge axis where segments of the ridge are shifted laterally by tens to hundreds of kilometres. Between two offset ridge segments, the crust on both sides moves in the same direction but at different distances from the ridge; this creates the lateral shearing motion that gives transform faults their name. Transform faults at mid-ocean ridges are active seismic zones; beyond the ridge offset, inactive fracture zones extend across the ocean floor, recording the geometry of past ridge offsets. The San Andreas Fault in California is a continental transform fault where the Pacific and North American plates slide past each other — geologically equivalent to a mid-ocean transform, except it occurs on land.
 
-**Hydrothermal circulation.** Seawater percolates down through cracks and pores in the newly formed basaltic crust. As it descends toward the hot magma body below, it heats to temperatures exceeding 400°C. At these temperatures and pressures, seawater is a powerful chemical reagent: it strips metals (iron, copper, zinc, cobalt, lead, silver, gold) and other elements from the surrounding basalt. The hot, metal-laden fluid rises back through the crust along fault zones and erupts at the seafloor as hydrothermal vents. Where the fluid is hottest and most metal-rich, it immediately precipitates sulphide minerals as it hits cold seawater, building chimneys of **black smoker** material — sometimes growing at several centimetres per day and reaching tens of metres in height. Cooler, more diffuse flows — **white smokers** — emit milky water rich in barium, calcium, and silicon. Some vents, called **Lost City** vents (discovered in 2000 on the Mid-Atlantic Ridge), are driven not by magmatic heat but by serpentinisation: the reaction of seawater with deep mantle rock (peridotite), which generates hydrogen and heat without a proximate magma body.
+**Hydrothermal circulation.** Seawater percolates down through cracks and pores in the newly formed basaltic crust. As it descends toward the hot magma body below, it heats to temperatures exceeding 400°C (752°F). At these temperatures and pressures, seawater is a powerful chemical reagent: it strips metals (iron, copper, zinc, cobalt, lead, silver, gold) and other elements from the surrounding basalt. The hot, metal-laden fluid rises back through the crust along fault zones and erupts at the seafloor as hydrothermal vents. Where the fluid is hottest and most metal-rich, it immediately precipitates sulphide minerals as it hits cold seawater, building chimneys of **black smoker** material — sometimes growing at several centimetres per day and reaching tens of metres in height. Cooler, more diffuse flows — **white smokers** — emit milky water rich in barium, calcium, and silicon. Some vents, called **Lost City** vents (discovered in 2000 on the Mid-Atlantic Ridge), are driven not by magmatic heat but by serpentinisation: the reaction of seawater with deep mantle rock (peridotite), which generates hydrogen and heat without a proximate magma body.
 
 **Hydrothermal vent chemistry and the ocean.** Hydrothermal circulation is not just biologically important — it is a major control on ocean chemistry. The global mid-ocean ridge system processes roughly the entire volume of the world's ocean through hydrothermal circulation every 8–10 million years. This circulation removes magnesium and sulphate from seawater and adds calcium, silicon, iron, and manganese — effectively acting as a massive geochemical pump that regulates ocean composition over geological time. The iron and trace metals added by hydrothermal vents near ridges fertilise phytoplankton in the open ocean.
 
@@ -90,14 +90,14 @@ The ridge system was first identified as a continuous global structure by Marie 
           name: 'Black & White Smokers',
           icon: Flame,
           color: BRAND.coral,
-          desc: 'Black smokers: >350°C, precipitate iron-copper-zinc sulphides, form tall chimneys. White smokers: 40–300°C, precipitate barium-calcium-silicon minerals, milky plume. Lost City vents (2000): driven by serpentinisation rather than magmatic heat — peridotite + seawater reaction generates H₂ and heat independently of a magma source. All types support chemosynthetic communities.',
-          examples: 'TAG Field (Mid-Atlantic Ridge): active black smokers at 2,600 m, explored by *Alvin* · Lost City (Mid-Atlantic): serpentinisation-driven chimneys up to 60 m tall, discovered 2000 · Galapagos Rift: site of first hydrothermal vent discovery in 1977',
+          desc: 'Black smokers: >350°C (662°F), precipitate iron-copper-zinc sulphides, form tall chimneys. White smokers: 40–300°C (104–572°F), precipitate barium-calcium-silicon minerals, milky plume. Lost City vents (2000): driven by serpentinisation rather than magmatic heat — peridotite + seawater reaction generates H₂ and heat independently of a magma source. All types support chemosynthetic communities.',
+          examples: 'TAG Field (Mid-Atlantic Ridge): active black smokers at 2,600 m (8,531 ft), explored by *Alvin* · Lost City (Mid-Atlantic): serpentinisation-driven chimneys up to 60 m (197 ft) tall, discovered 2000 · Galapagos Rift: site of first hydrothermal vent discovery in 1977',
         },
         {
           name: 'Vent Ecosystems',
           icon: Waves,
           color: BRAND.accent,
-          desc: 'Chemosynthesis drives vent food webs instead of photosynthesis. Bacteria and Archaea oxidise H₂S → organic carbon. Tubeworms (Riftia pachyptila): up to 2 m long, no mouth or gut, feed entirely via chemosynthetic symbionts in trophosome. Giant clams, mussels, shrimp, crabs, eelpout fish. Individual vent lifespan: decades to centuries. Species disperse across ocean basins via bottom currents between active vents.',
+          desc: 'Chemosynthesis drives vent food webs instead of photosynthesis. Bacteria and Archaea oxidise H₂S → organic carbon. Tubeworms (Riftia pachyptila): up to 2 m (7 ft) long, no mouth or gut, feed entirely via chemosynthetic symbionts in trophosome. Giant clams, mussels, shrimp, crabs, eelpout fish. Individual vent lifespan: decades to centuries. Species disperse across ocean basins via bottom currents between active vents.',
           examples: `Riftia pachyptila: growth rate up to 85 cm/yr, world\'s fastest animal growth · Yeti crab: "farms" bacterial mats on its hairy claws · 700+ species unique to hydrothermal vents globally`,
         },
       ],
@@ -113,35 +113,35 @@ The ridge system was first identified as a continuous global structure by Marie 
             x: 8,
             y: 48,
             label: 'Continental Shelf',
-            description: 'The gently sloping underwater extension of the continent, reaching depths of 0–200 m over widths of 50–350 km. Continental shelves are geologically part of the continent (continental crust), biologically rich due to sunlight penetration and nutrient upwelling, and economically critical for fisheries and offshore hydrocarbon resources. They end abruptly at the shelf break, where the slope steepens dramatically.',
+            description: 'The gently sloping underwater extension of the continent, reaching depths of 0–200 m (0–656 ft) over widths of 50–350 km (31–217 mi). Continental shelves are geologically part of the continent (continental crust), biologically rich due to sunlight penetration and nutrient upwelling, and economically critical for fisheries and offshore hydrocarbon resources. They end abruptly at the shelf break, where the slope steepens dramatically.',
           },
           {
             id: 'abyssal-plain',
             x: 35,
             y: 63,
             label: 'Abyssal Plain',
-            description: 'The vast, remarkably flat deep-ocean floor at 3,000–6,000 m depth, blanketed by slow-settling sediment — clay particles, siliceous ooze from diatom shells, and calcareous ooze from foraminifera — that smooths all topographic features. Abyssal plains cover ~50% of Earth\'s surface, making them the largest geographic feature on the planet, yet they were essentially unknown until sonar mapping in the 20th century.',
+            description: 'The vast, remarkably flat deep-ocean floor at 3,000–6,000 m (9,843–19,686 ft) depth, blanketed by slow-settling sediment — clay particles, siliceous ooze from diatom shells, and calcareous ooze from foraminifera — that smooths all topographic features. Abyssal plains cover ~50% of Earth\'s surface, making them the largest geographic feature on the planet, yet they were essentially unknown until sonar mapping in the 20th century.',
           },
           {
             id: 'mid-ocean-ridge',
             x: 64,
             y: 37,
             label: 'Mid-Ocean Ridge',
-            description: 'A continuous underwater mountain range where new oceanic crust is created by seafloor spreading — molten rock wells up between separating plates and solidifies. The global mid-ocean ridge system is 65,000 km long, the longest mountain range on Earth. Hydrothermal vents along the ridge support unique ecosystems powered by chemosynthesis rather than photosynthesis, independent of sunlight.',
+            description: 'A continuous underwater mountain range where new oceanic crust is created by seafloor spreading — molten rock wells up between separating plates and solidifies. The global mid-ocean ridge system is 65,000 km (40,391 mi) long, the longest mountain range on Earth. Hydrothermal vents along the ridge support unique ecosystems powered by chemosynthesis rather than photosynthesis, independent of sunlight.',
           },
           {
             id: 'trench',
             x: 82,
             y: 84,
             label: 'Ocean Trench',
-            description: 'The deepest ocean features, formed where dense oceanic crust subducts beneath another plate. Trenches reach depths exceeding 10,000 m (the Mariana Trench is 11,034 m). They are geologically active zones of frequent large earthquakes, including megathrust events (M9+). Despite crushing pressures and total darkness, hadal zones (>6,000 m) host specially adapted organisms including amphipods and snailfish.',
+            description: 'The deepest ocean features, formed where dense oceanic crust subducts beneath another plate. Trenches reach depths exceeding 10,000 m (32,810 ft) (the Mariana Trench is 11,034 m (36,203 ft)). They are geologically active zones of frequent large earthquakes, including megathrust events (M9+). Despite crushing pressures and total darkness, hadal zones (>6,000 m (19,686 ft)) host specially adapted organisms including amphipods and snailfish.',
           },
           {
             id: 'seamount',
             x: 91,
             y: 57,
             label: 'Seamount',
-            description: 'An underwater volcano rising more than 1,000 m from the seafloor but not reaching the ocean surface. Seamounts are typically extinct hot-spot volcanoes carried away from their magma source by plate movement. They serve as biodiversity hotspots, concentrating marine life that feeds on currents deflected upward by the seamount\'s flanks. There are estimated to be over 100,000 seamounts worldwide.',
+            description: 'An underwater volcano rising more than 1,000 m (3,281 ft) from the seafloor but not reaching the ocean surface. Seamounts are typically extinct hot-spot volcanoes carried away from their magma source by plate movement. They serve as biodiversity hotspots, concentrating marine life that feeds on currents deflected upward by the seamount\'s flanks. There are estimated to be over 100,000 seamounts worldwide.',
           },
         ],
       },
@@ -151,7 +151,7 @@ The ridge system was first identified as a continuous global structure by Marie 
       title: 'Key takeaways',
       body: `• **Spreading rate controls ridge shape**: Fast-spreading ridges (East Pacific Rise, ~12 cm/yr) have smooth, broad axial highs because a continuous magma supply keeps the crust warm and buoyant. Slow-spreading ridges (Mid-Atlantic Ridge, ~2.5 cm/yr) have rugged, steep flanks and a deep rift valley because faulting dominates between infrequent eruptions.
 
-• **Hydrothermal vents are powered by seawater circulating through hot crust**: Cold seawater percolates down through cracks, heats to over 400°C near the magma body, strips metals from the basalt, and erupts as mineral-laden black smokers. This circulation processes the entire volume of the world's oceans every 8–10 million years and significantly influences ocean chemistry.
+• **Hydrothermal vents are powered by seawater circulating through hot crust**: Cold seawater percolates down through cracks, heats to over 400°C (752°F) near the magma body, strips metals from the basalt, and erupts as mineral-laden black smokers. This circulation processes the entire volume of the world's oceans every 8–10 million years and significantly influences ocean chemistry.
 
 • **Vent ecosystems run on chemistry, not sunlight**: Chemosynthetic bacteria oxidise hydrogen sulphide from vent fluid using dissolved oxygen, producing organic carbon that supports tubeworms, clams, shrimp, and fish — entirely independent of photosynthesis. This was the first ecosystem discovered on Earth that does not ultimately depend on sunlight.`,
     },
@@ -170,7 +170,7 @@ The ridge system was first identified as a continuous global structure by Marie 
           explain: 'Ridge morphology is not controlled by basalt age (A) — both fast and slow ridges produce the same young basalt at the spreading centre; the age of surrounding crust does not influence the axial morphology. Basin age (C) is not the primary factor — the Pacific is not significantly younger, and erosion does not carve rifts into the deep ocean floor. Water temperature differences (D) are not mechanically significant enough to drive this structural difference. The correct answer is B: at fast-spreading ridges, a nearly continuous supply of magma from the underlying mantle keeps the crust warm, partially molten, and buoyant; the thermal inflation of the crust creates the broad axial high, and the constant volcanism outpaces extensional faulting; at slow-spreading ridges, magma supply is episodic — the crust cools between eruptions, becomes brittle, and is pulled apart by plate divergence, creating normal faults and the characteristic deep, wide rift valley; this difference is one of the most robust relationships in marine geology and has been confirmed by extensive drilling and seismic imaging.',
         },
         {
-          q: 'Hydrothermal vent communities depend on chemosynthesis rather than photosynthesis as their energy source. What chemical reaction drives chemosynthesis at most hydrothermal vents, and why does it provide a viable energy source at 2,500 m depth?',
+          q: 'Hydrothermal vent communities depend on chemosynthesis rather than photosynthesis as their energy source. What chemical reaction drives chemosynthesis at most hydrothermal vents, and why does it provide a viable energy source at 2,500 m (8,202 ft) depth?',
           a: [
             'Vent bacteria use the temperature difference between the hot vent fluid and cold seawater as an energy source, in a biological equivalent of a thermoelectric generator — this is called chemosynthesis because the temperature gradient involves chemical heat energy',
             'Vent bacteria oxidise hydrogen sulphide (H₂S) from the vent fluid using dissolved oxygen from seawater; the energy released by this oxidation reaction is used to fix carbon dioxide into organic molecules, in the same way photosynthesis uses light energy',
@@ -200,7 +200,7 @@ The ridge system was first identified as a continuous global structure by Marie 
             'It means oceanic crust is entirely replaced by new basalt every 8–10 million years as the original crust is chemically consumed by reacting with seawater; the hydrothermal circulation dissolves the seafloor to create the minerals it later deposits elsewhere',
           ],
           correct: 2,
-          explain: 'Progressive salting (A) does not occur; the ocean maintains a roughly stable salinity over geological time because inputs from rivers and hydrothermal systems are balanced by removal via sediment burial, biological uptake, and hydrothermal precipitation — including the removal of magnesium and sulphate by the vents themselves. Near-boiling deep ocean temperatures (B) do not result from this process; hydrothermal heat is concentrated near ridge axes and is rapidly diluted into the vast ocean volume; the deep ocean remains at 2–4°C globally. Crustal dissolution (D) is incorrect; the basaltic crust is chemically altered (hydrated) but not dissolved — hydrothermal circulation modifies the crust and the fluid chemistry, not consumed the crust wholesale. The correct answer is C: because every drop of ocean water is cycled through hot basaltic crust over an 8–10 million year timescale, hydrothermal systems exert a first-order control on ocean chemistry; as cold seawater penetrates downward and heats, it undergoes a series of mineral reactions — magnesium and sulphate are stripped from the water and incorporated into secondary minerals in the altered basalt, while calcium, silica, iron, manganese, and reduced sulphur species are leached from the rock and added to the upwelling vent fluid; this two-way chemical exchange means that ocean chemistry reflects a balance between riverine input, biological cycling, sediment burial, and the continuous hydrothermal exchange with the oceanic crust; changes in spreading rate (and therefore hydrothermal flux) over geological time contributed to major shifts in ocean chemistry and, in turn, climate.',
+          explain: 'Progressive salting (A) does not occur; the ocean maintains a roughly stable salinity over geological time because inputs from rivers and hydrothermal systems are balanced by removal via sediment burial, biological uptake, and hydrothermal precipitation — including the removal of magnesium and sulphate by the vents themselves. Near-boiling deep ocean temperatures (B) do not result from this process; hydrothermal heat is concentrated near ridge axes and is rapidly diluted into the vast ocean volume; the deep ocean remains at 2–4°C (36–39°F) globally. Crustal dissolution (D) is incorrect; the basaltic crust is chemically altered (hydrated) but not dissolved — hydrothermal circulation modifies the crust and the fluid chemistry, not consumed the crust wholesale. The correct answer is C: because every drop of ocean water is cycled through hot basaltic crust over an 8–10 million year timescale, hydrothermal systems exert a first-order control on ocean chemistry; as cold seawater penetrates downward and heats, it undergoes a series of mineral reactions — magnesium and sulphate are stripped from the water and incorporated into secondary minerals in the altered basalt, while calcium, silica, iron, manganese, and reduced sulphur species are leached from the rock and added to the upwelling vent fluid; this two-way chemical exchange means that ocean chemistry reflects a balance between riverine input, biological cycling, sediment burial, and the continuous hydrothermal exchange with the oceanic crust; changes in spreading rate (and therefore hydrothermal flux) over geological time contributed to major shifts in ocean chemistry and, in turn, climate.',
         },
       ],
     },
