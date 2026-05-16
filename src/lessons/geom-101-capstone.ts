@@ -31,7 +31,7 @@ You\'ll be asked to interpret landform evidence, evaluate process relationships,
       questions: [
         // ── Chapter 1: Weathering, Soils, Mass Wasting, Hillslopes ──────────
         {
-          q: 'Why is freeze-thaw (frost) weathering most effective when temperatures cycle between 0 °C and −5 °C?',
+          q: 'Why is freeze-thaw (frost) weathering most effective when temperatures cycle between 0 °C (32 °F) and −5 °C (23 °F)?',
           a: [
             'Ice contracts below −5 °C, pulling rock walls inward and widening cracks by tension',
             'Water expands ~9 % on freezing, generating up to 207 MPa in confined pores; below −5 °C most pore water is already frozen and further expansion is minimal, while above 0 °C no freezing occurs',
@@ -39,7 +39,7 @@ You\'ll be asked to interpret landform evidence, evaluate process relationships,
             'Repeated freezing below −5 °C dissolves silicate minerals by cryogenic hydrolysis',
           ],
           correct: 1,
-          explain: `Frost wedging exploits water\'s anomalous 9 % volumetric expansion on freezing. In confined rock pores this generates pressures up to 207 MPa — far exceeding the tensile strength of most rocks (5–25 MPa). The 0 °C to −5 °C window is optimal because larger pores still contain liquid water that can migrate and refreeze while smaller pores have already frozen, maximising the hydraulic pressure differential. Below −5 °C most pore water is already solid and further volumetric change is minimal; above 0 °C no phase change occurs at all. Alpine and periglacial rockfall is therefore concentrated in seasons and elevations where temperatures repeatedly cycle through this narrow range, making alpine regions like the Himalayas and Rockies particularly susceptible.`,
+          explain: `Frost wedging exploits water\'s anomalous 9 % volumetric expansion on freezing. In confined rock pores this generates pressures up to 207 MPa — far exceeding the tensile strength of most rocks (5–25 MPa). The 0 °C (32 °F) to −5 °C (23 °F) window is optimal because larger pores still contain liquid water that can migrate and refreeze while smaller pores have already frozen, maximising the hydraulic pressure differential. Below −5 °C most pore water is already solid and further volumetric change is minimal; above 0 °C no phase change occurs at all. Alpine and periglacial rockfall is therefore concentrated in seasons and elevations where temperatures repeatedly cycle through this narrow range, making alpine regions like the Himalayas and Rockies particularly susceptible.`,
         },
         {
           q: 'The hydrolysis of potassium feldspar is a dominant weathering reaction in granite landscapes. What are the three main products?',
@@ -50,7 +50,7 @@ You\'ll be asked to interpret landform evidence, evaluate process relationships,
             'Hematite, potassium hydroxide (KOH), and silicic acid',
           ],
           correct: 0,
-          explain: 'Hydrolysis of K-feldspar (KAlSi₃O₈) produces kaolinite Al₂Si₂O₅(OH)₄ as a stable secondary clay mineral, K⁺ ions that are released into soil solution and transported by rivers to the ocean, and dissolved silica (H₄SiO₄ / SiO₂) that may be leached away or reprecipitate as opaline silica. The reaction rate approximately doubles per 10 °C increase in temperature (Arrhenius kinetics), which is why granite saprolite in tropical West Africa or Amazonia can reach 30–100 m depth while polar equivalents are only centimetres thick. Quartz — the most weathering-resistant primary mineral — is not a hydrolysis product; it is the residual mineral that concentrates in soils and sand deposits after more reactive minerals decompose.',
+          explain: 'Hydrolysis of K-feldspar (KAlSi₃O₈) produces kaolinite Al₂Si₂O₅(OH)₄ as a stable secondary clay mineral, K⁺ ions that are released into soil solution and transported by rivers to the ocean, and dissolved silica (H₄SiO₄ / SiO₂) that may be leached away or reprecipitate as opaline silica. The reaction rate approximately doubles per 10 °C increase in temperature (Arrhenius kinetics), which is why granite saprolite in tropical West Africa or Amazonia can reach 30–100 m (98–328 ft) depth while polar equivalents are only centimetres thick. Quartz — the most weathering-resistant primary mineral — is not a hydrolysis product; it is the residual mineral that concentrates in soils and sand deposits after more reactive minerals decompose.',
         },
         {
           q: `Jenny\'s CLORPT equation expresses soil formation as a function of five state factors. Which set lists all five correctly?`,
@@ -105,7 +105,7 @@ You\'ll be asked to interpret landform evidence, evaluate process relationships,
             '¹⁰Be is incorporated into quartz from atmospheric dust and records the age of soil formation',
           ],
           correct: 1,
-          explain: `Cosmogenic nuclides are produced in situ when high-energy secondary cosmic rays (primarily spallation neutrons and muons) interact with target minerals at or near Earth\'s surface — for ¹⁰Be, the target is ²⁸Si in quartz. Production rates decrease exponentially with depth (e-folding length ~60 cm in rock). At a surface of known age and zero inheritance, ¹⁰Be concentration equals the production rate × exposure time. For an eroding surface, the steady-state ¹⁰Be concentration equals the production rate divided by the erosion rate, because deeper (lower-concentration) rock is continuously being exhumed. By measuring ¹⁰Be concentration in surface quartz grains, geomorphologists can calculate basin-wide erosion rates, landslide timing, and terrace abandonment ages. This technique has revealed erosion rate contrasts of 10–1,000× between tectonically active and stable cratonic landscapes.`,
+          explain: `Cosmogenic nuclides are produced in situ when high-energy secondary cosmic rays (primarily spallation neutrons and muons) interact with target minerals at or near Earth\'s surface — for ¹⁰Be, the target is ²⁸Si in quartz. Production rates decrease exponentially with depth (e-folding length ~60 cm (2 ft) in rock). At a surface of known age and zero inheritance, ¹⁰Be concentration equals the production rate × exposure time. For an eroding surface, the steady-state ¹⁰Be concentration equals the production rate divided by the erosion rate, because deeper (lower-concentration) rock is continuously being exhumed. By measuring ¹⁰Be concentration in surface quartz grains, geomorphologists can calculate basin-wide erosion rates, landslide timing, and terrace abandonment ages. This technique has revealed erosion rate contrasts of 10–1,000× between tectonically active and stable cratonic landscapes.`,
         },
         // ── Chapter 2: Channel Morphology, Floodplains, Deltas, Coastal ─────
         {
@@ -223,12 +223,12 @@ You\'ll be asked to interpret landform evidence, evaluate process relationships,
           q: 'Permafrost is ground at or below 0 °C for two or more consecutive years. Which region contains the largest area?',
           a: [
             'Antarctica, beneath the East Antarctic Ice Sheet and surrounding exposed bedrock',
-            'Russia (Siberia), which holds approximately 65 % of the world\'s permafrost by area, with continuous permafrost reaching 1,500 m depth in Yakutia',
+            'Russia (Siberia), which holds approximately 65 % of the world\'s permafrost by area, with continuous permafrost reaching 1,500 m (4,921 ft) depth in Yakutia',
             'Canada, which has the world\'s deepest known permafrost in the High Arctic Archipelago',
             'Alaska and the Yukon, which together account for the majority of North American permafrost',
           ],
           correct: 1,
-          explain: 'Russia contains by far the largest permafrost area globally — approximately 65 % of the total ~14–18 million km² — largely in the vast Siberian lowlands where continuous permafrost (present everywhere beneath the surface) extends south to roughly 55–60 °N. The deepest known permafrost (~1,500 m) is in northeastern Yakutia. Global permafrost stores an estimated 1,500 Gt of organic carbon — roughly twice the carbon in the current atmosphere — making permafrost degradation one of the most consequential climate feedbacks under anthropogenic warming. Canada (~7 million km²) is second, with extensive discontinuous and sporadic permafrost in boreal peatlands. Antarctic permafrost exists but is largely under ice or in exposed nunataks and stores negligible organic carbon.',
+          explain: 'Russia contains by far the largest permafrost area globally — approximately 65 % of the total ~14–18 million km² — largely in the vast Siberian lowlands where continuous permafrost (present everywhere beneath the surface) extends south to roughly 55–60 °N. The deepest known permafrost (~1,500 m (4,921 ft)) is in northeastern Yakutia. Global permafrost stores an estimated 1,500 Gt of organic carbon — roughly twice the carbon in the current atmosphere — making permafrost degradation one of the most consequential climate feedbacks under anthropogenic warming. Canada (~7 million km²) is second, with extensive discontinuous and sporadic permafrost in boreal peatlands. Antarctic permafrost exists but is largely under ice or in exposed nunataks and stores negligible organic carbon.',
         },
         {
           q: 'Thermokarst lakes expand rapidly across Arctic tundra as permafrost degrades. What is the primary geomorphic mechanism?',

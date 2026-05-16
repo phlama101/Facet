@@ -21,13 +21,13 @@ const glacierTypes: Lesson = {
     {
       type: 'intro',
       title: `From cirque hollows to continent-covering ice sheets: a guide to the world\'s ice`,
-      body: `The Randolph Glacier Inventory (RGI) catalogues approximately 220,000 glaciers covering roughly 705,000 km² of Earth\'s surface — and that figure excludes the Greenland and Antarctic Ice Sheets entirely. Including those giants, the cryosphere stores roughly 26.9 million km³ of ice, enough to raise global sea level by ~65 m if melted completely. Understanding this ice requires two classification frameworks: morphological (how a glacier relates to underlying topography) and thermal (the temperature structure of the ice).
+      body: `The Randolph Glacier Inventory (RGI) catalogues approximately 220,000 glaciers covering roughly 705,000 km² (272,200 sq mi) of Earth\'s surface — and that figure excludes the Greenland and Antarctic Ice Sheets entirely. Including those giants, the cryosphere stores roughly 26.9 million km³ of ice, enough to raise global sea level by ~65 m (213 ft) if melted completely. Understanding this ice requires two classification frameworks: morphological (how a glacier relates to underlying topography) and thermal (the temperature structure of the ice).
 
 Morphological classification divides glaciers into unconstrained types — ice caps and ice sheets, which spread independently of bedrock relief — and topographically constrained types, which are shaped by the terrain they occupy. Cirque glaciers occupy the armchair-shaped hollows (cirques) eroded into mountain flanks; they are small, highly climate-sensitive, and found on every major mountain range. Valley glaciers flow down pre-existing river valleys, can extend tens to hundreds of kilometres, and transport ice from high accumulation zones to lower ablation zones. Piedmont glaciers spread onto flat plains after leaving a confining valley. Ice fields are plateau ice masses drained by outlet glaciers that follow underlying topography, while ice caps are smooth domes whose flow is independent of the bed. Ice sheets are continental-scale ice caps exceeding 50,000 km²; only two exist today — Antarctica and Greenland.
 
 Thermal classification controls dynamics: cold (polar) glaciers are frozen to their beds and flow only by internal creep; warm (temperate) glaciers are everywhere at the pressure-melting point, enabling basal sliding and abundant meltwater production; polythermal glaciers have cold upper ice and margins but warm, sliding-capable basal zones, producing complex drainage and surge behaviour.
 
-Geographically, glacier ice is concentrated at high latitudes and high altitudes. The largest volumes outside the ice sheets are in Alaska and adjacent Yukon (~86,000 km²), the Canadian Arctic Archipelago (~150,000 km²), Svalbard (~34,000 km²), and High Mountain Asia (~100,000 km²). Patagonia holds South America\'s largest ice masses (the Northern and Southern Patagonian Icefields). Smaller but highly visible glaciers exist in the Alps, New Zealand, East Africa (Kilimanjaro, Mount Kenya), and Papua. It is important to distinguish glacier ice — ice formed by the compaction of snow on land — from sea ice, which forms by direct freezing of ocean water and has negligible effect on sea level.`,
+Geographically, glacier ice is concentrated at high latitudes and high altitudes. The largest volumes outside the ice sheets are in Alaska and adjacent Yukon (~86,000 km² (33,205 sq mi)), the Canadian Arctic Archipelago (~150,000 km² (57,915 sq mi)), Svalbard (~34,000 km² (13,127 sq mi)), and High Mountain Asia (~100,000 km² (38,610 sq mi)). Patagonia holds South America\'s largest ice masses (the Northern and Southern Patagonian Icefields). Smaller but highly visible glaciers exist in the Alps, New Zealand, East Africa (Kilimanjaro, Mount Kenya), and Papua. It is important to distinguish glacier ice — ice formed by the compaction of snow on land — from sea ice, which forms by direct freezing of ocean water and has negligible effect on sea level.`,
       keyTerms: [
         {
           term: 'valley glacier',
@@ -35,7 +35,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
         },
         {
           term: 'ice cap',
-          def: 'A dome-shaped glacier (<50,000 km²) that spreads radially independent of underlying topography; e.g., Vatnajökull, Iceland (8,100 km²).',
+          def: 'A dome-shaped glacier (<50,000 km²) that spreads radially independent of underlying topography; e.g., Vatnajökull, Iceland (8,100 km² (3,127 sq mi)).',
         },
         {
           term: 'ice sheet',
@@ -111,7 +111,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           icon: Globe,
           color: BRAND.accent,
           desc: 'Glaciers classified by their relationship to underlying topography; unconstrained (ice caps, ice sheets) vs. topographically constrained (cirque, valley, piedmont).',
-          examples: `Cirque glaciers occupy armchair-shaped hollows eroded into mountain sides; common in high peaks worldwide. Valley glaciers flow down pre-existing valleys; can be 10s–100s km long (e.g., Hubbard Glacier, Alaska: 122 km). Ice caps are dome-shaped, unconstrained by topography; Vatnajökull, Iceland (8,100 km²) is Europe\'s largest.`,
+          examples: `Cirque glaciers occupy armchair-shaped hollows eroded into mountain sides; common in high peaks worldwide. Valley glaciers flow down pre-existing valleys; can be 10s–100s km long (e.g., Hubbard Glacier, Alaska: 122 km (76 mi)). Ice caps are dome-shaped, unconstrained by topography; Vatnajökull, Iceland (8,100 km²) is Europe\'s largest.`,
         },
         {
           name: 'Thermal Classification: Cold, Warm, and Polythermal',
@@ -125,7 +125,7 @@ Geographically, glacier ice is concentrated at high latitudes and high altitudes
           icon: Activity,
           color: BRAND.coral,
           desc: 'Continental-scale ice masses covering bedrock; Antarctica (26.5 million km³) and Greenland (2.85 million km³) contain 99% of glacier ice; ice shelves are floating extensions of ice sheets.',
-          examples: 'If the Antarctic Ice Sheet melted entirely, global sea level would rise ~58 m; Greenland adds ~7.4 m. The Ross Ice Shelf (Texas-sized) slows West Antarctic ice discharge by providing back-stress. East Antarctic Ice Sheet (EAIS) is primarily grounded above sea level; West Antarctic (WAIS) is largely below — more unstable.',
+          examples: 'If the Antarctic Ice Sheet melted entirely, global sea level would rise ~58 m (190 ft); Greenland adds ~7.4 m (24 ft). The Ross Ice Shelf (Texas-sized) slows West Antarctic ice discharge by providing back-stress. East Antarctic Ice Sheet (EAIS) is primarily grounded above sea level; West Antarctic (WAIS) is largely below — more unstable.',
         },
         {
           name: 'Global Distribution and Glacier Inventories',

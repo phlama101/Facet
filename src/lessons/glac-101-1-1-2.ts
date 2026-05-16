@@ -25,7 +25,7 @@ const glacierDynamics: Lesson = {
 
 Ice movement occurs through two primary mechanisms: internal deformation (creep) and basal sliding. Internal deformation involves the slow creep of ice by dislocation movement within individual ice crystals and grain boundary sliding between adjacent crystals. Over time, crystals develop preferred orientations (crystal fabric), which enhances deformation in the direction of maximum shear — a process that progressively softens the ice in fast-flowing zones. Basal sliding occurs where the glacier sole is at the pressure melting point; a thin film of meltwater reduces friction at the ice-bed interface. Geothermal heat (~65 mW/m² on average) and frictional heating from sliding itself generate this meltwater. Where the bed is composed of soft, water-saturated sediment (till), deformation of the subglacial till can also contribute significantly to glacier motion.
 
-Ice velocities span a remarkable range. Cold polar glaciers frozen to their beds move only a few metres per year entirely by internal creep. Temperate mountain glaciers typically move tens to hundreds of metres per year. Ice streams — narrow corridors of fast-moving ice that drain the interiors of large ice sheets — can move kilometres per year; Jakobshavn Isbrae in Greenland reaches ~40–50 m/day. The velocity profile through the ice column is parabolic in creep-dominated flow: fastest at the surface, decreasing to near-zero at the bed. Where basal sliding dominates, the column translates at the sliding velocity plus a creep component.
+Ice velocities span a remarkable range. Cold polar glaciers frozen to their beds move only a few metres per year entirely by internal creep. Temperate mountain glaciers typically move tens to hundreds of metres per year. Ice streams — narrow corridors of fast-moving ice that drain the interiors of large ice sheets — can move kilometres per year; Jakobshavn Isbrae in Greenland reaches ~40–50 m/day (131–164 ft/day). The velocity profile through the ice column is parabolic in creep-dominated flow: fastest at the surface, decreasing to near-zero at the bed. Where basal sliding dominates, the column translates at the sliding velocity plus a creep component.
 
 Flow regime — extending versus compressive — controls glacier structure. In extending flow, ice accelerates (over steepening bed or through a narrowing), creating longitudinal tensile stress. When tensile stress exceeds ice tensile strength (~100–200 kPa), crevasses fracture the ice surface perpendicular to flow. Icefalls are spectacular manifestations of extreme extending flow, with seracs and a maze of crevasses. In compressive flow, ice decelerates (flattening bed, spreading terminus), creating thrust faults, pressure ridges, and folded ice. Understanding these flow regimes is essential for interpreting glacier hazards, predicting calving rates at marine-terminating glaciers, and projecting ice-sheet contributions to sea level rise.`,
       keyTerms: [
@@ -54,7 +54,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
     {
       type: 'callout' as const,
       variant: 'insight',
-      headline: 'The Athabasca Glacier in Canada has retreated 1.5 km and lost half its volume since 1844.',
+      headline: 'The Athabasca Glacier in Canada has retreated 1.5 km (0.9 mi) and lost half its volume since 1844.',
       body: 'The bare rock and sediment you see at glacier margins was covered by ice within living memory. Signs mark where the ice surface stood in different decades — some dating back to your grandparents\' era.',
     },
     {
@@ -94,7 +94,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
             x: 57,
             y: 54,
             label: 'Crevasses',
-            description: 'Deep, open fractures in glacial ice formed where the glacier flows over a bedrock irregularity and stretches under tension. Crevasses can be 30–40 m deep (below which confining ice pressure closes them) and are most common at icefalls and zones of extending flow. They represent a major hazard for glacial travel and mountaineering, and their patterns reveal the flow dynamics of the glacier.',
+            description: 'Deep, open fractures in glacial ice formed where the glacier flows over a bedrock irregularity and stretches under tension. Crevasses can be 30–40 m (98–131 ft) deep (below which confining ice pressure closes them) and are most common at icefalls and zones of extending flow. They represent a major hazard for glacial travel and mountaineering, and their patterns reveal the flow dynamics of the glacier.',
           },
           {
             id: 'proglacial-lake',
@@ -125,7 +125,7 @@ Flow regime — extending versus compressive — controls glacier structure. In 
           icon: Globe,
           color: BRAND.coral,
           desc: 'Narrow zones of fast flow (km/yr) draining interior ice sheets, bounded by slow-moving inter-stream ice ridges; controlled by subglacial topography, geology, and water.',
-          examples: `Jakobshavn Isbrae, Greenland: ~40–50 m/day — one of the world\'s fastest glaciers. West Antarctic Ice Streams (Pine Island, Thwaites) drain ~30% of the WAIS into the Amundsen Sea. Ice stream margins are zones of intense shear, producing highly crevassed chaotic ice.`,
+          examples: `Jakobshavn Isbrae, Greenland: ~40–50 m/day (131–164 ft/day) — one of the world\'s fastest glaciers. West Antarctic Ice Streams (Pine Island, Thwaites) drain ~30% of the WAIS into the Amundsen Sea. Ice stream margins are zones of intense shear, producing highly crevassed chaotic ice.`,
         },
         {
           name: 'Extending and Compressive Flow Regimes',

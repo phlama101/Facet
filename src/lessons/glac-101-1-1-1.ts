@@ -29,7 +29,7 @@ As snow accumulates and older layers are buried, the process of firnification be
 
 At approximately 830 kg/m³, a critical threshold is crossed: pore close-off. The interconnected air passages seal off into isolated bubbles, cutting the firn column\'s connection to the atmosphere. The material is now glacier ice. Those sealed bubbles trap a sample of ancient atmosphere — including CO₂, CH₄, and N₂O — making deep glacier ice one of the most valuable paleoclimate archives on Earth.
 
-The time-scales of this journey vary dramatically. In warm, wet temperate alpine glaciers — the Alps, the Cascades, Patagonia — liquid meltwater accelerates metamorphism and pore close-off can occur in as little as 25–40 years. In the cold, dry interior of Antarctica or central Greenland, where temperatures rarely approach 0°C, the same process takes 1,000–2,500 years, and the firn layer may extend 60–100 m deep before giving way to true glacier ice. Beneath roughly 500–1,000 m of ice overburden, pressure is sufficient to convert air bubbles into solid clathrate hydrates, in which gas molecules are locked within cage-like ice crystal structures — deepening the paleoclimate record and complicating the retrieval of ice cores.`,
+The time-scales of this journey vary dramatically. In warm, wet temperate alpine glaciers — the Alps, the Cascades, Patagonia — liquid meltwater accelerates metamorphism and pore close-off can occur in as little as 25–40 years. In the cold, dry interior of Antarctica or central Greenland, where temperatures rarely approach 0°C, the same process takes 1,000–2,500 years, and the firn layer may extend 60–100 m (197–328 ft) deep before giving way to true glacier ice. Beneath roughly 500–1,000 m (1,640–3,281 ft) of ice overburden, pressure is sufficient to convert air bubbles into solid clathrate hydrates, in which gas molecules are locked within cage-like ice crystal structures — deepening the paleoclimate record and complicating the retrieval of ice cores.`,
       keyTerms: [
         {
           term: 'Snow Metamorphism',
@@ -57,7 +57,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
       type: 'callout' as const,
       variant: 'data',
       headline: 'Glaciers and ice sheets contain approximately 69% of all freshwater on Earth.',
-      body: 'If all of Antarctica\'s ice melted, global sea levels would rise by about 58 metres. At current rates of mass loss, the Greenland Ice Sheet alone is losing approximately 280 billion tonnes of ice per year.',
+      body: 'If all of Antarctica\'s ice melted, global sea levels would rise by about 58 metres (190 ft). At current rates of mass loss, the Greenland Ice Sheet alone is losing approximately 280 billion tonnes (308.6 billion tons) of ice per year.',
     },
     {
       type: 'concept',
@@ -96,7 +96,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
             x: 57,
             y: 54,
             label: 'Crevasses',
-            description: 'Deep, open fractures in glacial ice formed where the glacier flows over a bedrock irregularity and stretches under tension. Crevasses can be 30–40 m deep (below which confining ice pressure closes them) and are most common at icefalls and zones of extending flow. They represent a major hazard for glacial travel and mountaineering, and their patterns reveal the flow dynamics of the glacier.',
+            description: 'Deep, open fractures in glacial ice formed where the glacier flows over a bedrock irregularity and stretches under tension. Crevasses can be 30–40 m (98–131 ft) deep (below which confining ice pressure closes them) and are most common at icefalls and zones of extending flow. They represent a major hazard for glacial travel and mountaineering, and their patterns reveal the flow dynamics of the glacier.',
           },
           {
             id: 'proglacial-lake',
@@ -188,7 +188,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
           { from: 'settled-snow', to: 'firn',         label: 'Compaction & recrystallisation' },
           { from: 'firn',         to: 'late-firn',    label: 'Overburden pressure' },
           { from: 'late-firn',    to: 'glacier-ice',  label: 'Pore close-off ~830 kg/m³' },
-          { from: 'glacier-ice',  to: 'deep-ice',     label: 'Clathrate transformation >500 m' },
+          { from: 'glacier-ice',  to: 'deep-ice',     label: 'Clathrate transformation >500 m (1,640 ft)' },
         ],
       },
     },
@@ -226,7 +226,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
             'Polar firn never reaches pore close-off — it remains firn throughout the ice sheet',
           ],
           correct: 1,
-          explain: `In temperate alpine glaciers, summer melt produces percolating liquid water that dramatically accelerates firn densification through capillary bonding, refreezing, and direct crystal growth from liquid — pore close-off can occur in 25–40 years. In cold polar firn (Antarctic interior, central Greenland), temperatures rarely approach 0°C; there is no liquid water to enhance metamorphism, and densification proceeds only by vapor diffusion, plastic deformation, and pressure sintering. At Summit, Greenland (accumulation rate ~23 cm ice-eq/yr), pore close-off occurs at ~70 m depth after ~200 years. At Dome C, Antarctica (accumulation rate ~2.5 cm ice-eq/yr), it occurs at ~100 m depth after ~2,500 years. This means the gas age and the ice age differ by hundreds to thousands of years in polar cores.`,
+          explain: `In temperate alpine glaciers, summer melt produces percolating liquid water that dramatically accelerates firn densification through capillary bonding, refreezing, and direct crystal growth from liquid — pore close-off can occur in 25–40 years. In cold polar firn (Antarctic interior, central Greenland), temperatures rarely approach 0°C; there is no liquid water to enhance metamorphism, and densification proceeds only by vapor diffusion, plastic deformation, and pressure sintering. At Summit, Greenland (accumulation rate ~23 cm (9 in) ice-eq/yr), pore close-off occurs at ~70 m (230 ft) depth after ~200 years. At Dome C, Antarctica (accumulation rate ~2.5 cm (1.0 in) ice-eq/yr), it occurs at ~100 m (328 ft) depth after ~2,500 years. This means the gas age and the ice age differ by hundreds to thousands of years in polar cores.`,
         },
         {
           q: 'What happens to air bubbles trapped in glacier ice as depth (and pressure) increases below ~500–1,000 m?',
@@ -237,7 +237,7 @@ The time-scales of this journey vary dramatically. In warm, wet temperate alpine
             'Bubbles migrate upward through the ice via pressure-gradient diffusion',
           ],
           correct: 1,
-          explain: `Below approximately 500–1,000 m depth in an ice sheet (depending on temperature and ice pressure), the hydrostatic pressure becomes sufficient to destabilize air bubbles and force gas molecules into the ice crystal lattice, forming clathrate hydrates. Clathrates are cage-like ice structures in which gas molecules (N₂, O₂, CO₂, Ar) occupy interstitial sites. This transition is important practically: when ice cores containing clathrates are brought to the surface and depressurized, clathrates decompose and can cause the core to crack (horizontal fractures) and microbubbles to form, releasing ancient gases. Researchers must work quickly to collect gas samples from deep cores. Clathrate formation does not destroy the paleoclimate record — the gas composition is preserved — but core handling requires care.`,
+          explain: `Below approximately 500–1,000 m (1,640–3,281 ft) depth in an ice sheet (depending on temperature and ice pressure), the hydrostatic pressure becomes sufficient to destabilize air bubbles and force gas molecules into the ice crystal lattice, forming clathrate hydrates. Clathrates are cage-like ice structures in which gas molecules (N₂, O₂, CO₂, Ar) occupy interstitial sites. This transition is important practically: when ice cores containing clathrates are brought to the surface and depressurized, clathrates decompose and can cause the core to crack (horizontal fractures) and microbubbles to form, releasing ancient gases. Researchers must work quickly to collect gas samples from deep cores. Clathrate formation does not destroy the paleoclimate record — the gas composition is preserved — but core handling requires care.`,
         },
         {
           q: 'Which of the following best describes the equilibrium line altitude (ELA) on a glacier?',
