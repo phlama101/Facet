@@ -134,7 +134,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
         <div className="max-w-3xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
           {exitConfirm ? (
             <div className="flex items-center gap-3">
-              <span className="text-xs" style={{ color: BRAND.ruby }}>Quit quiz?</span>
+              <span className="text-xs" style={{ color: BRAND.ruby }}>Leave the quiz?</span>
               <button
                 onClick={onClose}
                 className="text-xs font-semibold tracking-wider uppercase px-2 py-1 rounded-sm transition-opacity hover:opacity-80"
@@ -273,9 +273,9 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                   transition={{ delay: 0.3 }}
                   className="space-y-2"
                 >
-                  <h2 className="font-serif text-3xl" style={{ color: BRAND.text }}>Lesson Complete</h2>
+                  <h2 className="font-serif text-3xl" style={{ color: BRAND.text }}>Done.</h2>
                   <p className="text-sm" style={{ color: BRAND.textDim }}>
-                    Quiz: {quizResult.correct}/{quizResult.total} correct
+                    {quizResult.correct} of {quizResult.total} correct
                   </p>
                 </motion.div>
 
@@ -303,8 +303,10 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                   style={{ color: BRAND.textDim, border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}
                 >
                   {shared
-                    ? <><CheckIcon size={12} style={{ color: BRAND.jade }} /> Copied to clipboard</>
-                    : <><Share2 size={12} /> Share this lesson</>
+                    ? <><CheckIcon size={12} style={{ color: BRAND.jade }} /> Copied</>
+                    : <><Share2 size={12} /> Share</>
+
+
                   }
                 </motion.button>
 
@@ -335,8 +337,8 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                       : { backgroundColor: trackColor, color: BRAND.bg }}
                   >
                     {nextLesson
-                      ? (isGuest ? 'Back to Library' : 'Back to Dashboard')
-                      : (isGuest ? 'Explore More Lessons' : 'Save & Continue')
+                      ? (isGuest ? 'Back to library' : 'Back to dashboard')
+                      : (isGuest ? 'Browse lessons' : 'Continue')
                     }
                     {!nextLesson && <ArrowRight size={14} />}
                   </motion.button>
@@ -357,7 +359,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                     <div className="flex items-center gap-2 min-w-0">
                       <UserPlus size={14} style={{ color: BRAND.accent, flexShrink: 0 }} />
                       <span className="text-xs" style={{ color: BRAND.textDim }}>
-                        Create a free account to save your progress and earn XP.
+                        Make an account to save your progress — it&apos;s free.
                       </span>
                     </div>
                     <a
@@ -382,7 +384,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                       className="w-full mt-2"
                     >
                       <div className="text-[9px] tracking-[0.2em] uppercase mb-2 text-center" style={{ color: BRAND.textSubtle }}>
-                        Up Next — Start a new path
+                        Up next
                       </div>
                       <button
                         onClick={() => onCompleteAndGoTo
@@ -424,7 +426,7 @@ export default function LessonRenderer({ lesson, onClose, onComplete, nextLesson
                     className="w-full mt-2"
                   >
                     <div className="text-[9px] tracking-[0.2em] uppercase mb-2 text-center" style={{ color: BRAND.textSubtle }}>
-                      Also in this path
+                      More from this path
                     </div>
                     <div className="flex flex-col gap-2">
                       {recommended.map(rec => (

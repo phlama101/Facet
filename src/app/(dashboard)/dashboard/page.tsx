@@ -182,10 +182,9 @@ export default async function DashboardPage({ searchParams }: Props) {
             <Play size={14} color={BRAND.accent} fill={BRAND.accent} />
           </div>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium" style={{ color: BRAND.text }}>Welcome to Facet</div>
+            <div className="text-sm font-medium" style={{ color: BRAND.text }}>Pick a lesson and start.</div>
             <div className="text-[11px] mt-1 leading-relaxed" style={{ color: BRAND.textDim }}>
-              Start your first lesson below to earn XP and begin your earth science journey.
-              Complete daily missions for bonus XP, and track your progress across all learning paths.
+              Daily missions give bonus XP on top of each lesson — check back as you go.
             </div>
           </div>
           <BookOpen size={16} color={BRAND.textSubtle} className="shrink-0 mt-0.5" />
@@ -200,9 +199,9 @@ export default async function DashboardPage({ searchParams }: Props) {
         >
           <Trophy size={16} color={BRAND.jade} />
           <div className="flex-1">
-            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>Welcome to Naturalist!</div>
+            <div className="text-sm font-medium" style={{ color: BRAND.jade }}>You&apos;re in.</div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-              Your subscription is active. All learning paths are unlocked immediately.
+              Every learning path is now unlocked.
             </div>
           </div>
         </div>
@@ -218,9 +217,9 @@ export default async function DashboardPage({ searchParams }: Props) {
           >
             <div className="w-4 h-4 rounded-full border-2 shrink-0 animate-spin" style={{ borderColor: `${BRAND.gold}40`, borderTopColor: BRAND.gold }} />
             <div className="flex-1">
-              <div className="text-sm font-medium" style={{ color: BRAND.gold }}>Activating your subscription…</div>
+              <div className="text-sm font-medium" style={{ color: BRAND.gold }}>Activating…</div>
               <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-                This usually takes a few seconds and will update automatically.
+                Sit tight — usually just a few seconds.
               </div>
             </div>
           </div>
@@ -241,7 +240,7 @@ export default async function DashboardPage({ searchParams }: Props) {
         <div className="relative p-6 md:p-10 grid md:grid-cols-5 gap-6 items-center">
           <div className="md:col-span-3">
             <div className="text-[10px] tracking-[0.25em] uppercase mb-2" style={{ color: BRAND.accent }}>
-              {completedSet.size === 0 ? `Welcome, ${profile.display_name ?? profile.username}` : 'Continue your study'}
+              {completedSet.size === 0 ? `Hey, ${profile.display_name ?? profile.username}` : 'Keep going'}
             </div>
             <h1 className="font-serif" style={{ fontSize: 'clamp(28px, 5vw, 48px)', lineHeight: 1.05 }}>
               {nextLesson.title}
@@ -258,14 +257,14 @@ export default async function DashboardPage({ searchParams }: Props) {
                 className="px-5 py-2.5 rounded-sm flex items-center gap-2 text-xs font-semibold tracking-[0.1em] uppercase transition-all hover:scale-[1.02]"
                 style={{ backgroundColor: BRAND.accent, color: BRAND.bg }}
               >
-                <Play size={12} fill={BRAND.bg} /> Start Lesson
+                <Play size={12} fill={BRAND.bg} /> Start lesson
               </Link>
               <Link
                 href="/learn"
                 className="px-5 py-2.5 rounded-sm text-xs font-semibold tracking-[0.1em] uppercase"
                 style={{ border: `1px solid ${BRAND.borderHi}`, color: BRAND.text }}
               >
-                All Lessons
+                All lessons
               </Link>
             </div>
           </div>
@@ -277,7 +276,7 @@ export default async function DashboardPage({ searchParams }: Props) {
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <StatCard label="Total XP" value={xp.toLocaleString()} icon={Zap}       accent={BRAND.gold}   />
+        <StatCard label="XP" value={xp.toLocaleString()} icon={Zap}       accent={BRAND.gold}   />
         <StatCard label="Lessons"  value={completedSet.size}  sub={`/ ${combinedList.length}`} icon={BookOpen} accent={BRAND.jade} />
         <StatCard label="Streak"   value={profile.streak}     sub="days"          icon={Flame}     accent={BRAND.coral}  />
         <StatCard label="Level"    value={level}              icon={TrendingUp}  accent={BRAND.accent} />
@@ -287,7 +286,7 @@ export default async function DashboardPage({ searchParams }: Props) {
       <div className="grid md:grid-cols-2 gap-3">
         {/* XP Level Progress */}
         <div className="p-5 rounded-sm" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
-          <div className="text-[10px] tracking-[0.25em] uppercase mb-3" style={{ color: BRAND.textSubtle }}>Level Progress</div>
+          <div className="text-[10px] tracking-[0.25em] uppercase mb-3" style={{ color: BRAND.textSubtle }}>Your level</div>
           <div className="flex items-end justify-between mb-3">
             <div>
               <span className="font-serif" style={{ fontSize: '28px', color: BRAND.accent }}>Lv {level}</span>
@@ -303,7 +302,7 @@ export default async function DashboardPage({ searchParams }: Props) {
             <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: BRAND.accent }} />
           </div>
           <div className="mt-2 flex items-center justify-between">
-            <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>{pct}% complete</span>
+            <span className="text-[10px]" style={{ color: BRAND.textSubtle }}>{pct}% there</span>
             <span className="text-[10px] font-mono" style={{ color: BRAND.textSubtle }}>{xpToGo.toLocaleString()} XP to Lv {level + 1}</span>
           </div>
         </div>
@@ -311,7 +310,7 @@ export default async function DashboardPage({ searchParams }: Props) {
         {/* 7-Day Activity */}
         <div className="p-5 rounded-sm" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
           <div className="flex items-center justify-between mb-3">
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>7-Day Activity</div>
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>This week</div>
             <div className="text-[10px] font-mono" style={{ color: totalWeekLessons > 0 ? BRAND.jade : BRAND.textSubtle }}>
               {totalWeekLessons} lesson{totalWeekLessons !== 1 ? 's' : ''} this week
             </div>
@@ -335,9 +334,9 @@ export default async function DashboardPage({ searchParams }: Props) {
       <div className="rounded-sm overflow-hidden" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
         <div className="px-5 py-3 flex items-center justify-between" style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}>
           <div>
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Daily Missions</div>
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Today&apos;s missions</div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-              Resets at midnight UTC · Bonus XP on top of lesson rewards · {todayCount} lesson{todayCount !== 1 ? 's' : ''} today
+              Resets midnight UTC · {todayCount} lesson{todayCount !== 1 ? 's' : ''} done today
             </div>
           </div>
           <Calendar size={14} color={BRAND.textSubtle} />
@@ -362,13 +361,13 @@ export default async function DashboardPage({ searchParams }: Props) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[11px] font-medium" style={{ color: done ? color : BRAND.textDim }}>{label}</span>
-                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>+{bonusXp} bonus XP</span>
+                    <span className="text-[10px] font-mono" style={{ color: done ? color : BRAND.textSubtle }}>+{bonusXp} XP</span>
                   </div>
                   <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: BRAND.border }}>
                     <div className="h-full rounded-full transition-all" style={{ width: `${pctFill}%`, backgroundColor: done ? color : `${color}80` }} />
                   </div>
                   <div className="text-[9px] mt-0.5 font-mono" style={{ color: BRAND.textSubtle }}>
-                    Complete {target} lesson{target !== 1 ? 's' : ''} today · earns bonus XP
+                    {target} lesson{target !== 1 ? 's' : ''} today · +{bonusXp} XP bonus
                   </div>
                 </div>
               </div>
@@ -395,7 +394,7 @@ export default async function DashboardPage({ searchParams }: Props) {
               {dueReviewCount} card{dueReviewCount !== 1 ? 's' : ''} due for review
             </div>
             <div className="text-[11px] mt-0.5" style={{ color: BRAND.textDim }}>
-              Reinforce what you&apos;ve learned with spaced repetition
+              Spaced repetition — due now
             </div>
           </div>
           <ChevronRight size={14} color={BRAND.amethyst} className="shrink-0" />
@@ -406,7 +405,7 @@ export default async function DashboardPage({ searchParams }: Props) {
       {recentActivity.length > 0 && (
         <div className="rounded-sm overflow-hidden" style={{ border: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surface }}>
           <div className="px-5 py-3 flex items-center justify-between" style={{ borderBottom: `1px solid ${BRAND.border}`, backgroundColor: BRAND.surfaceHi }}>
-            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Recent Activity</div>
+            <div className="text-[10px] tracking-[0.25em] uppercase" style={{ color: BRAND.textSubtle }}>Recent</div>
             <Clock size={12} color={BRAND.textSubtle} />
           </div>
           <div className="divide-y" style={{ borderColor: BRAND.border }}>

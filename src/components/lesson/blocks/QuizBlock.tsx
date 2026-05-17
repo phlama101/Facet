@@ -93,7 +93,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
           className="space-y-5 text-center"
         >
           <div className="space-y-2">
-            <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz Result</p>
+            <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Result</p>
             <motion.p
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -110,7 +110,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
               className="text-sm"
               style={{ color: BRAND.textDim }}
             >
-              You need at least {passMark}/{questions.length} to pass.
+              You need {passMark} of {questions.length} to pass.
             </motion.p>
           </div>
 
@@ -121,7 +121,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
             className="inline-block px-4 py-3 rounded-sm text-xs leading-relaxed"
             style={{ backgroundColor: `${BRAND.ruby}0d`, border: `1px solid ${BRAND.ruby}30`, color: BRAND.textDim }}
           >
-            Review your notes and try again — no XP is awarded until you pass.
+            Read through the lesson again and give it another go.
           </motion.div>
 
           <motion.button
@@ -134,7 +134,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
             className="flex items-center gap-2 mx-auto px-7 py-3 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase"
             style={{ backgroundColor: BRAND.ruby, color: '#fff' }}
           >
-            <RotateCcw size={13} /> Try Again
+            <RotateCcw size={13} /> Try again
           </motion.button>
         </motion.div>
       )
@@ -148,7 +148,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
         className="space-y-4 text-center"
       >
         <div className="space-y-2">
-          <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Quiz Passed</p>
+          <p className="text-xs tracking-widest uppercase" style={{ color: BRAND.textSubtle }}>Passed</p>
           <motion.p
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -165,7 +165,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
             className="text-sm"
             style={{ color: BRAND.textDim }}
           >
-            {totalCorrect === questions.length ? 'Perfect score!' : 'Nice work — lesson complete.'}
+            {totalCorrect === questions.length ? 'Every single one.' : 'That\'ll do it.'}
           </motion.p>
         </div>
       </motion.div>
@@ -263,7 +263,7 @@ export default function QuizBlock({ section, sectionKey, onComplete, onFail }: P
                 ? <CheckCircle2 size={16} />
                 : <XCircle size={16} />
               }
-              {selected === current.correct ? 'Correct!' : 'Not quite.'}
+              {selected === current.correct ? 'Right.' : 'Not this one.'}
             </div>
 
             {/* Explanation */}

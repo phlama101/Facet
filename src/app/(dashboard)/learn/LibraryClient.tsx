@@ -791,12 +791,12 @@ export default function LibraryClient({
         >
           <Sparkles size={24} color={BRAND.textSubtle} className="mx-auto mb-3" />
           <h3 className="font-serif" style={{ fontSize: '22px' }}>
-            {isSearching ? 'No lessons found' : 'Coming soon'}
+            {isSearching ? 'Nothing found' : 'Coming soon'}
           </h3>
           <p className="text-xs mt-2" style={{ color: BRAND.textSubtle }}>
             {isSearching
-              ? `No lessons match "${debouncedQuery}". Try a different keyword.`
-              : "We're building lessons for this track."}
+              ? `Nothing matches "${debouncedQuery}". Try something else.`
+              : "More lessons for this track are on the way."}
           </p>
           {isSearching && (
             <button
