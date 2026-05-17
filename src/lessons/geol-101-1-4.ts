@@ -87,9 +87,7 @@ During a reversal, the field does not flip instantly. Evidence from sedimentary 
 
 The result is a pattern of parallel bands of rock with alternating magnetic polarity — bands of "normal" polarity interleaved with bands of "reversed" polarity — radiating symmetrically outward on both sides of every mid-ocean ridge in the world. The pattern is symmetric because both sides move away from the ridge at the same rate. Geologists discovered this **magnetic striping** on the ocean floor in the 1950s and 1960s, and it played a central role in convincing the scientific community that seafloor spreading was real. By matching the stripe widths to the known timescale of magnetic reversals, researchers could even calculate how fast the seafloor was spreading at each ridge.
 
-Magnetic striping is one of the most elegant examples in science of how a single observable pattern simultaneously proves two different things — magnetic reversals happening deep in the core, and new oceanic crust being continuously created at mid-ocean ridges. It ties the core, the mantle, and the crust into one coherent story.
-
-**Chapter 1 — complete.** This lesson closes the first chapter of Earth Foundations. We have moved systematically from the outermost layer to the innermost: the crust (Lessons 1 and 2), the mantle and its convection engine (Lesson 3), and now the core and its magnetic dynamo (Lesson 4). Every major layer has been introduced with its composition, physical state, and the evidence that reveals it — and each lesson has resolved the open questions left by the one before it. Chapter 2 zooms back to the surface to ask a different kind of question: what are Earth's rocks actually built from at the scale of individual minerals?`,
+Magnetic striping is one of the most elegant examples in science of how a single observable pattern simultaneously proves two different things — magnetic reversals happening deep in the core, and new oceanic crust being continuously created at mid-ocean ridges. It ties the core, the mantle, and the crust into one coherent story.`,
       interaction: {
         type: 'annotated-image' as const,
         src: '/visuals/geo-interior.svg',

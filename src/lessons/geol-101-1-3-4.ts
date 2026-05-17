@@ -26,7 +26,7 @@ const metamorphicRocks: Lesson = {
 
 The word **metamorphism** comes from the Greek for "change of form." It describes a process fundamentally different from igneous rock formation: where igneous rocks form by the solidification of a melt, metamorphic rocks form entirely in the solid state. Atoms migrate through the crystal lattice or along grain boundaries, minerals dissolve and reprecipitate, and new mineral assemblages grow — all without the rock ever becoming liquid. The driving forces are heat (which speeds atomic diffusion) and pressure (which determines which minerals are thermodynamically stable).
 
-This lesson introduces the two settings where metamorphism occurs, the key textural feature — **foliation** — that distinguishes most metamorphic rocks in the field, the sequence of rock types produced as metamorphic intensity increases, and the common metamorphic rocks you are most likely to encounter. With this lesson, Chapter 3 is complete: you now have the vocabulary for all three rock families. Chapter 4 will show how plate tectonics controls where in the rock cycle rocks currently sit.`,
+This lesson introduces the two settings where metamorphism occurs, the key textural feature — **foliation** — that distinguishes most metamorphic rocks in the field, the sequence of rock types produced as metamorphic intensity increases, and the common metamorphic rocks you are most likely to encounter.`,
       keyTerms: [
         {
           term: 'Metamorphism',
