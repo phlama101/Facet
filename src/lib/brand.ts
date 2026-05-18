@@ -6,7 +6,7 @@ export const BRAND = {
   borderHi:    '#3A3E4D',
   text:        '#EDEEF2',
   textDim:     '#9CA0AE',
-  textSubtle:  '#6B6F7C',
+  textSubtle:  '#8A8E9D',
   accent:      '#7AD7F0',
   accentHot:   '#5FC5DE',
   gold:        '#E4B74A',

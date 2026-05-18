@@ -11,7 +11,7 @@
     --brand-border-hi:   #3A3E4D;
     --brand-text:        #EDEEF2;
     --brand-dim:         #9CA0AE;
-    --brand-subtle:      #6B6F7C;
+    --brand-subtle:      #8A8E9D;
     --brand-accent:      #7AD7F0;
     --brand-accent-hot:  #5FC5DE;
     --brand-gold:        #E4B74A;
@@ -22,6 +22,12 @@
   }
 
   * { box-sizing: border-box; }
+
+  :focus-visible {
+    outline: 2px solid #7AD7F0;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 
   html {
     scroll-behavior: smooth;
@@ -110,7 +116,7 @@
   .facet-popup .leaflet-popup-tip-container { margin-top: -1px; }
   .facet-popup .leaflet-popup-tip { background: #2A2D38; }
   .facet-popup .leaflet-popup-close-button {
-    color: #6B6F7C !important;
+    color: #8A8E9D !important;
     top: 8px !important;
     right: 10px !important;
     font-size: 16px !important;
@@ -128,7 +134,7 @@
   .leaflet-bar { border: 1px solid #2A2D38 !important; box-shadow: none !important; }
   .leaflet-control-attribution {
     background: rgba(14,15,20,0.8) !important;
-    color: #6B6F7C !important;
+    color: #8A8E9D !important;
     font-size: 9px !important;
   }
   .leaflet-control-attribution a { color: #9CA0AE !important; }
