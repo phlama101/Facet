@@ -56,6 +56,17 @@ export async function GET(req: NextRequest) {
     const body = await upstream.arrayBuffer()
     const contentType = upstream.headers.get('content-type') ?? 'image/jpeg'
 
+    if (!contentType.startsWith('image/') && !contentType.startsWith('application/octet-stream')) {
+      return new NextResponse(PLACEHOLDER_SVG, {
+        status: 200,
+        headers: {
+          'Content-Type': 'image/svg+xml',
+          'Cache-Control': 'public, max-age=60',
+          'X-Image-Status': 'unexpected-content-type',
+        },
+      })
+    }
+
     return new NextResponse(body, {
       headers: {
         'Content-Type': contentType,
